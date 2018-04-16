@@ -1,0 +1,50 @@
+sl_vs_bol_klobs = ((free_water_klobs-bl_qty_klobs)/free_water_klobs)*100
+
+slfal_vs_sf_klobs = ((sfbd_gsv_klobs-sfal_klobs)/sfbd_gsv_klobs)*100
+
+sfbd_vs_sr_klobs = ((sh_rec_klobs-sfbd_gsv_klobs)/sh_rec_klobs)*100
+
+sr_vs_bol_klobs =   ((sh_rec_klobs-bl_qty_klobs)/sh_rec_klobs)*100
+
+
+
+sl_vs_bol_kl15 = ((sfbd_tov_kl15-bl_qty_kl15)/sfbd_tov_kl15)*100
+
+slfal_vs_sf_kl15 = ((robq_kl15-free_water_kl15)/robq_kl15)*100
+
+sfbd_vs_sr_kl15 = ((sh_rec_kl15-robq_kl15)/sh_rec_kl15)*100
+
+sr_vs_bol_kl15 = ((bl_qty_kl15-sh_rec_kl15)/bl_qty_kl15)*100
+
+
+
+
+sl_vs_bol_bbls = ((sfbd_tov_bbls-bl_qty_bbls)/sfbd_tov_bbls)*100
+
+slfal_vs_sf_bbls = ((robq_bbls-free_water_bbls)/robq_bbls)*100
+
+sfbd_vs_sr_bbls = ((sh_rec_bbls-robq_bbls)/sh_rec_bbls)*100
+
+sr_vs_bol_bbls = ((bl_qty_bbls-sh_rec_bbls)/bl_qty_bbls)*100
+
+
+
+
+sl_vs_bol_longton = ((sfbd_tov_longton-bl_qty_longton)/sfbd_tov_longton)*100
+
+slfal_vs_sf_longton = ((robq_longton-free_water_longton)/robq_longton)*100
+
+sfbd_vs_sr_longton = ((sh_rec_longton-robq_longton)/sh_rec_longton)*100
+
+sr_vs_bol_longton = ((bl_qty_longton-sh_rec_longton)/bl_qty_longton)*100
+
+
+
+
+sl_vs_bol_metricton = ((sfbd_tov_metricton-bl_qty_metricton)/sfbd_tov_metricton)*100
+
+slfal_vs_sf_metricton = ((robq_metricton-free_water_metricton)/robq_metricton)*100
+
+sfbd_vs_sr_metricton = ((sh_rec_metricton-robq_metricton)/sh_rec_metricton)*100
+
+sr_vs_bol_metricton = ((bl_qty_metricton-sh_rec_metricton)/bl_qty_metricton)*100
