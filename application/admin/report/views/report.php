@@ -46,9 +46,9 @@
 					</thead>
 				</table>
 				 <div id="mm" class="easyui-menu">
-    <div>Edit</div>
-    <div>Delete</div>
-  </div>
+				    <div>Edit</div>
+				    <div>Delete</div>
+				  </div>
 				<!--<div id="toolbar">
 					<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newData()">Add</a>
 					<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editData()">Edit</a>

@@ -252,7 +252,8 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 <!-- START PANEL BODY -->
  <?php echo form_open_multipart('form_entry/save', array('id' => 'form_add','style'=>'width:200px;')); ?>
 <!-- OK -->
-<input type="hidden" name="client_site_id_form" value="<?php echo @$site_id; ?>" />
+<input type="hidden" name="product" value="<?php echo @$product_type; ?>" />
+<input type="hidden" name="intervention" value="<?php echo @$select_intervention; ?>" />
 <style>
 	td {
 		padding-left:10px;
@@ -403,12 +404,6 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 						Multi Cargo <input type="radio" name="select_cargo" value="multi_cargo" />
 						Single Cargo <input type="radio" name="select_cargo" value="single_cargo" />
 						</div>
-						&nbsp;&nbsp;
-						<select style="display:none;" name="product_type">
-							<option value="">--Pilih Produk--</option>
-							<option value="product">Produk</option>
-							<option value="crude">Crude</option>
-						</select>
 					</td>
 				</tr>
 			</table>

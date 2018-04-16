@@ -15,6 +15,7 @@
 	<div class="row">
 	    <!-- begin col-12 -->
 	    <div class="col-xs-12">
+	    	<?php echo $error_message; ?>
 	        <!-- begin panel -->
             <div class="panel panel-inverse">
                 <div class="panel-heading">
@@ -31,7 +32,7 @@
                 	/* sebelumnya form_entry/tables */
                 	echo form_open('form_entry/create',array('method'=>'get')); 
                 	?>
-					<table style="width:100%;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
+					<table>
 						<tr>
 							<td>
 								<table style="border-spacing: 10px;border-collapse: separate;">
@@ -57,7 +58,7 @@
 											<?php echo form_dropdown('select_intervention', $intervention_array, '', 'style="width:200px;"  class="form-control"',' required="required"'); ?>	
 										</td>
 										<td>
-											<?php echo form_submit('', 'Form Create', 'class="btn btn-sm btn-primary" style="margin-top:0px;height:33px;"');?>
+											<?php echo form_submit('', 'Create', 'class="btn btn-sm btn-primary" style="margin-top:0px;height:33px;"');?>
 										</td>
 									</tr>
 								</table>
@@ -65,6 +66,27 @@
 						</tr>
 					</table>
 					<?php echo form_close(); ?>
+					<table id="dg" class="easyui-datagrid" style="width:100%;min-height:400px"
+					url="<?php echo base_url(); ?>index.php/form_entry/list_rest"
+					toolbar="#toolbar" pagination="true"
+					rownumbers="true" fitColumns="true" singleSelect="true">
+					<thead>
+						<tr>
+							<th field="AREA" width="30">AREA</th>
+							<th field="FILE_ORDER" width="30">FILE ORDER</th>
+							<th field="IWO" width="30">IWO</th>
+							<th field="KONTRAK" width="30">KONTRAK</th>
+							<th field="SPK" width="30">SPK</th>
+							<th field="SURVEYOR_IN_CHARGE" width="30">SURVEYOR</th>
+							<th field="CTIME" width="30">INPUT DATE / TIME</th>
+							<th field="FUNGSI" width="30" align="center">FUNCTION</th>
+						</tr>
+					</thead>
+				</table>
+				 <div id="mm" class="easyui-menu">
+				    <div>Edit</div>
+				    <div>Delete</div>
+				  </div>
                 </div>
 			</div>
 		</div>

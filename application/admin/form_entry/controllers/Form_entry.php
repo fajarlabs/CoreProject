@@ -274,11 +274,8 @@ class Form_entry extends MY_Controller
 
 	// tampilan form wizard pertama muncul
 	public function index()
-	{
-		/* clear session before */
-		$this->session->unset_userdata('site_id');
-		$this->session->unset_userdata('site_name');
-
+	{	
+		$this->data['error_message'] = $this->session->flashdata("error_message");
 		$this->data['sites'] = $this->Client_site_model->get_all_items();
 		$this->load->view('admin/header',$this->data);
 		$this->load->view('site_selection',$this->data);
@@ -454,6 +451,7 @@ class Form_entry extends MY_Controller
 	
 	public function edit($id=0)
 	{
+		$this->data['error_message'] = $this->session->flashdata("error_message");
 		$this->data['site_id']     = $this->session->userdata("site_id");
 		$this->data['site_name']   = $this->session->userdata("site_name");
 		$this->data['title_page']        = "Form Entry";
@@ -474,23 +472,25 @@ class Form_entry extends MY_Controller
 		$filterRules = $this->input->post('filterRules');
 
 		/* get query data */
-		$query  = $this->Form_entry_model->get_all_items($offset,$rows,$this->session->userdata("site_id"),$filterRules);
+		$query  = $this->Form_entry_model->get_all_items($offset,$rows,$filterRules);
 
 		$json_object = new stdClass();
 		$temp_row = array();
 		if($query->num_rows() > 0) {
 			foreach($query->result() as $row) {
-				/* modificated */
+				$row->KONTRAK = implode(", ",json_decode($row->KONTRAK));
+				$row->SPK = implode(", ",json_decode($row->SPK));
+				$row->SURVEYOR_IN_CHARGE = implode(", ",json_decode($row->SURVEYOR_IN_CHARGE));
 				$row->CTIME  = date('d-m-Y H:i:s',strtotime($row->CTIME));
-				$row->FUNGSI = '<a href="'.base_url().'index.php/form_entry/edit/'.$row->FEFID.'" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> Edit</a>'; 
-				$row->FUNGSI .= ' <a href="'.base_url().'index.php/form_entry/delete/'.$row->FEFID.'" onclick="return confirm(\'Are you sure?\')" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a>'; 
+				$row->FUNGSI = '<a href="'.base_url().'index.php/form_entry/edit/'.$row->FEFID.'" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> Edit</a> '; 
+				$row->FUNGSI .= '<a href="'.base_url().'index.php/form_entry/delete/'.$row->FEFID.'" onclick="return confirm(\'Delete data permanently. Are you sure? \')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>'; 
 				$row->PRODUCT_TYPE = ucfirst($row->PRODUCT_TYPE);
 				$row->SELECT_CARGO = ucwords(str_replace("_", " ", $row->SELECT_CARGO));
-				$temp_row[]  = $row;
+				$temp_row[] = $row;
 			}
 		}
 
-		$json_object->total = $this->Form_entry_model->count_all_items($this->session->userdata("site_id"),$filterRules);
+		$json_object->total = $this->Form_entry_model->count_all_items($filterRules);
 		$json_object->rows  = @$temp_row;
 
 		header('Content-Type: application/json');
@@ -501,7 +501,7 @@ class Form_entry extends MY_Controller
 	{
 		$this->Form_entry_model->update(array("IS_DELETE" => 1),$id);
 		$this->session->set_flashdata('error_message', alert_success('Delete Succeded'));
-		redirect('/form_entry/tables');
+		redirect('/form_entry');
 	}
 
 	public function contract_rest()

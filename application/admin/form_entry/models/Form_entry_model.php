@@ -38,19 +38,22 @@ class Form_entry_model extends CI_Model
                     $query .= "\"fef\".\"CREATE_TIME\" >= timestamp '".$array_datetime."' AND \"fef\".\"CREATE_TIME\" < timestamp '".$array_endtime."' ";
                 }
                 if($row->field == "SPK") {
-                    $query .= "\"fef\".\"SPK\" = '".$row->value."' ";
+                    $query .= "\"fef\".\"SPK\" LIKE '%".$row->value."%' ";
+                }
+                if($row->field == "AREA") {
+                    $query .= "\"fef\".\"AREA\" LIKE '%".$row->value."%' ";
                 }
                 if($row->field == "KONTRAK") {
-                    $query .= "\"fef\".\"KONTRAK\" = '".$row->value."' ";
+                    $query .= "\"fef\".\"KONTRAK\" LIKE '%".$row->value."%' ";
                 }
-                if($row->field == "INTERVENTION_NAME") {
-                    $query .= "\"mi\".\"INTERVENTION_NAME\" = '".ucwords(strtolower($row->value))."' ";
+                if($row->field == "FILE_ORDER") {
+                    $query .= "\"fef\".\"FILE_ORDER\" LIKE '%".$row->value."%' ";
                 }   
-                if($row->field == "PRODUCT_TYPE") {
-                    $query .= "\"fef\".\"PRODUCT_TYPE\" = '".str_replace(" ","_",strtolower($row->value))."' ";
+                if($row->field == "IWO") {
+                    $query .= "\"fef\".\"IWO\" LIKE '%".$row->value."%' ";
                 }
-                if($row->field == "SELECT_CARGO") {
-                    $query .= "\"fef\".\"SELECT_CARGO\" = '".str_replace(" ","_",strtolower($row->value))."' ";
+                if($row->field == "SURVEYOR_IN_CHARGE") {
+                    $query .= "\"fef\".\"SURVEYOR_IN_CHARGE\" LIKE '%".$row->value."%' ";
                 }
                 if($count > 1) {
                     $query .= "AND ";
@@ -59,11 +62,12 @@ class Form_entry_model extends CI_Model
             }
         }
 
-        $query .= ($cp_count > 0 ? "AND " : " ")." \"fef\".\"CLIENT_SITE_ID\" = '$site_id' AND \"fef\".\"IS_DELETE\" = '0' LIMIT $limit OFFSET $offset ";
+        $query .= ($cp_count > 0 ? "AND " : " ")." \"fef\".\"IS_DELETE\" = '0' LIMIT $limit OFFSET $offset ";
+
         return $this->db->query($query);
     }
 
-    public function count_all_items($site_id=0,$filter_rules=array())
+    public function count_all_items($filter_rules=array())
     {               
         $query = "SELECT *, \"fef\".\"CREATE_TIME\" \"CTIME\", \"fef\".\"ID\" \"FEFID\" FROM \"$this->table\" \"fef\" ";
         $filter_rules = json_decode($filter_rules);
@@ -95,19 +99,22 @@ class Form_entry_model extends CI_Model
                     $query .= "\"fef\".\"CREATE_TIME\" >= timestamp '".$array_datetime."' AND \"fef\".\"CREATE_TIME\" < timestamp '".$array_endtime."' ";
                 }
                 if($row->field == "SPK") {
-                    $query .= "\"fef\".\"SPK\" = '".$row->value."' ";
+                    $query .= "\"fef\".\"SPK\" LIKE '%".$row->value."%' ";
+                }
+                if($row->field == "AREA") {
+                    $query .= "\"fef\".\"AREA\" LIKE '%".$row->value."%' ";
                 }
                 if($row->field == "KONTRAK") {
-                    $query .= "\"fef\".\"KONTRAK\" = '".$row->value."' ";
+                    $query .= "\"fef\".\"KONTRAK\" LIKE '%".$row->value."%' ";
                 }
-                if($row->field == "INTERVENTION_NAME") {
-                    $query .= "\"mi\".\"INTERVENTION_NAME\" = '".ucwords(strtolower($row->value))."' ";
+                if($row->field == "FILE_ORDER") {
+                    $query .= "\"fef\".\"FILE_ORDER\" LIKE '%".$row->value."%' ";
                 }   
-                if($row->field == "PRODUCT_TYPE") {
-                    $query .= "\"fef\".\"PRODUCT_TYPE\" = '".str_replace(" ","_",strtolower($row->value))."' ";
+                if($row->field == "IWO") {
+                    $query .= "\"fef\".\"IWO\" LIKE '%".$row->value."%' ";
                 }
-                if($row->field == "SELECT_CARGO") {
-                    $query .= "\"fef\".\"SELECT_CARGO\" = '".str_replace(" ","_",strtolower($row->value))."' ";
+                if($row->field == "SURVEYOR_IN_CHARGE") {
+                    $query .= "\"fef\".\"SURVEYOR_IN_CHARGE\" LIKE '%".$row->value."%' ";
                 }
                 if($count > 1) {
                     $query .= "AND ";
@@ -116,7 +123,7 @@ class Form_entry_model extends CI_Model
             }
         }
 
-        $query .= ($cp_count > 0 ? "AND " : " ")." \"fef\".\"CLIENT_SITE_ID\" = '$site_id' AND \"fef\".\"IS_DELETE\" = '0' ";
+        $query .= ($cp_count > 0 ? "AND " : " ")." \"fef\".\"IS_DELETE\" = '0' ";
         return $this->db->query($query)->num_rows();
     }
 
