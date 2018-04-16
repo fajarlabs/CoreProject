@@ -41,4 +41,10 @@ class Log_monitoring_client extends MY_Controller
 		header('Content-Type: application/json');
 		echo json_encode($json_object);
 	}
+
+	public function clear_all() {
+		$this->Log_monitoring_client_model->truncate_db();
+		$this->session->set_flashdata('error_message', alert_success('Delete succeded.'));
+		redirect("Log_monitoring_client");
+	}
 }

@@ -15,7 +15,7 @@
 		<?php echo script_tag('assets/admin/color-admin/assets/crossbrowserjs/respond.min.js'); ?>
 		<?php echo script_tag('assets/admin/color-admin/assets/crossbrowserjs/excanvas.min.js'); ?>
 	<![endif]-->
-	<?php echo script_tag('assets/admin/color-admin/assets/plugins/slimscroll/jquery.slimscroll.min.js') ?>
+	<?php echo script_tag('assets/admin/plugins/jQuery-slimScroll-1.3.8/jquery.slimscroll.min.js') ?>
 	<?php echo script_tag('assets/admin/color-admin/assets/plugins/jquery-cookie/jquery.cookie.js') ?>
 	<!-- ================== END BASE JS ================== -->	
 
