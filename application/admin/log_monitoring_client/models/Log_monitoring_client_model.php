@@ -36,4 +36,9 @@ class Log_monitoring_client_model extends CI_Model
 		$this->db->update($this->table, $array_col_val); 
 		return $id;
     }
+
+    public function truncate_db() {
+        $this->db->from('APP_LOG_CLIENT');
+        $this->db->truncate();
+    }
 }
