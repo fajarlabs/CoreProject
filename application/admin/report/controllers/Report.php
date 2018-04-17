@@ -122,9 +122,8 @@ class Report extends MY_Controller
 		echo json_encode($json_object);
 	}
 	
-	public function detil()
+	public function detil($id_item)
 	{
-		$id_item='8';
         $query_site = $this->Client_site_model->get_item_by_id($this->input->post("site_id"));
         if($query_site->num_rows() > 0) {
         	foreach($query_site->result() as $row) {
@@ -138,6 +137,7 @@ class Report extends MY_Controller
         		$intervensi=$row->SELECT_INTERVENTION;		
         	}
         }
+        //$intervensi = 15;
 		switch($intervensi){
 			case 14:
 				$tplreport='report_loading_detil';

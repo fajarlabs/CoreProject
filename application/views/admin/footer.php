@@ -7,6 +7,7 @@
 	<!-- end page container -->
 	<!-- ================== BEGIN BASE JS ================== -->
 	<?php echo script_tag('assets/admin/color-admin/assets/plugins/jquery/jquery-1.9.1.min.js'); ?>
+	<?php echo script_tag('assets/admin/plugins/sweetalert/dist/sweetalert.min.js'); ?>
 	<?php echo script_tag('assets/admin/color-admin/assets/plugins/jquery/jquery-migrate-1.1.0.min.js'); ?>
 	<?php echo script_tag('assets/admin/color-admin/assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js'); ?>
 	<?php echo script_tag('assets/admin/color-admin/assets/plugins/bootstrap/js/bootstrap.min.js'); ?>

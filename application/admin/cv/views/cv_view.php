@@ -32,7 +32,6 @@
 				            rownumbers="true" fitColumns="true" singleSelect="true">
 				        <thead>
 				            <tr>
-				                <th field="POSISI" width="30">Position</th>
                                 <th field="NAMA" width="30">NAME</th>
                                 <th field="UPLOAD_FILE" width="30">FILE</th>
 				            </tr>

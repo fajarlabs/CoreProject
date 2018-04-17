@@ -529,4 +529,11 @@ if(!function_exists('get_client_group_id'))
 		return isset($oclient) ? $oclient->client_group_id : '';
 	} 
 }
+
+function check_exist($var){
+	return (!empty($var) ? $var : ' - ');
+}
+function check_exist_date($var){
+	return (!empty($var) ? convert_date($var,'d/m/Y')  : ' - ');
+}
 ?>
