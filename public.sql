@@ -12,7 +12,7 @@
  Target Server Version : 90608
  File Encoding         : 65001
 
- Date: 16/04/2018 13:19:29
+ Date: 17/04/2018 16:49:55
 */
 
 
@@ -347,6 +347,50 @@ START 1
 CACHE 1;
 
 -- ----------------------------
+-- Sequence structure for MASTER_CV_CERTIFICATE_ID_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."MASTER_CV_CERTIFICATE_ID_seq";
+CREATE SEQUENCE "public"."MASTER_CV_CERTIFICATE_ID_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 15
+CACHE 1;
+
+-- ----------------------------
+-- Sequence structure for MASTER_CV_EDUCATION_ID_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."MASTER_CV_EDUCATION_ID_seq";
+CREATE SEQUENCE "public"."MASTER_CV_EDUCATION_ID_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 102
+CACHE 1;
+
+-- ----------------------------
+-- Sequence structure for MASTER_CV_EXPERIENCE_ID_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."MASTER_CV_EXPERIENCE_ID_seq";
+CREATE SEQUENCE "public"."MASTER_CV_EXPERIENCE_ID_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 81
+CACHE 1;
+
+-- ----------------------------
+-- Sequence structure for MASTER_CV_HISTORY_OF_WORK_ID_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."MASTER_CV_HISTORY_OF_WORK_ID_seq";
+CREATE SEQUENCE "public"."MASTER_CV_HISTORY_OF_WORK_ID_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 70
+CACHE 1;
+
+-- ----------------------------
 -- Sequence structure for MASTER_CV_ID_seq
 -- ----------------------------
 DROP SEQUENCE IF EXISTS "public"."MASTER_CV_ID_seq";
@@ -355,6 +399,17 @@ INCREMENT 1
 MINVALUE  1
 MAXVALUE 9223372036854775807
 START 1
+CACHE 1;
+
+-- ----------------------------
+-- Sequence structure for MASTER_CV_REGION_ID_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."MASTER_CV_REGION_ID_seq";
+CREATE SEQUENCE "public"."MASTER_CV_REGION_ID_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 80
 CACHE 1;
 
 -- ----------------------------
@@ -468,10 +523,54 @@ START 1
 CACHE 1;
 
 -- ----------------------------
+-- Sequence structure for REF_EXP_ID_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."REF_EXP_ID_seq";
+CREATE SEQUENCE "public"."REF_EXP_ID_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 5
+CACHE 1;
+
+-- ----------------------------
+-- Sequence structure for REF_POSITION_ID_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."REF_POSITION_ID_seq";
+CREATE SEQUENCE "public"."REF_POSITION_ID_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 6
+CACHE 1;
+
+-- ----------------------------
+-- Sequence structure for REF_REGION_ID_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."REF_REGION_ID_seq";
+CREATE SEQUENCE "public"."REF_REGION_ID_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 32
+CACHE 1;
+
+-- ----------------------------
 -- Sequence structure for RUNNING_TEXT_RUNNING_TEXT_ID_seq
 -- ----------------------------
 DROP SEQUENCE IF EXISTS "public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq";
 CREATE SEQUENCE "public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 1
+CACHE 1;
+
+-- ----------------------------
+-- Sequence structure for WA_ID_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."WA_ID_seq";
+CREATE SEQUENCE "public"."WA_ID_seq" 
 INCREMENT 1
 MINVALUE  1
 MAXVALUE 9223372036854775807
@@ -846,146 +945,6 @@ INSERT INTO "public"."APP_CLIENT_SITE" VALUES (1, 'Pertamina', 0, NULL, 'admin',
 INSERT INTO "public"."APP_CLIENT_SITE" VALUES (3, 'Pelni', 0, NULL, 'admin', '2017-10-16 07:31:00', NULL, NULL, NULL, 'http://localhost/uploads/file_manager/pelni-logo.png', 180, 40, 'http://1.bp.blogspot.com/-k3DU7DtJNus/UxpjhBX7D2I/AAAAAAAAAW8/joo_nXra-yE/s1600/Cermai.jpg');
 
 -- ----------------------------
--- Table structure for APP_CLIENT_TEMPLATE
--- ----------------------------
-DROP TABLE IF EXISTS "public"."APP_CLIENT_TEMPLATE";
-CREATE TABLE "public"."APP_CLIENT_TEMPLATE" (
-  "CLIENT_TEMPLATE_ID" int4 NOT NULL DEFAULT nextval('"APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq"'::regclass),
-  "TEMPLATE_NAME" text COLLATE "pg_catalog"."default",
-  "MENU_ID" int4,
-  "IS_DELETE" int4,
-  "CREATE_TIME" timestamp(6),
-  "CREATE_USER" text COLLATE "pg_catalog"."default",
-  "MODIFY_TIME" timestamp(6),
-  "MODIFY_USER" text COLLATE "pg_catalog"."default",
-  "DELETE_TIME" timestamp(6),
-  "DELETE_USER" text COLLATE "pg_catalog"."default"
-)
-;
-
--- ----------------------------
--- Records of APP_CLIENT_TEMPLATE
--- ----------------------------
-INSERT INTO "public"."APP_CLIENT_TEMPLATE" VALUES (8, 'form02', 3, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE" VALUES (9, 'form03', 3, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE" VALUES (7, 'form01', 3, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-
--- ----------------------------
--- Table structure for APP_CLIENT_TEMPLATE_ACCESS
--- ----------------------------
-DROP TABLE IF EXISTS "public"."APP_CLIENT_TEMPLATE_ACCESS";
-CREATE TABLE "public"."APP_CLIENT_TEMPLATE_ACCESS" (
-  "TEMPLATE_ACCESS_ID" int4 NOT NULL DEFAULT nextval('"APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq"'::regclass),
-  "CLIENT_TEMPLATE_COMPONENT_ID" int4,
-  "ACCESS_STATUS" int4 DEFAULT 0,
-  "IS_DELETE" int4,
-  "CREATE_TIME" timestamp(6),
-  "CREATE_USER" text COLLATE "pg_catalog"."default",
-  "MODIFY_TIME" timestamp(6),
-  "MODIFY_USER" text COLLATE "pg_catalog"."default",
-  "DELETE_TIME" timestamp(6),
-  "DELETE_USER" text COLLATE "pg_catalog"."default",
-  "HEADER_ACCESS_ID" int4
-)
-;
-
--- ----------------------------
--- Records of APP_CLIENT_TEMPLATE_ACCESS
--- ----------------------------
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (30, 32, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (31, 38, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (33, 30, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (35, 42, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (36, 29, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (37, 41, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (38, 36, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (39, 44, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (40, 49, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (41, 45, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (42, 43, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (43, 35, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (32, 48, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (34, 50, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (22, 39, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (23, 33, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (24, 31, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (25, 34, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (26, 47, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (27, 46, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (28, 40, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (29, 37, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (44, 32, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (45, 38, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (46, 30, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (47, 42, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (48, 29, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (49, 41, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (50, 36, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (51, 44, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (52, 49, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (53, 45, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (54, 43, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (55, 35, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (56, 48, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (57, 50, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (58, 39, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (59, 33, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (60, 31, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (61, 34, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (62, 47, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (63, 46, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (64, 40, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (65, 37, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (66, 32, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 12);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (67, 38, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 12);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (68, 30, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 12);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_ACCESS" VALUES (69, 42, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 12);
-
--- ----------------------------
--- Table structure for APP_CLIENT_TEMPLATE_COMPONENT
--- ----------------------------
-DROP TABLE IF EXISTS "public"."APP_CLIENT_TEMPLATE_COMPONENT";
-CREATE TABLE "public"."APP_CLIENT_TEMPLATE_COMPONENT" (
-  "CLIENT_TEMPLATE_COMPONENT_ID" int4 NOT NULL DEFAULT nextval('"APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_seq"'::regclass),
-  "FIELD_NAME" text COLLATE "pg_catalog"."default",
-  "CLIENT_TEMPLATE_ID" int4,
-  "IS_DELETE" int4,
-  "CREATE_TIME" timestamp(6),
-  "CREATE_USER" text COLLATE "pg_catalog"."default",
-  "MODIFY_TIME" timestamp(6),
-  "MODIFY_USER" text COLLATE "pg_catalog"."default",
-  "DELETE_TIME" timestamp(6),
-  "DELETE_USER" text COLLATE "pg_catalog"."default"
-)
-;
-
--- ----------------------------
--- Records of APP_CLIENT_TEMPLATE_COMPONENT
--- ----------------------------
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (29, 'upload_file', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (30, 'remarks', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (31, 'ship_rec_kl15', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (32, 'ship_rec_kl', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (33, 'bar_fig_afdc_kl15', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (34, 'bar_fig_afdc_kl', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (35, 'bar_fig_bfdc_kl15', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (36, 'bar_fig_bfdc_kl', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (37, 'bar_fig_afterload_kl15', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (38, 'bar_fig_afterload_kl', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (39, 'obq_kl15', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (40, 'obq_kl', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (41, 'deliv_order_kl15', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (42, 'deliv_order_kl', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (43, 'def_ship', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (44, 'def_barge', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (45, 'def_terminal', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (46, 'date_loading_pelni', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (47, 'date_loading_barge', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (48, 'port', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (49, 'barge', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_CLIENT_TEMPLATE_COMPONENT" VALUES (50, 'vessel', 7, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-
--- ----------------------------
 -- Table structure for APP_CLIENT_USER
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."APP_CLIENT_USER";
@@ -1247,538 +1206,6 @@ CREATE TABLE "public"."APP_LOG_CLIENT" (
 ;
 
 -- ----------------------------
--- Records of APP_LOG_CLIENT
--- ----------------------------
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4558, '2017-11-26 00:27:42', 'client', '::1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4559, '2017-11-26 00:27:42', 'client_dashboard', '::1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4560, '2017-11-26 00:27:45', 'running_text', '::1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4561, '2017-11-26 00:27:47', 'client', '::1', 'client/logout', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4562, '2017-11-26 19:29:31', 'client', '127.0.0.1', 'client/page/list-pelni-data', 'Not Logged In', '', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4563, '2017-11-26 19:30:56', 'client', '127.0.0.1', 'client/page/list-pelni-data', 'Not Logged In', '', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4564, '2017-11-26 19:35:37', 'client', '127.0.0.1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4565, '2017-11-26 19:35:38', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4566, '2017-11-26 19:35:41', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4567, '2017-11-26 19:36:13', 'client_peta_indonesia', '127.0.0.1', 'client_peta_indonesia', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4568, '2017-11-26 19:36:14', 'client_peta_indonesia', '127.0.0.1', 'client_peta_indonesia/page_list_rest', 'PNI-12345', 'Pelni', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4569, '2017-11-26 19:36:14', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4570, '2017-11-26 19:36:14', 'client_peta_indonesia', '127.0.0.1', 'client_peta_indonesia/page_list_rest', 'PNI-12345', 'Pelni', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4571, '2017-11-26 19:39:34', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4572, '2017-11-26 19:40:00', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4573, '2017-11-26 19:40:02', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4574, '2017-11-26 19:41:28', 'client_peta_indonesia', '127.0.0.1', 'client_peta_indonesia', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4575, '2017-11-26 19:41:29', 'client_peta_indonesia', '127.0.0.1', 'client_peta_indonesia/page_list_rest', 'PNI-12345', 'Pelni', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4576, '2017-11-26 19:41:29', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4577, '2017-11-26 19:41:29', 'client_peta_indonesia', '127.0.0.1', 'client_peta_indonesia/page_list_rest', 'PNI-12345', 'Pelni', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4578, '2017-11-26 19:41:36', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4579, '2017-11-26 19:41:38', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4580, '2017-11-26 19:42:44', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4581, '2017-11-26 19:42:46', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4582, '2017-11-26 19:54:36', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4583, '2017-11-26 19:54:37', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4584, '2017-11-26 19:55:29', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4585, '2017-11-26 19:55:31', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4586, '2017-11-26 19:55:38', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4587, '2017-11-26 19:55:40', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4588, '2017-11-26 19:55:54', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4589, '2017-11-26 19:55:56', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4590, '2017-11-26 19:57:37', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4591, '2017-11-26 19:57:39', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4592, '2017-11-26 19:58:36', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4593, '2017-11-26 19:58:38', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4594, '2017-11-26 19:59:12', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4595, '2017-11-26 19:59:14', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4596, '2017-11-26 20:00:03', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4597, '2017-11-26 20:00:06', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4598, '2017-11-26 20:00:23', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4599, '2017-11-26 20:00:25', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4600, '2017-11-26 20:04:23', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4601, '2017-11-26 20:04:25', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4602, '2017-11-26 20:05:28', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4603, '2017-11-26 20:05:29', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4604, '2017-11-26 20:06:14', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4605, '2017-11-26 20:06:16', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4606, '2017-11-26 20:32:06', 'client_peta_indonesia', '127.0.0.1', 'client_peta_indonesia', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4607, '2017-11-26 20:32:07', 'client_peta_indonesia', '127.0.0.1', 'client_peta_indonesia/page_list_rest', 'PNI-12345', 'Pelni', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4608, '2017-11-26 20:32:07', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4609, '2017-11-26 20:32:07', 'client_peta_indonesia', '127.0.0.1', 'client_peta_indonesia/page_list_rest', 'PNI-12345', 'Pelni', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4610, '2017-11-26 20:36:07', 'client_peta_indonesia', '127.0.0.1', 'client_peta_indonesia', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4611, '2017-11-26 20:36:08', 'client_peta_indonesia', '127.0.0.1', 'client_peta_indonesia/page_list_rest', 'PNI-12345', 'Pelni', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4612, '2017-11-26 20:36:08', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4613, '2017-11-26 20:36:08', 'client_peta_indonesia', '127.0.0.1', 'client_peta_indonesia/page_list_rest', 'PNI-12345', 'Pelni', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4614, '2017-11-26 20:37:05', 'client', '127.0.0.1', 'client/logout', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4615, '2017-11-26 20:42:15', 'client', '127.0.0.1', 'client/logout', 'Not Logged In', '', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4616, '2017-11-30 08:03:32', 'client', '127.0.0.1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4617, '2017-11-30 08:03:32', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4618, '2017-11-30 08:03:34', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4619, '2017-11-30 08:03:40', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4620, '2017-11-30 08:03:40', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4621, '2017-11-30 08:03:52', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4622, '2017-11-30 08:04:06', 'client', '127.0.0.1', 'client/logout', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4623, '2017-11-30 08:05:15', 'client', '127.0.0.1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4624, '2017-11-30 08:05:15', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4625, '2017-11-30 08:05:16', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4626, '2017-11-30 08:05:28', 'client_dashboard', '127.0.0.1', 'client_dashboard/datagraph', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4627, '2017-11-30 08:05:28', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4628, '2017-11-30 08:05:49', 'logout', '127.0.0.1', 'logout', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4629, '2017-11-30 08:05:51', 'login', '127.0.0.1', 'login', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4630, '2017-11-30 08:05:57', 'client', '127.0.0.1', 'client/auth', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4631, '2017-11-30 08:05:57', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4632, '2017-11-30 08:05:58', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4633, '2017-11-30 08:06:01', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4634, '2017-11-30 08:06:10', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4635, '2017-11-30 08:06:11', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4636, '2017-11-30 08:06:28', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4637, '2017-11-30 08:06:29', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4638, '2017-11-30 08:06:51', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4639, '2017-11-30 08:06:51', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4640, '2017-11-30 08:06:51', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4641, '2017-11-30 08:07:07', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4642, '2017-11-30 08:07:48', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4643, '2017-11-30 08:10:04', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4644, '2017-11-30 08:10:59', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4645, '2017-11-30 08:14:31', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4646, '2017-11-30 08:19:35', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4647, '2017-11-30 08:27:03', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4648, '2017-11-30 08:27:55', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4649, '2017-11-30 08:29:22', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4650, '2017-11-30 08:29:23', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4651, '2017-11-30 08:30:54', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4652, '2017-11-30 08:31:36', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4653, '2017-11-30 08:32:27', 'client', '127.0.0.1', 'client/logout', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4654, '2017-11-30 08:32:38', 'client', '127.0.0.1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4655, '2017-11-30 08:32:38', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4656, '2017-11-30 08:32:41', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4657, '2017-11-30 08:32:57', 'client_dashboard', '127.0.0.1', 'client_dashboard/datagraph', 'PNI-12345', 'Pelni', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4658, '2017-11-30 08:32:58', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4659, '2017-11-30 08:36:24', 'client_dashboard', '127.0.0.1', 'client_dashboard/datagraph', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4660, '2017-11-30 08:36:25', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4661, '2017-11-30 08:36:29', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4662, '2017-11-30 08:36:32', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4663, '2017-11-30 08:36:36', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4664, '2017-11-30 08:36:39', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4665, '2017-11-30 08:39:05', 'client', '127.0.0.1', 'client/logout', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4666, '2017-11-30 10:15:44', 'client', '::1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4667, '2017-11-30 10:15:44', 'client_dashboard', '::1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4668, '2017-11-30 10:16:01', 'client_dashboard', '::1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4669, '2017-11-30 10:16:08', 'running_text', '::1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4670, '2017-11-30 10:16:23', 'client', '::1', 'client/logout', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4671, '2017-11-30 10:17:26', 'client', '::1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4672, '2017-11-30 10:17:26', 'client_dashboard', '::1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4673, '2017-11-30 10:17:28', 'running_text', '::1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4674, '2017-11-30 10:18:21', 'client_dashboard', '::1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4675, '2017-11-30 10:18:23', 'running_text', '::1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4676, '2017-11-30 10:18:30', 'client_dashboard', '::1', 'client_dashboard/datagraph', 'PNI-12345', 'Pelni', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4677, '2017-11-30 10:18:31', 'running_text', '::1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4678, '2017-11-30 10:20:14', 'client_dashboard', '::1', 'client_dashboard/datagraph', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4679, '2017-11-30 10:20:15', 'running_text', '::1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4680, '2017-11-30 10:20:25', 'client_dashboard', '::1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4681, '2017-11-30 10:20:27', 'running_text', '::1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4682, '2017-11-30 10:21:24', 'client_dashboard', '::1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4683, '2017-11-30 10:21:26', 'running_text', '::1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4684, '2017-11-30 10:21:33', 'client_dashboard', '::1', 'client_dashboard/datagraph', 'PNI-12345', 'Pelni', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4685, '2017-11-30 10:21:34', 'running_text', '::1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4686, '2017-11-30 10:23:15', 'client_dashboard', '::1', 'client_dashboard/datagraph', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4687, '2017-11-30 10:23:15', 'running_text', '::1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4688, '2017-11-30 10:23:21', 'client_dashboard', '::1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4689, '2017-11-30 10:23:23', 'running_text', '::1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4690, '2017-11-30 10:23:52', 'client_dashboard', '::1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4691, '2017-11-30 10:23:54', 'running_text', '::1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4692, '2017-11-30 10:24:13', 'client_dashboard', '::1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4693, '2017-11-30 10:24:15', 'running_text', '::1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4694, '2017-11-30 10:24:54', 'client_dashboard', '::1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4695, '2017-11-30 10:24:56', 'running_text', '::1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4696, '2017-11-30 10:25:05', 'client_dashboard', '::1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4697, '2017-11-30 10:25:07', 'running_text', '::1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4698, '2017-11-30 10:25:18', 'client', '::1', 'client/logout', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4699, '2017-11-30 10:25:41', 'client', '::1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4700, '2017-11-30 10:25:42', 'client_dashboard', '::1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4701, '2017-11-30 10:25:42', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4702, '2017-11-30 10:25:54', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4703, '2017-11-30 10:26:54', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4704, '2017-11-30 10:29:20', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4705, '2017-11-30 10:29:36', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4706, '2017-11-30 10:30:26', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4707, '2017-11-30 10:31:27', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4708, '2017-11-30 10:32:18', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4709, '2017-11-30 10:32:52', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4710, '2017-11-30 10:33:00', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4711, '2017-11-30 10:35:06', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4712, '2017-11-30 10:35:13', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4713, '2017-11-30 10:37:28', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4714, '2017-11-30 10:37:46', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4715, '2017-11-30 10:38:11', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4716, '2017-11-30 10:38:17', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4717, '2017-11-30 10:38:23', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4718, '2017-11-30 10:38:50', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4719, '2017-11-30 10:40:04', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4720, '2017-11-30 10:40:23', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4721, '2017-11-30 10:40:51', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4722, '2017-11-30 10:41:27', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4723, '2017-11-30 10:43:02', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4724, '2017-11-30 10:43:19', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4725, '2017-11-30 10:44:20', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4726, '2017-11-30 10:45:14', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4727, '2017-11-30 10:45:26', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4728, '2017-11-30 10:47:55', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4729, '2017-11-30 10:48:16', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4730, '2017-11-30 10:49:27', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4731, '2017-11-30 10:49:52', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4732, '2017-11-30 10:50:01', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4733, '2017-11-30 10:54:08', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4734, '2017-11-30 10:59:45', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4735, '2017-11-30 11:02:04', 'login', '::1', 'login', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4736, '2017-11-30 11:02:08', 'login', '::1', 'login/auth', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4737, '2017-11-30 11:02:08', 'dashboard', '::1', 'dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4738, '2017-11-30 11:02:09', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4739, '2017-11-30 11:02:10', 'form_entry', '::1', 'form_entry', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4740, '2017-11-30 11:02:11', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4741, '2017-11-30 11:02:14', 'form_entry', '::1', 'form_entry/tables', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4742, '2017-11-30 11:02:14', 'form_entry', '::1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4743, '2017-11-30 11:02:14', 'form_entry', '::1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4744, '2017-11-30 11:02:14', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4745, '2017-11-30 11:02:15', 'form_entry', '::1', 'form_entry/create', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4746, '2017-11-30 11:02:15', 'form_entry', '::1', 'form_entry/create_new', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4747, '2017-11-30 11:02:15', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4748, '2017-11-30 11:02:22', 'form_entry', '::1', 'form_entry/form_iframe/3', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4749, '2017-11-30 11:02:23', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4750, '2017-11-30 11:03:57', 'form_entry', '::1', 'form_entry', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4751, '2017-11-30 11:03:58', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4752, '2017-11-30 11:04:01', 'form_entry', '::1', 'form_entry/tables', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4753, '2017-11-30 11:04:01', 'form_entry', '::1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4754, '2017-11-30 11:04:01', 'form_entry', '::1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4755, '2017-11-30 11:04:01', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4756, '2017-11-30 11:04:02', 'form_entry', '::1', 'form_entry/create', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4757, '2017-11-30 11:04:02', 'form_entry', '::1', 'form_entry/form_entry_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4758, '2017-11-30 11:04:03', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4759, '2017-11-30 11:04:03', 'form_entry', '::1', 'form_entry/form_entry_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4760, '2017-11-30 11:04:03', 'form_entry', '::1', 'form_entry/form_entry_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4761, '2017-11-30 11:06:05', 'dashboard', '::1', 'dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4762, '2017-11-30 11:06:05', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4763, '2017-11-30 11:06:07', 'form_entry', '::1', 'form_entry', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4764, '2017-11-30 11:06:07', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4765, '2017-11-30 11:06:09', 'form_entry', '::1', 'form_entry/tables', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4766, '2017-11-30 11:06:10', 'form_entry', '::1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4767, '2017-11-30 11:06:10', 'form_entry', '::1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4768, '2017-11-30 11:06:10', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4769, '2017-11-30 11:06:11', 'form_entry', '::1', 'form_entry/create', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4770, '2017-11-30 11:06:11', 'form_entry', '::1', 'form_entry/create_new', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4771, '2017-11-30 11:06:11', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4772, '2017-11-30 11:06:13', 'form_entry', '::1', 'form_entry/form_iframe/3', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4773, '2017-11-30 11:06:13', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4774, '2017-11-30 11:09:27', 'form_entry', '::1', 'form_entry', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4775, '2017-11-30 11:09:28', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4776, '2017-11-30 11:09:31', 'form_entry', '::1', 'form_entry/tables', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4777, '2017-11-30 11:09:31', 'form_entry', '::1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4778, '2017-11-30 11:09:32', 'form_entry', '::1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4779, '2017-11-30 11:09:32', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4780, '2017-11-30 11:09:34', 'form_entry', '::1', 'form_entry/create', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4781, '2017-11-30 11:09:34', 'form_entry', '::1', 'form_entry/form_entry_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4782, '2017-11-30 11:09:34', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4783, '2017-11-30 11:09:34', 'form_entry', '::1', 'form_entry/form_entry_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4784, '2017-11-30 11:09:35', 'form_entry', '::1', 'form_entry/form_entry_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4785, '2017-11-30 11:09:43', 'form_entry', '::1', 'form_entry/contract_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4786, '2017-11-30 11:10:47', 'form_entry', '::1', 'form_entry', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4787, '2017-11-30 11:10:48', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4788, '2017-11-30 11:10:51', 'form_entry', '::1', 'form_entry/tables', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4789, '2017-11-30 11:10:51', 'form_entry', '::1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4790, '2017-11-30 11:10:51', 'form_entry', '::1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4791, '2017-11-30 11:10:51', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4792, '2017-11-30 11:10:52', 'form_entry', '::1', 'form_entry/create', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4793, '2017-11-30 11:10:53', 'form_entry', '::1', 'form_entry/create_new', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4794, '2017-11-30 11:10:53', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4795, '2017-11-30 11:10:58', 'form_entry', '::1', 'form_entry/form_iframe/3', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4796, '2017-11-30 11:10:58', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4797, '2017-11-30 11:17:24', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4798, '2017-11-30 11:25:06', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4799, '2017-11-30 11:32:44', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4800, '2017-11-30 11:40:32', 'logout', '::1', 'logout', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4801, '2017-11-30 11:43:53', 'login', '::1', 'login', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4802, '2017-11-30 11:47:02', 'login', '::1', 'login', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4803, '2017-11-30 11:47:25', 'client', '::1', 'client/auth', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4804, '2017-11-30 11:47:25', 'client_dashboard', '::1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4805, '2017-11-30 11:47:27', 'running_text', '::1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4806, '2017-11-30 11:47:35', 'client', '::1', 'client/logout', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4807, '2017-11-30 11:47:47', 'client', '::1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4808, '2017-11-30 11:47:47', 'client_dashboard', '::1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4809, '2017-11-30 11:47:48', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4810, '2017-11-30 11:48:18', 'running_text', '::1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4811, '2017-11-30 11:48:59', 'client', '::1', 'client/logout', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4812, '2017-11-30 12:11:08', 'client', '::1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4813, '2017-11-30 12:11:08', 'client_dashboard', '::1', 'client_dashboard', 'PTM-12345', 'Pertamina', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4814, '2017-11-30 12:11:11', 'running_text', '::1', 'running_text/footer_list_rest', 'PTM-12345', 'Pertamina', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4815, '2017-11-30 12:13:00', 'client', '::1', 'client/logout', 'PTM-12345', 'Pertamina', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4816, '2017-12-14 16:02:25', 'client', '127.0.0.1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4817, '2017-12-14 16:02:48', 'client', '127.0.0.1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4818, '2017-12-14 16:02:48', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4819, '2017-12-14 16:02:49', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4820, '2017-12-14 16:02:57', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4821, '2017-12-14 16:06:46', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4822, '2017-12-14 16:06:52', 'login', '127.0.0.1', 'login', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4823, '2017-12-14 16:06:56', 'login', '127.0.0.1', 'login/auth', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4824, '2017-12-14 16:06:56', 'dashboard', '127.0.0.1', 'dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4825, '2017-12-14 16:06:57', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4826, '2017-12-14 16:07:26', 'form_entry', '127.0.0.1', 'form_entry', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4827, '2017-12-14 16:07:27', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4828, '2017-12-14 16:07:29', 'form_entry', '127.0.0.1', 'form_entry/tables', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4829, '2017-12-14 16:07:30', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4830, '2017-12-14 16:07:30', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4831, '2017-12-14 16:07:30', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4832, '2017-12-14 16:08:12', 'form_entry', '127.0.0.1', 'form_entry/tables', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4833, '2017-12-14 16:08:13', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4834, '2017-12-14 16:08:13', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4835, '2017-12-14 16:08:13', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4836, '2017-12-14 16:10:14', 'report_summary_discharge_gas', '127.0.0.1', 'report_summary_discharge_gas', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4837, '2017-12-14 16:10:15', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4838, '2017-12-14 16:10:33', 'form_entry', '127.0.0.1', 'form_entry', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4839, '2017-12-14 16:10:34', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4840, '2017-12-14 16:10:36', 'form_entry', '127.0.0.1', 'form_entry/tables', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4841, '2017-12-14 16:10:37', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4842, '2017-12-14 16:10:37', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4843, '2017-12-14 16:10:37', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4844, '2017-12-14 16:11:04', 'form_entry', '127.0.0.1', 'form_entry/tables', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4845, '2017-12-14 16:11:05', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4846, '2017-12-14 16:11:05', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4847, '2017-12-14 16:11:05', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4848, '2017-12-14 16:16:36', 'contract', '127.0.0.1', 'contract', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4849, '2017-12-14 16:16:37', 'contract', '127.0.0.1', 'contract/page_list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4850, '2017-12-14 16:16:37', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4851, '2017-12-14 16:16:41', 'form_entry', '127.0.0.1', 'form_entry', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4852, '2017-12-14 16:16:42', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4853, '2017-12-14 16:16:45', 'form_entry', '127.0.0.1', 'form_entry/tables', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4854, '2017-12-14 16:16:46', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4855, '2017-12-14 16:16:46', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4856, '2017-12-14 16:16:46', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4857, '2017-12-14 16:18:41', 'form_entry', '127.0.0.1', 'form_entry/create', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4858, '2017-12-14 16:18:41', 'form_entry', '127.0.0.1', 'form_entry/create_new', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4859, '2017-12-14 16:18:42', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4860, '2017-12-14 16:19:00', 'form_entry', '127.0.0.1', 'form_entry/form_iframe/10', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4861, '2017-12-14 16:19:01', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4862, '2017-12-14 16:19:33', 'report', '127.0.0.1', 'report', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4863, '2017-12-14 16:19:34', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4864, '2017-12-14 16:19:37', 'report', '127.0.0.1', 'report/tables', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4865, '2017-12-14 16:19:39', 'report', '127.0.0.1', 'report/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4866, '2017-12-14 16:19:40', 'report', '127.0.0.1', 'report/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4867, '2017-12-14 16:19:41', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4868, '2017-12-14 16:20:02', 'report', '127.0.0.1', 'report/download', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4869, '2017-12-14 16:20:44', 'form_entry', '127.0.0.1', 'form_entry', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4870, '2017-12-14 16:20:45', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4871, '2017-12-14 16:20:48', 'form_entry', '127.0.0.1', 'form_entry/tables', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4872, '2017-12-14 16:20:49', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4873, '2017-12-14 16:20:49', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4874, '2017-12-14 16:20:49', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4875, '2017-12-14 16:20:51', 'form_entry', '127.0.0.1', 'form_entry/create', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4876, '2017-12-14 16:20:51', 'form_entry', '127.0.0.1', 'form_entry/create_new', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4877, '2017-12-14 16:20:52', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4878, '2017-12-14 16:21:11', 'form_entry', '127.0.0.1', 'form_entry/form_iframe/13', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4879, '2017-12-14 16:21:12', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4880, '2017-12-14 16:22:08', 'form_entry', '127.0.0.1', 'form_entry/form_iframe/3', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4881, '2017-12-14 16:22:09', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4882, '2017-12-14 16:23:02', 'form_entry', '127.0.0.1', 'form_entry', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4883, '2017-12-14 16:23:03', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4884, '2017-12-14 16:23:07', 'form_entry', '127.0.0.1', 'form_entry/tables', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4885, '2017-12-14 16:23:07', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4886, '2017-12-14 16:23:07', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4887, '2017-12-14 16:23:08', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4888, '2017-12-14 16:23:09', 'form_entry', '127.0.0.1', 'form_entry/create', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4889, '2017-12-14 16:23:10', 'form_entry', '127.0.0.1', 'form_entry/form_entry_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4890, '2017-12-14 16:23:10', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4891, '2017-12-14 16:23:10', 'form_entry', '127.0.0.1', 'form_entry/form_entry_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4892, '2017-12-14 16:23:10', 'form_entry', '127.0.0.1', 'form_entry/form_entry_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4893, '2017-12-14 16:24:08', 'form_entry', '127.0.0.1', 'form_entry/contract_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4894, '2017-12-14 16:24:30', 'form_entry', '127.0.0.1', 'form_entry', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4895, '2017-12-14 16:24:31', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4896, '2017-12-14 16:24:50', 'form_entry', '127.0.0.1', 'form_entry/tables', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4897, '2017-12-14 16:24:50', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4898, '2017-12-14 16:24:50', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4899, '2017-12-14 16:24:50', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4900, '2017-12-14 16:28:07', 'map_point', '127.0.0.1', 'map_point', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4901, '2017-12-14 16:28:08', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4902, '2017-12-14 16:31:20', 'map_point', '127.0.0.1', 'map_point', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4903, '2017-12-14 16:31:23', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4904, '2017-12-14 16:31:35', 'map_point', '127.0.0.1', 'map_point/view_list', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4905, '2017-12-14 16:31:35', 'map_point', '127.0.0.1', 'map_point/page_list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4906, '2017-12-14 16:31:35', 'map_point', '127.0.0.1', 'map_point/page_list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4907, '2017-12-14 16:31:36', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4908, '2017-12-14 16:31:44', 'map_point', '127.0.0.1', 'map_point/get_point/Port', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4909, '2017-12-14 16:31:51', 'map_point', '127.0.0.1', 'map_point/add', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4910, '2017-12-14 16:31:52', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4911, '2017-12-14 16:32:17', 'map_point', '127.0.0.1', 'map_point/save', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4912, '2017-12-14 16:32:17', 'map_point', '127.0.0.1', 'map_point/view_list', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4913, '2017-12-14 16:32:18', 'map_point', '127.0.0.1', 'map_point/page_list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4914, '2017-12-14 16:32:18', 'map_point', '127.0.0.1', 'map_point/page_list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4915, '2017-12-14 16:32:18', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4916, '2017-12-14 16:32:21', 'map_point', '127.0.0.1', 'map_point/get_point/Vessel', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4917, '2017-12-14 16:32:22', 'map_point', '127.0.0.1', 'map_point/get_point/Port', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4918, '2017-12-14 16:32:29', 'map_point', '127.0.0.1', 'map_point/view_list', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4919, '2017-12-14 16:32:30', 'map_point', '127.0.0.1', 'map_point/page_list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4920, '2017-12-14 16:32:30', 'map_point', '127.0.0.1', 'map_point/page_list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4921, '2017-12-14 16:32:30', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4922, '2017-12-14 16:32:41', 'map_point', '127.0.0.1', 'map_point/get_point/Vessel', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4923, '2017-12-14 16:32:58', 'map_point', '127.0.0.1', 'map_point/add', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4924, '2017-12-14 16:32:58', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4925, '2017-12-14 16:33:13', 'map_point', '127.0.0.1', 'map_point/save', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4926, '2017-12-14 16:33:14', 'map_point', '127.0.0.1', 'map_point/view_list', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4927, '2017-12-14 16:33:14', 'map_point', '127.0.0.1', 'map_point/page_list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4928, '2017-12-14 16:33:14', 'map_point', '127.0.0.1', 'map_point/page_list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4929, '2017-12-14 16:33:15', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4930, '2017-12-14 16:33:19', 'map_point', '127.0.0.1', 'map_point/get_point/Port', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4931, '2017-12-14 16:33:20', 'map_point', '127.0.0.1', 'map_point/add', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4932, '2017-12-14 16:33:21', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4933, '2017-12-14 16:33:24', 'map_point', '127.0.0.1', 'map_point/get_point/Vessel', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4934, '2017-12-14 16:35:54', 'form_entry', '127.0.0.1', 'form_entry', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4935, '2017-12-14 16:35:54', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4936, '2017-12-14 16:36:19', 'form_entry', '127.0.0.1', 'form_entry/tables', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4937, '2017-12-14 16:36:20', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4938, '2017-12-14 16:36:20', 'form_entry', '127.0.0.1', 'form_entry/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4939, '2017-12-14 16:36:20', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4940, '2017-12-27 06:00:05', 'client', '127.0.0.1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4941, '2017-12-27 06:00:05', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4942, '2017-12-27 06:00:10', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4943, '2017-12-27 06:01:35', 'login', '127.0.0.1', 'login', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4944, '2017-12-27 06:01:49', 'login', '127.0.0.1', 'login/auth', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4945, '2017-12-27 06:01:49', 'dashboard', '127.0.0.1', 'dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4946, '2017-12-27 06:01:50', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4947, '2017-12-27 06:02:11', 'client_access', '127.0.0.1', 'client_access', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4948, '2017-12-27 06:02:11', 'client_access', '127.0.0.1', 'client_access/client_access_list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4949, '2017-12-27 06:02:11', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4950, '2017-12-27 06:02:18', 'client_site', '127.0.0.1', 'client_site', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4951, '2017-12-27 06:02:18', 'client_site', '127.0.0.1', 'client_site/page_list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4952, '2017-12-27 06:02:18', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4953, '2017-12-27 06:02:21', 'client_site', '127.0.0.1', 'client_site/edit/2', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4954, '2017-12-27 06:02:22', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4955, '2017-12-27 06:02:36', 'client_site', '127.0.0.1', 'client_site/update/2', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4956, '2017-12-27 06:02:36', 'client_site', '127.0.0.1', 'client_site', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4957, '2017-12-27 06:02:37', 'client_site', '127.0.0.1', 'client_site/page_list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4958, '2017-12-27 06:02:37', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4959, '2017-12-27 06:02:40', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4960, '2017-12-27 06:02:41', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4961, '2017-12-27 06:02:59', 'client', '127.0.0.1', 'client/logout', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4962, '2017-12-27 06:03:08', 'client', '127.0.0.1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4963, '2017-12-27 06:03:08', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4964, '2017-12-27 06:03:09', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4965, '2017-12-27 06:03:25', 'client_site', '127.0.0.1', 'client_site/edit/1', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4966, '2017-12-27 06:03:25', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4967, '2017-12-27 06:03:32', 'client_site', '127.0.0.1', 'client_site/update/1', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4968, '2017-12-27 06:03:32', 'client_site', '127.0.0.1', 'client_site', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4969, '2017-12-27 06:03:33', 'client_site', '127.0.0.1', 'client_site/page_list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4970, '2017-12-27 06:03:33', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4971, '2017-12-27 06:03:36', 'client_site', '127.0.0.1', 'client_site/edit/3', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4972, '2017-12-27 06:03:36', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4973, '2017-12-27 06:03:41', 'client_site', '127.0.0.1', 'client_site/update/3', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4974, '2017-12-27 06:03:42', 'client_site', '127.0.0.1', 'client_site', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4975, '2017-12-27 06:03:42', 'client_site', '127.0.0.1', 'client_site/page_list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4976, '2017-12-27 06:03:42', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4977, '2017-12-27 06:11:55', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4978, '2017-12-27 06:11:56', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4979, '2017-12-27 06:12:33', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4980, '2017-12-27 06:12:34', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4981, '2017-12-27 06:13:18', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4982, '2017-12-27 06:13:18', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4983, '2017-12-27 06:13:29', 'dashboard', '127.0.0.1', 'dashboard/chart_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4984, '2017-12-27 06:14:54', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4985, '2017-12-27 06:14:55', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4986, '2017-12-27 06:15:05', 'dashboard', '127.0.0.1', 'dashboard/chart_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4987, '2017-12-27 06:15:14', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4988, '2017-12-27 06:15:14', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4989, '2017-12-27 06:15:22', 'dashboard', '127.0.0.1', 'dashboard/chart_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4990, '2017-12-27 06:19:45', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4991, '2017-12-27 06:19:45', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4992, '2017-12-27 06:19:52', 'dashboard', '127.0.0.1', 'dashboard/chart_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4993, '2017-12-27 06:20:03', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4994, '2017-12-27 06:20:07', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4995, '2017-12-27 06:20:07', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4996, '2017-12-27 06:23:15', 'report', '127.0.0.1', 'report/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4997, '2017-12-27 06:23:15', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4998, '2017-12-27 06:23:15', 'report', '127.0.0.1', 'report/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (4999, '2017-12-27 06:24:26', 'report', '127.0.0.1', 'report/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5000, '2017-12-27 06:24:27', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5001, '2017-12-27 06:24:27', 'report', '127.0.0.1', 'report/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5002, '2017-12-27 06:30:33', 'report', '127.0.0.1', 'report/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5003, '2017-12-27 06:30:33', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5004, '2017-12-27 06:30:33', 'report', '127.0.0.1', 'report/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5005, '2017-12-27 06:32:02', 'report', '127.0.0.1', 'report/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5006, '2017-12-27 06:32:02', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5007, '2017-12-27 06:32:02', 'report', '127.0.0.1', 'report/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5008, '2017-12-27 06:32:07', 'report', '127.0.0.1', 'report/cetak/1', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5009, '2017-12-27 06:33:18', 'report', '127.0.0.1', 'report/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5010, '2017-12-27 06:33:18', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5011, '2017-12-27 06:33:18', 'report', '127.0.0.1', 'report/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5012, '2017-12-27 06:34:03', 'report', '127.0.0.1', 'report/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5013, '2017-12-27 06:34:04', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5014, '2017-12-27 06:34:04', 'report', '127.0.0.1', 'report/list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5015, '2017-12-27 06:34:06', 'report', '127.0.0.1', 'report/cetak/1', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5016, '2017-12-27 06:34:39', 'report', '127.0.0.1', 'report/cetak/3', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5017, '2017-12-27 06:34:45', 'logout', '127.0.0.1', 'logout', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5018, '2017-12-27 06:34:48', 'report', '127.0.0.1', 'report/cetak/5', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5019, '2017-12-27 06:38:20', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5020, '2017-12-27 06:39:16', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5021, '2017-12-27 06:39:17', 'report', '127.0.0.1', 'report/detil/1', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5022, '2017-12-27 06:39:20', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5023, '2017-12-27 06:39:53', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5024, '2017-12-27 06:40:31', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5025, '2017-12-27 06:41:32', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5026, '2017-12-27 06:41:53', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5027, '2017-12-27 06:42:28', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5028, '2017-12-27 06:42:51', 'login', '127.0.0.1', 'login', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5029, '2017-12-27 06:42:55', 'client', '127.0.0.1', 'client/auth', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5030, '2017-12-27 06:42:57', 'login', '127.0.0.1', 'login', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5031, '2017-12-27 06:43:02', 'login', '127.0.0.1', 'login/auth', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5032, '2017-12-27 06:43:02', 'dashboard', '127.0.0.1', 'dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5033, '2017-12-27 06:43:03', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5034, '2017-12-27 06:43:09', 'client_user', '127.0.0.1', 'client_user', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5035, '2017-12-27 06:43:10', 'client_user', '127.0.0.1', 'client_user/user_list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5036, '2017-12-27 06:43:10', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5037, '2017-12-27 06:43:16', 'client_user', '127.0.0.1', 'client_user/delete/4', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5038, '2017-12-27 06:43:16', 'client_user', '127.0.0.1', 'client_user', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5039, '2017-12-27 06:43:17', 'client_user', '127.0.0.1', 'client_user/user_list_rest', 'PLN-12345', 'PLN', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5040, '2017-12-27 06:43:17', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5041, '2017-12-27 06:43:20', 'client_user', '127.0.0.1', 'client_user/edit/1', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5042, '2017-12-27 06:43:21', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5043, '2017-12-27 06:47:16', 'client', '127.0.0.1', 'client/logout', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5044, '2017-12-27 06:47:25', 'client', '127.0.0.1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5045, '2017-12-27 06:47:26', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5046, '2017-12-27 06:47:26', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5047, '2017-12-27 06:48:25', 'client', '127.0.0.1', 'client/logout', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5048, '2017-12-27 06:48:30', 'client', '127.0.0.1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5049, '2017-12-27 06:48:39', 'client', '127.0.0.1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5050, '2017-12-27 06:48:39', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5051, '2017-12-27 06:48:40', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5052, '2017-12-27 06:48:42', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5053, '2017-12-27 06:48:50', 'report', '127.0.0.1', 'report/detil/1', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5054, '2017-12-27 06:48:57', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5055, '2017-12-27 06:49:32', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5056, '2017-12-27 06:49:39', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5057, '2017-12-27 06:49:43', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5058, '2017-12-27 06:51:04', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5059, '2017-12-27 06:51:56', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5060, '2017-12-27 06:52:28', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5061, '2017-12-27 06:52:38', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5062, '2017-12-27 06:52:40', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5063, '2017-12-27 06:52:46', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5064, '2017-12-27 06:53:05', 'client', '127.0.0.1', 'client/logout', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5065, '2017-12-27 06:53:15', 'client', '127.0.0.1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5066, '2017-12-27 06:53:15', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5067, '2017-12-27 06:53:15', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5068, '2017-12-27 06:53:24', 'dashboard', '127.0.0.1', 'dashboard/chart_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5069, '2017-12-27 06:53:32', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5070, '2017-12-27 06:54:12', 'client', '127.0.0.1', 'client/logout', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5071, '2017-12-27 06:54:21', 'client', '127.0.0.1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5072, '2017-12-27 06:54:21', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5073, '2017-12-27 06:54:22', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5074, '2017-12-27 06:54:28', 'dashboard', '127.0.0.1', 'dashboard/chart_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5075, '2017-12-27 06:54:30', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5076, '2017-12-27 07:04:33', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5077, '2017-12-27 07:04:37', 'client', '127.0.0.1', 'client/logout', 'PNI-12345', 'Pelni', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5078, '2017-12-27 07:04:49', 'client', '127.0.0.1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5079, '2017-12-27 07:04:49', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5080, '2017-12-27 07:04:50', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5081, '2017-12-27 07:04:53', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5082, '2017-12-27 07:05:04', 'client', '127.0.0.1', 'client/logout', 'PLN-12345', 'PLN', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5083, '2017-12-27 15:03:55', 'client', '127.0.0.1', 'client/auth', 'Not Logged In', '', 'POST');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5084, '2017-12-27 15:03:55', 'client_dashboard', '127.0.0.1', 'client_dashboard', 'PTM-12345', 'Pertamina', 'GET');
-INSERT INTO "public"."APP_LOG_CLIENT" VALUES (5085, '2017-12-27 15:04:55', 'running_text', '127.0.0.1', 'running_text/footer_list_rest', 'PTM-12345', 'Pertamina', 'GET');
-
--- ----------------------------
 -- Table structure for APP_MENU
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."APP_MENU";
@@ -1810,13 +1237,11 @@ CREATE TABLE "public"."APP_MENU" (
 -- ----------------------------
 INSERT INTO "public"."APP_MENU" VALUES (105, 2, 103, 'Security', NULL, 'Security', '_self', NULL, 70, 1, NULL, NULL, 0, NULL, '', NULL, NULL, NULL, NULL);
 INSERT INTO "public"."APP_MENU" VALUES (110, 2, 103, 'Website', NULL, 'Website', '_self', NULL, 30, 1, NULL, NULL, 0, NULL, '', NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_MENU" VALUES (137, 3, 131, 'Client Template', '/client_template', 'Client Template', '_self', '', 0, 1, NULL, NULL, 0, NULL, '', NULL, '', NULL, NULL);
 INSERT INTO "public"."APP_MENU" VALUES (114, 3, 110, 'Tag', '/tag', 'Tag', '_self', '', 0, 1, NULL, NULL, 0, NULL, '', NULL, '', NULL, NULL);
 INSERT INTO "public"."APP_MENU" VALUES (124, 3, 119, 'SMS Gateway', '/sms_gateway', 'SMS Gateway', '_self', '', 30, 1, NULL, NULL, 0, NULL, '', NULL, NULL, NULL, NULL);
 INSERT INTO "public"."APP_MENU" VALUES (123, 3, 119, 'File Manager', '/file_manager', 'File Manager', '_self', '', 0, 1, NULL, NULL, 0, NULL, '', NULL, NULL, NULL, NULL);
 INSERT INTO "public"."APP_MENU" VALUES (125, 3, 110, 'Article', '/article', 'Article', '_self', '', 0, 1, NULL, NULL, 0, NULL, '', NULL, NULL, NULL, NULL);
 INSERT INTO "public"."APP_MENU" VALUES (126, 3, 110, 'Article Category', '/article_category', 'Article Category', '_self', '', 30, 1, NULL, NULL, 0, NULL, '', NULL, NULL, NULL, NULL);
-INSERT INTO "public"."APP_MENU" VALUES (138, 3, 131, 'Client Template Component', '/template_component', 'Client Template Component', '_self', '', 0, 1, NULL, NULL, 0, NULL, '', NULL, '', NULL, NULL);
 INSERT INTO "public"."APP_MENU" VALUES (127, 3, 105, 'Log Monitoring', '/log_monitoring', 'Log Monitoring', '_self', '', 0, 1, NULL, NULL, 0, NULL, '', NULL, NULL, NULL, NULL);
 INSERT INTO "public"."APP_MENU" VALUES (129, 1, 0, 'Dashboard', '/dashboard', 'Dashboard', '_self', '<i class="fa fa-bar-chart"></i> ', 1, 1, NULL, NULL, 0, NULL, '', NULL, NULL, NULL, NULL);
 INSERT INTO "public"."APP_MENU" VALUES (107, 3, 105, 'User Management', '/user/', 'User Management', '_self', '', 10, 1, NULL, NULL, 0, NULL, '', NULL, '', NULL, NULL);
@@ -1956,24 +1381,6 @@ CREATE TABLE "public"."APP_USER_GROUP" (
 -- Records of APP_USER_GROUP
 -- ----------------------------
 INSERT INTO "public"."APP_USER_GROUP" VALUES (2, 'admin', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-
--- ----------------------------
--- Table structure for FORM_ENTRY
--- ----------------------------
-DROP TABLE IF EXISTS "public"."FORM_ENTRY";
-CREATE TABLE "public"."FORM_ENTRY" (
-  "ID" int4 NOT NULL DEFAULT nextval('"FORM_ENTRY_ID_seq"'::regclass),
-  "DATA" jsonb,
-  "IS_DELETE" int4,
-  "CREATE_TIME" timestamp(6),
-  "CREATE_USER" text COLLATE "pg_catalog"."default",
-  "MODIFY_TIME" timestamp(6),
-  "MODIFY_USER" text COLLATE "pg_catalog"."default",
-  "DELETE_TIME" timestamp(6),
-  "CLIENT_SITE_ID" int4,
-  "SFBD_GSV_KL15" text COLLATE "pg_catalog"."default"
-)
-;
 
 -- ----------------------------
 -- Table structure for FORM_ENTRY_FIELD
@@ -2528,13 +1935,15 @@ CREATE TABLE "public"."FORM_ENTRY_FIELD" (
 -- ----------------------------
 -- Records of FORM_ENTRY_FIELD
 -- ----------------------------
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES (23, '', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE.001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', NULL, NULL, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', NULL, NULL, 'FO/001', NULL, '', 'single_port', '["50","50"]', NULL, NULL, NULL, NULL, '', NULL, NULL, '00:00:00', '2018-04-18', '00:00:00', NULL, NULL, '[""]', '110', 'multi_client', NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, 'single_product', NULL, NULL, NULL, NULL, '2018-04-17', '', 'no', 'no', '00:00:00', NULL, NULL, NULL, '2018-04-20', '', NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, '320', '102', '567', '543', NULL, NULL, NULL, '-Infinity', '-5.867256637168142', '', NULL, NULL, '2018-04-16', '00:00:00', '421', '', 'no', NULL, '-1.1849710982658959', '00:00:00', NULL, '100', '320', '', NULL, '2018-04-16', '', NULL, NULL, NULL, '00:00:00', NULL, '00:00:00', '421', '320', '0.2013888888888889', '765', NULL, '2018-04-20', '00:00:00', '', NULL, NULL, NULL, NULL, '654', NULL, '', NULL, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL, NULL, '00:00:00', '200', '100', '00:00:00', '00:00:00', NULL, NULL, '200', NULL, NULL, '', '', '', '', '320', '210', NULL, NULL, '', '', '403', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-04-16 10:31:07', NULL, NULL, 'admin', NULL, NULL, '65645', '432', '654', '344', '463', '230', NULL, '563', NULL, NULL, '876', NULL, NULL, '00:00:00', NULL, '', '432', '00:00:00', '112', NULL, NULL, '', '', NULL, NULL, '-Infinity', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', NULL, NULL, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'flow_meter', NULL, NULL, NULL, '["AGUS","AGUS"]', '""', '""', '""', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PELNI001', 0, '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '', '432', '223', '543', '456', '123', '654', '110', '230', '234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES (24, '', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE.001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', NULL, NULL, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', NULL, NULL, 'FO/001', NULL, '', 'single_port', '["50","50"]', NULL, NULL, NULL, NULL, '', NULL, NULL, '00:00:00', '2018-04-18', '00:00:00', NULL, NULL, '[""]', '110', 'multi_client', NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, 'single_product', NULL, NULL, NULL, NULL, '2018-04-17', '', 'no', 'no', '00:00:00', NULL, NULL, NULL, '2018-04-20', '', NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, '320', '102', '567', '543', NULL, NULL, NULL, '-Infinity', '-5.867256637168142', '', NULL, NULL, '1970-01-01', '00:00:00', '421', '', 'no', NULL, '-1.1849710982658959', '00:00:00', NULL, '100', '320', '', NULL, '2018-04-16', '', NULL, NULL, NULL, '00:00:00', NULL, '00:00:00', '421', '320', '0.2013888888888889', '765', NULL, '2018-04-20', '00:00:00', '', NULL, NULL, NULL, NULL, '654', NULL, '', NULL, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL, NULL, '00:00:00', '200', '100', '00:00:00', '00:00:00', NULL, NULL, '200', NULL, NULL, '', '', '', '', '320', '210', NULL, NULL, '', '', '403', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-04-16 10:36:11', NULL, NULL, 'admin', NULL, NULL, '65645', '432', '654', '344', '463', '230', NULL, '563', NULL, NULL, '876', NULL, NULL, '00:00:00', NULL, '', '432', '00:00:00', '112', NULL, NULL, '', '', NULL, NULL, '-Infinity', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', NULL, NULL, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'flow_meter', NULL, NULL, NULL, '["AGUS","AGUS"]', '""', '""', '""', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PELNI001', 0, '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '', '432', '223', '543', '456', '123', '654', '110', '230', '234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES (26, 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', NULL, NULL, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', NULL, NULL, 'FO/001', NULL, '', 'single_port', '["50","50"]', NULL, NULL, NULL, NULL, '', NULL, NULL, '00:00:00', '2018-04-18', '00:00:00', NULL, NULL, '[""]', '110', 'multi_client', NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, 'single_product', NULL, NULL, NULL, NULL, '2018-04-17', '', 'no', 'no', '00:00:00', NULL, NULL, NULL, '2018-04-20', '', NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, '320', '102', '567', '543', NULL, NULL, NULL, '-Infinity', '-5.867256637168142', '', NULL, NULL, '2018-04-16', '00:00:00', '421', '', 'no', NULL, '-1.1849710982658959', '00:00:00', NULL, '100', '320', '', NULL, '2018-04-16', '', NULL, NULL, NULL, '00:00:00', NULL, '00:00:00', '421', '320', '0.2013888888888889', '765', NULL, '2018-04-20', '00:00:00', '', NULL, NULL, NULL, NULL, '654', NULL, '', NULL, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL, NULL, '00:00:00', '200', '100', '00:00:00', '00:00:00', NULL, NULL, '200', NULL, NULL, '', '', '', '', '320', '210', NULL, NULL, '', '', '403', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-04-16 10:50:31', NULL, NULL, 'admin', NULL, NULL, '65645', '432', '654', '344', '463', '230', NULL, '563', NULL, NULL, '876', NULL, NULL, '00:00:00', NULL, '', '432', '00:00:00', '112', NULL, NULL, '', '', NULL, NULL, '-Infinity', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', NULL, NULL, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'flow_meter', NULL, NULL, NULL, '["AGUS","INDRA"]', '""', '""', '""', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PELNI001', 0, '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '', '432', '223', '543', '456', '123', '654', '110', '230', '234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES (25, 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE.001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', NULL, NULL, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', NULL, NULL, 'FO/001', NULL, '', 'single_port', '["50","50"]', NULL, NULL, NULL, NULL, '', NULL, NULL, '00:00:00', '2018-04-18', '00:00:00', NULL, NULL, '[""]', '110', 'multi_client', NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, 'single_product', NULL, NULL, NULL, NULL, '2018-04-17', '', 'no', 'no', '00:00:00', NULL, NULL, NULL, '2018-04-20', '', NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, '320', '102', '567', '543', NULL, NULL, NULL, '-Infinity', '-5.867256637168142', '', NULL, NULL, '1970-01-01', '00:00:00', '421', '', 'no', NULL, '-1.1849710982658959', '00:00:00', NULL, '100', '320', '', NULL, '2018-04-16', '', NULL, NULL, NULL, '00:00:00', NULL, '00:00:00', '421', '320', '0.2013888888888889', '765', NULL, '2018-04-20', '00:00:00', '', NULL, NULL, NULL, NULL, '654', NULL, '', NULL, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL, NULL, '00:00:00', '200', '100', '00:00:00', '00:00:00', NULL, NULL, '200', NULL, NULL, '', '', '', '', '320', '210', NULL, NULL, '', '', '403', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-04-16 10:42:56', NULL, NULL, 'admin', NULL, NULL, '65645', '432', '654', '344', '463', '230', NULL, '563', NULL, NULL, '876', NULL, NULL, '00:00:00', NULL, '', '432', '00:00:00', '112', NULL, NULL, '', '', NULL, NULL, '-Infinity', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', NULL, NULL, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'flow_meter', NULL, NULL, NULL, '["AGUS","AGUS"]', '""', '""', '""', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PELNI001', 0, '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '', '432', '223', '543', '456', '123', '654', '110', '230', '234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES (27, 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', NULL, NULL, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', NULL, NULL, 'FO/001', NULL, '', 'single_port', '["50","50"]', NULL, NULL, NULL, NULL, '', NULL, NULL, '00:00:00', '2018-04-18', '00:00:00', NULL, NULL, '[""]', '110', 'multi_client', NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, 'single_product', NULL, NULL, NULL, NULL, '2018-04-17', '', 'no', 'no', '00:00:00', NULL, NULL, NULL, '2018-04-20', '', NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, '320', '102', '567', '543', NULL, NULL, NULL, '-5.954545454545454', '-5.867256637168142', '', NULL, NULL, '2018-04-16', '00:00:00', '421', '', 'no', NULL, '-1.1849710982658959', '00:00:00', NULL, '100', '320', '', NULL, '2018-04-16', '', NULL, NULL, NULL, '00:00:00', NULL, '00:00:00', '421', '320', '0.2013888888888889', '765', NULL, '2018-04-20', '00:00:00', '', NULL, NULL, NULL, NULL, '654', NULL, '', NULL, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL, NULL, '00:00:00', '200', '100', '00:00:00', '00:00:00', NULL, NULL, '200', NULL, NULL, '', '', '', '', '320', '210', NULL, NULL, '', '', '403', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-04-16 11:10:31', NULL, NULL, 'admin', NULL, NULL, '65645', '432', '654', '344', '463', '230', NULL, '563', NULL, NULL, '876', NULL, NULL, '00:00:00', NULL, '', '432', '00:00:00', '112', NULL, NULL, '', '', NULL, NULL, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', NULL, NULL, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', NULL, NULL, NULL, '["AGUS","INDRA"]', '""', '""', '""', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PELNI001', 0, '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES (28, 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', NULL, NULL, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', NULL, NULL, 'FO/001', NULL, '', 'single_port', '["50","50"]', NULL, NULL, NULL, NULL, '', NULL, NULL, '00:00:00', '2018-04-18', '00:00:00', NULL, NULL, '[""]', '110', 'multi_client', NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, 'single_product', NULL, NULL, NULL, NULL, '2018-04-17', '', 'yes', 'yes', '00:00:00', NULL, NULL, NULL, '2018-04-20', '', NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, '320', '102', '567', '543', NULL, NULL, NULL, '-5.954545454545454', '-5.867256637168142', '', NULL, NULL, '2018-04-16', '00:00:00', '421', '', 'yes', NULL, '-1.1849710982658959', '00:00:00', NULL, '100', '320', '', NULL, '2018-04-16', '', NULL, NULL, NULL, '00:00:00', NULL, '00:00:00', '421', '320', '0.2013888888888889', '765', NULL, '2018-04-20', '00:00:00', '', NULL, NULL, NULL, NULL, '654', NULL, '', NULL, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL, NULL, '00:00:00', '200', '100', '00:00:00', '00:00:00', NULL, NULL, '200', NULL, NULL, '', '', '', '', '320', '210', NULL, NULL, '', '', '403', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-04-16 11:17:24', NULL, NULL, 'admin', NULL, NULL, '65645', '432', '654', '344', '463', '230', NULL, '563', NULL, NULL, '876', NULL, NULL, '00:00:00', NULL, '', '432', '00:00:00', '112', NULL, NULL, '', '', NULL, NULL, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', NULL, NULL, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', NULL, NULL, '["Penguins.jpg","Lighthouse1.jpg"]', '["AGUS","INDRA"]', '"Tulips1.jpg"', '"Chrysanthemum1.jpg"', '"Lighthouse2.jpg"', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PELNI001', 0, '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES (29, 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', NULL, NULL, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', NULL, NULL, 'FO/001', NULL, '', 'single_port', '["50","50"]', NULL, NULL, NULL, NULL, '', NULL, NULL, '00:00:00', '2018-04-18', '00:00:00', NULL, NULL, '[""]', '110', 'multi_client', NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, 'single_product', NULL, NULL, NULL, NULL, '2018-04-17', '', 'no', 'no', '00:00:00', NULL, NULL, NULL, '2018-04-20', '', NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, '320', '102', '567', '543', NULL, NULL, NULL, '-5.954545454545454', '-5.867256637168142', '', NULL, NULL, '2018-04-16', '00:00:00', '421', '', 'no', NULL, '-1.1849710982658959', '00:00:00', NULL, '100', '320', '', NULL, '2018-04-16', '', NULL, NULL, NULL, '00:00:00', NULL, '00:00:00', '421', '320', '0.2013888888888889', '765', NULL, '2018-04-20', '00:00:00', '', NULL, NULL, NULL, NULL, '654', NULL, '', NULL, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL, NULL, '00:00:00', '200', '100', '00:00:00', '00:00:00', NULL, NULL, '200', NULL, NULL, '', '', '', '', '320', '210', NULL, NULL, '', '', '403', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-04-16 11:34:53', NULL, NULL, 'admin', NULL, NULL, '65645', '432', '654', '344', '463', '230', NULL, '563', NULL, NULL, '876', NULL, NULL, '00:00:00', NULL, '', '432', '00:00:00', '112', NULL, NULL, '', '', NULL, NULL, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', NULL, NULL, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', NULL, NULL, NULL, '["AGUS","INDRA"]', '""', '""', '""', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PELNI001', 0, '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES (23, '', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE.001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', NULL, NULL, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', NULL, NULL, 'FO/001', NULL, '', 'single_port', '["50","50"]', NULL, NULL, NULL, NULL, '', NULL, NULL, '00:00:00', '2018-04-18', '00:00:00', NULL, NULL, '[""]', '110', 'multi_client', NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, 'single_product', NULL, NULL, NULL, NULL, '2018-04-17', '', 'no', 'no', '00:00:00', NULL, NULL, NULL, '2018-04-20', '', NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, '320', '102', '567', '543', NULL, NULL, NULL, '-Infinity', '-5.867256637168142', '', NULL, NULL, '2018-04-16', '00:00:00', '421', '', 'no', NULL, '-1.1849710982658959', '00:00:00', NULL, '100', '320', '', NULL, '2018-04-16', '', 14, NULL, NULL, '00:00:00', NULL, '00:00:00', '421', '320', '0.2013888888888889', '765', NULL, '2018-04-20', '00:00:00', '', NULL, NULL, NULL, NULL, '654', NULL, '', NULL, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL, NULL, '00:00:00', '200', '100', '00:00:00', '00:00:00', NULL, NULL, '200', NULL, NULL, '', '', '', '', '320', '210', NULL, NULL, '', '', '403', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-04-16 10:31:07', NULL, NULL, 'admin', NULL, NULL, '65645', '432', '654', '344', '463', '230', NULL, '563', NULL, NULL, '876', NULL, NULL, '00:00:00', NULL, '', '432', '00:00:00', '112', NULL, NULL, '', '', NULL, NULL, '-Infinity', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', NULL, NULL, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', NULL, NULL, NULL, '["AGUS","AGUS"]', '""', '""', '""', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PELNI001', 0, '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '', '432', '223', '543', '456', '123', '654', '110', '230', '234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES (26, 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', NULL, NULL, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', NULL, NULL, 'FO/001', NULL, '', 'single_port', '["50","50"]', NULL, NULL, NULL, NULL, '', NULL, NULL, '00:00:00', '2018-04-18', '00:00:00', NULL, NULL, '[""]', '110', 'multi_client', NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, 'single_product', NULL, NULL, NULL, NULL, '2018-04-17', '', 'no', 'no', '00:00:00', NULL, NULL, NULL, '2018-04-20', '', NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, '320', '102', '567', '543', NULL, NULL, NULL, '-Infinity', '-5.867256637168142', '', NULL, NULL, '2018-04-16', '00:00:00', '421', '', 'no', NULL, '-1.1849710982658959', '00:00:00', NULL, '100', '320', '', NULL, '2018-04-16', '', 14, NULL, NULL, '00:00:00', NULL, '00:00:00', '421', '320', '0.2013888888888889', '765', NULL, '2018-04-20', '00:00:00', '', NULL, NULL, NULL, NULL, '654', NULL, '', NULL, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL, NULL, '00:00:00', '200', '100', '00:00:00', '00:00:00', NULL, NULL, '200', NULL, NULL, '', '', '', '', '320', '210', NULL, NULL, '', '', '403', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-04-16 10:50:31', NULL, NULL, 'admin', NULL, NULL, '65645', '432', '654', '344', '463', '230', NULL, '563', NULL, NULL, '876', NULL, NULL, '00:00:00', NULL, '', '432', '00:00:00', '112', NULL, NULL, '', '', NULL, NULL, '-Infinity', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', NULL, NULL, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', NULL, NULL, NULL, '["AGUS","INDRA"]', '""', '""', '""', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PELNI001', 0, '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '', '432', '223', '543', '456', '123', '654', '110', '230', '234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES (27, 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', NULL, NULL, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', NULL, NULL, 'FO/001', NULL, '', 'single_port', '["50","50"]', NULL, NULL, NULL, NULL, '', NULL, NULL, '00:00:00', '2018-04-18', '00:00:00', NULL, NULL, '[""]', '110', 'multi_client', NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, 'single_product', NULL, NULL, NULL, NULL, '2018-04-17', '', 'no', 'no', '00:00:00', NULL, NULL, NULL, '2018-04-20', '', NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, '320', '102', '567', '543', NULL, NULL, NULL, '-5.954545454545454', '-5.867256637168142', '', NULL, NULL, '2018-04-16', '00:00:00', '421', '', 'no', NULL, '-1.1849710982658959', '00:00:00', NULL, '100', '320', '', NULL, '2018-04-16', '', 14, NULL, NULL, '00:00:00', NULL, '00:00:00', '421', '320', '0.2013888888888889', '765', NULL, '2018-04-20', '00:00:00', '', NULL, NULL, NULL, NULL, '654', NULL, '', NULL, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL, NULL, '00:00:00', '200', '100', '00:00:00', '00:00:00', NULL, NULL, '200', NULL, NULL, '', '', '', '', '320', '210', NULL, NULL, '', '', '403', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-04-16 11:10:31', NULL, NULL, 'admin', NULL, NULL, '65645', '432', '654', '344', '463', '230', NULL, '563', NULL, NULL, '876', NULL, NULL, '00:00:00', NULL, '', '432', '00:00:00', '112', NULL, NULL, '', '', NULL, NULL, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', NULL, NULL, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', NULL, NULL, NULL, '["AGUS","INDRA"]', '""', '""', '""', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PELNI001', 0, '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES (25, 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE.001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', NULL, NULL, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', NULL, NULL, 'FO/001', NULL, '', 'single_port', '["50","50"]', NULL, NULL, NULL, NULL, '', NULL, NULL, '00:00:00', '2018-04-18', '00:00:00', NULL, NULL, '[""]', '110', 'multi_client', NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, 'single_product', NULL, NULL, NULL, NULL, '2018-04-17', '', 'no', 'no', '00:00:00', NULL, NULL, NULL, '2018-04-20', '', NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, '320', '102', '567', '543', NULL, NULL, NULL, '-Infinity', '-5.867256637168142', '', NULL, NULL, '1970-01-01', '00:00:00', '421', '', 'no', NULL, '-1.1849710982658959', '00:00:00', NULL, '100', '320', '', NULL, '2018-04-16', '', 14, NULL, NULL, '00:00:00', NULL, '00:00:00', '421', '320', '0.2013888888888889', '765', NULL, '2018-04-20', '00:00:00', '', NULL, NULL, NULL, NULL, '654', NULL, '', NULL, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL, NULL, '00:00:00', '200', '100', '00:00:00', '00:00:00', NULL, NULL, '200', NULL, NULL, '', '', '', '', '320', '210', NULL, NULL, '', '', '403', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-04-16 10:42:56', NULL, NULL, 'admin', NULL, NULL, '65645', '432', '654', '344', '463', '230', NULL, '563', NULL, NULL, '876', NULL, NULL, '00:00:00', NULL, '', '432', '00:00:00', '112', NULL, NULL, '', '', NULL, NULL, '-Infinity', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', NULL, NULL, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', NULL, NULL, NULL, '["AGUS","AGUS"]', '""', '""', '""', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PELNI001', 0, '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '', '432', '223', '543', '456', '123', '654', '110', '230', '234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES (28, 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', NULL, NULL, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', NULL, NULL, 'FO/001', NULL, '', 'single_port', '["50","50"]', NULL, NULL, NULL, NULL, '', NULL, NULL, '00:00:00', '2018-04-18', '00:00:00', NULL, NULL, '[""]', '110', 'multi_client', NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, 'single_product', NULL, NULL, NULL, NULL, '2018-04-17', '', 'yes', 'yes', '00:00:00', NULL, NULL, NULL, '2018-04-20', '', NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, '320', '102', '567', '543', NULL, NULL, NULL, '-5.954545454545454', '-5.867256637168142', '', NULL, NULL, '2018-04-16', '00:00:00', '421', '', 'yes', NULL, '-1.1849710982658959', '00:00:00', NULL, '100', '320', '', NULL, '2018-04-16', '', 14, NULL, NULL, '00:00:00', NULL, '00:00:00', '421', '320', '0.2013888888888889', '765', NULL, '2018-04-20', '00:00:00', '', NULL, NULL, NULL, NULL, '654', NULL, '', NULL, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL, NULL, '00:00:00', '200', '100', '00:00:00', '00:00:00', NULL, NULL, '200', NULL, NULL, '', '', '', '', '320', '210', NULL, NULL, '', '', '403', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-04-16 11:17:24', NULL, NULL, 'admin', NULL, NULL, '65645', '432', '654', '344', '463', '230', NULL, '563', NULL, NULL, '876', NULL, NULL, '00:00:00', NULL, '', '432', '00:00:00', '112', NULL, NULL, '', '', NULL, NULL, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', NULL, NULL, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', NULL, NULL, '["Penguins.jpg","Lighthouse1.jpg"]', '["AGUS","INDRA"]', '"Tulips1.jpg"', '"Chrysanthemum1.jpg"', '"Lighthouse2.jpg"', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PELNI001', 0, '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES (29, 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', NULL, NULL, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', NULL, NULL, 'FO/001', NULL, '', 'single_port', '["50","50"]', NULL, NULL, NULL, NULL, '', NULL, NULL, '00:00:00', '2018-04-18', '00:00:00', NULL, NULL, '[""]', '110', 'multi_client', NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, 'single_product', NULL, NULL, NULL, NULL, '2018-04-17', '', 'no', 'no', '00:00:00', NULL, NULL, NULL, '2018-04-20', '', NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, '320', '102', '567', '543', NULL, NULL, NULL, '-5.954545454545454', '-5.867256637168142', '', NULL, NULL, '2018-04-16', '00:00:00', '421', '', 'no', NULL, '-1.1849710982658959', '00:00:00', NULL, '100', '320', '', NULL, '2018-04-16', '', 14, NULL, NULL, '00:00:00', NULL, '00:00:00', '421', '320', '0.2013888888888889', '765', NULL, '2018-04-20', '00:00:00', '', NULL, NULL, NULL, NULL, '654', NULL, '', NULL, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL, NULL, '00:00:00', '200', '100', '00:00:00', '00:00:00', NULL, NULL, '200', NULL, NULL, '', '', '', '', '320', '210', NULL, NULL, '', '', '403', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-04-16 11:34:53', NULL, NULL, 'admin', NULL, NULL, '65645', '432', '654', '344', '463', '230', NULL, '563', NULL, NULL, '876', NULL, NULL, '00:00:00', NULL, '', '432', '00:00:00', '112', NULL, NULL, '', '', NULL, NULL, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', NULL, NULL, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', NULL, NULL, NULL, '["AGUS","INDRA"]', '""', '""', '""', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PELNI001', 0, '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES (24, '', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE.001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', NULL, NULL, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', NULL, NULL, 'FO/001', NULL, '', 'single_port', '["50","50"]', NULL, NULL, NULL, NULL, '', NULL, NULL, '00:00:00', '2018-04-18', '00:00:00', NULL, NULL, '[""]', '110', 'multi_client', NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, 'single_product', NULL, NULL, NULL, NULL, '2018-04-17', '', 'no', 'no', '00:00:00', NULL, NULL, NULL, '2018-04-20', '', NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, '320', '102', '567', '543', NULL, NULL, NULL, '-Infinity', '-5.867256637168142', '', NULL, NULL, '1970-01-01', '00:00:00', '421', '', 'no', NULL, '-1.1849710982658959', '00:00:00', NULL, '100', '320', '', NULL, '2018-04-16', '', 14, NULL, NULL, '00:00:00', NULL, '00:00:00', '421', '320', '0.2013888888888889', '765', NULL, '2018-04-20', '00:00:00', '', NULL, NULL, NULL, NULL, '654', NULL, '', NULL, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL, NULL, '00:00:00', '200', '100', '00:00:00', '00:00:00', NULL, NULL, '200', NULL, NULL, '', '', '', '', '320', '210', NULL, NULL, '', '', '403', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-04-16 10:36:11', NULL, NULL, 'admin', NULL, NULL, '65645', '432', '654', '344', '463', '230', NULL, '563', NULL, NULL, '876', NULL, NULL, '00:00:00', NULL, '', '432', '00:00:00', '112', NULL, NULL, '', '', NULL, NULL, '-Infinity', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', NULL, NULL, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', NULL, NULL, NULL, '["AGUS","AGUS"]', '""', '""', '""', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PELNI001', 0, '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '', '432', '223', '543', '456', '123', '654', '110', '230', '234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES (30, 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', NULL, NULL, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', NULL, NULL, 'FO/001', NULL, '', 'single_port', '["50","50"]', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', '2018-04-18', '00:00:00', NULL, NULL, '[""]', '110', 'multi_client', NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, 'single_product', NULL, NULL, NULL, NULL, '2018-04-17', '', 'no', 'no', '00:00:00', NULL, NULL, NULL, '2018-04-20', '', NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, '320', '102', '567', '543', NULL, NULL, NULL, '-5.954545454545454', '-5.867256637168142', '', NULL, NULL, '2018-04-16', '00:00:00', '421', '', 'no', NULL, '-1.1849710982658959', '00:00:00', NULL, '100', '320', NULL, NULL, '2018-04-16', '', 14, NULL, NULL, '00:00:00', NULL, '00:00:00', '421', '320', '0.2013888888888889', '765', NULL, '2018-04-20', '00:00:00', '', NULL, NULL, NULL, NULL, '654', NULL, '', NULL, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL, NULL, '00:00:00', '200', '100', '00:00:00', '00:00:00', NULL, NULL, '200', NULL, NULL, '', '', '', '', '320', '210', NULL, NULL, '', '', '403', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2018-04-16 14:12:14', NULL, NULL, 'admin', NULL, NULL, '65645', '432', '654', '344', '463', '230', NULL, '563', NULL, NULL, '876', NULL, NULL, '00:00:00', NULL, '', '432', '00:00:00', '112', NULL, NULL, '', '', NULL, NULL, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', NULL, NULL, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', NULL, NULL, NULL, '["AGUS","INDRA"]', '""', '""', '""', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PELNI001', 0, '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES (31, 'No Condition', '', '["",""]', '["",""]', '', '["on"]', '["on"]', NULL, NULL, '["",""]', '[""]', NULL, '00:00:00', NULL, NULL, '', NULL, '', 'single_port', '["",""]', NULL, NULL, NULL, NULL, 'crude', NULL, NULL, '00:00:00', NULL, '00:00:00', NULL, NULL, '[""]', '110', 'multi_client', NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, 'single_product', NULL, NULL, NULL, NULL, NULL, '', 'no', 'no', '00:00:00', NULL, NULL, NULL, '2018-04-20', '', NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, '320', '102', '', '', NULL, NULL, NULL, '1', '1', '', NULL, NULL, NULL, '00:00:00', '', '', 'no', NULL, '1', '00:00:00', NULL, '100', '320', NULL, NULL, NULL, '', 14, NULL, NULL, '00:00:00', NULL, '00:00:00', '', '320', '1', '', NULL, NULL, '00:00:00', '', NULL, NULL, NULL, NULL, '', NULL, '', NULL, '1', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL, NULL, '00:00:00', '200', '100', '00:00:00', '00:00:00', NULL, NULL, '200', NULL, NULL, '', '', '', '', '320', '210', NULL, NULL, '', '', '403', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2018-04-16 14:20:00', NULL, NULL, 'admin', NULL, NULL, '', '', '', '', '', '230', NULL, '', NULL, NULL, '', NULL, NULL, '00:00:00', NULL, '', '432', '00:00:00', '', NULL, NULL, '', '', NULL, NULL, '1', '1', '00:00:00', '00:00:00', '1', '', NULL, NULL, '', '', '1', '00:00:00', '00:00:00', '1', '', '', 'Y', NULL, NULL, NULL, '["",""]', '""', '""', '""', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 0, '["",""]', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for HEADER_INFO_CLIENT
@@ -5260,7 +4669,6 @@ INSERT INTO "public"."MASTER_CONTRACT" VALUES (5, 'K0005/03/2017/SUC', 'Screensh
 DROP TABLE IF EXISTS "public"."MASTER_CV";
 CREATE TABLE "public"."MASTER_CV" (
   "ID" int4 NOT NULL DEFAULT nextval('"MASTER_CV_ID_seq"'::regclass),
-  "POSISI" text COLLATE "pg_catalog"."default",
   "NAMA" text COLLATE "pg_catalog"."default",
   "UPLOAD_FILE" text COLLATE "pg_catalog"."default",
   "IS_DELETE" int4,
@@ -5268,15 +4676,188 @@ CREATE TABLE "public"."MASTER_CV" (
   "CREATE_USER" text COLLATE "pg_catalog"."default",
   "MODIFY_TIME" timestamp(6),
   "MODIFY_USER" text COLLATE "pg_catalog"."default",
-  "DELETE_TIME" timestamp(6)
+  "DELETE_TIME" timestamp(6),
+  "POSISI" int4,
+  "CONTACT_1" varchar(30) COLLATE "pg_catalog"."default",
+  "CONTACT_2" varchar(30) COLLATE "pg_catalog"."default",
+  "ADDRESS" text COLLATE "pg_catalog"."default",
+  "BIRTHDATE" date,
+  "PLACE_BIRTHDATE" varchar(100) COLLATE "pg_catalog"."default",
+  "GENDER" char(1) COLLATE "pg_catalog"."default",
+  "REGION" int4,
+  "PHOTO_FILE" text COLLATE "pg_catalog"."default",
+  "EMAIL" varchar(150) COLLATE "pg_catalog"."default"
 )
 ;
+COMMENT ON COLUMN "public"."MASTER_CV"."GENDER" IS 'L = Male, P = Female';
 
 -- ----------------------------
 -- Records of MASTER_CV
 -- ----------------------------
-INSERT INTO "public"."MASTER_CV" VALUES (2, 'Position A', 'Test Position Name Of A', 'worksans.zip', 0, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO "public"."MASTER_CV" VALUES (1, 'Position B', 'Test Position Name Of B', 'xiidea-ezRbac-1_3_2-0-g3bcdd68.zip', 0, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "public"."MASTER_CV" VALUES (5, 'Bagos W', '180416082526_cv_5ad4a4460c58e_sea_1.jpg', 0, NULL, NULL, NULL, NULL, NULL, 1, '08348328', '0214243', 'Gandaria 3', '1995-06-07', 'Jakarta', 'L', 15, '180416082526_photo_5ad4a4460c595_sea_2.jpg', 'bagos24@gmail.com');
+
+-- ----------------------------
+-- Table structure for MASTER_CV_CERTIFICATE
+-- ----------------------------
+DROP TABLE IF EXISTS "public"."MASTER_CV_CERTIFICATE";
+CREATE TABLE "public"."MASTER_CV_CERTIFICATE" (
+  "ID" int4 NOT NULL DEFAULT nextval('"MASTER_CV_CERTIFICATE_ID_seq"'::regclass),
+  "ID_CV" int4,
+  "CERTIFICATE_NAME" varchar(150) COLLATE "pg_catalog"."default",
+  "CERITIFICATE_EXPIRED" date,
+  "CERITIFICATE_FROM" varchar(100) COLLATE "pg_catalog"."default",
+  "CERITIFICATE_FILE" text COLLATE "pg_catalog"."default"
+)
+;
+
+-- ----------------------------
+-- Records of MASTER_CV_CERTIFICATE
+-- ----------------------------
+INSERT INTO "public"."MASTER_CV_CERTIFICATE" VALUES (14, 5, 'Sertifikat A', '2022-03-23', 'Vendor A', '180416110415_certificate_5ad4c97f7d7d2_nature_1.jpg');
+INSERT INTO "public"."MASTER_CV_CERTIFICATE" VALUES (15, 5, 'Sertifikat B', '2019-03-15', 'Vendor B', '180416110415_certificate_5ad4c97f887a7_nature_2.jpg');
+
+-- ----------------------------
+-- Table structure for MASTER_CV_EDUCATION
+-- ----------------------------
+DROP TABLE IF EXISTS "public"."MASTER_CV_EDUCATION";
+CREATE TABLE "public"."MASTER_CV_EDUCATION" (
+  "ID" int4 NOT NULL DEFAULT nextval('"MASTER_CV_EDUCATION_ID_seq"'::regclass),
+  "ID_CV" int4,
+  "ID_REF_EDUCATION" int4,
+  "SCHOOL" varchar(150) COLLATE "pg_catalog"."default"
+)
+;
+
+-- ----------------------------
+-- Records of MASTER_CV_EDUCATION
+-- ----------------------------
+INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES (101, 5, 4, 'SMKN 24');
+INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES (102, 5, 5, 'BSI Margonda Depok');
+
+-- ----------------------------
+-- Table structure for MASTER_CV_EXPERIENCE
+-- ----------------------------
+DROP TABLE IF EXISTS "public"."MASTER_CV_EXPERIENCE";
+CREATE TABLE "public"."MASTER_CV_EXPERIENCE" (
+  "ID" int4 NOT NULL DEFAULT nextval('"MASTER_CV_EXPERIENCE_ID_seq"'::regclass),
+  "ID_CV" int4,
+  "ID_REF_EXPERIENCE" int4,
+  "LEVEL" int2
+)
+;
+COMMENT ON COLUMN "public"."MASTER_CV_EXPERIENCE"."LEVEL" IS '1 = Beginner, 2 = Intermediate, 3 = Advance';
+
+-- ----------------------------
+-- Records of MASTER_CV_EXPERIENCE
+-- ----------------------------
+INSERT INTO "public"."MASTER_CV_EXPERIENCE" VALUES (79, 5, 1, 1);
+INSERT INTO "public"."MASTER_CV_EXPERIENCE" VALUES (80, 5, 2, 3);
+INSERT INTO "public"."MASTER_CV_EXPERIENCE" VALUES (81, 5, 3, 2);
+
+-- ----------------------------
+-- Table structure for MASTER_CV_HISTORY_OF_WORK
+-- ----------------------------
+DROP TABLE IF EXISTS "public"."MASTER_CV_HISTORY_OF_WORK";
+CREATE TABLE "public"."MASTER_CV_HISTORY_OF_WORK" (
+  "ID" int4 DEFAULT nextval('"MASTER_CV_HISTORY_OF_WORK_ID_seq"'::regclass),
+  "COMPANY_NAME" varchar(150) COLLATE "pg_catalog"."default",
+  "FROM" date,
+  "END" date,
+  "POSITION" varchar(100) COLLATE "pg_catalog"."default",
+  "DESCRIPTION" text COLLATE "pg_catalog"."default",
+  "ID_CV" int4
+)
+;
+
+-- ----------------------------
+-- Records of MASTER_CV_HISTORY_OF_WORK
+-- ----------------------------
+INSERT INTO "public"."MASTER_CV_HISTORY_OF_WORK" VALUES (69, 'PT A', '2018-01-01', '2018-02-28', 'Web Programmer', 'tESTTT', 5);
+INSERT INTO "public"."MASTER_CV_HISTORY_OF_WORK" VALUES (70, 'PT B', '2018-03-01', '2018-04-16', 'Desktop Programmer', 'TESTT 2', 5);
+
+-- ----------------------------
+-- Table structure for MASTER_CV_REGION
+-- ----------------------------
+DROP TABLE IF EXISTS "public"."MASTER_CV_REGION";
+CREATE TABLE "public"."MASTER_CV_REGION" (
+  "ID" int4 NOT NULL DEFAULT nextval('"MASTER_CV_REGION_ID_seq"'::regclass),
+  "ID_REF_REGION" int4,
+  "ID_CV" int4
+)
+;
+
+-- ----------------------------
+-- Records of MASTER_CV_REGION
+-- ----------------------------
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (11, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (13, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (14, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (15, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (16, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (17, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (18, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (19, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (20, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (21, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (22, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (23, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (24, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (25, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (26, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (27, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (28, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (29, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (30, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (31, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (32, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (33, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (34, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (35, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (36, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (37, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (38, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (39, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (40, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (41, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (42, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (43, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (44, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (45, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (46, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (47, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (48, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (49, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (50, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (51, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (52, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (53, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (54, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (55, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (56, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (57, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (58, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (59, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (60, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (61, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (62, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (63, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (64, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (65, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (66, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (67, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (68, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (69, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (70, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (71, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (72, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (73, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (74, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (75, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (76, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (77, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (78, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (79, 15, 5);
+INSERT INTO "public"."MASTER_CV_REGION" VALUES (80, 15, 5);
 
 -- ----------------------------
 -- Table structure for MASTER_ICON_MARKER
@@ -5545,6 +5126,109 @@ INSERT INTO "public"."MASTER_VESSEL" VALUES (26, 'KM Pangrango', NULL, 0, NULL, 
 INSERT INTO "public"."MASTER_VESSEL" VALUES (27, 'KM Sangiang', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
+-- Table structure for REF_EDUCATION
+-- ----------------------------
+DROP TABLE IF EXISTS "public"."REF_EDUCATION";
+CREATE TABLE "public"."REF_EDUCATION" (
+  "ID_REF_EDUCATION" int4 NOT NULL,
+  "EDUCATION_TYPE" varchar(50) COLLATE "pg_catalog"."default"
+)
+;
+
+-- ----------------------------
+-- Records of REF_EDUCATION
+-- ----------------------------
+INSERT INTO "public"."REF_EDUCATION" VALUES (1, 'SD');
+INSERT INTO "public"."REF_EDUCATION" VALUES (2, 'SMP/MTS');
+INSERT INTO "public"."REF_EDUCATION" VALUES (3, 'SMA/MA');
+INSERT INTO "public"."REF_EDUCATION" VALUES (4, 'SMK');
+INSERT INTO "public"."REF_EDUCATION" VALUES (5, 'D3');
+INSERT INTO "public"."REF_EDUCATION" VALUES (6, 'S1');
+INSERT INTO "public"."REF_EDUCATION" VALUES (7, 'S2');
+INSERT INTO "public"."REF_EDUCATION" VALUES (8, 'S3');
+
+-- ----------------------------
+-- Table structure for REF_EXP
+-- ----------------------------
+DROP TABLE IF EXISTS "public"."REF_EXP";
+CREATE TABLE "public"."REF_EXP" (
+  "ID_REF_EXP" int4 NOT NULL DEFAULT nextval('"REF_EXP_ID_seq"'::regclass),
+  "EXP_TYPE" varchar(50) COLLATE "pg_catalog"."default"
+)
+;
+
+-- ----------------------------
+-- Records of REF_EXP
+-- ----------------------------
+INSERT INTO "public"."REF_EXP" VALUES (1, 'Designer');
+INSERT INTO "public"."REF_EXP" VALUES (2, 'Programmer');
+INSERT INTO "public"."REF_EXP" VALUES (3, 'Photography');
+INSERT INTO "public"."REF_EXP" VALUES (5, 'Writer');
+
+-- ----------------------------
+-- Table structure for REF_POSITION
+-- ----------------------------
+DROP TABLE IF EXISTS "public"."REF_POSITION";
+CREATE TABLE "public"."REF_POSITION" (
+  "ID_REF_POSITION" int4 NOT NULL DEFAULT nextval('"REF_POSITION_ID_seq"'::regclass),
+  "POSITION" varchar(100) COLLATE "pg_catalog"."default"
+)
+;
+
+-- ----------------------------
+-- Records of REF_POSITION
+-- ----------------------------
+INSERT INTO "public"."REF_POSITION" VALUES (1, 'Technical Inspector I');
+INSERT INTO "public"."REF_POSITION" VALUES (2, 'Technical Inspector II');
+INSERT INTO "public"."REF_POSITION" VALUES (3, 'Technical Inspector III');
+INSERT INTO "public"."REF_POSITION" VALUES (4, 'Project Manager');
+
+-- ----------------------------
+-- Table structure for REF_REGION
+-- ----------------------------
+DROP TABLE IF EXISTS "public"."REF_REGION";
+CREATE TABLE "public"."REF_REGION" (
+  "ID_REF_REGION" int4 DEFAULT nextval('"REF_REGION_ID_seq"'::regclass),
+  "REGION" varchar(100) COLLATE "pg_catalog"."default"
+)
+;
+
+-- ----------------------------
+-- Records of REF_REGION
+-- ----------------------------
+INSERT INTO "public"."REF_REGION" VALUES (1, 'Bandar Lampung');
+INSERT INTO "public"."REF_REGION" VALUES (2, 'Bandung');
+INSERT INTO "public"."REF_REGION" VALUES (3, 'Bengkulu');
+INSERT INTO "public"."REF_REGION" VALUES (4, 'Batam');
+INSERT INTO "public"."REF_REGION" VALUES (5, 'Writer');
+INSERT INTO "public"."REF_REGION" VALUES (6, 'Cilacap');
+INSERT INTO "public"."REF_REGION" VALUES (7, 'Balikpapan');
+INSERT INTO "public"."REF_REGION" VALUES (8, 'Cilegon');
+INSERT INTO "public"."REF_REGION" VALUES (9, 'Cirebon');
+INSERT INTO "public"."REF_REGION" VALUES (10, 'Bekasi');
+INSERT INTO "public"."REF_REGION" VALUES (11, 'Batu Licin (BJM)');
+INSERT INTO "public"."REF_REGION" VALUES (12, 'Bontang');
+INSERT INTO "public"."REF_REGION" VALUES (13, 'Dumai');
+INSERT INTO "public"."REF_REGION" VALUES (14, 'Semarang');
+INSERT INTO "public"."REF_REGION" VALUES (15, 'Jakarta');
+INSERT INTO "public"."REF_REGION" VALUES (16, 'Denpasar');
+INSERT INTO "public"."REF_REGION" VALUES (17, 'Jambi');
+INSERT INTO "public"."REF_REGION" VALUES (18, 'Makassar');
+INSERT INTO "public"."REF_REGION" VALUES (19, 'Medan');
+INSERT INTO "public"."REF_REGION" VALUES (20, 'Pontianak');
+INSERT INTO "public"."REF_REGION" VALUES (21, 'Padang');
+INSERT INTO "public"."REF_REGION" VALUES (22, 'Samarinda');
+INSERT INTO "public"."REF_REGION" VALUES (23, 'Palembang');
+INSERT INTO "public"."REF_REGION" VALUES (24, 'Pekanbaru');
+INSERT INTO "public"."REF_REGION" VALUES (25, 'Surabaya');
+INSERT INTO "public"."REF_REGION" VALUES (26, 'Sangatta');
+INSERT INTO "public"."REF_REGION" VALUES (27, 'Tarakan');
+INSERT INTO "public"."REF_REGION" VALUES (28, 'Dondang');
+INSERT INTO "public"."REF_REGION" VALUES (29, 'Timika');
+INSERT INTO "public"."REF_REGION" VALUES (30, 'Duri (Riau)');
+INSERT INTO "public"."REF_REGION" VALUES (31, 'Gresik');
+
+-- ----------------------------
 -- Table structure for RUNNING_TEXT
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."RUNNING_TEXT";
@@ -5568,6 +5252,29 @@ CREATE TABLE "public"."RUNNING_TEXT" (
 -- ----------------------------
 INSERT INTO "public"."RUNNING_TEXT" VALUES (86, '<p>Alert Loss</p>', '2018-03-03 18:04:00', '2018-03-04 18:04:00', 0, NULL, NULL, NULL, NULL, NULL, 2);
 INSERT INTO "public"."RUNNING_TEXT" VALUES (87, '<p>PLN Losses 312 litter hari ini</p>', '2018-03-03 18:07:00', '2018-03-05 18:07:00', 0, NULL, NULL, NULL, NULL, NULL, 2);
+
+-- ----------------------------
+-- Table structure for WA
+-- ----------------------------
+DROP TABLE IF EXISTS "public"."WA";
+CREATE TABLE "public"."WA" (
+  "ID" int4 NOT NULL DEFAULT nextval('"WA_ID_seq"'::regclass),
+  "CONTACT" varchar(255) COLLATE "pg_catalog"."default",
+  "MESSAGE" varchar(255) COLLATE "pg_catalog"."default",
+  "STATUS" int4 DEFAULT 0
+)
+;
+
+-- ----------------------------
+-- Records of WA
+-- ----------------------------
+INSERT INTO "public"."WA" VALUES (1, 'Ridwansyah', 'Db Connect', 1);
+INSERT INTO "public"."WA" VALUES (2, 'mas rizal', 'Db Connect', 1);
+INSERT INTO "public"."WA" VALUES (3, 'mas rizal', 'Bot Wa', 1);
+INSERT INTO "public"."WA" VALUES (4, 'mas rizal', 'Db Disconnect', 1);
+INSERT INTO "public"."WA" VALUES (5, 'Ridwansyah', 'Db Disconnect', 1);
+INSERT INTO "public"."WA" VALUES (6, 'mas rizal', 'Bot Wa', 1);
+INSERT INTO "public"."WA" VALUES (7, 'mas rizal', 'Db Connect', 1);
 
 -- ----------------------------
 -- Table structure for WEBSITE_ARTICLE
@@ -6195,7 +5902,7 @@ SELECT setval('"public"."APP_USER_GROUP_GROUP_ID_seq"', 8, true);
 SELECT setval('"public"."APP_USER_USER_ID_seq"', 10, true);
 SELECT setval('"public"."CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq"', 10, true);
 SELECT setval('"public"."FILE_MANAGER_ID_seq"', 13, true);
-SELECT setval('"public"."FORM_ENTRY_FIELD_ID_seq"', 30, true);
+SELECT setval('"public"."FORM_ENTRY_FIELD_ID_seq"', 32, true);
 SELECT setval('"public"."FORM_ENTRY_ID_seq"', 8, true);
 SELECT setval('"public"."HEADER_INFO_CLIENT_ID_seq"', 6, true);
 SELECT setval('"public"."KOMPONEN_HTML_ID_seq"', 23, true);
@@ -6205,7 +5912,12 @@ SELECT setval('"public"."MASTER_BARGE_BARGE_ID_seq"', 14, true);
 SELECT setval('"public"."MASTER_BBM_BBM_ID_seq"', 3, true);
 SELECT setval('"public"."MASTER_CABANG_CABANG_ID_seq"', 5, true);
 SELECT setval('"public"."MASTER_CONTRACT_ID_seq"', 6, true);
+SELECT setval('"public"."MASTER_CV_CERTIFICATE_ID_seq"', 16, true);
+SELECT setval('"public"."MASTER_CV_EDUCATION_ID_seq"', 103, true);
+SELECT setval('"public"."MASTER_CV_EXPERIENCE_ID_seq"', 82, true);
+SELECT setval('"public"."MASTER_CV_HISTORY_OF_WORK_ID_seq"', 71, true);
 SELECT setval('"public"."MASTER_CV_ID_seq"', 3, true);
+SELECT setval('"public"."MASTER_CV_REGION_ID_seq"', 81, false);
 SELECT setval('"public"."MASTER_ICON_MARKER_ID_seq"', 9, true);
 SELECT setval('"public"."MASTER_INTERVENTION_ID_seq"', 26, true);
 SELECT setval('"public"."MASTER_LOCATION_ID_seq"', 6, true);
@@ -6216,7 +5928,11 @@ SELECT setval('"public"."MASTER_STDREF_ID_seq"', 6, true);
 SELECT setval('"public"."MASTER_STD_REF_ID_seq"', 2, false);
 SELECT setval('"public"."MASTER_TOOL_ID_seq"', 2, true);
 SELECT setval('"public"."MASTER_VESSEL_VESSEL_ID_seq"', 28, true);
+SELECT setval('"public"."REF_EXP_ID_seq"', 6, true);
+SELECT setval('"public"."REF_POSITION_ID_seq"', 7, true);
+SELECT setval('"public"."REF_REGION_ID_seq"', 33, true);
 SELECT setval('"public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq"', 88, true);
+SELECT setval('"public"."WA_ID_seq"', 8, true);
 SELECT setval('"public"."WEBSITE_ARTICLE_CATEGORY_ID_seq"', 4, true);
 SELECT setval('"public"."WEBSITE_ARTICLE_ID_seq"', 4, true);
 SELECT setval('"public"."WEBSITE_MENU_MENU_ID_seq"', 23, true);
@@ -6279,21 +5995,6 @@ ALTER TABLE "public"."APP_CLIENT_MENU" ADD CONSTRAINT "APP_CLIENT_MENU_pkey" PRI
 ALTER TABLE "public"."APP_CLIENT_SITE" ADD CONSTRAINT "APP_CLIENT_SITE_pkey" PRIMARY KEY ("CLIENT_SITE_ID");
 
 -- ----------------------------
--- Primary Key structure for table APP_CLIENT_TEMPLATE
--- ----------------------------
-ALTER TABLE "public"."APP_CLIENT_TEMPLATE" ADD CONSTRAINT "APP_CLIENT_TEMPLATE_pkey" PRIMARY KEY ("CLIENT_TEMPLATE_ID");
-
--- ----------------------------
--- Primary Key structure for table APP_CLIENT_TEMPLATE_ACCESS
--- ----------------------------
-ALTER TABLE "public"."APP_CLIENT_TEMPLATE_ACCESS" ADD CONSTRAINT "APP_TEMPLATE_ACCESS_pkey" PRIMARY KEY ("TEMPLATE_ACCESS_ID");
-
--- ----------------------------
--- Primary Key structure for table APP_CLIENT_TEMPLATE_COMPONENT
--- ----------------------------
-ALTER TABLE "public"."APP_CLIENT_TEMPLATE_COMPONENT" ADD CONSTRAINT "APP_CLIENT_TEMPLATE_COMPONENT_pkey" PRIMARY KEY ("CLIENT_TEMPLATE_COMPONENT_ID");
-
--- ----------------------------
 -- Primary Key structure for table APP_CLIENT_USER
 -- ----------------------------
 ALTER TABLE "public"."APP_CLIENT_USER" ADD CONSTRAINT "APP_CLIENT_USER_pkey" PRIMARY KEY ("USER_ID");
@@ -6347,11 +6048,6 @@ ALTER TABLE "public"."APP_USER" ADD CONSTRAINT "APP_USER_pkey" PRIMARY KEY ("USE
 -- Primary Key structure for table APP_USER_GROUP
 -- ----------------------------
 ALTER TABLE "public"."APP_USER_GROUP" ADD CONSTRAINT "APP_USER_GROUP_pkey" PRIMARY KEY ("GROUP_ID");
-
--- ----------------------------
--- Primary Key structure for table FORM_ENTRY
--- ----------------------------
-ALTER TABLE "public"."FORM_ENTRY" ADD CONSTRAINT "FORM_ENTRY_pkey" PRIMARY KEY ("ID");
 
 -- ----------------------------
 -- Primary Key structure for table FORM_ENTRY_FIELD
@@ -6409,6 +6105,26 @@ ALTER TABLE "public"."MASTER_CONTRACT" ADD CONSTRAINT "MASTER_CONTRACT_pkey" PRI
 ALTER TABLE "public"."MASTER_CV" ADD CONSTRAINT "MASTER_CV_pkey" PRIMARY KEY ("ID");
 
 -- ----------------------------
+-- Primary Key structure for table MASTER_CV_CERTIFICATE
+-- ----------------------------
+ALTER TABLE "public"."MASTER_CV_CERTIFICATE" ADD CONSTRAINT "MASTER_CV_CERTIFICATE_pkey" PRIMARY KEY ("ID");
+
+-- ----------------------------
+-- Primary Key structure for table MASTER_CV_EDUCATION
+-- ----------------------------
+ALTER TABLE "public"."MASTER_CV_EDUCATION" ADD CONSTRAINT "MASTER_CV_EDUCATION_pkey" PRIMARY KEY ("ID");
+
+-- ----------------------------
+-- Primary Key structure for table MASTER_CV_EXPERIENCE
+-- ----------------------------
+ALTER TABLE "public"."MASTER_CV_EXPERIENCE" ADD CONSTRAINT "MASTER_CV_EXPERIENCE_pkey" PRIMARY KEY ("ID");
+
+-- ----------------------------
+-- Primary Key structure for table MASTER_CV_REGION
+-- ----------------------------
+ALTER TABLE "public"."MASTER_CV_REGION" ADD CONSTRAINT "MASTER_CV_REGION_pkey" PRIMARY KEY ("ID");
+
+-- ----------------------------
 -- Primary Key structure for table MASTER_ICON_MARKER
 -- ----------------------------
 ALTER TABLE "public"."MASTER_ICON_MARKER" ADD CONSTRAINT "MASTER_ICON_MARKER_pkey" PRIMARY KEY ("ID");
@@ -6454,9 +6170,29 @@ ALTER TABLE "public"."MASTER_TOOL" ADD CONSTRAINT "MASTER_TOOL_pkey" PRIMARY KEY
 ALTER TABLE "public"."MASTER_VESSEL" ADD CONSTRAINT "MASTER_VESSEL_pkey" PRIMARY KEY ("VESSEL_ID");
 
 -- ----------------------------
+-- Primary Key structure for table REF_EDUCATION
+-- ----------------------------
+ALTER TABLE "public"."REF_EDUCATION" ADD CONSTRAINT "REF_EDUCATION_pkey" PRIMARY KEY ("ID_REF_EDUCATION");
+
+-- ----------------------------
+-- Primary Key structure for table REF_EXP
+-- ----------------------------
+ALTER TABLE "public"."REF_EXP" ADD CONSTRAINT "REF_EXP_pkey" PRIMARY KEY ("ID_REF_EXP");
+
+-- ----------------------------
+-- Primary Key structure for table REF_POSITION
+-- ----------------------------
+ALTER TABLE "public"."REF_POSITION" ADD CONSTRAINT "REF_POSITION_pkey" PRIMARY KEY ("ID_REF_POSITION");
+
+-- ----------------------------
 -- Primary Key structure for table RUNNING_TEXT
 -- ----------------------------
 ALTER TABLE "public"."RUNNING_TEXT" ADD CONSTRAINT "RUNNING_TEXT_pkey" PRIMARY KEY ("RUNNING_TEXT_ID");
+
+-- ----------------------------
+-- Primary Key structure for table WA
+-- ----------------------------
+ALTER TABLE "public"."WA" ADD CONSTRAINT "WA_pkey" PRIMARY KEY ("ID");
 
 -- ----------------------------
 -- Primary Key structure for table WEBSITE_ARTICLE
