@@ -137,13 +137,16 @@ class Report extends MY_Controller
         		$intervensi=$row->SELECT_INTERVENTION;		
         	}
         }
-        //$intervensi = 15;
+        //$intervensi = 16;
 		switch($intervensi){
-			case 14:
+			case 14:	//product loading
 				$tplreport='report_loading_detil';
 				break;
-			case 15:
+			case 15:   //product discharge
 				$tplreport='report_discharge_detil';
+				break;
+			case 16:   //crud bunker
+				$tplreport='report_bunker_detil';
 				break;
 		}
 		$this->data['onclick_report'] = "../cetak/$id_item"; // button report		
