@@ -268,7 +268,7 @@
     <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_LOADING_VALVE_SEEALED); ?></td>
     <td class="span">&nbsp;</td>
     <td class="span"><?php echo check_exist($item->result()[0]->TIME_LOADING_VALVE_SEEALED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_VALVE_SEEALED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_LOADING_VALVE_SEEALED); ?></td>
   </tr>
   <tr>
     <td class="span">Loading Tank Inspect Meter Verification</td>
@@ -289,83 +289,179 @@
   <tr>
     <td class="span">Loading Host Connected</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_CONNECTED_COMPLETED); ?></td>
+    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_LOADING_HOST_CONNECTED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_CONNECTED_COMPLETED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_CONNECTED_COMPLETED); ?></td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_LOADING_HOST_CONNECTED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_LOADING_HOST_CONNECTED); ?></td>
   </tr>
   <tr>
     <td class="span">Loading  Commenced</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_COMMENCED); ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_LOADING_COMMENCED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_COMMENCED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_COMMENCED); ?></td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_LOADING_LOADING_COMMENCED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_LOADING_LOADING_COMMENCED); ?></td>
 
   </tr>
   <tr>
     <td class="span"> Loading  Completed</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_COMPLETED); ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_LOADING_COMPLETED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_LOADING_COMPLETED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_COMPLETED); ?></td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_LOADING_LOADING_COMPLETED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_LOADING_LOADING_COMPLETED); ?></td>
   </tr>
   <tr>
-    <td class="span">Hose  Disconnected</td>
+    <td class="span">Loading Hose Arms Disconnect</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_HOSE_CONNECTED); ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_HOSE_ARMS_DISCONNECT); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_HOSE_CONNECTED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_HOSE_CONNECTED); ?></td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DATE_LOADING_HOSE_ARMS_DISCONNECT); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DATE_LOADING_HOSE_ARMS_DISCONNECT); ?></td>
   </tr>
   <tr>
-    <td class="span">Sampling  Commenced</td>
+    <td class="span">Loading Tank Inspect Meter Verification Final</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_SAMPLING_COMMENCED); ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_TANK_INSPECT_METER_VERIFICATION_FINAL); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_SAMPLING_COMMENCED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_SAMPLING_COMMENCED); ?></td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_LOADING_TANK_INSPECT_METER_VERIFICATION_FINAL); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_LOADING_TANK_INSPECT_METER_VERIFICATION_FINAL); ?></td>
   </tr>
   <tr>
-    <td class="span">Sampling  Completed</td>
+    <td class="span">Loading Calcul Completed Doc Onboard</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_SAMPLING_COMPLETED); ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_CALCUL_COMPLETED_DOC_ONBOARD); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_SAMPLING_COMPLETED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_SAMPLING_COMPLETED); ?></td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_LOADING_CALCUL_COMPLETED_DOC_ONBOARD); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_LOADING_CALCUL_COMPLETED_DOC_ONBOARD); ?></td>
   </tr>
   <tr>
-    <td class="span">Cargo  Measurement Commenced</td>
+    <td class="span">Discharge Barge Arrived</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_MEASUREMENT_COMMENCED); ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_BARGE_ARRIVED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_MEASUREMENT_COMMENCED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_MEASUREMENT_COMMENCED); ?></td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_BARGE_ARRIVED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_BARGE_ARRIVED); ?></td>
   </tr>
   <tr>
-    <td class="span">Cargo  Measurement Completed</td>
+    <td class="span">Discharge Nor Tendered</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_MEASUREMENT_COMPLETED); ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_NOR_TENDERED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_MEASUREMENT_COMPLETED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_MEASUREMENT_COMPLETED); ?></td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_NOR_TENDERED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_NOR_TENDERED); ?></td>
   </tr>
   <tr>
-    <td class="span">Document  OnBoard</td>
+    <td class="span">Discharge Key Meeting</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DOCUMENTS_ONBOARD); ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_KEY_MEETING); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DOCUMENTS_ONBOARD); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DOCUMENTS_ONBOARD); ?></td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_KEY_MEETING); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_KEY_MEETING); ?></td>
   </tr>
   <tr>
-    <td class="span">Vessel  Sailed</td>
+    <td class="span">Discharge Nor Accepted</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_VESSEL_SAILED); ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_NOR_ACCEPTED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_VESSEL_SAILED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_VESSEL_SAILED); ?></td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_NOR_ACCEPTED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_NOR_ACCEPTED); ?></td>
+  </tr>
+  <tr>
+    <td class="span">Time Discharge Valve Seealed</td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_VALVE_SEEALED); ?></td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_VALVE_SEEALED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_VALVE_SEEALED); ?></td>
+  </tr> 
+  <tr>
+    <td class="span">Time Discharge Tank Inspect Measure</td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_TANK_INSPECT_MEASURE); ?></td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_TANK_INSPECT_MEASURE); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_TANK_INSPECT_MEASURE); ?></td>
+  </tr> 
+  <tr>
+    <td class="span">Visual Inspection Sampling</td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_VISUAL_INSPECTION_SAMPLING); ?></td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_VISUAL_INSPECTION_SAMPLING); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_VISUAL_INSPECTION_SAMPLING); ?></td>
+  </tr> 
+  <tr>
+    <td class="span">Discharge Host Connected</td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_HOST_CONNECTED); ?></td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_HOST_CONNECTED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_HOST_CONNECTED); ?></td>
+  </tr>
+  <tr>
+    <td class="span">Discharge Bunker Commenced</td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_BUNKER_COMMENCED); ?></td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_BUNKER_COMMENCED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_BUNKER_COMMENCED); ?></td>
+  </tr>
+  <tr>
+    <td class="span">Discharge Bunker Completed</td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_BUNKER_COMPLETED); ?></td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_BUNKER_COMPLETED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_BUNKER_COMPLETED); ?></td>
+  </tr>
+  <tr>
+    <td class="span">Discharge Bunker Completed</td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_BUNKER_COMPLETED); ?></td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_BUNKER_COMPLETED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_BUNKER_COMPLETED); ?></td>
+  </tr> 
+  <tr>
+    <td class="span">Discharge Hose Disconnect</td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_HOSE_DISCONNECT); ?></td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DATE_DISCHARGE_HOSE_DISCONNECT); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DATE_DISCHARGE_HOSE_DISCONNECT); ?></td>
+  </tr>
+  <tr>
+    <td class="span">Discharge Tank Inspect Measr Final</td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_TANK_INSPECT_MEASR_FINAL); ?></td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_TANK_INSPECT_MEASR_FINAL); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_TANK_INSPECT_MEASR_FINAL); ?></td>
+  </tr>
+   <tr>
+    <td class="span">Discharge Visual Inspection Sampling</td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_VISUAL_INSPECTION_SAMPLING); ?></td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_VISUAL_INSPECTION_SAMPLING); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_VISUAL_INSPECTION_SAMPLING); ?></td>
+  </tr>
+  <tr>
+    <td class="span">Discharge Calcul Completed Doc Onboard</td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->date_discharge_calcul_completed_doc_onboard); ?></td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD); ?></td>
+  </tr>  
+  <tr>
+    <td class="span">Discharge Barge Leave Ship</td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_BARGE_LEAVE_SHIP); ?></td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_BARGE_LEAVE_SHIP); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_BARGE_LEAVE_SHIP); ?></td>
   </tr>
     <tr>
     <td class="span">Remarks</td>
@@ -399,248 +495,105 @@
     <td class="span">&nbsp;</td>
     <td class="span" align="center">K/L Obsv.</td>
     <td class="span" align="center">K/L @15 oC</td>
-    <td class="span" align="center">BBls @60 oF</td>
     <td class="span" align="center">Metric Ton</td>
-    <td class="span" align="center">Long Ton</td>
-  </tr>
-  <tr>
-    <td class="span"><strong>BL Figure</strong></td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
+    <td class="span">&nbsp;</td>
   </tr>
   <tr>
     <?php 
-      $BL_QUANTITY_KLOBS = number_format((float)$item->result()[0]->BL_QUANTITY_KLOBS, 3, '.', '');
-      $BL_QUANTITY_KL15 = number_format((float)$item->result()[0]->BL_QUANTITY_KL15, 3, '.', '');
-      $BL_QUANTITY_BBLS = number_format((float)$item->result()[0]->BL_QUANTITY_BBLS, 3, '.', '');
-      $BL_QUANTITY_METRICTON = number_format((float)$item->result()[0]->BL_QUANTITY_METRICTON, 3, '.', '');
-      $BL_QUANTITY_LONGTON = number_format((float)$item->result()[0]->BL_QUANTITY_LONGTON, 3, '.', '');
+      $INITIAL_READOUT_KLOBS = number_format((float)$item->result()[0]->INITIAL_READOUT_KLOBS, 3, '.', '');
+      $INITIAL_READOUT_KL15 = number_format((float)$item->result()[0]->INITIAL_READOUT_KL15, 3, '.', '');
+      $INITIAL_READOUT_METRIC_TONS = number_format((float)$item->result()[0]->INITIAL_READOUT_METRIC_TONS, 3, '.', '');
     ?>  
-    <td class="span">BL Quantity</td>
+    <td class="span">Initial Readout</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($BL_QUANTITY_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($BL_QUANTITY_KL15); ?> </td>
-    <td class="span" align="center"><?php echo check_exist($BL_QUANTITY_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($BL_QUANTITY_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($BL_QUANTITY_LONGTON); ?></td>
-  </tr>
-  <tr>
-    <td class="span">BL Figure based on</td>
+    <td class="span" align="center"><?php echo check_exist($INITIAL_READOUT_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($INITIAL_READOUT_KL15); ?> </td>
+    <td class="span" align="center"><?php echo check_exist($INITIAL_READOUT_METRIC_TONS); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center">
-    <?php if(@$item->result()[0]->BL_FLOW_METER=="Y") { ?>
-      <i style="color:green" class="fa fa-check"></i> 
-    <?php } else { ?>
-      <i style="color:red" class="fa fa-check"></i> 
-    <?php }  ?><br>Flow Meter</td>
-    <td class="span" align="center">
-    <?php if(@$item->result()[0]->BL_SHORE_TANK=="Y") { ?>
-      <i style="color:green" class="fa fa-check"></i> 
-    <?php } else { ?>
-      <i style="color:red" class="fa fa-times"></i> 
-    <?php }  ?><br>Shore Tank</td>
-    <td class="span" align="center">
-      <?php if(@$item->result()[0]->BL_SHIP_TANK=="Y") { ?>
-      <i style="color:green" class="fa fa-check"></i> 
-    <?php } else { ?>
-      <i style="color:red" class="fa fa-times"></i> 
-    <?php }  ?><br>Ship Tank</td>
-    <td class="span" align="center"><?php //echo @$item->result()[0]->BL_SFAL_METRICTON; ?></td>
-    <td class="span" align="center"><?php //echo @$item->result()[0]->BL_SFAL_LONGTON; ?></td>
+    <td class="span">&nbsp;</td>
   </tr>
    <?php 
-      $BL_15_DERAJAT_CELCIUS = number_format((float)$item->result()[0]->BL_15_DERAJAT_CELCIUS, 3, '.', '');
+      $FINAL_READOUT_KLOBS = number_format((float)$item->result()[0]->FINAL_READOUT_KLOBS, 3, '.', '');
+      $FINAL_READOUT_KL15 = number_format((float)$item->result()[0]->FINAL_READOUT_KL15, 3, '.', '');
+      $FINAL_READOUT_METRIC_TONS = number_format((float)$item->result()[0]->FINAL_READOUT_METRIC_TONS, 3, '.', '');
     ?>  
-   <tr>
-    <td class="span">DENSITY@15°C</td>
+    <tr>
+    <td class="span">Final Readout</td>
     <td class="span">&nbsp;</td>
-    <td align="center" class="span"><?php echo check_exist($BL_15_DERAJAT_CELCIUS); ?></td>
-    <td colspan="4" class="span"></td>
-  </tr>
-  <tr>
-    <td colspan="7" class="span" style="height:20px"></td>
-  </tr>
-
-  <tr>
-    <td class="span"><strong>Shore Figure</strong></td>
+    <td class="span" align="center"><?php echo check_exist($FINAL_READOUT_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($FINAL_READOUT_KL15); ?> </td>
+    <td class="span" align="center"><?php echo check_exist($FINAL_READOUT_METRIC_TONS); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
+    <td class="span">&nbsp;</td>
   </tr>
   <tr>
-     <?php 
-      $SF_QUANTITY_KLOBS = number_format((float)$item->result()[0]->SF_QUANTITY_KLOBS, 3, '.', '');
-      $SF_QUANTITY_KL15 = number_format((float)$item->result()[0]->SF_QUANTITY_KL15, 3, '.', '');
-      $SF_QUANTITY_BBLS = number_format((float)$item->result()[0]->SF_QUANTITY_BBLS, 3, '.', '');
-      $SF_QUANTITY_METRICTON = number_format((float)$item->result()[0]->SF_QUANTITY_METRICTON, 3, '.', '');
-      $SF_QUANTITY_LONGTON = number_format((float)$item->result()[0]->SF_QUANTITY_LONGTON, 3, '.', '');
+    <?php 
+      $DIFFERENCE_KLOBS = number_format((float)$item->result()[0]->DIFFERENCE_KLOBS, 3, '.', '');
+      $DIFFERENCE_KL15 = number_format((float)$item->result()[0]->DIFFERENCE_KL15, 3, '.', '');
+      $DIFFERENCE_METRIC_TONS = number_format((float)$item->result()[0]->DIFFERENCE_METRIC_TONS, 3, '.', '');
     ?>  
-    <td class="span">Shore Quantity</td>
+    <td class="span">Difference</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($SF_QUANTITY_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($SF_QUANTITY_KL15); ?> </td>
-    <td class="span" align="center"><?php echo check_exist($SF_QUANTITY_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($SF_QUANTITY_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($SF_QUANTITY_LONGTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($DIFFERENCE_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($DIFFERENCE_KL15); ?> </td>
+    <td class="span" align="center"><?php echo check_exist($DIFFERENCE_METRIC_TONS); ?></td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
   </tr>
   <tr>
       <?php 
-      $ST_NOMINATION = number_format((float)$item->result()[0]->ST_NOMINATION, 3, '.', '');
+      $METER_FACTOR_KLOBS = number_format((float)$item->result()[0]->METER_FACTOR_KLOBS, 3, '.', '');
     ?>  
-    <td class="span">Shore Tanks Nomination</td>
+    <td class="span">Meter Factor</td>
     <td class="span">&nbsp;</td>
-    <td align="center" class="span"><?php echo check_exist($ST_NOMINATION); ?></td>
+    <td align="center" class="span"><?php echo check_exist($METER_FACTOR_KLOBS); ?></td>
     <td colspan="4" class="span"></td>
-  </tr>
-
-  <tr>
-    <td colspan="7" class="span" style="height:20px"></td>
-  </tr>
-
-   <tr>
-    <td class="span"><strong>Ship Figure</strong></td>
-    <td class="span">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-  </tr>
-  <tr>
-     <?php 
-      $OBQ_QUANTITY_KLOBS = number_format((float)$item->result()[0]->OBQ_QUANTITY_KLOBS, 3, '.', '');
-      $OBQ_QUANTITY_KL15 = number_format((float)$item->result()[0]->OBQ_QUANTITY_KL15, 3, '.', '');
-      $OBQ_QUANTITY_BBLS = number_format((float)$item->result()[0]->OBQ_QUANTITY_BBLS, 3, '.', '');
-      $OBQ_QUANTITY_METRICTON = number_format((float)$item->result()[0]->OBQ_QUANTITY_METRICTON, 3, '.', '');
-      $OBQ_QUANTITY_LONGTON = number_format((float)$item->result()[0]->OBQ_QUANTITY_LONGTON, 3, '.', '');
-    ?>  
-    <td class="span">Onboard Quantity (OBQ)</td>
-    <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($OBQ_QUANTITY_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($OBQ_QUANTITY_KL15); ?> </td>
-    <td class="span" align="center"><?php echo check_exist($OBQ_QUANTITY_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($OBQ_QUANTITY_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($OBQ_QUANTITY_LONGTON); ?></td>
-  </tr>
-  <tr>
-     <?php 
-      $SFAL_TOV_KLOBS = number_format((float)$item->result()[0]->SFAL_TOV_KLOBS, 3, '.', '');
-      $SFAL_TOV_KL15 = number_format((float)$item->result()[0]->SFAL_TOV_KL15, 3, '.', '');
-      $SFAL_TOV_BBLS = number_format((float)$item->result()[0]->SFAL_TOV_BBLS, 3, '.', '');
-      $SFAL_TOV_METRICTON = number_format((float)$item->result()[0]->SFAL_TOV_METRICTON, 3, '.', '');
-      $SFAL_TOV_LONGTON = number_format((float)$item->result()[0]->SFAL_TOV_LONGTON, 3, '.', '');
-    ?>  
-    <td class="span">Ship's Figure After Loading (SFAL) - TOV</td>
-    <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($SFAL_TOV_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($SFAL_TOV_KL15); ?> </td>
-    <td class="span" align="center"><?php echo check_exist($SFAL_TOV_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($SFAL_TOV_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($SFAL_TOV_LONGTON); ?></td>
-  </tr>
-  <tr>
-     <?php 
-      $FWAL_KLOBS = number_format((float)$item->result()[0]->FWAL_KLOBS, 3, '.', '');
-      $FWAL_KL15 = number_format((float)$item->result()[0]->FWAL_KL15, 3, '.', '');
-      $FWAL_BBLS = number_format((float)$item->result()[0]->FWAL_BBLS, 3, '.', '');
-      $FWAL_METRICTON = number_format((float)$item->result()[0]->FWAL_METRICTON, 3, '.', '');
-      $FWAL_LONGTON = number_format((float)$item->result()[0]->FWAL_LONGTON, 3, '.', '');
-    ?>  
-    <td class="span">Free Water After Loading</td>
-    <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($FWAL_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($FWAL_KL15); ?> </td>
-    <td class="span" align="center"><?php echo check_exist($FWAL_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($FWAL_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($FWAL_LONGTON); ?></td>
-  </tr>
-  <tr>
-     <?php 
-      $SL_GSV_KLOBS = number_format((float)$item->result()[0]->SL_GSV_KLOBS, 3, '.', '');
-      $SL_GSV_KL15 = number_format((float)$item->result()[0]->SL_GSV_KL15, 3, '.', '');
-      $SL_GSV_BBLS = number_format((float)$item->result()[0]->SL_GSV_BBLS, 3, '.', '');
-      $SL_GSV_METRICTON = number_format((float)$item->result()[0]->SL_GSV_METRICTON, 3, '.', '');
-      $SL_GSV_LONGTON = number_format((float)$item->result()[0]->SL_GSV_LONGTON, 3, '.', '');
-    ?>  
-    <td class="span">Ship's Loaded - GSV</td>
-    <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($SL_GSV_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($SL_GSV_KL15); ?> </td>
-    <td class="span" align="center"><?php echo check_exist($SL_GSV_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($SL_GSV_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($SL_GSV_LONGTON); ?></td>
-  </tr>
-  <?php 
-      $VEF_LOADING_BBLS = number_format((float)$item->result()[0]->VEF_LOADING_BBLS, 3, '.', '');
-      $SL_APPLIED_VEFL_BBLS = number_format((float)$item->result()[0]->SL_APPLIED_VEFL_BBLS, 3, '.', '');
-    ?>  
-  <tr>
-    <td class="span">Vessel Experience Factor - Loading (VEF-L)</td>
-    <td class="span">&nbsp;</td>
-    <td align="center" class="span"><?php echo check_exist($VEF_LOADING_BBLS); ?></td>
-    <td colspan="4" class="span"></td>
-  </tr>
-  <tr>
-    <td class="span">Ship's Loaded (applied VEF-L)</td>
-    <td class="span">&nbsp;</td>
-    <td align="center" class="span"><?php echo check_exist($SL_APPLIED_VEFL_BBLS); ?></td>
-    <td colspan="4" class="span"></td>
-  </tr>
-
-
-  <tr>
-    <td colspan="7" class="span" style="height:20px"></td>
-  </tr>
-
-
-   <tr>
-    <td class="span"><strong>Discrepancy</strong></td>
-    <td class="span">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-    <td class="span" align="center">&nbsp;</td>
-  </tr>
-  <tr>
-    <?php 
-      $SL_VS_BOL_R1_KLOBS = number_format((float)$item->result()[0]->SL_VS_BOL_R1_KLOBS, 3, '.', '');
-      $SL_VS_BOL_R1_KL15 = number_format((float)$item->result()[0]->SL_VS_BOL_R1_KL15, 3, '.', '');
-      $SL_VS_BOL_R1_BBLS = number_format((float)$item->result()[0]->SL_VS_BOL_R1_BBLS, 3, '.', '');
-      $SL_VS_BOL_R1_METRICTON = number_format((float)$item->result()[0]->SL_VS_BOL_R1_METRICTON, 3, '.', '');
-      $SL_VS_BOL_R1_LONGTON = number_format((float)$item->result()[0]->SL_VS_BOL_R1_LONGTON, 3, '.', '');
-    ?>  
-    <td class="span">Ship's Loaded vs Bill of Lading (R1)</td>
-    <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($SL_VS_BOL_R1_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($SL_VS_BOL_R1_KL15); ?> </td>
-    <td class="span" align="center"><?php echo check_exist($SL_VS_BOL_R1_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($SL_VS_BOL_R1_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($SL_VS_BOL_R1_LONGTON); ?></td>
   </tr> 
   <tr>
-     <?php 
-      $SL_VEF_APPLIED_VS_BOL_KLOBS = number_format((float)$item->result()[0]->SL_VEF_APPLIED_VS_BOL_KLOBS, 3, '.', '');
-      $SL_VEF_APPLIED_VS_BOL_KL15 = number_format((float)$item->result()[0]->SL_VEF_APPLIED_VS_BOL_KL15, 3, '.', '');
-      $SL_VEF_APPLIED_VS_BOL_BBLS = number_format((float)$item->result()[0]->SL_VEF_APPLIED_VS_BOL_BBLS, 3, '.', '');
-      $SL_VEF_APPLIED_VS_BOL_METRICTON = number_format((float)$item->result()[0]->SL_VEF_APPLIED_VS_BOL_METRICTON, 3, '.', '');
-      $SL_VEF_APPLIED_VS_BOL_LONGTON = number_format((float)$item->result()[0]->SL_VEF_APPLIED_VS_BOL_LONGTON, 3, '.', '');
-    ?>  
-    <td class="span">Ship's Loaded (VEF applied) vs Bill of Lading (R1)</td>
-    <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($SL_VEF_APPLIED_VS_BOL_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($SL_VEF_APPLIED_VS_BOL_KL15); ?> </td>
-    <td class="span" align="center"><?php echo check_exist($SL_VEF_APPLIED_VS_BOL_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($SL_VEF_APPLIED_VS_BOL_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($SL_VEF_APPLIED_VS_BOL_LONGTON); ?></td>
+    <td colspan="7" class="span" style="height:20px"></td>
   </tr>
+
+   <tr>
+    <?php 
+      $CORD_VOL_DELIVERED_KLOBS = number_format((float)$item->result()[0]->CORD_VOL_DELIVERED_KLOBS, 3, '.', '');
+      $CORD_VOL_DELIVERED_KL15 = number_format((float)$item->result()[0]->CORD_VOL_DELIVERED_KL15, 3, '.', '');
+      $CORD_VOL_DELIVERED_METRIC_TONS = number_format((float)$item->result()[0]->CORD_VOL_DELIVERED_METRIC_TONS, 3, '.', '');
+    ?>  
+    <td class="span">Cord Vol Deliverd</td>
+    <td class="span">&nbsp;</td>
+    <td class="span" align="center"><?php echo check_exist($CORD_VOL_DELIVERED_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($CORD_VOL_DELIVERED_KL15); ?> </td>
+    <td class="span" align="center"><?php echo check_exist($CORD_VOL_DELIVERED_METRIC_TONS); ?></td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+  </tr>
+
+  <tr>
+      <?php 
+      $DENSITY15DEG_KLOBS = number_format((float)$item->result()[0]->DENSITY15DEG_KLOBS, 3, '.', '');
+    ?>  
+    <td class="span">Density 15</td>
+    <td class="span">&nbsp;</td>
+    <td align="center" class="span"><?php echo check_exist($DENSITY15DEG_KLOBS); ?></td>
+    <td colspan="4" class="span"></td>
+  </tr> 
+
+<tr>
+    <?php 
+      $SUPPLY_LOSS_KLOBS = number_format((float)$item->result()[0]->SUPPLY_LOSS_KLOBS, 3, '.', '');
+      $SUPPLY_LOSS_KL15 = number_format((float)$item->result()[0]->SUPPLY_LOSS_KL15, 3, '.', '');
+      $SUPPLY_LOSS_METRIC_TONS = number_format((float)$item->result()[0]->SUPPLY_LOSS_METRIC_TONS, 3, '.', '');
+    ?>  
+    <td class="span">Supply Loss</td>
+    <td class="span">&nbsp;</td>
+    <td class="span" align="center"><?php echo check_exist($SUPPLY_LOSS_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SUPPLY_LOSS_KL15); ?> </td>
+    <td class="span" align="center"><?php echo check_exist($SUPPLY_LOSS_METRIC_TONS); ?></td>
+    <td class="span" align="center"></td>
+    <td class="span" align="center"></td>
+  </tr>
+
   <tr>
     <td colspan="7" class="span" style="height:20px"></td>
   </tr>
