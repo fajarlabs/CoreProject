@@ -8,7 +8,7 @@ class Report extends MY_Controller
 	public function  __construct()
 	{
 		parent::__construct();
-		$this->load->model(array("Report_model","client_site/Client_site_model"));
+		$this->load->model(array("Report_model","client_site/Client_site_model","intervention/Intervention_model"));
 		$this->load->helper(array("cetak_report_helper"));
 		// kick if session is expired
 		if(empty(get_admin_session())) {
@@ -108,8 +108,8 @@ class Report extends MY_Controller
 				$row->SPK = implode(", ",json_decode($row->SPK));
 				$row->SURVEYOR_IN_CHARGE = implode(", ",json_decode($row->SURVEYOR_IN_CHARGE));
 				$row->CTIME  = date('d-m-Y H:i:s',strtotime($row->CTIME));
-				$row->FUNGSI = '<a href="'.base_url().'index.php/report/detil/'.$row->FEFID.'" class="btn btn-success btn-xs"><i class="fa fa-eye"></i> Lihat</a> '; 
-				$row->FUNGSI .= '<a href="javascript:;" onclick="callModal('.$row->FEFID.')" class="btn btn-success btn-xs"><i class="fa fa-print"></i> Cetak</a>'; 
+				$row->FUNGSI = '<a href="'.base_url().'index.php/report/detil/'.$row->FEFID.'" class="btn btn-primary btn-xs"><i class="fa fa-eye"> View</i></a> '; 
+				$row->FUNGSI .= '<a href="javascript:;" onclick="callModal('.$row->FEFID.')" class="btn btn-success btn-xs"><i class="fa fa-print"></i> Print</a>'; 
 				$row->PRODUCT_TYPE = ucfirst($row->PRODUCT_TYPE);
 				$row->SELECT_CARGO = ucwords(str_replace("_", " ", $row->SELECT_CARGO));
 				$array_list[] = $row;

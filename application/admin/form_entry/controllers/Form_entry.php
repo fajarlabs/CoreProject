@@ -451,12 +451,10 @@ class Form_entry extends MY_Controller
 	
 	public function edit($id=0)
 	{
-		$this->data['error_message'] = $this->session->flashdata("error_message");
-		$this->data['site_id']     = $this->session->userdata("site_id");
-		$this->data['site_name']   = $this->session->userdata("site_name");
+		$this->data['error_message']     = $this->session->flashdata("error_message");
 		$this->data['title_page']        = "Form Entry";
 		$this->data['title_description'] = "Function to input general form";
-		$this->data['item'] = $this->Form_entry_model->get_item_by_id($id);
+		$this->data['item'] = $this->Form_entry_model->get_item_by_id((int)$id);
 		$this->load->view('admin/header',$this->data);
 		$this->load->view('form_entry_edit',$this->data);
 		$this->load->view('admin/footer',$this->data);		

@@ -46,6 +46,12 @@ class Form_entry_model extends CI_Model
                 if($row->field == "KONTRAK") {
                     $query .= "\"fef\".\"KONTRAK\" LIKE '%".$row->value."%' ";
                 }
+                if($row->field == "INTERVENTION_NAME") {
+                    $query .= "\"mi\".\"INTERVENTION_NAME\" LIKE '%".$row->value."%' ";
+                }
+                if($row->field == "PRODUCT_TYPE") {
+                    $query .= "\"fef\".\"PRODUCT_TYPE\" LIKE '%".$row->value."%' ";
+                }
                 if($row->field == "FILE_ORDER") {
                     $query .= "\"fef\".\"FILE_ORDER\" LIKE '%".$row->value."%' ";
                 }   
@@ -106,6 +112,12 @@ class Form_entry_model extends CI_Model
                 }
                 if($row->field == "KONTRAK") {
                     $query .= "\"fef\".\"KONTRAK\" LIKE '%".$row->value."%' ";
+                }
+                if($row->field == "INTERVENTION_NAME") {
+                    $query .= "\"mi\".\"INTERVENTION_NAME\" LIKE '%".$row->value."%' ";
+                }
+                if($row->field == "PRODUCT_TYPE") {
+                    $query .= "\"fef\".\"PRODUCT_TYPE\" LIKE '%".$row->value."%' ";
                 }
                 if($row->field == "FILE_ORDER") {
                     $query .= "\"fef\".\"FILE_ORDER\" LIKE '%".$row->value."%' ";

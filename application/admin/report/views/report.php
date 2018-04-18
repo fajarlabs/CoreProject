@@ -24,7 +24,7 @@
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
 					</div>
-					<h4 class="panel-title"><?php e($site_name); ?> - Data Records</h4>
+					<h4 class="panel-title">All Data Records</h4>
 				</div>
 				<div class="panel-body" style="overflow-x: hidden;">
 
@@ -40,7 +40,9 @@
 							<th field="KONTRAK" width="30">KONTRAK</th>
 							<th field="SPK" width="30">SPK</th>
 							<th field="SURVEYOR_IN_CHARGE" width="30">SURVEYOR</th>
-							<th field="CTIME" width="30">INPUT DATE / TIME</th>
+							<th field="PRODUCT_TYPE" width="20">PRODUCT</th>
+							<th field="INTERVENTION_NAME" width="28">INTERVENTION</th>
+							<th field="CTIME" width="35">DATE/TIME</th>
 							<th field="FUNGSI" width="30" align="center">FUNCTION</th>
 						</tr>
 					</thead>
