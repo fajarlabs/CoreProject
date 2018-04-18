@@ -1,7 +1,7 @@
 <?php 
-
-if($item->num_rows() > 0) { ?>
-
+if($item->num_rows() > 0) { 
+$object = @$item->result()[0];
+?>
 <script type="text/javascript">
 
 	// inisialisasi untuk header table
