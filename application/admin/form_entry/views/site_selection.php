@@ -39,11 +39,12 @@
 									<tr>
 										<td>
 											<select class="form-control" style="width:200px;" name="product_type">
-												<option value="">--Choose Product--</option>
-												<option value="crude">Crude</option>
-												<option value="product">Product</option>
-												<option value="petrokimia">Petrokimia</option>
-												<option value="gas">Gas</option>
+												<option value="0">--Choose Product--</option>
+												<?php 
+												foreach($product->result() as $row) :
+													echo "<option value=".$row->PRODUCT_ID.">".$row->PRODUCT_NAME."</option>";
+												endforeach;
+												?>
 											</select>
 										</td>
 										<td>
@@ -52,7 +53,7 @@
 											$intervention_array[] = '--Choose Intervention--';
 											if($intervention_list->num_rows() > 0) {
 												foreach($intervention_list->result() as $row_intervention) {
-													$intervention_array[$row_intervention->INTERVENTION_NAME] = $row_intervention->INTERVENTION_NAME;
+													$intervention_array[$row_intervention->ID] = $row_intervention->INTERVENTION_NAME;
 												}
 											}?>
 											<?php echo form_dropdown('select_intervention', $intervention_array, '', 'style="width:200px;"  class="form-control"',' required="required"'); ?>	

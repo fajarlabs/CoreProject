@@ -253,7 +253,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
  <?php echo form_open_multipart('form_entry/save', array('id' => 'form_add','style'=>'width:200px;')); ?>
 <!-- OK -->
 <input type="hidden" name="product_type" value="<?php echo @$product_type; ?>" />
-<input type="hidden" name="select_intervention" value="<?php echo @$select_intervention; ?>" />
+<input type="hidden" name="select_intervention" value="<?php echo @$intervention_id; ?>" />
 <style>
 	td {
 		padding-left:10px;
