@@ -465,7 +465,31 @@ class Form_entry extends MY_Controller
 		$this->data['error_message']     = $this->session->flashdata("error_message");
 		$this->data['title_page']        = "Form Entry";
 		$this->data['title_description'] = "Function to input general form";
-		$this->data['item'] = $this->Form_entry_model->get_item_by_id((int)$id);
+
+		$item = $this->Form_entry_model->get_item_by_id((int)$id);
+		$this->data['item'] = $item;
+
+		$product_type_id = isset($item->result()[0]->PRODUCT_TYPE) ? $item->result()[0]->PRODUCT_TYPE : ''; 
+		$intervention_id = isset($item->result()[0]->SELECT_INTERVENTION) ? $item->result()[0]->SELECT_INTERVENTION : ''; 
+
+		// parameter data GET untuk acuan model form yang akan ditampilkan
+		$this->data['product_type_id']   = strtolower($product_type_id);
+		$this->data['intervention_id'] 	 = strtolower($intervention_id);
+
+		// intervention name
+		$intervention_query = $this->Intervention_model->get_item_by_id((int)$intervention_id);
+		$intervention_name  = isset($intervention_query->result()[0]->INTERVENTION_NAME) ? $intervention_query->result()[0]->INTERVENTION_NAME : '';
+		$this->data['select_intervention'] = str_replace(" ","_",strtolower($intervention_name));
+
+		// product name
+		$product_query = $this->Product_model->get_item_by_menu_id((int)$product_type_id);
+		$product_name  = isset($product_query->result()[0]->PRODUCT_NAME) ? $product_query->result()[0]->PRODUCT_NAME : '';
+		$this->data['product_type'] = str_replace(" ","_",strtolower($product_name));
+
+		$query = $this->Komponen_html_model->get_item_by_name(strtolower('quantity_'.$this->data['product_type'].'_'.$this->data['select_intervention']));
+
+		$this->data['html_quantity'] = @$query->result()[0]->DATA;
+
 		$this->load->view('admin/header',$this->data);
 		$this->load->view('form_entry_edit',$this->data);
 		$this->load->view('admin/footer',$this->data);		

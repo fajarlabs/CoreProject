@@ -257,7 +257,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
  <?php echo form_open_multipart('form_entry/save', array('id' => 'form_add','style'=>'width:200px;')); ?>
 <!-- OK -->
 <input type="hidden" name="product_type" value="<?php echo @$product_type_id; ?>" />
-<input type="hidden" name="select_intervention" value="<?php echo @$select_intervention; ?>" />
+<input type="hidden" name="select_intervention" value="<?php echo @$intervention_id; ?>" />
 <style>
 	td {
 		padding-left:10px;
@@ -299,12 +299,12 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 							<tr><td colspan="2"><b>Internal*</b></td></tr>
 							<tr>
 								<td style="width:150px;" align="left">File Order</td>
-								<td><input style="width:300px;margin-bottom:3px;" type="text" name="file_order" class="" /></td>
+								<td><input style="width:300px;margin-bottom:3px;" value="<?php echo @$object->FILE_ORDER; ?>" type="text" name="file_order" class="" /></td>
 							</tr>
 							<tr>
 								<td align="left">IWO</td>
 								<td>
-									<input style="width:300px;margin-bottom:3px;" type="text" name="iwo" class="" />
+									<input style="width:300px;margin-bottom:3px;" type="text" name="iwo" class="" value="<?php echo @$object->IWO; ?>" />
 								</td>
 							</tr>
 						</table>				
@@ -403,7 +403,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tr>
 					<td valign="middle">
-						<input type="text" style="width:40%;" name="vessel" /> 
+						<input type="text" style="width:40%;" name="vessel" value="<?php echo @$object->VESSEL; ?>" /> 
 						<div style="display:none;">
 						Multi Cargo <input type="radio" name="select_cargo" value="multi_cargo" />
 						Single Cargo <input type="radio" name="select_cargo" value="single_cargo" />
@@ -432,19 +432,19 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 				<tr>
 					<td style="width:135px;">Area</td>
 					<td colspan="2">
-						<input type="text" style="width:300px;" name="area" />
+						<input type="text" style="width:300px;" name="area" value="<?php echo @$object->AREA; ?>" />
 					</td>
 				</tr>
 				<tr>
 					<td valign="middle" style="width:135px;">Port / Terminal</td>
 					<td valign="middle" style="width:200px;">
-						<input onclick="check_port(this)" type="radio" value="single_port" name="select_port" />
+						<input onclick="check_port(this)" type="radio" value="single_port" name="select_port" <?php echo @$object->SELECT_PORT == "single_port" ? 'checked' : '' ; ?> />
 						Single Port
-						<input onclick="check_port(this)" type="radio" value="multi_port" name="select_port" />
+						<input onclick="check_port(this)" type="radio" value="multi_port" name="select_port" <?php echo @$object->SELECT_PORT == "multi_port" ? 'checked' : '' ; ?> />
 						Multi Port
 					</td>
 					<td>
-						<a id="id_tb_port" href="javascript:;" onclick="add_tb_port()" class="btn btn-success btn-xs" style="margin-left:10px;margin-bottom:2px;display:none;"><i class="fa fa-plus"></i></a>
+						<a id="id_tb_port" href="javascript:;" onclick="add_tb_port()" class="btn btn-success btn-xs" style="margin-left:10px;margin-bottom:2px;<?php echo @$object->SELECT_PORT == "multi_port" ? 'display:none' : '' ; ?>"><i class="fa fa-plus"></i></a>
 						<table id="tb_port" style="width:100%;"></table>
 
 						<script type="text/javascript">
@@ -483,30 +483,37 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 		</td>
 	</tr>
 	<tr class="general_form">
-		<td width="100px" style="padding-top:15px;"><?php echo form_label('Produk/Komoditi*');?></td>  	
+		<td width="100px" style="padding-top:15px;"><?php echo form_label('Product/Comodity*');?></td>  	
 		<td>
 			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tr>
 					<td style="width:250px;" valign="middle">
-						<input type="radio" onclick="check_product(this)" value="single_product" name="select_product" />
+						<input type="radio" onclick="check_product(this)" value="single_product" name="select_product" <?php echo (@$object->SELECT_PRODUCT == 'single_product' ? 'checked' : ''); ?>  />
 						Single Product
-						<input type="radio" onclick="check_product(this)" value="multi_product" name="select_product" />
+						<input type="radio" onclick="check_product(this)" value="multi_product" name="select_product" <?php echo (@$object->SELECT_PRODUCT == 'multi_product' ? 'checked' : ''); ?> />
 						Multi Product
 					</td>
 					<td>
 						<table style="width:100%;border-collapse: separate;border-spacing: 8px;">
 							<tr>
-								<td style="display:none;" id="lbl_product" width="90px">Pilih Produk</td>
+								<td <?php echo ((@$object->SELECT_PRODUCT == 'single_product') || (@$object->SELECT_PRODUCT == 'multi_product')  ? '' : 'style="display:none;"'); ?> id="lbl_product" width="90px">Pilih Produk</td>
 								<td>
-									<a id="id_tb_product" href="javascript:;" onclick="add_tb_product()" class="btn btn-success btn-xs" style="display:none;margin-left:10px;margin-bottom:2px;"><i class="fa fa-plus"></i></a>
-									<table id="tb_product" style="display:none;width:100%;">
+									<a id="id_tb_product" href="javascript:;" onclick="add_tb_product()" class="btn btn-success btn-xs" <?php echo ((@$object->SELECT_PRODUCT == 'multi_product') ? '' : 'style="display:none;margin-left:10px;margin-bottom:2px;"'); ?> ><i class="fa fa-plus"></i></a>
+
+									<?php if((@$object->SELECT_PRODUCT == 'multi_product' ) || ((@$object->SELECT_PRODUCT == 'single_product' ))) : ?>
+									<table id="tb_product" <?php echo ((@$object->SELECT_PRODUCT == 'single_product') || (@$object->SELECT_PRODUCT == 'multi_product')  ? '' : 'style="display:none;width:100%;"'); ?>>
+										<?php 
+										$product_array = json_decode(@$object->PRODUCT);
+										foreach($product_array as $key => $val) : ?>
 										<tr>
 											<td style="padding-top:2px;">
-												<input style="width:300px;" type="text" name="product[]"/>
+												<input style="width:300px;" type="text" name="product[]" value="<?php echo $val; ?>"/>
 												<a onclick="delete_tb_product(this)" style="margin-top:-2px;" href="javascript:;" class="btn btn-danger btn-xs"><i class="fa fa-minus"></i></a>
 											</td>
 										</tr>
+										<?php endforeach; ?>
 									</table>
+									<?php endif; ?>
 								</td>
 							</tr>
 						</table>
@@ -558,11 +565,11 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 					<td>
 						<table>
 							<tr><td style="padding-right: 3px;">
-								<input style="min-width:100px !important;width:100px;margin-left:3px;" type="text" class="datepicker" data-date-format="dd/mm/yyyy" name="loading_start_date" />
+								<input style="min-width:100px !important;width:100px;margin-left:3px;" type="text" class="datepicker" data-date-format="dd/mm/yyyy" name="loading_start_date" value="<?php echo convertDateDBFormat(@$object->LOADING_START_DATE,1); ?>" />
 
 							</td>
 							<td style="padding-right: 3px;">
-								<input style="margin-left:3px;width:100px;" type="text" class="timepicker" name="loading_start_time" />
+								<input style="margin-left:3px;width:100px;" type="text" class="timepicker" name="loading_start_time" value="<?php echo @$object->LOADING_START_TIME; ?>" />
 
 							</td>
 						</tr>
@@ -571,9 +578,9 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 				<td style="width:125px;">Complete (Date/Time)</td>
 				<td>
 					<table><tr><td style="padding-right: 3px;"">
-						<input style="margin-left:3px;width:100px;min-width:100px !important;" type="text" class=" datepicker" data-date-format="dd/mm/yyyy" name="loading_complete_date" />
+						<input style="margin-left:3px;width:100px;min-width:100px !important;" type="text" class=" datepicker" data-date-format="dd/mm/yyyy" name="loading_complete_date" value="<?php echo convertDateDBFormat(@$object->LOADING_COMPLETE_DATE,1); ?>" />
 						</td><td style="padding-right: 3px;"">
-						<input style="margin-left:3px;width:100px;" type="text" class=" timepicker" name="loading_complete_time" /></td></tr>
+						<input style="margin-left:3px;width:100px;" type="text" class=" timepicker" name="loading_complete_time" value="<?php echo @$object->LOADING_COMPLETE_TIME; ?>" /></td></tr>
 					</table>
 				</td>
 			</tr>
@@ -589,11 +596,11 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 					<td>
 						<table>
 							<tr><td style="padding-right: 3px;">
-								<input style="min-width:100px !important;width:100px;margin-left:3px;" type="text" class="datepicker" data-date-format="dd/mm/yyyy" name="discharge_start_date" />
+								<input style="min-width:100px !important;width:100px;margin-left:3px;" type="text" class="datepicker" data-date-format="dd/mm/yyyy" name="discharge_start_date" value="<?php echo convertDateDBFormat($object->DISCHARGE_START_DATE,1); ?>" />
 
 							</td>
 							<td style="padding-right: 3px;">
-								<input style="margin-left:3px;width:100px;" type="text" class="timepicker" name="discharge_start_time" />
+								<input style="margin-left:3px;width:100px;" type="text" class="timepicker" name="discharge_start_time" value="<?php echo @$object->DISCHARGE_START_TIME; ?>" />
 
 							</td>
 						</tr>
@@ -602,9 +609,9 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 				<td style="width:125px;">Complete (Date/Time)</td>
 				<td>
 					<table><tr><td style="padding-right: 3px;"">
-						<input style="margin-left:3px;width:100px;min-width:100px !important;" type="text" class=" datepicker" data-date-format="dd/mm/yyyy" name="discharge_complete_date" />
+						<input style="margin-left:3px;width:100px;min-width:100px !important;" type="text" class=" datepicker" data-date-format="dd/mm/yyyy" name="discharge_complete_date" value="<?php echo convertDateDBFormat(@$object->DISCHARGE_COMPLETE_DATE,1); ?>" />
 						</td><td style="padding-right: 3px;"">
-						<input style="margin-left:3px;width:100px;" type="text" class=" timepicker" name="discharge_complete_time" /></td></tr>
+						<input style="margin-left:3px;width:100px;" type="text" class=" timepicker" name="discharge_complete_time" value="<?php echo @$object->DISCHARGE_COMPLETE_TIME; ?>" /></td></tr>
 					</table>
 				</td>
 			</tr>
@@ -618,10 +625,13 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 				<tr>
 					<td style="width:135px;">Start (date/time)</td>
 					<td>
-						<table><tr><td style="padding-left:3px;">
-							<input style="min-width:100px !important;width:100px;" type="text" class=" datepicker" data-date-format="dd/mm/yyyy" name="bl_start_date" />
-								</td><td style="padding-left:7px;">
-									<input style="min-width:100px !important;width:100px;" type="text" class=" timepicker" name="bl_start_time" />
+						<table>
+							<tr>
+								<td style="padding-left:3px;">
+									<input style="min-width:100px !important;width:100px;" type="text" class=" datepicker" data-date-format="dd/mm/yyyy" name="bl_start_date" value="<?php echo convertDateDBFormat(@$object->BL_START_DATE,1); ?>" />
+								</td>
+								<td style="padding-left:7px;">
+									<input style="min-width:100px !important;width:100px;" type="text" class=" timepicker" name="bl_start_time" value="<?php echo @$object->BL_START_TIME; ?>" />
 								</td>
 							</tr>
 						</table>
@@ -638,7 +648,16 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 					<td style="width:135px;">Surveyor In Charge</td>
 					<td>
 						<a id="id_tb_surveyor" onclick="add_tb_surveyor()" style="margin-bottom:3px;" href="javascript:;" class="btn btn-success btn-xs"><i class="fa fa-plus"></i></a>
-						<table id="tb_surveyor" style="width:100%;margin-left:-10px;"></table>
+						<table id="tb_surveyor" style="width:100%;margin-left:-10px;">
+							<?php 
+							$data_surveyor = json_decode(@$object->SURVEYOR_IN_CHARGE);
+							if(count($data_surveyor) > 0) :
+								foreach($data_surveyor as $key => $val):
+									echo "<tr><td><input style=\"width:300px;margin-bottom: 3px;\" type=\"text\" name=\"surveyor_in_charge[]\" value=\"".$val."\" /><a onclick=\"delete_tb_surveyor(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
+								endforeach; 
+							endif;
+							?>
+						</table>
 					</td>
 				</tr>
 			</table>
@@ -736,8 +755,8 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 						<table style="width:100%;">
 							<tr>
 								<td style="width:100px;">
-									<input onclick="check_notice(this)" type="radio" name="rn_notice_issue" value="yes" />Yes
-									<input onclick="check_notice(this)" type="radio" name="rn_notice_issue" value="no" />No
+									<input onclick="check_notice(this)" type="radio" name="rn_notice_issue" value="yes" <?php echo (@$object->RN_NOTICE_ISSUE == 'yes' ? 'checked' : '') ?> />Yes
+									<input onclick="check_notice(this)" type="radio" name="rn_notice_issue" value="no" <?php echo (@$object->RN_NOTICE_ISSUE == 'no' ? 'checked' : '') ?> />No
 								</td>
 								<td>
 									<input style="display:none;" type="file" name="rn_notice_issue_description" />	
@@ -762,8 +781,8 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 						<table style="width:100%;">
 							<tr>
 								<td style="width:100px;">
-									<input onclick="check_letter(this)" type="radio" name="rn_letter_issue" value="yes" />Yes
-									<input onclick="check_letter(this)" type="radio" name="rn_letter_issue" value="no" />No
+									<input onclick="check_letter(this)" type="radio" name="rn_letter_issue" value="yes" <?php echo (@$object->RN_LETTER_ISSUE == 'yes' ? 'checked' : '') ?> />Yes
+									<input onclick="check_letter(this)" type="radio" name="rn_letter_issue" value="no" <?php echo (@$object->RN_LETTER_ISSUE == 'no' ? 'checked' : '') ?> />No
 								</td>
 								<td>
 									<input style="display:none;" type="file" name="rn_letter_issue_description" />
@@ -788,8 +807,8 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 						<table id="tb_statement" style="width:100%;">
 							<tr>
 								<td style="width:100px;">
-									<input onclick="check_statement(this)" type="radio" name="rn_statement_issue" value="yes" />Yes
-									<input onclick="check_statement(this)" type="radio" name="rn_statement_issue" value="no" />No
+									<input onclick="check_statement(this)" type="radio" name="rn_statement_issue" value="yes" <?php echo (@$object->RN_STATEMENT_ISSUE == 'yes' ? 'checked' : '') ?> />Yes
+									<input onclick="check_statement(this)" type="radio" name="rn_statement_issue" value="no"  <?php echo (@$object->RN_STATEMENT_ISSUE == 'no' ? 'checked' : '') ?> />No
 								</td>
 								<td>
 									<input style="display:none;" type="file" name="rn_statement_issue_description" />
@@ -814,11 +833,11 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 						<table style="border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 							<tr>
 								<td style="width:100px;">On Arrival</td>
-								<td>MFO/metric ton <input style="width:100px;" type="text" class="" name="bo_mfo_on_arrival" />&nbsp;&nbsp;MDO/metric ton <input style="width:100px;" type="text" class="" name="bo_mdo_on_arrival" /></td>
+								<td>MFO/metric ton <input style="width:100px;" type="text" class="" name="bo_mfo_on_arrival" value="<?php echo @$object->BO_MFO_ON_ARRIVAL; ?>" />&nbsp;&nbsp;MDO/metric ton <input style="width:100px;" type="text" class="" name="bo_mdo_on_arrival" value="<?php echo @$object->BO_MDO_ON_ARRIVAL; ?>" /></td>
 							</tr>
 							<tr>
 								<td style="width:100px;">On Departure</td>
-								<td>MFO/metric ton <input style="width:100px;" type="text" class="" name="bo_mfo_on_departure" />&nbsp;&nbsp;MDO/metric ton <input style="width:100px;" type="text" class="" name="bo_mdo_on_departure" /></td>
+								<td>MFO/metric ton <input style="width:100px;" type="text" class="" name="bo_mfo_on_departure" value="<?php echo @$object->BO_MFO_ON_DEPARTURE; ?>" />&nbsp;&nbsp;MDO/metric ton <input style="width:100px;" type="text" class="" name="bo_mdo_on_departure" value="<?php echo @$object->BO_MDO_ON_DEPARTURE; ?>" /></td>
 							</tr>
 						</table>
 					</td>
@@ -829,19 +848,19 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 						<table style="border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 							<tr>
 								<td style="width:100px;">On Arrival</td>
-								<td>DRAFT/meter FWD <input style="width:70px;" type="text" class="" name="sc_on_arrival_draft_fwd" /></td>
-								<td>DRAFT/meter AFT <input style="width:70px;" type="text" class="" name="sc_on_arrival_draft_aft" /></td>
-								<td>LIST <input style="width:70px;" type="text" class="" name="sc_on_arrival_draft_list" /></td>
+								<td>DRAFT/meter FWD <input style="width:70px;" type="text" class="" name="sc_on_arrival_draft_fwd" value="<?php echo @$object->SC_ON_ARRIVAL_DRAFT_FWD; ?>" /></td>
+								<td>DRAFT/meter AFT <input style="width:70px;" type="text" class="" name="sc_on_arrival_draft_aft" value="<?php echo @$object->SC_ON_ARRIVAL_DRAFT_AFT; ?>" /></td>
+								<td>LIST <input style="width:70px;" type="text" class="" name="sc_on_arrival_draft_list" value="<?php echo @$object->SC_ON_ARRIVAL_DRAFT_LIST; ?>" /></td>
 							</tr>
 							<tr>
 								<td style="width:100px;">On Departure</td>
-								<td>DRAFT/meter FWD <input style="width:70px;" type="text" class="" name="sc_on_departure_draft_fwd" /></td>
-								<td>DRAFT/meter AFT <input style="width:70px;" type="text" class="" name="sc_on_departure_draft_aft" /></td>
-								<td>LIST <input style="width:70px;" type="text" class="" name="sc_on_departure_draft_list" /></td>
+								<td>DRAFT/meter FWD <input style="width:70px;" type="text" class="" name="sc_on_departure_draft_fwd" value="<?php echo @$object->SC_ON_DEPARTURE_DRAFT_FWD; ?>" /></td>
+								<td>DRAFT/meter AFT <input style="width:70px;" type="text" class="" name="sc_on_departure_draft_aft" value="<?php echo @$object->SC_ON_DEPARTURE_DRAFT_AFT; ?>" /></td>
+								<td>LIST <input style="width:70px;" type="text" class="" name="sc_on_departure_draft_list" value="<?php echo @$object->SC_ON_DEPARTURE_DRAFT_LIST; ?>" /></td>
 							</tr>
 							<tr>
 								<td style="width:100px;">Sea Condition</td>
-								<td colspan="3"><input style="width:100%" type="text" class="" name="sc" /></td>
+								<td colspan="3"><input style="width:100%" type="text" class="" name="sc" value="<?php echo @$object->SC; ?>" /></td>
 							</tr>
 						</table>
 					</td>
@@ -863,7 +882,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 			</div>
 		</div>
 	</div>
-</div>    
+</div>     
 <?php 
 } else {
 	echo "<center><h3>Data Not found!</h3><a href='".base_url()."index.php/form_entry' class='btn btn-sm btn-primary'><i class='fa fa-arrow-left'></i> Back</a></center>";
