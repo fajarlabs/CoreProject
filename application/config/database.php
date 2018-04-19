@@ -87,7 +87,11 @@ $db['default'] = array(
 	//-----------------------------------------------
 	// localhost PGSQL | comment if using localhost
 	//-----------------------------------------------	
+<<<<<<< HEAD
 	'hostname' => 'pgsql:host=192.168.1.12;dbname=postgres',
+=======
+	'hostname' => 'pgsql:host=localhost;dbname=postgres',
+>>>>>>> 4bc8bb4340aa795bc3620d3b3892127ee99ad508
 	'username' => 'postgres',
 	'password' => 'postgres',
 	'database' => 'postgres',
