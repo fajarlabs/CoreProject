@@ -40,10 +40,15 @@ class Dashboard extends MY_Controller
 
 	}
 
+
 	public function index()
 	{ 	
-		$this->data['sites'] = $this->Client_site_model->get_all_items();
-		$this->data['title'] = "Dashboard";
+		$this->data['sites'] 		= $this->Client_site_model->get_all_items();
+		$this->data['product'] 		= $this->Dashboard_model->get_table_name('MASTER_PRODUCT');
+		$this->data['intervensi'] 	= $this->Dashboard_model->get_table_name('MASTER_INTERVENTION');
+		$this->data['client'] 		= $this->Dashboard_model->get_table_name_one('FORM_ENTRY_FIELD');
+		$this->data['area'] 		= $this->Dashboard_model->get_table_group_by('FORM_ENTRY_FIELD','AREA');
+		$this->data['title'] 		= "Dashboard";
 		$this->load->view("admin/header",$this->data);
 		$this->load->view("dashboard", $this->data);
 		$this->load->view("admin/footer", $this->data);
@@ -66,7 +71,7 @@ class Dashboard extends MY_Controller
 
 		$result = array();
 
-		$query = $this->Dashboard_model->loading_stats($date_start,$date_end,$site_id,$vessel,$produk);
+		$query = $this->Dashboard_model->loading_stats($date_start,$date_end,$vessel,$produk);
 
 		/* chart column negative */
 		$array_data = array();
@@ -81,7 +86,7 @@ class Dashboard extends MY_Controller
 		$result[] = $array_data;
 
 		/* chart pie */
-		$query = $this->Dashboard_model->discharge_stats($date_start,$date_end,$site_id,$vessel,$produk);
+		$query = $this->Dashboard_model->discharge_stats($date_start,$date_end,$vessel,$produk);
 		
 		/* chart column negative */
 		$array_data = array();

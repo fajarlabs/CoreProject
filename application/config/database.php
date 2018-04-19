@@ -87,10 +87,10 @@ $db['default'] = array(
 	//-----------------------------------------------
 	// localhost PGSQL | comment if using localhost
 	//-----------------------------------------------	
-	'hostname' => 'pgsql:host=localhost;dbname=sucofindo',
+	'hostname' => 'pgsql:host=192.168.1.12;dbname=postgres',
 	'username' => 'postgres',
-	'password' => 'qwerty147',
-	'database' => 'sucofindo',
+	'password' => 'postgres',
+	'database' => 'postgres',
 
 	//-----------------------------------------------
 	// cloudkilat PGSQL | comment if using localhost
