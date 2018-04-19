@@ -69,12 +69,22 @@
     <tr>
     <td class="span">Referensi</td>
     <td class="span">:</td>
-    <td class="span" colspan="5">REPORT-00000<?php echo check_exist($item->result()[0]->ID) ?></td>
+    <td class="span" colspan="5">REPORT-00000<?php echo check_exist($item->result()[0]->ID) ?>
+    </td>
   </tr>
   <tr>
     <td class="span">Principal</td>
     <td class="span">:</td>
-    <td class="span" colspan="5"><?php echo check_exist($item->result()[0]->KONTRAK) ?></td>
+    <td class="span" colspan="5">
+      <?php 
+        $data_pr ="";
+        $arr_pr =  json_decode(@$item->result()[0]->KONTRAK);
+        foreach ($arr_pr as $key => $value) {
+          $data_pr .=$value.", ";
+        }
+        echo  rtrim($data_pr, ', ');
+      ?>
+    </td>
   </tr>
   <tr>
     <td class="span">FILE Order</td>
@@ -94,7 +104,16 @@
   <tr>
     <td class="span">Voyage</td>
     <td class="span">:</td>
-    <td class="span" colspan="5"><?php echo @$item->result()[0]->VOY; ?></td>
+    <td class="span" colspan="5">
+    <?php 
+      $data_voy ="";
+      $arr_voy =  json_decode( @$item->result()[0]->VOY);
+      foreach ($arr_voy as $key => $value) {
+        $data_voy .=$value.", ";
+      }
+      echo  rtrim($data_voy, ', ');
+    ?>
+    </td>
   </tr>
   <tr>
     <td class="span">Location</td>
@@ -425,7 +444,7 @@
     <td class="span">:</td>
     <td class="span" colspan="5">
       <?php echo check_exist($item->result()[0]->ACTIVITIES_REMARKS); ?></td>
-    </tr>
+  </tr>
   <tr>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
@@ -434,7 +453,8 @@
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
-  </tr><tr>
+  </tr>
+  <tr>
     <td class="span"><strong>B. QUANTITY</strong></td>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
@@ -465,22 +485,36 @@
     <td class="span" align="center">&nbsp;</td>
   </tr>
   <tr>
+      <?php 
+      $BL_QUANTITY_KLOBS = number_format((float)$item->result()[0]->BL_QUANTITY_KLOBS, 3, '.', '');
+      $BL_QUANTITY_KL15 = number_format((float)$item->result()[0]->BL_QUANTITY_KL15, 3, '.', '');
+      $BL_QUANTITY_BBLS = number_format((float)$item->result()[0]->BL_QUANTITY_BBLS, 3, '.', '');
+      $BL_QUANTITY_METRICTON = number_format((float)$item->result()[0]->BL_QUANTITY_METRICTON, 3, '.', '');
+      $BL_QUANTITY_LONGTON = number_format((float)$item->result()[0]->BL_QUANTITY_LONGTON, 3, '.', '');
+    ?>
     <td class="span">Gross Standard Volume</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->BL_QUANTITY_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->BL_QUANTITY_KL15); ?> </td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->BL_QUANTITY_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->BL_QUANTITY_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->BL_QUANTITY_LONGTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($BL_QUANTITY_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($BL_QUANTITY_KL15); ?> </td>
+    <td class="span" align="center"><?php echo check_exist($BL_QUANTITY_BBLS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($BL_QUANTITY_METRICTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($BL_QUANTITY_LONGTON); ?></td>
   </tr>
   <tr>
+    <?php 
+      $BL_NSV_KLOBS = number_format((float)$item->result()[0]->BL_NSV_KLOBS, 3, '.', '');
+      $BL_NSV_KL15 = number_format((float)$item->result()[0]->BL_NSV_KL15, 3, '.', '');
+      $BL_NSV_BBLS = number_format((float)$item->result()[0]->BL_NSV_BBLS, 3, '.', '');
+      $BL_NSV_METRICTON = number_format((float)$item->result()[0]->BL_NSV_METRICTON, 3, '.', '');
+      $BL_NSV_LONGTON = number_format((float)$item->result()[0]->BL_NSV_LONGTON, 3, '.', '');
+    ?>
     <td class="span">Net Standard Volume</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->BL_NSV_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->BL_NSV_KL15); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->BL_NSV_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->BL_NSV_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->BL_NSV_LONGTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($BL_NSV_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($BL_NSV_KL15); ?></td>
+    <td class="span" align="center"><?php echo check_exist($BL_NSV_BBLS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($BL_NSV_METRICTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($BL_NSV_LONGTON); ?></td>
   </tr>
   <tr>
     <td class="span">BL Figure based on</td>
@@ -507,13 +541,20 @@
     <td class="span" align="center"><?php //echo @$item->result()[0]->BL_SFAL_LONGTON; ?></td>
   </tr>
   <tr>
+     <?php 
+      $SFAL_KLOBS = number_format((float)$item->result()[0]->SFAL_KLOBS, 3, '.', '');
+      $SFAL_KL15 = number_format((float)$item->result()[0]->SFAL_KL15, 3, '.', '');
+      $SFAL_BBLS = number_format((float)$item->result()[0]->SFAL_BBLS, 3, '.', '');
+      $SFAL_METRICTON = number_format((float)$item->result()[0]->SFAL_METRICTON, 3, '.', '');
+      $SFAL_LONGTON = number_format((float)$item->result()[0]->SFAL_LONGTON, 3, '.', '');
+    ?>
     <td class="span">Ship's Figure After Loading (SFAL)</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFAL_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFAL_KL15); ?> </td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFAL_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFAL_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFAL_LONGTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SFAL_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SFAL_KL15); ?> </td>
+    <td class="span" align="center"><?php echo check_exist($SFAL_BBLS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SFAL_METRICTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SFAL_LONGTON); ?></td>
   </tr>
   <tr>
     <td class="span">&nbsp;</td>
@@ -534,40 +575,68 @@
     <td class="span">&nbsp;</td>
   </tr>
   <tr>
+    <?php 
+      $SF_SQ_KLOBS = number_format((float)$item->result()[0]->SF_SQ_KLOBS, 3, '.', '');
+      $SF_SQ_KL15 = number_format((float)$item->result()[0]->SF_SQ_KL15, 3, '.', '');
+      $SF_SQ_BBLS = number_format((float)$item->result()[0]->SF_SQ_BBLS, 3, '.', '');
+      $SF_SQ_METRICTON = number_format((float)$item->result()[0]->SF_SQ_METRICTON, 3, '.', '');
+      $SF_SQ_LONGTON = number_format((float)$item->result()[0]->SF_SQ_LONGTON, 3, '.', '');
+    ?>
     <td class="span">Shore Quantity</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SF_SQ_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SF_SQ_KL15); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SF_SQ_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SF_SQ_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SF_SQ_LONGTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SF_SQ_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SF_SQ_KL15); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SF_SQ_BBLS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SF_SQ_METRICTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SF_SQ_LONGTON); ?></td>
   </tr>
   <tr>
+    <?php 
+      $SF_GSV_KLOBS = number_format((float)$item->result()[0]->SF_GSV_KLOBS, 3, '.', '');
+      $SF_GSV_KL15 = number_format((float)$item->result()[0]->SF_GSV_KL15, 3, '.', '');
+      $SF_GSV_BBLS = number_format((float)$item->result()[0]->SF_GSV_BBLS, 3, '.', '');
+      $SF_GSV_METRICTON = number_format((float)$item->result()[0]->SF_GSV_METRICTON, 3, '.', '');
+      $SF_GSV_LONGTON = number_format((float)$item->result()[0]->SF_GSV_LONGTON, 3, '.', '');
+    ?>
     <td class="span">Gross Standard Volume</td>
     <td class="span">&nbsp;</td>
-    <td align="center" class="span"><?php echo check_exist($item->result()[0]->SF_GSV_KLOBS); ?></td>
-    <td align="center" class="span"><?php echo check_exist($item->result()[0]->SF_GSV_KL15); ?></td>
-    <td align="center" class="span"><?php echo check_exist($item->result()[0]->SF_GSV_BBLS); ?></td>
-    <td align="center" class="span"><?php echo check_exist($item->result()[0]->SF_GSV_METRICTON); ?></td>
-    <td align="center" class="span"><?php echo check_exist($item->result()[0]->SF_GSV_LONGTON); ?> </td>
+    <td align="center" class="span"><?php echo check_exist($SF_GSV_KLOBS); ?></td>
+    <td align="center" class="span"><?php echo check_exist($SF_GSV_KL15); ?></td>
+    <td align="center" class="span"><?php echo check_exist($SF_GSV_BBLS); ?></td>
+    <td align="center" class="span"><?php echo check_exist($SF_GSV_METRICTON); ?></td>
+    <td align="center" class="span"><?php echo check_exist($SF_GSV_LONGTON); ?> </td>
   </tr>
   <tr>
+    <?php 
+      $SF_NSV_KLOBS = number_format((float)$item->result()[0]->SF_NSV_KLOBS, 3, '.', '');
+      $SF_NSV_KL15 = number_format((float)$item->result()[0]->SF_NSV_KL15, 3, '.', '');
+      $SF_NSV_BBLS = number_format((float)$item->result()[0]->SF_NSV_BBLS, 3, '.', '');
+      $SF_NSV_METRICTON = number_format((float)$item->result()[0]->SF_NSV_METRICTON, 3, '.', '');
+      $SF_NSV_LONGTON = number_format((float)$item->result()[0]->SF_NSV_LONGTON, 3, '.', '');
+    ?>
     <td class="span">Net Standard Volume</td>
     <td class="span">&nbsp;</td>
-    <td align="center" class="span"><?php echo check_exist($item->result()[0]->SF_NSV_KLOBS); ?></td>
-    <td align="center" class="span"><?php echo check_exist($item->result()[0]->SF_NSV_KL15); ?></td>
-    <td align="center" class="span"><?php echo check_exist($item->result()[0]->SF_NSV_BBLS); ?></td>
-    <td align="center" class="span"><?php echo check_exist($item->result()[0]->SF_NSV_METRICTON); ?></td>
-    <td align="center" class="span"><?php echo check_exist($item->result()[0]->SF_NSV_LONGTON); ?> </td>
+    <td align="center" class="span"><?php echo check_exist($SF_NSV_KLOBS); ?></td>
+    <td align="center" class="span"><?php echo check_exist($SF_NSV_KL15); ?></td>
+    <td align="center" class="span"><?php echo check_exist($SF_NSV_BBLS); ?></td>
+    <td align="center" class="span"><?php echo check_exist($SF_NSV_METRICTON); ?></td>
+    <td align="center" class="span"><?php echo check_exist($SF_NSV_LONGTON); ?> </td>
   </tr>
   <tr>
+     <?php 
+      $SF_SFAL_KLOBS = number_format((float)$item->result()[0]->SF_SFAL_KLOBS, 3, '.', '');
+      $SF_SFAL_KL15 = number_format((float)$item->result()[0]->SF_SFAL_KL15, 3, '.', '');
+      $SF_SFAL_BBLS = number_format((float)$item->result()[0]->SF_SFAL_BBLS, 3, '.', '');
+      $SF_SFAL_METRICTON = number_format((float)$item->result()[0]->SF_SFAL_METRICTON, 3, '.', '');
+      $SF_SFAL_LONGTON = number_format((float)$item->result()[0]->SF_SFAL_LONGTON, 3, '.', '');
+    ?>
     <td class="span">Ship's Figure After Loading (SFAL)</td>
     <td class="span">&nbsp;</td>
-    <td align="center" class="span"><?php echo check_exist($item->result()[0]->SF_SFAL_KLOBS); ?></td>
-    <td align="center" class="span"><?php echo check_exist($item->result()[0]->SF_SFAL_KL15); ?></td>
-    <td align="center" class="span"><?php echo check_exist($item->result()[0]->SF_SFAL_BBLS); ?></td>
-    <td align="center" class="span"><?php echo check_exist($item->result()[0]->SF_SFAL_METRICTON); ?></td>
-    <td align="center" class="span"><?php echo check_exist($item->result()[0]->SF_SFAL_LONGTON); ?> </td>
+    <td align="center" class="span"><?php echo check_exist($SF_SFAL_KLOBS); ?></td>
+    <td align="center" class="span"><?php echo check_exist($SF_SFAL_KL15); ?></td>
+    <td align="center" class="span"><?php echo check_exist($SF_SFAL_BBLS); ?></td>
+    <td align="center" class="span"><?php echo check_exist($SF_SFAL_METRICTON); ?></td>
+    <td align="center" class="span"><?php echo check_exist($SF_SFAL_LONGTON); ?> </td>
   </tr>
   <tr>
     <td class="span">&nbsp;</td>
@@ -588,48 +657,68 @@
     <td class="span">&nbsp;</td>
   </tr>
   <tr>
+    <?php 
+      $SFBD_TOV_KLOBS = number_format((float)$item->result()[0]->SFBD_TOV_KLOBS, 3, '.', '');
+      $SFBD_TOV_KL15 = number_format((float)$item->result()[0]->SFBD_TOV_KL15, 3, '.', '');
+      $SFBD_TOV_BBLS = number_format((float)$item->result()[0]->SFBD_TOV_BBLS, 3, '.', '');
+      $SFBD_TOV_METRICTON = number_format((float)$item->result()[0]->SFBD_TOV_METRICTON, 3, '.', '');
+      $SFBD_TOV_LONGTON = number_format((float)$item->result()[0]->SFBD_TOV_LONGTON, 3, '.', '');
+    ?>
     <td class="span">Ship Figure Before Discharge - TOV</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFBD_TOV_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFBD_TOV_KL15); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFBD_TOV_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFBD_TOV_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFBD_TOV_LONGTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SFBD_TOV_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SFBD_TOV_KL15); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SFBD_TOV_BBLS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SFBD_TOV_METRICTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SFBD_TOV_LONGTON); ?></td>
   </tr>
   <tr>
+     <?php 
+      $FREE_WATER_KLOBS = number_format((float)$item->result()[0]->FREE_WATER_KLOBS, 3, '.', '');
+      $FREE_WATER_KL15 = number_format((float)$item->result()[0]->FREE_WATER_KL15, 3, '.', '');
+      $FREE_WATER_BBLS = number_format((float)$item->result()[0]->FREE_WATER_BBLS, 3, '.', '');
+      $FREE_WATER_METRICTON = number_format((float)$item->result()[0]->FREE_WATER_METRICTON, 3, '.', '');
+      $FREE_WATER_LONGTON = number_format((float)$item->result()[0]->FREE_WATER_LONGTON, 3, '.', '');
+    ?>
     <td class="span">Free Water</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->FREE_WATER_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->FREE_WATER_KL15); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->FREE_WATER_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->FREE_WATER_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->FREE_WATER_LONGTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($FREE_WATER_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($FREE_WATER_KL15); ?></td>
+    <td class="span" align="center"><?php echo check_exist($FREE_WATER_BBLS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($FREE_WATER_METRICTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($FREE_WATER_LONGTON); ?></td>
   </tr>
+  <?php 
+      $ROBQ_KLOBS = number_format((float)$item->result()[0]->ROBQ_KLOBS, 3, '.', '');
+      $ROBQ_KL15 = number_format((float)$item->result()[0]->ROBQ_KL15, 3, '.', '');
+      $ROBQ_BBLS = number_format((float)$item->result()[0]->ROBQ_BBLS, 3, '.', '');
+      $ROBQ_METRICTON = number_format((float)$item->result()[0]->ROBQ_METRICTON, 3, '.', '');
+      $ROBQ_LONGTON = number_format((float)$item->result()[0]->ROBQ_LONGTON, 3, '.', '');
+    ?>
   <tr>
     <td class="span">Remaining On Board Quantity</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->ROBQ_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->ROBQ_KL15); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->ROBQ_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->ROBQ_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->ROBQ_LONGTON); ?>  </td>
+    <td class="span" align="center"><?php echo check_exist($ROBQ_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($ROBQ_KL15); ?></td>
+    <td class="span" align="center"><?php echo check_exist($ROBQ_BBLS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($ROBQ_METRICTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($ROBQ_LONGTON); ?>  </td>
   <tr>
-    <td class="span">Ship Figure Before Discharge - GSV</td>
-    <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFBD_GSV_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFBD_GSV_KL15); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFBD_GSV_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFBD_GSV_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFBD_GSV_LONGTON); ?>  </td>
-  </tr>
   <tr>
+    <?php 
+      $SFBD_NSV_KLOBS = number_format((float)$item->result()[0]->SFBD_NSV_KLOBS, 3, '.', '');
+      $SFBD_NSV_KL15 = number_format((float)$item->result()[0]->SFBD_NSV_KL15, 3, '.', '');
+      $SFBD_NSV_BBLS = number_format((float)$item->result()[0]->SFBD_NSV_BBLS, 3, '.', '');
+      $SFBD_NSV_METRICTON = number_format((float)$item->result()[0]->SFBD_NSV_METRICTON, 3, '.', '');
+      $SFBD_NSV_LONGTON = number_format((float)$item->result()[0]->SFBD_NSV_LONGTON, 3, '.', '');
+    ?>
     <td class="span">Ship Figure Before Discharge - NSV</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFBD_NSV_KLOBS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFBD_NSV_KL15); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFBD_NSV_BBLS); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFBD_NSV_METRICTON); ?></td>
-    <td class="span" align="center"><?php echo check_exist($item->result()[0]->SFBD_NSV_LONGTON); ?>  </td>
+    <td class="span" align="center"><?php echo check_exist($SFBD_NSV_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SFBD_NSV_KL15); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SFBD_NSV_BBLS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SFBD_NSV_METRICTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SFBD_NSV_LONGTON); ?>  </td>
   </tr>
   <tr>
     <td class="span">&nbsp;</td>
@@ -775,20 +864,20 @@
     <td class="span" colspan="2"></td>
     <td class="span"></td>
   </tr>
-    <tr>
+  <tr>
     <td class="span">On Arrival</td>
     <td class="span">:</td>
     <td class="span" colspan="2">DRAFT/meter FWD &nbsp; <?php echo check_exist($item->result()[0]->SC_ON_ARRIVAL_DRAFT_FWD); ?></td>
     <td class="span" colspan="2">DRAFT/meter AFT &nbsp; <?php echo check_exist($item->result()[0]->SC_ON_ARRIVAL_DRAFT_AFT); ?></td>
     <td class="span">LIST &nbsp; <?php echo check_exist($item->result()[0]->SC_ON_ARRIVAL_DRAFT_LIST); ?></td>
   </tr> 
-    <tr>
+  <tr>
       <td class="span">On Departure</td>
       <td class="span">:</td>
       <td class="span" colspan="2">DRAFT/meter FWD &nbsp; <?php echo check_exist($item->result()[0]->SC_ON_DEPARTURE_DRAFT_FWD); ?></td>
       <td class="span" colspan="2">DRAFT/meter AFT &nbsp; <?php echo check_exist($item->result()[0]->SC_ON_DEPARTURE_DRAFT_AFT); ?></td>
       <td class="span">LIST &nbsp; <?php echo check_exist($item->result()[0]->SC_ON_DEPARTURE_DRAFT_LIST); ?></td>
-    </tr>
+  </tr>
     <tr>
       <td class="span" colspan="1">Ships & Sea Condition</td>
       <td class="span" colspan="1">:</td>

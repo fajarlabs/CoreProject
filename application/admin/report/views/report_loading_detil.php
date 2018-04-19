@@ -70,17 +70,41 @@
   <tr>
     <td class="span">Referensi</td>
     <td class="span">:</td>
-    <td class="span" colspan="5"><?php echo @$item->result()[0]->KONTRAK; ?></td>
+    <td class="span" colspan="5">
+    REPORT-00000<?php echo check_exist($item->result()[0]->ID) ?></td>
   </tr>
   <tr>
     <td class="span">Principal</td>
     <td class="span">:</td>
-    <td class="span" colspan="5">tester saja</td>
+    <td class="span" colspan="5">
+      <?php 
+      $data_pr ="";
+      $arr_pr =  json_decode(@$item->result()[0]->KONTRAK);
+      foreach ($arr_pr as $key => $value) {
+        $data_pr .=$value.", ";
+      }
+      echo  rtrim($data_pr, ', ');
+    ?>
+    </td>
   </tr>
-  <tr>
+   <tr>
     <td class="span">Vessel</td>
     <td class="span">:</td>
-    <td class="span" colspan="5"><?php echo @$item->result()[0]->VOY; ?></td>
+    <td class="span" colspan="5"><?php echo @$item->result()[0]->VESSEL; ?></td>
+  </tr>
+  <tr>
+    <td class="span">Voyage</td>
+    <td class="span">:</td>
+    <td class="span" colspan="5">
+    <?php 
+      $data_voy ="";
+      $arr_voy =  json_decode( @$item->result()[0]->VOY);
+      foreach ($arr_voy as $key => $value) {
+        $data_voy .=$value.", ";
+      }
+      echo  rtrim($data_voy, ', ');
+    ?>
+    </td>
   </tr>
   <tr>
     <td class="span">Location</td>
@@ -114,21 +138,27 @@
   <tr>
     <td class="span">Loading Date</td>
     <td class="span">:</td>
-    <td class="span"><?php echo @$item->result()[0]->lsd; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span" colspan="2">
+      <?php echo check_exist_date($item->result()[0]->LOADING_START_DATE) ?> &nbsp;
+      <?php echo check_exist($item->result()[0]->LOADING_START_TIME) ?>
+    </td>
+    <td class="span" colspan="3">s/d &nbsp;
+      <?php echo check_exist_date($item->result()[0]->LOADING_COMPLETE_DATE) ?>
+      <?php echo check_exist($item->result()[0]->LOADING_COMPLETE_TIME) ?>
+    </td>
   </tr>
-  <!--<tr>
-    <td>Discharge Date</td>
-    <td>:</td>
-    <td><?php echo @$item->result()[0]->lcd; ?></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>-->
+   <tr>
+    <td class="span">Discharge Date</td>
+    <td class="span">:</td>
+     <td class="span" colspan="2">
+      <?php echo check_exist_date($item->result()[0]->DISCHARGE_START_DATE) ?> &nbsp;
+      <?php echo check_exist($item->result()[0]->DISCHARGE_START_TIME) ?>
+    </td>
+    <td class="span" colspan="3">s/d &nbsp;
+      <?php echo check_exist_date($item->result()[0]->DISCHARGE_COMPLETE_DATE) ?>
+      <?php echo check_exist($item->result()[0]->DISCHARGE_COMPLETE_TIME) ?>
+    </td>
+  </tr>
   <tr>
     <td class="span">Bill of Lading No</td>
     <td class="span">:</td>
@@ -138,11 +168,11 @@
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
   </tr>
-  <tr>
+   <tr>
     <td class="span">Bill of Lading Date</td>
     <td class="span">:</td>
-    <td class="span"><?php echo convert_date(@$item->result()[0]->BL_START_DATE,'d/m/Y'); ?></td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist_date($item->result()[0]->BL_START_DATE); ?></td>
+    <td class="span"><?php echo check_exist($item->result()[0]->BL_START_TIME); ?></td>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
@@ -150,7 +180,7 @@
   <tr>
     <td class="span" valign="top">Surveyor in charge</td>
     <td class="span" valign="top">:</td>
-    <td class="span" valign="top" colspan="5"> <?php 
+    <td class="span" colspan="5"> <?php 
   $tes=json_decode(@$item->result()[0]->SURVEYOR_IN_CHARGE);    
   if (is_array($tes) || is_object($tes))
   { 
@@ -211,8 +241,7 @@
     <td class="span"><strong>Date</strong></td>
     <td></td>
     <td class="span"><strong>Time</strong></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td class="span" colspan="2"><strong>Remarks/Delays/Etc</strong></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -223,191 +252,173 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
-  <tr>
-    <td class="span">Vessel Arrive</td>
+   <tr>
+    <td class="span">Vessel Arrived</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->dva; ?></td>
+    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_VESSEL_ARRIVED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_VESSEL_ARRIVED; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_VESSEL_ARRIVED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_VESSEL_ARRIVED); ?></td>
   </tr>
   <tr>
-    <td class="span">Vessel Anchoraged</td>
+    <td class="span">Vessel Anchorage</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->danchor; ?></td>
+    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_ANCHORAGED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_ANCHORAGED; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_ANCHORAGED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_ANCHORAGED); ?></td>
   </tr>
   <tr>
     <td class="span">Notice of Readiness Tendered</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->danor; ?></td>
+    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_NOR); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_NOR; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_NOR); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_NOR); ?></td>
   </tr>
   <tr>
     <td class="span">Notice of Readiness Accepted</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->dacept; ?></td>
+    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_ACCEPTED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_ACCEPTED; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_ACCEPTED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_ACCEPTED); ?></td>
   </tr>
   <tr>
     <td class="span">Vessel Berthed</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->daber; ?></td>
+    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_BERTHED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_BERTHED; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_BERTHED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_BERTHED); ?></td>
   </tr>
   <tr>
     <td class="span">Surveyor On Board</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->dasubord; ?></td>
+    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_SURVEYOR_ON_BOARD); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_SURVEYOR_ON_BOARD; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_SURVEYOR_ON_BOARD); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_SURVEYOR_ON_BOARD); ?></td>
   </tr>
   <tr>
     <td class="span">Key Meeting</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->dkm; ?></td>
+    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_KEY_MEETING); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_KEY_MEETING; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_KEY_MEETING); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_KEY_MEETING); ?></td>
   </tr>
   <tr>
     <td class="span">Tanks Inspection Commenced</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->dacomenc; ?></td>
+    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_COMMENCED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_COMMENCED; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_COMMENCED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_COMMENCED); ?></td>
   </tr>
   <tr>
     <td class="span">Tanks Inspection Completed</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->dacomplet; ?></td>
+    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_COMPLETED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_COMPLETED; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_COMPLETED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_COMPLETED); ?></td>
   </tr>
   <tr>
     <td class="span">Hose  Connected Commenced</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->daconmenced; ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_CONNECTED_COMMENCED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_CONNECTED_COMMENCED; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_CONNECTED_COMMENCED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_CONNECTED_COMMENCED); ?></td>
   </tr>
   <tr>
     <td class="span">Hose  Connected Completed</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->daconpleted; ?></td>
+    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_CONNECTED_COMPLETED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_CONNECTED_COMPLETED; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_CONNECTED_COMPLETED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_CONNECTED_COMPLETED); ?></td>
   </tr>
   <tr>
     <td class="span">Loading  Commenced</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->dlomenced; ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_COMMENCED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_LOADING_COMMENCED; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_COMMENCED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_COMMENCED); ?></td>
+
   </tr>
   <tr>
     <td class="span"> Loading  Completed</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->dlocomplet; ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_COMPLETED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_LOADING_COMPLETED; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_LOADING_COMPLETED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_COMPLETED); ?></td>
   </tr>
   <tr>
     <td class="span">Hose  Disconnected</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->dahoconeted; ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_HOSE_CONNECTED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_HOSE_CONNECTED; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_HOSE_CONNECTED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_HOSE_CONNECTED); ?></td>
   </tr>
   <tr>
     <td class="span">Sampling  Commenced</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->dasamcomened; ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_SAMPLING_COMMENCED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_SAMPLING_COMMENCED; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_SAMPLING_COMMENCED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_SAMPLING_COMMENCED); ?></td>
   </tr>
   <tr>
     <td class="span">Sampling  Completed</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->dasamcomplet; ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_SAMPLING_COMPLETED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_SAMPLING_COMPLETED; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_SAMPLING_COMPLETED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_SAMPLING_COMPLETED); ?></td>
   </tr>
   <tr>
     <td class="span">Cargo  Measurement Commenced</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->damenced; ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_MEASUREMENT_COMMENCED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_MEASUREMENT_COMMENCED; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_MEASUREMENT_COMMENCED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_MEASUREMENT_COMMENCED); ?></td>
   </tr>
   <tr>
     <td class="span">Cargo  Measurement Completed</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->damencomplet; ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_MEASUREMENT_COMPLETED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_MEASUREMENT_COMPLETED; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_MEASUREMENT_COMPLETED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_MEASUREMENT_COMPLETED); ?></td>
   </tr>
   <tr>
     <td class="span">Document  OnBoard</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->dadoon; ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DOCUMENTS_ONBOARD); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_DOCUMENTS_ONBOARD; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DOCUMENTS_ONBOARD); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DOCUMENTS_ONBOARD); ?></td>
   </tr>
   <tr>
     <td class="span">Vessel  Sailed</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->davesa; ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_VESSEL_SAILED); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo @$item->result()[0]->TIME_VESSEL_SAILED; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_VESSEL_SAILED); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_VESSEL_SAILED); ?></td>
   </tr>
-  <tr>
+    <tr>
     <td class="span">Remarks</td>
     <td class="span">:</td>
-    <td colspan="5"><?php echo @$item->result()[0]->ACTIVITIES_REMARKS; ?></td>
-    </tr>
+    <td class="span" colspan="5">
+      <?php echo check_exist($item->result()[0]->ACTIVITIES_REMARKS); ?></td>
+  </tr>
   <tr>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
@@ -439,125 +450,251 @@
     <td class="span" align="center">Long Ton</td>
   </tr>
   <tr>
+    <td class="span"><strong>BL Figure</strong></td>
     <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
   </tr>
   <tr>
-    <td class="span">Bill of Lading</td>
+    <?php 
+      $BL_QUANTITY_KLOBS = number_format((float)$item->result()[0]->BL_QUANTITY_KLOBS, 3, '.', '');
+      $BL_QUANTITY_KL15 = number_format((float)$item->result()[0]->BL_QUANTITY_KL15, 3, '.', '');
+      $BL_QUANTITY_BBLS = number_format((float)$item->result()[0]->BL_QUANTITY_BBLS, 3, '.', '');
+      $BL_QUANTITY_METRICTON = number_format((float)$item->result()[0]->BL_QUANTITY_METRICTON, 3, '.', '');
+      $BL_QUANTITY_LONGTON = number_format((float)$item->result()[0]->BL_QUANTITY_LONGTON, 3, '.', '');
+    ?>  
+    <td class="span">BL Quantity</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->BL_QUANTITY_KLOBS; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->BL_QUANTITY_KL15; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->BL_QUANTITY_BBLS; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->BL_QUANTITY_METRICTON; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->BL_QUANTITY_LONGTON; ?></td>
+    <td class="span" align="center"><?php echo check_exist($BL_QUANTITY_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($BL_QUANTITY_KL15); ?> </td>
+    <td class="span" align="center"><?php echo check_exist($BL_QUANTITY_BBLS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($BL_QUANTITY_METRICTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($BL_QUANTITY_LONGTON); ?></td>
   </tr>
   <tr>
-    <td class="span">Vessel Loaded(GSV)</td>
+    <td class="span">BL Figure based on</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->SL_GSV_KLOBS; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->SL_GSV_KL15; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->SL_GSV_BBLS; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->SL_GSV_METRICTON; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->SL_GSV_LONGTON; ?></td>
+    <td class="span" align="center">
+    <?php if(@$item->result()[0]->BL_FLOW_METER=="Y") { ?>
+      <i style="color:green" class="fa fa-check"></i> 
+    <?php } else { ?>
+      <i style="color:red" class="fa fa-check"></i> 
+    <?php }  ?><br>Flow Meter</td>
+    <td class="span" align="center">
+    <?php if(@$item->result()[0]->BL_SHORE_TANK=="Y") { ?>
+      <i style="color:green" class="fa fa-check"></i> 
+    <?php } else { ?>
+      <i style="color:red" class="fa fa-times"></i> 
+    <?php }  ?><br>Shore Tank</td>
+    <td class="span" align="center">
+      <?php if(@$item->result()[0]->BL_SHIP_TANK=="Y") { ?>
+      <i style="color:green" class="fa fa-check"></i> 
+    <?php } else { ?>
+      <i style="color:red" class="fa fa-times"></i> 
+    <?php }  ?><br>Ship Tank</td>
+    <td class="span" align="center"><?php //echo @$item->result()[0]->BL_SFAL_METRICTON; ?></td>
+    <td class="span" align="center"><?php //echo @$item->result()[0]->BL_SFAL_LONGTON; ?></td>
+  </tr>
+   <?php 
+      $BL_15_DERAJAT_CELCIUS = number_format((float)$item->result()[0]->BL_15_DERAJAT_CELCIUS, 3, '.', '');
+    ?>  
+   <tr>
+    <td class="span">DENSITY@15°C</td>
+    <td class="span">&nbsp;</td>
+    <td align="center" class="span"><?php echo check_exist($BL_15_DERAJAT_CELCIUS); ?></td>
+    <td colspan="4" class="span"></td>
   </tr>
   <tr>
-    <td class="span">Differences(4Bform)</td>
+    <td colspan="7" class="span" style="height:20px"></td>
+  </tr>
+
+  <tr>
+    <td class="span"><strong>Shore Figure</strong></td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php //echo @$item->result()[0]->SL_GSV_KLOBS; ?></td>
-    <td class="span" align="center"><?php //echo @$item->result()[0]->SL_GSV_KL15; ?></td>
-    <td class="span" align="center"><?php //echo @$item->result()[0]->SL_GSV_BBLS; ?></td>
-    <td class="span" align="center"><?php //echo @$item->result()[0]->SL_GSV_METRICTON; ?></td>
-    <td class="span" align="center"><?php //echo @$item->result()[0]->SL_GSV_LONGTON; ?></td>
+    <td class="span" align="center">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
   </tr>
   <tr>
-    <td class="span">% tase</td>
+     <?php 
+      $SF_QUANTITY_KLOBS = number_format((float)$item->result()[0]->SF_QUANTITY_KLOBS, 3, '.', '');
+      $SF_QUANTITY_KL15 = number_format((float)$item->result()[0]->SF_QUANTITY_KL15, 3, '.', '');
+      $SF_QUANTITY_BBLS = number_format((float)$item->result()[0]->SF_QUANTITY_BBLS, 3, '.', '');
+      $SF_QUANTITY_METRICTON = number_format((float)$item->result()[0]->SF_QUANTITY_METRICTON, 3, '.', '');
+      $SF_QUANTITY_LONGTON = number_format((float)$item->result()[0]->SF_QUANTITY_LONGTON, 3, '.', '');
+    ?>  
+    <td class="span">Shore Quantity</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php //echo @$item->result()[0]->SL_GSV_KLOBS; ?></td>
-    <td class="span" align="center"><?php //echo @$item->result()[0]->SL_GSV_KL15; ?></td>
-    <td class="span" align="center"><?php //echo @$item->result()[0]->SL_GSV_BBLS; ?></td>
-    <td class="span" align="center"><?php //echo @$item->result()[0]->SL_GSV_METRICTON; ?></td>
-    <td class="span" align="center"><?php //echo @$item->result()[0]->SL_GSV_LONGTON; ?></td>
+    <td class="span" align="center"><?php echo check_exist($SF_QUANTITY_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SF_QUANTITY_KL15); ?> </td>
+    <td class="span" align="center"><?php echo check_exist($SF_QUANTITY_BBLS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SF_QUANTITY_METRICTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SF_QUANTITY_LONGTON); ?></td>
   </tr>
   <tr>
-    <td class="span">OBQ</td>
+      <?php 
+      $ST_NOMINATION = number_format((float)$item->result()[0]->ST_NOMINATION, 3, '.', '');
+    ?>  
+    <td class="span">Shore Tanks Nomination</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->OBQ_QUANTITY_KLOBS; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->OBQ_QUANTITY_KL15; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->OBQ_QUANTITY_BBLS; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->OBQ_QUANTITY_METRICTON; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->OBQ_QUANTITY_LONGTON; ?></td>
+    <td align="center" class="span"><?php echo check_exist($ST_NOMINATION); ?></td>
+    <td colspan="4" class="span"></td>
+  </tr>
+
+  <tr>
+    <td colspan="7" class="span" style="height:20px"></td>
+  </tr>
+
+   <tr>
+    <td class="span"><strong>Ship Figure</strong></td>
+    <td class="span">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
   </tr>
   <tr>
-    <td class="span">Free  Water</td>
+     <?php 
+      $OBQ_QUANTITY_KLOBS = number_format((float)$item->result()[0]->OBQ_QUANTITY_KLOBS, 3, '.', '');
+      $OBQ_QUANTITY_KL15 = number_format((float)$item->result()[0]->OBQ_QUANTITY_KL15, 3, '.', '');
+      $OBQ_QUANTITY_BBLS = number_format((float)$item->result()[0]->OBQ_QUANTITY_BBLS, 3, '.', '');
+      $OBQ_QUANTITY_METRICTON = number_format((float)$item->result()[0]->OBQ_QUANTITY_METRICTON, 3, '.', '');
+      $OBQ_QUANTITY_LONGTON = number_format((float)$item->result()[0]->OBQ_QUANTITY_LONGTON, 3, '.', '');
+    ?>  
+    <td class="span">Onboard Quantity (OBQ)</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->FWAL_KLOBS; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->FWAL_KL15; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->FWAL_BBLS; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->FWAL_METRICTON; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->FWAL_LONGTON; ?></td>
+    <td class="span" align="center"><?php echo check_exist($OBQ_QUANTITY_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($OBQ_QUANTITY_KL15); ?> </td>
+    <td class="span" align="center"><?php echo check_exist($OBQ_QUANTITY_BBLS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($OBQ_QUANTITY_METRICTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($OBQ_QUANTITY_LONGTON); ?></td>
   </tr>
   <tr>
-    <td class="span">VEF</td>
+     <?php 
+      $SFAL_TOV_KLOBS = number_format((float)$item->result()[0]->SFAL_TOV_KLOBS, 3, '.', '');
+      $SFAL_TOV_KL15 = number_format((float)$item->result()[0]->SFAL_TOV_KL15, 3, '.', '');
+      $SFAL_TOV_BBLS = number_format((float)$item->result()[0]->SFAL_TOV_BBLS, 3, '.', '');
+      $SFAL_TOV_METRICTON = number_format((float)$item->result()[0]->SFAL_TOV_METRICTON, 3, '.', '');
+      $SFAL_TOV_LONGTON = number_format((float)$item->result()[0]->SFAL_TOV_LONGTON, 3, '.', '');
+    ?>  
+    <td class="span">Ship's Figure After Loading (SFAL) - TOV</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->VEF_LOADING_BBLS; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span" align="center"><?php echo check_exist($SFAL_TOV_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SFAL_TOV_KL15); ?> </td>
+    <td class="span" align="center"><?php echo check_exist($SFAL_TOV_BBLS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SFAL_TOV_METRICTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SFAL_TOV_LONGTON); ?></td>
   </tr>
   <tr>
-    <td class="span">Density@15°C</td>
+     <?php 
+      $FWAL_KLOBS = number_format((float)$item->result()[0]->FWAL_KLOBS, 3, '.', '');
+      $FWAL_KL15 = number_format((float)$item->result()[0]->FWAL_KL15, 3, '.', '');
+      $FWAL_BBLS = number_format((float)$item->result()[0]->FWAL_BBLS, 3, '.', '');
+      $FWAL_METRICTON = number_format((float)$item->result()[0]->FWAL_METRICTON, 3, '.', '');
+      $FWAL_LONGTON = number_format((float)$item->result()[0]->FWAL_LONGTON, 3, '.', '');
+    ?>  
+    <td class="span">Free Water After Loading</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->BL_15_DERAJAT_CELCIUS; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span" align="center"><?php echo check_exist($FWAL_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($FWAL_KL15); ?> </td>
+    <td class="span" align="center"><?php echo check_exist($FWAL_BBLS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($FWAL_METRICTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($FWAL_LONGTON); ?></td>
   </tr>
   <tr>
-    <td class="span">API  60°F</td>
+     <?php 
+      $SL_GSV_KLOBS = number_format((float)$item->result()[0]->SL_GSV_KLOBS, 3, '.', '');
+      $SL_GSV_KL15 = number_format((float)$item->result()[0]->SL_GSV_KL15, 3, '.', '');
+      $SL_GSV_BBLS = number_format((float)$item->result()[0]->SL_GSV_BBLS, 3, '.', '');
+      $SL_GSV_METRICTON = number_format((float)$item->result()[0]->SL_GSV_METRICTON, 3, '.', '');
+      $SL_GSV_LONGTON = number_format((float)$item->result()[0]->SL_GSV_LONGTON, 3, '.', '');
+    ?>  
+    <td class="span">Ship's Loaded - GSV</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php //echo @$item->result()[0]->BL_15_DERAJAT_CELCIUS; ?></td>
+    <td class="span" align="center"><?php echo check_exist($SL_GSV_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SL_GSV_KL15); ?> </td>
+    <td class="span" align="center"><?php echo check_exist($SL_GSV_BBLS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SL_GSV_METRICTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SL_GSV_LONGTON); ?></td>
+  </tr>
+  <?php 
+      $VEF_LOADING_BBLS = number_format((float)$item->result()[0]->VEF_LOADING_BBLS, 3, '.', '');
+      $SL_APPLIED_VEFL_BBLS = number_format((float)$item->result()[0]->SL_APPLIED_VEFL_BBLS, 3, '.', '');
+    ?>  
+  <tr>
+    <td class="span">Vessel Experience Factor - Loading (VEF-L)</td>
     <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td align="center" class="span"><?php echo check_exist($VEF_LOADING_BBLS); ?></td>
+    <td colspan="4" class="span"></td>
   </tr>
   <tr>
-    <td class="span">S+W %  VOL</td>
+    <td class="span">Ship's Loaded (applied VEF-L)</td>
     <td class="span">&nbsp;</td>
-    <td class="span" align="center"><?php //echo @$item->result()[0]->BL_15_DERAJAT_CELCIUS; ?></td>
+    <td align="center" class="span"><?php echo check_exist($SL_APPLIED_VEFL_BBLS); ?></td>
+    <td colspan="4" class="span"></td>
+  </tr>
+
+
+  <tr>
+    <td colspan="7" class="span" style="height:20px"></td>
+  </tr>
+
+
+   <tr>
+    <td class="span"><strong>Discrepancy</strong></td>
     <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
+    <td class="span" align="center">&nbsp;</td>
   </tr>
   <tr>
+    <?php 
+      $SL_VS_BOL_R1_KLOBS = number_format((float)$item->result()[0]->SL_VS_BOL_R1_KLOBS, 3, '.', '');
+      $SL_VS_BOL_R1_KL15 = number_format((float)$item->result()[0]->SL_VS_BOL_R1_KL15, 3, '.', '');
+      $SL_VS_BOL_R1_BBLS = number_format((float)$item->result()[0]->SL_VS_BOL_R1_BBLS, 3, '.', '');
+      $SL_VS_BOL_R1_METRICTON = number_format((float)$item->result()[0]->SL_VS_BOL_R1_METRICTON, 3, '.', '');
+      $SL_VS_BOL_R1_LONGTON = number_format((float)$item->result()[0]->SL_VS_BOL_R1_LONGTON, 3, '.', '');
+    ?>  
+    <td class="span">Ship's Loaded vs Bill of Lading (R1)</td>
     <td class="span">&nbsp;</td>
+    <td class="span" align="center"><?php echo check_exist($SL_VS_BOL_R1_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SL_VS_BOL_R1_KL15); ?> </td>
+    <td class="span" align="center"><?php echo check_exist($SL_VS_BOL_R1_BBLS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SL_VS_BOL_R1_METRICTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SL_VS_BOL_R1_LONGTON); ?></td>
+  </tr> 
+  <tr>
+     <?php 
+      $SL_VEF_APPLIED_VS_BOL_KLOBS = number_format((float)$item->result()[0]->SL_VEF_APPLIED_VS_BOL_KLOBS, 3, '.', '');
+      $SL_VEF_APPLIED_VS_BOL_KL15 = number_format((float)$item->result()[0]->SL_VEF_APPLIED_VS_BOL_KL15, 3, '.', '');
+      $SL_VEF_APPLIED_VS_BOL_BBLS = number_format((float)$item->result()[0]->SL_VEF_APPLIED_VS_BOL_BBLS, 3, '.', '');
+      $SL_VEF_APPLIED_VS_BOL_METRICTON = number_format((float)$item->result()[0]->SL_VEF_APPLIED_VS_BOL_METRICTON, 3, '.', '');
+      $SL_VEF_APPLIED_VS_BOL_LONGTON = number_format((float)$item->result()[0]->SL_VEF_APPLIED_VS_BOL_LONGTON, 3, '.', '');
+    ?>  
+    <td class="span">Ship's Loaded (VEF applied) vs Bill of Lading (R1)</td>
     <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span" align="center"><?php echo check_exist($SL_VEF_APPLIED_VS_BOL_KLOBS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SL_VEF_APPLIED_VS_BOL_KL15); ?> </td>
+    <td class="span" align="center"><?php echo check_exist($SL_VEF_APPLIED_VS_BOL_BBLS); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SL_VEF_APPLIED_VS_BOL_METRICTON); ?></td>
+    <td class="span" align="center"><?php echo check_exist($SL_VEF_APPLIED_VS_BOL_LONGTON); ?></td>
+  </tr>
+  <tr>
+    <td colspan="7" class="span" style="height:20px"></td>
+  </tr>
+
   </tr>
   <tr>
     <td class="span"><strong>C. REMARKS  NOTE</strong></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td class="span">Nomination Ship&rsquo;s Tanks</td>
-    <td class="span">:</td>
+    <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
@@ -565,8 +702,29 @@
     <td class="span">&nbsp;</td>
   </tr>
   <tr>
-    <td class="span">Non  Nom Ship&rsquo;s Tanks</td>
+    <td class="span"><strong>Bunker onboard</strong></td>
+    <td class="span"></td>
+    <td class="span" colspan="2"></td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr>
+   <tr>
+    <td class="span">On Arrival</td>
     <td class="span">:</td>
+    <td class="span" colspan="2">MFO/metric ton &nbsp; <?php echo check_exist($item->result()[0]->BO_MFO_ON_ARRIVAL); ?></td>
+    <td class="span" colspan="2">MDO/metric ton &nbsp; <?php echo check_exist($item->result()[0]->BO_MDO_ON_ARRIVAL); ?></td>
+    <td class="span">&nbsp;</td>
+  </tr> 
+  <tr>
+    <td class="span">On Departure</td>
+    <td class="span">:</td>
+    <td class="span" colspan="2">MFO/metric ton &nbsp; <?php echo check_exist($item->result()[0]->BO_MFO_ON_DEPARTURE); ?></td>
+    <td class="span" colspan="2">MDO/metric ton &nbsp; <?php echo check_exist($item->result()[0]->BO_MDO_ON_DEPARTURE); ?></td>
+    <td class="span">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
@@ -574,143 +732,57 @@
     <td class="span">&nbsp;</td>
   </tr>
   <tr>
-    <td class="span">NOAD/LOP/SOF  Issued</td>
-    <td class="span">:</td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->RN_NOTICE_ISSUE; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->RN_LETTER_ISSUE; ?></td>
-    <td class="span" align="center"><?php echo @$item->result()[0]->RN_STATEMENT_ISSUE; ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span"><strong>Ships & Sea Condition</strong></td>
+    <td class="span"></td>
+    <td class="span" colspan="2"></td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
   </tr>
   <tr>
-    <td class="span">Sample  Source for Analysis</td>
+    <td class="span">On Arrival</td>
     <td class="span">:</td>
-    <td class="span" colspan="5"><?php echo @$item->result()[0]->SAMPLE_SOURCE; ?></td>
+    <td class="span" colspan="2">DRAFT/meter FWD &nbsp; <?php echo check_exist($item->result()[0]->SC_ON_ARRIVAL_DRAFT_FWD); ?></td>
+    <td class="span" colspan="2">DRAFT/meter AFT &nbsp; <?php echo check_exist($item->result()[0]->SC_ON_ARRIVAL_DRAFT_AFT); ?></td>
+    <td class="span">LIST &nbsp; <?php echo check_exist($item->result()[0]->SC_ON_ARRIVAL_DRAFT_LIST); ?></td>
+  </tr> 
+  <tr>
+      <td class="span">On Departure</td>
+      <td class="span">:</td>
+      <td class="span" colspan="2">DRAFT/meter FWD &nbsp; <?php echo check_exist($item->result()[0]->SC_ON_DEPARTURE_DRAFT_FWD); ?></td>
+      <td class="span" colspan="2">DRAFT/meter AFT &nbsp; <?php echo check_exist($item->result()[0]->SC_ON_DEPARTURE_DRAFT_AFT); ?></td>
+      <td class="span">LIST &nbsp; <?php echo check_exist($item->result()[0]->SC_ON_DEPARTURE_DRAFT_LIST); ?></td>
+  </tr>
+    <tr>
+      <td class="span" colspan="1">Ships & Sea Condition</td>
+      <td class="span" colspan="1">:</td>
+      <td class="span" colspan="5"><?php echo check_exist($item->result()[0]->SC); ?></td>
     </tr>
+    <tr style="height:100px"> 
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+  </tr>
+  
+  
+  
+</table>
+ </td></tr>
+    </table></td>
+    <td class="span">&nbsp;</td>
+  </tr>
   <tr>
-    <td class="span">Draft Arrival</td>
-    <td class="span">:</td>
-    <td class="span" colspan="2">Fwd&nbsp;<?php echo @$item->result()[0]->SC_ON_ARRIVAL_DRAFT_FWD; ?>&nbsp;M</td>
-    <td class="span" colspan="2">Aft&nbsp;<?php echo @$item->result()[0]->SC_ON_ARRIVAL_DRAFT_AFT; ?>&nbsp;M</td>
-    <td class="span">&nbsp;</td>
-  </tr>
-   <tr>
-    <td class="span">Draft Departure</td>
-    <td class="span">:</td>
-    <td class="span" colspan="2">Fwd&nbsp;<?php echo @$item->result()[0]->SC_ON_DEPARTURE_DRAFT_FWD; ?>&nbsp;M</td>
-    <td class="span" colspan="2">Aft&nbsp;<?php echo @$item->result()[0]->SC_ON_DEPARTURE_DRAFT_AFT; ?>&nbsp;M</td>
-    <td class="span">&nbsp;</td>
-  </tr>
-   <tr>
-    <td class="span">Bunker  Condition</td>
-    <td class="span">:</td>
-    <td class="span">Arrival </td>
-    <td class="span" colspan="2">MFO&nbsp;&nbsp;&nbsp;<?php echo @$item->result()[0]->BO_MFO_ON_ARRIVAL; ?></td>
-    <td class="span" colspan="2">MDO&nbsp;&nbsp;&nbsp;<?php echo @$item->result()[0]->BO_MDO_ON_ARRIVAL; ?></td>
-    </tr>
-   <tr>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">Departure</td>
-    <td class="span" colspan="2">MFO&nbsp;&nbsp;&nbsp;<?php echo @$item->result()[0]->BO_MFO_ON_DEPARTURE; ?></td>
-    <td class="span" colspan="2">MDO&nbsp;&nbsp;&nbsp;<?php echo @$item->result()[0]->BO_MDO_ON_DEPARTURE; ?></td>
-    </tr>
-   <tr>
-    <td class="span">Sea  Condition</td>
-    <td class="span">:</td>
-    <td class="span" colspan="5"><?php echo @$item->result()[0]->SC; ?></td>
-    </tr>
-   <tr>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-  </tr>
-   <tr>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-  </tr>
-   <tr>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-  </tr>
-   <tr>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-  </tr>
-   <tr>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-  </tr>
-   <tr>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-  </tr>
-   <tr>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-  </tr>
-   <tr>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-  </tr>
-   <tr>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
   </tr>
 </table>
-  </td></tr></table></td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-</table>
+
+        
+          
         </div>
     </div>
   </div>

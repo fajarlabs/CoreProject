@@ -71,6 +71,10 @@
 							<!-- Tempat Chart -->
 							<table id="div_chart_1" style="display:none;width:100%;margin-top:3px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 								<tr>
+									<td><div style="width:500px;height:400px;" id="chart3">No Data</div></td>
+									<td><div style="width:500px;height:400px;" id="chart4">No Data</div></td>
+								</tr>
+								<tr>
 									<td><div style="width:500px;height:400px;" id="chart1">No Data</div></td>
 									<td><div style="width:500px;height:400px;" id="chart2">No Data</div></td>
 								</tr>
@@ -89,6 +93,7 @@
 	 	    		$.get('<?php echo base_url(); ?>index.php/dashboard/chart_rest/?'+$(this).serialize(),function(json){
 	 	    			// show division
 	 	    			$("#div_chart_1").show();
+	 	    			$("#div_chart_2").show();
 
 						var categories1 = ['R1_KLOBS','R1_KL15','R1_BBLS','R1_LONGTON','R1_METRICTON','R1_VEF_KLOBS','R1_VEF_KL15','R1_VEF_BBLS','R1_VEF_LONGTON','R1_VEF_METRICTON'];
 						var title1 = 'Statistik Data (R1) Loading';
@@ -97,6 +102,9 @@
 	 	    			var categories2 = ['SLVS_BOL_R1_KLOBS','SLVS_BOL_R1_KL15','SLVS_BOL_R1_BBLS','SLVS_BOL_R1_LONGTON','SLVS_BOL_R1_METRICTON','SFAL_VS_SFBD_R2_KLOBS','SFAL_VS_SFBD_R2_KL15','SFAL_VS_SFBD_R2_BBLS','SFAL_VS_SFBD_R2_LONGTON','SFAL_VS_SFBD_R2_METRICTON','SFBD_VS_SR_R3_KLOBS','SFBD_VS_SR_R3_KL15','SFBD_VS_SR_R3_BBLS','SFBD_VS_SR_R3_LONGTON','SFBD_VS_SR_R3_METRICTON','SR_VS_BOL_R4_KLOBS','SR_VS_BOL_R4_KL15','SR_VS_BOL_R4_BBLS','SR_VS_BOL_R4_LONGTON','SR_VS_BOL_R4_METRICTON'];
 	 	    			var title2 = 'Statistik Data (R1,R2,R3,R4) Discharge';
 	 	    			columnNegative(json[1],"chart2",categories2,title2);
+
+	 	    			column_curva('','chart3','','Statistik');
+	 	    			column_pie('','chart4','','Statistik Data (R1,R2,R3,R4) Discharge');
 	 	    		});
 	 	    		return false;
 	 	    	}); 
@@ -121,5 +129,101 @@
 			    },
 			    series: data
 			});
+		 }
+
+		 function column_curva(data,chart_id,categories,title) {
+		 	Highcharts.chart(chart_id, {
+			    chart: {
+			        type: 'area',
+			        spacingBottom: 30
+			    },
+			    title: {
+			        text: title
+			    },
+			    xAxis: {
+			        categories: categories
+			    },
+			    credits: {
+			        enabled: false
+			    },
+			    yAxis: {
+			        title: {
+			            text: 'Liter'
+			        },
+			        labels: {
+			            formatter: function () {
+			                return this.value;
+			            }
+			        }
+			    },
+			    tooltip: {
+			        formatter: function () {
+			            return '<b>' + this.series.name + '</b><br/>' +
+			                this.x + ': ' + this.y;
+			        }
+			    },
+			    plotOptions: {
+			        area: {
+			            fillOpacity: 0.5
+			        }
+			    },
+			    series: [{
+			        name: 'Target',
+			        data: [100000, 120000, 6000, 500000, 320000, 400000, 140000,480000]
+			    }, {
+			        name: 'Diterima',
+			        data: [8000, 120000, 5000, 300000, 120000, 200000, 9000,430000]
+			    }]
+			});
+		 }
+
+		 function column_pie(data,chart_id,categories,title) {
+		 	Highcharts.chart(chart_id, {
+				    chart: {
+				        plotBackgroundColor: null,
+				        plotBorderWidth: null,
+				        plotShadow: false,
+				        type: 'pie'
+				    },
+				    title: {
+				        text: title
+				    },
+				    credits: {
+				        enabled: false
+				    },
+				    tooltip: {
+				        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+				    },
+				    plotOptions: {
+				        pie: {
+				            allowPointSelect: true,
+				            cursor: 'pointer',
+				            dataLabels: {
+				                enabled: true,
+				                format: '<b>{point.name}</b>: {point.percentage:.1f}%',
+				                style: {
+				                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+				                }
+				            }
+				        }
+				    },
+				    series: [{
+				        name: 'Discharge',
+				        colorByPoint: true,
+				        data: [{
+				            name: 'R1',
+				            y: 11.84
+				        }, {
+				            name: 'R2',
+				            y: 10.85
+				        }, {
+				            name: 'R3',
+				            y: 4.67
+				        }, {
+				            name: 'R4',
+				            y: 4.18
+				        }]
+				    }]
+				});
 		 }
 	</script>

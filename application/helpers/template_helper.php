@@ -531,7 +531,19 @@ if(!function_exists('get_client_group_id'))
 }
 
 function check_exist($var){
-	return (!empty($var) ? $var : ' - ');
+	$result="";
+	if(!empty($var)){
+		if($var=="0.000"){
+			$result="-";
+		}
+		else {
+			$result=$var;
+		}
+	}
+	else {
+		$result="-";
+	}
+	return $result;
 }
 function check_exist_date($var){
 	return (!empty($var) ? convert_date($var,'d/m/Y')  : ' - ');
