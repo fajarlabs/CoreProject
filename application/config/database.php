@@ -89,7 +89,7 @@ $db['default'] = array(
 	//-----------------------------------------------	
 	'hostname' => 'pgsql:host=localhost;dbname=sucofindo',
 	'username' => 'postgres',
-	'password' => 'qwerty147',
+	'password' => 'postgres',
 	'database' => 'sucofindo',
 
 	//-----------------------------------------------
