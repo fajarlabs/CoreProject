@@ -26,44 +26,58 @@
 		                	<?php echo form_open('',array('id' => 'chart_form')); ?>
 							<table style="width:100%;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 								<tr>
-									<td style="width:190px;">
-									<?php echo form_label('Tanggal Awal') ?>
+									<td >
+										<?php echo form_label('Produk') ?><br/>
+										<select name="produk" style="height:33px;">	
+											<option value="">--Pilih--</option>
+											<?php foreach($product as $pr){ ?>
+												<option  value='<?php echo $pr->PRODUCT_ID ?>'><?php echo $pr->PRODUCT_NAME ?></option>
+											<?php } ?>		
+										</select>
+									</td>
+									<td>
+										<?php echo form_label('Intervensi') ?><br/>
+										<select name="intervensi" style="height:33px;">
+											<option value="">--Pilih--</option>
+											<?php foreach($intervensi as $itv){ ?>
+												<option  value='<?php echo $itv->ID ?>'><?php echo $itv->INTERVENTION_NAME ?></option>
+											<?php } ?>		
+										</select>
+									</td>	
+									<td>
+										<?php echo form_label('Costumer'); ?><br/>
+										<select name="cst_id" style="height:33px;">
+											<option value="">--Pilih--</option>
+											<?php 
+											$ct =  $client[0]->CLIENTS;
+											$clnt = json_decode($ct);
+											foreach($clnt as $clt){ ?>
+												<option value="<?php echo $clt ?>"><?php echo $clt ?></option>
+											<?php } ?>	
+										</select>
+									</td>		
+									<td>
+									<?php 
+									echo form_label('Lokasi Kerja') ?><br/>
+										<select name="lokasi_kerja" style="height:33px;">
+									<?php foreach($area as $ar){ ?>
+												<option  value='<?php echo $ar->AREA ?>'><?php echo $ar->AREA ?></option>
+											<?php } ?>		
+										</select>
+									</td>
+									<td >
+									<?php echo form_label('Tanggal Awal') ?><br/>
 									<?php 
 										//$dtbarge=date("m/d/Y", strtotime($row->DATE_LOADING_BARGE));
 											echo form_input(array('type' => 'text', 'name' => 'date_start','class' => 'datepicker', 'style' => ' min-width:100px !important;width:100px;height:33px;color:#000 !important;', 'value' => '')); ?>
 										</td>
-										<td style="width:190px;">
-										<?php echo form_label('Tanggal Akhir') ?>
+										<td style="width:300px;">
+										<?php echo form_label('Tanggal Akhir') ?><br/>
 										<?php 
 											//$dtbarge=date("m/d/Y", strtotime($row->DATE_LOADING_BARGE));
 											echo form_input(array('type' => 'text', 'name' => 'date_end','class' => 'datepicker', 'style' => ' min-width:100px !important;width:100px;height:33px;color:#000 !important;', 'value' => '')); ?>
-										</td>
-										<td style="width:150px;">
-											<?php echo form_label('Produk') ?>
-											<input type="text" name="produk" style="width:100px;height:33px;" />
-										</td>
-										<td style="width:150px;">
-											<?php echo form_label('Vessel') ?>
-											<input type="text" name="vessel" style="width:100px;height:33px;" />
-										</td>
-										<td>
-										<?php echo form_label('Pilih Lokasi Kerja') ?>
-										<?php
-										$site_array = array();
-										$site_array[0] = "--Pilih--";
-										if($sites->num_rows() > 0) {
-											foreach($sites->result() as $row) {
-												$site_array[$row->CLIENT_SITE_ID] = $row->CLIENT_SITE_NAME;
-											}
-										}
-										?>
-											<select name="site_id" style="height:33px;">
-												<?php foreach($site_array as $key => $val) {
-													echo '<option value="'.$key.'">'.$val.'</option>';
-												}?>
-											</select>
-										<a style="height:33px;margin-top:-3px;margin-left:5px;" href="#" onclick="$(this).closest('form').submit()" class="btn btn-primary"><i class="fa fa-dashboard"></i> Lihat</a>
-									</td>						
+											<a style="height:33px;margin-top:-3px;margin-left:5px;" href="#" onclick="$(this).closest('form').submit()" class="btn btn-primary"><i class="fa fa-dashboard"></i> Lihat</a>
+									</td>					
 								</tr>
 							</table>
 							<?php echo form_close(); ?>
@@ -75,9 +89,13 @@
 									<td><div style="width:500px;height:400px;" id="chart4">No Data</div></td>
 								</tr>
 								<tr>
+									<td><div style="width:500px;height:400px;" id="chart5">No Data</div></td>
+									<td><div style="width:500px;height:400px;" id="chart6">No Data</div></td>
+								</tr>
+								<!--<tr>
 									<td><div style="width:500px;height:400px;" id="chart1">No Data</div></td>
 									<td><div style="width:500px;height:400px;" id="chart2">No Data</div></td>
-								</tr>
+								</tr>-->
 							</table>
 						</div>
 					</div>                
@@ -97,13 +115,17 @@
 
 						var categories1 = ['R1_KLOBS','R1_KL15','R1_BBLS','R1_LONGTON','R1_METRICTON','R1_VEF_KLOBS','R1_VEF_KL15','R1_VEF_BBLS','R1_VEF_LONGTON','R1_VEF_METRICTON'];
 						var title1 = 'Statistik Data (R1) Loading';
-	 	    			columnNegative(json[0],"chart1",categories1,title1);
+	 	    			//columnNegative(json[0],"chart1",categories1,title1);
 
 	 	    			var categories2 = ['SLVS_BOL_R1_KLOBS','SLVS_BOL_R1_KL15','SLVS_BOL_R1_BBLS','SLVS_BOL_R1_LONGTON','SLVS_BOL_R1_METRICTON','SFAL_VS_SFBD_R2_KLOBS','SFAL_VS_SFBD_R2_KL15','SFAL_VS_SFBD_R2_BBLS','SFAL_VS_SFBD_R2_LONGTON','SFAL_VS_SFBD_R2_METRICTON','SFBD_VS_SR_R3_KLOBS','SFBD_VS_SR_R3_KL15','SFBD_VS_SR_R3_BBLS','SFBD_VS_SR_R3_LONGTON','SFBD_VS_SR_R3_METRICTON','SR_VS_BOL_R4_KLOBS','SR_VS_BOL_R4_KL15','SR_VS_BOL_R4_BBLS','SR_VS_BOL_R4_LONGTON','SR_VS_BOL_R4_METRICTON'];
 	 	    			var title2 = 'Statistik Data (R1,R2,R3,R4) Discharge';
-	 	    			columnNegative(json[1],"chart2",categories2,title2);
+
+	 	    			//columnNegative(json[1],"chart2",categories2,title2);
 
 	 	    			column_curva('','chart3','','Statistik');
+	 	    			chart_dobule_line('','chart5','','Statistik');
+	 	    			chart_line('','chart6','','Statistik');
+
 	 	    			column_pie('','chart4','','Statistik Data (R1,R2,R3,R4) Discharge');
 	 	    		});
 	 	    		return false;
@@ -129,6 +151,109 @@
 			    },
 			    series: data
 			});
+		 }
+
+		 function chart_dobule_line(data,chart_id,categories,title){
+				Highcharts.chart(chart_id, {
+				    chart: {
+				        type: 'spline'
+				    },
+				    title: {
+				        text: 'Statistik'
+				    },
+				    credits: {
+				        enabled: false
+				    },
+				    xAxis: {
+				        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+				            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+				    },
+				    yAxis: {
+				        title: {
+				            text: 'Liter'
+				        },
+				        labels: {
+				            formatter: function () {
+				                return this.value;
+				            }
+				        }
+				    },
+				    tooltip: {
+				        crosshairs: true,
+				        shared: true
+				    },
+				    plotOptions: {
+				        spline: {
+				            marker: {
+				                radius: 4,
+				                lineColor: '#666666',
+				                lineWidth: 1
+				            }
+				        }
+				    },
+				    series: [{
+				        name: 'Diterima',
+				        marker: {
+				            symbol: 'square'
+				        },
+				        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2,23.3, 18.3, 13.9, 9.6]
+
+				    }, {
+				        name: 'Dikirim',
+				        marker: {
+				            symbol: 'diamond'
+				        },
+				        data: [4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6]
+				    }]
+				});
+		 }
+
+		 function chart_line(data,chart_id,categories,title){
+				Highcharts.chart(chart_id, {
+				    chart: {
+				        type: 'spline'
+				    },
+				    title: {
+				        text: 'Statistik'
+				    },
+				    credits: {
+				        enabled: false
+				    },
+				    xAxis: {
+				        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+				            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+				    },
+				    yAxis: {
+				        title: {
+				            text: 'Liter'
+				        },
+				        labels: {
+				            formatter: function () {
+				                return this.value;
+				            }
+				        }
+				    },
+				    tooltip: {
+				        crosshairs: true,
+				        shared: true
+				    },
+				    plotOptions: {
+				        spline: {
+				            marker: {
+				                radius: 4,
+				                lineColor: '#666666',
+				                lineWidth: 1
+				            }
+				        }
+				    },
+				    series: [{
+				        name: 'Dikirim',
+				        marker: {
+				            symbol: 'diamond'
+				        },
+				        data: [4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6]
+				    }]
+				});
 		 }
 
 		 function column_curva(data,chart_id,categories,title) {

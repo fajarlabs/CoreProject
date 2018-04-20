@@ -137,7 +137,7 @@ class Report extends MY_Controller
         		$intervensi=$row->SELECT_INTERVENTION;		
         	}
         }
-        //$intervensi = 15;
+        // $intervensi = 16;
 		switch($intervensi){
 			case 14:	//product loading
 				$tplreport='report_loading_detil';

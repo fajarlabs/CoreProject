@@ -11,7 +11,37 @@ class Dashboard_model extends CI_Model
         return $this->db->get($this->table);
 	}
 
-	public function loading_stats($start_date='',$end_date='',$client_site_id=0,$vessel="",$produk="") 
+
+    public  function get_table_name($table,$col_name='',$order_type='',$where_col='',$where_data='') {
+        $this->db->select('*');
+        $this->db->from($table);
+        if(!empty($where_col) and !empty($where_data)){    
+            $this->db->where($where_col, $where_data);
+        }
+        if(!empty($col_name) and !empty($order_type)){
+          $this->db->order_by($col_name, $order_type);
+        }  
+
+        return $this->db->get()->result();
+    } 
+
+     public  function get_table_group_by($table,$col_name='') {
+        $this->db->select($col_name);
+        $this->db->from($table);
+        $this->db->group_by($col_name);
+        return $this->db->get()->result();
+    } 
+
+    public  function get_table_name_one($table) {
+        $this->db->select('*');
+        $this->db->from($table);
+		$this->db->limit('1');
+        return $this->db->get()->result();
+    }
+	
+
+
+	public function loading_stats($start_date='',$end_date='',$vessel="",$produk="") 
 	{
 		/* field acuan */
 		/**
@@ -46,7 +76,7 @@ class Dashboard_model extends CI_Model
 				SUM(cast("SL_VEF_APPLIED_VS_BOL_LONGTON" as double precision)) "R1_VEF_LONGTON",
 				SUM(cast("SL_VEF_APPLIED_VS_BOL_METRICTON" as double precision)) "R1_VEF_METRICTON"
 				FROM "FORM_ENTRY_FIELD"
-				WHERE "IS_DELETE" = \'0\' AND "CLIENT_SITE_ID" = \''.$client_site_id.'\' 
+				WHERE "IS_DELETE" = \'0\' 
 				AND "CREATE_TIME" >= timestamp \''.$start_date.' 00:00:00\' 
 				AND "CREATE_TIME" < timestamp \''.$end_date.' 23:59:59\' 
 				'.$str_vessel.'  
@@ -56,7 +86,7 @@ class Dashboard_model extends CI_Model
 		return $this->db->query($sql);
 	}
 
-	public function discharge_stats($start_date='',$end_date='',$client_site_id=0,$vessel="",$produk="") 
+	public function discharge_stats($start_date='',$end_date='',$vessel="",$produk="") 
 	{
 		/* field acuan */
 		/**
@@ -118,7 +148,7 @@ class Dashboard_model extends CI_Model
 				SUM(cast("SR_VS_BOL_R4_METRICTON" as double precision)) "R4_METRICTON"
 
 				FROM "FORM_ENTRY_FIELD"
-				WHERE "IS_DELETE" = \'0\' AND "CLIENT_SITE_ID" = \''.$client_site_id.'\' 
+				WHERE "IS_DELETE" = \'0\' 
 				AND "CREATE_TIME" >= timestamp \''.$start_date.' 00:00:00\' 
 				AND "CREATE_TIME" < timestamp \''.$end_date.' 23:59:59\' 
 				'.$str_vessel.'  
