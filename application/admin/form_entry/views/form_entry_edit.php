@@ -4,11 +4,13 @@ $object = @$item->result()[0];
 ?>
 <script type="text/javascript">
 
+	var d64 = JSON.parse(atob('<?php echo base64_encode(json_encode($object)); ?>'));
+	
 	// inisialisasi untuk header table
 	var header_tr = "<tr><th style=\"width:25px;\"><center>No</center></th><th style=\"width:250px;\"> &nbsp;&nbsp;Activities</th><th style=\"width:80px;\"> Time</th><th style=\"width:100px;\"> Date</th><th> Remarks/Delays/Etc</th></tr>";
 
 	// inisialisasi untuk footer table
-	var footer_tr = "<tr><td></td><td>Remarks</td><td colspan=\"3\"><input type=\"text\" style=\"margin-left:-10px;width:100%;\" name=\"activities_remarks\" /></td></tr>";
+	var footer_tr = "<tr><td></td><td>Remarks</td><td colspan=\"3\"><input type=\"text\" style=\"margin-left:-10px;width:100%;\" name=\"activities_remarks\" value=\"<?php echo @$object->ACTIVITIES_REMARKS; ?>\" /></td></tr>";
 
 	// fungsi defer untuk menunggu jquery selesai di load pada browser
 	(function defer() {
@@ -27,14 +29,61 @@ $object = @$item->result()[0];
  	  		// =============================================================================
 	  		$.get('<?php echo base_url(); ?>index.php/form_entry/get_timelog_json/'+search_name,function(json) {
 	  			var row_data = JSON.parse(json.rows[0].DATA);
+	  			var data_column = [];
 	  			for(var i=0; i < row_data.length; i++) {
-
+	  				data_column.push(row_data[i].time.toUpperCase());
+	  				data_column.push(row_data[i].date.toUpperCase());
+	  				data_column.push(row_data[i].remarks.toUpperCase());
 	  				$("#table_list_timelog").append("<tr><td>"+(i+1)+"</td><td>"+row_data[i].activities+"</td><td><input style=\"margin-left:-10px;width:60px;\" class=\"timepicker\" type=\"text\" name=\""+row_data[i].time+"\" /></td><td><input style=\"min-width:100px !important;width:100px;margin-left:-10px;\" class=\"datepicker\" data-date-format=\"dd/mm/yyyy\" type=\"text\" name=\""+row_data[i].date+"\" /></td><td><input style=\"margin-left:-10px;width:100%;\" class=\"\" type=\"text\" name=\""+row_data[i].remarks+"\" /></td></tr>");
 	  			}
 	  			$("#table_list_timelog").append(footer_tr);
 				$('.datepicker').datepicker({});
 				$('.timepicker').timepicker({defaultTime: '0:00',showMeridian: false,minuteStep: 1,showSeconds: false,showMeridian: false});
+
+	  			for(var col=0; col < data_column.length; col++) {
+	  				var val_data_column = d64[data_column[col]];
+
+	  				// filter and modified date 
+	  				if(val_data_column != null) {
+	  					var temp_split = val_data_column.split('-');
+		  				if(temp_split.length == 3) {
+		  					val_data_column = temp_split[2]+"/"+temp_split[1]+"/"+temp_split[0];
+		  				}
+	  				}
+
+	  				var low_data_column = data_column[col].toLowerCase();
+	  				$('input[name="'+low_data_column+'"]').val(val_data_column);
+	  			}
 	  		});
+
+	  		// search all & extract element in ID el_div_qty
+	  		$("#el_div_qty :input").each(function() {
+	  			// filter by type & name
+	  			var el_type = $(this).attr('type');
+	  			var el_name = $(this).attr('name');
+	  			var val_data_column = val_data_column;
+
+	  			// checkbox
+	  			if(el_type == 'checkbox') {
+	  				if(d64[el_name.toUpperCase()] == 'Y') {
+	  					$(this).prop('checked',true);
+	  				}
+	  			}
+	  			
+	  			// text
+	  			if(el_type == 'text') {
+
+	  				// filter and modified date 
+	  				if(val_data_column != null) {
+	  					var temp_split = val_data_column.split('-');
+		  				if(temp_split.length == 3) {
+		  					val_data_column = temp_split[2]+"/"+temp_split[1]+"/"+temp_split[0];
+		  				}
+	  				}
+
+	  				$(this).val(val_data_column);
+	  			}
+			});
 
 	  		// =============================================================================
  	  		// END ELEMENT TIMELOG BERDASARKAN PRODUK DAN INTERVENSI
@@ -285,15 +334,64 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tr>
 					<td>
-						<input onclick="check_principle(this)" type="radio" name="select_client" value="single_client" />Single Client
-						<input onclick="check_principle(this)" type="radio" name="select_client" value="multi_client" />Multi Client
+						<input onclick="check_principle(this)" type="radio" name="select_client" value="single_client" <?php echo (@$object->SELECT_CLIENT == 'single_client' ? 'checked' : ''); ?> />Single Client
+						<input onclick="check_principle(this)" type="radio" name="select_client" value="multi_client" <?php echo (@$object->SELECT_CLIENT == 'multi_client' ? 'checked' : ''); ?> />Multi Client
 						&nbsp;&nbsp;
-						<a style="display: none;" id="id_single_principle" onclick="add_tb_principle()" href="javascript:;" class="btn btn-success btn-xs"><i class="fa fa-plus"></i></a>
+						<a <?php echo (@$object->SELECT_CLIENT == 'multi_client' ? '' : 'style="display: none;"'); ?> id="id_single_principle" onclick="add_tb_principle()" href="javascript:;" class="btn btn-success btn-xs"><i class="fa fa-plus"></i></a>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<table id="tb_principle" style="margin-left:-10px;width:100%;">
+							<?php 
+
+								$clients = json_decode(@$object->CLIENTS);
+								if(count($clients) > 0) :
+									$i = 0;
+									foreach($clients as $key => $vl) : 
+
+										$kontrak = isset(json_decode(@$object->KONTRAK)[$i]) ? json_decode(@$object->KONTRAK)[$i] : '';
+										$spk = isset(json_decode(@$object->SPK)[$i]) ? json_decode(@$object->SPK)[$i] : '';
+										$voy = isset(json_decode(@$object->VOY)[$i]) ? json_decode(@$object->VOY)[$i] : '';
+										$fileref = '<table style="margin-top:3px;margin-left:-10px;width:100%;">'.
+											'<tr>'.
+												'<td style="width:150px;" align="left">Kontrak</td>'.
+												'<td><input style="width:300px;margin-bottom:3px;" type="text" name="kontrak[]" value="'.$kontrak.'" class=" contract_autocomplete" />'.
+												'</td>'.
+											'</tr>'.
+											'<tr>'.
+												'<td align="left">LOI/SPK/PO/WO/NOA</td>'.
+												'<td>'.
+													'<input style="width:300px;margin-bottom:3px;" type="text" name="spk[]" value="'.$spk.'" class="" />'.
+												'</td>'.
+											'</tr>'.
+											'<tr>'.
+												'<td align="left">Voy. /Trip No.</td>'.
+												'<td>'.
+													'<input style="width:300px;margin-bottom:3px;" type="text" name="voy[]" value="'.$voy.'" class="" />'.
+												'</td>'.
+											'</tr>'.
+										'</table><br />'; 
+
+										$clients = isset(json_decode(@$object->CLIENTS)[$i]) ? json_decode(@$object->CLIENTS)[$i] : '';
+										$supplier = isset(json_decode(@$object->SUPPLIER)[$i]) ? json_decode(@$object->SUPPLIER)[$i] : '';
+										$trader = isset(json_decode(@$object->TRADER)[$i]) ? json_decode(@$object->TRADER)[$i] : '';
+										$buyer = isset(json_decode(@$object->BUYER)[$i]) ? json_decode(@$object->BUYER)[$i] : '';
+										$seller = isset(json_decode(@$object->SELLER)[$i]) ? json_decode(@$object->SELLER)[$i] : '';
+										$sharing_fee = isset(json_decode(@$object->SHARING_FEE)[$i]) ? json_decode(@$object->SHARING_FEE)[$i] : '';
+
+										echo "<tr>
+												<td>
+													Client <input name=\"clients[]\" type=\"\" value=\"".$clients."\" /> 
+													<input type=\"checkbox\" name=\"supplier[]\" value=\".".$supplier.".\" />Supplier&nbsp;
+													<input type=\"checkbox\" name=\"trader[]\" value=\"".$trader."\" />Trader&nbsp;
+													<input type=\"checkbox\" name=\"buyer[]\" value=\"".$buyer."\" />Buyer&nbsp;
+													<input type=\"checkbox\" name=\"seller[]\" value=\"".$seller."\" />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee[]\" value=\"".$sharing_fee."\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> ".$fileref."</td></tr>";
+										$i++;
+									endforeach;
+								endif;
+
+								?>
 						</table>
 						<table id="external_ref" style="margin-left:-10px;width:90%;">
 							<tr><td colspan="2"><b>Internal*</b></td></tr>
@@ -426,7 +524,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 		</td>
 	</tr>
 	<tr class="general_form">
-		<td width="100px" style="padding-top:15px;"><?php echo form_label('Lokasi Pekerjaan*');?></td>
+		<td width="100px" style="padding-top:15px;"><?php echo form_label('Job Location*');?></td>
 		<td>
 			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tr>
@@ -444,8 +542,17 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 						Multi Port
 					</td>
 					<td>
-						<a id="id_tb_port" href="javascript:;" onclick="add_tb_port()" class="btn btn-success btn-xs" style="margin-left:10px;margin-bottom:2px;<?php echo @$object->SELECT_PORT == "multi_port" ? 'display:none' : '' ; ?>"><i class="fa fa-plus"></i></a>
-						<table id="tb_port" style="width:100%;"></table>
+						<a id="id_tb_port" href="javascript:;" onclick="add_tb_port()" class="btn btn-success btn-xs" style="margin-left:10px;margin-bottom:2px;<?php echo @$object->SELECT_PORT == "multi_port" ? '' : 'display:none;' ; ?>"><i class="fa fa-plus"></i></a>
+						<table id="tb_port" style="width:100%;">
+							<?php 
+							$port = json_decode(@$object->PORT_TERMINAL);
+							if(count($port) > 0) :
+								foreach($port as $key => $val):
+									echo "<tr><td style=\"padding-top:2px;\"><input type=\"text\" style=\"width:300px;\" name=\"port_terminal[]\" value=\"".$val."\" /><a onclick=\"delete_tb_port(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i> </a></td></tr>";
+								endforeach;
+							endif;
+							?>
+						</table>
 
 						<script type="text/javascript">
 							// inisialisasi element html port
@@ -496,7 +603,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 					<td>
 						<table style="width:100%;border-collapse: separate;border-spacing: 8px;">
 							<tr>
-								<td <?php echo ((@$object->SELECT_PRODUCT == 'single_product') || (@$object->SELECT_PRODUCT == 'multi_product')  ? '' : 'style="display:none;"'); ?> id="lbl_product" width="90px">Pilih Produk</td>
+								<td <?php echo ((@$object->SELECT_PRODUCT == 'single_product') || (@$object->SELECT_PRODUCT == 'multi_product')  ? '' : 'style="display:none;"'); ?> id="lbl_product" width="90px">Choose Product</td>
 								<td>
 									<a id="id_tb_product" href="javascript:;" onclick="add_tb_product()" class="btn btn-success btn-xs" <?php echo ((@$object->SELECT_PRODUCT == 'multi_product') ? '' : 'style="display:none;margin-left:10px;margin-bottom:2px;"'); ?> ><i class="fa fa-plus"></i></a>
 
@@ -723,7 +830,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 		</td>									
 	</tr>
 	<tr class="quality">
-		<td colspan="2">
+		<td id="el_div_qty" colspan="2">
 			<?php echo @$html_quantity; ?>
 		</td>
 	</tr>
@@ -759,7 +866,14 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 									<input onclick="check_notice(this)" type="radio" name="rn_notice_issue" value="no" <?php echo (@$object->RN_NOTICE_ISSUE == 'no' ? 'checked' : '') ?> />No
 								</td>
 								<td>
-									<input style="display:none;" type="file" name="rn_notice_issue_description" />	
+									<?php 
+									$file = json_decode(@$object->RN_NOTICE_ISSUE_DESCRIPTION);
+									if(!empty($file)):?>
+									<a class="btn btn-xs btn-success" href="<?php echo base_url(); ?>uploads/form_entry/<?php echo $val; ?>"><i class="fa fa-eye"></i> View</a>
+									<b><i>*if you do not want to change the file do not upload</i></b>
+									<?php endif; ?>
+
+									<input <?php echo (empty($file) ? 'style="display:none;"' : ''); ?> type="file" name="rn_notice_issue_description" />	
 								</td>
 							</tr>
 						</table>	
@@ -785,7 +899,13 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 									<input onclick="check_letter(this)" type="radio" name="rn_letter_issue" value="no" <?php echo (@$object->RN_LETTER_ISSUE == 'no' ? 'checked' : '') ?> />No
 								</td>
 								<td>
-									<input style="display:none;" type="file" name="rn_letter_issue_description" />
+									<?php 
+									$file = json_decode(@$object->RN_LETTER_ISSUE_DESCRIPTION);
+									if(!empty($file)):?>
+									<a class="btn btn-xs btn-success" href="<?php echo base_url(); ?>uploads/form_entry/<?php echo $val; ?>"><i class="fa fa-eye"></i> View</a>
+									<b><i>*if you do not want to change the file do not upload</i></b>
+									<?php endif; ?>
+									<input <?php echo (empty($file) ? 'style="display:none;"' : ''); ?> type="file" name="rn_letter_issue_description" />
 								</td>
 							</tr>
 						</table>
@@ -811,7 +931,14 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 									<input onclick="check_statement(this)" type="radio" name="rn_statement_issue" value="no"  <?php echo (@$object->RN_STATEMENT_ISSUE == 'no' ? 'checked' : '') ?> />No
 								</td>
 								<td>
-									<input style="display:none;" type="file" name="rn_statement_issue_description" />
+									<?php 
+									$file = json_decode(@$object->RN_STATEMENT_ISSUE_DESCRIPTION);
+									if(!empty($file)):?>
+									<a class="btn btn-xs btn-success" href="<?php echo base_url(); ?>uploads/form_entry/<?php echo $val; ?>"><i class="fa fa-eye"></i> View</a>
+									<b><i>*if you do not want to change the file do not upload</i></b>
+									<?php endif; ?>
+
+									<input <?php echo (empty($file) ? 'style="display:none;"' : ''); ?>" type="file" name="rn_statement_issue_description" />
 								</td>
 							</tr>
 						</table>

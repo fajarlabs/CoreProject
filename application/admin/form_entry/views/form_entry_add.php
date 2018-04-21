@@ -422,7 +422,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 		</td>
 	</tr>
 	<tr class="general_form">
-		<td width="100px" style="padding-top:15px;"><?php echo form_label('Lokasi Pekerjaan*');?></td>
+		<td width="100px" style="padding-top:15px;"><?php echo form_label('Job Location*');?></td>
 		<td>
 			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tr>
@@ -479,7 +479,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 		</td>
 	</tr>
 	<tr class="general_form">
-		<td width="100px" style="padding-top:15px;"><?php echo form_label('Produk/Komoditi*');?></td>  	
+		<td width="100px" style="padding-top:15px;"><?php echo form_label('Product/Comodity*');?></td>  	
 		<td>
 			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tr>

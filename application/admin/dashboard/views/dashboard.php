@@ -119,11 +119,13 @@
 
 	 	    			var categories2 = ['SLVS_BOL_R1_KLOBS','SLVS_BOL_R1_KL15','SLVS_BOL_R1_BBLS','SLVS_BOL_R1_LONGTON','SLVS_BOL_R1_METRICTON','SFAL_VS_SFBD_R2_KLOBS','SFAL_VS_SFBD_R2_KL15','SFAL_VS_SFBD_R2_BBLS','SFAL_VS_SFBD_R2_LONGTON','SFAL_VS_SFBD_R2_METRICTON','SFBD_VS_SR_R3_KLOBS','SFBD_VS_SR_R3_KL15','SFBD_VS_SR_R3_BBLS','SFBD_VS_SR_R3_LONGTON','SFBD_VS_SR_R3_METRICTON','SR_VS_BOL_R4_KLOBS','SR_VS_BOL_R4_KL15','SR_VS_BOL_R4_BBLS','SR_VS_BOL_R4_LONGTON','SR_VS_BOL_R4_METRICTON'];
 	 	    			var title2 = 'Statistik Data (R1,R2,R3,R4) Discharge';
+
 	 	    			//columnNegative(json[1],"chart2",categories2,title2);
 
 	 	    			column_curva('','chart3','','Statistik');
 	 	    			chart_dobule_line('','chart5','','Statistik');
 	 	    			chart_line('','chart6','','Statistik');
+
 	 	    			column_pie('','chart4','','Statistik Data (R1,R2,R3,R4) Discharge');
 	 	    		});
 	 	    		return false;
