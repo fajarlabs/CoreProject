@@ -143,10 +143,12 @@ class Cabang extends MY_Controller
 	{
 		$cabang_name = $this->input->post('cabang_name');
 		$cabang_description = $this->input->post('cabang_description');
+		$address = $this->input->post('address');
 
 		$insert = array(
 			'BRANCH_NAME' => addslashes($cabang_name),
 			'BRANCH_DESCRIPTION' => addslashes($cabang_description),
+			'ADDRESS' => addslashes($address),
 			'IS_DELETE'   => 0,
 		);
 
@@ -159,10 +161,12 @@ class Cabang extends MY_Controller
 	{
 		$cabang_name   = $this->input->post('cabang_name');
 		$cabang_description   = $this->input->post('cabang_description');
+		$address = $this->input->post('address');
 
 		$insert = array(
 			'BRANCH_NAME' => addslashes($cabang_name),
 			'BRANCH_DESCRIPTION' => addslashes($cabang_description),
+			'ADDRESS' => addslashes($address),
 			'IS_DELETE'     => 0,
 		);
 

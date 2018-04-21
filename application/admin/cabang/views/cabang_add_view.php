@@ -33,6 +33,16 @@
 							<td><?php echo form_input(array('type' => 'text', 'name' => 'cabang_name','class' => 'form-control','required' => 'required')); ?></td>
 						</tr>
 						<tr>
+							<td width="150px" style="padding-top:15px;"><?php echo form_label('Address*') ?></td>
+							<td>
+								<div class="row">
+									<div class="col-md-12">
+										<?php echo form_input(array('type' => 'text', 'name' => 'address','class' => 'form-control',  'required' => 'required','placeholder' => 'Address')); ?>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
 							<td width="150px" style="padding-top:15px;"><?php echo form_label('Branch Description*') ?></td>
 							<td><?php echo form_textarea(array('type' => 'text', 'name' => 'cabang_description','class' => 'form-control')); ?></td>
 						</tr>
