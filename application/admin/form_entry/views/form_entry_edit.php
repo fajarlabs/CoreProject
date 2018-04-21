@@ -4,11 +4,13 @@ $object = @$item->result()[0];
 ?>
 <script type="text/javascript">
 
+	var d64 = JSON.parse(atob('<?php echo base64_encode(json_encode($object)); ?>'));
+	
 	// inisialisasi untuk header table
 	var header_tr = "<tr><th style=\"width:25px;\"><center>No</center></th><th style=\"width:250px;\"> &nbsp;&nbsp;Activities</th><th style=\"width:80px;\"> Time</th><th style=\"width:100px;\"> Date</th><th> Remarks/Delays/Etc</th></tr>";
 
 	// inisialisasi untuk footer table
-	var footer_tr = "<tr><td></td><td>Remarks</td><td colspan=\"3\"><input type=\"text\" style=\"margin-left:-10px;width:100%;\" name=\"activities_remarks\" /></td></tr>";
+	var footer_tr = "<tr><td></td><td>Remarks</td><td colspan=\"3\"><input type=\"text\" style=\"margin-left:-10px;width:100%;\" name=\"activities_remarks\" value=\"<?php echo @$object->ACTIVITIES_REMARKS; ?>\" /></td></tr>";
 
 	// fungsi defer untuk menunggu jquery selesai di load pada browser
 	(function defer() {
@@ -27,14 +29,61 @@ $object = @$item->result()[0];
  	  		// =============================================================================
 	  		$.get('<?php echo base_url(); ?>index.php/form_entry/get_timelog_json/'+search_name,function(json) {
 	  			var row_data = JSON.parse(json.rows[0].DATA);
+	  			var data_column = [];
 	  			for(var i=0; i < row_data.length; i++) {
-
+	  				data_column.push(row_data[i].time.toUpperCase());
+	  				data_column.push(row_data[i].date.toUpperCase());
+	  				data_column.push(row_data[i].remarks.toUpperCase());
 	  				$("#table_list_timelog").append("<tr><td>"+(i+1)+"</td><td>"+row_data[i].activities+"</td><td><input style=\"margin-left:-10px;width:60px;\" class=\"timepicker\" type=\"text\" name=\""+row_data[i].time+"\" /></td><td><input style=\"min-width:100px !important;width:100px;margin-left:-10px;\" class=\"datepicker\" data-date-format=\"dd/mm/yyyy\" type=\"text\" name=\""+row_data[i].date+"\" /></td><td><input style=\"margin-left:-10px;width:100%;\" class=\"\" type=\"text\" name=\""+row_data[i].remarks+"\" /></td></tr>");
 	  			}
 	  			$("#table_list_timelog").append(footer_tr);
 				$('.datepicker').datepicker({});
 				$('.timepicker').timepicker({defaultTime: '0:00',showMeridian: false,minuteStep: 1,showSeconds: false,showMeridian: false});
+
+	  			for(var col=0; col < data_column.length; col++) {
+	  				var val_data_column = d64[data_column[col]];
+
+	  				// filter and modified date 
+	  				if(val_data_column != null) {
+	  					var temp_split = val_data_column.split('-');
+		  				if(temp_split.length == 3) {
+		  					val_data_column = temp_split[2]+"/"+temp_split[1]+"/"+temp_split[0];
+		  				}
+	  				}
+
+	  				var low_data_column = data_column[col].toLowerCase();
+	  				$('input[name="'+low_data_column+'"]').val(val_data_column);
+	  			}
 	  		});
+
+	  		// search all & extract element in ID el_div_qty
+	  		$("#el_div_qty :input").each(function() {
+	  			// filter by type & name
+	  			var el_type = $(this).attr('type');
+	  			var el_name = $(this).attr('name');
+	  			var val_data_column = val_data_column;
+
+	  			// checkbox
+	  			if(el_type == 'checkbox') {
+	  				if(d64[el_name.toUpperCase()] == 'Y') {
+	  					$(this).prop('checked',true);
+	  				}
+	  			}
+	  			
+	  			// text
+	  			if(el_type == 'text') {
+
+	  				// filter and modified date 
+	  				if(val_data_column != null) {
+	  					var temp_split = val_data_column.split('-');
+		  				if(temp_split.length == 3) {
+		  					val_data_column = temp_split[2]+"/"+temp_split[1]+"/"+temp_split[0];
+		  				}
+	  				}
+
+	  				$(this).val(val_data_column);
+	  			}
+			});
 
 	  		// =============================================================================
  	  		// END ELEMENT TIMELOG BERDASARKAN PRODUK DAN INTERVENSI
@@ -781,7 +830,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 		</td>									
 	</tr>
 	<tr class="quality">
-		<td colspan="2">
+		<td id="el_div_qty" colspan="2">
 			<?php echo @$html_quantity; ?>
 		</td>
 	</tr>
