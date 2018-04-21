@@ -56,16 +56,23 @@ $object = @$item->result()[0];
 	  			}
 	  		});
 
+	  		// element yg sudah di set tetap fsoq,sample_source,date_of_analysis
 	  		// search all & extract element in ID el_div_qty
+
+	  		// init once for itarate element
+	  		add_tb_certificate();
+
+	  		// iterate element
 	  		$("#el_div_qty :input").each(function() {
 	  			// filter by type & name
 	  			var el_type = $(this).attr('type');
-	  			var el_name = $(this).attr('name');
-	  			var val_data_column = val_data_column;
+	  			// clear element name
+	  			var el_name = $(this).attr('name').replace("[","").replace("]","");
+	  			var val_data_column = d64[el_name.toUpperCase()];
 
 	  			// checkbox
 	  			if(el_type == 'checkbox') {
-	  				if(d64[el_name.toUpperCase()] == 'Y') {
+	  				if(val_data_column == 'Y') {
 	  					$(this).prop('checked',true);
 	  				}
 	  			}
@@ -73,7 +80,7 @@ $object = @$item->result()[0];
 	  			// text
 	  			if(el_type == 'text') {
 
-	  				// filter and modified date 
+	  				// filter date and modified value date 
 	  				if(val_data_column != null) {
 	  					var temp_split = val_data_column.split('-');
 		  				if(temp_split.length == 3) {
@@ -82,6 +89,17 @@ $object = @$item->result()[0];
 	  				}
 
 	  				$(this).val(val_data_column);
+	  			}
+
+	  			// ini untuk filter type file
+	  			if((el_type == 'file') && (el_name == 'fsoq')) {
+	  				if(val_data_column != null) {
+	  					var djson = JSON.parse(val_data_column);
+	  					for(var i=0;i<djson.length;i++) {
+	  						$("#tb_certificate").find('td:last').after('<td><a class="btn btn-xs btn-primary" href="<?php echo base_url(); ?>uploads/form_entry/'+djson[i]+'"><i class="fa fa-eye"></i> view</a> <i><b>*if you do not want to change the file do not upload</b></i></td>');
+	  						add_tb_certificate();
+	  					}
+	  				}
 	  			}
 			});
 
@@ -869,7 +887,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 									<?php 
 									$file = json_decode(@$object->RN_NOTICE_ISSUE_DESCRIPTION);
 									if(!empty($file)):?>
-									<a class="btn btn-xs btn-success" href="<?php echo base_url(); ?>uploads/form_entry/<?php echo $val; ?>"><i class="fa fa-eye"></i> View</a>
+									<a class="btn btn-xs btn-success" href="<?php echo base_url(); ?>uploads/form_entry/<?php echo json_decode(@$object->RN_NOTICE_ISSUE_DESCRIPTION); ?>"><i class="fa fa-eye"></i> View</a>
 									<b><i>*if you do not want to change the file do not upload</i></b>
 									<?php endif; ?>
 
@@ -902,7 +920,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 									<?php 
 									$file = json_decode(@$object->RN_LETTER_ISSUE_DESCRIPTION);
 									if(!empty($file)):?>
-									<a class="btn btn-xs btn-success" href="<?php echo base_url(); ?>uploads/form_entry/<?php echo $val; ?>"><i class="fa fa-eye"></i> View</a>
+									<a class="btn btn-xs btn-success" href="<?php echo base_url(); ?>uploads/form_entry/<?php echo json_decode(@$object->RN_LETTER_ISSUE_DESCRIPTION); ?>"><i class="fa fa-eye"></i> View</a>
 									<b><i>*if you do not want to change the file do not upload</i></b>
 									<?php endif; ?>
 									<input <?php echo (empty($file) ? 'style="display:none;"' : ''); ?> type="file" name="rn_letter_issue_description" />
@@ -934,7 +952,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 									<?php 
 									$file = json_decode(@$object->RN_STATEMENT_ISSUE_DESCRIPTION);
 									if(!empty($file)):?>
-									<a class="btn btn-xs btn-success" href="<?php echo base_url(); ?>uploads/form_entry/<?php echo $val; ?>"><i class="fa fa-eye"></i> View</a>
+									<a class="btn btn-xs btn-success" href="<?php echo base_url(); ?>uploads/form_entry/<?php echo json_decode(@$object->RN_STATEMENT_ISSUE_DESCRIPTION); ?>"><i class="fa fa-eye"></i> View</a>
 									<b><i>*if you do not want to change the file do not upload</i></b>
 									<?php endif; ?>
 
