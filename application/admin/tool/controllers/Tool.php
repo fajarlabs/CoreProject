@@ -55,7 +55,10 @@ class Tool extends MY_Controller
 
 	public function add()
 	{
+		
 		$this->data['title'] = "Tool Management";
+		$this->data['cabang'] = $this->Tool_model->get_table_name('MASTER_CABANG');
+		$this->data['sbu'] = $this->Tool_model->get_table_name('MASTER_SBU');
 		$this->load->view('admin/header',$this->data);
 		$this->load->view('tool_add_view',$this->data);
 		$this->load->view('admin/footer',$this->data);
@@ -65,6 +68,8 @@ class Tool extends MY_Controller
 	{
 		$this->data['title'] = "Tool Management";
 		$this->data['id']    = $id;
+		$this->data['cabang'] = $this->Tool_model->get_table_name('MASTER_CABANG');
+		$this->data['sbu'] = $this->Tool_model->get_table_name('MASTER_SBU');
 		$this->data['item']  = $this->Tool_model->get_item_by_id($id);
 		$this->load->view('admin/header',$this->data);
 		$this->load->view('tool_edit_view',$this->data);
@@ -87,8 +92,12 @@ class Tool extends MY_Controller
 
 		$type     = $this->input->post('jenis');
 		$name     = $this->input->post('nama');
-		$location = $this->input->post('lokasi');
 		$total    = $this->input->post('jumlah');	
+		$date_calibration   = $this->input->post('date_calibration');	
+		$type_location    	= $this->input->post('type_location');	
+		$sbu    			= (!empty($this->input->post('sbu'))  ? $this->input->post('sbu') : null);	 
+		$cabang    			= (!empty($this->input->post('cabang'))  ? $this->input->post('cabang') : null);
+		$condition    		= $this->input->post('condition');	
 
 		if(isset($msg_upload['error'])) {
 			$this->session->set_flashdata('error_message', alert_danger('Save failed. '.$msg_upload['error']));
@@ -96,8 +105,12 @@ class Tool extends MY_Controller
 			$array_col_val = array(
 				'JENIS'  => $type,
 				'NAMA'   => $name,
-				'LOKASI' => $location,
 				'JUMLAH' => $total,
+				'KONDISI' => $condition,
+				'TYPE_LOCATION' => $type_location,
+				'ID_SBU' => $sbu,
+				'ID_CABANG' => $cabang,
+				'TGL_END_KALIBRASI' => convert_date($date_calibration,'Y-m-d'),
 				'UPLOAD_SERTIFIKAT' => (isset($msg_upload['upload_data']) ? $msg_upload['upload_data']['file_name'] : ''),
 				'IS_DELETE'   => 0,
 			);
@@ -112,9 +125,12 @@ class Tool extends MY_Controller
 	{
 		$type     = $this->input->post('jenis');
 		$name     = $this->input->post('nama');
-		$location = $this->input->post('lokasi');
 		$total    = $this->input->post('jumlah');	
-
+		$date_calibration   = $this->input->post('date_calibration');	
+		$type_location    	= $this->input->post('type_location');	
+		$sbu    			= (!empty($this->input->post('sbu'))  ? $this->input->post('sbu') : null);	 
+		$cabang    			= (!empty($this->input->post('cabang'))  ? $this->input->post('cabang') : null);
+		$condition    		= $this->input->post('condition');	
 
         $config['upload_path']   = './uploads/tool_files';
         $config['allowed_types'] = 'gif|jpg|jpeg|png|doc|docx';
@@ -131,7 +147,11 @@ class Tool extends MY_Controller
 		$array_col_val = array(
 			'JENIS'  => $type,
 			'NAMA'   => $name,
-			'LOKASI' => $location,
+			'KONDISI' => $condition,
+			'TYPE_LOCATION' => $type_location,
+			'ID_SBU' => $sbu,
+			'ID_CABANG' => $cabang,
+			'TGL_END_KALIBRASI' => convert_date($date_calibration,'Y-m-d'),
 			'JUMLAH' => $total,
 			'UPLOAD_SERTIFIKAT' => (isset($msg_upload['upload_data']) ? $msg_upload['upload_data']['file_name'] : ''),
 			'IS_DELETE'   => 0,
@@ -161,7 +181,7 @@ class Tool extends MY_Controller
 		if(is_array($result)) {
 			$total = count($result);
 			for($i=0; $i < $total; $i++) {
-				$result[$i]->UPLOAD_SERTIFIKAT = '<a class="btn btn-xs btn-success" href="'.base_url().'uploads/tool_files/'.$result[$i]->UPLOAD_SERTIFIKAT.'"><i class="fa fa-download"></i> View or download</a>';
+				$result[$i]->UPLOAD_SERTIFIKAT = '<a onclick="detail('.$result[$i]->ID.')" class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModal" ><i class="fa fa-eye"></i> View</a>';
 			}
 		}
 		
@@ -175,5 +195,42 @@ class Tool extends MY_Controller
 		$this->Tool_model->delete_by_id($id);
 		$this->session->set_flashdata('error_message', alert_success('Delete succeded.'));
 		redirect('Tool');
+	}
+
+	public function detail_gbr($id)
+	{
+		$this->data['item']  = $this->Tool_model->get_item_by_id($id);
+
+		$sbu ="-";
+		$this->data['sbu']  = $this->Tool_model->get_item_table_by_id('MASTER_SBU','ID',$this->data['item']->result()[0]->ID_SBU);
+		if(!empty($this->data['sbu']->result()[0]->NAMA_SBU)){
+			$sbu = $this->data['sbu']->result()[0]->NAMA_SBU;
+		}
+
+
+		$cbg ="-";
+		$this->data['cabang']  = $this->Tool_model->get_item_table_by_id('MASTER_CABANG','CABANG_ID',$this->data['item']->result()[0]->ID_CABANG);
+		if(!empty($this->data['cabang']->result()[0]->BRANCH_NAME)){
+			$cbg = $this->data['cabang']->result()[0]->BRANCH_NAME;
+		}
+
+		$kondisi = "";
+		if($this->data['item']->result()[0]->KONDISI=="1"){
+			$kondisi = "<font color='#00B16A'><b>Very Good</b></font>";
+		}
+		else if($this->data['item']->result()[0]->KONDISI=="2"){
+			$kondisi = "<font color='#26C281'><b>Good</b></font>";
+		}
+		else if($this->data['item']->result()[0]->KONDISI=="3"){
+			$kondisi = "<font color='orange'><b>Bad</b></font>";
+		}
+		else if($this->data['item']->result()[0]->KONDISI=="4"){
+			$kondisi = "<font color='red'><b>Very Bad</b></font>";
+		}
+
+
+
+
+		echo $this->data['item']->result()[0]->NAMA."@@@".$this->data['item']->result()[0]->JUMLAH."@@@".$this->data['item']->result()[0]->UPLOAD_SERTIFIKAT."@@@".$this->data['item']->result()[0]->TGL_END_KALIBRASI."@@@".$kondisi."@@@".$this->data['item']->result()[0]->TYPE_LOCATION."@@@".$cbg."@@@".$sbu;
 	}
 }

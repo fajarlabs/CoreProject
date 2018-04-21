@@ -376,7 +376,7 @@ foreach($cv_cr as $my_cv_cr){
 	$( window ).load(showHistory(data_history));
 	$( window ).load(showCertificate(data_cr));
 
- } else {
+ 	} else {
            setTimeout(function() { defer() }, 2000);
         }
 	 })();
