@@ -145,8 +145,8 @@ class Report extends MY_Controller
 			case 15:   //product discharge
 				$tplreport='report_discharge_detil';
 				break;
-			case 16:   //crud bunker
-				$tplreport='report_bunker_detil';
+			case 25:   //crud bunker vessel
+				$tplreport='report_bunker_vessel_detil';
 				break;
 		}
 		$this->data['onclick_report'] = "../cetak/$id_item"; // button report		

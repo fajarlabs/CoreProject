@@ -50,7 +50,7 @@
   <tr>
     <td width="307"><img src="<?php echo base_url(); ?>/assets/admin/images/logo_suco_report.png" width="150px"/></td>
     <td class="span" colspan="6"><strong>PT. SUPERINTENDING COMPANY OF INDONESIA<br>SBU Hulu Migas Dan Produk Migas<br>
-    BUNKER SUMMARY</strong></td>
+    BUNKER VESSEL SUMMARY</strong></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
