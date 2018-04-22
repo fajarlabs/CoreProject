@@ -155,15 +155,14 @@ class Form_entry_model extends CI_Model
     	return $this->db->insert_id();
     }
 
+    public function update($array_col_val = array(), $id)
+    {
+        $this->db->where('ID', $id);
+        $this->db->update($this->table, $array_col_val); 
+    }
+
     public function delete_by_id($id)
     {
     	$this->db->delete($this->table, array('ID' => $id));
-    }
-
-    public function update($array_col_val = array(), $id)
-    {
-		$this->db->where('ID', $id);
-		$this->db->update($this->table, $array_col_val); 
-		return $id;
     }
 }

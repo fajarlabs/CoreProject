@@ -321,7 +321,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
                 </div>
                 <div class="panel-body">
 <!-- START PANEL BODY -->
- <?php echo form_open_multipart('form_entry/save', array('id' => 'form_add','style'=>'width:200px;')); ?>
+ <?php echo form_open_multipart('form_entry/update/'.$fef_id, array('id' => 'form_add','style'=>'width:200px;')); ?>
 <!-- OK -->
 <input type="hidden" name="product_type" value="<?php echo @$product_type_id; ?>" />
 <input type="hidden" name="select_intervention" value="<?php echo @$intervention_id; ?>" />

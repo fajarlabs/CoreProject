@@ -455,9 +455,100 @@ class Form_entry extends MY_Controller
 
 	public function update($id=0)
 	{
+		// ================================================================================================
+		// sinkronisasi kolom tabel pada tabel 'FORM_ENTRY_FIELD'
+		// membuat kolom baru jika kolom belum tersedia dengan defaultnya type 'TEXT'
+		// ================================================================================================
+		// checking & create kolom untuk post
+		create_column_1d(get_key_post());
+		// checking & create kolom untuk files
+		create_column_1d(get_key_files());
+
+		// ================================================================================================
+		// field parameter yang diupload
+		// fsoq[],rn_notice_issue_description,rn_letter_issue_description,rn_statement_issue_description
+		// ================================================================================================
+		$path = './uploads/form_entry';
+        $config['upload_path']   = $path;
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size']      = 100000; // 100Mb
+        $config['max_width']     = 4000;
+        $config['max_height']    = 4000;
+
+		// check and create folder
+		create_folder($path);
+		// load setting upload
+		$this->load->library('upload', $config);
+		// checking files
+		$array_file2d = array();
+
+		foreach($_FILES as $key => $val) {
+			// check if single file or multiple file
+			if(is_multiple_files($val)) {
+				$result = $this->upload->do_multi_upload($key);
+				if(is_array($result)) {
+					if(count($result) > 0) {
+						$dump = array();
+						foreach($result as $k => $v) {
+							$dump[] = $v['file_name'];
+						}
+						$array_file2d[$key] = $dump;
+					} 
+				}
+			} else {
+                if ( ! $this->upload->do_upload($key)){
+                    $this->upload->display_errors();
+                } else {
+                    $result = $this->upload->data();
+					$array_file2d[$key] = @$result['file_name'];
+                }
+			}
+		}
+
+		// ================================================================================================
+		// Upload kolom secara dinamis
+		// ================================================================================================
+
+		$col_val = array();
+		foreach($_POST as $key => $val) {
+			// numeric columnn not allowed
+			if(!is_numeric($key)) {
+				// check is not array
+				if(!is_array($val)) {
+					// filter date
+					if(get_key_type(strtoupper($key)) == 'date') {
+						if(substr_count($val,'/') == 2) {
+							$col_val[strtoupper($key)] = date("Y-m-d", strtotime(str_replace('/', '-', $val)));
+						} else {
+							$col_val[strtoupper($key)] = NULL;
+						}
+					} else {
+						// string value
+						$col_val[strtoupper($key)] = $val;
+					}
+				} else {
+					// array value
+					$col_val[strtoupper($key)] = json_encode($val);
+				}
+			}
+		}
+
+		// additional column
+		$col_val['CREATE_TIME'] = date('Y-m-d H:i:s');
+		$col_val['MODIFY_USER'] = get_admin_username();
+		$col_val['IS_DELETE']   = 0;
+
+		foreach(get_key_files() as $ky => $vl) {
+			if(isset($array_file2d[strtolower($vl)])) {
+				$col_val[strtoupper($vl)] = json_encode($array_file2d[strtolower($vl)]);
+			}
+		}
+
+		$this->Form_entry_model->update($col_val,$id);
+		
 		/* development process */
 		$this->session->set_flashdata('error_message', alert_success('Update Succeded'));
-		redirect('/form_entry/tables');
+		redirect('/form_entry');
 	}
 	
 	public function edit($id=0)
@@ -465,6 +556,7 @@ class Form_entry extends MY_Controller
 		$this->data['error_message']     = $this->session->flashdata("error_message");
 		$this->data['title_page']        = "Form Entry";
 		$this->data['title_description'] = "Function to input general form";
+		$this->data['fef_id']            = $id;
 
 		$item = $this->Form_entry_model->get_item_by_id((int)$id);
 		$this->data['item'] = $item;
