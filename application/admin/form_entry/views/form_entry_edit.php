@@ -818,7 +818,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 				// menambahkan 1 element ketika pertama di muat
 			    (function defer() {
 					if (window.jQuery) {
-					    $("#tb_surveyor").append(element_surveyor);
+					    //$("#tb_surveyor").append(element_surveyor);
 					} else {
 					   setTimeout(function() { defer() }, 50);
 					}

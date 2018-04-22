@@ -12,7 +12,8 @@ class Form_entry_model extends CI_Model
         $filter_rules = json_decode($filter_rules);
         $count = count($filter_rules);
         $cp_count = $count;
-        $query .= "left join \"MASTER_INTERVENTION\" \"mi\" ON \"fef\".\"SELECT_INTERVENTION\" = \"mi\".\"ID\" WHERE ";
+        $query .= "left join \"MASTER_INTERVENTION\" \"mi\" ON \"fef\".\"SELECT_INTERVENTION\" = \"mi\".\"ID\" ";
+        $query .= "left join \"MASTER_PRODUCT\" \"mp\" ON \"fef\".\"PRODUCT_TYPE\"::int = \"mp\".\"PRODUCT_ID\" WHERE ";
         
         if($count > 0) {
             foreach($filter_rules as $row) {
@@ -49,8 +50,8 @@ class Form_entry_model extends CI_Model
                 if($row->field == "INTERVENTION_NAME") {
                     $query .= "\"mi\".\"INTERVENTION_NAME\" LIKE '%".$row->value."%' ";
                 }
-                if($row->field == "PRODUCT_TYPE") {
-                    $query .= "\"fef\".\"PRODUCT_TYPE\" LIKE '%".$row->value."%' ";
+                if($row->field == "PRODUCT_NAME") {
+                    $query .= "\"mp\".\"PRODUCT_NAME\" LIKE '%".$row->value."%' ";
                 }
                 if($row->field == "FILE_ORDER") {
                     $query .= "\"fef\".\"FILE_ORDER\" LIKE '%".$row->value."%' ";
@@ -68,7 +69,7 @@ class Form_entry_model extends CI_Model
             }
         }
 
-        $query .= ($cp_count > 0 ? "AND " : " ")." \"fef\".\"IS_DELETE\" = '0' LIMIT $limit OFFSET $offset ";
+        $query .= ($cp_count > 0 ? "AND " : " ")." \"fef\".\"IS_DELETE\" = '0' ORDER BY \"fef\".\"ID\" DESC LIMIT $limit OFFSET $offset ";
 
         return $this->db->query($query);
     }
@@ -79,7 +80,8 @@ class Form_entry_model extends CI_Model
         $filter_rules = json_decode($filter_rules);
         $count = count($filter_rules);
         $cp_count = $count;
-        $query .= "left join \"MASTER_INTERVENTION\" \"mi\" ON \"fef\".\"SELECT_INTERVENTION\" = \"mi\".\"ID\" WHERE ";
+        $query .= "left join \"MASTER_INTERVENTION\" \"mi\" ON \"fef\".\"SELECT_INTERVENTION\" = \"mi\".\"ID\" ";
+        $query .= "left join \"MASTER_PRODUCT\" \"mp\" ON \"fef\".\"PRODUCT_TYPE\"::int = \"mp\".\"PRODUCT_ID\" WHERE ";
         
         if($count > 0) {
             foreach($filter_rules as $row) {
@@ -116,8 +118,8 @@ class Form_entry_model extends CI_Model
                 if($row->field == "INTERVENTION_NAME") {
                     $query .= "\"mi\".\"INTERVENTION_NAME\" LIKE '%".$row->value."%' ";
                 }
-                if($row->field == "PRODUCT_TYPE") {
-                    $query .= "\"fef\".\"PRODUCT_TYPE\" LIKE '%".$row->value."%' ";
+                if($row->field == "PRODUCT_NAME") {
+                    $query .= "\"mp\".\"PRODUCT_NAME\" LIKE '%".$row->value."%' ";
                 }
                 if($row->field == "FILE_ORDER") {
                     $query .= "\"fef\".\"FILE_ORDER\" LIKE '%".$row->value."%' ";
