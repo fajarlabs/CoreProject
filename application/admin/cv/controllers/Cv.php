@@ -59,6 +59,8 @@ class Cv extends MY_Controller
 		$this->data['region'] = $this->Cv_model->get_table_name('REF_REGION','REGION','asc');
 		$this->data['education'] = $this->Cv_model->get_table_name('REF_EDUCATION','ID_REF_EDUCATION','asc');
 		$this->data['experience'] = $this->Cv_model->get_table_name('REF_EXP','EXP_TYPE','asc');
+		$this->data['cabang'] = $this->Cv_model->get_table_name('MASTER_CABANG');
+		$this->data['sbu'] = $this->Cv_model->get_table_name('MASTER_SBU');
 		$this->load->view('admin/header',$this->data);
 		$this->load->view('cv_add_view',$this->data);
 		$this->load->view('admin/footer',$this->data);
@@ -77,6 +79,8 @@ class Cv extends MY_Controller
 		$this->data['cv_edu'] = $this->Cv_model->get_table_name('MASTER_CV_EDUCATION','ID_REF_EDUCATION','DESC','ID_CV',$id);
 		$this->data['cv_work'] = $this->Cv_model->get_table_name('MASTER_CV_HISTORY_OF_WORK','ID','DESC','ID_CV',$id);
 		$this->data['experience'] = $this->Cv_model->get_table_name('REF_EXP','EXP_TYPE','desc');
+		$this->data['cabang'] = $this->Cv_model->get_table_name('MASTER_CABANG');
+		$this->data['sbu'] = $this->Cv_model->get_table_name('MASTER_SBU');
 		$this->load->view('admin/header',$this->data);
 		$this->load->view('cv_edit_view',$this->data);
 		$this->load->view('admin/footer',$this->data);
@@ -150,6 +154,9 @@ class Cv extends MY_Controller
 		$address     		 = $this->input->post('address');
 		$gender     		 = $this->input->post('gender');
 		$region     		 = $this->input->post('region');
+		$type_location    	 = $this->input->post('type_location');	
+		$sbu    			 = (!empty($this->input->post('sbu'))  ? $this->input->post('sbu') : null);	 
+		$cabang    			 = (!empty($this->input->post('cabang'))  ? $this->input->post('cabang') : null);
 
 		
 		$array_col_val = array(
@@ -160,6 +167,9 @@ class Cv extends MY_Controller
 				'PLACE_BIRTHDATE'=>$birthdate_place,
 				'CONTACT_1'=>$contact_1,
 				'CONTACT_2'=>$contact_2,
+				'TYPE_LOCATION' => $type_location,
+				'ID_SBU' => $sbu,
+				'ID_CABANG' => $cabang,
 				'ADDRESS'=>$address,
 				'GENDER'=>$gender,
 				'REGION'=>$region,
@@ -439,6 +449,9 @@ class Cv extends MY_Controller
 		$address     		 = $this->input->post('address');
 		$gender     		 = $this->input->post('gender');
 		$region     		 = $this->input->post('region');
+		$type_location    	 = $this->input->post('type_location');	
+		$sbu    			 = (!empty($this->input->post('sbu'))  ? $this->input->post('sbu') : null);	 
+		$cabang    			 = (!empty($this->input->post('cabang'))  ? $this->input->post('cabang') : null);
 
 
 		if(isset($msg_upload['error'])) {
@@ -459,6 +472,9 @@ class Cv extends MY_Controller
 				'ADDRESS'=>$address,
 				'GENDER'=>$gender,
 				'REGION'=>$region,
+				'TYPE_LOCATION' => $type_location,
+				'ID_SBU' => $sbu,
+				'ID_CABANG' => $cabang,
 				'UPLOAD_FILE' => (is_array($msg_upload) ? $msg_upload['upload_data']['file_name'] : ''),
 				'PHOTO_FILE' => (is_array($msg_upload2) ? $msg_upload2['upload_data']['file_name'] : ''),
 				'IS_DELETE'   => 0,
