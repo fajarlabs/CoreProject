@@ -96,7 +96,7 @@ $object = @$item->result()[0];
 	  				if(val_data_column != null) {
 	  					var djson = JSON.parse(val_data_column);
 	  					for(var i=0;i<djson.length;i++) {
-	  						$("#tb_certificate").find('td:last').after('<td><a class="btn btn-xs btn-primary" href="<?php echo base_url(); ?>uploads/form_entry/'+djson[i]+'"><i class="fa fa-eye"></i> view</a> <i><b>*if you do not want to change the file do not upload</b></i></td>');
+	  						$("#tb_certificate").find('td:last').after('<td><a target="_blank" class="btn btn-xs btn-primary" href="<?php echo base_url(); ?>uploads/form_entry/'+djson[i]+'"><i class="fa fa-eye"></i> view</a> <i><b>*if you do not want to change the file do not upload</b></i></td>');
 	  						add_tb_certificate();
 	  					}
 	  				}
@@ -397,14 +397,21 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 										$buyer = isset(json_decode(@$object->BUYER)[$i]) ? json_decode(@$object->BUYER)[$i] : '';
 										$seller = isset(json_decode(@$object->SELLER)[$i]) ? json_decode(@$object->SELLER)[$i] : '';
 										$sharing_fee = isset(json_decode(@$object->SHARING_FEE)[$i]) ? json_decode(@$object->SHARING_FEE)[$i] : '';
-
 										echo "<tr>
 												<td>
-													Client <input name=\"clients[]\" type=\"\" value=\"".$clients."\" /> 
-													<input type=\"checkbox\" name=\"supplier[]\" value=\".".$supplier.".\" />Supplier&nbsp;
-													<input type=\"checkbox\" name=\"trader[]\" value=\"".$trader."\" />Trader&nbsp;
-													<input type=\"checkbox\" name=\"buyer[]\" value=\"".$buyer."\" />Buyer&nbsp;
-													<input type=\"checkbox\" name=\"seller[]\" value=\"".$seller."\" />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee[]\" value=\"".$sharing_fee."\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> ".$fileref."</td></tr>";
+													Client <input name=\"clients[]\" type=\"\" value=\"".$clients."\"  /> 
+
+													<input class=\"supp_deft_".$i."\" type=\"hidden\" name=\"supplier[]\" value=\"off\" ".(@$supplier == 'on' ? 'disabled=""' : '')." />
+													<input onclick='check_state(this,\"supp_deft_".$i."\")' type=\"checkbox\" name=\"supplier[]\" ".(@$supplier == 'on' ? 'checked' : '')." />Supplier&nbsp;
+
+													<input class=\"trade_deft_".$i."\" type=\"hidden\" name=\"trader[]\" value=\"off\" ".(@$trader == 'on' ? 'disabled=""' : '')." />
+													<input onclick='check_state(this,\"trade_deft_".$i."\")' type=\"checkbox\" name=\"trader[]\" ".(@$trader == 'on' ? 'checked' : '')." />Trader&nbsp;
+
+													<input class=\"buyer_deft_".$i."\" type=\"hidden\" name=\"buyer[]\" value=\"off\" ".(@$buyer == 'on' ? 'disabled=""' : '')." />
+													<input onclick='check_state(this,\"buyer_deft_".$i."\")' type=\"checkbox\" name=\"buyer[]\" ".(@$buyer == 'on' ? 'checked' : '')." />Buyer&nbsp;
+
+													<input class=\"sell_deft_".$i."\" type=\"hidden\" name=\"seller[]\" value=\"off\" ".(@$seller == 'on' ? 'disabled=""' : '')." />
+													<input onclick='check_state(this,\"sell_deft_".$i."\")' type=\"checkbox\" name=\"seller[]\" ".(@$seller == 'on' ? 'checked' : '')." />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee[]\" value=\"".$sharing_fee."\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> ".$fileref."</td></tr>";
 										$i++;
 									endforeach;
 								endif;
@@ -428,6 +435,13 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 				</tr>
 			</table>
 			<script type="text/javascript">
+				function check_state(e,cls_ref) {
+					if ($(e).prop('checked')) {
+						$('.'+cls_ref).prop("disabled", true);
+					} else {
+						$('.'+cls_ref).prop("disabled", false);
+					}
+				}
 				// inisialisasi file ref untuk informasi multi format
 				var file_ref = '<table style="margin-top:3px;margin-left:-10px;width:100%;">'+
 									'<tr>'+
@@ -887,7 +901,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 									<?php 
 									$file = json_decode(@$object->RN_NOTICE_ISSUE_DESCRIPTION);
 									if(!empty($file)):?>
-									<a class="btn btn-xs btn-success" href="<?php echo base_url(); ?>uploads/form_entry/<?php echo json_decode(@$object->RN_NOTICE_ISSUE_DESCRIPTION); ?>"><i class="fa fa-eye"></i> View</a>
+									<a class="btn btn-xs btn-success" target="_blank" href="<?php echo base_url(); ?>uploads/form_entry/<?php echo json_decode(@$object->RN_NOTICE_ISSUE_DESCRIPTION); ?>"><i class="fa fa-eye"></i> View</a>
 									<b><i>*if you do not want to change the file do not upload</i></b>
 									<?php endif; ?>
 
@@ -920,7 +934,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 									<?php 
 									$file = json_decode(@$object->RN_LETTER_ISSUE_DESCRIPTION);
 									if(!empty($file)):?>
-									<a class="btn btn-xs btn-success" href="<?php echo base_url(); ?>uploads/form_entry/<?php echo json_decode(@$object->RN_LETTER_ISSUE_DESCRIPTION); ?>"><i class="fa fa-eye"></i> View</a>
+									<a target="_blank" class="btn btn-xs btn-success" href="<?php echo base_url(); ?>uploads/form_entry/<?php echo json_decode(@$object->RN_LETTER_ISSUE_DESCRIPTION); ?>"><i class="fa fa-eye"></i> View</a>
 									<b><i>*if you do not want to change the file do not upload</i></b>
 									<?php endif; ?>
 									<input <?php echo (empty($file) ? 'style="display:none;"' : ''); ?> type="file" name="rn_letter_issue_description" />
@@ -952,7 +966,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 									<?php 
 									$file = json_decode(@$object->RN_STATEMENT_ISSUE_DESCRIPTION);
 									if(!empty($file)):?>
-									<a class="btn btn-xs btn-success" href="<?php echo base_url(); ?>uploads/form_entry/<?php echo json_decode(@$object->RN_STATEMENT_ISSUE_DESCRIPTION); ?>"><i class="fa fa-eye"></i> View</a>
+									<a target="_blank" class="btn btn-xs btn-success" href="<?php echo base_url(); ?>uploads/form_entry/<?php echo json_decode(@$object->RN_STATEMENT_ISSUE_DESCRIPTION); ?>"><i class="fa fa-eye"></i> View</a>
 									<b><i>*if you do not want to change the file do not upload</i></b>
 									<?php endif; ?>
 
