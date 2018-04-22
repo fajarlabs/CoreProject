@@ -125,12 +125,20 @@ foreach($cv_cr as $my_cv_cr){
 							</td>
 						</tr>
 						<tr>
-							<td width="150px" style="padding-top:15px;"><?php echo form_label('Region*') ?></td>
+							<td width="150px" style="padding-top:15px;"><?php echo form_label('Location*') ?> </td>
 							<td>
-								<select name="region" class="form-control">
-									<option value="">--Choose Region--</option>
-									<?php foreach($region as $rg){ ?>
-										<option <?php if(@$item->result()[0]->REGION==$rg->ID_REF_REGION) echo "selected"; ?> value='<?php echo $rg->ID_REF_REGION ?>'><?php echo $rg->REGION ?></option>
+								<input required onclick="get_type_location()" <?Php if(@$item->result()[0]->TYPE_LOCATION=="1") echo "checked"; ?> type="radio" value="1" name="type_location" id="type_location"> Kantor Pusat
+								<input required onclick="get_type_location()" <?Php if(@$item->result()[0]->TYPE_LOCATION=="2") echo "checked"; ?> type="radio" value="2" name="type_location" id="type_location"> Cabang <br/><br/>
+								<select name="sbu" id="sbu" class="form-control" <?Php if(@$item->result()[0]->TYPE_LOCATION!="1") echo "style='display:none' "; ?>>
+									<option value="">--Choose Strategi Business Unit--</option>
+									<?php foreach($sbu as $sb){ ?>
+										<option <?Php if(@$item->result()[0]->ID_SBU==$sb->ID) echo "selected"; ?> value='<?php echo $sb->ID ?>'><?php echo $sb->NAMA_SBU ?></option>
+									<?php } ?>
+								</select>
+								<select name="cabang" id="cabang" class="form-control"  <?Php if(@$item->result()[0]->TYPE_LOCATION!="2") echo "style='display:none' "; ?>>
+									<option value="">--Choose Branch--</option>
+									<?php foreach($cabang as $cb){ ?>
+										<option <?Php if(@$item->result()[0]->ID_CABANG==$cb->CABANG_ID) echo "selected"; ?>  value='<?php echo $cb->CABANG_ID ?>'><?php echo $cb->BRANCH_NAME ?></option>
 									<?php } ?>
 								</select>
 							</td>
@@ -556,4 +564,19 @@ foreach($cv_cr as $my_cv_cr){
 			$("#"+id_div+myIds).slideUp('slow');
 			setTimeout(function(){ $("#"+id_div+myIds).remove(); }, 1000);
 	}	
+	function get_type_location(){
+		var type =	$('input[name=type_location]:checked', '#form_add').val();
+		if(type=="1"){
+			$("#sbu").show();
+			$("#sbu").val("");
+			$("#cabang").hide();
+			$("#cabang").val("");
+		}
+		else if(type=="2"){
+			$("#cabang").show();
+			$("#cabang").val("");
+			$("#sbu").hide();
+			$("#sbu").val("");
+		}
+	}
 </script>
