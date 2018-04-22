@@ -66,16 +66,28 @@
 										</select>
 									</td>
 									<td >
-									<?php echo form_label('Tanggal Awal') ?><br/>
-									<?php 
-										//$dtbarge=date("m/d/Y", strtotime($row->DATE_LOADING_BARGE));
-											echo form_input(array('type' => 'text', 'name' => 'date_start','class' => 'datepicker', 'style' => ' min-width:100px !important;width:100px;height:33px;color:#000 !important;', 'value' => '')); ?>
+									<?php echo form_label('Bulan') ?><br/>
+									<select class="form-control" required="">
+										<option value="">-- Pilih --</option>
+										<option value="01">January</option>
+										<option value="02">February</option>
+										<option value="03">March</option>
+										<option value="04">April</option>
+										<option value="05">May</option>
+										<option value="06">June</option>
+										<option value="07">July</option>
+										<option value="08">August</option>
+										<option value="09">September</option>
+										<option value="10">October</option>
+										<option value="11">November</option>
+										<option value="12">December</option>
+									</select>
 										</td>
 										<td style="width:300px;">
-										<?php echo form_label('Tanggal Akhir') ?><br/>
+										<?php echo form_label('Tahun') ?><br/>
 										<?php 
 											//$dtbarge=date("m/d/Y", strtotime($row->DATE_LOADING_BARGE));
-											echo form_input(array('type' => 'text', 'name' => 'date_end','class' => 'datepicker', 'style' => ' min-width:100px !important;width:100px;height:33px;color:#000 !important;', 'value' => '')); ?>
+											echo form_input(array('type' => 'text', 'readonly' => 'true','maxlength' => '4', 'name' => 'date_end','class' => 'thn_picker', 'style' => ' min-width:100px !important;width:100px;height:33px;color:#000 !important;', 'value' => '')); ?>
 											<a style="height:33px;margin-top:-3px;margin-left:5px;" href="#" onclick="$(this).closest('form').submit()" class="btn btn-primary"><i class="fa fa-dashboard"></i> Lihat</a>
 									</td>					
 								</tr>
@@ -107,6 +119,11 @@
 	<script type="text/javascript">
 		 (function defer() {
 	 	    if (window.jQuery) {
+	 	    	$('.thn_picker').datepicker({
+				    format: "yyyy",
+				    viewMode: "years", 
+				    minViewMode: "years"
+				});
 	 	    	$("#chart_form").on("submit",function(e) {
 	 	    		$.get('<?php echo base_url(); ?>index.php/dashboard/chart_rest/?'+$(this).serialize(),function(json){
 	 	    			// show division
