@@ -67,7 +67,7 @@
 									</td>
 									<td >
 									<?php echo form_label('Bulan') ?><br/>
-									<select class="form-control" required="">
+									<select name="bulan" class="form-control" required="">
 										<option value="">-- Pilih --</option>
 										<option value="01">January</option>
 										<option value="02">February</option>
@@ -87,7 +87,7 @@
 										<?php echo form_label('Tahun') ?><br/>
 										<?php 
 											//$dtbarge=date("m/d/Y", strtotime($row->DATE_LOADING_BARGE));
-											echo form_input(array('type' => 'text', 'readonly' => 'true','maxlength' => '4', 'name' => 'date_end','class' => 'thn_picker', 'style' => ' min-width:100px !important;width:100px;height:33px;color:#000 !important;', 'value' => '')); ?>
+											echo form_input(array('type' => 'text', 'readonly' => 'true','maxlength' => '4', 'name' => 'tahun','class' => 'thn_picker', 'style' => ' min-width:100px !important;width:100px;height:33px;color:#000 !important;', 'value' => '')); ?>
 											<a style="height:33px;margin-top:-3px;margin-left:5px;" href="#" onclick="$(this).closest('form').submit()" class="btn btn-primary"><i class="fa fa-dashboard"></i> Lihat</a>
 									</td>					
 								</tr>

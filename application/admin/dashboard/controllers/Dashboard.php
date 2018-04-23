@@ -57,13 +57,8 @@ class Dashboard extends MY_Controller
 	public function chart_rest()
 	{
 
-		$date_start = $this->input->get("date_start");
-		$date_start = explode("/",$date_start);
-		$date_start = implode("-",array_reverse($date_start));
-
-		$date_end = $this->input->get("date_end");
-		$date_end = explode("/",$date_end);
-		$date_end = implode("-",array_reverse($date_end));
+		$date_month = $this->input->get("bulan");
+		$date_year = $this->input->get("tahun");
 
 		$site_id = $this->input->get("site_id");
 		$vessel  = $this->input->get("vessel");
@@ -71,7 +66,7 @@ class Dashboard extends MY_Controller
 
 		$result = array();
 
-		$query = $this->Dashboard_model->loading_stats($date_start,$date_end,$vessel,$produk);
+		$query = $this->Dashboard_model->loading_stats($date_month,$date_year,$vessel,$produk);
 
 		/* chart column negative */
 		$array_data = array();
@@ -86,7 +81,7 @@ class Dashboard extends MY_Controller
 		$result[] = $array_data;
 
 		/* chart pie */
-		$query = $this->Dashboard_model->discharge_stats($date_start,$date_end,$vessel,$produk);
+		$query = $this->Dashboard_model->discharge_stats($date_month,$date_year,$vessel,$produk);
 		
 		/* chart column negative */
 		$array_data = array();
