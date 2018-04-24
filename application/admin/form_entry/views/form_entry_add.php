@@ -28,8 +28,11 @@
 	  				$("#table_list_timelog").append("<tr><td>"+(i+1)+"</td><td>"+row_data[i].activities+"</td><td><input style=\"margin-left:-10px;width:60px;\" class=\"timepicker\" type=\"text\" name=\""+row_data[i].time+"\" /></td><td><input style=\"min-width:100px !important;width:100px;margin-left:-10px;\" class=\"datepicker\" data-date-format=\"dd/mm/yyyy\" type=\"text\" name=\""+row_data[i].date+"\" /></td><td><input style=\"margin-left:-10px;width:100%;\" class=\"\" type=\"text\" name=\""+row_data[i].remarks+"\" /></td></tr>");
 	  			}
 	  			$("#table_list_timelog").append(footer_tr);
-				$('.datepicker').datepicker({});
-				$('.timepicker').timepicker({defaultTime: '0:00',showMeridian: false,minuteStep: 1,showSeconds: false,showMeridian: false});
+
+	  			// datepicker
+	  			$('.datepicker').datepicker({dateFormat:'dd/mm/yy'});
+	  			// timepicker
+	  			$('.timepicker').timepicker({defaultTime: '0:00',showMeridian: false,minuteStep: 1,showSeconds: false,showMeridian: false});
 	  		});
 
 	  		// =============================================================================

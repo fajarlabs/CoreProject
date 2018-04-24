@@ -28,8 +28,6 @@
 	<?php echo script_tag('assets/admin/color-admin/assets/plugins/sparkline/jquery.sparkline.js'); ?>
 	<?php echo script_tag('assets/admin/color-admin/assets/plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.min.js'); ?>
 	<?php echo script_tag('assets/admin/color-admin/assets/plugins/jquery-jvectormap/jquery-jvectormap-world-mill-en.js'); ?>
-	<?php echo script_tag('assets/admin/color-admin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js'); ?>
-	<?php echo script_tag('assets/admin/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js'); ?>
 	<?php echo script_tag('assets/admin/plugins/jQuery-autoComplete-master/jquery.auto-complete.min.js'); ?>
 	<?php echo script_tag('assets/admin/color-admin/assets/js/dashboard.min.js'); ?>
 	<?php echo script_tag('assets/admin/plugins/easyui/jquery.easyui.min.js'); ?>
@@ -43,7 +41,6 @@
 	<?php echo script_tag('assets/admin/color-admin/assets/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js'); ?>
 	<?php echo script_tag('assets/admin/color-admin/assets/js/table-manage-default.demo.min.js'); ?>
 	<?php echo script_tag('assets/admin/plugins/datagrid-filter/datagrid-filter.js'); ?>
-	<?php echo script_tag('assets/admin/color-admin/assets/js/apps.min.js'); ?>
 	<?php echo script_tag('assets/admin/color-admin/assets/plugins/bootstrap-wizard/js/bwizard.js'); ?>
 	<?php echo script_tag('assets/admin/color-admin/assets/js/form-wizards.demo.min.js'); ?>
 	<?php //echo script_tag('assets/admin/js/decimal.js'); ?>
@@ -52,16 +49,21 @@
 	<!-- ================== BEGIN CDN BASE JS ================== -->
 	<?php echo script_tag(base_url().'assets/admin/plugins/bootstrap-fileinput/js/fileinput.min.js'); ?>
 	<?php echo script_tag(base_url().'assets/admin/plugins/moment/min/moment.min.js'); ?>
+
+	<?php echo script_tag('assets/admin/js/jquery-ui.js') ?>
+	<?php echo script_tag('assets/admin/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js'); ?>
+	<?php echo script_tag('assets/admin/color-admin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js'); ?>
 	<?php echo script_tag(base_url().'assets/admin/plugins/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js'); ?>
+	<?php echo script_tag('assets/admin/color-admin/assets/js/apps.min.js'); ?>
 
 	<?php echo $html_js; ?>
 
 	<script type="text/javascript">
 		// global initialize
 		$(document).ready(function(){
-			// Do not modify
+			// Do not modify format indonesia
+			$('.datepicker').datepicker({dateFormat:'dd/mm/yy'});
 
-			$('.datepicker').datepicker({});
 			$('.timepicker').timepicker({defaultTime: '0:00',showMeridian: false,minuteStep: 1,showSeconds: false,showMeridian: false});
 
 			var dg = $("#dg");
@@ -101,8 +103,6 @@
 	    }
 	});
 	</script>
-
-<?php echo script_tag('assets/admin/js/jquery-ui.js') ?>
 
 <!-- RANDOM -->
 <script type="text/javascript">

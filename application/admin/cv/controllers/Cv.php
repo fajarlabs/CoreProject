@@ -53,8 +53,9 @@ class Cv extends MY_Controller
 		if($query->num_rows() > 0) {
 			foreach($query->result() as $row) {
 				$o = new stdClass();
-				$o->label = $row->NAMA;
+				$o->label = $row->NAMA ." - ".$row->NAMA_SBU;
 				//$o->value = $row->ID;
+				$o->query = $this->db->last_query();
 				$json_array[] = $o;
 			}
 		}
