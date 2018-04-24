@@ -399,7 +399,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tr>
 					<td valign="middle">
-						<input type="text" style="width:40%;" name="vessel" /> 
+						<input type="text" id="vessel" style="width:40%;" name="vessel" /> 
 						<div style="display:none;">
 						Multi Cargo <input type="radio" name="select_cargo" value="multi_cargo" />
 						Single Cargo <input type="radio" name="select_cargo" value="single_cargo" />
@@ -443,36 +443,6 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 						<a id="id_tb_port" href="javascript:;" onclick="add_tb_port()" class="btn btn-success btn-xs" style="margin-left:10px;margin-bottom:2px;display:none;"><i class="fa fa-plus"></i></a>
 						<table id="tb_port" style="width:100%;"></table>
 
-						<script type="text/javascript">
-							// inisialisasi element html port
-							var element_port = "<tr><td style=\"padding-top:2px;\"><input type=\"text\" style=\"width:300px;\" name=\"port_terminal[]\" /><a onclick=\"delete_tb_port(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i> </a></td></tr>";
-
-							// fungsi untuk check port
-							function check_port(e) {
-								var select_port = $(e).val();
-								if(select_port == "single_port") {
-									$("#id_tb_port").hide();
-									$("#tb_port tr").remove();
-									$("#tb_port").append(element_port);
-								}
-								if(select_port == "multi_port") {
-									$("#id_tb_port").show();
-									$("#tb_port tr").remove();
-									$("#tb_port").append(element_port);
-								}
-							}
-
-							// fungsi untuk menambahkan element html port
-						    function add_tb_port() {
-						    	$("#tb_port").append(element_port);
-						    }
-
-						    // fungsi untuk hapus elemen html port
-						    function delete_tb_port(e) {
-						    	$(e).parent().remove();
-						    }
-						</script>
-
 					</td>
 				</tr>
 			</table>
@@ -506,40 +476,6 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 								</td>
 							</tr>
 						</table>
-						<script type="text/javascript">
-
-							// inisialisasi element produk
-							var element_product = "<tr><td style=\"padding-top:2px;\"><input style=\"width:300px;\" type=\"text\" name=\"product[]\"/><a onclick=\"delete_tb_product(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
-
-							// fungsi untuk menambahkan produk
-							function add_tb_product() {
-								$("#tb_product").append(element_product);
-							}
-
-							// fungsi untuk menghapus produk
-							function delete_tb_product(e) {
-								$(e).parent().remove();
-							}
-
-							// fungsi untuk periksa parameter yang dipakai untuk element
-							function check_product(e) {
-								var select_product = $(e).val();
-								if(select_product == "single_product") {
-									$("#tb_product tr").remove();
-									$("#tb_product").show();
-									$("#id_tb_product").hide();
-									$("#lbl_product").show();
-									$("#tb_product").append(element_product);
-								}
-								if(select_product == "multi_product") {
-									$("#tb_product tr").remove();
-									$("#tb_product").show();
-									$("#id_tb_product").show();
-									$("#lbl_product").show();
-									$("#tb_product").append(element_product);
-								}
-							}
-						</script>
 					</td>
 				</tr>
 			</table>
@@ -638,30 +574,8 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 					</td>
 				</tr>
 			</table>
-			<script type="text/javascript">
+			
 
-				// inisialisasi element surveyor
-				var element_surveyor = "<tr><td><input style=\"width:300px;margin-bottom: 3px;\" type=\"text\" name=\"surveyor_in_charge[]\" /><a onclick=\"delete_tb_surveyor(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
-
-				// fungsi untuk tambah elemen surveyor
-				function add_tb_surveyor() {
-					$("#tb_surveyor").append(element_surveyor);
-				}
-
-				// fungsi untuk menghapus elemen surveyor
-				function delete_tb_surveyor(e) {
-					$(e).parent().remove();
-				}
-
-				// menambahkan 1 element ketika pertama di muat
-			    (function defer() {
-					if (window.jQuery) {
-					    $("#tb_surveyor").append(element_surveyor);
-					} else {
-					   setTimeout(function() { defer() }, 50);
-					}
-			    })();
-			</script>
 		</td>
 	</tr>
 	<tr>

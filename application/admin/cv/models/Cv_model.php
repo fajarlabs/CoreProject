@@ -11,6 +11,14 @@ class Cv_model extends CI_Model
         return $this->db->get($this->table);
 	}
 
+    public function get_personil_by_name_location($query_name, $location) {
+        $this->db->select('*');
+        $this->db->from($this->table);
+        $this->db->like('NAMA', $query_name); 
+        $this->db->where('TYPE_LOCATION', $location); 
+        return $this->db->get();
+    }
+
     public  function get_item_by_id($id) 
     {
         $this->db->select('*');

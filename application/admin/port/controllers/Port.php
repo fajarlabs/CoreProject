@@ -113,6 +113,23 @@ class Port extends MY_Controller
 		$this->data['error_message'] = $this->session->flashdata("error_message");
 	}
 
+	public function get_port() {
+		$query = trim($this->input->get('q', TRUE));
+		$query = $this->Port_model->search_by_port_name($query);
+		$json_array = array();
+		if($query->num_rows() > 0) {
+			foreach($query->result() as $row) {
+				$o = new stdClass();
+				$o->label = $row->PORT_NAME;
+				//$o->value = $row->PORT_ID;
+				$json_array[] = $o;
+			}
+		}
+
+		header('Content-Type: application/json');
+		echo json_encode($json_array);
+	}
+
 	public function index()
 	{
 		$this->data['title'] = "Port Management";

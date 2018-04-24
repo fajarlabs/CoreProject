@@ -39,6 +39,10 @@
 	<?php e(link_tag('assets/admin/plugins/jQuery-autoComplete-master/jquery.auto-complete.css')); ?>
 	<?php e(link_tag('assets/admin/plugins/sweetalert/dist/sweetalert.css')); ?>
 
+	<!-- Load jquery-UI css -->
+	<?php e(link_tag('assets/admin/js/jquery-ui.css')); ?>
+	<?php e(link_tag('assets/admin/js/jquery-ui.theme.css')); ?>
+
 
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 	<style type="text/css">

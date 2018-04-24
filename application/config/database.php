@@ -89,7 +89,7 @@ $db['default'] = array(
 	//-----------------------------------------------	
 
 	//Fajar Localhost DB
-	'hostname' => 'pgsql:host=localhost;dbname=postgres',
+	'hostname' => 'pgsql:host=localhost;dbname=sucofindo',
 	'username' => 'postgres',
 	'password' => 'postgres',
 	'database' => 'postgres',

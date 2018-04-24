@@ -6,10 +6,10 @@
 
 	<!-- end page container -->
 	<!-- ================== BEGIN BASE JS ================== -->
-	<?php echo script_tag('assets/admin/color-admin/assets/plugins/jquery/jquery-1.9.1.min.js'); ?>
+
+	<?php echo script_tag('assets/admin/js/jquery-1.12.4.js') ?>
+
 	<?php echo script_tag('assets/admin/plugins/sweetalert/dist/sweetalert.min.js'); ?>
-	<?php echo script_tag('assets/admin/color-admin/assets/plugins/jquery/jquery-migrate-1.1.0.min.js'); ?>
-	<?php echo script_tag('assets/admin/color-admin/assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js'); ?>
 	<?php echo script_tag('assets/admin/color-admin/assets/plugins/bootstrap/js/bootstrap.min.js'); ?>
 	<!--[if lt IE 9]>
 		<?php echo script_tag('assets/admin/color-admin/assets/crossbrowserjs/html5shiv.js'); ?>
@@ -19,8 +19,7 @@
 	<?php echo script_tag('assets/admin/plugins/jQuery-slimScroll-1.3.8/jquery.slimscroll.min.js') ?>
 	<?php echo script_tag('assets/admin/color-admin/assets/plugins/jquery-cookie/jquery.cookie.js') ?>
 	<!-- ================== END BASE JS ================== -->	
-
-	<?php echo script_tag('assets/admin/color-admin/assets/plugins/jquery-ui-1.12.1/jquery-ui.min.js'); ?>
+  
 	<?php echo script_tag('assets/admin/color-admin/assets/plugins/gritter/js/jquery.gritter.js'); ?>
 	<?php echo script_tag('assets/admin/color-admin/assets/plugins/flot/jquery.flot.min.js'); ?>
 	<?php echo script_tag('assets/admin/color-admin/assets/plugins/flot/jquery.flot.time.min.js'); ?>
@@ -102,6 +101,214 @@
 	    }
 	});
 	</script>
+
+<?php echo script_tag('assets/admin/js/jquery-ui.js') ?>
+
+<!-- SURVEYOR -->
+<script type="text/javascript">
+	var xcv = 0;
+	// fungsi untuk tambah elemen surveyor
+	function add_tb_surveyor() {
+		var element_surveyor = "<tr><td><select id=\"loc_"+xcv+"\" style=\"height:24px;\" name=\"type_location[]\"><option value=\"0\">--Choose Level--</option><option value=\"1\">Pusat</option><option value=\"2\">Cabang</option></select> <input id=\"autocomplete_"+xcv+"\" style=\"width:300px;margin-bottom: 3px;\" type=\"text\" name=\"surveyor_in_charge[]\" /><a onclick=\"delete_tb_surveyor(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
+
+
+		$("#tb_surveyor").append(element_surveyor);
+		var strid = '#loc_'+(xcv)+' option:selected';
+
+	    $('#autocomplete_'+xcv).autocomplete({
+	      source: function( request, response ) {
+	      		var loc =$(strid).val();
+		 		$.ajax({
+		          url: "<?php echo base_url(); ?>index.php/cv/get_surveyor",
+		          dataType: "json",
+		          data: {
+		            q: request.term,
+		            l: loc
+		          },
+		          success: function( data ) {
+		            response( data );
+		          }
+		        });
+	      },
+	      minLength: 1,
+	      select: function( event, ui ) {
+		    var label = ui.item.label;
+		    var value = ui.item.value;
+		    // tukar value jadi label
+		    ui.item.value = label;
+	      },
+	      open: function() {
+	      },
+	      close: function() {
+	      }
+	    });
+		xcv = 1+xcv;
+	}
+
+	// fungsi untuk menghapus elemen surveyor
+	function delete_tb_surveyor(e) {
+		$(e).parent().remove();
+	}
+
+	add_tb_surveyor();
+</script>
+
+<!-- PRODUCT -->
+<script type="text/javascript">
+	// inisialisasi element produk
+	var xcp = 0;
+
+	// fungsi untuk menambahkan produk
+	function add_tb_product() {
+		var element_product = "<tr><td style=\"padding-top:2px;\"><input id=\"product_"+xcp+"\" style=\"width:300px;\" type=\"text\" name=\"product[]\"/><a onclick=\"delete_tb_product(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
+
+		$("#tb_product").append(element_product);
+	    $('#product_'+xcp).autocomplete({
+	      source: function( request, response ) {
+		 		$.ajax({
+		          url: "<?php echo base_url(); ?>index.php/product/get_product",
+		          dataType: "json",
+		          data: {
+		            q: request.term
+		          },
+		          success: function( data ) {
+		            response( data );
+		          }
+		        });
+	      },
+	      minLength: 1,
+	      select: function( event, ui ) {
+		    var label = ui.item.label;
+		    var value = ui.item.value;
+		    // tukar value jadi label
+		    ui.item.value = label;
+	      },
+	      open: function() {
+	      },
+	      close: function() {
+	      }
+	    });
+
+		xcp = 1+xcp;
+	}
+
+	// fungsi untuk menghapus produk
+	function delete_tb_product(e) {
+		$(e).parent().remove();
+	}
+
+	// fungsi untuk periksa parameter yang dipakai untuk element
+	function check_product(e) {
+		var select_product = $(e).val();
+		if(select_product == "single_product") {
+			$("#tb_product tr").remove();
+			$("#tb_product").show();
+			$("#id_tb_product").hide();
+			$("#lbl_product").show();
+			add_tb_product();
+		}
+		if(select_product == "multi_product") {
+			$("#tb_product tr").remove();
+			$("#tb_product").show();
+			$("#id_tb_product").show();
+			$("#lbl_product").show();
+			add_tb_product();
+		}
+	}
+</script>
+
+<!-- Multiport -->
+	<script type="text/javascript">
+		var xpp = 0;
+		// fungsi untuk check port
+		function check_port(e) {
+			var select_port = $(e).val();
+			if(select_port == "single_port") {
+				$("#id_tb_port").hide();
+				$("#tb_port tr").remove();
+				add_tb_port();
+			}
+			if(select_port == "multi_port") {
+				$("#id_tb_port").show();
+				$("#tb_port tr").remove();
+				add_tb_port();
+			}
+		}
+
+		// fungsi untuk menambahkan element html port
+	    function add_tb_port() {
+			// inisialisasi element html port
+			var element_port = "<tr><td style=\"padding-top:2px;\"><input id=\"port_"+xpp+"\" type=\"text\" style=\"width:300px;\" name=\"port_terminal[]\" /><a onclick=\"delete_tb_port(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i> </a></td></tr>";
+	    	$("#tb_port").append(element_port);
+
+		    $('#port_'+xpp).autocomplete({
+		      source: function( request, response ) {
+			 		$.ajax({
+			          url: "<?php echo base_url(); ?>index.php/port/get_port",
+			          dataType: "json",
+			          data: {
+			            q: request.term
+			          },
+			          success: function( data ) {
+			            response( data );
+			          }
+			        });
+		      },
+		      minLength: 1,
+		      select: function( event, ui ) {
+			    var label = ui.item.label;
+			    var value = ui.item.value;
+			    // tukar value jadi label
+			    ui.item.value = label;
+		      },
+		      open: function() {
+		      },
+		      close: function() {
+		      }
+		    });
+	    	xpp = 1+xpp;
+	    }
+
+	    // fungsi untuk hapus elemen html port
+	    function delete_tb_port(e) {
+	    	$(e).parent().remove();
+	    }
+	</script>
+
+	<script type="text/javascript">
+	    $('#vessel').autocomplete({
+	      source: function( request, response ) {
+		 		$.ajax({
+		          url: "<?php echo base_url(); ?>index.php/vessel/get_vessel",
+		          dataType: "json",
+		          data: {
+		            q: request.term
+		          },
+		          success: function( data ) {
+		            response( data );
+		          }
+		        });
+	      },
+	      minLength: 1,
+	      select: function( event, ui ) {
+		    var label = ui.item.label;
+		    var value = ui.item.value;
+		    // tukar value jadi label
+		    ui.item.value = label;
+	      },
+	      open: function( event, ui) {
+	      },
+	      close: function() {
+	      },change: function(event, ui) {
+	      	var label = ui.item.label;
+		    var value = ui.item.value;
+		    // tukar value jadi label
+		    ui.item.value = label;
+	      }
+	    });
+	</script>
+
+
 </body>
 
 </html>
