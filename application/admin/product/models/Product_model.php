@@ -76,7 +76,7 @@ class Product_model extends CI_Model
         $this->db->from($this->table);
         $this->db->where('PRODUCT_LEVEL', $product_level); 
         $this->db->where('PRODUCT_REFERENCE', $product_reference); 
-        $this->db->like('PRODUCT_NAME', $product_name); 
+        $this->db->like('lower("PRODUCT_NAME")', strtolower($product_name)); 
         return $this->db->get();
     }
 

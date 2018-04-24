@@ -399,7 +399,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tr>
 					<td valign="middle">
-						<input type="text" id="vessel" style="width:40%;" name="vessel" /> 
+						<input type="text" id="vessel" onkeydown="initVessel(this,'vessel')" style="width:40%;" name="vessel" /> 
 						<div style="display:none;">
 						Multi Cargo <input type="radio" name="select_cargo" value="multi_cargo" />
 						Single Cargo <input type="radio" name="select_cargo" value="single_cargo" />

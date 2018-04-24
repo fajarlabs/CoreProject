@@ -14,7 +14,7 @@ class Cv_model extends CI_Model
     public function get_personil_by_name_location($query_name, $location) {
         $this->db->select('*');
         $this->db->from($this->table);
-        $this->db->like('NAMA', $query_name); 
+        $this->db->like('lower("NAMA")', strtolower($query_name)); 
         $this->db->where('TYPE_LOCATION', $location); 
         return $this->db->get();
     }

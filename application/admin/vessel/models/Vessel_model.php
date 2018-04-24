@@ -15,7 +15,7 @@ class Vessel_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from($this->table);
-        $this->db->like('VESSEL_NAME', $vessel); 
+        $this->db->like('lower("VESSEL_NAME")', strtolower($vessel)); 
         return $this->db->get();
     }
 

@@ -54,7 +54,7 @@ class Cv extends MY_Controller
 			foreach($query->result() as $row) {
 				$o = new stdClass();
 				$o->label = $row->NAMA;
-				$o->value = $row->ID;
+				//$o->value = $row->ID;
 				$json_array[] = $o;
 			}
 		}

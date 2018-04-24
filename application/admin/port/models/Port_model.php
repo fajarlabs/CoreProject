@@ -14,7 +14,7 @@ class Port_model extends CI_Model
     public function search_by_port_name($port_name='') {
         $this->db->select('*');
         $this->db->from($this->table);
-        $this->db->like('PORT_NAME', $port_name); 
+        $this->db->like('lower("PORT_NAME")', strtolower($port_name)); 
         return $this->db->get();
     }
 
