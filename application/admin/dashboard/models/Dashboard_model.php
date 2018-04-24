@@ -41,7 +41,7 @@ class Dashboard_model extends CI_Model
 	
 
 
-	public function loading_stats($start_date='',$end_date='',$vessel="",$produk="") 
+	public function loading_stats($month='',$year='',$vessel="",$produk="") 
 	{
 		/* field acuan */
 		/**
@@ -63,7 +63,11 @@ class Dashboard_model extends CI_Model
 
 		$str_vessel = $vessel != "" ? "AND \"VESSEL\" LIKE '%$vessel'" : "";
 		$str_produk = $produk != "" ? "AND \"PRODUCT\" LIKE '%$produk'" : "";
-
+		
+		$param="";
+		if($month!='' and $year!=''){
+			$param = ' AND "CREATE_TIME" like \'%'.$month."-".$year.'%\'';
+		}
 		$sql = 'SELECT "AREA", 
 				SUM(cast("SL_VS_BOL_R1_KLOBS" as double precision)) "R1_KLOBS",
 				SUM(cast("SL_VS_BOL_R1_KL15" as double precision)) "R1_KL15",
@@ -77,8 +81,6 @@ class Dashboard_model extends CI_Model
 				SUM(cast("SL_VEF_APPLIED_VS_BOL_METRICTON" as double precision)) "R1_VEF_METRICTON"
 				FROM "FORM_ENTRY_FIELD"
 				WHERE "IS_DELETE" = \'0\' 
-				AND "CREATE_TIME" >= timestamp \''.$start_date.' 00:00:00\' 
-				AND "CREATE_TIME" < timestamp \''.$end_date.' 23:59:59\' 
 				'.$str_vessel.'  
 				'.$str_produk.'  
 				GROUP BY "AREA"';
@@ -86,7 +88,7 @@ class Dashboard_model extends CI_Model
 		return $this->db->query($sql);
 	}
 
-	public function discharge_stats($start_date='',$end_date='',$vessel="",$produk="") 
+	public function discharge_stats($month='',$year='',$vessel="",$produk="") 
 	{
 		/* field acuan */
 		/**
@@ -121,7 +123,10 @@ class Dashboard_model extends CI_Model
 
 		$str_vessel = $vessel != "" ? "AND \"VESSEL\" LIKE '%$vessel'" : "";
 		$str_produk = $produk != "" ? "AND \"PRODUCT\" LIKE '%$produk'" : "";
-
+		$param="";
+		if($month!='' and $year!=''){
+			$param = ' AND "CREATE_TIME" like \'%'.$month."-".$year.'%\'';
+		}
 		$sql = 'SELECT "AREA", 
 				SUM(cast("SLVS_BOL_R1_KLOBS" as double precision)) "R1_KLOBS",
 				SUM(cast("SLVS_BOL_R1_KL15" as double precision)) "R1_KL15",
@@ -149,8 +154,6 @@ class Dashboard_model extends CI_Model
 
 				FROM "FORM_ENTRY_FIELD"
 				WHERE "IS_DELETE" = \'0\' 
-				AND "CREATE_TIME" >= timestamp \''.$start_date.' 00:00:00\' 
-				AND "CREATE_TIME" < timestamp \''.$end_date.' 23:59:59\' 
 				'.$str_vessel.'  
 				'.$str_produk.'  
 				GROUP BY "AREA"';
