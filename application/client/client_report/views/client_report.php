@@ -6,7 +6,7 @@
     <!-- end breadcrumb -->
     
     <!-- begin page-header -->
-    <h1 class="page-header"><?php e($site_name); ?> Report <small>Berfungsi untuk menampilkan data-data yang telah di input</small></h1>
+    <h1 class="page-header"><?php e($site_name); ?> Report <small>Function to show data <?php e($site_name); ?></small></h1>
     <!-- end page-header -->
 
     <!-- begin row -->
@@ -17,14 +17,14 @@
             <div class="panel panel-inverse">
                 <div class="panel-heading">
                     <div class="panel-heading-btn">
-                        <a style="display:none; "href="<?php echo base_url(); ?>index.php/report" class="btn btn-xs btn-icon btn-circle btn-primary" ><i class="fa fa-reply"></i></a>
-                        <a style="display:none;" href="javascript:;" onclick="downloadReport()" class="btn btn-xs btn-icon btn-circle btn-primary" ><i class="fa fa-download"></i></a>
+                        <a href="<?php echo base_url(); ?>index.php/report" class="btn btn-xs btn-icon btn-circle btn-primary" ><i class="fa fa-reply"></i></a>
+                        <a href="javascript:;" onclick="downloadReport()" class="btn btn-xs btn-icon btn-circle btn-primary" ><i class="fa fa-download"></i></a>
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                     </div>
-                    <h4 class="panel-title"><?php e($site_name); ?> - Data Records</h4>
+                    <h4 class="panel-title">All Data Records</h4>
                 </div>
                 <div class="panel-body" style="overflow-x: hidden;">
 
@@ -34,20 +34,19 @@
                     rownumbers="true" fitColumns="true" singleSelect="true">
                     <thead>
                         <tr>
-                            <th field="INTERVENTION_NAME" width="20">Intervensi</th>
-                            <th field="PRODUCT_TYPE" width="20">Tipe</th>
-                            <th field="SELECT_CARGO" width="20">Cargo</th>
-                            <th field="KONTRAK" width="30">Kontrak</th>
-                            <th field="SPK" width="30">LOI/SPK/PO/WO/NOA</th>
-                            <th field="CTIME" width="30">Tanggal / Jam Input</th>
-                            <th field="FUNGSI" width="30" align="center">Fungsi</th>
+                            <th field="AREA" width="30">AREA</th>
+                            <th field="FILE_ORDER" width="30">FILE ORDER</th>
+                            <th field="IWO" width="30">IWO</th>
+                            <th field="KONTRAK" width="30">KONTRAK</th>
+                            <th field="SPK" width="30">SPK</th>
+                            <th field="SURVEYOR_IN_CHARGE" width="30">SURVEYOR</th>
+                            <th field="PRODUCT_TYPE" width="20">PRODUCT</th>
+                            <th field="INTERVENTION_NAME" width="28">INTERVENTION</th>
+                            <th field="CTIME" width="35">DATE/TIME</th>
+                            <th field="FUNGSI" width="30" align="center">FUNCTION</th>
                         </tr>
                     </thead>
                 </table>
-                 <div id="mm" class="easyui-menu">
-    <div>Edit</div>
-    <div>Delete</div>
-  </div>
                 <!--<div id="toolbar">
                     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newData()">Add</a>
                     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editData()">Edit</a>
@@ -88,7 +87,7 @@
 
  function callModal(id) {
     $("#exampleModalDownload").modal("show");
-    $("#iframe-download").attr("src","<?php echo base_url(); ?>index.php/client_report/cetak/"+id);
+    $("#iframe-download").attr("src","<?php echo base_url(); ?>index.php/report/cetak/"+id);
  }
 
 function downloadReport() {
@@ -98,6 +97,6 @@ function downloadReport() {
     str_query += "&KONTRAK="+encodeURI($("input[name=KONTRAK]").val());
     str_query += "&SPK="+encodeURI($("input[name=SPK]").val());
     str_query += "&CTIME="+encodeURI($("input[name=CTIME]").val());
-    window.location.href = "<?php echo base_url(); ?>index.php/client_report/downloadexcel/?"+str_query;
+    window.location.href = "<?php echo base_url(); ?>index.php/report/downloadexcel/?"+str_query;
  } 
 </script>

@@ -63,6 +63,12 @@ class Client_dashboard extends MY_Controller
 	{ 	
 		$this->data['sites'] = $this->Client_site_model->get_all_items();
 		$this->data['title'] = "Dashboard";
+		$this->data['sites'] 		= $this->Client_site_model->get_all_items();
+		$this->data['product'] 		= $this->Dashboard_model->get_table_name('MASTER_PRODUCT');
+		$this->data['intervensi'] 	= $this->Dashboard_model->get_table_name('MASTER_INTERVENTION');
+		$this->data['client'] 		= $this->Dashboard_model->get_table_name_one('FORM_ENTRY_FIELD');
+		$this->data['area'] 		= $this->Dashboard_model->get_table_group_by('FORM_ENTRY_FIELD','AREA');
+		$this->data['title'] 		= "Dashboard";
 		$this->load->view("client/header",$this->data);
 		$this->load->view("dashboard", $this->data);
 		$this->load->view("client/footer", $this->data);

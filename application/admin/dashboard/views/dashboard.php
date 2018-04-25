@@ -16,7 +16,7 @@
 			<!-- end breadcrumb -->
 			
 			<!-- begin page-header -->
-			<h1 class="page-header">Dashboard <small>berisi kumpulan informasi tentang statistik proyek</small></h1>
+			<h1 class="page-header">Dashboard <small>contains a collection of information about project statistics</small></h1>
 			<!-- end page-header -->
 
 			<!-- begin row -->
@@ -58,7 +58,7 @@
 									<td>
 										<?php echo form_label('Costumer'); ?><br/>
 										<select name="cst_id" style="height:33px;">
-											<option value="">--Pilih--</option>
+											<option value="">--Choose--</option>
 											<?php 
 											$ct =  $client[0]->CLIENTS;
 											$clnt = json_decode($ct);
@@ -69,17 +69,18 @@
 									</td>		
 									<td>
 									<?php 
-									echo form_label('Lokasi Kerja') ?><br/>
+									echo form_label('Job Location') ?><br/>
 										<select name="lokasi_kerja" style="height:33px;">
+											<option  value='0'>--Choose--</option>
 									<?php foreach($area as $ar){ ?>
 												<option  value='<?php echo $ar->AREA ?>'><?php echo $ar->AREA ?></option>
 											<?php } ?>		
 										</select>
 									</td>
 									<td >
-									<?php echo form_label('Bulan') ?><br/>
+									<?php echo form_label('Month') ?><br/>
 									<select name="bulan" class="form-control" required="">
-										<option value="">-- Pilih --</option>
+										<option value="">--Choose--</option>
 										<option value="01">January</option>
 										<option value="02">February</option>
 										<option value="03">March</option>
@@ -95,7 +96,7 @@
 									</select>
 										</td>
 										<td style="width:300px;">
-										<?php echo form_label('Tahun') ?><br/>
+										<?php echo form_label('Year') ?><br/>
 										<?php 
 											//$dtbarge=date("m/d/Y", strtotime($row->DATE_LOADING_BARGE));
 											echo form_input(array('type' => 'text', 'readonly' => 'true','maxlength' => '4', 'name' => 'tahun','class' => 'thn_picker', 'style' => ' min-width:100px !important;width:100px;height:33px;color:#000 !important;', 'value' => '')); ?>

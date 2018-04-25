@@ -72,16 +72,25 @@ class Client_report extends CI_Controller
 		$total = 0;
 		$json_object = new stdClass();
 		
-		$query_items = @$this->Report_model->get_all_items($offset,$rows,get_client_site_id(),$filterRules);
+		$query_items = @$this->Report_model->get_all_items($offset,$rows,$filterRules);
 		$array_list  = array();
 		if($query_items->num_rows() > 0) {
+
+			$i=0;
 			foreach($query_items->result() as $row) {
+				if($i > 2) {
+					break;
+				}
+				$row->KONTRAK = implode(", ",json_decode($row->KONTRAK));
+				$row->SPK = implode(", ",json_decode($row->SPK));
+				$row->SURVEYOR_IN_CHARGE = implode(", ",json_decode($row->SURVEYOR_IN_CHARGE));
 				$row->CTIME  = date('d-m-Y H:i:s',strtotime($row->CTIME));
-				$row->FUNGSI = '<a href="'.base_url().'index.php/client_report/detil/'.$row->FEFID.'" class="btn btn-success btn-xs"><i class="fa fa-eye"></i> Lihat</a> '; 
-				$row->FUNGSI .= '<a href="javascript:;" onclick="callModal('.$row->FEFID.')" class="btn btn-success btn-xs"><i class="fa fa-print"></i> Cetak</a>'; 
+				$row->FUNGSI = '<a href="'.base_url().'index.php/report/detil/'.$row->FEFID.'" class="btn btn-primary btn-xs"><i class="fa fa-eye"> View</i></a> '; 
+				$row->FUNGSI .= '<a href="javascript:;" onclick="callModal('.$row->FEFID.')" class="btn btn-success btn-xs"><i class="fa fa-print"></i> Print</a>'; 
 				$row->PRODUCT_TYPE = ucfirst($row->PRODUCT_TYPE);
 				$row->SELECT_CARGO = ucwords(str_replace("_", " ", $row->SELECT_CARGO));
 				$array_list[] = $row;
+				$i++;
 			}
 		}
 		$json_object->rows = $array_list;
