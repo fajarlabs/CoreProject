@@ -238,6 +238,22 @@ if(!function_exists('get_app_wallpaper'))
 	} 
 }
 
+if(!function_exists('get_app_ss_timeout'))
+{
+	function get_app_ss_timeout() 
+	{
+		return get_admin_setting('APP_SCREEN_SAVER_TIMEOUT');
+	} 
+}
+
+if(!function_exists('get_app_ss_wallpaper'))
+{
+	function get_app_ss_wallpaper() 
+	{
+		return get_admin_setting('APP_SCREEN_SAVER_IMAGE');
+	} 
+}
+
 if(!function_exists('get_app_brand_width'))
 {
 	function get_app_brand_width() 
@@ -546,6 +562,12 @@ function check_exist($var){
 	return $result;
 }
 function check_exist_date($var){
-	return (!empty($var) ? convert_date($var,'d/m/Y')  : ' - ');
+	if($var=="1970-01-01"){
+		return " - ";
+	}
+	else {
+		return (!empty($var) ? convert_date($var,'d/m/Y')  : ' - ');
+	}
+	
 }
 ?>

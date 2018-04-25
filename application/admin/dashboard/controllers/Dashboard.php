@@ -57,16 +57,17 @@ class Dashboard extends MY_Controller
 	public function chart_rest()
 	{
 
-		$date_month = $this->input->get("bulan");
-		$date_year = $this->input->get("tahun");
+		$date_month  	 = $this->input->get("bulan");
+		$date_year   	 = $this->input->get("tahun");
+		$intervensi  	 = $this->input->get("intervensi");
+		$cst_id  	 	 = $this->input->get("cst_id");
+		$produk 	 	 = $this->input->get("produk");
+		$lokasi_kerja 	 = $this->input->get("lokasi_kerja");
 
-		$site_id = $this->input->get("site_id");
-		$vessel  = $this->input->get("vessel");
-		$produk  = $this->input->get("produk");
 
 		$result = array();
 
-		$query = $this->Dashboard_model->loading_stats($date_month,$date_year,$vessel,$produk);
+		$query = $this->Dashboard_model->loading_stats($date_month,$date_year,$intervensi,$cst_id,$produk,$lokasi_kerja);
 
 		/* chart column negative */
 		$array_data = array();

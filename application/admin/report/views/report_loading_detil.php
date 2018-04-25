@@ -140,11 +140,15 @@
     <td class="span">:</td>
     <td class="span" colspan="2">
       <?php echo check_exist_date($item->result()[0]->LOADING_START_DATE) ?> &nbsp;
-      <?php echo check_exist($item->result()[0]->LOADING_START_TIME) ?>
     </td>
-    <td class="span" colspan="3">s/d &nbsp;
-      <?php echo check_exist_date($item->result()[0]->LOADING_COMPLETE_DATE) ?>
-      <?php echo check_exist($item->result()[0]->LOADING_COMPLETE_TIME) ?>
+    <td class="span" colspan="3">
+	<?php 
+		if(!empty($item->result()[0]->LOADING_START_DATE) and !empty($item->result()[0]->LOADING_COMPLETE_DATE)){
+			echo "s/d";
+		}
+	?>
+	&nbsp;
+    <?php echo check_exist_date($item->result()[0]->LOADING_COMPLETE_DATE) ?>
     </td>
   </tr>
    <tr>
@@ -152,11 +156,15 @@
     <td class="span">:</td>
      <td class="span" colspan="2">
       <?php echo check_exist_date($item->result()[0]->DISCHARGE_START_DATE) ?> &nbsp;
-      <?php echo check_exist($item->result()[0]->DISCHARGE_START_TIME) ?>
     </td>
-    <td class="span" colspan="3">s/d &nbsp;
-      <?php echo check_exist_date($item->result()[0]->DISCHARGE_COMPLETE_DATE) ?>
-      <?php echo check_exist($item->result()[0]->DISCHARGE_COMPLETE_TIME) ?>
+    <td class="span" colspan="3">
+	<?php 
+		if(!empty($item->result()[0]->DISCHARGE_START_DATE) and !empty($item->result()[0]->DISCHARGE_COMPLETE_DATE)){
+			echo "s/d";
+		}
+	?>
+	&nbsp;
+    <?php echo check_exist_date($item->result()[0]->DISCHARGE_COMPLETE_DATE) ?>
     </td>
   </tr>
   <tr>
@@ -172,7 +180,7 @@
     <td class="span">Bill of Lading Date</td>
     <td class="span">:</td>
     <td class="span"><?php echo check_exist_date($item->result()[0]->BL_START_DATE); ?></td>
-    <td class="span"><?php echo check_exist($item->result()[0]->BL_START_TIME); ?></td>
+    <td class="span"></td>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
@@ -481,7 +489,7 @@
     <?php if(@$item->result()[0]->BL_FLOW_METER=="Y") { ?>
       <i style="color:green" class="fa fa-check"></i> 
     <?php } else { ?>
-      <i style="color:red" class="fa fa-check"></i> 
+      <i style="color:red" class="fa fa-times"></i> 
     <?php }  ?><br>Flow Meter</td>
     <td class="span" align="center">
     <?php if(@$item->result()[0]->BL_SHORE_TANK=="Y") { ?>

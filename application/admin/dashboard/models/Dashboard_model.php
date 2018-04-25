@@ -41,7 +41,7 @@ class Dashboard_model extends CI_Model
 	
 
 
-	public function loading_stats($month='',$year='',$vessel="",$produk="") 
+	public function loading_stats($month='',$year='',$intervensi='',$cst_id='',$produk='',$lokasi_kerja='') 
 	{
 		/* field acuan */
 		/**
@@ -61,12 +61,15 @@ class Dashboard_model extends CI_Model
 		 * SL_VEF_APPLIED_VS_BOL_METRICTON
 		 */
 
-		$str_vessel = $vessel != "" ? "AND \"VESSEL\" LIKE '%$vessel'" : "";
 		$str_produk = $produk != "" ? "AND \"PRODUCT\" LIKE '%$produk'" : "";
+		$str_intervensi = $intervensi != "" ? "AND \"SELECT_INTERVENTION\" LIKE '%$intervensi'" : "";
+		$str_clients = $cst_id != "" ? "AND \"CLIENTS\" LIKE '%$cst_id%'" : "";
+		$str_lokasi_kerja = $lokasi_kerja != "" ? "AND \"AREA\" LIKE '%$lokasi_kerja%'" : "";
 		
-		$param="";
+		$str_date="";
 		if($month!='' and $year!=''){
-			$param = ' AND "CREATE_TIME" like \'%'.$month."-".$year.'%\'';
+			$my_date = $year."-".$month."-01";
+			$str_date = ' AND "CREATE_TIME"  >= DATE \''.$my_date.'\' AND "CREATE_TIME" < DATE \''.$my_date.'\' ';
 		}
 		$sql = 'SELECT "AREA", 
 				SUM(cast("SL_VS_BOL_R1_KLOBS" as double precision)) "R1_KLOBS",
@@ -81,14 +84,17 @@ class Dashboard_model extends CI_Model
 				SUM(cast("SL_VEF_APPLIED_VS_BOL_METRICTON" as double precision)) "R1_VEF_METRICTON"
 				FROM "FORM_ENTRY_FIELD"
 				WHERE "IS_DELETE" = \'0\' 
-				'.$str_vessel.'  
 				'.$str_produk.'  
+				'.$str_intervensi.'  
+				'.$str_clients.'  
+				'.$str_lokasi_kerja.'  
+				'.$str_date.'  
 				GROUP BY "AREA"';
 
 		return $this->db->query($sql);
 	}
 
-	public function discharge_stats($month='',$year='',$vessel="",$produk="") 
+	public function discharge_stats($month='',$year='',$intervensi='',$cst_id='',$produk='',$lokasi_kerja='') 
 	{
 		/* field acuan */
 		/**
@@ -120,12 +126,15 @@ class Dashboard_model extends CI_Model
 		 * SR_VS_BOL_R4_LONGTON
 		 * SR_VS_BOL_R4_METRICTON
 		 */
-
-		$str_vessel = $vessel != "" ? "AND \"VESSEL\" LIKE '%$vessel'" : "";
 		$str_produk = $produk != "" ? "AND \"PRODUCT\" LIKE '%$produk'" : "";
-		$param="";
+		$str_intervensi = $intervensi != "" ? "AND \"SELECT_INTERVENTION\" LIKE '%$intervensi'" : "";
+		$str_clients = $cst_id != "" ? "AND \"CLIENTS\" LIKE '%$cst_id%'" : "";
+		$str_lokasi_kerja = $lokasi_kerja != "" ? "AND \"AREA\" LIKE '%$lokasi_kerja%'%" : "";
+		
+		$str_date="";
 		if($month!='' and $year!=''){
-			$param = ' AND "CREATE_TIME" like \'%'.$month."-".$year.'%\'';
+			$my_date = $year."-".$month."-01";
+			$str_date = ' AND "CREATE_TIME"  >= DATE \''.$my_date.'\' AND "CREATE_TIME" < DATE \''.$my_date.'\' ';
 		}
 		$sql = 'SELECT "AREA", 
 				SUM(cast("SLVS_BOL_R1_KLOBS" as double precision)) "R1_KLOBS",
@@ -154,8 +163,11 @@ class Dashboard_model extends CI_Model
 
 				FROM "FORM_ENTRY_FIELD"
 				WHERE "IS_DELETE" = \'0\' 
-				'.$str_vessel.'  
 				'.$str_produk.'  
+				'.$str_intervensi.'  
+				'.$str_clients.'  
+				'.$str_lokasi_kerja.'  
+				'.$str_date.'  
 				GROUP BY "AREA"';
 
 		return $this->db->query($sql);

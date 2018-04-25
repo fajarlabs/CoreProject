@@ -1,4 +1,15 @@
-			<!-- begin #content -->
+		 <style> 
+			 #displayed {
+			    margin: 0;
+			    position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    margin-right: -50%;
+			    transform: translate(-50%, -50%) }
+			}
+		 </style> 
+		
+		<!-- begin #content -->
 		<div id="content" class="content">
 			<!-- begin breadcrumb -->
 			<?php echo create_breadcrumb('Home'); ?>
@@ -119,6 +130,39 @@
 	<script type="text/javascript">
 		 (function defer() {
 	 	    if (window.jQuery) {
+
+	 	    		var mousetimeout;
+					var screensaver_active = false;
+					var idletime = <?php echo get_app_ss_timeout()*60; ?>;
+
+					function show_screensaver(){
+						$('#displayed').show();
+						$('#page-container').hide();
+						screensaver_active = true;
+						screensaver_animation();
+					}
+					function stop_screensaver(){
+						$('#displayed').hide();
+						$('#page-container').show();
+						screensaver_active = false;
+					}
+					$(document).mousemove(function(){
+						clearTimeout(mousetimeout);
+						if (screensaver_active) {
+							stop_screensaver();
+						}
+						mousetimeout = setTimeout(function(){
+							show_screensaver();
+						}, 1000 * idletime); // 5 secs			
+					});
+					function screensaver_animation(){
+						if (screensaver_active) {
+							$('#displayed').show();
+							$('#page-container').hide();
+							screensaver_animation;
+						}
+					}
+
 	 	    	$('.thn_picker').datepicker({
 				    format: "yyyy",
 				    viewMode: "years", 
@@ -368,4 +412,6 @@
 				    }]
 				});
 		 }
-	</script>
+
+	
+		</script>

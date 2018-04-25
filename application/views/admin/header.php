@@ -9,7 +9,7 @@
 	<title><?php e(@$title); ?></title>
 
 	<?php e(meta(array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'))); ?>
-	<?php e(meta('author', 'Fajar,Wibi,Fajri')); ?>
+	<?php e(meta('author', 'Fajar,Ridwansyah')); ?>
 	<?php e(meta('description', 'Site build using codeigniter 3')); ?>
 	<?php e(meta('Content-type', 'text/html; charset=utf-8', 'equiv')); ?>
 	<?php e(meta(array('name' => 'robots', 'content' => 'no-cache'))); ?>
@@ -186,6 +186,7 @@
 	<!-- end #page-loader -->
 	
 	<!-- begin #page-container -->
+	<img id="displayed" style="display:none" src="<?php echo get_app_ss_wallpaper() ?>">
 	<div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
 		<!-- begin #header -->
 		<div id="header" class="header navbar navbar-default navbar-fixed-top" style="background-image: url('<?php echo base_url(); ?>assets/admin/images/bg-header.png');background-size:cover;">

@@ -232,6 +232,7 @@ foreach($cv_cr as $my_cv_cr){
 		var yy=d.getFullYear();
 		return dd+"/"+mm+"/"+yy;
 	}
+	
 	(function defer() {
  	    if (window.jQuery) {
 
@@ -387,6 +388,7 @@ foreach($cv_cr as $my_cv_cr){
  	} else {
            setTimeout(function() { defer() }, 2000);
         }
+
 	 })();
 
 	 function removeRowdata(Ids,divId,jenis)
