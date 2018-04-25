@@ -30,7 +30,8 @@ class Alert_confirmation_model extends CI_Model
         $filter_rules = json_decode($filter_rules);
         $count = count($filter_rules);
         $cp_count = $count;
-        $query .= "left join \"MASTER_INTERVENTION\" \"mi\" ON \"fef\".\"SELECT_INTERVENTION\" = \"mi\".\"ID\" left join \"APP_CLIENT_SITE\" \"aps\" ON \"fef\".\"CLIENT_SITE_ID\" = \"aps\".\"CLIENT_SITE_ID\" WHERE ";
+        $query .= "left join \"MASTER_INTERVENTION\" \"mi\" ON \"fef\".\"SELECT_INTERVENTION\" = \"mi\".\"ID\"";
+        $query .= "left join \"MASTER_PRODUCT\" \"mp\" ON \"fef\".\"PRODUCT_TYPE\"::int = \"mp\".\"PRODUCT_ID\" WHERE ";
         
         if($count > 0) {
             foreach($filter_rules as $row) {
@@ -64,8 +65,8 @@ class Alert_confirmation_model extends CI_Model
                 if($row->field == "INTERVENTION_NAME") {
                     $query .= "\"mi\".\"INTERVENTION_NAME\" = '".ucwords(strtolower($row->value))."' ";
                 }   
-                if($row->field == "PRODUCT_TYPE") {
-                    $query .= "\"fef\".\"PRODUCT_TYPE\" = '".str_replace(" ","_",strtolower($row->value))."' ";
+                if($row->field == "PRODUCT_NAME") {
+                    $query .= "LOWER(\"mp\".\"PRODUCT_NAME\") = '".str_replace(" ","_",strtolower($row->value))."' ";
                 }
                 if($row->field == "VESSEL") {
                     $query .= "LOWER(\"fef\".\"VESSEL\") LIKE '%".strtolower($row->value)."%' ";
@@ -94,7 +95,8 @@ class Alert_confirmation_model extends CI_Model
         $filter_rules = json_decode($filter_rules);
         $count = count($filter_rules);
         $cp_count = $count;
-        $query .= "left join \"MASTER_INTERVENTION\" \"mi\" ON \"fef\".\"SELECT_INTERVENTION\" = \"mi\".\"ID\" left join \"APP_CLIENT_SITE\" \"aps\" ON \"fef\".\"CLIENT_SITE_ID\" = \"aps\".\"CLIENT_SITE_ID\" WHERE ";
+        $query .= "left join \"MASTER_INTERVENTION\" \"mi\" ON \"fef\".\"SELECT_INTERVENTION\" = \"mi\".\"ID\" ";
+        $query .= "left join \"MASTER_PRODUCT\" \"mp\" ON \"fef\".\"PRODUCT_TYPE\"::int = \"mp\".\"PRODUCT_ID\" WHERE ";
         
         if($count > 0) {
             foreach($filter_rules as $row) {
@@ -128,17 +130,14 @@ class Alert_confirmation_model extends CI_Model
                 if($row->field == "INTERVENTION_NAME") {
                     $query .= "\"mi\".\"INTERVENTION_NAME\" = '".ucwords(strtolower($row->value))."' ";
                 }   
-                if($row->field == "PRODUCT_TYPE") {
-                    $query .= "\"fef\".\"PRODUCT_TYPE\" = '".str_replace(" ","_",strtolower($row->value))."' ";
+                if($row->field == "PRODUCT_NAME") {
+                    $query .= "LOWER(\"mp\".\"PRODUCT_NAME\") = '".str_replace(" ","_",strtolower($row->value))."' ";
                 }
                 if($row->field == "VESSEL") {
                     $query .= "LOWER(\"fef\".\"VESSEL\") LIKE '%".strtolower($row->value)."%' ";
                 }
                 if($row->field == "SELECT_CARGO") {
                     $query .= "\"fef\".\"SELECT_CARGO\" = '".str_replace(" ","_",strtolower($row->value))."' ";
-                }
-                if($row->field == "CLIENT_SITE_NAME") {
-                    $query .= "LOWER(\"aps\".\"CLIENT_SITE_NAME\") LIKE '%".strtolower($row->value)."%' ";
                 }
                 if($count > 1) {
                     $query .= "AND ";

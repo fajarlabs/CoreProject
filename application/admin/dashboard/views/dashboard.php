@@ -38,18 +38,18 @@
 							<table style="width:100%;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 								<tr>
 									<td >
-										<?php echo form_label('Produk') ?><br/>
+										<?php echo form_label('Product') ?><br/>
 										<select name="produk" style="height:33px;">	
-											<option value="">--Pilih--</option>
+											<option value="">--Choose--</option>
 											<?php foreach($product as $pr){ ?>
 												<option  value='<?php echo $pr->PRODUCT_ID ?>'><?php echo $pr->PRODUCT_NAME ?></option>
 											<?php } ?>		
 										</select>
 									</td>
 									<td>
-										<?php echo form_label('Intervensi') ?><br/>
+										<?php echo form_label('Intervention') ?><br/>
 										<select name="intervensi" style="height:33px;">
-											<option value="">--Pilih--</option>
+											<option value="">--Choose--</option>
 											<?php foreach($intervensi as $itv){ ?>
 												<option  value='<?php echo $itv->ID ?>'><?php echo $itv->INTERVENTION_NAME ?></option>
 											<?php } ?>		
@@ -169,6 +169,13 @@
 				    minViewMode: "years"
 				});
 	 	    	$("#chart_form").on("submit",function(e) {
+	 	    		var tahun = $('input[name="tahun"');
+	 	    		var tahun_int = parseInt(tahun.val());
+	 	    		if(tahun_int < 2018) {
+	 	    			alert("Data not found!");
+	 	    			return false;
+	 	    		}
+	 	    		
 	 	    		$.get('<?php echo base_url(); ?>index.php/dashboard/chart_rest/?'+$(this).serialize(),function(json){
 	 	    			// show division
 	 	    			$("#div_chart_1").show();
@@ -183,11 +190,11 @@
 
 	 	    			//columnNegative(json[1],"chart2",categories2,title2);
 
-	 	    			column_curva('','chart3','','Statistik');
-	 	    			chart_dobule_line('','chart5','','Statistik');
-	 	    			chart_line('','chart6','','Statistik');
+	 	    			column_curva('','chart3','','Statistics');
+	 	    			chart_dobule_line('','chart5','','Statistics');
+	 	    			chart_line('','chart6','','Statistics');
 
-	 	    			column_pie('','chart4','','Statistik Data (R1,R2,R3,R4) Discharge');
+	 	    			column_pie('','chart4','','Loss Statistics Percentage');
 	 	    		});
 	 	    		return false;
 	 	    	}); 
@@ -220,7 +227,7 @@
 				        type: 'spline'
 				    },
 				    title: {
-				        text: 'Statistik'
+				        text: 'Detail Transaction'
 				    },
 				    credits: {
 				        enabled: false
@@ -231,7 +238,7 @@
 				    },
 				    yAxis: {
 				        title: {
-				            text: 'Liter'
+				            text: 'Liter (x1000)'
 				        },
 				        labels: {
 				            formatter: function () {
@@ -253,18 +260,18 @@
 				        }
 				    },
 				    series: [{
-				        name: 'Diterima',
+				        name: 'Receive',
 				        marker: {
 				            symbol: 'square'
 				        },
-				        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2,23.3, 18.3, 13.9, 9.6]
+				        data: [70.340, 106.9, 109.5, 114.5, 0.0,0.0, 0.0,0.0, 0.0, 0.0, 0.0,0.0]
 
 				    }, {
-				        name: 'Dikirim',
+				        name: 'Sending',
 				        marker: {
 				            symbol: 'diamond'
 				        },
-				        data: [4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6]
+				        data: [74.2, 107.3, 110.32, 115.9, 0.0,0.0, 0.0,0.0, 0.0, 0.0, 0.0,0.0]
 				    }]
 				});
 		 }
@@ -275,7 +282,7 @@
 				        type: 'spline'
 				    },
 				    title: {
-				        text: 'Statistik'
+				        text: 'Fuel Transaction Statistics'
 				    },
 				    credits: {
 				        enabled: false
@@ -286,7 +293,7 @@
 				    },
 				    yAxis: {
 				        title: {
-				            text: 'Liter'
+				            text: 'Liter (x1000)'
 				        },
 				        labels: {
 				            formatter: function () {
@@ -308,11 +315,11 @@
 				        }
 				    },
 				    series: [{
-				        name: 'Dikirim',
+				        name: 'Sending',
 				        marker: {
 				            symbol: 'diamond'
 				        },
-				        data: [4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6]
+				        data: [70.340, 106.9, 109.5, 114.5, 0.0,0.0, 0.0,0.0, 0.0, 0.0, 0.0,0.0]
 				    }]
 				});
 		 }
@@ -355,10 +362,10 @@
 			    },
 			    series: [{
 			        name: 'Target',
-			        data: [100000, 120000, 6000, 500000, 320000, 400000, 140000,480000]
+			        data: [70340, 106900, 109000, 114000, 0.0,0.0, 0.0,0.0, 0.0, 0.0, 0.0,0.0]
 			    }, {
-			        name: 'Diterima',
-			        data: [8000, 120000, 5000, 300000, 120000, 200000, 9000,430000]
+			        name: 'Receive',
+			        data: [69030, 105800, 108980, 113300, 0.0,0.0, 0.0,0.0, 0.0, 0.0, 0.0,0.0]
 			    }]
 			});
 		 }

@@ -35,15 +35,13 @@
 				            rownumbers="true" fitColumns="true" singleSelect="true">
 				        <thead>
 				            <tr>
-                                <th field="INTERVENTION_NAME" width="15">Intervensi</th>
-                                <th field="PRODUCT_TYPE" width="15">Tipe</th>
-                                <th field="SELECT_CARGO" width="18">Cargo</th>
-                                <th field="CLIENT_SITE_NAME" width="15">Site Name</th>
-                                <th field="VESSEL" width="20">Vessel</th>
-                                <th field="KONTRAK" width="30">Kontrak</th>
-                                <th field="SPK" width="30">LOI/SPK/PO/WO/NOA</th>
-                                <th field="CTIME" width="30">Tanggal / Jam Input</th>
-                                <th field="FUNGSI" width="30" align="center">Fungsi</th>
+                                <th field="INTERVENTION_NAME" width="15">INTERVENTION</th>
+                                <th field="PRODUCT_NAME" width="15">PRODUCT NAME</th>
+                                <th field="VESSEL" width="20">VESSEL</th>
+                                <th field="KONTRAK" width="30">CONTRACT</th>
+                                <th field="SPK" width="30">SPK</th>
+                                <th field="CTIME" width="30">DATE/TIME</th>
+                                <th field="FUNGSI" width="30" align="center">FUNCTION</th>
 				            </tr>
 				        </thead>
 				    </table>

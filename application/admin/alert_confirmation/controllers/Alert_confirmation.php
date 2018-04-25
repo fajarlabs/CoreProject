@@ -111,6 +111,8 @@ class Alert_confirmation extends MY_Controller
 				/* modificated */
 				$row->CTIME  = date('d-m-Y H:i:s',strtotime($row->CTIME));
 				$row->FUNGSI = '';
+				$row->SPK    = implode(",",json_decode($row->SPK));
+				$row->KONTRAK = implode(",",json_decode($row->KONTRAK));
 
 				if($is_losses) {
 					$row->FUNGSI .= '<a href="'.base_url().'index.php/alert_confirmation/single_broadcast/'.$row->FEFID.'"

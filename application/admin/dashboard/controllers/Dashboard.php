@@ -37,9 +37,7 @@ class Dashboard extends MY_Controller
 			</script>';
 			
 		$this->data['osess'] = $this->session->userdata("osess");
-
 	}
-
 
 	public function index()
 	{ 	
@@ -82,7 +80,7 @@ class Dashboard extends MY_Controller
 		$result[] = $array_data;
 
 		/* chart pie */
-		$query = $this->Dashboard_model->discharge_stats($date_month,$date_year,$vessel,$produk);
+		$query = $this->Dashboard_model->discharge_stats($date_month,$date_year,$intervensi,$cst_id,$produk,$lokasi_kerja);
 		
 		/* chart column negative */
 		$array_data = array();

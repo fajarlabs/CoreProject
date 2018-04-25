@@ -11,7 +11,6 @@ class Dashboard_model extends CI_Model
         return $this->db->get($this->table);
 	}
 
-
     public  function get_table_name($table,$col_name='',$order_type='',$where_col='',$where_data='') {
         $this->db->select('*');
         $this->db->from($table);
@@ -62,7 +61,7 @@ class Dashboard_model extends CI_Model
 		 */
 
 		$str_produk = $produk != "" ? "AND \"PRODUCT\" LIKE '%$produk'" : "";
-		$str_intervensi = $intervensi != "" ? "AND \"SELECT_INTERVENTION\" LIKE '%$intervensi'" : "";
+		$str_intervensi = $intervensi != "" ? "AND \"SELECT_INTERVENTION\"::int = '$intervensi'" : "";
 		$str_clients = $cst_id != "" ? "AND \"CLIENTS\" LIKE '%$cst_id%'" : "";
 		$str_lokasi_kerja = $lokasi_kerja != "" ? "AND \"AREA\" LIKE '%$lokasi_kerja%'" : "";
 		
@@ -94,7 +93,7 @@ class Dashboard_model extends CI_Model
 		return $this->db->query($sql);
 	}
 
-	public function discharge_stats($month='',$year='',$intervensi='',$cst_id='',$produk='',$lokasi_kerja='') 
+	public function discharge_stats($month='',$year='',$intervensi=0,$cst_id='',$produk='',$lokasi_kerja='') 
 	{
 		/* field acuan */
 		/**
@@ -127,7 +126,7 @@ class Dashboard_model extends CI_Model
 		 * SR_VS_BOL_R4_METRICTON
 		 */
 		$str_produk = $produk != "" ? "AND \"PRODUCT\" LIKE '%$produk'" : "";
-		$str_intervensi = $intervensi != "" ? "AND \"SELECT_INTERVENTION\" LIKE '%$intervensi'" : "";
+		$str_intervensi = $intervensi != "" ? "AND \"SELECT_INTERVENTION\" = '$intervensi'" : "";
 		$str_clients = $cst_id != "" ? "AND \"CLIENTS\" LIKE '%$cst_id%'" : "";
 		$str_lokasi_kerja = $lokasi_kerja != "" ? "AND \"AREA\" LIKE '%$lokasi_kerja%'" : "";
 		
