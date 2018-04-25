@@ -286,6 +286,29 @@
                                  <?php } ?>
                             </div>
                         </div>
+
+                        <!-- ========================================
+                         Works Experiences 
+                        ==========================================-->
+
+                        <div class="section-wrapper z-depth-1">
+                            <div class="section-icon col s12 m12 l2">
+                                <i class="fa fa-trophy"></i>
+                            </div>
+                            <div class="custom-content col s12 m12 l10 wow fadeIn a1" data-wow-delay="0.1s" >
+                                <h2>Work Experiences </h2>
+                                
+                                <?php 
+                                 if(isset($work_experiences)) {
+                                 foreach($work_experiences as $cr){ ?>   
+                                <div class="custom-content-wrapper wow fadeIn a2" data-wow-delay="0.2s" >
+                                    <h3><?php echo $cr->CERTIFICATE_NAME ?> -  <span><?php echo $cr->CERITIFICATE_FROM ?></span>
+                                    </h3><br/> Expired until : <?php echo convert_date($cr->CERITIFICATE_EXPIRED,"d/m/Y") ?> - <a style="color:blue" href="<?php echo base_url() ?>uploads/cv_files_certificate/<?php echo $cr->CERITIFICATE_FILE ?>" title="Download Certificate" download>Download</a>
+                                </div>
+                                 <?php } }?>
+                            </div>
+                        </div>
+
                     </div><!-- end row -->
                 </section><!-- end section -->
             </div> <!-- end row -->

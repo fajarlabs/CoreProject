@@ -711,6 +711,10 @@ class Cv extends MY_Controller
 
 		//education
 		$this->data['cv_edu'] = $this->Cv_model->get_table_name('MASTER_CV_EDUCATION','ID','ASC','ID_CV',$id);
+
+		// works experiences
+		$this->data['work_experiences'] = NULL;
+
 		$arrx = array();
 		foreach ($this->data['cv_edu'] as $key => $value) {
 			$query  = $this->Cv_model->get_table_name('REF_EDUCATION','EDUCATION_TYPE','asc','ID_REF_EDUCATION',$value->ID_REF_EDUCATION);
