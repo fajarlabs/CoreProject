@@ -203,7 +203,7 @@ class Report extends MY_Controller
 				$surveyoric=$row->SURVEYOR_IN_CHARGE;
 				$lcd=$row->lcd;
 				$blsd=$row->blsd;
-
+				
 
 				$date_va		= check_exist_date($row->DATE_VESSEL_ARRIVED);
 				$tm_va			= check_exist($row->TIME_VESSEL_ARRIVED);
@@ -237,13 +237,13 @@ class Report extends MY_Controller
 				$tm_dkm				= check_exist($row->TIME_KEY_MEETING);
 				$rmk_dkm			= check_exist($row->REMARKS_KEY_MEETING);
 				
-				$date_tip_comm  	= check_exist_date($row->DATE_COMMENCED);
-				$tm_tip_comm		= check_exist($row->TIME_COMMENCED);
-				$rmk_tip_comm		= check_exist($row->REMARKS_COMMENCED);
+				$date_tip_comm  	= check_exist_date($row->DATE_INPECTION_COMMENCED);
+				$tm_tip_comm		= check_exist($row->TIME_INPECTION_COMMENCED);
+				$rmk_tip_comm		= check_exist($row->REMARKS_INPECTION_COMMENCED);
 				
-				$date_tip_compl  	= check_exist_date($row->DATE_COMPLETED);
-				$tm_tip_compl		= check_exist($row->TIME_COMPLETED);
-				$rmk_tip_compl		= check_exist($row->REMARKS_COMPLETED);
+				$date_tip_compl  	= check_exist_date($row->DATE_INSPECTION_COMPLETED);
+				$tm_tip_compl		= check_exist($row->TIME_INSPECTION_COMPLETED);
+				$rmk_tip_compl		= check_exist($row->REMARKS_INSPECTION_COMPLETED);
 				
 				$date_hs_comm  		= check_exist_date($row->DATE_CONNECTED_COMMENCED);
 				$tm_hs_comm			= check_exist($row->TIME_CONNECTED_COMMENCED);
@@ -261,9 +261,13 @@ class Report extends MY_Controller
 				$tm_ld_compl		= check_exist($row->TIME_LOADING_COMPLETED);
 				$rmk_ld_compl		= check_exist($row->REMARKS_LOADING_COMPLETED);
 				
-				$date_hs_dc  		= check_exist_date($row->DATE_HOSE_CONNECTED);
-				$tm_hs_dc			= check_exist($row->TIME_HOSE_CONNECTED);
-				$rmk_hs_dc			= check_exist($row->REMARKS_HOSE_CONNECTED);
+				$date_hs_con  		= check_exist_date($row->DATE_HOSE_CONNECTED);
+				$tm_hs_con			= check_exist($row->TIME_HOSE_CONNECTED);
+				$rmk_hs_con			= check_exist($row->REMARKS_HOSE_CONNECTED);
+				
+				$date_hs_dc  		= check_exist_date($row->DATE_HOSE_DISCONNECTED);
+				$tm_hs_dc			= check_exist($row->TIME_HOSE_DISCONNECTED);
+				$rmk_hs_dc			= check_exist($row->REMARKS_HOSE_DISCONNECTED);
 				
 				$date_smpl_comm  	= check_exist_date($row->DATE_SAMPLING_COMMENCED);
 				$tm_smpl_comm		= check_exist($row->TIME_SAMPLING_COMMENCED);
@@ -289,6 +293,50 @@ class Report extends MY_Controller
 				$tm_vs_sailed		= check_exist($row->TIME_VESSEL_SAILED);
 				$rmk_vs_sailed		= check_exist($row->REMARKS_VESSEL_SAILED);
 				
+				$date_pob  			= check_exist_date($row->DATE_POB);
+				$tm_pob				= check_exist($row->TIME_POB);
+				$rmk_pob			= check_exist($row->REMARKS_POB);
+				
+				$date_aweigh 		= check_exist_date($row->DATE_A_AWEIGH);
+				$tm_aweigh			= check_exist($row->TIME_A_AWEIGH);
+				$rmk_aweigh			= check_exist($row->REMARKS_A_AWEIGH);
+				
+				$date_sbd_comm 		= check_exist_date($row->DATE_SBD_COMMENCED);
+				$tm_sbd_comm		= check_exist($row->TIME_SBD_COMMENCED);
+				$rmk_sbd_comm		= check_exist($row->REMARKS_SBD_COMMENCED);
+				
+				$date_sbd_compl		= check_exist_date($row->DATE_SBD_COMPLETED);
+				$tm_sbd_compl		= check_exist($row->TIME_SBD_COMPLETED);
+				$rmk_sbd_compl		= check_exist($row->REMARKS_SBD_COMPLETED);
+				
+				$date_dsc_comm		= check_exist_date($row->DATE_DISCHARGE_COMMENCED);
+				$tm_dsc_comm		= check_exist($row->TIME_DISCHARGE_COMMENCED);
+				$rmk_dsc_comm		= check_exist($row->REMARKS_DISCHARGE_COMMENCED);
+				
+				$date_dsc_compl		= check_exist_date($row->DATE_DISCHARGE_COMPLETED);
+				$tm_dsc_compl		= check_exist($row->TIME_DISCHARGE_COMPLETED);
+				$rmk_dsc_compl		= check_exist($row->REMARKS_DISCHARGE_COMPLETED);
+				
+				$date_tanks_ins_comm	= check_exist_date($row->DATE_TANKS_INS_COMMENCED);
+				$tm_tanks_ins_comm		= check_exist($row->TIME_TANKS_INS_COMMENCED);
+				$rmk_tanks_ins_comm		= check_exist($row->REMARKS_TANKS_INS_COMMENCED);
+				
+				$date_tanks_ins_compl	= check_exist_date($row->DATE_TANKS_INS_COMPLETED);
+				$tm_tanks_ins_compl		= check_exist($row->TIME_TANKS_INS_COMPLETED);
+				$rmk_tanks_ins_compl	= check_exist($row->REMARKS_TANKS_INS_COMPLETED);
+				
+				$date_tanks_ins_compl	= check_exist_date($row->DATE_TANKS_INS_COMPLETED);
+				$tm_tanks_ins_compl		= check_exist($row->TIME_TANKS_INS_COMPLETED);
+				$rmk_tanks_ins_compl	= check_exist($row->REMARKS_TANKS_INS_COMPLETED);
+				
+				$date_svy_left_vessel	= check_exist_date($row->DATE_SVY_LEFT_VESSEL);
+				$tm_svy_left_vessel		= check_exist($row->TIME_SVY_LEFT_VESSEL);
+				$rmk_svy_left_vessel	= check_exist($row->REMARKS_SVY_LEFT_VESSEL);
+				
+				$date_vs_sail	= check_exist_date($row->DATE_VESSEL_SAIL);
+				$tm_vs_sail		= check_exist($row->TIME_VESSEL_SAIL);
+				$rmk_vs_sail	= check_exist($row->REMARKS_VESSEL_SAIL);
+				
 				$bl_flow_meter		= ($row->BL_FLOW_METER=="Y"  ? "V"  : "X");
 				$bl_shore_tank		= ($row->BL_SHORE_TANK=="Y"  ? "V"  : "X");
 				$bl_ship_tank		= ($row->BL_SHIP_TANK=="Y"  ? "V"  : "X");
@@ -298,6 +346,18 @@ class Report extends MY_Controller
 				$bl_quantity_bbls 	= check_exist(number_format((float)$row->BL_QUANTITY_BBLS, 3, '.', ''));
 				$bl_quantity_metricton = check_exist(number_format((float)$row->BL_QUANTITY_METRICTON, 3, '.', ''));
 				$bl_quantity_longton  =  check_exist(number_format((float)$row->BL_QUANTITY_LONGTON, 3, '.', ''));
+				
+				$bl_gsv_klobs	= check_exist(number_format((float)$row->BL_QUANTITY_KLOBS, 3, '.', ''));
+				$bl_gsv_kl15 	= check_exist(number_format((float)$row->BL_QUANTITY_KL15, 3, '.', ''));
+				$bl_gsv_bbls  	= check_exist(number_format((float)$row->BL_QUANTITY_BBLS, 3, '.', ''));
+				$bl_gsv_metricton = check_exist(number_format((float)$row->BL_QUANTITY_METRICTON, 3, '.', ''));
+				$bl_gsv_longton  =  check_exist(number_format((float)$row->BL_QUANTITY_LONGTON, 3, '.', ''));
+				
+				$bl_nsv_klobs	= check_exist(number_format((float)$row->BL_NSV_KLOBS, 3, '.', ''));
+				$bl_nsv_kl15 	= check_exist(number_format((float)$row->BL_NSV_KL15, 3, '.', ''));
+				$bl_nsv_bbls 	= check_exist(number_format((float)$row->BL_NSV_BBLS, 3, '.', ''));
+				$bl_nsv_metricton = check_exist(number_format((float)$row->BL_NSV_METRICTON, 3, '.', ''));
+				$bl_nsv_longton  =  check_exist(number_format((float)$row->BL_NSV_LONGTON, 3, '.', ''));
 				
 				$bl_15_derajat_cel	= check_exist(number_format((float)$row->BL_15_DERAJAT_CELCIUS, 3, '.', ''));
 				
@@ -344,6 +404,84 @@ class Report extends MY_Controller
 				$sl_vef_applied_vs_bol_metricton =  check_exist(number_format((float)$row->SL_VEF_APPLIED_VS_BOL_METRICTON, 3, '.', ''));
 				$sl_vef_applied_vs_bol_longton 	 =  check_exist(number_format((float)$row->SL_VEF_APPLIED_VS_BOL_LONGTON, 3, '.', ''));
 				
+				
+				$sfal_vs_sfbd_r2_klobs 	=  check_exist(number_format((float)$row->SFAL_VS_SFBD_R2_KLOBS, 3, '.', ''));
+				$sfal_vs_sfbd_r2_kl15 	=  check_exist(number_format((float)$row->SFAL_VS_SFBD_R2_KL15, 3, '.', ''));
+				$sfal_vs_sfbd_r2_bbls 	=  check_exist(number_format((float)$row->SFAL_VS_SFBD_R2_BBLS, 3, '.', ''));
+				$sfal_vs_sfbd_r2_metricton =  check_exist(number_format((float)$row->SFAL_VS_SFBD_R2_METRICTON, 3, '.', ''));
+				$sfal_vs_sfbd_r2_longton 	 =  check_exist(number_format((float)$row->SFAL_VS_SFBD_R2_LONGTON, 3, '.', ''));
+				
+				
+				$sfbd_vs_sr_r3_klobs = check_exist(number_format((float)$row->SFBD_VS_SR_R3_KLOBS, 3, '.', ''));
+				$sfbd_vs_sr_r3_kl15 = check_exist(number_format((float)$row->SFBD_VS_SR_R3_KL15, 3, '.', ''));
+				$sfbd_vs_sr_r3_bbls = check_exist(number_format((float)$row->SFBD_VS_SR_R3_BBLS, 3, '.', ''));
+				$sfbd_vs_sr_r3_metricton = check_exist(number_format((float)$row->SFBD_VS_SR_R3_METRICTON, 3, '.', ''));
+				$sfbd_vs_sr_r3_longton = check_exist(number_format((float)$row->SFBD_VS_SR_R3_LONGTON, 3, '.', ''));
+				
+				$sr_vs_bol_r4_klobs = check_exist(number_format((float)$row->SR_VS_BOL_R4_KLOBS, 3, '.', ''));
+				$sr_vs_bol_r4_kl15 = check_exist(number_format((float)$row->SR_VS_BOL_R4_KL15, 3, '.', ''));
+				$sr_vs_bol_r4_bbls = check_exist(number_format((float)$row->SR_VS_BOL_R4_BBLS, 3, '.', ''));
+				$sr_vs_bol_r4_longton = check_exist(number_format((float)$row->SR_VS_BOL_R4_LONGTON, 3, '.', ''));
+				$sr_vs_bol_r4_metricton = check_exist(number_format((float)$row->SR_VS_BOL_R4_METRICTON, 3, '.', ''));
+			
+				
+			    $sfal_klobs = check_exist(number_format((float)$row->SFAL_KLOBS, 3, '.', ''));
+			    $sfal_kl15 = check_exist(number_format((float)$row->SFAL_KL15, 3, '.', ''));
+			    $sfal_bbls = check_exist(number_format((float)$row->SFAL_BBLS, 3, '.', ''));
+			    $sfal_metricton = check_exist(number_format((float)$row->SFAL_METRICTON, 3, '.', ''));
+			    $sfal_longton = check_exist(number_format((float)$row->SFAL_LONGTON, 3, '.', ''));
+				
+				$sf_sq_klobs = check_exist(number_format((float)$row->SF_SQ_KLOBS, 3, '.', ''));
+			    $sf_sq_kl15 = check_exist(number_format((float)$row->SF_SQ_KL15, 3, '.', ''));
+			    $sf_sq_bbls = check_exist(number_format((float)$row->SF_SQ_BBLS, 3, '.', ''));
+			    $sf_sq_metricton = check_exist(number_format((float)$row->SF_SQ_METRICTON, 3, '.', ''));
+			    $sf_sq_longton = check_exist(number_format((float)$row->SF_SQ_LONGTON, 3, '.', ''));
+				
+				$sf_gsv_klobs = check_exist(number_format((float)$row->SF_GSV_KLOBS, 3, '.', ''));
+				$sf_gsv_kl15 = check_exist(number_format((float)$row->SF_GSV_KL15, 3, '.', ''));
+				$sf_gsv_bbls = check_exist(number_format((float)$row->SF_GSV_BBLS, 3, '.', ''));
+				$sf_gsv_metricton = check_exist(number_format((float)$row->SF_GSV_METRICTON, 3, '.', ''));
+				$sf_gsv_longton = check_exist(number_format((float)$row->SF_GSV_LONGTON, 3, '.', ''));
+				
+				$sf_nsv_klobs = check_exist(number_format((float)$row->SF_NSV_KLOBS, 3, '.', ''));
+			    $sf_nsv_kl15 = check_exist(number_format((float)$row->SF_NSV_KL15, 3, '.', ''));
+				$sf_nsv_bbls = check_exist(number_format((float)$row->SF_NSV_BBLS, 3, '.', ''));
+				$sf_nsv_metricton = check_exist(number_format((float)$row->SF_NSV_METRICTON, 3, '.', ''));
+				$sf_nsv_longton = check_exist(number_format((float)$row->SF_NSV_LONGTON, 3, '.', ''));
+				
+				$sf_sfal_klobs = check_exist(number_format((float)$row->SF_SFAL_KLOBS, 3, '.', ''));
+				$sf_sfal_kl15 = check_exist(number_format((float)$row->SF_SFAL_KL15, 3, '.', ''));
+				$sf_sfal_bbls = check_exist(number_format((float)$row->SF_SFAL_BBLS, 3, '.', ''));
+				$sf_sfal_metricton = check_exist(number_format((float)$row->SF_SFAL_METRICTON, 3, '.', ''));
+				$sf_sfal_longton = check_exist(number_format((float)$row->SF_SFAL_LONGTON, 3, '.', ''));
+				
+				$sfbd_tov_klobs = check_exist(number_format((float)$row->SFBD_TOV_KLOBS, 3, '.', ''));
+				$sfbd_tov_kl15 = check_exist(number_format((float)$row->SFBD_TOV_KL15, 3, '.', ''));
+				$sfbd_tov_bbls = check_exist(number_format((float)$row->SFBD_TOV_BBLS, 3, '.', ''));
+				$sfbd_tov_metricton = check_exist(number_format((float)$row->SFBD_TOV_METRICTON, 3, '.', ''));
+				$sfbd_tov_longton = check_exist(number_format((float)$row->SFBD_TOV_LONGTON, 3, '.', ''));
+				
+				$free_water_klobs = check_exist(number_format((float)$row->FREE_WATER_KLOBS, 3, '.', ''));
+				$free_water_kl15 = check_exist(number_format((float)$row->FREE_WATER_KL15, 3, '.', ''));
+				$free_water_bbls = check_exist(number_format((float)$row->FREE_WATER_BBLS, 3, '.', ''));
+				$free_water_metricton = check_exist(number_format((float)$row->FREE_WATER_METRICTON, 3, '.', ''));
+				$free_water_longton = check_exist(number_format((float)$row->FREE_WATER_LONGTON, 3, '.', ''));
+				
+				$robq_klobs = check_exist(number_format((float)$row->ROBQ_KLOBS, 3, '.', ''));
+				$robq_kl15 = check_exist(number_format((float)$row->ROBQ_KL15, 3, '.', ''));
+				$robq_bbls = check_exist(number_format((float)$row->ROBQ_BBLS, 3, '.', ''));
+				$robq_metricton = check_exist(number_format((float)$row->ROBQ_METRICTON, 3, '.', ''));
+				$robq_longton = check_exist(number_format((float)$row->ROBQ_LONGTON, 3, '.', ''));
+				
+			    $sfbd_nsv_klobs = number_format((float)$row->SFBD_NSV_KLOBS, 3, '.', '');
+			    $sfbd_nsv_kl15 = number_format((float)$row->SFBD_NSV_KL15, 3, '.', '');
+			    $sfbd_nsv_bbls = number_format((float)$row->SFBD_NSV_BBLS, 3, '.', '');
+			    $sfbd_nsv_metricton = number_format((float)$row->SFBD_NSV_METRICTON, 3, '.', '');
+			    $sfbd_nsv_longton = number_format((float)$row->SFBD_NSV_LONGTON, 3, '.', '');
+				
+				$activities_remarks =  check_exist($row->ACTIVITIES_REMARKS);
+				$ship_sea_cond =  check_exist($row->SC);
+				
 				$bo_mfo_on_arrival =  check_exist($row->BO_MFO_ON_ARRIVAL);
 				$bo_mdo_on_arrival =  check_exist($row->BO_MDO_ON_ARRIVAL);
 				
@@ -358,9 +496,9 @@ class Report extends MY_Controller
 				$sc_on_departure_draft_aft =  check_exist($row->SC_ON_DEPARTURE_DRAFT_AFT);
 				$sc_on_departure_draft_list =  check_exist($row->SC_ON_DEPARTURE_DRAFT_LIST);
 				
-				$ship_sea_cond =  check_exist($row->SC);
 				
-				
+				$sample_source =  check_exist($row->SAMPLE_SOURCE);
+				$date_of_analysis =  check_exist_date($row->DATE_OF_ANALYSIS);
 				}
         }
 	
@@ -436,6 +574,7 @@ $intervention=$this->Report_model->get_intervention($id_item);
         		$intervensi=$row->SELECT_INTERVENTION;		
         	}
         }
+		// $intervensi = 15;
 		switch($intervensi){
 			case 14: // LOADING
 				$tbl = <<<EOD
@@ -1187,6 +1326,20 @@ EOD;
   <td  colspan="2">$rmk_acc</td>
  </tr>
  <tr>
+  <td>Pilot on Board for Berthing</td>
+  <td>&nbsp;</td>
+  <td>$date_pob</td>  <td>&nbsp;</td>
+  <td>$tm_pob</td>  
+  <td  colspan="2">$rmk_pob</td>
+ </tr>
+ <tr>
+  <td>Anchors Aweigh</td>
+  <td>&nbsp;</td>
+  <td>$date_aweigh</td>  <td>&nbsp;</td>
+  <td>$tm_aweigh</td>  
+  <td  colspan="2">$rmk_aweigh</td>
+ </tr>
+ <tr>
   <td>Vessel Berthed</td>
   <td>&nbsp;</td>
   <td>$date_brthed </td>  <td>&nbsp;</td>
@@ -1222,32 +1375,39 @@ EOD;
   <td colspan=2>$rmk_tip_compl</td>
  </tr>
  <tr>
-  <td>Hose Connected Commenced</td>
+  <td>Sampling  Before Discharge Commenced</td>
   <td>&nbsp;</td>
-  <td>$date_hs_comm</td>  <td>&nbsp;</td>
-  <td>$tm_hs_comm</td>
-  <td colspan=2>$rmk_hs_comm</td>
+  <td>$date_sbd_comm</td>  <td>&nbsp;</td>
+  <td>$tm_sbd_comm</td>
+  <td colspan=2>$rmk_sbd_comm</td>
  </tr>
  <tr>
-  <td>Hose Connected Completed</td>
+  <td>Sampling  Before Discharge Completed</td>
   <td>&nbsp;</td>
-  <td>$date_hs_compl</td>  <td>&nbsp;</td>
-  <td>$tm_hs_compl</td>
-  <td colspan=2>$rmk_hs_compl</td>
+  <td>$date_sbd_compl</td>  <td>&nbsp;</td>
+  <td>$tm_sbd_compl</td>
+  <td colspan=2>$rmk_sbd_compl</td>
  </tr>
  <tr>
-  <td>Loading Commenced</td>
+  <td>Hose Connected</td>
   <td>&nbsp;</td>
-  <td>$date_ld_comm</td>  <td>&nbsp;</td>
-  <td>$tm_ld_comm</td>
-  <td colspan=2>$rmk_ld_comm</td>
+  <td>$date_hs_con</td>  <td>&nbsp;</td>
+  <td>$tm_hs_con</td>
+  <td colspan=2>$rmk_hs_con</td>
  </tr>
  <tr>
-  <td>Loading Completed</td>
+  <td>Discharge Commenced</td>
   <td>&nbsp;</td>
-  <td>$date_ld_compl</td>  <td>&nbsp;</td>
-  <td>$tm_ld_compl</td>
-  <td colspan=2>$rmk_ld_compl</td>
+  <td>$date_dsc_comm</td>  <td>&nbsp;</td>
+  <td>$tm_dsc_comm</td>
+  <td colspan=2>$rmk_dsc_comm</td>
+ </tr>
+ <tr>
+  <td>Discharge Completed</td>
+  <td>&nbsp;</td>
+  <td>$date_dsc_compl</td>  <td>&nbsp;</td>
+  <td>$tm_dsc_compl</td>
+  <td colspan=2>$rmk_dsc_compl</td>
  </tr>
  <tr>
   <td>Hose Disconnected</td>
@@ -1257,32 +1417,32 @@ EOD;
   <td colspan=2>$rmk_hs_dc</td>
  </tr>
  <tr>
-  <td>Sampling Commenced</td>
+  <td>Tanks  Inspection Commenced</td>
   <td>&nbsp;</td>
-  <td>$date_smpl_comm</td>  <td>&nbsp;</td>
-  <td>$tm_smpl_comm</td>
-  <td colspan=2>$rmk_smpl_comm</td>
+  <td>$date_tanks_ins_comm</td>  <td>&nbsp;</td>
+  <td>$tm_tanks_ins_comm</td>
+  <td colspan=2>$rmk_tanks_ins_comm</td>
  </tr>
  <tr>
-  <td>Sampling Completed</td>
+  <td>Tanks  Inspection Completed</td>
   <td>&nbsp;</td>
-  <td>$date_smpl_compl</td>  <td>&nbsp;</td>
-  <td>$tm_smpl_compl</td>
-  <td colspan=2>$rmk_smpl_compl</td>
+  <td>$date_tanks_ins_compl</td>  <td>&nbsp;</td>
+  <td>$tm_tanks_ins_compl</td>
+  <td colspan=2>$rmk_tanks_ins_compl</td>
  </tr>
  <tr>
-  <td>Cargo Measurement Commenced</td>
+  <td>Documents  OnBoard</td>
   <td>&nbsp;</td>
-  <td>$date_cgm_comm</td>  <td>&nbsp;</td>
-  <td>$tm_cgm_comm</td>
-  <td colspan=2>$rmk_cgm_comm</td>
+  <td>$date_doc_on_board</td>  <td>&nbsp;</td>
+  <td>$tm_doc_on_board</td>
+  <td colspan=2>$rmk_doc_on_board</td>
  </tr>
  <tr>
-  <td>Cargo Measurement Completed</td>
+  <td>Surveyour  Left Vessel</td>
   <td>&nbsp;</td>
-  <td>$date_cgm_compl</td>  <td>&nbsp;</td>
-  <td>$tm_cgm_compl</td>
-  <td colspan=2>$rmk_cgm_compl</td>
+  <td>$date_svy_left_vessel</td>  <td>&nbsp;</td>
+  <td>$tm_svy_left_vessel</td>
+  <td colspan=2>$rmk_svy_left_vessel</td>
  </tr>
  <tr>
   <td>Document OnBoard</td>
@@ -1292,11 +1452,16 @@ EOD;
   <td colspan=2>$rmk_doc_on_board</td>
  </tr>
  <tr>
-  <td>Vessel Sailed</td>
+  <td>Vessel Sail</td>
   <td>&nbsp;</td>
-  <td>$date_vs_sailed</td>  <td>&nbsp;</td>
-  <td>$tm_vs_sailed</td>  
-  <td colspan=2>$rmk_vs_sailed</td>
+  <td>$date_vs_sail</td>  <td>&nbsp;</td>
+  <td>$tm_vs_sail</td>  
+  <td colspan=2>$rmk_vs_sail</td>
+ </tr>
+ <tr>
+  <td>Remarks</td>
+  <td>&nbsp;</td>
+  <td colspan=5>$activities_remarks</td>
  </tr>
   <tr>
     <td>&nbsp;</td>
@@ -1392,13 +1557,22 @@ EOD;
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>BL Quantity</td>
+    <td>BL Quantity<br/>Gross Standard Volume</td>
     <td>&nbsp;</td>
-    <td align="center">$bl_quantity_klobs</td>
-    <td align="center">$bl_quantity_kl15</td>
-    <td align="center">$bl_quantity_bbls</td>
-    <td align="center">$bl_quantity_metricton</td>
-    <td align="center">$bl_quantity_longton</td>
+    <td align="center">$bl_gsv_klobs</td>
+    <td align="center">$bl_gsv_kl15</td>
+    <td align="center">$bl_gsv_bbls</td>
+    <td align="center">$bl_gsv_metricton</td>
+    <td align="center">$bl_gsv_longton</td>
+  </tr>
+  <tr>
+    <td>Net Standard Volume</td>
+    <td>&nbsp;</td>
+    <td align="center">$bl_nsv_klobs</td>
+    <td align="center">$bl_nsv_kl15</td>
+    <td align="center">$bl_nsv_bbls</td>
+    <td align="center">$bl_nsv_metricton</td>
+    <td align="center">$bl_nsv_longton</td>
   </tr>
   <tr>
     <td>BL Figure based on</td>
@@ -1410,73 +1584,130 @@ EOD;
     <td align="center"></td>
   </tr>
   <tr>
-    <td>DENSITY@15°C</td>
+    <td>Ship's Figure After Loading (SFAL)</td>
     <td>&nbsp;</td>
-    <td align="center">$bl_15_derajat_cel</td>
-    <td align="center" colspan="4"></td>
+    <td align="center">$sfal_klobs</td>
+    <td align="center">$sfal_kl15</td>
+    <td align="center">$sfal_bbls</td>
+    <td align="center">$sfal_metricton</td>
+    <td align="center">$sfal_longton</td>
   </tr>
   <tr>
-    <td align="center" colspan="7"></td>
-  </tr>
-  <tr>
-    <td>Ship Figure</td>
+    <td>Shore Figure</td>
     <td>&nbsp;</td>
-    <td align="center"></td>
-    <td align="center"></td>
-    <td align="center"></td>
-    <td align="center"></td>
-    <td align="center"></td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
   </tr>
   <tr>
-    <td>Onboard Quantity (OBQ)</td>
+    <td>Shore Quantity</td>
     <td>&nbsp;</td>
-    <td align="center">$obq_quantity_klobs</td>
-    <td align="center">$obq_quantity_kl15</td>
-    <td align="center">$obq_quantity_bbls</td>
-    <td align="center">$obq_quantity_metricton</td>
-    <td align="center">$obq_quantity_longton</td>
+    <td align="center">$sf_sq_klobs</td>
+    <td align="center">$sf_sq_kl15</td>
+    <td align="center">$sf_sq_bbls</td>
+    <td align="center">$sf_sq_metricton</td>
+    <td align="center">$sf_sq_longton</td>
   </tr>
   <tr>
-    <td>Ship's Figure After Loading (SFAL) - TOV</td>
+    <td>Gross Standard Volume</td>
     <td>&nbsp;</td>
-    <td align="center">$sfal_tov_klobs</td>
-    <td align="center">$sfal_tov_kl15</td>
-    <td align="center">$sfal_tov_bbls</td>
-    <td align="center">$sfal_tov_metricton</td>
-    <td align="center">$sfal_tov_longton</td>
+    <td align="center">$sf_gsv_klobs</td>
+    <td align="center">$sf_gsv_kl15</td>
+    <td align="center">$sf_gsv_bbls</td>
+    <td align="center">$sf_gsv_metricton</td>
+    <td align="center">$sf_gsv_longton</td>
   </tr>
   <tr>
-    <td>Free Water After Loading</td>
+    <td>Net Standard Volume</td>
     <td>&nbsp;</td>
-    <td align="center">$fwal_klobs</td>
-    <td align="center">$fwal_kl15</td>
-    <td align="center">$fwal_bbls</td>
-    <td align="center">$fwal_metricton</td>
-    <td align="center">$fwal_longton</td>
+    <td align="center">$sf_nsv_klobs</td>
+    <td align="center">$sf_nsv_kl15</td>
+    <td align="center">$sf_nsv_bbls</td>
+    <td align="center">$sf_nsv_metricton</td>
+    <td align="center">$sf_nsv_longton</td>
   </tr>
   <tr>
-    <td class="span">Vessel Experience Factor - Loading (VEF-L)</td>
+    <td>Ship's Figure After Loading (SFAL)</td>
+    <td>&nbsp;</td>
+    <td align="center">$sf_sfal_klobs</td>
+    <td align="center">$sf_sfal_kl15</td>
+    <td align="center">$sf_sfal_bbls</td>
+    <td align="center">$sf_sfal_metricton</td>
+    <td align="center">$sf_sfal_longton</td>
+  </tr>
+   <tr>
     <td class="span">&nbsp;</td>
-    <td align="center" class="span"> $vef_loading_bbls</td>
-    <td colspan="4" class="span"></td>
-  </tr>
-  <tr>
-    <td class="span">Ship's Loaded (applied VEF-L)</td>
     <td class="span">&nbsp;</td>
-    <td align="center" class="span">$sl_applied_vefl_bbls</td>
-    <td colspan="4" class="span"></td>
-  </tr>
- <tr>
-    <td align="center" colspan="7"></td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
   </tr>
   <tr>
-    <td>Discrepancy</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td class="span">Ship Figure</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="span">Ship Figure Before Discharge - TOV</td>
+	<td>&nbsp;</td>
+    <td class="span">$sfbd_tov_klobs</td>
+    <td class="span">$sfbd_tov_kl15</td>
+    <td class="span">$sfbd_tov_bbls</td>
+    <td class="span">$sfbd_tov_metricton</td>
+    <td class="span">$sfbd_tov_longton</td>
+  </tr>
+  <tr>
+    <td class="span">Free Water</td>
+	<td>&nbsp;</td>
+    <td class="span">$free_water_klobs</td>
+    <td class="span">$free_water_kl15</td>
+    <td class="span">$free_water_bbls</td>
+    <td class="span">$free_water_metricton</td>
+    <td class="span">$free_water_longton</td>
+  </tr>
+  <tr>
+    <td class="span">Remaining On Board Quantity</td>
+	<td>&nbsp;</td>
+    <td class="span">$robq_klobs</td>
+    <td class="span">$robq_kl15</td>
+    <td class="span">$robq_bbls</td>
+    <td class="span">$robq_metricton</td>
+    <td class="span">$robq_longton</td>
+  </tr>
+  <tr>
+    <td class="span">Ship Figure Before Discharge - NSV</td>
+	<td>&nbsp;</td>
+    <td class="span">$sfbd_nsv_klobs</td>
+    <td class="span">$sfbd_nsv_kl15</td>
+    <td class="span">$sfbd_nsv_bbls</td>
+    <td class="span">$sfbd_nsv_metricton</td>
+    <td class="span">$sfbd_nsv_longton</td>
+  </tr>
+  <tr>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="span"><strong>Discrepancy</strong></td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
   </tr>
   <tr>
     <td>Ship's Loaded vs Bill of Lading (R1)</td>
@@ -1497,7 +1728,37 @@ EOD;
     <td>$sl_vef_applied_vs_bol_longton</td>
   </tr>
   <tr>
-    <td colspan="7" class="span" style="height:20px"></td>
+    <td>Ship's Fig. After Loading vs Ship's Fig. Before Discharge (R2)</td>
+    <td>&nbsp;</td>
+    <td>$sfal_vs_sfbd_r2_klobs</td>
+    <td>$sfal_vs_sfbd_r2_kl15</td>
+    <td>$sfal_vs_sfbd_r2_bbls</td>
+    <td>$sfal_vs_sfbd_r2_metricton</td>
+    <td>$sfal_vs_sfbd_r2_longton</td>
+  </tr>
+  <tr>
+    <td>Ship's Fig. Before Discharge vs Shore Received (R3)</td>
+    <td>&nbsp;</td>
+    <td>$sfbd_vs_sr_r3_klobs</td>
+    <td>$sfbd_vs_sr_r3_kl15</td>
+    <td>$sfbd_vs_sr_r3_bbls</td>
+    <td>$sfbd_vs_sr_r3_metricton</td>
+    <td>$sfbd_vs_sr_r3_longton</td>
+  </tr>
+  <tr>
+    <td>Shore Received vs Bill of Lading (R4)</td>
+    <td>&nbsp;</td>
+    <td>$sr_vs_bol_r4_klobs</td>
+    <td>$sr_vs_bol_r4_kl15</td>
+    <td>$sr_vs_bol_r4_bbls</td>
+    <td>$sr_vs_bol_r4_metricton</td>
+    <td>$sr_vs_bol_r4_longton</td>
+  </tr>
+  <tr>
+    <td colspan="7" >Sample Source  :  $sample_source</td>
+  </tr>
+  <tr>
+    <td colspan="7" >Date of Analysis  :  $date_of_analysis</td>
   </tr>
   <tr>
     <td><strong>C. REMARKS  NOTE</strong></td>
