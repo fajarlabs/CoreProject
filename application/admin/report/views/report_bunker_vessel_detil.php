@@ -320,14 +320,6 @@
     <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DATE_LOADING_HOSE_ARMS_DISCONNECT); ?></td>
   </tr> 
   <tr>
-    <td class="span">Loading Hose Arms Disconnect</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_HOSE_ARMS_DISCONNECT); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DATE_LOADING_HOSE_ARMS_DISCONNECT); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DATE_LOADING_HOSE_ARMS_DISCONNECT); ?></td>
-  </tr>
-  <tr>
     <td class="span">Loading Visual Inspection & Sampling</td>
     <td class="span">&nbsp;</td>
     <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_VISUAL_INSPEC_SAMPL); ?></td>
@@ -450,7 +442,7 @@
   <tr>
     <td class="span">Discharge Hose(s) Arms Disconnected</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DATE_DISCHARGE_HOSE_ARMS_DISCONNECT); ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_HOSE_ARMS_DISCONNECT); ?></td>
     <td class="span">&nbsp;</td>
     <td class="span"><?php echo check_exist($item->result()[0]->TIME_DATE_DISCHARGE_HOSE_ARMS_DISCONNECT); ?></td>
     <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DATE_DISCHARGE_HOSE_ARMS_DISCONNECT); ?></td>
@@ -482,7 +474,7 @@
   <tr>
     <td class="span">Discharge Calcul Completed Doc Onboard</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->date_discharge_calcul_completed_doc_onboard); ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD); ?></td>
     <td class="span">&nbsp;</td>
     <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD); ?></td>
     <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD); ?></td>
