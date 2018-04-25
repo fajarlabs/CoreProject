@@ -4,21 +4,21 @@ Navicat PGSQL Data Transfer
 Source Server         : localhost
 Source Server Version : 90608
 Source Host           : localhost:5432
-Source Database       : postgres
+Source Database       : sucofindo
 Source Schema         : public
 
 Target Server Type    : PGSQL
 Target Server Version : 90608
 File Encoding         : 65001
 
-Date: 2018-04-23 11:06:02
+Date: 2018-04-25 11:43:10
 */
 
 
 -- ----------------------------
 -- Sequence structure for "public"."ALERT_SUBSCRIBER_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."ALERT_SUBSCRIBER_ID_seq";
+DROP SEQUENCE "public"."ALERT_SUBSCRIBER_ID_seq";
 CREATE SEQUENCE "public"."ALERT_SUBSCRIBER_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -29,7 +29,7 @@ CREATE SEQUENCE "public"."ALERT_SUBSCRIBER_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq";
+DROP SEQUENCE "public"."APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -40,7 +40,7 @@ CREATE SEQUENCE "public"."APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq";
+DROP SEQUENCE "public"."APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -51,7 +51,7 @@ CREATE SEQUENCE "public"."APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_CLIENT_MENU_CLIENT_MENU_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_CLIENT_MENU_CLIENT_MENU_ID_seq";
+DROP SEQUENCE "public"."APP_CLIENT_MENU_CLIENT_MENU_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_MENU_CLIENT_MENU_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -62,7 +62,7 @@ CREATE SEQUENCE "public"."APP_CLIENT_MENU_CLIENT_MENU_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_CLIENT_SITE_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_CLIENT_SITE_ID_seq";
+DROP SEQUENCE "public"."APP_CLIENT_SITE_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_SITE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -73,7 +73,7 @@ CREATE SEQUENCE "public"."APP_CLIENT_SITE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq";
+DROP SEQUENCE "public"."APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -84,7 +84,7 @@ CREATE SEQUENCE "public"."APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_seq";
+DROP SEQUENCE "public"."APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -95,7 +95,7 @@ CREATE SEQUENCE "public"."APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_se
 -- ----------------------------
 -- Sequence structure for "public"."APP_CLIENT_USER_CLIENT_USER_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_CLIENT_USER_CLIENT_USER_ID_seq";
+DROP SEQUENCE "public"."APP_CLIENT_USER_CLIENT_USER_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_USER_CLIENT_USER_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -106,7 +106,7 @@ CREATE SEQUENCE "public"."APP_CLIENT_USER_CLIENT_USER_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq";
+DROP SEQUENCE "public"."APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -117,7 +117,7 @@ CREATE SEQUENCE "public"."APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_FUNCTION_ACCESS_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_FUNCTION_ACCESS_ID_seq";
+DROP SEQUENCE "public"."APP_FUNCTION_ACCESS_ID_seq";
 CREATE SEQUENCE "public"."APP_FUNCTION_ACCESS_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -128,7 +128,7 @@ CREATE SEQUENCE "public"."APP_FUNCTION_ACCESS_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_LOG_CLIENT_LOG_CLIENT_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_LOG_CLIENT_LOG_CLIENT_ID_seq";
+DROP SEQUENCE "public"."APP_LOG_CLIENT_LOG_CLIENT_ID_seq";
 CREATE SEQUENCE "public"."APP_LOG_CLIENT_LOG_CLIENT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -139,7 +139,7 @@ CREATE SEQUENCE "public"."APP_LOG_CLIENT_LOG_CLIENT_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_LOG_LOG_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_LOG_LOG_ID_seq";
+DROP SEQUENCE "public"."APP_LOG_LOG_ID_seq";
 CREATE SEQUENCE "public"."APP_LOG_LOG_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -150,7 +150,7 @@ CREATE SEQUENCE "public"."APP_LOG_LOG_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_MENU_MENU_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_MENU_MENU_ID_seq";
+DROP SEQUENCE "public"."APP_MENU_MENU_ID_seq";
 CREATE SEQUENCE "public"."APP_MENU_MENU_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -161,7 +161,7 @@ CREATE SEQUENCE "public"."APP_MENU_MENU_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_ROUTE_ROUTE_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_ROUTE_ROUTE_ID_seq";
+DROP SEQUENCE "public"."APP_ROUTE_ROUTE_ID_seq";
 CREATE SEQUENCE "public"."APP_ROUTE_ROUTE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -172,18 +172,18 @@ CREATE SEQUENCE "public"."APP_ROUTE_ROUTE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_SETTING_SETTING_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_SETTING_SETTING_ID_seq";
+DROP SEQUENCE "public"."APP_SETTING_SETTING_ID_seq";
 CREATE SEQUENCE "public"."APP_SETTING_SETTING_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 9
+ START 10
  CACHE 1;
 
 -- ----------------------------
 -- Sequence structure for "public"."APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq";
+DROP SEQUENCE "public"."APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq";
 CREATE SEQUENCE "public"."APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -194,7 +194,7 @@ CREATE SEQUENCE "public"."APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_USER_GROUP_GROUP_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_USER_GROUP_GROUP_ID_seq";
+DROP SEQUENCE "public"."APP_USER_GROUP_GROUP_ID_seq";
 CREATE SEQUENCE "public"."APP_USER_GROUP_GROUP_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -205,7 +205,7 @@ CREATE SEQUENCE "public"."APP_USER_GROUP_GROUP_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_USER_USER_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."APP_USER_USER_ID_seq";
+DROP SEQUENCE "public"."APP_USER_USER_ID_seq";
 CREATE SEQUENCE "public"."APP_USER_USER_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -216,7 +216,7 @@ CREATE SEQUENCE "public"."APP_USER_USER_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq";
+DROP SEQUENCE "public"."CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq";
 CREATE SEQUENCE "public"."CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -227,7 +227,7 @@ CREATE SEQUENCE "public"."CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."FILE_MANAGER_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."FILE_MANAGER_ID_seq";
+DROP SEQUENCE "public"."FILE_MANAGER_ID_seq";
 CREATE SEQUENCE "public"."FILE_MANAGER_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -238,18 +238,18 @@ CREATE SEQUENCE "public"."FILE_MANAGER_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."FORM_ENTRY_FIELD_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."FORM_ENTRY_FIELD_ID_seq";
+DROP SEQUENCE "public"."FORM_ENTRY_FIELD_ID_seq";
 CREATE SEQUENCE "public"."FORM_ENTRY_FIELD_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 50
+ START 57
  CACHE 1;
 
 -- ----------------------------
 -- Sequence structure for "public"."FORM_ENTRY_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."FORM_ENTRY_ID_seq";
+DROP SEQUENCE "public"."FORM_ENTRY_ID_seq";
 CREATE SEQUENCE "public"."FORM_ENTRY_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -260,7 +260,7 @@ CREATE SEQUENCE "public"."FORM_ENTRY_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."HEADER_INFO_CLIENT_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."HEADER_INFO_CLIENT_ID_seq";
+DROP SEQUENCE "public"."HEADER_INFO_CLIENT_ID_seq";
 CREATE SEQUENCE "public"."HEADER_INFO_CLIENT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -271,7 +271,7 @@ CREATE SEQUENCE "public"."HEADER_INFO_CLIENT_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."inbox_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."inbox_ID_seq";
+DROP SEQUENCE "public"."inbox_ID_seq";
 CREATE SEQUENCE "public"."inbox_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -282,7 +282,7 @@ CREATE SEQUENCE "public"."inbox_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."KOMPONEN_HTML_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."KOMPONEN_HTML_ID_seq";
+DROP SEQUENCE "public"."KOMPONEN_HTML_ID_seq";
 CREATE SEQUENCE "public"."KOMPONEN_HTML_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -293,7 +293,7 @@ CREATE SEQUENCE "public"."KOMPONEN_HTML_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."KOMPONEN_JSON_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."KOMPONEN_JSON_ID_seq";
+DROP SEQUENCE "public"."KOMPONEN_JSON_ID_seq";
 CREATE SEQUENCE "public"."KOMPONEN_JSON_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -304,7 +304,7 @@ CREATE SEQUENCE "public"."KOMPONEN_JSON_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MAP_POINT_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MAP_POINT_ID_seq";
+DROP SEQUENCE "public"."MAP_POINT_ID_seq";
 CREATE SEQUENCE "public"."MAP_POINT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -315,7 +315,7 @@ CREATE SEQUENCE "public"."MAP_POINT_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_BARGE_BARGE_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_BARGE_BARGE_ID_seq";
+DROP SEQUENCE "public"."MASTER_BARGE_BARGE_ID_seq";
 CREATE SEQUENCE "public"."MASTER_BARGE_BARGE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -326,7 +326,7 @@ CREATE SEQUENCE "public"."MASTER_BARGE_BARGE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_BBM_BBM_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_BBM_BBM_ID_seq";
+DROP SEQUENCE "public"."MASTER_BBM_BBM_ID_seq";
 CREATE SEQUENCE "public"."MASTER_BBM_BBM_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -337,7 +337,7 @@ CREATE SEQUENCE "public"."MASTER_BBM_BBM_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_CABANG_CABANG_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_CABANG_CABANG_ID_seq";
+DROP SEQUENCE "public"."MASTER_CABANG_CABANG_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CABANG_CABANG_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -348,7 +348,7 @@ CREATE SEQUENCE "public"."MASTER_CABANG_CABANG_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_CONTRACT_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_CONTRACT_ID_seq";
+DROP SEQUENCE "public"."MASTER_CONTRACT_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CONTRACT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -359,7 +359,7 @@ CREATE SEQUENCE "public"."MASTER_CONTRACT_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_CV_CERTIFICATE_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_CV_CERTIFICATE_ID_seq";
+DROP SEQUENCE "public"."MASTER_CV_CERTIFICATE_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_CERTIFICATE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -370,7 +370,7 @@ CREATE SEQUENCE "public"."MASTER_CV_CERTIFICATE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_CV_EDUCATION_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_CV_EDUCATION_ID_seq";
+DROP SEQUENCE "public"."MASTER_CV_EDUCATION_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_EDUCATION_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -381,7 +381,7 @@ CREATE SEQUENCE "public"."MASTER_CV_EDUCATION_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_CV_EXPERIENCE_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_CV_EXPERIENCE_ID_seq";
+DROP SEQUENCE "public"."MASTER_CV_EXPERIENCE_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_EXPERIENCE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -392,7 +392,7 @@ CREATE SEQUENCE "public"."MASTER_CV_EXPERIENCE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_CV_HISTORY_OF_WORK_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_CV_HISTORY_OF_WORK_ID_seq";
+DROP SEQUENCE "public"."MASTER_CV_HISTORY_OF_WORK_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_HISTORY_OF_WORK_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -403,7 +403,7 @@ CREATE SEQUENCE "public"."MASTER_CV_HISTORY_OF_WORK_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_CV_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_CV_ID_seq";
+DROP SEQUENCE "public"."MASTER_CV_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -414,7 +414,7 @@ CREATE SEQUENCE "public"."MASTER_CV_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_CV_REGION_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_CV_REGION_ID_seq";
+DROP SEQUENCE "public"."MASTER_CV_REGION_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_REGION_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -425,7 +425,7 @@ CREATE SEQUENCE "public"."MASTER_CV_REGION_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_ICON_MARKER_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_ICON_MARKER_ID_seq";
+DROP SEQUENCE "public"."MASTER_ICON_MARKER_ID_seq";
 CREATE SEQUENCE "public"."MASTER_ICON_MARKER_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -436,7 +436,7 @@ CREATE SEQUENCE "public"."MASTER_ICON_MARKER_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_INTERVENTION_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_INTERVENTION_ID_seq";
+DROP SEQUENCE "public"."MASTER_INTERVENTION_ID_seq";
 CREATE SEQUENCE "public"."MASTER_INTERVENTION_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -447,7 +447,7 @@ CREATE SEQUENCE "public"."MASTER_INTERVENTION_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_LOCATION_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_LOCATION_ID_seq";
+DROP SEQUENCE "public"."MASTER_LOCATION_ID_seq";
 CREATE SEQUENCE "public"."MASTER_LOCATION_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -458,7 +458,7 @@ CREATE SEQUENCE "public"."MASTER_LOCATION_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_PERSONIL_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_PERSONIL_ID_seq";
+DROP SEQUENCE "public"."MASTER_PERSONIL_ID_seq";
 CREATE SEQUENCE "public"."MASTER_PERSONIL_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -469,29 +469,29 @@ CREATE SEQUENCE "public"."MASTER_PERSONIL_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_PORT_PORT_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_PORT_PORT_ID_seq";
+DROP SEQUENCE "public"."MASTER_PORT_PORT_ID_seq";
 CREATE SEQUENCE "public"."MASTER_PORT_PORT_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 11
+ START 12
  CACHE 1;
 
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_PRODUCT_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_PRODUCT_ID_seq";
+DROP SEQUENCE "public"."MASTER_PRODUCT_ID_seq";
 CREATE SEQUENCE "public"."MASTER_PRODUCT_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 14
+ START 20
  CACHE 1;
 
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_SBU_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_SBU_ID_seq";
+DROP SEQUENCE "public"."MASTER_SBU_ID_seq";
 CREATE SEQUENCE "public"."MASTER_SBU_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -502,7 +502,7 @@ CREATE SEQUENCE "public"."MASTER_SBU_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_STD_REF_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_STD_REF_ID_seq";
+DROP SEQUENCE "public"."MASTER_STD_REF_ID_seq";
 CREATE SEQUENCE "public"."MASTER_STD_REF_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -513,7 +513,7 @@ CREATE SEQUENCE "public"."MASTER_STD_REF_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_STDREF_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_STDREF_ID_seq";
+DROP SEQUENCE "public"."MASTER_STDREF_ID_seq";
 CREATE SEQUENCE "public"."MASTER_STDREF_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -524,7 +524,7 @@ CREATE SEQUENCE "public"."MASTER_STDREF_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_TOOL_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_TOOL_ID_seq";
+DROP SEQUENCE "public"."MASTER_TOOL_ID_seq";
 CREATE SEQUENCE "public"."MASTER_TOOL_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -535,7 +535,7 @@ CREATE SEQUENCE "public"."MASTER_TOOL_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_VESSEL_VESSEL_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."MASTER_VESSEL_VESSEL_ID_seq";
+DROP SEQUENCE "public"."MASTER_VESSEL_VESSEL_ID_seq";
 CREATE SEQUENCE "public"."MASTER_VESSEL_VESSEL_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -546,7 +546,7 @@ CREATE SEQUENCE "public"."MASTER_VESSEL_VESSEL_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."outbox_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."outbox_ID_seq";
+DROP SEQUENCE "public"."outbox_ID_seq";
 CREATE SEQUENCE "public"."outbox_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -557,7 +557,7 @@ CREATE SEQUENCE "public"."outbox_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."outbox_multipart_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."outbox_multipart_ID_seq";
+DROP SEQUENCE "public"."outbox_multipart_ID_seq";
 CREATE SEQUENCE "public"."outbox_multipart_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -568,7 +568,7 @@ CREATE SEQUENCE "public"."outbox_multipart_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."pbk_groups_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."pbk_groups_ID_seq";
+DROP SEQUENCE "public"."pbk_groups_ID_seq";
 CREATE SEQUENCE "public"."pbk_groups_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -579,7 +579,7 @@ CREATE SEQUENCE "public"."pbk_groups_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."pbk_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."pbk_ID_seq";
+DROP SEQUENCE "public"."pbk_ID_seq";
 CREATE SEQUENCE "public"."pbk_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -590,7 +590,7 @@ CREATE SEQUENCE "public"."pbk_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."pelni_info_id_info_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."pelni_info_id_info_seq";
+DROP SEQUENCE "public"."pelni_info_id_info_seq";
 CREATE SEQUENCE "public"."pelni_info_id_info_seq"
  INCREMENT 1
  MINVALUE 1
@@ -601,7 +601,7 @@ CREATE SEQUENCE "public"."pelni_info_id_info_seq"
 -- ----------------------------
 -- Sequence structure for "public"."pelni_info_id_info_seq1"
 -- ----------------------------
---DROP SEQUENCE "public"."pelni_info_id_info_seq1";
+DROP SEQUENCE "public"."pelni_info_id_info_seq1";
 CREATE SEQUENCE "public"."pelni_info_id_info_seq1"
  INCREMENT 1
  MINVALUE 1
@@ -612,7 +612,7 @@ CREATE SEQUENCE "public"."pelni_info_id_info_seq1"
 -- ----------------------------
 -- Sequence structure for "public"."REF_EXP_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."REF_EXP_ID_seq";
+DROP SEQUENCE "public"."REF_EXP_ID_seq";
 CREATE SEQUENCE "public"."REF_EXP_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -623,7 +623,7 @@ CREATE SEQUENCE "public"."REF_EXP_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."REF_POSITION_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."REF_POSITION_ID_seq";
+DROP SEQUENCE "public"."REF_POSITION_ID_seq";
 CREATE SEQUENCE "public"."REF_POSITION_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -634,7 +634,7 @@ CREATE SEQUENCE "public"."REF_POSITION_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."REF_REGION_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."REF_REGION_ID_seq";
+DROP SEQUENCE "public"."REF_REGION_ID_seq";
 CREATE SEQUENCE "public"."REF_REGION_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -645,7 +645,7 @@ CREATE SEQUENCE "public"."REF_REGION_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq";
+DROP SEQUENCE "public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq";
 CREATE SEQUENCE "public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -656,7 +656,7 @@ CREATE SEQUENCE "public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."sentitems_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."sentitems_ID_seq";
+DROP SEQUENCE "public"."sentitems_ID_seq";
 CREATE SEQUENCE "public"."sentitems_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -667,7 +667,7 @@ CREATE SEQUENCE "public"."sentitems_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WA_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."WA_ID_seq";
+DROP SEQUENCE "public"."WA_ID_seq";
 CREATE SEQUENCE "public"."WA_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -678,7 +678,7 @@ CREATE SEQUENCE "public"."WA_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WEBSITE_ARTICLE_CATEGORY_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."WEBSITE_ARTICLE_CATEGORY_ID_seq";
+DROP SEQUENCE "public"."WEBSITE_ARTICLE_CATEGORY_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_ARTICLE_CATEGORY_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -689,7 +689,7 @@ CREATE SEQUENCE "public"."WEBSITE_ARTICLE_CATEGORY_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WEBSITE_ARTICLE_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."WEBSITE_ARTICLE_ID_seq";
+DROP SEQUENCE "public"."WEBSITE_ARTICLE_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_ARTICLE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -700,7 +700,7 @@ CREATE SEQUENCE "public"."WEBSITE_ARTICLE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WEBSITE_MENU_MENU_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."WEBSITE_MENU_MENU_ID_seq";
+DROP SEQUENCE "public"."WEBSITE_MENU_MENU_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_MENU_MENU_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -711,7 +711,7 @@ CREATE SEQUENCE "public"."WEBSITE_MENU_MENU_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WEBSITE_PAGE_STATIC_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."WEBSITE_PAGE_STATIC_ID_seq";
+DROP SEQUENCE "public"."WEBSITE_PAGE_STATIC_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_PAGE_STATIC_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -722,7 +722,7 @@ CREATE SEQUENCE "public"."WEBSITE_PAGE_STATIC_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WEBSITE_SLIDER_DETAIL_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."WEBSITE_SLIDER_DETAIL_ID_seq";
+DROP SEQUENCE "public"."WEBSITE_SLIDER_DETAIL_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_SLIDER_DETAIL_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -733,7 +733,7 @@ CREATE SEQUENCE "public"."WEBSITE_SLIDER_DETAIL_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WEBSITE_SLIDER_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."WEBSITE_SLIDER_ID_seq";
+DROP SEQUENCE "public"."WEBSITE_SLIDER_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_SLIDER_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -744,7 +744,7 @@ CREATE SEQUENCE "public"."WEBSITE_SLIDER_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WEBSITE_TAG_ARTICLE_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."WEBSITE_TAG_ARTICLE_ID_seq";
+DROP SEQUENCE "public"."WEBSITE_TAG_ARTICLE_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_TAG_ARTICLE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -755,7 +755,7 @@ CREATE SEQUENCE "public"."WEBSITE_TAG_ARTICLE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WEBSITE_TAG_ID_seq"
 -- ----------------------------
---DROP SEQUENCE "public"."WEBSITE_TAG_ID_seq";
+DROP SEQUENCE "public"."WEBSITE_TAG_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_TAG_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -766,7 +766,7 @@ CREATE SEQUENCE "public"."WEBSITE_TAG_ID_seq"
 -- ----------------------------
 -- Table structure for "public"."ALERT_SUBSCRIBER"
 -- ----------------------------
---DROP TABLE "public"."ALERT_SUBSCRIBER";
+DROP TABLE "public"."ALERT_SUBSCRIBER";
 CREATE TABLE "public"."ALERT_SUBSCRIBER" (
 "ALERT_SUBSCRIBER_ID" int4 DEFAULT nextval('"ALERT_SUBSCRIBER_ID_seq"'::regclass) NOT NULL,
 "USER_ID" int4,
@@ -794,7 +794,7 @@ INSERT INTO "public"."ALERT_SUBSCRIBER" VALUES ('9', '4', '0', '2018-01-02 17:06
 -- ----------------------------
 -- Table structure for "public"."APP_CLIENT_ACCESS"
 -- ----------------------------
---DROP TABLE "public"."APP_CLIENT_ACCESS";
+DROP TABLE "public"."APP_CLIENT_ACCESS";
 CREATE TABLE "public"."APP_CLIENT_ACCESS" (
 "ID" int4 DEFAULT nextval('"APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq"'::regclass) NOT NULL,
 "NAME" text,
@@ -842,7 +842,7 @@ INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('59', 'Pelni', '1', '1', '1', '
 -- ----------------------------
 -- Table structure for "public"."APP_CLIENT_FORM_UPLOAD_DETAIL"
 -- ----------------------------
---DROP TABLE "public"."APP_CLIENT_FORM_UPLOAD_DETAIL";
+DROP TABLE "public"."APP_CLIENT_FORM_UPLOAD_DETAIL";
 CREATE TABLE "public"."APP_CLIENT_FORM_UPLOAD_DETAIL" (
 "FILE_UPLOAD_DETAIL_ID" int4 DEFAULT nextval('"CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq"'::regclass) NOT NULL,
 "PATH" text,
@@ -873,7 +873,7 @@ INSERT INTO "public"."APP_CLIENT_FORM_UPLOAD_DETAIL" VALUES ('9', 'uploads/form_
 -- ----------------------------
 -- Table structure for "public"."APP_CLIENT_HEADER_ACCESS"
 -- ----------------------------
---DROP TABLE "public"."APP_CLIENT_HEADER_ACCESS";
+DROP TABLE "public"."APP_CLIENT_HEADER_ACCESS";
 CREATE TABLE "public"."APP_CLIENT_HEADER_ACCESS" (
 "HEADER_ACCESS_ID" int4 DEFAULT nextval('"APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq"'::regclass) NOT NULL,
 "CLIENT_SITE_ID" int4,
@@ -902,7 +902,7 @@ INSERT INTO "public"."APP_CLIENT_HEADER_ACCESS" VALUES ('12', '5', '3', '7', nul
 -- ----------------------------
 -- Table structure for "public"."APP_CLIENT_MENU"
 -- ----------------------------
---DROP TABLE "public"."APP_CLIENT_MENU";
+DROP TABLE "public"."APP_CLIENT_MENU";
 CREATE TABLE "public"."APP_CLIENT_MENU" (
 "MENU_ID" int4 DEFAULT nextval('"APP_CLIENT_MENU_CLIENT_MENU_ID_seq"'::regclass) NOT NULL,
 "MENU_LEVEL" int4,
@@ -939,7 +939,7 @@ INSERT INTO "public"."APP_CLIENT_MENU" VALUES ('7', '1', '0', 'Peta Indonesia', 
 -- ----------------------------
 -- Table structure for "public"."APP_CLIENT_SITE"
 -- ----------------------------
---DROP TABLE "public"."APP_CLIENT_SITE";
+DROP TABLE "public"."APP_CLIENT_SITE";
 CREATE TABLE "public"."APP_CLIENT_SITE" (
 "CLIENT_SITE_ID" int4 DEFAULT nextval('"APP_CLIENT_SITE_ID_seq"'::regclass) NOT NULL,
 "CLIENT_SITE_NAME" text,
@@ -969,7 +969,7 @@ INSERT INTO "public"."APP_CLIENT_SITE" VALUES ('3', 'Pelni', '0', null, 'admin',
 -- ----------------------------
 -- Table structure for "public"."APP_CLIENT_USER"
 -- ----------------------------
---DROP TABLE "public"."APP_CLIENT_USER";
+DROP TABLE "public"."APP_CLIENT_USER";
 CREATE TABLE "public"."APP_CLIENT_USER" (
 "USER_ID" int4 DEFAULT nextval('"APP_CLIENT_USER_CLIENT_USER_ID_seq"'::regclass) NOT NULL,
 "USERNAME" text,
@@ -1009,7 +1009,7 @@ INSERT INTO "public"."APP_CLIENT_USER" VALUES ('4', 'PLN-12346', 'admin@gmail.co
 -- ----------------------------
 -- Table structure for "public"."APP_CLIENT_USER_GROUP"
 -- ----------------------------
---DROP TABLE "public"."APP_CLIENT_USER_GROUP";
+DROP TABLE "public"."APP_CLIENT_USER_GROUP";
 CREATE TABLE "public"."APP_CLIENT_USER_GROUP" (
 "GROUP_ID" int4 DEFAULT nextval('"APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq"'::regclass) NOT NULL,
 "GROUP_NAME" text,
@@ -1036,7 +1036,7 @@ INSERT INTO "public"."APP_CLIENT_USER_GROUP" VALUES ('4', 'Coloco', '0', null, n
 -- ----------------------------
 -- Table structure for "public"."APP_FILE_MANAGER"
 -- ----------------------------
---DROP TABLE "public"."APP_FILE_MANAGER";
+DROP TABLE "public"."APP_FILE_MANAGER";
 CREATE TABLE "public"."APP_FILE_MANAGER" (
 "FILE_MANAGER_ID" int4 DEFAULT nextval('"FILE_MANAGER_ID_seq"'::regclass) NOT NULL,
 "NAME" text,
@@ -1068,7 +1068,7 @@ INSERT INTO "public"."APP_FILE_MANAGER" VALUES ('12', 'KD_20-2015-Penetapan_Port
 -- ----------------------------
 -- Table structure for "public"."APP_FUNCTION_ACCESS"
 -- ----------------------------
---DROP TABLE "public"."APP_FUNCTION_ACCESS";
+DROP TABLE "public"."APP_FUNCTION_ACCESS";
 CREATE TABLE "public"."APP_FUNCTION_ACCESS" (
 "ID" int4 DEFAULT nextval('"APP_FUNCTION_ACCESS_ID_seq"'::regclass) NOT NULL,
 "NAME" text,
@@ -1211,7 +1211,7 @@ INSERT INTO "public"."APP_FUNCTION_ACCESS" VALUES ('1548', 'admin', '1', '1', '1
 -- ----------------------------
 -- Table structure for "public"."APP_LOG"
 -- ----------------------------
---DROP TABLE "public"."APP_LOG";
+DROP TABLE "public"."APP_LOG";
 CREATE TABLE "public"."APP_LOG" (
 "LOG_ID" int4 DEFAULT nextval('"APP_LOG_LOG_ID_seq"'::regclass) NOT NULL,
 "CREATE_TIME" timestamp(6),
@@ -1232,7 +1232,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."APP_LOG_CLIENT"
 -- ----------------------------
---DROP TABLE "public"."APP_LOG_CLIENT";
+DROP TABLE "public"."APP_LOG_CLIENT";
 CREATE TABLE "public"."APP_LOG_CLIENT" (
 "LOG_ID" int4 DEFAULT nextval('"APP_LOG_CLIENT_LOG_CLIENT_ID_seq"'::regclass) NOT NULL,
 "CREATE_TIME" timestamp(6),
@@ -1254,7 +1254,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."APP_MENU"
 -- ----------------------------
---DROP TABLE "public"."APP_MENU";
+DROP TABLE "public"."APP_MENU";
 CREATE TABLE "public"."APP_MENU" (
 "MENU_ID" int4 DEFAULT nextval('"APP_MENU_MENU_ID_seq"'::regclass) NOT NULL,
 "MENU_LEVEL" int4,
@@ -1340,7 +1340,7 @@ INSERT INTO "public"."APP_MENU" VALUES ('161', '2', '115', 'Strategi Business Un
 -- ----------------------------
 -- Table structure for "public"."APP_ROUTE"
 -- ----------------------------
---DROP TABLE "public"."APP_ROUTE";
+DROP TABLE "public"."APP_ROUTE";
 CREATE TABLE "public"."APP_ROUTE" (
 "ROUTE_ID" int4 DEFAULT nextval('"APP_ROUTE_ROUTE_ID_seq"'::regclass) NOT NULL,
 "SLUG" text,
@@ -1364,7 +1364,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."APP_SETTING"
 -- ----------------------------
---DROP TABLE "public"."APP_SETTING";
+DROP TABLE "public"."APP_SETTING";
 CREATE TABLE "public"."APP_SETTING" (
 "SETTING_ID" int4 DEFAULT nextval('"APP_SETTING_SETTING_ID_seq"'::regclass) NOT NULL,
 "SETTING_NAME" text,
@@ -1382,11 +1382,13 @@ INSERT INTO "public"."APP_SETTING" VALUES ('2', 'APP_WALLPAPER', 'http://localho
 INSERT INTO "public"."APP_SETTING" VALUES ('4', 'APP_BRAND_HEIGHT', '50px');
 INSERT INTO "public"."APP_SETTING" VALUES ('5', 'APP_BRAND_WIDTH', '170px');
 INSERT INTO "public"."APP_SETTING" VALUES ('6', 'APP_BRAND_LOGO', 'http://localhost/uploads/file_manager/logo.jpg');
+INSERT INTO "public"."APP_SETTING" VALUES ('9', 'APP_SCREEN_SAVER_TIMEOUT', '3');
+INSERT INTO "public"."APP_SETTING" VALUES ('10', 'APP_SCREEN_SAVER_IMAGE', 'http://localhost/uploads/file_manager/logo.jpg');
 
 -- ----------------------------
 -- Table structure for "public"."APP_USER"
 -- ----------------------------
---DROP TABLE "public"."APP_USER";
+DROP TABLE "public"."APP_USER";
 CREATE TABLE "public"."APP_USER" (
 "USER_ID" int4 DEFAULT nextval('"APP_USER_USER_ID_seq"'::regclass) NOT NULL,
 "USERNAME" text,
@@ -1425,7 +1427,7 @@ INSERT INTO "public"."APP_USER" VALUES ('8', 'tubagus', 'tubagus@gmail.com', 'Tu
 -- ----------------------------
 -- Table structure for "public"."APP_USER_GROUP"
 -- ----------------------------
---DROP TABLE "public"."APP_USER_GROUP";
+DROP TABLE "public"."APP_USER_GROUP";
 CREATE TABLE "public"."APP_USER_GROUP" (
 "GROUP_ID" int4 DEFAULT nextval('"APP_USER_GROUP_GROUP_ID_seq"'::regclass) NOT NULL,
 "GROUP_NAME" text,
@@ -1451,7 +1453,7 @@ INSERT INTO "public"."APP_USER_GROUP" VALUES ('2', 'admin', '0', null, null, nul
 -- ----------------------------
 -- Table structure for "public"."daemons"
 -- ----------------------------
---DROP TABLE "public"."daemons";
+DROP TABLE "public"."daemons";
 CREATE TABLE "public"."daemons" (
 "Start" text NOT NULL,
 "Info" text NOT NULL
@@ -1467,7 +1469,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."FORM_ENTRY_FIELD"
 -- ----------------------------
---DROP TABLE "public"."FORM_ENTRY_FIELD";
+DROP TABLE "public"."FORM_ENTRY_FIELD";
 CREATE TABLE "public"."FORM_ENTRY_FIELD" (
 "ID" int4 DEFAULT nextval('"FORM_ENTRY_FIELD_ID_seq"'::regclass) NOT NULL,
 "SC" text,
@@ -2010,7 +2012,8 @@ CREATE TABLE "public"."FORM_ENTRY_FIELD" (
 "SR_VS_BOL_KL15" text,
 "SR_VS_BOL_BBLS" text,
 "SR_VS_BOL_LONGTON" text,
-"SR_VS_BOL_METRICTON" text
+"SR_VS_BOL_METRICTON" text,
+"TYPE_LOCATION" text
 )
 WITH (OIDS=FALSE)
 
@@ -2019,32 +2022,18 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Records of FORM_ENTRY_FIELD
 -- ----------------------------
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('23', '', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE.001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', null, null, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-Infinity', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', '', null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-16 10:31:07', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-Infinity', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, null, '["AGUS","AGUS"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('24', '', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE.001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', null, null, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-Infinity', '-5.867256637168142', '', null, null, '1970-01-01', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', '', null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-16 10:36:11', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-Infinity', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, null, '["AGUS","AGUS"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('25', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE.001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', null, null, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-Infinity', '-5.867256637168142', '', null, null, '1970-01-01', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', '', null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-16 10:42:56', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-Infinity', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, null, '["AGUS","AGUS"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('26', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', null, null, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-Infinity', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', '', null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-16 10:50:31', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-Infinity', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, null, '["AGUS","INDRA"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('27', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', null, null, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', '', null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-16 11:10:31', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, null, '["AGUS","INDRA"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('28', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', null, null, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'yes', 'yes', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'yes', null, '-1.1849710982658959', '00:00:00', null, '100', '320', '', null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-16 11:17:24', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, '["Penguins.jpg","Lighthouse1.jpg"]', '["AGUS","INDRA"]', '"Tulips1.jpg"', '"Chrysanthemum1.jpg"', '"Lighthouse2.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('29', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', null, null, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', '', null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-16 11:34:53', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, null, '["AGUS","INDRA"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('30', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', null, null, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', null, null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-16 14:12:14', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, null, '["AGUS","INDRA"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('32', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', null, null, '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', null, null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-20 00:49:23', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, null, '["AGUS","INDRA"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('33', 'Calm', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', null, null, '["on"]', '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'yes', 'yes', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'yes', null, '-1.1849710982658959', '00:00:00', null, '100', '320', null, null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-22 00:30:36', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, '["Chrysanthemum.jpg"]', '["AGUS","INDRA",""]', '"Lighthouse.jpg"', '"Tulips.jpg"', '"Penguins.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('34', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', null, null, '["on"]', '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', null, null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-22 00:36:28', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, '""', '["AGUS","INDRA",""]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('35', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', null, null, '["on"]', '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', null, null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-22 00:37:02', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, '""', '["AGUS","INDRA",""]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('36', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', null, null, '["on"]', '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', null, null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-22 00:39:02', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, '""', '["AGUS","INDRA","",""]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('37', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on","on"]', null, null, '["on","on"]', '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', null, null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-22 00:40:17', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, '""', '["AGUS","INDRA","","",""]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('44', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on","off"]', '["off","off"]', '["off","off"]', '["off","on"]', '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, 'Remarks 3', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'yes', 'yes', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', 'Remarks  2', 'yes', null, '-1.1849710982658959', '00:00:00', null, '100', '320', null, null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, 'Remarks 1', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-23 02:37:09', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, '["Lighthouse4.jpg","Penguins2.jpg"]', '["AGUS","INDRA"]', '"Lighthouse5.jpg"', '"Jellyfish2.jpg"', '"Tulips1.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('45', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on","off"]', '["off","on"]', '["off","off"]', '["off","off"]', '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', null, null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-22 06:52:27', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, '""', '["AGUS","INDRA","","","","",""]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('46', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["off","on","off"]', '["off","off","on"]', '["off","off"]', '["off","on"]', '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', null, null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-22 06:54:25', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, '""', '["AGUS","INDRA","","","","","",""]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('47', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on","off"]', '["off","on"]', '["on","off"]', '["off","on"]', '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', null, null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-22 07:05:02', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, '""', '["AGUS","INDRA","","","","","",""]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('48', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on","off"]', '["off","on"]', '["off","on"]', '["on","off"]', '["KONTRAK\/001","KONTRAK\/002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', null, null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-22 07:05:43', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, '""', '["AGUS","INDRA","","","","","","",""]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","KONTRAK\/002"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('49', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002","LOI\/003"]', '["VOYAGE\/001","VOY\/002","VOY\/003"]', 'TANJUNG PRIUK', '["on","off","on"]', '["off","on"]', '["off","on","on"]', '["on","off"]', '["KONTRAK\/001","KONTRAK\/002","KONTRAK\/003"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50",""]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', null, null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-22 07:06:42', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, '""', '["AGUS","INDRA","","","","","","","",""]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","CLIENT002","CLIENT003"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('50', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002","LOI\/003"]', '["VOYAGE\/001","VOY\/002","VOY\/003"]', 'TANJUNG PRIUK', '["on","off","on"]', '["off","on","off"]', '["off","on","on"]', '["on","off","off"]', '["KONTRAK\/001","KONTRAK\/002","KONTRAK\/003"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, '', 'single_port', '["50","50",""]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', null, null, '["TANJUNG PRIUK"]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, null, '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', null, null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, null, null, null, '654', null, '', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-22 07:09:05', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, null, '876', null, null, '00:00:00', null, '', '432', '00:00:00', '112', null, null, '', '', null, null, '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, '""', '["AGUS","INDRA"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["CLIENT001","CLIENT002","CLIENT003"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('51', 'Calm', 'IWO/24/04/2018/002', '["LOI\/24\/04\/2018\/001","LOI\/24\/04\/2018\/002"]', '["VOY\/24\/04\/2018\/001","LOI\/24\/04\/2018\/002"]', 'Semarang', '["on","off"]', '["off","off"]', '["off","off"]', '["off","on"]', '["KONTRAK\/24\/04\/2018\/001","KONTRAK\/24\/04\/2018\/002"]', '["HSD","MFO"]', '1970-01-01', '05:00:00', null, null, 'FO/24/04/2018/002', null, '', 'multi_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-24', '04:00:00', null, null, '["Semarang","Makasar"]', '321234', 'multi_client', null, null, null, '00:00:00', null, null, null, 'multi_product', null, null, null, null, '1970-01-01', '', 'yes', 'yes', '04:11:00', null, null, null, '2018-04-24', '', null, null, null, null, '00:00:00', null, null, '1000', '1000', '121002', '121003', null, null, null, '-0.006343262036937747', '0.01890831252229754', '', null, null, '2018-04-24', '03:00:00', '121002', '', 'yes', null, '0.00247320692497939', '00:00:00', null, '1000', '1000', null, null, '1970-01-01', '', '14', null, null, '03:00:00', null, '00:00:00', '121001', '121241', '0.010729164991072434', '123000', null, '2018-04-24', '03:00:00', '', null, null, null, null, '121004', null, '', null, '0.019703156393803874', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '1000', '1000', '00:00:00', '00:00:00', null, null, '1000', null, null, '', '', '', '', '1000', '1000', null, null, '', '', '1000', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-25 00:08:17', null, null, 'admin', null, null, '123400', '123203', '121232', '123234', '134321', '124300', null, '112999', null, null, '124000', null, null, '00:00:00', null, '', '143233', '00:00:00', '123532', null, null, '', '', null, null, '-0.006343262036937747', '0.01890831252229754', '00:00:00', '00:00:00', '0.00247320692497939', '125400', null, null, '', '', '0.010729164991072434', '00:00:00', '00:00:00', '0.019703156393803874', '', '', 'Y', null, null, '["chevron-certification1.jpg"]', '["Indra - SBU AE Migas","Bagos W - SBU AE Migas","",""]', '"PENGHARGAAN_PERTAMINA1.JPG"', '"Sertifikat_HSE1.png"', '"Sertifikat-Prakualifikasi-CSMS1.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Kelud', '0', '["CUSTOMER1","CUSTOMER2"]', '122000', '123000', '123400', '122000', '123000', '121000', '121000', '122000', '123000', '121000', '123103', '123303', '123100', '121103', '123203', '123403', '123103', '123103', '124000', '123992', '121023', '125300', '120300', '123234', '121342', '124309', '123432', '121300', '123332', '121231', '124334', '123432', '123300', '123321', '121234', '124343', '123432', '123342', '123433', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["0","0","0","0"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('52', 'Calm', 'IWO/24/04/2008/003', '["LOI\/24\/04\/2008\/003"]', '["VOY\/24\/04\/2008\/003"]', 'Semarang', '["on"]', '["off"]', '["off"]', '["off"]', '["KONTRAK\/24\/04\/2008\/003"]', '["MFO"]', '2018-04-04', '03:00:00', null, null, 'FO/24/04/2008/003', null, '', 'single_port', '[""]', null, null, null, null, '6', null, null, '00:00:00', null, '05:00:00', null, null, '["Semarang"]', '100000', 'single_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-04', '', 'yes', 'yes', '04:00:00', null, null, null, '1970-01-01', '', null, null, null, null, '00:00:00', null, null, '100000', '100000', '92335', '92345', null, null, null, '-0.08190145807360832', '-0.07330069748299614', '', null, null, null, '03:00:00', '94300', '', 'yes', null, '-0.061513631784751034', '00:00:00', null, '100000', '100000', null, null, '2018-04-04', '', '14', null, null, '03:00:00', null, '00:00:00', '92300', '92366', '-0.0744884806602905', '98000', null, null, '02:00:00', '', null, null, null, null, '92334', null, '', null, '-0.07402314779727813', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '100000', '100000', '00:00:00', '00:00:00', null, null, '100000', null, null, '', '', '', '', '100000', '100000', null, null, '', '', '100000', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-25 00:07:41', null, null, 'admin', null, null, '92000', '93000', '92334', '92343', '92326', '92332', null, '92342', null, null, '92375', null, null, '00:00:00', null, '', '92373', '00:00:00', '92376', null, null, '', '', null, null, '-0.08190145807360832', '-0.07330069748299614', '00:00:00', '00:00:00', '-0.061513631784751034', '94000', null, null, '', '', '-0.0744884806602905', '00:00:00', '00:00:00', '-0.07402314779727813', '', '', 'Y', null, null, '["chevron-certification2.jpg"]', '["Indra - SBU AE Migas","Iwan - SBU AE Migas"]', '"PENGHARGAAN_PERTAMINA2.JPG"', '"Sertifikat_HSE2.png"', '"Sertifikat-Prakualifikasi-CSMS2.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Gunung Dempo', '0', '["CUSTOMER3"]', '99000', '99500', '99700', '99550', '99890', '98000', '99100', '99800', '99200', '99200', '96000', '96000', '98000', '94000', '95000', '93000', '99000', '93000', '92353', '92365', '92375', '92600', '92324', '92354', '92367', '92335', '92335', '92321', '92332', '92245', '92323', '92363', '92311', '92337', '92342', '92356', '92337', '92327', '92364', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["0","0"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('53', 'Calm', 'IWO/24/04/2008/004', '["LOI\/24\/04\/2008\/004"]', '["VOY\/24\/04\/2008\/004"]', 'Surabaya', 'on', null, null, null, '["KONTRAK\/24\/04\/2008\/004"]', '["HSD"]', '2018-04-26', '04:00:00', null, null, 'FO/24/04/2008/004', null, '', 'single_port', '100', null, null, null, null, '6', null, null, null, '2018-04-25', '03:00:00', null, null, '["Surabaya"]', '125000', 'single_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-25', null, 'yes', 'yes', '03:00:00', null, null, null, '2018-04-25', '', null, null, null, null, '00:00:00', null, null, '125000', '125000', null, null, null, null, null, null, null, 'Arrived', null, null, '2018-04-25', '03:00:00', null, '', 'yes', null, null, null, null, '125000', '125000', null, null, '2018-04-25', '', '15', null, '00:00:00', '02:00:00', null, '00:00:00', null, null, null, null, null, '2018-04-24', '03:00:00', null, null, null, null, null, null, '', '', null, null, '00:00:00', null, null, '00:00:00', null, null, null, '00:00:00', '125000', '125000', null, null, null, null, '125000', null, '00:00:00', '', null, null, '', '125000', '125000', null, null, null, null, '125000', null, null, null, null, null, '', null, null, null, null, null, '0', '2018-04-25 00:39:58', null, null, 'admin', null, null, '123212', '124502', null, null, null, null, null, null, null, null, null, '00:00:00', '00:00:00', '00:00:00', null, '', null, '00:00:00', null, '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["chevron-certification3.jpg"]', '["Bagos W - SBU AE Migas"]', '"PENGHARGAAN_PERTAMINA3.JPG"', '"Sertifikat_HSE3.png"', '"Sertifikat-Prakualifikasi-CSMS3.jpg"', null, '00:00:00', null, '00:00:00', null, '00:00:00', null, null, '00:00:00', '00:00:00', null, null, '00:00:00', null, '00:00:00', null, '00:00:00', null, '00:00:00', '00:00:00', null, null, null, null, '125502', '124502', '124502', '124502', '124502', '123324', '123423', '124323', '123342', '123345', '122324', '123342', '123345', '123234', '124224', '124234', '124323', '123335', '123341', null, '124452', '0.007968000509952033', '-0.06883289339443896', '0.032111933944836225', '-0.0139997695511185', '0.0024129163900179756', '-0.02704084999670032', '-0.07894951938795527', '0.022858671942784396', '0.00115124245003851', '0.009000748051446635', '0.026328894314950765', '0.00937636637463361', '0.0014493692409839516', '0.015618266268694832', '-0.014865063427535878', '0', '-0.06883289339443896', '0.02427491052776473', '0.01675152830760882', '-0.005730518685409218', 'KM Dobonsolo', '0', '["CUSTOMER4"]', '125004', '124004', '120003', '120003', '120005', '124502', '132003', '120504', '123203', '123204', '124502', '125402', '125302', '124502', '123502', '123502', '125302', '122502', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '125502', '123502', '124502', '121502', '123502', '125502', '123502', '125502', '125502', '123502', '123224', '123242', '124234', '123342', '123342', '121224', '122344', '123323', '123345', '124323', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('54', 'Calm', 'IWO/24/04/2008/004', '["LOI\/24\/04\/2008\/005"]', '["VOY\/24\/04\/2008\/004"]', 'Surabaya', 'on', null, null, null, '["KONTRAK\/24\/04\/2008\/005"]', '["HSD"]', '2018-04-25', '05:00:00', null, null, 'FO/24/04/2008/004', null, '', 'single_port', '100', null, null, null, null, '6', null, null, null, '2018-04-25', '01:00:00', null, null, '["Surabaya"]', 'GSSWDS', 'single_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-25', null, 'yes', 'yes', '04:00:00', null, null, null, '2018-05-29', '', null, null, null, null, '00:00:00', null, null, '49434', '49434', null, null, null, null, null, null, null, '', null, null, '2018-04-25', '01:00:00', null, '', 'yes', null, null, null, null, '49434', '49434', null, null, '2018-04-23', '', '15', null, '00:00:00', '02:08:00', null, '00:00:00', null, null, null, null, null, '2018-04-25', '02:00:00', null, null, null, null, null, null, '', '', null, null, '00:00:00', null, null, '00:00:00', null, null, null, '00:00:00', '49434', '49434', null, null, null, null, '49434', null, '00:00:00', '', null, null, '', '49434', '49434', null, null, null, null, '49434', null, null, null, null, null, '', null, null, null, null, null, '0', '2018-04-25 01:11:12', null, null, 'admin', null, null, '49532', '49532', null, null, null, null, null, null, null, null, null, '00:00:00', '00:00:00', '00:00:00', null, '', null, '00:00:00', null, '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["PENGHARGAAN_PERTAMINA5.JPG"]', '["Indra - SBU AE Migas","Iwan - SBU AE Migas"]', '"chevron-certification5.jpg"', '"Sertifikat_HSE5.png"', '"Sertifikat-Prakualifikasi-CSMS5.jpg"', null, '00:00:00', null, '00:00:00', null, '00:00:00', null, null, '00:00:00', '00:00:00', null, null, '00:00:00', null, '00:00:00', null, '00:00:00', null, '00:00:00', '00:00:00', null, null, null, null, '49534', '49543', '49323', '49512', '49532', '49489', '49423', '49234', '49523', '49523', '49434', '49523', '49553', '49532', '49434', '49323', '49543', '49523', '49544', null, '49234', '0.00026255730818168965', '0.001655428594500747', '0', '-0.0007876878332525448', '-0.00014131707514030767', '-0.0015579790785666592', '-0.004427834423365967', '0', '0.00006054001695120475', '-0.0017794673730612905', '0.0022005975934749253', '0.005815597108355882', '-0.0008285841316034114', '-0.00086849387004908', '0.0011916303118435934', '0.0006460469999192441', '0.0014135131860587213', '-0.0008285841316034114', '-0.0008079012744642604', '-0.0005857165939570205', 'KM Dobonsolo', '0', '["CUSTOMER4"]', '49520', '49542', '49510', '49511', '49522', '49500', '49452', '49523', '49551', '49541', '49543', '49423', '49512', '49522', '49522', '49482', '49511', '49512', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '49513', '49534', '49523', '49512', '49534', '49521', '49523', '49482', '49532', '49543', '49423', '49423', '49523', '49511', '49542', '49423', '49234', '49523', '49554', '49453', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1","1"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('55', 'Calm', 'IWO/24/04/2008/006', '["LOI\/24\/04\/2008\/006"]', '["VOY\/24\/04\/2008\/006"]', 'Semarang', 'on', null, null, null, '["KONTRAK\/24\/04\/2008\/006"]', '["HSD"]', '2018-04-25', '03:00:00', '95225', '95253', 'FO/24/04/2008/006', '95221', '', 'single_port', '100', '95223', '95223', null, '95223', '7', null, '95253', '00:00:00', '2018-04-25', '02:00:00', null, null, '["Semarang"]', '95232', 'single_client', '95252', '95263', '94500', '00:00:00', null, null, '95224', 'single_product', '95253', '95253', '00:00:00', '00:00:00', '2018-04-25', '', 'yes', 'yes', '03:00:00', '96000', '95000', null, '2018-04-25', '', '94332', '94132', '95223', '95223', '00:00:00', '95223', '94000', '95232', '95232', '95255', '95253', '', '', '94232', '-0.008159793327242367', '0.0023418711865830734', '', null, null, '2018-04-25', '02:02:00', '95231', '', 'yes', '95253', '0.013154441329931866', '00:00:00', '95000', '95232', '95232', null, null, '2018-04-25', '', '14', '94432', '00:00:00', '03:00:00', null, '00:00:00', '95253', '95251', '0.0026560843228034814', '94234', '96000', '2018-04-25', '02:00:00', '', null, null, null, null, '95223', '', '', '94235', '-0.008159793327242367', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '95232', '95232', '00:00:00', '00:00:00', null, null, '95232', '00:00:00', '00:00:00', '', '', '', '', '95232', '95232', null, null, '', '', '95232', '-0.008159793327242367', '0.0023418711865830734', '00:00:00', '00:00:00', '', '', '0.013154441329931866', '', '', '0.0026560843228034814', '-0.008159793327242367', '0', '2018-04-25 01:23:21', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["chevron-certification6.jpg"]', '["Bagos W - SBU AE Migas","Indra - SBU AE Migas"]', '"PENGHARGAAN_PERTAMINA6.JPG"', '"Sertifikat_HSE6.png"', '"Sertifikat-Prakualifikasi-CSMS6.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Umsini', '0', '["CUSTOMER6"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1","1"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('56', 'Calm', 'IWO/24/04/2008/007', '["LOI\/24\/04\/2008\/007"]', '["VOY\/24\/04\/2008\/007"]', 'Semarang', 'on', null, null, null, '["KONTRAK\/24\/04\/2008\/007"]', '["HSD"]', '2018-04-25', '04:00:00', null, null, 'FO/24/04/2008/007', null, '', 'single_port', '100', null, null, null, null, '7', null, null, null, '2018-04-24', '02:00:00', null, null, '["Surabaya"]', '151343', 'single_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-25', null, 'yes', 'yes', '02:00:00', '15130', '15220', null, '2018-04-18', '', null, null, null, null, '00:00:00', null, '15130', '151343', '151343', null, null, null, null, null, '90.00224668613794', '89.94204450083596', '', null, null, '2018-04-24', '02:00:00', null, '', 'yes', null, '90.00204848973442', null, '15120', '151343', '151343', null, null, '2018-04-26', '', '15', null, '00:00:00', '03:00:00', null, '00:00:00', null, null, '90.00944873565345', null, '15130', '2018-04-26', '02:00:00', null, null, null, null, null, null, '', '', null, '90.00151992757215', '00:00:00', null, null, '00:00:00', null, null, null, '00:00:00', '151343', '151343', null, null, null, null, '151343', null, '00:00:00', '', null, null, '', '151343', '151343', null, null, null, null, '151343', null, null, null, null, null, '', null, null, null, null, null, '0', '2018-04-25 01:32:47', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', '00:00:00', '00:00:00', null, '', null, '00:00:00', null, '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["PENGHARGAAN_PERTAMINA7.JPG"]', '["Iwan - SBU AE Migas","Indra - SBU AE Migas"]', '"Sertifikat_HSE7.png"', '"Sertifikat-Prakualifikasi-CSMS7.jpg"', '"Sertifikat_HSE8.png"', null, '00:00:00', null, '00:00:00', null, '00:00:00', null, null, '00:00:00', '00:00:00', null, null, '00:00:00', null, '00:00:00', null, '00:00:00', null, '00:00:00', '00:00:00', '151343', '151343', '151343', '151343', null, null, null, null, null, '151311', '151310', '151334', '151341', '151311', '151331', '151352', '151323', '151323', '151312', '151343', '151323', '151343', '151334', '151343', '151311', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Kelud', '0', '["CUSTOMER7"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, '151331', '151323', '151334', '151343', '151323', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '151311', '151331', '151311', '151310', '151312', '151310', '151341', '-0.007929637681638263', '-0.021148495482813542', '0.019160632168719275', '-0.007269218823311724', '-0.013216761496930405', '-0.013217809676758464', '0.013216062802730438', '-0.027096509837354853', '-0.008591633071178375', '-0.007269747277149201', '90.00072697953222', '89.94257620712214', '90.00072697953222', '90.00726984336792', '90.00079306333933', '["1","1"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('57', 'Calm', 'IWO/24/04/2008/007 	', '["LOI\/24\/04\/2008\/007"]', '["VOY\/24\/04\/2008\/007"]', 'Makasar', 'on', null, null, null, '["KONTRAK\/24\/04\/2008\/007"]', '["MFO"]', '2018-04-25', '02:00:00', '124353', '124353', 'FO/24/04/2008/007 	', '124315', '', 'single_port', '100', '124311', '124323', null, '124323', '7', null, '124323', '00:00:00', '2018-04-25', '03:00:00', null, null, '["Makasar"]', '125000', 'single_client', '124353', '124325', '123000', '00:00:00', null, null, '124324', 'single_product', '124342', '124354', '00:00:00', '00:00:00', '2018-04-25', '', 'yes', 'yes', '02:00:00', '125000', '125000', null, '2018-04-25', '', '123400', '122320', '124343', '124342', '00:00:00', '124353', '125000', '124300', '124300', '124323', '124356', '', '', '123000', '-0.00554255053856859', '-0.005445492788944926', '', null, null, '2018-04-25', '03:00:00', '124321', '', 'yes', '124354', '-0.005445492788944926', '00:00:00', '125000', '124300', '124300', null, null, '2018-04-25', '', '14', '123240', '00:00:00', '02:00:00', null, '00:00:00', '124312', '124321', '-0.005194846969136497', '125000', '125000', '2018-04-25', '02:00:00', '', null, null, null, null, '124323', '', '', '125343', '-0.005291856331730228', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '124300', '124300', '00:00:00', '00:00:00', null, null, '124300', '00:00:00', '00:00:00', '', '', '', '', '124300', '124300', null, null, '', '', '124300', '-0.00554255053856859', '-0.005445492788944926', '00:00:00', '00:00:00', '', '', '-0.005445492788944926', '', '', '-0.005194846969136497', '-0.005291856331730228', '0', '2018-04-25 02:39:53', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, null, '["Bagos W - SBU AE Migas","Indra - SBU AE Migas"]', '"chevron-certification7.jpg"', '"PENGHARGAAN_PERTAMINA8.JPG"', '"Sertifikat-Prakualifikasi-CSMS8.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Dobonsolo', '0', '["CUSTOMER7"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1","1"]');
 
 -- ----------------------------
 -- Table structure for "public"."gammu"
 -- ----------------------------
---DROP TABLE "public"."gammu";
+DROP TABLE "public"."gammu";
 CREATE TABLE "public"."gammu" (
 "Version" int2 DEFAULT '0'::smallint NOT NULL
 )
@@ -2060,7 +2049,7 @@ INSERT INTO "public"."gammu" VALUES ('15');
 -- ----------------------------
 -- Table structure for "public"."HEADER_INFO_CLIENT"
 -- ----------------------------
---DROP TABLE "public"."HEADER_INFO_CLIENT";
+DROP TABLE "public"."HEADER_INFO_CLIENT";
 CREATE TABLE "public"."HEADER_INFO_CLIENT" (
 "ID" int4 DEFAULT nextval('"HEADER_INFO_CLIENT_ID_seq"'::regclass) NOT NULL,
 "INTERVENTION_ID" text,
@@ -2093,10 +2082,10 @@ INSERT INTO "public"."HEADER_INFO_CLIENT" VALUES ('5', null, null, null, null, n
 -- ----------------------------
 -- Table structure for "public"."inbox"
 -- ----------------------------
---DROP TABLE "public"."inbox";
+DROP TABLE "public"."inbox";
 CREATE TABLE "public"."inbox" (
-"UpdatedInDB" timestamp DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
-"ReceivingDateTime" timestamp DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
+"UpdatedInDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
+"ReceivingDateTime" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "Text" text NOT NULL,
 "SenderNumber" varchar(20) DEFAULT ''::character varying NOT NULL,
 "Coding" varchar(255) DEFAULT 'Default_No_Compression'::character varying NOT NULL,
@@ -2119,7 +2108,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."INFO_CLIENT"
 -- ----------------------------
---DROP TABLE "public"."INFO_CLIENT";
+DROP TABLE "public"."INFO_CLIENT";
 CREATE TABLE "public"."INFO_CLIENT" (
 "ID_INFO" int4 DEFAULT nextval('pelni_info_id_info_seq1'::regclass) NOT NULL,
 "VESSEL" int4 DEFAULT 0 NOT NULL,
@@ -2216,7 +2205,7 @@ INSERT INTO "public"."INFO_CLIENT" VALUES ('81', '26', '1', '6', '2017-02-09', '
 -- ----------------------------
 -- Table structure for "public"."KOMPONEN_HTML"
 -- ----------------------------
---DROP TABLE "public"."KOMPONEN_HTML";
+DROP TABLE "public"."KOMPONEN_HTML";
 CREATE TABLE "public"."KOMPONEN_HTML" (
 "ID" int4 DEFAULT nextval('"KOMPONEN_HTML_ID_seq"'::regclass) NOT NULL,
 "NAME" text,
@@ -2924,7 +2913,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('17', 'quantity_crude_loading', '<t
 				</tr>
 				<tr>
 					<td>b)</td>
-					<td style="width:150px;">Ship''s Figure After Loading (SFAL) - TOV</td>
+					<td style="width:150px;">Ship''s Figure After Loading (SFAL)</td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_sfal_tov_klobs" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_sfal_tov_kl15" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_sfal_tov_bbls" class="" type="text"></td>
@@ -2942,7 +2931,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('17', 'quantity_crude_loading', '<t
 				</tr>
 				<tr>
 					<td>d)</td>
-					<td style="width:150px;">Ship''s Figure After Loading (SFAL) - GSV</td>
+					<td style="width:150px;">Ship''s Figure After Loading (SFAL)</td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_gsv_klobs" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_gsv_kl15" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_gsv_bbls" class="" type="text"></td>
@@ -2951,7 +2940,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('17', 'quantity_crude_loading', '<t
 				</tr>
 				<tr>
 					<td>e)</td>
-					<td style="width:150px;">Ship''s Figure After Loading (SFAL) - NSV</td>
+					<td style="width:150px;">Ship''s Figure After Loading (SFAL) </td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_nsv_klobs" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_nsv_kl15" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_nsv_bbls" class="" type="text"></td>
@@ -2960,7 +2949,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('17', 'quantity_crude_loading', '<t
 				</tr>
 				<tr>
 					<td>f)</td>
-					<td style="width:150px;">Vessel Experience Factor - Loading (VEF-L)</td>
+					<td style="width:150px;">Vessel Experience Factor</td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="vefl_klobs" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="vefl_kl15" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="vefl_bbls" class="" type="text"></td>
@@ -3159,7 +3148,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('18', 'quantity_crude_discharge', '
 <table style="width:900px !important;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tbody><tr>
 					<td>a)</td>
-					<td style="width:150px;">Ship Figure Before Discharge - TOV</td>
+					<td style="width:150px;">Ship Figure Before Discharge</td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_tov_klobs" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_tov_kl15" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_tov_bbls" class="" type="text"></td>
@@ -3186,7 +3175,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('18', 'quantity_crude_discharge', '
 				</tr>
 				<tr>
 					<td>d)</td>
-					<td style="width:150px;">Ship Figure Before Discharge -  GSV</td>
+					<td style="width:150px;">Ship Figure Before Discharge</td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_gsv_klobs" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_gsv_kl15" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_gsv_bbls" class="" type="text"></td>
@@ -3195,7 +3184,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('18', 'quantity_crude_discharge', '
 				</tr>
 				<tr>
 					<td>f)</td>
-					<td style="width:150px;">Ship Figure Before Discharge -  NSV</td>
+					<td style="width:150px;">Ship Figure Before Discharge</td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_nsv_klobs" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_nsv_kl15" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_nsv_bbls" class="" type="text"></td>
@@ -3376,7 +3365,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('19', 'quantity_product_loading', '
 				</tr>
 				<tr>
 					<td style="width:10px;">b)</td>
-					<td style="width:135px;">Ship''s Figure After Loading (SFAL) - TOV</td>
+					<td style="width:135px;">Ship''s Figure After Loading (SFAL)</td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_tov_klobs" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_tov_kl15" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_tov_bbls" class="" type="text"></td>
@@ -3403,7 +3392,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('19', 'quantity_product_loading', '
 				</tr>
 				<tr>
 					<td style="width:10px;">e)</td>
-					<td style="width:135px;">Vessel Experience Factor - Loading (VEF-L)</td>
+					<td style="width:135px;">Vessel Experience Factor</td>
 					<td colspan="5"><input onkeyup="hitung(this)" style="width:100px;" name="vef_loading_bbls" class="" type="text"></td>
 				</tr>
 				<tr>
@@ -3565,7 +3554,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('20', 'quantity_product_discharge',
 <table style="width:900px !important;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tbody><tr>
 					<td style="width:5px;">a)</td>
-					<td style="width:160px;">Ship Figure Before Discharge - TOV</td>
+					<td style="width:160px;">Ship Figure Before Discharge</td>
 					<td style="width:160px;"><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_tov_klobs" class="" type="text"></td>
 					<td style="width:160px;"><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_tov_kl15" class="" type="text"></td>
 					<td style="width:160px;"><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_tov_bbls" class="" type="text"></td>
@@ -3592,7 +3581,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('20', 'quantity_product_discharge',
 				</tr>
 				<tr>
 					<td style="width:10px;">d)</td>
-					<td style="width:135px;">Ship Figure Before Discharge -  GSV</td>
+					<td style="width:135px;">Ship Figure Before Discharge</td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_gsv_klobs" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_gsv_kl15" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_gsv_bbls" class="" type="text"></td>
@@ -3857,7 +3846,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('22', 'quantity_gas_loading', '<tab
 				</tr>
 				<tr>
 					<td>e)</td>
-					<td>Thermal Expansion Factor - Loading</td>
+					<td>Thermal Expansion Factor</td>
 					<td colspan="5"><input onkeyup="hitung(this)" style="width:100px;" name="thermal_expansion_volume_loading" class="" type="text"></td>
 				</tr>
 			</tbody></table>
@@ -4006,12 +3995,12 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('23', 'quantity_gas_discharge', '<t
 			<tr>
 				<td style="width:5px;">a)</td>
 				<td style="width:160px;">Volume Gas During UnLoading (m3)</td>
-				<td><input style="width:100px;" name="volume_gas_during_unloading" class="" type="text"></td>
+				<td><input onkeyup="hitung(this)" style="width:100px;" name="volume_gas_during_unloading" class="" type="text"></td>
 			</tr>
 			<tr>
 				<td>b)</td>
 				<td>Energy of Gas Consummed (MMBTU)</td>
-				<td><input style="width:100px;" name="energy_gas_consumed_during_unloading" class="" type="text"></td>
+				<td><input onkeyup="hitung(this)" style="width:100px;" name="energy_gas_consumed_during_unloading" class="" type="text"></td>
 			</tr>
 		</tbody>
 	</table>
@@ -4136,7 +4125,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('24', 'quantity_petrokimia_loading'
 				</tr>
 				<tr>
 					<td style="width:10px;">b)</td>
-					<td style="width:135px;">Ship''s Figure After Loading (SFAL) - TOV</td>
+					<td style="width:135px;">Ship''s Figure After Loading (SFAL)</td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_tov_klobs" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_tov_kl15" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_tov_bbls" class="" type="text"></td>
@@ -4154,7 +4143,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('24', 'quantity_petrokimia_loading'
 				</tr>
 				<tr>
 					<td style="width:10px;">d)</td>
-					<td style="width:135px;">Ship''s Loaded - GSV</td>
+					<td style="width:135px;">Ship''s Loaded</td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sl_gsv_klobs" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sl_gsv_kl15" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sl_gsv_bbls" class="" type="text"></td>
@@ -4163,7 +4152,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('24', 'quantity_petrokimia_loading'
 				</tr>
 				<tr>
 					<td style="width:10px;">e)</td>
-					<td style="width:135px;">Vessel Experience Factor - Loading (VEF-L)</td>
+					<td style="width:135px;">Vessel Experience Factor</td>
 					<td colspan="5"><input onkeyup="hitung(this)" style="width:100px;" name="vef_loading_bbls" class="" type="text"></td>
 				</tr>
 				<tr>
@@ -4352,7 +4341,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('25', 'quantity_petrokimia_discharg
 				</tr>
 				<tr>
 					<td style="width:10px;">d)</td>
-					<td style="width:135px;">Ship Figure Before Discharge -  GSV</td>
+					<td style="width:135px;">Ship Figure Before Discharge</td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_gsv_klobs" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_gsv_kl15" class="" type="text"></td>
 					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfbd_gsv_bbls" class="" type="text"></td>
@@ -4512,45 +4501,45 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('26', 'quantity_crude_bunker_vessel
 			<tr>
 				<td style="width:5px;">a)</td>
 				<td style="width:135px;">@loading - Barge Before Loading</td>
-				<td style="width:160px;"><input style="width:100px;" name="barge_before_loading_klobs" class="" type="text"></td>
-				<td style="width:160px;"><input style="width:100px;" name="barge_before_loading_kl15" class="" type="text"></td>
-				<td><input style="width:100px;" name="barge_before_loading_metric_tons" class="" type="text"></td>
+				<td style="width:160px;"><input onkeyup="hitung(this)" style="width:100px;" name="barge_before_loading_klobs" class="" type="text"></td>
+				<td style="width:160px;"><input onkeyup="hitung(this)" style="width:100px;" name="barge_before_loading_kl15" class="" type="text"></td>
+				<td><input onkeyup="hitung(this)" style="width:100px;" name="barge_before_loading_metric_tons" class="" type="text"></td>
 			</tr>
 			<tr>
 				<td>b)</td>
 				<td style="width:135px;">@loading - Barge After Loading</td>
-				<td><input style="width:100px;" name="barge_after_loading_klobs" class="" type="text"></td>
-				<td><input style="width:100px;" name="barge_after_loading_kl15" class="" type="text"></td>
-				<td><input style="width:100px;" name="barge_after_loading_metric_tons" class="" type="text"></td>
+				<td><input onkeyup="hitung(this)" style="width:100px;" name="barge_after_loading_klobs" class="" type="text"></td>
+				<td><input onkeyup="hitung(this)" style="width:100px;" name="barge_after_loading_kl15" class="" type="text"></td>
+				<td><input onkeyup="hitung(this)" style="width:100px;" name="barge_after_loading_metric_tons" class="" type="text"></td>
 			</tr>
 			<tr>
 				<td>c)</td>
 				<td style="width:135px;">@loading - Barge Loaded</td>
-				<td><input style="width:100px;" name="barge_loaded_klobs" class="" type="text"></td>
-				<td><input style="width:100px;" name="barge_loaded_kl15" class="" type="text"></td>
-				<td><input style="width:100px;" name="barge_loaded_metric_tons" class="" type="text"></td>
+				<td><input onkeyup="hitung(this)" style="width:100px;" name="barge_loaded_klobs" class="" type="text"></td>
+				<td><input onkeyup="hitung(this)" style="width:100px;" name="barge_loaded_kl15" class="" type="text"></td>
+				<td><input onkeyup="hitung(this)" style="width:100px;" name="barge_loaded_metric_tons" class="" type="text"></td>
 			</tr>
 
 			<tr>
 				<td>a)</td>
 				<td style="width:135px;">@discharge - Barge Before discharge</td>
-				<td><input style="width:100px;" name="barge_before_discharge_klobs" class="" type="text"></td>
-				<td><input style="width:100px;" name="barge_before_discharge_kl15" class="" type="text"></td>
-				<td><input style="width:100px;" name="barge_before_discharge_metric_tons" class="" type="text"></td>
+				<td><input style="width:100px;" onkeyup="hitung(this)" name="barge_before_discharge_klobs" class="" type="text"></td>
+				<td><input style="width:100px;" onkeyup="hitung(this)" name="barge_before_discharge_kl15" class="" type="text"></td>
+				<td><input style="width:100px;" onkeyup="hitung(this)" name="barge_before_discharge_metric_tons" class="" type="text"></td>
 			</tr>
 			<tr>
 				<td>b)</td>
 				<td style="width:135px;">@discharge - Barge After discharge</td>
-				<td><input style="width:100px;" name="barge_after_discharge_klobs" class="" type="text"></td>
-				<td><input style="width:100px;" name="barge_after_discharge_kl15" class="" type="text"></td>
-				<td><input style="width:100px;" name="barge_after_discharge_metric_tons" class="" type="text"></td>
+				<td><input style="width:100px;" onkeyup="hitung(this)" name="barge_after_discharge_klobs" class="" type="text"></td>
+				<td><input style="width:100px;" onkeyup="hitung(this)" name="barge_after_discharge_kl15" class="" type="text"></td>
+				<td><input style="width:100px;" onkeyup="hitung(this)" name="barge_after_discharge_metric_tons" class="" type="text"></td>
 			</tr>
 			<tr>
 				<td>c)</td>
 				<td style="width:135px;">@discharge - Barge Discharged</td>
-				<td><input style="width:100px;" name="barge_discharge_klobs" class="" type="text"></td>
-				<td><input style="width:100px;" name="barge_discharge_kl15" class="" type="text"></td>
-				<td><input style="width:100px;" name="barge_discharge_metric_tons" class="" type="text"></td>
+				<td><input style="width:100px;" onkeyup="hitung(this)" name="barge_discharge_klobs" class="" type="text"></td>
+				<td><input style="width:100px;" onkeyup="hitung(this)" name="barge_discharge_kl15" class="" type="text"></td>
+				<td><input style="width:100px;" onkeyup="hitung(this)" name="barge_discharge_metric_tons" class="" type="text"></td>
 			</tr>
 		</tbody>
 	</table>
@@ -4566,23 +4555,23 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('26', 'quantity_crude_bunker_vessel
 			<tr>
 				<td style="width:5px;">a)</td>
 				<td style="width:135px;">Ship Before Receive</td>
-				<td style="width:160px;"><input style="width:100px;" name="barge_before_receive_klobs" class="" type="text"></td>
-				<td style="width:160px;"><input style="width:100px;" name="barge_before_receive_kl15" class="" type="text"></td>
-				<td><input style="width:100px;" name="barge_before_receive_metric_tons" class="" type="text"></td>
+				<td style="width:160px;"><input onkeyup="hitung(this)" style="width:100px;" name="barge_before_receive_klobs" class="" type="text"></td>
+				<td style="width:160px;"><input onkeyup="hitung(this)" style="width:100px;" name="barge_before_receive_kl15" class="" type="text"></td>
+				<td><input onkeyup="hitung(this)" style="width:100px;" name="barge_before_receive_metric_tons" class="" type="text"></td>
 			</tr>
 			<tr>
 				<td>b)</td>
 				<td style="width:135px;">Ship After Receive</td>
-				<td><input style="width:100px;" name="barge_after_receive_klobs" class="" type="text"></td>
-				<td><input style="width:100px;" name="barge_after_receive_kl15" class="" type="text"></td>
-				<td><input style="width:100px;" name="barge_after_receive_metric_tons" class="" type="text"></td>
+				<td><input onkeyup="hitung(this)" style="width:100px;" name="barge_after_receive_klobs" class="" type="text"></td>
+				<td><input onkeyup="hitung(this)" style="width:100px;" name="barge_after_receive_kl15" class="" type="text"></td>
+				<td><input onkeyup="hitung(this)" style="width:100px;" name="barge_after_receive_metric_tons" class="" type="text"></td>
 			</tr>
 			<tr>
 				<td>c)</td>
 				<td style="width:135px;">Ship Received</td>
-				<td><input style="width:100px;" name="barge_receive_klobs" class="" type="text"></td>
-				<td><input style="width:100px;" name="barge_receive_kl15" class="" type="text"></td>
-				<td><input style="width:100px;" name="barge_receive_metric_tons" class="" type="text"></td>
+				<td><input onkeyup="hitung(this)" style="width:100px;" name="barge_receive_klobs" class="" type="text"></td>
+				<td><input onkeyup="hitung(this)" style="width:100px;" name="barge_receive_kl15" class="" type="text"></td>
+				<td><input onkeyup="hitung(this)" style="width:100px;" name="barge_receive_metric_tons" class="" type="text"></td>
 			</tr>
 		</tbody>
 	</table>
@@ -4640,7 +4629,7 @@ In Any
 -- ----------------------------
 -- Table structure for "public"."KOMPONEN_JSON"
 -- ----------------------------
---DROP TABLE "public"."KOMPONEN_JSON";
+DROP TABLE "public"."KOMPONEN_JSON";
 CREATE TABLE "public"."KOMPONEN_JSON" (
 "ID" int4 DEFAULT nextval('"KOMPONEN_JSON_ID_seq"'::regclass) NOT NULL,
 "NAME" text,
@@ -4673,7 +4662,7 @@ INSERT INTO "public"."KOMPONEN_JSON" VALUES ('10', 'timelog_crude_bunker_vessel'
 -- ----------------------------
 -- Table structure for "public"."MAP_POINT"
 -- ----------------------------
---DROP TABLE "public"."MAP_POINT";
+DROP TABLE "public"."MAP_POINT";
 CREATE TABLE "public"."MAP_POINT" (
 "ID" int4 DEFAULT nextval('"MAP_POINT_ID_seq"'::regclass) NOT NULL,
 "NAME" text,
@@ -4708,7 +4697,7 @@ INSERT INTO "public"."MAP_POINT" VALUES ('13', 'Semarang', '-1.10058359450581', 
 -- ----------------------------
 -- Table structure for "public"."MASTER_BARGE"
 -- ----------------------------
---DROP TABLE "public"."MASTER_BARGE";
+DROP TABLE "public"."MASTER_BARGE";
 CREATE TABLE "public"."MASTER_BARGE" (
 "BARGE_ID" int4 DEFAULT nextval('"MASTER_BARGE_BARGE_ID_seq"'::regclass) NOT NULL,
 "BARGE_NAME" name,
@@ -4744,7 +4733,7 @@ INSERT INTO "public"."MASTER_BARGE" VALUES ('13', 'TK KBT I', 'Standard', '0', n
 -- ----------------------------
 -- Table structure for "public"."MASTER_BBM"
 -- ----------------------------
---DROP TABLE "public"."MASTER_BBM";
+DROP TABLE "public"."MASTER_BBM";
 CREATE TABLE "public"."MASTER_BBM" (
 "BBM_ID" int4 DEFAULT nextval('"MASTER_BBM_BBM_ID_seq"'::regclass) NOT NULL,
 "BBM_NAME" text,
@@ -4768,7 +4757,7 @@ INSERT INTO "public"."MASTER_BBM" VALUES ('1', 'Solar', '<p>Grade A</p>', '0', n
 -- ----------------------------
 -- Table structure for "public"."MASTER_CABANG"
 -- ----------------------------
---DROP TABLE "public"."MASTER_CABANG";
+DROP TABLE "public"."MASTER_CABANG";
 CREATE TABLE "public"."MASTER_CABANG" (
 "CABANG_ID" int4 DEFAULT nextval('"MASTER_CABANG_CABANG_ID_seq"'::regclass) NOT NULL,
 "BRANCH_NAME" text,
@@ -4819,7 +4808,7 @@ INSERT INTO "public"."MASTER_CABANG" VALUES ('29', 'Sumatera Utara', '<p>-</p>',
 -- ----------------------------
 -- Table structure for "public"."MASTER_CONTRACT"
 -- ----------------------------
---DROP TABLE "public"."MASTER_CONTRACT";
+DROP TABLE "public"."MASTER_CONTRACT";
 CREATE TABLE "public"."MASTER_CONTRACT" (
 "ID" int4 DEFAULT nextval('"MASTER_CONTRACT_ID_seq"'::regclass) NOT NULL,
 "CONTRACT" text,
@@ -4847,7 +4836,7 @@ INSERT INTO "public"."MASTER_CONTRACT" VALUES ('5', 'K0005/03/2017/SUC', 'Screen
 -- ----------------------------
 -- Table structure for "public"."MASTER_CV"
 -- ----------------------------
---DROP TABLE "public"."MASTER_CV";
+DROP TABLE "public"."MASTER_CV";
 CREATE TABLE "public"."MASTER_CV" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_ID_seq"'::regclass) NOT NULL,
 "NAMA" text,
@@ -4880,12 +4869,14 @@ COMMENT ON COLUMN "public"."MASTER_CV"."GENDER" IS 'L = Male, P = Female';
 -- ----------------------------
 -- Records of MASTER_CV
 -- ----------------------------
+INSERT INTO "public"."MASTER_CV" VALUES ('2', 'Iwan', '180416082526_cv_5ad4a4460c58e_sea_1.jpg', '0', null, null, null, null, null, '1', '245242', '24123', 'Depok', null, null, null, null, null, null, '1', '5', null);
+INSERT INTO "public"."MASTER_CV" VALUES ('3', 'Indra', '180416082526_cv_5ad4a4460c58e_sea_1.jpg', '0', null, null, null, null, null, '1', '45245234', '3452345', 'Sawagan', null, null, null, null, null, null, '1', '5', null);
 INSERT INTO "public"."MASTER_CV" VALUES ('5', 'Bagos W', '180416082526_cv_5ad4a4460c58e_sea_1.jpg', '0', null, null, null, null, null, '1', '08348328', '0214243', 'Gandaria 3', '1995-07-06', 'Jakarta', 'L', null, '180416082526_photo_5ad4a4460c595_sea_2.jpg', 'bagos24@gmail.com', '1', '5', null);
 
 -- ----------------------------
 -- Table structure for "public"."MASTER_CV_CERTIFICATE"
 -- ----------------------------
---DROP TABLE "public"."MASTER_CV_CERTIFICATE";
+DROP TABLE "public"."MASTER_CV_CERTIFICATE";
 CREATE TABLE "public"."MASTER_CV_CERTIFICATE" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_CERTIFICATE_ID_seq"'::regclass) NOT NULL,
 "ID_CV" int4,
@@ -4907,7 +4898,7 @@ INSERT INTO "public"."MASTER_CV_CERTIFICATE" VALUES ('15', '5', 'Sertifikat B', 
 -- ----------------------------
 -- Table structure for "public"."MASTER_CV_EDUCATION"
 -- ----------------------------
---DROP TABLE "public"."MASTER_CV_EDUCATION";
+DROP TABLE "public"."MASTER_CV_EDUCATION";
 CREATE TABLE "public"."MASTER_CV_EDUCATION" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_EDUCATION_ID_seq"'::regclass) NOT NULL,
 "ID_CV" int4,
@@ -4927,7 +4918,7 @@ INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES ('102', '5', '5', 'BSI Margond
 -- ----------------------------
 -- Table structure for "public"."MASTER_CV_EXPERIENCE"
 -- ----------------------------
---DROP TABLE "public"."MASTER_CV_EXPERIENCE";
+DROP TABLE "public"."MASTER_CV_EXPERIENCE";
 CREATE TABLE "public"."MASTER_CV_EXPERIENCE" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_EXPERIENCE_ID_seq"'::regclass) NOT NULL,
 "ID_CV" int4,
@@ -4949,7 +4940,7 @@ INSERT INTO "public"."MASTER_CV_EXPERIENCE" VALUES ('81', '5', '3', '2');
 -- ----------------------------
 -- Table structure for "public"."MASTER_CV_HISTORY_OF_WORK"
 -- ----------------------------
---DROP TABLE "public"."MASTER_CV_HISTORY_OF_WORK";
+DROP TABLE "public"."MASTER_CV_HISTORY_OF_WORK";
 CREATE TABLE "public"."MASTER_CV_HISTORY_OF_WORK" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_HISTORY_OF_WORK_ID_seq"'::regclass),
 "COMPANY_NAME" varchar(150),
@@ -4972,7 +4963,7 @@ INSERT INTO "public"."MASTER_CV_HISTORY_OF_WORK" VALUES ('70', 'PT B', '2018-03-
 -- ----------------------------
 -- Table structure for "public"."MASTER_CV_REGION"
 -- ----------------------------
---DROP TABLE "public"."MASTER_CV_REGION";
+DROP TABLE "public"."MASTER_CV_REGION";
 CREATE TABLE "public"."MASTER_CV_REGION" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_REGION_ID_seq"'::regclass) NOT NULL,
 "ID_REF_REGION" int4,
@@ -5058,7 +5049,7 @@ INSERT INTO "public"."MASTER_CV_REGION" VALUES ('80', '15', '5');
 -- ----------------------------
 -- Table structure for "public"."MASTER_ICON_MARKER"
 -- ----------------------------
---DROP TABLE "public"."MASTER_ICON_MARKER";
+DROP TABLE "public"."MASTER_ICON_MARKER";
 CREATE TABLE "public"."MASTER_ICON_MARKER" (
 "ID" int4 DEFAULT nextval('"MASTER_ICON_MARKER_ID_seq"'::regclass) NOT NULL,
 "NAMA" text,
@@ -5089,7 +5080,7 @@ INSERT INTO "public"."MASTER_ICON_MARKER" VALUES ('8', 'Cabang', 'cityscape.png'
 -- ----------------------------
 -- Table structure for "public"."MASTER_INTERVENTION"
 -- ----------------------------
---DROP TABLE "public"."MASTER_INTERVENTION";
+DROP TABLE "public"."MASTER_INTERVENTION";
 CREATE TABLE "public"."MASTER_INTERVENTION" (
 "ID" int4 DEFAULT nextval('"MASTER_INTERVENTION_ID_seq"'::regclass) NOT NULL,
 "INTERVENTION_NAME" text,
@@ -5118,7 +5109,7 @@ INSERT INTO "public"."MASTER_INTERVENTION" VALUES ('25', 'Bunker Vessel', '0', n
 -- ----------------------------
 -- Table structure for "public"."MASTER_LOCATION"
 -- ----------------------------
---DROP TABLE "public"."MASTER_LOCATION";
+DROP TABLE "public"."MASTER_LOCATION";
 CREATE TABLE "public"."MASTER_LOCATION" (
 "ID" int4 DEFAULT nextval('"MASTER_LOCATION_ID_seq"'::regclass) NOT NULL,
 "LOCATION_NAME" text,
@@ -5145,7 +5136,7 @@ INSERT INTO "public"."MASTER_LOCATION" VALUES ('5', 'Kapal', '<p>-</p>', '0', nu
 -- ----------------------------
 -- Table structure for "public"."MASTER_PERSONIL"
 -- ----------------------------
---DROP TABLE "public"."MASTER_PERSONIL";
+DROP TABLE "public"."MASTER_PERSONIL";
 CREATE TABLE "public"."MASTER_PERSONIL" (
 "ID" int4 DEFAULT nextval('"MASTER_PERSONIL_ID_seq"'::regclass) NOT NULL,
 "POSISI" text,
@@ -5170,7 +5161,7 @@ INSERT INTO "public"."MASTER_PERSONIL" VALUES ('3', 'Jakarta', '10', 'Screenshot
 -- ----------------------------
 -- Table structure for "public"."MASTER_PORT"
 -- ----------------------------
---DROP TABLE "public"."MASTER_PORT";
+DROP TABLE "public"."MASTER_PORT";
 CREATE TABLE "public"."MASTER_PORT" (
 "PORT_ID" int4 DEFAULT nextval('"MASTER_PORT_PORT_ID_seq"'::regclass) NOT NULL,
 "PORT_NAME" name,
@@ -5196,12 +5187,14 @@ INSERT INTO "public"."MASTER_PORT" VALUES ('7', 'Bitung', 'Control', '0', null, 
 INSERT INTO "public"."MASTER_PORT" VALUES ('8', 'Jakarta', 'Control', '0', null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_PORT" VALUES ('9', 'Makasar', 'Control', '0', null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_PORT" VALUES ('10', 'Surabaya', 'Control', '0', null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_PORT" VALUES ('11', 'PORTA', null, null, null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_PORT" VALUES ('11', 'Semarang', 'Control', '0', null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_PORT" VALUES ('12', 'PORTB', null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for "public"."MASTER_PRODUCT"
 -- ----------------------------
---DROP TABLE "public"."MASTER_PRODUCT";
+DROP TABLE "public"."MASTER_PRODUCT";
 CREATE TABLE "public"."MASTER_PRODUCT" (
 "PRODUCT_ID" int4 DEFAULT nextval('"MASTER_PRODUCT_ID_seq"'::regclass) NOT NULL,
 "PRODUCT_LEVEL" int4,
@@ -5233,18 +5226,22 @@ INSERT INTO "public"."MASTER_PRODUCT" VALUES ('9', '1', '0', 'Gas', '4', '1', nu
 INSERT INTO "public"."MASTER_PRODUCT" VALUES ('10', '2', '9', 'LNG', '1', '1', null, null, '0', null, '', null, null, null, null);
 INSERT INTO "public"."MASTER_PRODUCT" VALUES ('11', '2', '9', 'LPG', '2', '1', null, null, '0', null, '', null, null, null, null);
 INSERT INTO "public"."MASTER_PRODUCT" VALUES ('12', '2', '9', 'Chem Gas', '3', '1', null, null, '0', null, '', null, null, null, null);
-INSERT INTO "public"."MASTER_PRODUCT" VALUES ('13', '2', '7', 'Int Produk', '1', '1', null, null, '0', null, '', null, null, null, null);
-INSERT INTO "public"."MASTER_PRODUCT" VALUES ('14', '2', '7', 'End Product', '2', '1', null, null, '0', null, '', null, null, null, null);
+INSERT INTO "public"."MASTER_PRODUCT" VALUES ('15', '2', '7', 'MFO', '1', '1', null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_PRODUCT" VALUES ('16', '2', '7', 'MMO', '1', '1', null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_PRODUCT" VALUES ('17', '2', '7', 'MHO', '1', '1', null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_PRODUCT" VALUES ('18', '2', '7', '', '1', '1', null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_PRODUCT" VALUES ('19', '2', '7', 'MDO', '1', '1', null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_PRODUCT" VALUES ('20', '2', '7', 'HSD', '1', '1', null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for "public"."MASTER_SBU"
 -- ----------------------------
---DROP TABLE "public"."MASTER_SBU";
+DROP TABLE "public"."MASTER_SBU";
 CREATE TABLE "public"."MASTER_SBU" (
 "ID" int4 DEFAULT nextval('"MASTER_SBU_ID_seq"'::regclass),
 "NAMA_SBU" varchar(150),
-"CREATED_DATE" timestamp,
-"UPDATE_DATE" timestamp,
+"CREATED_DATE" timestamp(6),
+"UPDATE_DATE" timestamp(6),
 "SBU_DESCRIPTION" varchar(255),
 "IS_DELETE" int2
 )
@@ -5269,7 +5266,7 @@ INSERT INTO "public"."MASTER_SBU" VALUES ('12', 'SBU Industri', '2018-04-21 23:2
 -- ----------------------------
 -- Table structure for "public"."MASTER_STDREF"
 -- ----------------------------
---DROP TABLE "public"."MASTER_STDREF";
+DROP TABLE "public"."MASTER_STDREF";
 CREATE TABLE "public"."MASTER_STDREF" (
 "ID" int4 DEFAULT nextval('"MASTER_STDREF_ID_seq"'::regclass) NOT NULL,
 "STD_REF" text,
@@ -5295,7 +5292,7 @@ INSERT INTO "public"."MASTER_STDREF" VALUES ('5', 'PERATURAN PEMERINTAH NO.50 TA
 -- ----------------------------
 -- Table structure for "public"."MASTER_TOOL"
 -- ----------------------------
---DROP TABLE "public"."MASTER_TOOL";
+DROP TABLE "public"."MASTER_TOOL";
 CREATE TABLE "public"."MASTER_TOOL" (
 "ID" int4 DEFAULT nextval('"MASTER_TOOL_ID_seq"'::regclass) NOT NULL,
 "JENIS" text,
@@ -5333,7 +5330,7 @@ INSERT INTO "public"."MASTER_TOOL" VALUES ('4', '-', 'Ullage Temperature Interfa
 -- ----------------------------
 -- Table structure for "public"."MASTER_VESSEL"
 -- ----------------------------
---DROP TABLE "public"."MASTER_VESSEL";
+DROP TABLE "public"."MASTER_VESSEL";
 CREATE TABLE "public"."MASTER_VESSEL" (
 "VESSEL_ID" int4 DEFAULT nextval('"MASTER_VESSEL_VESSEL_ID_seq"'::regclass) NOT NULL,
 "VESSEL_NAME" name,
@@ -5378,15 +5375,16 @@ INSERT INTO "public"."MASTER_VESSEL" VALUES ('23', 'KM Kelimutu', 'Loader', '0',
 INSERT INTO "public"."MASTER_VESSEL" VALUES ('24', 'KM Lawit', 'Loader', '0', null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_VESSEL" VALUES ('25', 'KM Tilongkabila', 'Loader', '0', null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_VESSEL" VALUES ('26', 'KM Pangrango', null, '0', null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_VESSEL" VALUES ('27', 'KM Malimboto', null, null, null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_VESSEL" VALUES ('27', 'KM Sangiang', null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for "public"."outbox"
 -- ----------------------------
---DROP TABLE "public"."outbox";
+DROP TABLE "public"."outbox";
 CREATE TABLE "public"."outbox" (
-"UpdatedInDB" timestamp DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
-"InsertIntoDB" timestamp DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
+"UpdatedInDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
+"InsertIntoDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "SendingDateTime" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "SendBefore" time(6) DEFAULT '23:59:59'::time without time zone NOT NULL,
 "SendAfter" time(6) DEFAULT '00:00:00'::time without time zone NOT NULL,
@@ -5400,7 +5398,7 @@ CREATE TABLE "public"."outbox" (
 "MultiPart" bool DEFAULT false NOT NULL,
 "RelativeValidity" int4 DEFAULT '-1'::integer,
 "SenderID" varchar(255),
-"SendingTimeOut" timestamp DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
+"SendingTimeOut" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "DeliveryReport" varchar(10) DEFAULT 'default'::character varying,
 "CreatorID" text NOT NULL,
 "Retries" int4 DEFAULT 0,
@@ -5415,14 +5413,14 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Records of outbox
 -- ----------------------------
-INSERT INTO "public"."outbox" VALUES ('2018-01-03 09:35:44', '2018-01-03 09:33:48', '2018-01-03 09:33:48', '23:59:59', '00:00:00', '00480045004C004C004F00200057004F0052004C0044', '089663159652', 'Default_No_Compression', '', '-1', 'HELLO WORLD', '104', 'f', '255', '', '2018-01-03 09:45:44', 'default', 'Gammu 1.37.0', '1', '0', 'Reserved', '-1');
 INSERT INTO "public"."outbox" VALUES ('2018-01-03 09:34:04', '2018-01-03 09:34:04', '2018-01-03 09:34:04', '23:59:59', '00:00:00', '00480045004C004C004F00200057004F0052004C0044', '089663159652', 'Default_No_Compression', '', '-1', 'HELLO WORLD', '105', 'f', '255', '', '2018-01-03 09:34:04', 'default', 'Gammu 1.37.0', '0', '0', 'Reserved', '-1');
 INSERT INTO "public"."outbox" VALUES ('2018-01-03 09:35:00', '2018-01-03 09:35:00', '2018-01-03 09:35:00', '23:59:59', '00:00:00', '00480045004C004C004F00200057004F0052004C0044', '089663159652', 'Default_No_Compression', '', '-1', 'HELLO WORLD', '106', 'f', '255', '', '2018-01-03 09:35:00', 'default', 'Gammu 1.37.0', '0', '0', 'Reserved', '-1');
+INSERT INTO "public"."outbox" VALUES ('2018-01-03 09:35:44', '2018-01-03 09:33:48', '2018-01-03 09:33:48', '23:59:59', '00:00:00', '00480045004C004C004F00200057004F0052004C0044', '089663159652', 'Default_No_Compression', '', '-1', 'HELLO WORLD', '104', 'f', '255', '', '2018-01-03 09:45:44', 'default', 'Gammu 1.37.0', '1', '0', 'Reserved', '-1');
 
 -- ----------------------------
 -- Table structure for "public"."outbox_multipart"
 -- ----------------------------
---DROP TABLE "public"."outbox_multipart";
+DROP TABLE "public"."outbox_multipart";
 CREATE TABLE "public"."outbox_multipart" (
 "Text" text,
 "Coding" varchar(255) DEFAULT 'Default_No_Compression'::character varying NOT NULL,
@@ -5443,7 +5441,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."pbk"
 -- ----------------------------
---DROP TABLE "public"."pbk";
+DROP TABLE "public"."pbk";
 CREATE TABLE "public"."pbk" (
 "ID" int4 DEFAULT nextval('"pbk_ID_seq"'::regclass) NOT NULL,
 "GroupID" int4 DEFAULT '-1'::integer NOT NULL,
@@ -5461,7 +5459,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."pbk_groups"
 -- ----------------------------
---DROP TABLE "public"."pbk_groups";
+DROP TABLE "public"."pbk_groups";
 CREATE TABLE "public"."pbk_groups" (
 "Name" text NOT NULL,
 "ID" int4 DEFAULT nextval('"pbk_groups_ID_seq"'::regclass) NOT NULL
@@ -5477,12 +5475,12 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."phones"
 -- ----------------------------
---DROP TABLE "public"."phones";
+DROP TABLE "public"."phones";
 CREATE TABLE "public"."phones" (
 "ID" text NOT NULL,
-"UpdatedInDB" timestamp DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
-"InsertIntoDB" timestamp DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
-"TimeOut" timestamp DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
+"UpdatedInDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
+"InsertIntoDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
+"TimeOut" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "Send" bool DEFAULT false NOT NULL,
 "Receive" bool DEFAULT false NOT NULL,
 "IMEI" varchar(35) NOT NULL,
@@ -5506,7 +5504,7 @@ INSERT INTO "public"."phones" VALUES ('', '2018-01-03 09:35:49', '2018-01-03 09:
 -- ----------------------------
 -- Table structure for "public"."REF_EDUCATION"
 -- ----------------------------
---DROP TABLE "public"."REF_EDUCATION";
+DROP TABLE "public"."REF_EDUCATION";
 CREATE TABLE "public"."REF_EDUCATION" (
 "ID_REF_EDUCATION" int4 NOT NULL,
 "EDUCATION_TYPE" varchar(50)
@@ -5530,7 +5528,7 @@ INSERT INTO "public"."REF_EDUCATION" VALUES ('8', 'S3');
 -- ----------------------------
 -- Table structure for "public"."REF_EXP"
 -- ----------------------------
---DROP TABLE "public"."REF_EXP";
+DROP TABLE "public"."REF_EXP";
 CREATE TABLE "public"."REF_EXP" (
 "ID_REF_EXP" int4 DEFAULT nextval('"REF_EXP_ID_seq"'::regclass) NOT NULL,
 "EXP_TYPE" varchar(50)
@@ -5550,7 +5548,7 @@ INSERT INTO "public"."REF_EXP" VALUES ('5', 'Writer');
 -- ----------------------------
 -- Table structure for "public"."REF_POSITION"
 -- ----------------------------
---DROP TABLE "public"."REF_POSITION";
+DROP TABLE "public"."REF_POSITION";
 CREATE TABLE "public"."REF_POSITION" (
 "ID_REF_POSITION" int4 DEFAULT nextval('"REF_POSITION_ID_seq"'::regclass) NOT NULL,
 "POSITION" varchar(100)
@@ -5570,7 +5568,7 @@ INSERT INTO "public"."REF_POSITION" VALUES ('4', 'Project Manager');
 -- ----------------------------
 -- Table structure for "public"."REF_REGION"
 -- ----------------------------
---DROP TABLE "public"."REF_REGION";
+DROP TABLE "public"."REF_REGION";
 CREATE TABLE "public"."REF_REGION" (
 "ID_REF_REGION" int4 DEFAULT nextval('"REF_REGION_ID_seq"'::regclass),
 "REGION" varchar(100)
@@ -5617,7 +5615,7 @@ INSERT INTO "public"."REF_REGION" VALUES ('31', 'Gresik');
 -- ----------------------------
 -- Table structure for "public"."RUNNING_TEXT"
 -- ----------------------------
---DROP TABLE "public"."RUNNING_TEXT";
+DROP TABLE "public"."RUNNING_TEXT";
 CREATE TABLE "public"."RUNNING_TEXT" (
 "RUNNING_TEXT_ID" int4 DEFAULT nextval('"RUNNING_TEXT_RUNNING_TEXT_ID_seq"'::regclass) NOT NULL,
 "MESSAGE" text,
@@ -5644,12 +5642,12 @@ INSERT INTO "public"."RUNNING_TEXT" VALUES ('87', '<p>PLN Losses 312 litter hari
 -- ----------------------------
 -- Table structure for "public"."sentitems"
 -- ----------------------------
---DROP TABLE "public"."sentitems";
+DROP TABLE "public"."sentitems";
 CREATE TABLE "public"."sentitems" (
-"UpdatedInDB" timestamp DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
-"InsertIntoDB" timestamp DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
-"SendingDateTime" timestamp DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
-"DeliveryDateTime" timestamp,
+"UpdatedInDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
+"InsertIntoDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
+"SendingDateTime" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
+"DeliveryDateTime" timestamp(6),
 "Text" text NOT NULL,
 "DestinationNumber" varchar(20) DEFAULT ''::character varying NOT NULL,
 "Coding" varchar(255) DEFAULT 'Default_No_Compression'::character varying NOT NULL,
@@ -5677,7 +5675,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."WA"
 -- ----------------------------
---DROP TABLE "public"."WA";
+DROP TABLE "public"."WA";
 CREATE TABLE "public"."WA" (
 "ID" int4 DEFAULT nextval('"WA_ID_seq"'::regclass) NOT NULL,
 "CONTACT" varchar(255),
@@ -5706,7 +5704,7 @@ INSERT INTO "public"."WA" VALUES ('11', 'Pak Ewing', 'DUNKIN DONUTS, BAYAR 9 UNT
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_ARTICLE"
 -- ----------------------------
---DROP TABLE "public"."WEBSITE_ARTICLE";
+DROP TABLE "public"."WEBSITE_ARTICLE";
 CREATE TABLE "public"."WEBSITE_ARTICLE" (
 "ARTICLE_ID" int4 DEFAULT nextval('"WEBSITE_ARTICLE_ID_seq"'::regclass) NOT NULL,
 "ARTICLE_CATEGORY_ID" int4 NOT NULL,
@@ -5733,7 +5731,7 @@ INSERT INTO "public"."WEBSITE_ARTICLE" VALUES ('2', '1', 'Terjadi pencurian miny
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_ARTICLE_CATEGORY"
 -- ----------------------------
---DROP TABLE "public"."WEBSITE_ARTICLE_CATEGORY";
+DROP TABLE "public"."WEBSITE_ARTICLE_CATEGORY";
 CREATE TABLE "public"."WEBSITE_ARTICLE_CATEGORY" (
 "ARTICLE_CATEGORY_ID" int4 DEFAULT nextval('"WEBSITE_ARTICLE_CATEGORY_ID_seq"'::regclass) NOT NULL,
 "CATEGORY_NAME" text,
@@ -5758,7 +5756,7 @@ INSERT INTO "public"."WEBSITE_ARTICLE_CATEGORY" VALUES ('2', 'Non Public', '0', 
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_MENU"
 -- ----------------------------
---DROP TABLE "public"."WEBSITE_MENU";
+DROP TABLE "public"."WEBSITE_MENU";
 CREATE TABLE "public"."WEBSITE_MENU" (
 "MENU_ID" int4 DEFAULT nextval('"WEBSITE_MENU_MENU_ID_seq"'::regclass) NOT NULL,
 "MENU_LEVEL" int4,
@@ -5799,7 +5797,7 @@ INSERT INTO "public"."WEBSITE_MENU" VALUES ('22', '2', '5', 'Standard & Referenc
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_PAGE_STATIC"
 -- ----------------------------
---DROP TABLE "public"."WEBSITE_PAGE_STATIC";
+DROP TABLE "public"."WEBSITE_PAGE_STATIC";
 CREATE TABLE "public"."WEBSITE_PAGE_STATIC" (
 "PAGE_STATIC_ID" int4 DEFAULT nextval('"WEBSITE_PAGE_STATIC_ID_seq"'::regclass) NOT NULL,
 "TITLE" text,
@@ -6020,7 +6018,7 @@ INSERT INTO "public"."WEBSITE_PAGE_STATIC" VALUES ('17', 'Standard Reference', '
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_SLIDER"
 -- ----------------------------
---DROP TABLE "public"."WEBSITE_SLIDER";
+DROP TABLE "public"."WEBSITE_SLIDER";
 CREATE TABLE "public"."WEBSITE_SLIDER" (
 "SLIDER_ID" int4 DEFAULT nextval('"WEBSITE_SLIDER_ID_seq"'::regclass) NOT NULL,
 "NAME" text,
@@ -6045,7 +6043,7 @@ INSERT INTO "public"."WEBSITE_SLIDER" VALUES ('4', 'Profile Slider', '0', null, 
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_SLIDER_DETAIL"
 -- ----------------------------
---DROP TABLE "public"."WEBSITE_SLIDER_DETAIL";
+DROP TABLE "public"."WEBSITE_SLIDER_DETAIL";
 CREATE TABLE "public"."WEBSITE_SLIDER_DETAIL" (
 "SLIDER_DETAIL_ID" int4 DEFAULT nextval('"WEBSITE_SLIDER_DETAIL_ID_seq"'::regclass) NOT NULL,
 "SLIDER_ID" int4,
@@ -6082,7 +6080,7 @@ INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('18', '4', 'SUCOFINDO | <sm
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_TAG"
 -- ----------------------------
---DROP TABLE "public"."WEBSITE_TAG";
+DROP TABLE "public"."WEBSITE_TAG";
 CREATE TABLE "public"."WEBSITE_TAG" (
 "TAG_ID" int4 DEFAULT nextval('"WEBSITE_TAG_ID_seq"'::regclass) NOT NULL,
 "TAG_NAME" text,
@@ -6110,7 +6108,7 @@ INSERT INTO "public"."WEBSITE_TAG" VALUES ('6', 'Pemilu', '0', null, null, null,
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_TAG_ARTICLE"
 -- ----------------------------
---DROP TABLE "public"."WEBSITE_TAG_ARTICLE";
+DROP TABLE "public"."WEBSITE_TAG_ARTICLE";
 CREATE TABLE "public"."WEBSITE_TAG_ARTICLE" (
 "TAG_ARTICLE_ID" int4 DEFAULT nextval('"WEBSITE_TAG_ARTICLE_ID_seq"'::regclass) NOT NULL,
 "ARTICLE_ID" int4,
@@ -6215,303 +6213,3 @@ ALTER TABLE "public"."APP_MENU" ADD PRIMARY KEY ("MENU_ID");
 -- Primary Key structure for table "public"."APP_ROUTE"
 -- ----------------------------
 ALTER TABLE "public"."APP_ROUTE" ADD PRIMARY KEY ("ROUTE_ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."APP_SETTING"
--- ----------------------------
-ALTER TABLE "public"."APP_SETTING" ADD PRIMARY KEY ("SETTING_ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."APP_USER"
--- ----------------------------
-ALTER TABLE "public"."APP_USER" ADD PRIMARY KEY ("USER_ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."APP_USER_GROUP"
--- ----------------------------
-ALTER TABLE "public"."APP_USER_GROUP" ADD PRIMARY KEY ("GROUP_ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."FORM_ENTRY_FIELD"
--- ----------------------------
-ALTER TABLE "public"."FORM_ENTRY_FIELD" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."HEADER_INFO_CLIENT"
--- ----------------------------
-ALTER TABLE "public"."HEADER_INFO_CLIENT" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Triggers structure for table "public"."inbox"
--- ----------------------------
-CREATE TRIGGER "update_timestamp" BEFORE UPDATE ON "public"."inbox"
-FOR EACH ROW
-EXECUTE PROCEDURE "update_timestamp"();
-
--- ----------------------------
--- Checks structure for table "public"."inbox"
--- ----------------------------
-ALTER TABLE "public"."inbox" ADD CHECK (("Coding")::text = ANY (ARRAY[('Default_No_Compression'::character varying)::text, ('Unicode_No_Compression'::character varying)::text, ('8bit'::character varying)::text, ('Default_Compression'::character varying)::text, ('Unicode_Compression'::character varying)::text]));
-
--- ----------------------------
--- Primary Key structure for table "public"."inbox"
--- ----------------------------
-ALTER TABLE "public"."inbox" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."INFO_CLIENT"
--- ----------------------------
-ALTER TABLE "public"."INFO_CLIENT" ADD PRIMARY KEY ("ID_INFO");
-
--- ----------------------------
--- Primary Key structure for table "public"."KOMPONEN_HTML"
--- ----------------------------
-ALTER TABLE "public"."KOMPONEN_HTML" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."KOMPONEN_JSON"
--- ----------------------------
-ALTER TABLE "public"."KOMPONEN_JSON" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MAP_POINT"
--- ----------------------------
-ALTER TABLE "public"."MAP_POINT" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_BARGE"
--- ----------------------------
-ALTER TABLE "public"."MASTER_BARGE" ADD PRIMARY KEY ("BARGE_ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_BBM"
--- ----------------------------
-ALTER TABLE "public"."MASTER_BBM" ADD PRIMARY KEY ("BBM_ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_CABANG"
--- ----------------------------
-ALTER TABLE "public"."MASTER_CABANG" ADD PRIMARY KEY ("CABANG_ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_CONTRACT"
--- ----------------------------
-ALTER TABLE "public"."MASTER_CONTRACT" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_CV"
--- ----------------------------
-ALTER TABLE "public"."MASTER_CV" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_CV_CERTIFICATE"
--- ----------------------------
-ALTER TABLE "public"."MASTER_CV_CERTIFICATE" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_CV_EDUCATION"
--- ----------------------------
-ALTER TABLE "public"."MASTER_CV_EDUCATION" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_CV_EXPERIENCE"
--- ----------------------------
-ALTER TABLE "public"."MASTER_CV_EXPERIENCE" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_CV_REGION"
--- ----------------------------
-ALTER TABLE "public"."MASTER_CV_REGION" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_ICON_MARKER"
--- ----------------------------
-ALTER TABLE "public"."MASTER_ICON_MARKER" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_INTERVENTION"
--- ----------------------------
-ALTER TABLE "public"."MASTER_INTERVENTION" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_LOCATION"
--- ----------------------------
-ALTER TABLE "public"."MASTER_LOCATION" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_PERSONIL"
--- ----------------------------
-ALTER TABLE "public"."MASTER_PERSONIL" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_PORT"
--- ----------------------------
-ALTER TABLE "public"."MASTER_PORT" ADD PRIMARY KEY ("PORT_ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_PRODUCT"
--- ----------------------------
-ALTER TABLE "public"."MASTER_PRODUCT" ADD PRIMARY KEY ("PRODUCT_ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_STDREF"
--- ----------------------------
-ALTER TABLE "public"."MASTER_STDREF" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_TOOL"
--- ----------------------------
-ALTER TABLE "public"."MASTER_TOOL" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."MASTER_VESSEL"
--- ----------------------------
-ALTER TABLE "public"."MASTER_VESSEL" ADD PRIMARY KEY ("VESSEL_ID");
-
--- ----------------------------
--- Indexes structure for table outbox
--- ----------------------------
-CREATE INDEX "outbox_date" ON "public"."outbox" USING btree ("SendingDateTime", "SendingTimeOut");
-CREATE INDEX "outbox_sender" ON "public"."outbox" USING btree ("SenderID");
-
--- ----------------------------
--- Triggers structure for table "public"."outbox"
--- ----------------------------
-CREATE TRIGGER "update_timestamp" BEFORE UPDATE ON "public"."outbox"
-FOR EACH ROW
-EXECUTE PROCEDURE "update_timestamp"();
-
--- ----------------------------
--- Checks structure for table "public"."outbox"
--- ----------------------------
-ALTER TABLE "public"."outbox" ADD CHECK (("Coding")::text = ANY (ARRAY[('Default_No_Compression'::character varying)::text, ('Unicode_No_Compression'::character varying)::text, ('8bit'::character varying)::text, ('Default_Compression'::character varying)::text, ('Unicode_Compression'::character varying)::text]));
-ALTER TABLE "public"."outbox" ADD CHECK (("Status")::text = ANY (ARRAY[('SendingOK'::character varying)::text, ('SendingOKNoReport'::character varying)::text, ('SendingError'::character varying)::text, ('DeliveryOK'::character varying)::text, ('DeliveryFailed'::character varying)::text, ('DeliveryPending'::character varying)::text, ('DeliveryUnknown'::character varying)::text, ('Error'::character varying)::text, ('Reserved'::character varying)::text]));
-ALTER TABLE "public"."outbox" ADD CHECK (("DeliveryReport")::text = ANY (ARRAY[('default'::character varying)::text, ('yes'::character varying)::text, ('no'::character varying)::text]));
-
--- ----------------------------
--- Primary Key structure for table "public"."outbox"
--- ----------------------------
-ALTER TABLE "public"."outbox" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Checks structure for table "public"."outbox_multipart"
--- ----------------------------
-ALTER TABLE "public"."outbox_multipart" ADD CHECK (("Coding")::text = ANY (ARRAY[('Default_No_Compression'::character varying)::text, ('Unicode_No_Compression'::character varying)::text, ('8bit'::character varying)::text, ('Default_Compression'::character varying)::text, ('Unicode_Compression'::character varying)::text]));
-
--- ----------------------------
--- Primary Key structure for table "public"."outbox_multipart"
--- ----------------------------
-ALTER TABLE "public"."outbox_multipart" ADD PRIMARY KEY ("ID", "SequencePosition");
-
--- ----------------------------
--- Primary Key structure for table "public"."pbk"
--- ----------------------------
-ALTER TABLE "public"."pbk" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."pbk_groups"
--- ----------------------------
-ALTER TABLE "public"."pbk_groups" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Triggers structure for table "public"."phones"
--- ----------------------------
-CREATE TRIGGER "update_timestamp" BEFORE UPDATE ON "public"."phones"
-FOR EACH ROW
-EXECUTE PROCEDURE "update_timestamp"();
-
--- ----------------------------
--- Primary Key structure for table "public"."phones"
--- ----------------------------
-ALTER TABLE "public"."phones" ADD PRIMARY KEY ("IMEI");
-
--- ----------------------------
--- Primary Key structure for table "public"."REF_EDUCATION"
--- ----------------------------
-ALTER TABLE "public"."REF_EDUCATION" ADD PRIMARY KEY ("ID_REF_EDUCATION");
-
--- ----------------------------
--- Primary Key structure for table "public"."REF_EXP"
--- ----------------------------
-ALTER TABLE "public"."REF_EXP" ADD PRIMARY KEY ("ID_REF_EXP");
-
--- ----------------------------
--- Primary Key structure for table "public"."REF_POSITION"
--- ----------------------------
-ALTER TABLE "public"."REF_POSITION" ADD PRIMARY KEY ("ID_REF_POSITION");
-
--- ----------------------------
--- Primary Key structure for table "public"."RUNNING_TEXT"
--- ----------------------------
-ALTER TABLE "public"."RUNNING_TEXT" ADD PRIMARY KEY ("RUNNING_TEXT_ID");
-
--- ----------------------------
--- Indexes structure for table sentitems
--- ----------------------------
-CREATE INDEX "sentitems_date" ON "public"."sentitems" USING btree ("DeliveryDateTime");
-CREATE INDEX "sentitems_dest" ON "public"."sentitems" USING btree ("DestinationNumber");
-CREATE INDEX "sentitems_sender" ON "public"."sentitems" USING btree ("SenderID");
-CREATE INDEX "sentitems_tpmr" ON "public"."sentitems" USING btree ("TPMR");
-
--- ----------------------------
--- Triggers structure for table "public"."sentitems"
--- ----------------------------
-CREATE TRIGGER "update_timestamp" BEFORE UPDATE ON "public"."sentitems"
-FOR EACH ROW
-EXECUTE PROCEDURE "update_timestamp"();
-
--- ----------------------------
--- Checks structure for table "public"."sentitems"
--- ----------------------------
-ALTER TABLE "public"."sentitems" ADD CHECK (("Status")::text = ANY (ARRAY[('SendingOK'::character varying)::text, ('SendingOKNoReport'::character varying)::text, ('SendingError'::character varying)::text, ('DeliveryOK'::character varying)::text, ('DeliveryFailed'::character varying)::text, ('DeliveryPending'::character varying)::text, ('DeliveryUnknown'::character varying)::text, ('Error'::character varying)::text]));
-ALTER TABLE "public"."sentitems" ADD CHECK (("Coding")::text = ANY (ARRAY[('Default_No_Compression'::character varying)::text, ('Unicode_No_Compression'::character varying)::text, ('8bit'::character varying)::text, ('Default_Compression'::character varying)::text, ('Unicode_Compression'::character varying)::text]));
-
--- ----------------------------
--- Primary Key structure for table "public"."sentitems"
--- ----------------------------
-ALTER TABLE "public"."sentitems" ADD PRIMARY KEY ("ID", "SequencePosition");
-
--- ----------------------------
--- Primary Key structure for table "public"."WA"
--- ----------------------------
-ALTER TABLE "public"."WA" ADD PRIMARY KEY ("ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."WEBSITE_ARTICLE"
--- ----------------------------
-ALTER TABLE "public"."WEBSITE_ARTICLE" ADD PRIMARY KEY ("ARTICLE_CATEGORY_ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."WEBSITE_ARTICLE_CATEGORY"
--- ----------------------------
-ALTER TABLE "public"."WEBSITE_ARTICLE_CATEGORY" ADD PRIMARY KEY ("ARTICLE_CATEGORY_ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."WEBSITE_MENU"
--- ----------------------------
-ALTER TABLE "public"."WEBSITE_MENU" ADD PRIMARY KEY ("MENU_ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."WEBSITE_PAGE_STATIC"
--- ----------------------------
-ALTER TABLE "public"."WEBSITE_PAGE_STATIC" ADD PRIMARY KEY ("PAGE_STATIC_ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."WEBSITE_SLIDER"
--- ----------------------------
-ALTER TABLE "public"."WEBSITE_SLIDER" ADD PRIMARY KEY ("SLIDER_ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."WEBSITE_SLIDER_DETAIL"
--- ----------------------------
-ALTER TABLE "public"."WEBSITE_SLIDER_DETAIL" ADD PRIMARY KEY ("SLIDER_DETAIL_ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."WEBSITE_TAG"
--- ----------------------------
-ALTER TABLE "public"."WEBSITE_TAG" ADD PRIMARY KEY ("TAG_ID");
-
--- ----------------------------
--- Primary Key structure for table "public"."WEBSITE_TAG_ARTICLE"
--- ----------------------------
-ALTER TABLE "public"."WEBSITE_TAG_ARTICLE" ADD PRIMARY KEY ("TAG_ARTICLE_ID");
