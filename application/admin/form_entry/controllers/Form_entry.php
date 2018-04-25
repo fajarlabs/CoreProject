@@ -25,6 +25,7 @@ class Form_entry extends MY_Controller
 				'product/Product_model',
 				'contract/Contract_model',
 				'location/Location_model',
+				'cv/Cv_model',
 				'Form_entry_model',
 				'Komponen_json_model',
 				'Komponen_html_model'
@@ -445,10 +446,33 @@ class Form_entry extends MY_Controller
 		}
 
 		$id = $this->Form_entry_model->save($col_val);
-		
+
+		// save product history
+		$products = $this->input->post("product");
+		if(is_array($products)) {
+			if(count($products) > 0) {
+				foreach($products as $key => $val) {
+					if(!empty($val))$this->Product_model->save_product_history($val);
+				}
+			}
+		}
+
+		// save port history
+		$ports = $this->input->post("port_terminal");
+		if(is_array($ports)) {
+			if(count($ports) > 0) {
+				foreach($ports as $key => $val) {
+					if(!empty($val))$this->Port_model->save_port_history($val);
+				}
+			}
+		}
+
+		// save vessel history
+		$vessel = $this->input->post("vessel");
+		if(!empty($vessel)) $this->Vessel_model->save_vessel_history($vessel);
+
 		$this->session->set_flashdata('error_message', alert_success('Save Succeded'));
 
-		//redirect('/form_entry/tables');
 		$this->load->library('user_agent');
 		redirect($this->agent->referrer());
 	}
@@ -545,6 +569,30 @@ class Form_entry extends MY_Controller
 		}
 
 		$this->Form_entry_model->update($col_val,$id);
+
+		// save product history
+		$products = $this->input->post("product");
+		if(is_array($products)) {
+			if(count($products) > 0) {
+				foreach($products as $key => $val) {
+					if(!empty($val))$this->Product_model->save_product_history($val);
+				}
+			}
+		}
+
+		// save port history
+		$ports = $this->input->post("port_terminal");
+		if(is_array($ports)) {
+			if(count($ports) > 0) {
+				foreach($ports as $key => $val) {
+					if(!empty($val))$this->Port_model->save_port_history($val);
+				}
+			}
+		}
+
+		// save vessel history
+		$vessel = $this->input->post("vessel");
+		if(!empty($vessel)) $this->Vessel_model->save_vessel_history($vessel);
 		
 		/* development process */
 		$this->session->set_flashdata('error_message', alert_success('Update Succeded'));

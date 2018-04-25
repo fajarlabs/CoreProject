@@ -11,12 +11,43 @@ class Vessel_model extends CI_Model
         return $this->db->get($this->table);
 	}
 
+    public  function search_by_vessel_name($vessel) 
+    {
+        $this->db->select('*');
+        $this->db->from($this->table);
+        $this->db->like('lower("VESSEL_NAME")', strtolower($vessel)); 
+        return $this->db->get();
+    }
+
+    // ini adalah fungsi untuk menyimpan history transaksi vessel
+    // pada form entry
+    public function save_vessel_history($vessel='') {
+        $vessel  = trim($vessel);
+        $array_col_val = array();
+        $array_col_val['VESSEL_NAME'] = $vessel;
+
+        if($this->get_item_by_name($vessel)->num_rows() < 1) {
+            $this->db->insert($this->table,$array_col_val);
+            return $this->db->insert_id();    
+        }
+
+        return NULL;  
+    }
+
     public  function get_item_by_id($id) 
     {
 		$this->db->select('*');
 		$this->db->from($this->table);
 		$this->db->where('VESSEL_ID', $id); 
 		return $this->db->get();
+    }
+
+    public  function get_item_by_name($vessel) 
+    {
+        $this->db->select('*');
+        $this->db->from($this->table);
+        $this->db->where('VESSEL_NAME', $vessel); 
+        return $this->db->get();
     }
 
     public function save($array_col_val = array())

@@ -187,4 +187,21 @@ class Vessel extends MY_Controller
 		$this->session->set_flashdata('error_message', alert_success('Delete succeded.'));
 		redirect('vessel');
 	}
+
+	public function get_vessel() {
+		$query = trim($this->input->get('q', TRUE));
+		$query = $this->Vessel_model->search_by_vessel_name($query);
+		$json_array = array();
+		if($query->num_rows() > 0) {
+			foreach($query->result() as $row) {
+				$o = new stdClass();
+				$o->label = $row->VESSEL_NAME;
+				//$o->value = $row->VESSEL_ID;
+				$json_array[] = $o;
+			}
+		}
+
+		header('Content-Type: application/json');
+		echo json_encode($json_array);
+	}
 }

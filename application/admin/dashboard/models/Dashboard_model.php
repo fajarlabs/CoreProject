@@ -129,7 +129,7 @@ class Dashboard_model extends CI_Model
 		$str_produk = $produk != "" ? "AND \"PRODUCT\" LIKE '%$produk'" : "";
 		$str_intervensi = $intervensi != "" ? "AND \"SELECT_INTERVENTION\" LIKE '%$intervensi'" : "";
 		$str_clients = $cst_id != "" ? "AND \"CLIENTS\" LIKE '%$cst_id%'" : "";
-		$str_lokasi_kerja = $lokasi_kerja != "" ? "AND \"AREA\" LIKE '%$lokasi_kerja%'%" : "";
+		$str_lokasi_kerja = $lokasi_kerja != "" ? "AND \"AREA\" LIKE '%$lokasi_kerja%'" : "";
 		
 		$str_date="";
 		if($month!='' and $year!=''){

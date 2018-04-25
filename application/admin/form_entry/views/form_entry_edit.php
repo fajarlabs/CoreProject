@@ -533,7 +533,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tr>
 					<td valign="middle">
-						<input type="text" style="width:40%;" name="vessel" value="<?php echo @$object->VESSEL; ?>" /> 
+						<input onkeydown="initVessel(this,'vessel')" type="text" id="vessel" style="width:40%;" name="vessel" value="<?php echo @$object->VESSEL; ?>" /> 
 						<div style="display:none;">
 						Multi Cargo <input type="radio" name="select_cargo" value="multi_cargo" />
 						Single Cargo <input type="radio" name="select_cargo" value="single_cargo" />
@@ -579,43 +579,14 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 							<?php 
 							$port = json_decode(@$object->PORT_TERMINAL);
 							if(count($port) > 0) :
+								$i = 0;
 								foreach($port as $key => $val):
-									echo "<tr><td style=\"padding-top:2px;\"><input type=\"text\" style=\"width:300px;\" name=\"port_terminal[]\" value=\"".$val."\" /><a onclick=\"delete_tb_port(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i> </a></td></tr>";
+									echo "<tr><td style=\"padding-top:2px;\"><input onkeydown=\"initPort(this,'port_".$i."')\" type=\"text\" style=\"width:300px;\" name=\"port_terminal[]\" value=\"".$val."\" /><a onclick=\"delete_tb_port(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i> </a></td></tr>";
+									$i++;
 								endforeach;
 							endif;
 							?>
 						</table>
-
-						<script type="text/javascript">
-							// inisialisasi element html port
-							var element_port = "<tr><td style=\"padding-top:2px;\"><input type=\"text\" style=\"width:300px;\" name=\"port_terminal[]\" /><a onclick=\"delete_tb_port(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i> </a></td></tr>";
-
-							// fungsi untuk check port
-							function check_port(e) {
-								var select_port = $(e).val();
-								if(select_port == "single_port") {
-									$("#id_tb_port").hide();
-									$("#tb_port tr").remove();
-									$("#tb_port").append(element_port);
-								}
-								if(select_port == "multi_port") {
-									$("#id_tb_port").show();
-									$("#tb_port tr").remove();
-									$("#tb_port").append(element_port);
-								}
-							}
-
-							// fungsi untuk menambahkan element html port
-						    function add_tb_port() {
-						    	$("#tb_port").append(element_port);
-						    }
-
-						    // fungsi untuk hapus elemen html port
-						    function delete_tb_port(e) {
-						    	$(e).parent().remove();
-						    }
-						</script>
-
 					</td>
 				</tr>
 			</table>
@@ -643,53 +614,20 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 									<table id="tb_product" <?php echo ((@$object->SELECT_PRODUCT == 'single_product') || (@$object->SELECT_PRODUCT == 'multi_product')  ? '' : 'style="display:none;width:100%;"'); ?>>
 										<?php 
 										$product_array = json_decode(@$object->PRODUCT);
+										$i = 0;
 										foreach($product_array as $key => $val) : ?>
 										<tr>
 											<td style="padding-top:2px;">
-												<input style="width:300px;" type="text" name="product[]" value="<?php echo $val; ?>"/>
+												<input onkeydown="initProduct(this,'product_'+<?php echo $i; ?>)" style="width:300px;" type="text" name="product[]" value="<?php echo $val; ?>"/>
 												<a onclick="delete_tb_product(this)" style="margin-top:-2px;" href="javascript:;" class="btn btn-danger btn-xs"><i class="fa fa-minus"></i></a>
 											</td>
 										</tr>
-										<?php endforeach; ?>
+										<?php $i++; endforeach; ?>
 									</table>
 									<?php endif; ?>
 								</td>
 							</tr>
 						</table>
-						<script type="text/javascript">
-
-							// inisialisasi element produk
-							var element_product = "<tr><td style=\"padding-top:2px;\"><input style=\"width:300px;\" type=\"text\" name=\"product[]\"/><a onclick=\"delete_tb_product(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
-
-							// fungsi untuk menambahkan produk
-							function add_tb_product() {
-								$("#tb_product").append(element_product);
-							}
-
-							// fungsi untuk menghapus produk
-							function delete_tb_product(e) {
-								$(e).parent().remove();
-							}
-
-							// fungsi untuk periksa parameter yang dipakai untuk element
-							function check_product(e) {
-								var select_product = $(e).val();
-								if(select_product == "single_product") {
-									$("#tb_product tr").remove();
-									$("#tb_product").show();
-									$("#id_tb_product").hide();
-									$("#lbl_product").show();
-									$("#tb_product").append(element_product);
-								}
-								if(select_product == "multi_product") {
-									$("#tb_product tr").remove();
-									$("#tb_product").show();
-									$("#id_tb_product").show();
-									$("#lbl_product").show();
-									$("#tb_product").append(element_product);
-								}
-							}
-						</script>
 					</td>
 				</tr>
 			</table>
@@ -791,8 +729,10 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 							<?php 
 							$data_surveyor = json_decode(@$object->SURVEYOR_IN_CHARGE);
 							if(count($data_surveyor) > 0) :
+								$i = 0;
 								foreach($data_surveyor as $key => $val):
-									echo "<tr><td><input style=\"width:300px;margin-bottom: 3px;\" type=\"text\" name=\"surveyor_in_charge[]\" value=\"".$val."\" /><a onclick=\"delete_tb_surveyor(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
+									echo "<tr><td><select id=\"loc_".$i."\" style=\"height:24px;\" name=\"type_location[]\"><option value=\"0\">--Choose Level--</option><option value=\"1\">Pusat</option><option value=\"2\">Cabang</option></select><input id=\"autocomplete_".$i."\" onkeydown=\"initSurveyor(this,'loc_".$i."')\" style=\"width:300px;margin-bottom: 3px;\" type=\"text\" name=\"surveyor_in_charge[]\" value=\"".$val."\" /><a onclick=\"delete_tb_surveyor(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
+									$i++;
 								endforeach; 
 							endif;
 							?>
@@ -800,30 +740,6 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 					</td>
 				</tr>
 			</table>
-			<script type="text/javascript">
-
-				// inisialisasi element surveyor
-				var element_surveyor = "<tr><td><input style=\"width:300px;margin-bottom: 3px;\" type=\"text\" name=\"surveyor_in_charge[]\" /><a onclick=\"delete_tb_surveyor(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
-
-				// fungsi untuk tambah elemen surveyor
-				function add_tb_surveyor() {
-					$("#tb_surveyor").append(element_surveyor);
-				}
-
-				// fungsi untuk menghapus elemen surveyor
-				function delete_tb_surveyor(e) {
-					$(e).parent().remove();
-				}
-
-				// menambahkan 1 element ketika pertama di muat
-			    (function defer() {
-					if (window.jQuery) {
-					    //$("#tb_surveyor").append(element_surveyor);
-					} else {
-					   setTimeout(function() { defer() }, 50);
-					}
-			    })();
-			</script>
 		</td>
 	</tr>
 	<tr>

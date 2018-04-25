@@ -44,6 +44,26 @@ class Cv extends MY_Controller
 		$this->data['error_message'] = $this->session->flashdata("error_message");
 	}
 
+	public function get_surveyor() 
+	{
+		$query = trim($this->input->get('q', TRUE));
+		$locid = (int)trim($this->input->get('l', TRUE));
+		$query = $this->Cv_model->get_personil_by_name_location($query,$locid);
+		$json_array = array();
+		if($query->num_rows() > 0) {
+			foreach($query->result() as $row) {
+				$o = new stdClass();
+				$o->label = $row->NAMA ." - ".$row->NAMA_SBU;
+				//$o->value = $row->ID;
+				$o->query = $this->db->last_query();
+				$json_array[] = $o;
+			}
+		}
+
+		header('Content-Type: application/json');
+		echo json_encode($json_array);
+	}
+
 	public function index()
 	{
 		$this->data['title'] = "Cv Management";

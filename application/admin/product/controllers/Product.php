@@ -30,6 +30,23 @@ class Product extends MY_Controller
 		$this->data['error_message'] = $this->session->flashdata("error_message");
 	}
 
+	public function get_product(){
+		$query = trim($this->input->get('q', TRUE));
+		$query = $this->Product_model->get_product_search_by_name($query);
+		$json_array = array();
+		if($query->num_rows() > 0) {
+			foreach($query->result() as $row) {
+				$o = new stdClass();
+				$o->label = $row->PRODUCT_NAME;
+				//$o->value = $row->PRODUCT_ID;
+				$json_array[] = $o;
+			}
+		}
+
+		header('Content-Type: application/json');
+		echo json_encode($json_array);
+	}
+
 	public function index()
 	{
 		$this->data['title'] = "Product Management";

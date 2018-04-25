@@ -4,7 +4,7 @@
 	<?php echo create_breadcrumb('Home'); ?>
 	<!-- end breadcrumb -->
 	<!-- begin page-header -->
-	<h1 class="page-header">Select Site <small>Choose a project location</small></h1>
+	<h1 class="page-header">Form Wizard <small>Function to create form dynamic</small></h1>
 	<!-- end page-header -->
 
     <!-- begin front message -->
@@ -86,10 +86,6 @@
 						</tr>
 					</thead>
 				</table>
-				 <div id="mm" class="easyui-menu">
-				    <div>Edit</div>
-				    <div>Delete</div>
-				  </div>
                 </div>
 			</div>
 		</div>

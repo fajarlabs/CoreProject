@@ -9,8 +9,8 @@
 	<title><?php e(@$title); ?></title>
 
 	<?php e(meta(array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'))); ?>
-	<?php e(meta('author', 'Fajar,Ridwansyah')); ?>
-	<?php e(meta('description', 'Site build using codeigniter 3')); ?>
+	<?php e(meta('author', 'Araka')); ?>
+	<?php e(meta('description', 'Sucofindo')); ?>
 	<?php e(meta('Content-type', 'text/html; charset=utf-8', 'equiv')); ?>
 	<?php e(meta(array('name' => 'robots', 'content' => 'no-cache'))); ?>
 
@@ -38,6 +38,10 @@
 	<?php e(link_tag('assets/admin/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css')); ?>
 	<?php e(link_tag('assets/admin/plugins/jQuery-autoComplete-master/jquery.auto-complete.css')); ?>
 	<?php e(link_tag('assets/admin/plugins/sweetalert/dist/sweetalert.css')); ?>
+
+	<!-- Load jquery-UI css -->
+	<?php e(link_tag('assets/admin/js/jquery-ui.css')); ?>
+	<?php e(link_tag('assets/admin/js/jquery-ui.theme.css')); ?>
 
 
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
