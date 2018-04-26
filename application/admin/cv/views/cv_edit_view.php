@@ -85,7 +85,7 @@ foreach($cv_cr as $my_cv_cr){
 										<?php echo form_input(array('type' => 'text', 'name' => 'placedate','class' => 'form-control','required' => 'required','value' => @$item->result()[0]->PLACE_BIRTHDATE,'placeholder' => 'Place of birth','maxlength' => 100)); ?>
 									</div>
 									<div class="col-md-4">
-										<?php echo form_input(array('type' => 'text', 'name' => 'birthdate','class' => 'form-control datepicker','required' => 'required','value' => check_exist_date(@$item->result()[0]->BIRTHDATE),'placeholder' => 'Birthdate')); ?>
+										<?php echo form_input(array('type' => 'text', 'name' => 'birthdate','class' => 'form-control datepicker2','required' => 'required','value' => check_exist_date(@$item->result()[0]->BIRTHDATE),'placeholder' => 'Birthdate')); ?>
 									</div>
 								</div>
 							</td>
@@ -228,6 +228,13 @@ foreach($cv_cr as $my_cv_cr){
 		else {
 		 bln = month;
 		}
+
+		if(dd<10) { 
+			dd = 0+""+d.getDate();
+		}
+		else {
+		 dd = d.getDate();
+		}
 		var mm=  bln;
 		var yy=d.getFullYear();
 		return dd+"/"+mm+"/"+yy;
@@ -236,6 +243,9 @@ foreach($cv_cr as $my_cv_cr){
 	(function defer() {
  	    if (window.jQuery) {
 
+	 	$('.datepicker2').datepicker({
+		    format: 'dd/mm/yyyy'
+		 }); 	   	
 	var data_cr 	 = <?php echo json_encode($cr); ?>;
 	var data_exp 	 = <?php echo json_encode($exp); ?>;
 	var data_history = <?php echo json_encode($work); ?>;
@@ -337,7 +347,8 @@ foreach($cv_cr as $my_cv_cr){
 					html +=	'</div>';
 					$("#data_work").after(html);
 					$('.datepicker').datepicker({
-					    format: 'dd/mm/yyyy'
+					    format: 'dd/mm/yyyy',
+					    autoUpdateInput: false
 					});
 					$('#desc_work_'+Ids3).val(data_history[i].DESCRIPTION)
 					$('#start_work_'+Ids3).val(convert_date(data_history[i].FROM))
@@ -581,4 +592,6 @@ foreach($cv_cr as $my_cv_cr){
 			$("#sbu").val("");
 		}
 	}
+
+
 </script>

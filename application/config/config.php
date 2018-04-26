@@ -39,8 +39,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //-----------------------------------------------
 // Set config base url for development
 //-----------------------------------------------	
-$config['base_url'] = "http://localhost/";
-//$config['base_url'] = "http://localhost:8089/fw3/";
+//$config['base_url'] = "http://localhost/";
+$config['base_url'] = "http://localhost:8089/fw3/";
 
 
 /*
