@@ -46,12 +46,18 @@ class Cv_model extends CI_Model
 		return $this->db->get()->result();
     }
 
-     public  function get_table_name($table,$col_name='',$order_type='',$where_col='',$where_data='') 
+     public  function get_table_name($table,$col_name='',$order_type='',$where_col='',$where_data='',$where_type='') 
     {
         $this->db->select('*');
         $this->db->from($table);
-        if(!empty($where_col) and !empty($where_data)){    
-            $this->db->where($where_col, $where_data);
+        if(!empty($where_col) and !empty($where_data)){ 
+            if(empty($where_type)){
+                 $this->db->where($where_col, $where_data);
+            } 
+            else if($where_type=="like"){
+                 $this->db->like('lower("'.$where_col.'")', strtolower($where_data)); 
+            }   
+           
         }
         if(!empty($col_name) and !empty($order_type)){
           $this->db->order_by($col_name, $order_type);

@@ -89,7 +89,7 @@
                             <!-- ========================================
                                        NAME AND TAGLINE
                             ==========================================-->
-                            <div class="title col s12 m12 l9 right  wow fadeIn" data-wow-delay="0.1s">   
+                            <div class="title col s12 m12 l9 right">   
                                
                             </div>                         
                         </div>
@@ -99,7 +99,7 @@
                                 <div class="col m12 s12 l3 icon"> <!-- icon -->
                                    <i class="fa fa-user"></i>
                                 </div>                                
-                                <div class="col m12 s12 l9 info wow fadeIn a1" data-wow-delay="0.1s" > <!-- text -->
+                                <div class="col m12 s12 l9 info"> <!-- text -->
                                     <div class="section-item-details">
                                         <h2><?php echo  @$item->result()[0]->NAMA ?></h2> <!-- title name -->
                                         <span><?php echo  @$posisi->result()[0]->POSITION ?></span>  <br/>
@@ -114,7 +114,7 @@
                                 <div class="col m12 s12 l3 icon">
                                     <i class="fa fa-calendar-o"></i> <!-- icon -->
                                 </div>                                
-                                <div class="col m12 s12 l9 info wow fadeIn a2" data-wow-delay="0.2s" >
+                                <div class="col m12 s12 l9 info"  >
                                     <div class="section-item-details">
                                         <div class="personal">
                                          <h4><?php echo  @$item->result()[0]->PLACE_BIRTHDATE ?>, <?php echo  @$item->result()[0]->BIRTHDATE ?></h4>
@@ -136,7 +136,7 @@
                                 <div class="col m12 s12 l3 icon">
                                     <i class="fa fa-phone"></i> <!-- icon -->
                                 </div>                                
-                                <div class="col m12 s12 l9 info wow fadeIn a2" data-wow-delay="0.2s" >
+                                <div class="col m12 s12 l9 info"  >
                                     <div class="section-item-details">
                                         <div class="personal">
                                             <h4><a href="tel:<?php echo  @$item->result()[0]->CONTACT_1 ?>"><?php echo  @$item->result()[0]->CONTACT_1 ?></a></h4> <!-- Number -->   
@@ -158,7 +158,7 @@
                                 <div class="col m12 s12 l3 icon">
                                     <i class="fa fa-envelope"></i> <!-- icon -->
                                 </div>                                
-                                <div class="col m12 s12 l9 info wow fadeIn a3" data-wow-delay="0.3s">
+                                <div class="col m12 s12 l9 info" >
                                     <div class="section-item-details">
                                         <div class="personal">                                    
                                             <h4><a href="mailto:<?php echo  @$item->result()[0]->EMAIL ?>"><?php echo  @$item->result()[0]->EMAIL ?></a></h4> <!-- Email -->
@@ -173,7 +173,7 @@
                                 <div class="col l3 m12  s12 icon">
                                     <i class="fa fa-home"></i> <!-- icon -->
                                 </div>                                
-                                <div class="col m12 s12 l9 info wow fadeIn a4" data-wow-delay="0.4s">
+                                <div class="col m12 s12 l9 info">
                                     <div class="section-item-details">
                                         <div class="address-details"> <!-- address  -->
                                             <h4><?php echo  @$item->result()[0]->ADDRESS ?></h4> 
@@ -189,7 +189,7 @@
                                     <i class="fa fa-camera-retro"></i> <!-- icon -->
                                 </div>
                                  <!-- Skills -->
-                                <div class="col m12 l9 s12 skill-line a5 wow fadeIn">
+                                <div class="col m12 l9 s12 skill-line">
                                     <h3>Experience</h3>
                                     <?php 
                                         $i=0;
@@ -228,17 +228,18 @@
                             <div class="section-icon col s12 m12 l2">
                                 <i class="fa fa-suitcase"></i>
                             </div>
-                            <div class="custom-content col s12 m12 l10 wow fadeIn a1" data-wow-delay="0.1s">
+                            <div class="custom-content col s12 m12 l10">
                                 <h2>Work Experience</h2>
-
+                                <div style="overflow-y: auto;height:230px;">
                                  <?php 
                                  foreach($cv_work as $work){ ?>   
-                                <div class="custom-content-wrapper wow fadeIn a2" data-wow-delay="0.2s">
+                                <div class="custom-content-wrapper" >
                                     <h3><?php echo $work->POSITION ?> - <span><?php echo $work->COMPANY_NAME ?></span></h3>
                                     <span><?php echo convert_date($work->FROM,"d/m/Y") ?> - <?php echo convert_date($work->END,"d/m/Y") ?></span>
                                     <p><?php echo $work->DESCRIPTION ?></p>
                                 </div>
                                 <?php } ?>
+                                </div>                            
                             </div>                            
                         </div>
 
@@ -250,19 +251,20 @@
                             <div class="section-icon col s12 m12 l2">
                                 <i class="fa fa-graduation-cap"></i>
                             </div>
-                            <div class="custom-content col s12 m12 l10 wow fadeIn a1" data-wow-delay="0.1s" >
+                            <div class="custom-content col s12 m12 l10">
                                 <h2>Education </h2>
-                                
-                                <?php   
-                                foreach ($edu_data as $key => $val ) {
-                                     $ty = (explode("$$$",$val->EDUCATION_TYPE));
-                                    ?>
-                                <div class="custom-content-wrapper wow fadeIn a2" data-wow-delay="0.2s" >
-                                    <h3><?php echo $ty[1] ?><br/>
-                                        <span><?php echo $ty[0] ?></span>
-                                    </h3>
-                                </div>
-                                  <?php } ?>   
+                                <div style="overflow-y: auto;height:230px;">
+                                    <?php   
+                                    foreach ($edu_data as $key => $val ) {
+                                         $ty = (explode("$$$",$val->EDUCATION_TYPE));
+                                        ?>
+                                    <div class="custom-content-wrapper"  >
+                                        <h3><?php echo $ty[1] ?><br/>
+                                            <span><?php echo $ty[0] ?></span>
+                                        </h3>
+                                    </div>
+                                      <?php } ?>   
+                                 </div>
                             </div>
                         </div>
 
@@ -274,16 +276,17 @@
                             <div class="section-icon col s12 m12 l2">
                                 <i class="fa fa-trophy"></i>
                             </div>
-                            <div class="custom-content col s12 m12 l10 wow fadeIn a1" data-wow-delay="0.1s" >
+                            <div class="custom-content col s12 m12 l10">
                                 <h2>Certificate </h2>
-                                
-                                <?php 
-                                 foreach($cv_certificate as $cr){ ?>   
-                                <div class="custom-content-wrapper wow fadeIn a2" data-wow-delay="0.2s" >
-                                    <h3><?php echo $cr->CERTIFICATE_NAME ?> -  <span><?php echo $cr->CERITIFICATE_FROM ?></span>
-                                    </h3><br/> Expired until : <?php echo convert_date($cr->CERITIFICATE_EXPIRED,"d/m/Y") ?> - <a style="color:blue" href="<?php echo base_url() ?>uploads/cv_files_certificate/<?php echo $cr->CERITIFICATE_FILE ?>" title="Download Certificate" download>Download</a>
+                                 <div style="overflow-y: auto;height:230px;">
+                                    <?php 
+                                     foreach($cv_certificate as $cr){ ?>   
+                                    <div class="custom-content-wrapper"  >
+                                        <h3><?php echo $cr->CERTIFICATE_NAME ?> -  <span><?php echo $cr->CERITIFICATE_FROM ?></span>
+                                        </h3><br/> Expired until : <?php echo convert_date($cr->CERITIFICATE_EXPIRED,"d/m/Y") ?> - <a style="color:blue" href="<?php echo base_url() ?>uploads/cv_files_certificate/<?php echo $cr->CERITIFICATE_FILE ?>" title="Download Certificate" download>Download</a>
+                                    </div>
+                                     <?php } ?>
                                 </div>
-                                 <?php } ?>
                             </div>
                         </div>
 
@@ -293,19 +296,58 @@
 
                         <div class="section-wrapper z-depth-1">
                             <div class="section-icon col s12 m12 l2">
-                                <i class="fa fa-trophy"></i>
+                                <i class="fa fa-list"></i>
                             </div>
-                            <div class="custom-content col s12 m12 l10 wow fadeIn a1" data-wow-delay="0.1s" >
-                                <h2>Work Experiences </h2>
+                            <div class="custom-content col s12 m12 l10" >
+                                <h2>List Job History</h2>
                                 
+                                <div style="overflow-y: auto;height:230px;">
                                 <?php 
-                                 if(isset($work_experiences)) {
-                                 foreach($work_experiences as $cr){ ?>   
-                                <div class="custom-content-wrapper wow fadeIn a2" data-wow-delay="0.2s" >
-                                    <h3><?php echo $cr->CERTIFICATE_NAME ?> -  <span><?php echo $cr->CERITIFICATE_FROM ?></span>
-                                    </h3><br/> Expired until : <?php echo convert_date($cr->CERITIFICATE_EXPIRED,"d/m/Y") ?> - <a style="color:blue" href="<?php echo base_url() ?>uploads/cv_files_certificate/<?php echo $cr->CERITIFICATE_FILE ?>" title="Download Certificate" download>Download</a>
+                                $ix=1;
+                                 foreach($list_history_work as $wr){ ?>   
+                                <div class="custom-content-wrapper"  >
+                                    <table>
+                                        <tr>
+                                            <th><span style="color:blue">#<?php echo $ix ?></span></th>
+                                            <td></td>
+                                            <td></td>
+                                        </tr> 
+                                        <tr>
+                                            <th style="width:5%">File Order</th>
+                                            <td style="width:1%">:</td>
+                                            <td><?php echo $wr->FILE_ORDER ?></td>
+                                        </tr> 
+                                        <tr>
+                                            <th>IWO</th>
+                                            <td>:</td>
+                                            <td> <?php echo $wr->IWO ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th>PRODUCT</th>
+                                            <td>:</td>
+                                            <td><?php 
+                                                 $arr_prod=json_decode($wr->PRODUCT);
+                                                      if (is_array($arr_prod) || is_object($arr_prod)) {
+                                                          $take='';
+                                                          foreach($arr_prod as $key => $value){
+                                                             $take .= $value.', ';
+                                                            }
+                                                            echo rtrim($take,', ');
+                                                      } else {
+                                                        echo $wr->PRODUCT;
+                                                      } 
+                                                ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>AREA</th>
+                                            <td>:</td>
+                                            <td> <?php echo $wr->AREA ?></td>
+                                        </tr>
+                                    </table>
                                 </div>
-                                 <?php } }?>
+                                 <?php $ix++; } ?>
+                             </div>
                             </div>
                         </div>
 

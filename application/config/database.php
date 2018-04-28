@@ -97,8 +97,8 @@ $db['default'] = array(
 	//Ridwansyah Localhost DB
 	'hostname' => 'pgsql:host=localhost;dbname=sucofindo',
 	'username' => 'postgres',
-	'password' => 'postgres',
-	'database' => 'postgres',
+	'password' => 'qwerty147',
+	'database' => 'sucofindo',
 
 	//-----------------------------------------------
 	// cloudkilat PGSQL | comment if using localhost
