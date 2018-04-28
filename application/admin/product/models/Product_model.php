@@ -27,6 +27,13 @@ class Product_model extends CI_Model
         return $this->db->get();
     }
 
+    public  function get_item_by_product_id($product_id=0) {
+        $this->db->select('*');
+        $this->db->from($this->table);
+        $this->db->where('PRODUCT_ID', $product_id); 
+        return $this->db->get();
+    }
+
     public  function get_item_by_menu_id($menu_id=0) {
 		$this->db->select('*');
 		$this->db->from($this->table);

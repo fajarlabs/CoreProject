@@ -38,7 +38,7 @@
 								<table style="border-spacing: 10px;border-collapse: separate;">
 									<tr>
 										<td>
-											<select class="form-control" style="width:200px;" name="product_type">
+											<select onchange="get_intervention(this)" class="form-control" style="width:200px;" name="product_type">
 												<option value="0">--Choose Product--</option>
 												<?php 
 												foreach($product->result() as $row) :
@@ -51,12 +51,7 @@
 											<?php 
 											$intervention_array = array();
 											$intervention_array[] = '--Choose Intervention--';
-											if($intervention_list->num_rows() > 0) {
-												foreach($intervention_list->result() as $row_intervention) {
-													$intervention_array[$row_intervention->ID] = $row_intervention->INTERVENTION_NAME;
-												}
-											}?>
-											<?php echo form_dropdown('select_intervention', $intervention_array, '', 'style="width:200px;"  class="form-control"',' required="required"'); ?>	
+											echo form_dropdown('select_intervention', $intervention_array, '', 'style="width:200px;"  class="form-control"',' required="required"'); ?>	
 										</td>
 										<td>
 											<?php echo form_submit('', 'Create', 'class="btn btn-sm btn-primary" style="margin-top:0px;height:33px;"');?>
@@ -92,6 +87,19 @@
 	</div>
 </div>               
 <script type="text/javascript">
+	function get_intervention(e) {
+		$el_product = $(e);
+		var el = $('select[name="select_intervention"]');
+		el.empty();
+		el.append('<option value="0">--Choose Intervention--</option>');
+		$.getJSON( "<?php echo base_url(); ?>index.php/form_entry/get_intervention/"+$el_product.val(), function( data ) {
+			if(data.length > 0) {
+				for(var i=0; i < data.length; i++) {
+					el.append('<option value="'+data[i].ID+'">'+data[i].INTERVENTION_NAME+'</option>');
+				}
+			}
+		});
+	}
 	 (function defer() {
  	    if (window.jQuery) {
  	    	$("form").on("submit",function() {

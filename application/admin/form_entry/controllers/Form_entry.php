@@ -738,4 +738,33 @@ class Form_entry extends MY_Controller
 			echo json_encode($json_array);
 		}
 	}
+
+	function get_intervention($product_id=0) {
+		$json_array = array();
+		$product_id = (int) $product_id;
+		$query_product = $this->Product_model->get_item_by_product_id($product_id);
+		$intervention_reference = NULL;
+		if($query_product->num_rows() > 0) {
+			foreach($query_product->result() as $row) {
+				$intervention_reference = json_decode($row->INTERVENTION_REFERENCE);
+			}
+		}
+
+		if($intervention_reference != NULL) :
+			foreach($intervention_reference as $k => $v) :
+				$query_intervention = $this->Intervention_model->get_item_by_id($v);
+				if($query_intervention->num_rows() > 0) :
+					foreach($query_intervention->result() as $row) :
+						$object = new stdClass();
+						$object->ID = $row->ID;
+						$object->INTERVENTION_NAME = $row->INTERVENTION_NAME;
+						$json_array[] = $object;
+					endforeach;
+				endif;
+			endforeach;
+		endif;
+		
+		header('Content-Type: application/json');
+		echo json_encode($json_array);
+	}
 }
