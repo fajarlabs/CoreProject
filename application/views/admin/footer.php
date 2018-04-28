@@ -8,9 +8,7 @@
 	<!-- ================== BEGIN BASE JS ================== -->
 
 	<?php echo script_tag('assets/admin/js/jquery-1.12.4.js') ?>
-
 	<?php echo script_tag('assets/admin/plugins/sweetalert/dist/sweetalert.min.js'); ?>
-	<?php echo script_tag('assets/admin/color-admin/assets/plugins/bootstrap/js/bootstrap.min.js'); ?>
 	<!--[if lt IE 9]>
 		<?php echo script_tag('assets/admin/color-admin/assets/crossbrowserjs/html5shiv.js'); ?>
 		<?php echo script_tag('assets/admin/color-admin/assets/crossbrowserjs/respond.min.js'); ?>
@@ -50,10 +48,11 @@
 	<?php echo script_tag(base_url().'assets/admin/plugins/bootstrap-fileinput/js/fileinput.min.js'); ?>
 	<?php echo script_tag(base_url().'assets/admin/plugins/moment/min/moment.min.js'); ?>
 
-	<?php echo script_tag('assets/admin/js/jquery-ui.js') ?>
 	<?php echo script_tag('assets/admin/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js'); ?>
 	<?php echo script_tag('assets/admin/color-admin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js'); ?>
 	<?php echo script_tag(base_url().'assets/admin/plugins/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js'); ?>
+	<?php echo script_tag('assets/admin/js/jquery-ui.js') ?>
+	<?php echo script_tag('assets/admin/color-admin/assets/plugins/bootstrap/js/bootstrap.min.js'); ?>
 	<?php echo script_tag('assets/admin/color-admin/assets/js/apps.min.js'); ?>
 
 	<?php echo $html_js; ?>

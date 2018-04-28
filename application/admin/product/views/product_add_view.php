@@ -49,6 +49,20 @@
 									<?php echo form_dropdown('show', array(1 => 'Yes', 0 => 'No'), '', 'id="show" class="form-control"'); ?>
 								</td>
 							</tr>
+							<tr>
+								<td width="150px" style="padding-top:15px;"><?php echo form_label('Intervention Reference') ?></td>
+								<td>
+									* <strong><small>For product reference and intervention on entry form</small></strong><br />
+									<?php 
+									if ($intervention_items != NULL) : 
+										foreach($intervention_items as $row) : 
+											echo '<input name="intervention_reference[]" type="checkbox" value="'.$row->ID.'" />';
+											echo $row->INTERVENTION_NAME."&nbsp;&nbsp;&nbsp;";
+										endforeach;
+									endif; 
+									?>
+								</td>
+							</tr>
 							<tr style="display: none;">
 								<td colspan="2"><?php echo form_input(array('type' => 'hidden', 'name' => $csrf['name'],'value' => $csrf['hash'],'class' => 'form-control','required' => 'required')); ?></td>
 							</tr>

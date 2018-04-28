@@ -6,7 +6,7 @@ class Product extends MY_Controller
 	public function __construct() 
 	{
 		parent::__construct();
-		$this->load->model(array("Product_model"));
+		$this->load->model(array("Product_model","intervention/Intervention_model"));
 
 		$this->data['html_css'] = '
     		<style>
@@ -59,6 +59,8 @@ class Product extends MY_Controller
 	{
 		$this->data['title'] = "Form Create Website Menu";
 		$this->data['id']    = $id;
+		$intervention_query  = $this->Intervention_model->get_all_items();
+		$this->data['intervention_items'] = $intervention_query->num_rows() > 0 ? $intervention_query->result() : NULL;
 		$this->load->view('admin/header',$this->data);
 		$this->load->view('product_add_view',$this->data);
 		$this->load->view('admin/footer',$this->data);
@@ -69,6 +71,8 @@ class Product extends MY_Controller
 		$this->data['title'] = "Form Edit Website Menu";
 		$this->data['item']  = $this->Product_model->get_item_by_menu_id($id);
 		$this->data['id']    = $id;
+		$intervention_query  = $this->Intervention_model->get_all_items();
+		$this->data['intervention_items'] = $intervention_query->num_rows() > 0 ? $intervention_query->result() : NULL;
 		$this->load->view('admin/header',$this->data);
 		$this->load->view('product_edit_view',$this->data);
 		$this->load->view('admin/footer',$this->data);
@@ -80,6 +84,7 @@ class Product extends MY_Controller
 		$product_name      = $this->input->post("product_name");
 		$weight            = $this->input->post("weight");
 		$show              = $this->input->post("show");
+		$intervention_ref  = $this->input->post("intervention_reference");
 
 		$product_reference = empty($product_reference) ? 0 : $product_reference;
 
@@ -95,14 +100,15 @@ class Product extends MY_Controller
 		}
 
 		$array_col_val = array(
-			'PRODUCT_REFERENCE'   => empty($product_reference) ? 0 : $product_reference,
-			'PRODUCT_LEVEL'   => $product_level,
-			'PRODUCT_NAME' => $product_name,
-			'WEIGHT'       => $weight,
-			'SHOW'         => $show,
-			'IS_DELETE'    => 0,
-			'CREATE_TIME'  => null,
-			'CREATE_USER'  => ''
+			'PRODUCT_REFERENCE'      => empty($product_reference) ? 0 : $product_reference,
+			'PRODUCT_LEVEL'          => $product_level,
+			'PRODUCT_NAME'           => $product_name,
+			'WEIGHT'                 => $weight,
+			'SHOW'                   => $show,
+			'IS_DELETE'              => 0,
+			'CREATE_TIME'            => null,
+			'CREATE_USER'            => '',
+			'INTERVENTION_REFERENCE' => json_encode($intervention_ref)
 		);
 		$this->Product_model->save($array_col_val);
 
@@ -123,7 +129,7 @@ class Product extends MY_Controller
 		$product_name      = $this->input->post("product_name");
 		$weight            = $this->input->post("weight");
 		$show              = $this->input->post("show");
-
+		$intervention_ref  = $this->input->post("intervention_reference");
 
 		if($product_reference < 1) {
 			$product_level = 1;
@@ -138,14 +144,16 @@ class Product extends MY_Controller
 
 		$array_col_val = array(
 			'PRODUCT_REFERENCE'      => empty($product_reference) ? 0 : $product_reference,
-			'PRODUCT_LEVEL'  => $product_level,			
-			'PRODUCT_NAME'   => $product_name,
-			'WEIGHT'         => $weight,
-			'SHOW'           => $show,
-			'IS_DELETE'      => 0,
-			'MODIFY_TIME'    => null,
-			'MODIFY_USER'    => ''
+			'PRODUCT_LEVEL'          => $product_level,			
+			'PRODUCT_NAME'           => $product_name,
+			'WEIGHT'                 => $weight,
+			'SHOW'                   => $show,
+			'IS_DELETE'              => 0,
+			'MODIFY_TIME'            => null,
+			'MODIFY_USER'            => '',
+			'INTERVENTION_REFERENCE' => json_encode($intervention_ref)
 		);
+
 		$this->Product_model->update($array_col_val,$id);
 
 		$this->session->set_flashdata('error_message', alert_success('Update succeded.'));
