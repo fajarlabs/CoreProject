@@ -449,32 +449,10 @@ class Form_entry extends MY_Controller
 
 		$id = $this->Form_entry_model->save($col_val);
 
-		// save product history
-		$products = $this->input->post("product");
-		if(is_array($products)) {
-			if(count($products) > 0) {
-				foreach($products as $key => $val) {
-					if(!empty($val))$this->Product_model->save_product_history($val);
-				}
-			}
-		}
-
-		// save port history
-		$ports = $this->input->post("port_terminal");
-		if(is_array($ports)) {
-			if(count($ports) > 0) {
-				foreach($ports as $key => $val) {
-					if(!empty($val))$this->Port_model->save_port_history($val);
-				}
-			}
-		}
-
-		// save vessel history
-		$vessel = $this->input->post("vessel");
-		if(!empty($vessel)) $this->Vessel_model->save_vessel_history($vessel);
+		// save history
+		$this->_register_history();
 
 		$this->session->set_flashdata('error_message', alert_success('Save Succeded'));
-
 		$this->load->library('user_agent');
 		redirect($this->agent->referrer());
 	}
@@ -572,6 +550,15 @@ class Form_entry extends MY_Controller
 
 		$this->Form_entry_model->update($col_val,$id);
 
+		// update history
+		$this->_register_history();
+		
+		/* development process */
+		$this->session->set_flashdata('error_message', alert_success('Update Succeded'));
+		redirect('/form_entry');
+	}
+
+	private function _register_history() {
 		// save product history
 		$products = $this->input->post("product");
 		if(is_array($products)) {
@@ -595,10 +582,21 @@ class Form_entry extends MY_Controller
 		// save vessel history
 		$vessel = $this->input->post("vessel");
 		if(!empty($vessel)) $this->Vessel_model->save_vessel_history($vessel);
-		
-		/* development process */
-		$this->session->set_flashdata('error_message', alert_success('Update Succeded'));
-		redirect('/form_entry');
+
+		// save area history
+		$area = $this->input->post("area");
+		if(!empty($area)) $this->Area_model->save_area_history($area);
+
+		// save client history
+		$clients = $this->input->post("clients");
+		//$clients = json_decode($clients);
+		if(is_array($clients)) {
+			if(count($clients) > 0) {
+				foreach($clients as $kc => $vc) {
+					if(!empty($vc)) $this->Client_model->save_client_history($vc);
+				}
+			}
+		}
 	}
 	
 	public function edit($id=0)

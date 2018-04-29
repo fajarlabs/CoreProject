@@ -43,5 +43,20 @@ class Area_model extends CI_Model
 		$this->db->where('AREA_ID', $id);
 		$this->db->update($this->table, $array_col_val); 
 		return $id;
+	}
+	
+    // ini adalah fungsi untuk menyimpan history transaksi area
+    // pada form entry
+    public function save_area_history($area='') {
+        $area  = trim($area);
+        $array_col_val = array();
+        $array_col_val['AREA_NAME'] = $area;
+
+        if($this->get_item_by_name($area)->num_rows() < 1) {
+            $this->db->insert($this->table,$array_col_val);
+            return $this->db->insert_id('AREA_ID');    
+        }
+
+        return NULL;  
     }
 }
