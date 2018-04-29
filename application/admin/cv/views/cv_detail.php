@@ -60,17 +60,19 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-        
     </head>
     <body>
+        
         <!-- Start Container-->
         <div class="container">
             <!-- row -->
+            <p align="right"><a href="../view_print/<?php echo @$item->result()[0]->ID ?>" style="color:blue;cursor:pointer">Print</a></p>
             <div class="row">
             <!-- =========================================
                            SIDEBAR   
             ==========================================-->
                 <!-- Start Sidebar -->
+
                 <aside class="col l4 m12 s12 sidebar z-depth-1" id="sidebar">
                     <!--  Sidebar row -->
                     <div class="row">                      
@@ -102,8 +104,7 @@
                                 <div class="col m12 s12 l9 info"> <!-- text -->
                                     <div class="section-item-details">
                                         <h2><?php echo  @$item->result()[0]->NAMA ?></h2> <!-- title name -->
-                                        <span><?php echo  @$posisi->result()[0]->POSITION ?></span>  <br/>
-                                        <span><?php echo  @$region->result()[0]->REGION ?></span>  <!-- tagline -->
+                                        <span><?php echo  @$posisi->result()[0]->POSITION ?></span> 
                                     </div>             
                                 </div>
                             </div>         
@@ -230,7 +231,7 @@
                             </div>
                             <div class="custom-content col s12 m12 l10">
                                 <h2>Work Experience</h2>
-                                <div style="overflow-y: auto;height:230px;">
+                                <div id="div_work_experience" style="overflow-y: auto;height:230px;">
                                  <?php 
                                  foreach($cv_work as $work){ ?>   
                                 <div class="custom-content-wrapper" >
@@ -253,7 +254,7 @@
                             </div>
                             <div class="custom-content col s12 m12 l10">
                                 <h2>Education </h2>
-                                <div style="overflow-y: auto;height:230px;">
+                                <div id="div_education" style="overflow-y: auto;height:230px;">
                                     <?php   
                                     foreach ($edu_data as $key => $val ) {
                                          $ty = (explode("$$$",$val->EDUCATION_TYPE));
@@ -278,7 +279,7 @@
                             </div>
                             <div class="custom-content col s12 m12 l10">
                                 <h2>Certificate </h2>
-                                 <div style="overflow-y: auto;height:230px;">
+                                 <div id="div_certificate" style="overflow-y: auto;height:230px;">
                                     <?php 
                                      foreach($cv_certificate as $cr){ ?>   
                                     <div class="custom-content-wrapper"  >
@@ -301,7 +302,7 @@
                             <div class="custom-content col s12 m12 l10" >
                                 <h2>List Job History</h2>
                                 
-                                <div style="overflow-y: auto;height:230px;">
+                                <div id="div_job_history" style="overflow-y: auto;height:230px;">
                                 <?php 
                                 $ix=1;
                                  foreach($list_history_work as $wr){ ?>   

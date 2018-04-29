@@ -21,8 +21,8 @@ class Dashboard extends MY_Controller
 			<link href="'.base_url().'assets/admin/color-admin/assets/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
 			<link href="'.base_url().'assets/admin/color-admin/assets/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />';
     	$this->data['html_js'] = '
-			<script src="https://code.highcharts.com/highcharts.js"></script>
-			<script src="https://code.highcharts.com/modules/exporting.js"></script>
+			<script src="'.base_url().'assets/admin/plugins/highchart/highcharts.js"></script>
+			<script src="'.base_url().'assets/admin/plugins/highchart/exporting.js"></script>
 			<script src="'.base_url().'assets/admin/color-admin/assets/js/dashboard.min.js"></script>
 			<script src="'.base_url().'assets/admin/color-admin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 			<script>

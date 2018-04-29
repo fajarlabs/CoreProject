@@ -747,4 +747,61 @@ class Cv extends MY_Controller
 		$this->data['cv_work'] = $this->Cv_model->get_table_name('MASTER_CV_HISTORY_OF_WORK','ID','desc','ID_CV',$id);
 		$this->load->view('cv_detail',$this->data);
 	}
+
+	public function view_print($id)
+	{
+		$this->data['id']    = $id;
+		$this->data['item']  = $this->Cv_model->get_item_by_id($id);
+		
+		
+		$this->data['posisi']  = $this->Cv_model->get_item_table_by_id('REF_POSITION','ID_REF_POSITION',$this->data['item']->result()[0]->POSISI);
+
+
+		$this->data['region']  = $this->Cv_model->get_item_table_by_id('REF_REGION','ID_REF_REGION',$this->data['item']->result()[0]->REGION);
+		
+		//history work
+		$this->data['cv_work'] = $this->Cv_model->get_table_name('MASTER_CV_HISTORY_OF_WORK','ID','ASC','ID_CV',$id);
+
+		//ceritificate
+		$this->data['cv_certificate'] = $this->Cv_model->get_table_name('MASTER_CV_CERTIFICATE','ID','ASC','ID_CV',$id);
+
+		//education
+		$this->data['cv_edu'] = $this->Cv_model->get_table_name('MASTER_CV_EDUCATION','ID','ASC','ID_CV',$id);
+
+		// list_history_work
+		$this->data['list_history_work'] = $this->Cv_model->get_table_name('FORM_ENTRY_FIELD','ID','ASC','SURVEYOR_IN_CHARGE',$this->data['item']->result()[0]->NAMA,'like');
+
+		
+
+		//education
+		$arrx = array();
+		foreach ($this->data['cv_edu'] as $key => $value) {
+			$query  = $this->Cv_model->get_table_name('REF_EDUCATION','EDUCATION_TYPE','asc','ID_REF_EDUCATION',$value->ID_REF_EDUCATION);
+			foreach ($query as $row) {
+				
+			}
+			 $row->EDUCATION_TYPE = $row->EDUCATION_TYPE."$$$".$value->SCHOOL;
+			 $arrx[] = $row;
+		}
+		$this->data['edu_data']  = $arrx;
+
+		//experience
+		$this->data['cv_exp'] = $this->Cv_model->get_table_name('MASTER_CV_EXPERIENCE','ID','desc','ID_CV',$id);
+		$arr = array();
+		foreach ($this->data['cv_exp'] as $key => $value) {
+			$query  = $this->Cv_model->get_table_name('REF_EXP','EXP_TYPE','asc','ID_REF_EXP',$value->ID_REF_EXPERIENCE);
+			foreach ($query as $row) {
+				
+			}
+			 $row->EXP_TYPE = $row->EXP_TYPE."$".$value->LEVEL;
+			 $arr[] = $row;
+		}
+
+		$this->data['exp_data']  = $arr;
+
+		$this->data['cv_edu'] = $this->Cv_model->get_table_name('MASTER_CV_EDUCATION','ID_REF_EDUCATION','desc','ID_CV',$id);
+		$this->data['cv_work'] = $this->Cv_model->get_table_name('MASTER_CV_HISTORY_OF_WORK','ID','desc','ID_CV',$id);
+		$this->load->view('cv_print',$this->data);
+	}
+
 }

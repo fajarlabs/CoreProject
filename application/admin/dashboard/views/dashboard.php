@@ -105,22 +105,82 @@
 								</tr>
 							</table>
 							<?php echo form_close(); ?>
+							<br/>
+							<ul style="display:none;" id="tabs_menu" class="nav nav-tabs">
+							  <li class="active"><a data-toggle="tab" href="#menu_klobs">KL @obs</a></li>
+							  <li><a data-toggle="tab" href="#menu_kl15c">KL @15° C</a></li>
+							  <li><a data-toggle="tab" href="#menu_bbls60f">BBLS @60°F</a></li>
+							  <li><a data-toggle="tab" href="#menu_longton">Long Ton</a></li>
+							  <li><a data-toggle="tab" href="#menu_metric_ton">Metric Ton</a></li>
+							</ul>
 
-							<!-- Tempat Chart -->
-							<table id="div_chart_1" style="display:none;width:100%;margin-top:3px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
-								<tr>
-									<td><div style="width:500px;height:400px;" id="chart3">No Data</div></td>
-									<td><div style="width:500px;height:400px;" id="chart4">No Data</div></td>
-								</tr>
-								<tr>
-									<td><div style="width:500px;height:400px;" id="chart5">No Data</div></td>
-									<td><div style="width:500px;height:400px;" id="chart6">No Data</div></td>
-								</tr>
-								<!--<tr>
-									<td><div style="width:500px;height:400px;" id="chart1">No Data</div></td>
-									<td><div style="width:500px;height:400px;" id="chart2">No Data</div></td>
-								</tr>-->
-							</table>
+							<div style="display:none;" class="tab-content">
+							    <div id="menu_klobs" class="tab-pane fade in active">
+								    <table id="div_chart_kl_obs" style="display:none;width:100%;margin-top:3px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
+										<tr>
+											<td><div style="width:500px;height:400px;" id="chart_kl_obs_1">No Data</div></td>
+											<td><div style="width:500px;height:400px;" id="chart_kl_obs_2">No Data</div></td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<div style="width:1000px;height:400px;" id="chart_kl_obs_3">No Data</div>
+											</td>
+										</tr>
+									</table>
+							    </div>
+							    <div id="menu_kl15c" class="tab-pane fade">
+							   		<table id="div_chart_kl15c" style="display:none;width:100%;margin-top:3px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
+										<tr>
+											<td><div style="width:500px;height:400px;" id="chart_kl15c_1">No Data</div></td>
+											<td><div style="width:500px;height:400px;" id="chart_kl15c_2">No Data</div></td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<div style="width:1000px;height:400px;" id="chart_kl15c_3">No Data</div>
+											</td>
+										</tr>
+									</table>
+							    </div>
+							  <div id="menu_bbls60f" class="tab-pane fade">
+							        <table id="div_chart_bbls60f" style="display:none;width:100%;margin-top:3px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
+										<tr>
+											<td><div style="width:500px;height:400px;" id="chart_bbls60f_1">No Data</div></td>
+											<td><div style="width:500px;height:400px;" id="chart_bbls60f_2">No Data</div></td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<div style="width:1000px;height:400px;" id="chart_bbls60f_3">No Data</div>
+											</td>
+										</tr>
+									</table>
+							  </div>
+							  <div id="menu_longton" class="tab-pane fade">
+							    <table id="div_chart_longton" style="display:none;width:100%;margin-top:3px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
+										<tr>
+											<td><div style="width:500px;height:400px;" id="chart_longton_1">No Data</div></td>
+											<td><div style="width:500px;height:400px;" id="chart_longton_2">No Data</div></td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<div style="width:1000px;height:400px;" id="chart_longton_3">No Data</div>
+											</td>
+										</tr>
+								</table>
+							  </div>
+							  <div id="menu_metric_ton" class="tab-pane fade">
+							     <table id="div_chart_metric_ton" style="display:none;width:100%;margin-top:3px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
+										<tr>
+											<td><div style="width:500px;height:400px;" id="chart_metric_ton_1">No Data</div></td>
+											<td><div style="width:500px;height:400px;" id="chart_metric_ton_2">No Data</div></td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<div style="width:1000px;height:400px;" id="chart_metric_ton_3">No Data</div>
+											</td>
+										</tr>
+								</table>
+							  </div>
+							</div>
 						</div>
 					</div>                
 				</div>
@@ -131,7 +191,6 @@
 	<script type="text/javascript">
 		 (function defer() {
 	 	    if (window.jQuery) {
-
 	 	    		var mousetimeout;
 					var screensaver_active = false;
 					var idletime = <?php echo get_app_ss_timeout()*60; ?>;
@@ -164,11 +223,12 @@
 						}
 					}
 
-	 	    	$('.thn_picker').datepicker({
-				    format: "yyyy",
-				    viewMode: "years", 
-				    minViewMode: "years"
-				});
+		 	    	$('.thn_picker').datepicker({
+					    format: "yyyy",
+					    viewMode: "years", 
+					    minViewMode: "years"
+					});
+
 	 	    	$("#chart_form").on("submit",function(e) {
 	 	    		var tahun = $('input[name="tahun"');
 	 	    		var tahun_int = parseInt(tahun.val());
@@ -178,9 +238,15 @@
 	 	    		}
 	 	    		
 	 	    		$.get('<?php echo base_url(); ?>index.php/dashboard/chart_rest/?'+$(this).serialize(),function(json){
-	 	    			// show division
-	 	    			$("#div_chart_1").show();
-	 	    			$("#div_chart_2").show();
+	 	    			
+	 	    			$("#tabs_menu").show();
+	 	    			$(".tab-content").show();
+
+	 	    			$("#div_chart_kl_obs").show();
+	 	    			$("#div_chart_kl15c").show();
+	 	    			$("#div_chart_bbls60f").show();
+	 	    			$("#div_chart_longton").show();
+	 	    			$("#div_chart_metric_ton").show();
 
 						var categories1 = ['R1_KLOBS','R1_KL15','R1_BBLS','R1_LONGTON','R1_METRICTON','R1_VEF_KLOBS','R1_VEF_KL15','R1_VEF_BBLS','R1_VEF_LONGTON','R1_VEF_METRICTON'];
 						var title1 = 'Statistik Data (R1) Loading';
@@ -191,11 +257,26 @@
 
 	 	    			//columnNegative(json[1],"chart2",categories2,title2);
 
-	 	    			column_curva('','chart3','','Statistics');
-	 	    			chart_dobule_line('','chart5','','Statistics');
-	 	    			chart_line('','chart6','','Statistics');
+	 	    			column_pie('','chart_kl_obs_1','','Loss Statistics Percentage');
+	 	    			column_curva('','chart_kl_obs_2','','Statistics');
+	 	    			chart_dobule_line('','chart_kl_obs_3','','Statistics');
 
-	 	    			column_pie('','chart4','','Loss Statistics Percentage');
+	 	    			column_pie('','chart_kl15c_1','','Loss Statistics Percentage');
+	 	    			column_curva('','chart_kl15c_2','','Statistics');
+	 	    			chart_dobule_line('','chart_kl15c_3','','Statistics');
+
+	 	    			column_pie('','chart_bbls60f_1','','Loss Statistics Percentage');
+	 	    			column_curva('','chart_bbls60f_2','','Statistics');
+	 	    			chart_dobule_line('','chart_bbls60f_3','','Statistics');
+
+	 	    			column_pie('','chart_longton_1','','Loss Statistics Percentage');
+	 	    			column_curva('','chart_longton_2','','Statistics');
+	 	    			chart_dobule_line('','chart_longton_3','','Statistics');
+
+	 	    			column_pie('','chart_metric_ton_1','','Loss Statistics Percentage');
+	 	    			column_curva('','chart_metric_ton_2','','Statistics');
+	 	    			chart_dobule_line('','chart_metric_ton_3','','Statistics');
+
 	 	    		});
 	 	    		return false;
 	 	    	}); 
