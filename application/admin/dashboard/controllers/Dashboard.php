@@ -9,7 +9,7 @@ class Dashboard extends MY_Controller
 	public function __construct() 
 	{
 		parent::__construct();
-		$this->load->model(array("client_site/Client_site_model","Dashboard_model"));
+		$this->load->model(array("client_site/Client_site_model","Dashboard_model","element_connection/Element_connection_model"));
 		$this->data['html_css'] = '
 			<style>
 				.form-horizontal .control-label{
@@ -54,15 +54,39 @@ class Dashboard extends MY_Controller
 
 	public function chart_rest()
 	{
-
+		$produk_id 	 	 = (int)$this->input->get("produk");
+		$intervention_id = (int)$this->input->get("intervensi");
 		$date_month  	 = $this->input->get("bulan");
 		$date_year   	 = $this->input->get("tahun");
-		$intervensi  	 = $this->input->get("intervensi");
-		$cst_id  	 	 = $this->input->get("cst_id");
-		$produk 	 	 = $this->input->get("produk");
+		$client  	 	 = $this->input->get("client");
 		$lokasi_kerja 	 = $this->input->get("lokasi_kerja");
 
+		$element_timelog_id = '';
+		$element_quality_id = '';
+		$element_fields     = '';
+		$element_r1 = '';
+		$element_r2 = '';
+		$element_r3 = '';
+		$element_r4 = '';
 
+		// initialize element connection
+		$query_setup = $this->Element_connection_model->get_item_by_product_intervention($produk_id,$intervention_id);
+		if($query_setup->num_rows() > 0) {
+			foreach($query_setup->result() as $row_setup) {
+				$element_timelog_id = json_decode($row_setup->ELEMENT_TIMELOG_ID);
+				$element_quality_id = json_decode($row_setup->ELEMENT_QUALITY_ID);
+				$element_fields     = json_decode($row_setup->ELEMENT_FIELDS);
+				$element_r1         = json_decode($row_setup->ELEMENT_R1);
+				$element_r2         = json_decode($row_setup->ELEMENT_R2);
+				$element_r3         = json_decode($row_setup->ELEMENT_R3);
+				$element_r4         = json_decode($row_setup->ELEMENT_R4);
+			}
+		}
+
+		echo "<pre>";
+		print_r($element_r1);
+		echo "</pre>";
+		die();
 		$result = array();
 
 		$query = $this->Dashboard_model->loading_stats($date_month,$date_year,$intervensi,$cst_id,$produk,$lokasi_kerja);

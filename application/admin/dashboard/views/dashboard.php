@@ -56,8 +56,8 @@
 										</select>
 									</td>	
 									<td>
-										<?php echo form_label('Costumer'); ?><br/>
-										<select name="cst_id" style="height:33px;">
+										<?php echo form_label('Clients'); ?><br/>
+										<select name="client" style="height:33px;">
 											<option value="">--Choose--</option>
 											<?php 
 											$ct =  $client[0]->CLIENTS;

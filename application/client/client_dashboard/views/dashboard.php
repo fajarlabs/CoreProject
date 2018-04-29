@@ -56,9 +56,9 @@
 										</select>
 									</td>	
 									<td>
-										<?php echo form_label('Costumer'); ?><br/>
-										<select name="cst_id" style="height:33px;">
-											<option value="">--Pilih--</option>
+										<?php echo form_label('Client'); ?><br/>
+										<select name="client" style="height:33px;">
+											<option value="">--Choose--</option>
 											<?php 
 											$ct =  $client[0]->CLIENTS;
 											$clnt = json_decode($ct);
