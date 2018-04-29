@@ -1,0 +1,23 @@
+--- Cara buat guid di postgres
+---CREATE EXTENSION IF NOT EXISTS pgcrypto;
+---select gen_random_uuid();
+
+CREATE TABLE public."MASTER_AREA"
+(
+    "AREA_ID" text NOT NULL DEFAULT gen_random_uuid(),
+    "AREA_NAME" text COLLATE pg_catalog."default",
+    "AREA_DESCRIPTION" text COLLATE pg_catalog."default",
+    "IS_DELETE" integer,
+    "CREATE_TIME" timestamp(6) without time zone,
+    "CREATE_USER" text COLLATE pg_catalog."default",
+    "MODIFY_TIME" timestamp(6) without time zone,
+    "MODIFY_USER" text COLLATE pg_catalog."default",
+    "DELETE_TIME" timestamp(6) without time zone
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."MASTER_AREA"
+    OWNER to postgres;

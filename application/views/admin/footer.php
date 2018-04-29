@@ -319,6 +319,78 @@
 	}
 </script>
 
+<!-- CLIENTS -->
+<script type="text/javascript">
+	function initClient(e,r) {
+	    $(e).autocomplete({
+			source: function( request, response ) {
+				$.ajax({
+			    	url: "<?php echo base_url(); ?>index.php/form_entry/get_client",
+			    	dataType: "json",
+			    	data: {
+			        	q: request.term
+			      	},
+			    	success: function( data ) {
+			        	response( data );
+			    	}
+			    });
+			},
+			minLength: 1,
+			select: function( event, ui ) {
+				var label = ui.item.label;
+				var value = ui.item.value;
+				// tukar value jadi label
+				ui.item.value = label;
+			},
+			open: function( event, ui) {
+			},
+			close: function() {
+			},change: function(event, ui) {
+				var label = ui.item.label;
+				var value = ui.item.value;
+				// tukar value jadi label
+				ui.item.value = label;
+			}
+		});
+	}
+</script>
+
+<!-- AREA -->
+<script type="text/javascript">
+	function initArea(e,r) {
+	    $(e).autocomplete({
+			source: function( request, response ) {
+				$.ajax({
+			    	url: "<?php echo base_url(); ?>index.php/form_entry/get_area",
+			    	dataType: "json",
+			    	data: {
+			        	q: request.term
+			      	},
+			    	success: function( data ) {
+			        	response( data );
+			    	}
+			    });
+			},
+			minLength: 1,
+			select: function( event, ui ) {
+				var label = ui.item.label;
+				var value = ui.item.value;
+				// tukar value jadi label
+				ui.item.value = label;
+			},
+			open: function( event, ui) {
+			},
+			close: function() {
+			},change: function(event, ui) {
+				var label = ui.item.label;
+				var value = ui.item.value;
+				// tukar value jadi label
+				ui.item.value = label;
+			}
+		});
+	}
+</script>
+
 
 </body>
 

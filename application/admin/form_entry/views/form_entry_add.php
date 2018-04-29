@@ -8,7 +8,6 @@
 
 	// fungsi defer untuk menunggu jquery selesai di load pada browser
 	(function defer() {
-
 	      if (window.jQuery) {  	
 
 	  		var select_intervention = "<?php echo @$select_intervention; ?>";
@@ -365,10 +364,10 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 			     })();
 
 			    // inisialisasi untuk multi client
-				var str_tr_principle = "<tr><td>Client <input name=\"clients[]\" type=\"\" value=\"\" /> <input type=\"checkbox\" name=\"supplier[]\" />Supplier&nbsp;<input type=\"checkbox\" name=\"trader[]\" />Trader&nbsp;<input type=\"checkbox\" name=\"buyer[]\" />Buyer&nbsp;<input type=\"checkbox\" name=\"seller[]\" />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee[]\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> "+file_ref+"</td></tr>";
+				var str_tr_principle = "<tr><td>Client <input onkeydown=\"initClient(this)\" name=\"clients[]\" type=\"\" value=\"\" /> <input type=\"checkbox\" name=\"supplier[]\" />Supplier&nbsp;<input type=\"checkbox\" name=\"trader[]\" />Trader&nbsp;<input type=\"checkbox\" name=\"buyer[]\" />Buyer&nbsp;<input type=\"checkbox\" name=\"seller[]\" />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee[]\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> "+file_ref+"</td></tr>";
 
 				// inisialisasi elemen jika single client maka sharing fee otomatis 100%
-				var str_tr_principle_100 = "<tr><td>Client <input name=\"clients[]\" type=\"\" value=\"\" /> <input type=\"checkbox\" name=\"supplier\" />Supplier&nbsp;<input type=\"checkbox\" name=\"trader\" />Trader&nbsp;<input type=\"checkbox\" name=\"buyer\" />Buyer&nbsp;<input type=\"checkbox\" name=\"seller\" />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee\" value=\"100\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> "+file_ref+"</td></tr>";
+				var str_tr_principle_100 = "<tr><td>Client <input onkeydown=\"initClient(this)\" name=\"clients[]\" type=\"\" value=\"\" /> <input type=\"checkbox\" name=\"supplier\" />Supplier&nbsp;<input type=\"checkbox\" name=\"trader\" />Trader&nbsp;<input type=\"checkbox\" name=\"buyer\" />Buyer&nbsp;<input type=\"checkbox\" name=\"seller\" />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee\" value=\"100\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> "+file_ref+"</td></tr>";
 				
 				// fungsi untuk menambahkan elemen html pada prinsipal
 				function add_tb_principle() {
@@ -431,7 +430,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 				<tr>
 					<td style="width:135px;">Area</td>
 					<td colspan="2">
-						<input type="text" style="width:300px;" name="area" />
+						<input onkeydown="initArea(this)"" type="text" style="width:300px;" name="area" />
 					</td>
 				</tr>
 				<tr>

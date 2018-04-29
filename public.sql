@@ -11,7 +11,7 @@ Target Server Type    : PGSQL
 Target Server Version : 90608
 File Encoding         : 65001
 
-Date: 2018-04-28 10:34:34
+Date: 2018-04-29 11:58:12
 */
 
 
@@ -4742,6 +4742,31 @@ INSERT INTO "public"."MAP_POINT" VALUES ('12', 'Vessel', '0.746861738138179', '1
 INSERT INTO "public"."MAP_POINT" VALUES ('13', 'Semarang', '-1.10058359450581', '101.6584951875', '0', null, null, null, null, null, null, '8', '0', '2');
 
 -- ----------------------------
+-- Table structure for "public"."MASTER_AREA"
+-- ----------------------------
+DROP TABLE "public"."MASTER_AREA";
+CREATE TABLE "public"."MASTER_AREA" (
+"AREA_ID" text DEFAULT gen_random_uuid() NOT NULL,
+"AREA_NAME" text,
+"AREA_DESCRIPTION" text,
+"IS_DELETE" int4,
+"CREATE_TIME" timestamp(6),
+"CREATE_USER" text,
+"MODIFY_TIME" timestamp(6),
+"MODIFY_USER" text,
+"DELETE_TIME" timestamp(6)
+)
+WITH (OIDS=FALSE)
+
+;
+
+-- ----------------------------
+-- Records of MASTER_AREA
+-- ----------------------------
+INSERT INTO "public"."MASTER_AREA" VALUES ('96954929-1eca-4c24-aea2-7986a5da2e07', 'Tulung Agung', '<p>asdfasdf</p>
+<div id=\"selenium-highlight\">&nbsp;</div>', '0', null, null, null, null, null);
+
+-- ----------------------------
 -- Table structure for "public"."MASTER_BARGE"
 -- ----------------------------
 DROP TABLE "public"."MASTER_BARGE";
@@ -4851,6 +4876,33 @@ INSERT INTO "public"."MASTER_CABANG" VALUES ('26', 'Sulawesi Utara', '<p>-</p>',
 INSERT INTO "public"."MASTER_CABANG" VALUES ('27', 'Sumatera Barat', '<p>-</p>', '0', '2018-04-21 00:00:00', null, '2018-04-21 00:00:00', null, null, null);
 INSERT INTO "public"."MASTER_CABANG" VALUES ('28', 'Sumatera Selatan', '<p>-</p>', '0', '2018-04-21 00:00:00', null, '2018-04-21 00:00:00', null, null, null);
 INSERT INTO "public"."MASTER_CABANG" VALUES ('29', 'Sumatera Utara', '<p>-</p>', '0', '2018-04-21 00:00:00', null, '2018-04-21 00:00:00', null, null, null);
+
+-- ----------------------------
+-- Table structure for "public"."MASTER_CLIENT"
+-- ----------------------------
+DROP TABLE "public"."MASTER_CLIENT";
+CREATE TABLE "public"."MASTER_CLIENT" (
+"CLIENT_ID" text DEFAULT gen_random_uuid() NOT NULL,
+"CLIENT_NAME" text,
+"CLIENT_DESCRIPTION" text,
+"IS_DELETE" int4,
+"CREATE_TIME" timestamp(6),
+"CREATE_USER" text,
+"MODIFY_TIME" timestamp(6),
+"MODIFY_USER" text,
+"DELETE_TIME" timestamp(6)
+)
+WITH (OIDS=FALSE)
+
+;
+
+-- ----------------------------
+-- Records of MASTER_CLIENT
+-- ----------------------------
+INSERT INTO "public"."MASTER_CLIENT" VALUES ('1acb464c-c8e7-4607-91a8-1b5ac13ba650', 'Pertamina', '<p>asdfasdfasd</p>
+<div id=\"selenium-highlight\">&nbsp;</div>', '0', null, null, null, null, null);
+INSERT INTO "public"."MASTER_CLIENT" VALUES ('ce634285-7e49-42b0-9151-b71a7467e267', 'Pelni', '<p><strong>sadfasdfasd</strong></p>
+<div id=\"selenium-highlight\">&nbsp;</div>', '0', null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for "public"."MASTER_CONTRACT"
@@ -6270,3 +6322,13 @@ ALTER TABLE "public"."APP_MENU" ADD PRIMARY KEY ("MENU_ID");
 -- Primary Key structure for table "public"."APP_ROUTE"
 -- ----------------------------
 ALTER TABLE "public"."APP_ROUTE" ADD PRIMARY KEY ("ROUTE_ID");
+
+-- ----------------------------
+-- Primary Key structure for table "public"."MASTER_AREA"
+-- ----------------------------
+ALTER TABLE "public"."MASTER_AREA" ADD PRIMARY KEY ("AREA_ID");
+
+-- ----------------------------
+-- Primary Key structure for table "public"."MASTER_CLIENT"
+-- ----------------------------
+ALTER TABLE "public"."MASTER_CLIENT" ADD PRIMARY KEY ("CLIENT_ID");

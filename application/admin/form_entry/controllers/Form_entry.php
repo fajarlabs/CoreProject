@@ -21,6 +21,8 @@ class Form_entry extends MY_Controller
 				'port/Port_model',
 				'client_site/Client_site_model',
 				'client_report/Info_model',
+				'area/Area_model',
+				'client/Client_model',
 				'intervention/Intervention_model',
 				'product/Product_model',
 				'contract/Contract_model',
@@ -687,6 +689,7 @@ class Form_entry extends MY_Controller
 		echo json_encode($json_object);
 	}
 
+	// reset search contact
 	public function search_kontrak() {
 		$q = $this->input->get("q");
 		$query = $this->Contract_model->search_by_contract_name($q);
@@ -739,6 +742,7 @@ class Form_entry extends MY_Controller
 		}
 	}
 
+	// rest intervention
 	function get_intervention($product_id=0) {
 		$json_array = array();
 		$product_id = (int) $product_id;
@@ -767,4 +771,41 @@ class Form_entry extends MY_Controller
 		header('Content-Type: application/json');
 		echo json_encode($json_array);
 	}
+
+	// rest area 
+	public function get_area() {
+		$query = trim($this->input->get('q', TRUE));
+		$query = $this->Area_model->search_by_area_name($query);
+		$json_array = array();
+		if($query->num_rows() > 0) {
+			foreach($query->result() as $row) {
+				$o = new stdClass();
+				$o->label = $row->AREA_NAME;
+				//$o->value = $row->AREA_ID;
+				$json_array[] = $o;
+			}
+		}
+
+		header('Content-Type: application/json');
+		echo json_encode($json_array);
+	}
+
+	// rest client 
+	public function get_client() {
+		$query = trim($this->input->get('q', TRUE));
+		$query = $this->Client_model->search_by_client_name($query);
+		$json_array = array();
+		if($query->num_rows() > 0) {
+			foreach($query->result() as $row) {
+				$o = new stdClass();
+				$o->label = $row->CLIENT_NAME;
+				//$o->value = $row->AREA_ID;
+				$json_array[] = $o;
+			}
+		}
+
+		header('Content-Type: application/json');
+		echo json_encode($json_array);
+	}
+	
 }
