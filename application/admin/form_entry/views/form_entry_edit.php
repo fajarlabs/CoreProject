@@ -1,4 +1,5 @@
 <?php 
+
 if($item->num_rows() > 0) { 
 $object = @$item->result()[0];
 ?>
@@ -21,29 +22,31 @@ $object = @$item->result()[0];
 	  		var select_product      = "<?php echo @$product_type; ?>" ;
 	  		var search_name         = 'timelog_'+select_product.toLowerCase()+'_'+select_intervention.toLowerCase();
 
-	  		$("#table_list_timelog tr").remove();
-	  		$("#table_list_timelog").append(header_tr);
+	  		// element yg sudah di set tetap fsoq,sample_source,date_of_analysis
+	  		// search all & extract element in ID el_div_qty
 
-	  		// =============================================================================
- 	  		// START ELEMENT TIMELOG BERDASARKAN PRODUK DAN INTERVENSI
- 	  		// =============================================================================
-	  		$.get('<?php echo base_url(); ?>index.php/form_entry/get_timelog_json/'+search_name,function(json) {
-	  			var row_data = JSON.parse(json.rows[0].DATA);
-	  			var data_column = [];
-	  			for(var i=0; i < row_data.length; i++) {
-	  				data_column.push(row_data[i].time.toUpperCase());
-	  				data_column.push(row_data[i].date.toUpperCase());
-	  				data_column.push(row_data[i].remarks.toUpperCase());
-	  				$("#table_list_timelog").append("<tr><td>"+(i+1)+"</td><td>"+row_data[i].activities+"</td><td><input style=\"margin-left:-10px;width:60px;\" class=\"timepicker\" type=\"text\" name=\""+row_data[i].time+"\" /></td><td><input style=\"min-width:100px !important;width:100px;margin-left:-10px;\" class=\"datepicker\" data-date-format=\"dd/mm/yyyy\" type=\"text\" name=\""+row_data[i].date+"\" /></td><td><input style=\"margin-left:-10px;width:100%;\" class=\"\" type=\"text\" name=\""+row_data[i].remarks+"\" /></td></tr>");
+	  		// init once for itarate element
+	  		add_tb_certificate();
+
+	  		// iterate element timelog
+	  		$("#el_div_timelog :input").each(function() {
+	  			// filter by type & name
+	  			var el_type = $(this).attr('type');
+	  			// clear element name
+	  			var el_name = $(this).attr('name').replace("[","").replace("]","");
+	  			var val_data_column = d64[el_name.toUpperCase()];
+
+	  			// checkbox
+	  			if(el_type == 'checkbox') {
+	  				if(val_data_column == 'Y') {
+	  					$(this).prop('checked',true);
+	  				}
 	  			}
-	  			$("#table_list_timelog").append(footer_tr);
-				$('.datepicker').datepicker({});
-				$('.timepicker').timepicker({defaultTime: '0:00',showMeridian: false,minuteStep: 1,showSeconds: false,showMeridian: false});
+	  			
+	  			// text
+	  			if(el_type == 'text') {
 
-	  			for(var col=0; col < data_column.length; col++) {
-	  				var val_data_column = d64[data_column[col]];
-
-	  				// filter and modified date 
+	  				// filter date and modified value date 
 	  				if(val_data_column != null) {
 	  					var temp_split = val_data_column.split('-');
 		  				if(temp_split.length == 3) {
@@ -51,19 +54,23 @@ $object = @$item->result()[0];
 		  				}
 	  				}
 
-	  				var low_data_column = data_column[col].toLowerCase();
-	  				$('input[name="'+low_data_column+'"]').val(val_data_column);
+	  				$(this).val(val_data_column);
 	  			}
-	  		});
 
-	  		// element yg sudah di set tetap fsoq,sample_source,date_of_analysis
-	  		// search all & extract element in ID el_div_qty
+	  			// ini untuk filter type file
+	  			if((el_type == 'file') && (el_name == 'fsoq')) {
+	  				if(val_data_column != null) {
+	  					var djson = JSON.parse(val_data_column);
+	  					for(var i=0;i<djson.length;i++) {
+	  						$("#tb_certificate").find('td:last').after('<td><a target="_blank" class="btn btn-xs btn-primary" href="<?php echo base_url(); ?>uploads/form_entry/'+djson[i]+'"><i class="fa fa-eye"></i> view</a> <i><b>*if you do not want to change the file do not upload</b></i></td>');
+	  						add_tb_certificate();
+	  					}
+	  				}
+	  			}
+			});
 
-	  		// init once for itarate element
-	  		add_tb_certificate();
-
-	  		// iterate element
-	  		$("#el_div_qty :input").each(function() {
+	  		// iterate element quality
+	  		$("#el_div_quality :input").each(function() {
 	  			// filter by type & name
 	  			var el_type = $(this).attr('type');
 	  			// clear element name
@@ -758,9 +765,8 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 		</td>									
 	</tr>
 	<tr class="timelog">
-		<td colspan="2">
-			<table id="table_list_timelog" style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
-			</table>
+		<td id="el_div_timelog" colspan="2">
+		<?php echo @$setup_timelog; ?>
 		</td>
 	</tr>
 	<tr>
@@ -778,8 +784,8 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 		</td>									
 	</tr>
 	<tr class="quality">
-		<td id="el_div_qty" colspan="2">
-			<?php echo @$html_quantity; ?>
+		<td id="el_div_quality" colspan="2">
+			<?php echo @$setup_quality; ?>
 		</td>
 	</tr>
 	<tr>

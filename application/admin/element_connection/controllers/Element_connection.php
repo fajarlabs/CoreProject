@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Element_html extends MY_Controller 
+class Element_connection extends MY_Controller 
 {
 	public function __construct() 
 	{
 		parent::__construct();
-		$this->load->model(array("user/User_model","user/User_group_model","menu/Menu_model","Element_html_model"));
+		$this->load->model(array("user/User_model","user/User_group_model","menu/Menu_model","element_html/Element_html_model","product/Product_model","intervention/Intervention_model","Element_connection_model"));
 
 		$this->data['html_css'] = '';
 
@@ -18,20 +18,20 @@ class Element_html extends MY_Controller
 
 				function newELement_htmlPage()
 				{
-					window.open("'.base_url().'index.php/element_html/add","_self");
+					window.open("'.base_url().'index.php/element_connection/add","_self");
 				}
 
 				function editELement_htmlPage()
 				{
 					var row = $("#dg").datagrid("getSelected");
-					window.open("'.base_url().'index.php/element_html/edit/"+row.ID,"_self");
+					window.open("'.base_url().'index.php/element_connection/edit/"+row.ID,"_self");
 				}
 
 				function destroyELement_htmlPage()
 				{
 					if(confirm("Are you sure ?")) {
 						var row = $("#dg").datagrid("getSelected");
-						window.open("'.base_url().'index.php/element_html/delete/"+row.ID,"_self");
+						window.open("'.base_url().'index.php/element_connection/delete/"+row.ID,"_self");
 					}
 				}
 
@@ -126,15 +126,18 @@ class Element_html extends MY_Controller
 	{
 		$this->data['title'] = "Element HTML Management";
 		$this->load->view('admin/header',$this->data);
-		$this->load->view('element_html_view',$this->data);
+		$this->load->view('element_connection_view',$this->data);
 		$this->load->view('admin/footer',$this->data);
 	}
 
 	public function add()
 	{
 		$this->data['title'] = "Element HTML Management";
+		$this->data['product'] = $this->Product_model->get_all_items();
+		$this->data['intervention'] = $this->Intervention_model->get_all_items();
+		$this->data['element'] = $this->Element_html_model->get_all_items();
 		$this->load->view('admin/header',$this->data);
-		$this->load->view('element_html_add_view',$this->data);
+		$this->load->view('element_connection_add_view',$this->data);
 		$this->load->view('admin/footer',$this->data);
 	}
 
@@ -142,48 +145,68 @@ class Element_html extends MY_Controller
 	{
 		$this->data['title'] = "Element HTML Management";
 		$this->data['id']    = $id;
-		$this->data['item']  = $this->Element_html_model->get_item_by_id($id);
+		$this->data['product'] = $this->Product_model->get_all_items();
+		$this->data['intervention'] = $this->Intervention_model->get_all_items();
+		$this->data['element'] = $this->Element_html_model->get_all_items();
+		$this->data['item']  = $this->Element_connection_model->get_item_by_id($id);
 		$this->load->view('admin/header',$this->data);
-		$this->load->view('element_html_edit_view',$this->data);
+		$this->load->view('element_connection_edit_view',$this->data);
 		$this->load->view('admin/footer',$this->data);
 	}
 
 	public function save()
 	{
-		$title   = $this->input->post('title');
-		$content = $this->input->post('content');
+		$title           = $this->input->post('title');
+		$content         = $this->input->post('content');
+		$product_id      = $this->input->post('product');
+		$intervention_id = $this->input->post('intervention');
+		$el_timelog_id   = $this->input->post('element_timelog');
+		$el_quality_id   = $this->input->post('element_quality');
 
 		$insert = array(
-			'NAME'     => addslashes($title),
-			'DATA'   => pg_escape_string ($content),
-			'IS_DELETE' => 0,
+			'NAME'               => addslashes($title),
+			'DATA'               => pg_escape_string ($content),
+			'PRODUCT_ID'         => $product_id,
+			'INTERVENTION_ID'    => $intervention_id,
+			'ELEMENT_TIMELOG_ID' => $el_timelog_id,
+			'ELEMENT_QUALITY_ID' => $el_quality_id,
+			'IS_DELETE'          => 0,
 		);
 
-		$this->Element_html_model->save($insert);
+		$this->Element_connection_model->save($insert);
 
 		$this->session->set_flashdata('error_message', alert_success('Save succeded.'));
-		redirect("element_html");	
+		redirect("element_connection");	
 	}
 
 	public function update($id=0) 
 	{
-		$title   = $this->input->post('title');
-		$content = $this->input->post('content');
+		$title           = $this->input->post('title');
+		$content         = $this->input->post('content');
+		$product_id      = $this->input->post('product');
+		$intervention_id = $this->input->post('intervention');
+		$el_timelog_id   = $this->input->post('element_timelog');
+		$el_quality_id   = $this->input->post('element_quality');
 
 		$insert = array(
-			'NAME'     => addslashes($title),
-			'DATA'   => pg_escape_string ($content),
-			'IS_DELETE' => 0,
+			'NAME'               => addslashes($title),
+			'DATA'               => pg_escape_string ($content),
+			'PRODUCT_ID'         => $product_id,
+			'INTERVENTION_ID'    => $intervention_id,
+			'ELEMENT_TIMELOG_ID' => $el_timelog_id,
+			'ELEMENT_QUALITY_ID' => $el_quality_id,
+			'IS_DELETE'          => 0,
 		);
-		$this->Element_html_model->update($insert,$id);
+
+		$this->Element_connection_model->update($insert,$id);
 
 		$this->session->set_flashdata('error_message', alert_success('Update succeded.'));
-		redirect("element_html");
+		redirect("element_connection");
 	}
 
 	public function page_list_rest()
 	{
-		$query = $this->Element_html_model->get_all_items(100,0);
+		$query = $this->Element_connection_model->get_all_items(100,0);
 		$json_object = new stdClass();
 		$json_object->total = @$query->num_rows();
 		$json_object->rows  = @$query->result();		
@@ -193,8 +216,8 @@ class Element_html extends MY_Controller
 
 	public function delete($id)
 	{
-		$this->Element_html_model->delete_by_id($id);
+		$this->Element_connection_model->delete_by_id($id);
 		$this->session->set_flashdata('error_message', alert_success('Delete succeded.'));
-		redirect('element_html');
+		redirect('element_connection');
 	}
 }

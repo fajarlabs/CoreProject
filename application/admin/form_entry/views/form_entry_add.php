@@ -14,26 +14,6 @@
 	  		var select_product      = "<?php echo @$product_type; ?>" ;
 	  		var search_name         = 'timelog_'+select_product.toLowerCase()+'_'+select_intervention.toLowerCase();
 
-	  		$("#table_list_timelog tr").remove();
-	  		$("#table_list_timelog").append(header_tr);
-
-	  		// =============================================================================
- 	  		// START ELEMENT TIMELOG BERDASARKAN PRODUK DAN INTERVENSI
- 	  		// =============================================================================
-	  		$.get('<?php echo base_url(); ?>index.php/form_entry/get_timelog_json/'+search_name,function(json) {
-	  			var row_data = JSON.parse(json.rows[0].DATA);
-	  			for(var i=0; i < row_data.length; i++) {
-
-	  				$("#table_list_timelog").append("<tr><td>"+(i+1)+"</td><td>"+row_data[i].activities+"</td><td><input style=\"margin-left:-10px;width:60px;\" class=\"timepicker\" type=\"text\" name=\""+row_data[i].time+"\" /></td><td><input style=\"min-width:100px !important;width:100px;margin-left:-10px;\" class=\"datepicker\" data-date-format=\"dd/mm/yyyy\" type=\"text\" name=\""+row_data[i].date+"\" /></td><td><input style=\"margin-left:-10px;width:100%;\" class=\"\" type=\"text\" name=\""+row_data[i].remarks+"\" /></td></tr>");
-	  			}
-	  			$("#table_list_timelog").append(footer_tr);
-
-	  			// datepicker
-	  			$('.datepicker').datepicker({dateFormat:'dd/mm/yy'});
-	  			// timepicker
-	  			$('.timepicker').timepicker({defaultTime: '0:00',showMeridian: false,minuteStep: 1,showSeconds: false,showMeridian: false});
-	  		});
-
 	  		// =============================================================================
  	  		// END ELEMENT TIMELOG BERDASARKAN PRODUK DAN INTERVENSI
  	  		// =============================================================================
@@ -430,7 +410,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 				<tr>
 					<td style="width:135px;">Area</td>
 					<td colspan="2">
-						<input onkeydown="initArea(this)"" type="text" style="width:300px;" name="area" />
+						<input onkeydown="initArea(this)" type="text" style="width:300px;" name="area" />
 					</td>
 				</tr>
 				<tr>
@@ -596,9 +576,8 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 		</td>									
 	</tr>
 	<tr class="timelog">
-		<td colspan="2">
-			<table id="table_list_timelog" style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
-			</table>
+		<td id="el_div_timelog" colspan="2">
+			<?php echo @$setup_timelog; ?>
 		</td>
 	</tr>
 	<tr>
@@ -616,8 +595,8 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 		</td>									
 	</tr>
 	<tr class="quality">
-		<td colspan="2">
-			<?php echo @$html_quantity; ?>
+		<td id="el_div_quality" colspan="2">
+			<?php echo @$setup_quality; ?>
 		</td>
 	</tr>
 	<tr>

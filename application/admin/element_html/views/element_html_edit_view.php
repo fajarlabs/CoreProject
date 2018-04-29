@@ -4,7 +4,7 @@
 	<?php echo create_breadcrumb('Home'); ?>
 	<!-- end breadcrumb -->
 	<!-- begin page-header -->
-	<h1 class="page-header">HTML Element Management <small>Function to create element HTML</small></h1>
+	<h1 class="page-header">Element Management <small>Function to create form element</small></h1>
 	<!-- end page-header -->
 
     <!-- begin front message -->
@@ -36,7 +36,7 @@
 							<td><?php echo form_input(array('value' => @$item->result()[0]->NAME ,'id' => 'title','type' => 'text', 'name' => 'title','class' => 'form-control','required' => 'required')); ?></td>
 						</tr>
 						<tr>
-							<td width="150px" style="padding-top:15px;"><?php echo form_label('Article*') ?></td>
+							<td width="150px" style="padding-top:15px;"><?php echo form_label('HTML Content*') ?></td>
 							<td><?php echo form_textarea(array('id'=>'mytextarea','type' => 'text', 'name' => 'content','class' => 'form-control', 'value' =>  '<template>'.html_entity_decode(stripslashes(@$item->result()[0]->DATA)).'</template>' )); ?></td>
 
 						</tr>

@@ -27,6 +27,14 @@ class Area_model extends CI_Model
 		return $this->db->get();
     }
 
+    public  function get_item_by_name($area) 
+    {
+		$this->db->select('*');
+		$this->db->from($this->table);
+		$this->db->where('AREA_NAME', $area); 
+		return $this->db->get();
+    }
+
     public function save($array_col_val = array())
     {
     	$this->db->insert($this->table,$array_col_val);

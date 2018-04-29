@@ -30,7 +30,9 @@ class Form_entry extends MY_Controller
 				'cv/Cv_model',
 				'Form_entry_model',
 				'Komponen_json_model',
-				'Komponen_html_model'
+				'Komponen_html_model',
+				'element_connection/Element_connection_model',
+				'element_html/Element_html_model'
 			));
 
 		$this->data['csrf'] = array(
@@ -300,19 +302,48 @@ class Form_entry extends MY_Controller
 		$this->data['intervention_id'] 	 = strtolower(str_replace(" ", "_", $this->input->get("select_intervention")));
 
 		// intervention name
-		$intervention_query = $this->Intervention_model->get_item_by_id((int)$this->input->get("select_intervention"));
+		$intervention_id = (int)$this->input->get("select_intervention");
+		$intervention_query = $this->Intervention_model->get_item_by_id($intervention_id);
 		$intervention_name  = isset($intervention_query->result()[0]->INTERVENTION_NAME) ? $intervention_query->result()[0]->INTERVENTION_NAME : '';
 		$this->data['select_intervention'] = str_replace(" ","_",strtolower($intervention_name));
 
 		// product name
-		$product_query = $this->Product_model->get_item_by_menu_id((int)$this->input->get("product_type"));
+		$product_id = (int)$this->input->get("product_type");
+		$product_query = $this->Product_model->get_item_by_menu_id($product_id);
 		$product_name  = isset($product_query->result()[0]->PRODUCT_NAME) ? $product_query->result()[0]->PRODUCT_NAME : '';
 		$this->data['product_type'] = str_replace(" ","_",strtolower($product_name));
 
 		$query = $this->Komponen_html_model->get_item_by_name(strtolower('quantity_'.$this->data['product_type'].'_'.$this->data['select_intervention']));
 
+		
 		$this->data['html_quantity'] = @$query->result()[0]->DATA;
 
+		$query_setup = $this->Element_connection_model->get_item_by_product_intervention($product_id,$intervention_id);
+		
+		$setup_timelog = '';
+		$setup_quality = '';
+		if($query_setup->num_rows() > 0):
+			foreach($query_setup->result() as $row_setup) :
+				// get timelog html
+				$query_timelog = $this->Element_html_model->get_item_by_id($row_setup->ELEMENT_TIMELOG_ID);
+				if($query_timelog->num_rows() > 0):
+					foreach($query_timelog->result() as $row_timelog):
+						$setup_timelog = $row_timelog->DATA;
+					endforeach;
+				endif;
+
+				// get quality html
+				$query_quality = $this->Element_html_model->get_item_by_id($row_setup->ELEMENT_QUALITY_ID);
+				if($query_quality->num_rows() > 0):
+					foreach($query_quality->result() as $row_quality):
+						$setup_quality = $row_quality->DATA;
+					endforeach;
+				endif;
+			endforeach;
+		endif;
+
+		$this->data['setup_timelog'] = $setup_timelog;
+		$this->data['setup_quality'] = $setup_quality;
 		$this->load->view('admin/header',$this->data);
 		$this->load->view('form_entry_add',$this->data);
 		$this->load->view('admin/footer',$this->data);
@@ -617,18 +648,47 @@ class Form_entry extends MY_Controller
 		$this->data['intervention_id'] 	 = strtolower($intervention_id);
 
 		// intervention name
-		$intervention_query = $this->Intervention_model->get_item_by_id((int)$intervention_id);
+		$intervention_id = (int)$intervention_id;
+		$intervention_query = $this->Intervention_model->get_item_by_id($intervention_id);
 		$intervention_name  = isset($intervention_query->result()[0]->INTERVENTION_NAME) ? $intervention_query->result()[0]->INTERVENTION_NAME : '';
 		$this->data['select_intervention'] = str_replace(" ","_",strtolower($intervention_name));
 
 		// product name
-		$product_query = $this->Product_model->get_item_by_menu_id((int)$product_type_id);
+		$product_id = (int)$product_type_id;
+		$product_query = $this->Product_model->get_item_by_menu_id($product_id);
 		$product_name  = isset($product_query->result()[0]->PRODUCT_NAME) ? $product_query->result()[0]->PRODUCT_NAME : '';
 		$this->data['product_type'] = str_replace(" ","_",strtolower($product_name));
 
 		$query = $this->Komponen_html_model->get_item_by_name(strtolower('quantity_'.$this->data['product_type'].'_'.$this->data['select_intervention']));
 
 		$this->data['html_quantity'] = @$query->result()[0]->DATA;
+
+		$query_setup = $this->Element_connection_model->get_item_by_product_intervention($product_id,$intervention_id);
+		
+		$setup_timelog = '';
+		$setup_quality = '';
+		if($query_setup->num_rows() > 0):
+			foreach($query_setup->result() as $row_setup) :
+				// get timelog html
+				$query_timelog = $this->Element_html_model->get_item_by_id($row_setup->ELEMENT_TIMELOG_ID);
+				if($query_timelog->num_rows() > 0):
+					foreach($query_timelog->result() as $row_timelog):
+						$setup_timelog = $row_timelog->DATA;
+					endforeach;
+				endif;
+
+				// get quality html
+				$query_quality = $this->Element_html_model->get_item_by_id($row_setup->ELEMENT_QUALITY_ID);
+				if($query_quality->num_rows() > 0):
+					foreach($query_quality->result() as $row_quality):
+						$setup_quality = $row_quality->DATA;
+					endforeach;
+				endif;
+			endforeach;
+		endif;
+
+		$this->data['setup_timelog'] = $setup_timelog;
+		$this->data['setup_quality'] = $setup_quality;
 
 		$this->load->view('admin/header',$this->data);
 		$this->load->view('form_entry_edit',$this->data);

@@ -4,7 +4,7 @@
 	<?php echo create_breadcrumb('Home'); ?>
 	<!-- end breadcrumb -->
 	<!-- begin page-header -->
-	<h1 class="page-header">Element HTML Management <small>Function to create element html</small></h1>
+	<h1 class="page-header">Element Management <small>Function to create form element</small></h1>
 	<!-- end page-header -->
 
     <!-- begin front message -->
@@ -25,7 +25,7 @@
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                     </div>
-                    <h4 class="panel-title">Element HTML Management - Table</h4>
+                    <h4 class="panel-title">Element Management - Table</h4>
                 </div>
                 <div class="panel-body" style="overflow-x: hidden;">
                 	<br />
