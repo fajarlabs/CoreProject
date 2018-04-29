@@ -258,6 +258,11 @@ class Element_connection extends MY_Controller
 		$el_quality_id   = $this->input->post('element_quality');
 		$field_element   = $this->input->post('field_element');
 		$field_element   = json_encode(explode(",",$field_element));
+		
+		$element_r1   = $this->input->post('element_r1');
+		$element_r2   = $this->input->post('element_r2');
+		$element_r3   = $this->input->post('element_r3');
+		$element_r4   = $this->input->post('element_r4');
 
 		$insert = array(
 			'NAME'               => addslashes($title),
@@ -267,6 +272,10 @@ class Element_connection extends MY_Controller
 			'ELEMENT_TIMELOG_ID' => $el_timelog_id,
 			'ELEMENT_QUALITY_ID' => $el_quality_id,
 			'ELEMENT_FIELDS'     => $field_element,
+			'ELEMENT_R1'         => $element_r1,
+			'ELEMENT_R2'         => $element_r2,
+			'ELEMENT_R3'         => $element_r3,
+			'ELEMENT_R4'         => $element_r4,
 			'IS_DELETE'          => 0,
 		);
 
@@ -285,6 +294,11 @@ class Element_connection extends MY_Controller
 		$el_timelog_id   = $this->input->post('element_timelog');
 		$el_quality_id   = $this->input->post('element_quality');
 
+		$element_r1   = $this->input->post('element_r1');
+		$element_r2   = $this->input->post('element_r2');
+		$element_r3   = $this->input->post('element_r3');
+		$element_r4   = $this->input->post('element_r4');
+
 		$insert = array(
 			'NAME'               => addslashes($title),
 			'DATA'               => pg_escape_string ($content),
@@ -292,6 +306,10 @@ class Element_connection extends MY_Controller
 			'INTERVENTION_ID'    => $intervention_id,
 			'ELEMENT_TIMELOG_ID' => $el_timelog_id,
 			'ELEMENT_QUALITY_ID' => $el_quality_id,
+			'ELEMENT_R1'         => $element_r1,
+			'ELEMENT_R2'         => $element_r2,
+			'ELEMENT_R3'         => $element_r3,
+			'ELEMENT_R4'         => $element_r4,
 			'IS_DELETE'          => 0,
 		);
 
