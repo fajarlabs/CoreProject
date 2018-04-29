@@ -11,7 +11,7 @@ Target Server Type    : PGSQL
 Target Server Version : 90608
 File Encoding         : 65001
 
-Date: 2018-04-29 11:58:12
+Date: 2018-04-29 16:45:52
 */
 
 
@@ -243,7 +243,7 @@ CREATE SEQUENCE "public"."FORM_ENTRY_FIELD_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 58
+ START 59
  CACHE 1;
 
 -- ----------------------------
@@ -287,7 +287,7 @@ CREATE SEQUENCE "public"."KOMPONEN_HTML_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 22
+ START 37
  CACHE 1;
 
 -- ----------------------------
@@ -1333,8 +1333,8 @@ INSERT INTO "public"."APP_MENU" VALUES ('155', '2', '115', 'Personil', 'personil
 INSERT INTO "public"."APP_MENU" VALUES ('156', '2', '115', 'Skill', 'skill', 'Information Skill Personal', '_self', '', '3', '1', null, null, '0', null, '', null, null, null, null);
 INSERT INTO "public"."APP_MENU" VALUES ('157', '2', '115', 'Position', 'position', 'Position Personal', '_self', '', '4', '1', null, null, '0', null, '', null, null, null, null);
 INSERT INTO "public"."APP_MENU" VALUES ('158', '2', '103', 'Form', '', 'Form Setting', '_self', '', '0', '1', null, null, '0', null, '', null, '', null, null);
-INSERT INTO "public"."APP_MENU" VALUES ('159', '3', '158', 'Element JSON', 'element_json', 'Element JSON', '_self', '', '0', '1', null, null, '0', null, '', null, '', null, null);
-INSERT INTO "public"."APP_MENU" VALUES ('160', '3', '158', 'Element HTML', 'element_html', 'Create Element HTML', '_self', '', '1', '1', null, null, '0', null, '', null, '', null, null);
+INSERT INTO "public"."APP_MENU" VALUES ('159', '3', '158', 'Setup', 'element_connection', 'Element Connection', '_self', '', '0', '1', null, null, '0', null, '', null, '', null, null);
+INSERT INTO "public"."APP_MENU" VALUES ('160', '3', '158', 'Element', 'element_html', 'Create Element', '_self', '', '1', '1', null, null, '0', null, '', null, '', null, null);
 INSERT INTO "public"."APP_MENU" VALUES ('161', '2', '115', 'Strategi Business Unit', 'strategi_business_unit', 'Strategi Business Unit', '_self', '', '0', '1', null, null, '0', null, '', null, '', null, null);
 
 -- ----------------------------
@@ -1465,6 +1465,59 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Records of daemons
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for "public"."ELEMENT_CONNECTION"
+-- ----------------------------
+DROP TABLE "public"."ELEMENT_CONNECTION";
+CREATE TABLE "public"."ELEMENT_CONNECTION" (
+"ID" text DEFAULT gen_random_uuid() NOT NULL,
+"NAME" text,
+"DATA" text,
+"PRODUCT_ID" int4,
+"INTERVENTION_ID" int4,
+"IS_DELETE" int4,
+"CREATE_TIME" timestamp(6),
+"CREATE_USER" text,
+"MODIFY_TIME" timestamp(6),
+"MODIFY_USER" text,
+"DELETE_TIME" timestamp(6),
+"ELEMENT_TIMELOG_ID" text,
+"ELEMENT_QUALITY_ID" text
+)
+WITH (OIDS=FALSE)
+
+;
+
+-- ----------------------------
+-- Records of ELEMENT_CONNECTION
+-- ----------------------------
+INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('044736a3-df87-4b8f-9a24-a74ac39a29b6', 'Setup Crude Bunker Pipe', '<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>', '6', '21', '0', null, null, null, null, null, '36', '21');
+INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('25b45faa-235f-461c-84da-2fe52255ee9c', 'Setup Petrokimia Loading', '<div id="selenium-highlight">&nbsp;</div>', '8', '14', '0', null, null, null, null, null, '28', '24');
+INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('2aef8807-bb3c-4cb2-9a0b-ae1c53c8a33b', 'Setup Petrokimia Discharge', '<div id="selenium-highlight">&nbsp;</div>', '8', '15', '0', null, null, null, null, null, '29', '25');
+INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('4d877458-bafc-4542-acf0-b93d5f620e26', 'Setup Crude Loading', '<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>', '6', '14', '0', null, null, null, null, null, '32', '17');
+INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('523c5a99-2fd8-4e59-af75-36a308c00641', 'Setup Gas Loading', '<div id="selenium-highlight">&nbsp;</div>', '9', '14', '0', null, null, null, null, null, '30', '22');
+INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('5ba15f93-c5aa-41c0-be10-f4323f63f45a', 'Setup Crude Discharge', '<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>', '6', '15', '0', null, null, null, null, null, '34', '18');
+INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('9828f26c-4361-4c4c-9267-c1bedc4aa617', 'Setup Product Loading', '<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>', '7', '14', '0', null, null, null, null, null, '37', '19');
+INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('b061ea1d-da64-400b-ae09-3338a15e7e7d', 'Setup Crude Bunker Vessel', '<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>', '6', '25', '0', null, null, null, null, null, '35', '26');
+INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('c0c8844d-4599-4256-bb3b-2ef427df7677', 'Setup Product Discharge', '<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>', '7', '15', '0', null, null, null, null, null, '27', '20');
+INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('dd727c4c-34c0-4917-82d5-abcf945d1625', 'Setup Gas Dishcarge', '<div id="selenium-highlight">&nbsp;</div>', '9', '15', '0', null, null, null, null, null, '31', '23');
 
 -- ----------------------------
 -- Table structure for "public"."FORM_ENTRY_FIELD"
@@ -2024,12 +2077,13 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('51', 'Calm', 'IWO/24/04/2018/002', '["LOI\/24\/04\/2018\/001","LOI\/24\/04\/2018\/002"]', '["VOY\/24\/04\/2018\/001","LOI\/24\/04\/2018\/002"]', 'Semarang', '["on","off"]', '["off","off"]', '["off","off"]', '["off","on"]', '["KONTRAK\/24\/04\/2018\/001","KONTRAK\/24\/04\/2018\/002"]', '["HSD","MFO"]', '1970-01-01', '05:00:00', null, null, 'FO/24/04/2018/002', null, '', 'multi_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-24', '04:00:00', null, null, '["Semarang","Makasar"]', '321234', 'multi_client', null, null, null, '00:00:00', null, null, null, 'multi_product', null, null, null, null, '1970-01-01', '', 'yes', 'yes', '04:11:00', null, null, null, '2018-04-24', '', null, null, null, null, '00:00:00', null, null, '1000', '1000', '121002', '121003', null, null, null, '-0.006343262036937747', '0.01890831252229754', '', null, null, '2018-04-24', '03:00:00', '121002', '', 'yes', null, '0.00247320692497939', '00:00:00', null, '1000', '1000', null, null, '1970-01-01', '', '14', null, null, '03:00:00', null, '00:00:00', '121001', '121241', '0.010729164991072434', '123000', null, '2018-04-24', '03:00:00', '', null, null, null, null, '121004', null, '', null, '0.019703156393803874', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '1000', '1000', '00:00:00', '00:00:00', null, null, '1000', null, null, '', '', '', '', '1000', '1000', null, null, '', '', '1000', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-25 00:08:17', null, null, 'admin', null, null, '123400', '123203', '121232', '123234', '134321', '124300', null, '112999', null, null, '124000', null, null, '00:00:00', null, '', '143233', '00:00:00', '123532', null, null, '', '', null, null, '-0.006343262036937747', '0.01890831252229754', '00:00:00', '00:00:00', '0.00247320692497939', '125400', null, null, '', '', '0.010729164991072434', '00:00:00', '00:00:00', '0.019703156393803874', '', '', 'Y', null, null, '["chevron-certification1.jpg"]', '["Indra - SBU AE Migas","Bagos W - SBU AE Migas","",""]', '"PENGHARGAAN_PERTAMINA1.JPG"', '"Sertifikat_HSE1.png"', '"Sertifikat-Prakualifikasi-CSMS1.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Kelud', '0', '["CUSTOMER1","CUSTOMER2"]', '122000', '123000', '123400', '122000', '123000', '121000', '121000', '122000', '123000', '121000', '123103', '123303', '123100', '121103', '123203', '123403', '123103', '123103', '124000', '123992', '121023', '125300', '120300', '123234', '121342', '124309', '123432', '121300', '123332', '121231', '124334', '123432', '123300', '123321', '121234', '124343', '123432', '123342', '123433', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["0","0","0","0"]');
 INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('52', 'Calm', 'IWO/24/04/2008/003', '["LOI\/24\/04\/2008\/003"]', '["VOY\/24\/04\/2008\/003"]', 'Semarang', '["on"]', '["off"]', '["off"]', '["off"]', '["KONTRAK\/24\/04\/2008\/003"]', '["MFO"]', '2018-04-04', '03:00:00', null, null, 'FO/24/04/2008/003', null, '', 'single_port', '[""]', null, null, null, null, '6', null, null, '00:00:00', null, '05:00:00', null, null, '["Semarang"]', '100000', 'single_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-04', '', 'yes', 'yes', '04:00:00', null, null, null, '1970-01-01', '', null, null, null, null, '00:00:00', null, null, '100000', '100000', '92335', '92345', null, null, null, '-0.08190145807360832', '-0.07330069748299614', '', null, null, null, '03:00:00', '94300', '', 'yes', null, '-0.061513631784751034', '00:00:00', null, '100000', '100000', null, null, '2018-04-04', '', '14', null, null, '03:00:00', null, '00:00:00', '92300', '92366', '-0.0744884806602905', '98000', null, null, '02:00:00', '', null, null, null, null, '92334', null, '', null, '-0.07402314779727813', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '100000', '100000', '00:00:00', '00:00:00', null, null, '100000', null, null, '', '', '', '', '100000', '100000', null, null, '', '', '100000', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-25 00:07:41', null, null, 'admin', null, null, '92000', '93000', '92334', '92343', '92326', '92332', null, '92342', null, null, '92375', null, null, '00:00:00', null, '', '92373', '00:00:00', '92376', null, null, '', '', null, null, '-0.08190145807360832', '-0.07330069748299614', '00:00:00', '00:00:00', '-0.061513631784751034', '94000', null, null, '', '', '-0.0744884806602905', '00:00:00', '00:00:00', '-0.07402314779727813', '', '', 'Y', null, null, '["chevron-certification2.jpg"]', '["Indra - SBU AE Migas","Iwan - SBU AE Migas"]', '"PENGHARGAAN_PERTAMINA2.JPG"', '"Sertifikat_HSE2.png"', '"Sertifikat-Prakualifikasi-CSMS2.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Gunung Dempo', '0', '["CUSTOMER3"]', '99000', '99500', '99700', '99550', '99890', '98000', '99100', '99800', '99200', '99200', '96000', '96000', '98000', '94000', '95000', '93000', '99000', '93000', '92353', '92365', '92375', '92600', '92324', '92354', '92367', '92335', '92335', '92321', '92332', '92245', '92323', '92363', '92311', '92337', '92342', '92356', '92337', '92327', '92364', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["0","0"]');
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('53', 'Calm', 'IWO/24/04/2008/004', '["LOI\/24\/04\/2008\/004"]', '["VOY\/24\/04\/2008\/004"]', 'Surabaya', 'on', null, null, null, '["KONTRAK\/24\/04\/2008\/004"]', '["HSD"]', '2018-04-26', '04:00:00', null, null, 'FO/24/04/2008/004', null, '', 'single_port', '100', null, null, null, null, '6', null, null, null, '2018-04-25', '03:00:00', null, null, '["Surabaya"]', '125000', 'single_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-25', null, 'yes', 'yes', '03:00:00', null, null, null, '2018-04-25', '', null, null, null, null, '00:00:00', null, null, '125000', '125000', null, null, null, null, null, null, null, 'Arrived', null, null, '2018-04-25', '03:00:00', null, '', 'yes', null, null, null, null, '125000', '125000', null, null, '2018-04-25', '', '15', null, '00:00:00', '02:00:00', null, '00:00:00', null, null, null, null, null, '2018-04-24', '03:00:00', null, null, null, null, null, null, '', '', null, null, '00:00:00', null, null, '00:00:00', null, null, null, '00:00:00', '125000', '125000', null, null, null, null, '125000', null, '00:00:00', '', null, null, '', '125000', '125000', null, null, null, null, '125000', null, null, null, null, null, '', null, null, null, null, null, '0', '2018-04-25 00:39:58', null, null, 'admin', null, null, '123212', '124502', null, null, null, null, null, null, null, null, null, '00:00:00', '00:00:00', '00:00:00', null, '', null, '00:00:00', null, '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["chevron-certification3.jpg"]', '["Bagos W - SBU AE Migas"]', '"PENGHARGAAN_PERTAMINA3.JPG"', '"Sertifikat_HSE3.png"', '"Sertifikat-Prakualifikasi-CSMS3.jpg"', null, '00:00:00', null, '00:00:00', null, '00:00:00', null, null, '00:00:00', '00:00:00', null, null, '00:00:00', null, '00:00:00', null, '00:00:00', null, '00:00:00', '00:00:00', null, null, null, null, '125502', '124502', '124502', '124502', '124502', '123324', '123423', '124323', '123342', '123345', '122324', '123342', '123345', '123234', '124224', '124234', '124323', '123335', '123341', null, '124452', '0.007968000509952033', '-0.06883289339443896', '0.032111933944836225', '-0.0139997695511185', '0.0024129163900179756', '-0.02704084999670032', '-0.07894951938795527', '0.022858671942784396', '0.00115124245003851', '0.009000748051446635', '0.026328894314950765', '0.00937636637463361', '0.0014493692409839516', '0.015618266268694832', '-0.014865063427535878', '0', '-0.06883289339443896', '0.02427491052776473', '0.01675152830760882', '-0.005730518685409218', 'KM Dobonsolo', '0', '["CUSTOMER4"]', '125004', '124004', '120003', '120003', '120005', '124502', '132003', '120504', '123203', '123204', '124502', '125402', '125302', '124502', '123502', '123502', '125302', '122502', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '125502', '123502', '124502', '121502', '123502', '125502', '123502', '125502', '125502', '123502', '123224', '123242', '124234', '123342', '123342', '121224', '122344', '123323', '123345', '124323', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('53', 'Calm', 'IWO/24/04/2008/004', '["LOI\/24\/04\/2008\/004"]', '["VOY\/24\/04\/2008\/004"]', 'Surabaya', '["off"]', '["off"]', '["off"]', '["off"]', '["KONTRAK\/24\/04\/2008\/004"]', '["HSD"]', '2018-04-26', '04:00:00', null, null, 'FO/24/04/2008/004', null, '', 'single_port', '[""]', null, null, null, null, '6', null, null, null, '2018-04-25', '03:00:00', null, null, '["Surabaya"]', '125000', 'single_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-25', null, 'yes', 'yes', '03:00:00', null, null, null, '2018-04-25', '', null, null, null, null, '00:00:00', null, null, '125000', '125000', null, null, null, null, null, null, null, 'Arrived', null, null, '2018-04-25', '03:00:00', null, '', 'yes', null, null, null, null, '125000', '125000', null, null, '2018-04-25', '', '15', null, '00:00:00', '02:00:00', null, '00:00:00', null, null, null, null, null, '2018-04-24', '03:00:00', null, null, null, null, null, null, '', '', null, null, '00:00:00', null, null, '00:00:00', null, null, null, '00:00:00', '125000', '125000', null, null, null, null, '125000', null, '00:00:00', '', null, null, '', '125000', '125000', null, null, null, null, '125000', null, null, null, null, null, '', null, null, null, null, null, '0', '2018-04-29 16:13:39', null, null, 'admin', null, null, '123212', '124502', null, null, null, null, null, null, null, null, null, '00:00:00', '00:00:00', '00:00:00', null, '', null, '00:00:00', null, '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["chevron-certification3.jpg"]', '["Bagos W - SBU AE Migas"]', '"PENGHARGAAN_PERTAMINA3.JPG"', '"Sertifikat_HSE3.png"', '"Sertifikat-Prakualifikasi-CSMS3.jpg"', null, '00:00:00', null, '00:00:00', null, '00:00:00', null, null, '00:00:00', '00:00:00', null, null, '00:00:00', null, '00:00:00', null, '00:00:00', null, '00:00:00', '00:00:00', null, null, null, null, '125502', '124502', '124502', '124502', '124502', '123324', '123423', '124323', '123342', '123345', '122324', '123342', '123345', '123234', '124224', '124234', '124323', '123335', '123341', null, '124452', '0.007968000509952033', '-0.06883289339443896', '0.032111933944836225', '-0.0139997695511185', '0.0024129163900179756', '-0.02704084999670032', '-0.07894951938795527', '0.022858671942784396', '0.00115124245003851', '0.009000748051446635', '0.026328894314950765', '0.00937636637463361', '0.0014493692409839516', '0.015618266268694832', '-0.014865063427535878', '0', '-0.06883289339443896', '0.02427491052776473', '0.01675152830760882', '-0.005730518685409218', 'KM Dobonsolo', '0', '["CUSTOMER4"]', '125004', '124004', '120003', '120003', '120005', '124502', '132003', '120504', '123203', '123204', '124502', '125402', '125302', '124502', '123502', '123502', '125302', '122502', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '125502', '123502', '124502', '121502', '123502', '125502', '123502', '125502', '125502', '123502', '123224', '123242', '124234', '123342', '123342', '121224', '122344', '123323', '123345', '124323', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["0"]');
 INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('54', 'Calm', 'IWO/24/04/2008/004', '["LOI\/24\/04\/2008\/005"]', '["VOY\/24\/04\/2008\/004"]', 'Surabaya', 'on', null, null, null, '["KONTRAK\/24\/04\/2008\/005"]', '["HSD"]', '2018-04-25', '05:00:00', null, null, 'FO/24/04/2008/004', null, '', 'single_port', '100', null, null, null, null, '6', null, null, null, '2018-04-25', '01:00:00', null, null, '["Surabaya"]', 'GSSWDS', 'single_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-25', null, 'yes', 'yes', '04:00:00', null, null, null, '2018-05-29', '', null, null, null, null, '00:00:00', null, null, '49434', '49434', null, null, null, null, null, null, null, '', null, null, '2018-04-25', '01:00:00', null, '', 'yes', null, null, null, null, '49434', '49434', null, null, '2018-04-23', '', '15', null, '00:00:00', '02:08:00', null, '00:00:00', null, null, null, null, null, '2018-04-25', '02:00:00', null, null, null, null, null, null, '', '', null, null, '00:00:00', null, null, '00:00:00', null, null, null, '00:00:00', '49434', '49434', null, null, null, null, '49434', null, '00:00:00', '', null, null, '', '49434', '49434', null, null, null, null, '49434', null, null, null, null, null, '', null, null, null, null, null, '0', '2018-04-25 01:11:12', null, null, 'admin', null, null, '49532', '49532', null, null, null, null, null, null, null, null, null, '00:00:00', '00:00:00', '00:00:00', null, '', null, '00:00:00', null, '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["PENGHARGAAN_PERTAMINA5.JPG"]', '["Indra - SBU AE Migas","Iwan - SBU AE Migas"]', '"chevron-certification5.jpg"', '"Sertifikat_HSE5.png"', '"Sertifikat-Prakualifikasi-CSMS5.jpg"', null, '00:00:00', null, '00:00:00', null, '00:00:00', null, null, '00:00:00', '00:00:00', null, null, '00:00:00', null, '00:00:00', null, '00:00:00', null, '00:00:00', '00:00:00', null, null, null, null, '49534', '49543', '49323', '49512', '49532', '49489', '49423', '49234', '49523', '49523', '49434', '49523', '49553', '49532', '49434', '49323', '49543', '49523', '49544', null, '49234', '0.00026255730818168965', '0.001655428594500747', '0', '-0.0007876878332525448', '-0.00014131707514030767', '-0.0015579790785666592', '-0.004427834423365967', '0', '0.00006054001695120475', '-0.0017794673730612905', '0.0022005975934749253', '0.005815597108355882', '-0.0008285841316034114', '-0.00086849387004908', '0.0011916303118435934', '0.0006460469999192441', '0.0014135131860587213', '-0.0008285841316034114', '-0.0008079012744642604', '-0.0005857165939570205', 'KM Dobonsolo', '0', '["CUSTOMER4"]', '49520', '49542', '49510', '49511', '49522', '49500', '49452', '49523', '49551', '49541', '49543', '49423', '49512', '49522', '49522', '49482', '49511', '49512', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '49513', '49534', '49523', '49512', '49534', '49521', '49523', '49482', '49532', '49543', '49423', '49423', '49523', '49511', '49542', '49423', '49234', '49523', '49554', '49453', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1","1"]');
 INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('55', 'Calm', 'IWO/24/04/2008/006', '["LOI\/24\/04\/2008\/006"]', '["VOY\/24\/04\/2008\/006"]', 'Semarang', 'on', null, null, null, '["KONTRAK\/24\/04\/2008\/006"]', '["HSD"]', '2018-04-25', '03:00:00', '95225', '95253', 'FO/24/04/2008/006', '95221', '', 'single_port', '100', '95223', '95223', null, '95223', '7', null, '95253', '00:00:00', '2018-04-25', '02:00:00', null, null, '["Semarang"]', '95232', 'single_client', '95252', '95263', '94500', '00:00:00', null, null, '95224', 'single_product', '95253', '95253', '00:00:00', '00:00:00', '2018-04-25', '', 'yes', 'yes', '03:00:00', '96000', '95000', null, '2018-04-25', '', '94332', '94132', '95223', '95223', '00:00:00', '95223', '94000', '95232', '95232', '95255', '95253', '', '', '94232', '-0.008159793327242367', '0.0023418711865830734', '', null, null, '2018-04-25', '02:02:00', '95231', '', 'yes', '95253', '0.013154441329931866', '00:00:00', '95000', '95232', '95232', null, null, '2018-04-25', '', '14', '94432', '00:00:00', '03:00:00', null, '00:00:00', '95253', '95251', '0.0026560843228034814', '94234', '96000', '2018-04-25', '02:00:00', '', null, null, null, null, '95223', '', '', '94235', '-0.008159793327242367', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '95232', '95232', '00:00:00', '00:00:00', null, null, '95232', '00:00:00', '00:00:00', '', '', '', '', '95232', '95232', null, null, '', '', '95232', '-0.008159793327242367', '0.0023418711865830734', '00:00:00', '00:00:00', '', '', '0.013154441329931866', '', '', '0.0026560843228034814', '-0.008159793327242367', '0', '2018-04-25 01:23:21', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["chevron-certification6.jpg"]', '["Bagos W - SBU AE Migas","Indra - SBU AE Migas"]', '"PENGHARGAAN_PERTAMINA6.JPG"', '"Sertifikat_HSE6.png"', '"Sertifikat-Prakualifikasi-CSMS6.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Umsini', '0', '["CUSTOMER6"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1","1"]');
 INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('56', 'Calm', 'IWO/24/04/2008/007', '["LOI\/24\/04\/2008\/007"]', '["VOY\/24\/04\/2008\/007"]', 'Semarang', 'on', null, null, null, '["KONTRAK\/24\/04\/2008\/007"]', '["HSD"]', '2018-04-25', '04:00:00', null, null, 'FO/24/04/2008/007', null, '', 'single_port', '100', null, null, null, null, '7', null, null, null, '2018-04-24', '02:00:00', null, null, '["Surabaya"]', '151343', 'single_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-25', null, 'yes', 'yes', '02:00:00', '15130', '15220', null, '2018-04-18', '', null, null, null, null, '00:00:00', null, '15130', '151343', '151343', null, null, null, null, null, '90.00224668613794', '89.94204450083596', '', null, null, '2018-04-24', '02:00:00', null, '', 'yes', null, '90.00204848973442', null, '15120', '151343', '151343', null, null, '2018-04-26', '', '15', null, '00:00:00', '03:00:00', null, '00:00:00', null, null, '90.00944873565345', null, '15130', '2018-04-26', '02:00:00', null, null, null, null, null, null, '', '', null, '90.00151992757215', '00:00:00', null, null, '00:00:00', null, null, null, '00:00:00', '151343', '151343', null, null, null, null, '151343', null, '00:00:00', '', null, null, '', '151343', '151343', null, null, null, null, '151343', null, null, null, null, null, '', null, null, null, null, null, '0', '2018-04-25 01:32:47', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', '00:00:00', '00:00:00', null, '', null, '00:00:00', null, '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["PENGHARGAAN_PERTAMINA7.JPG"]', '["Iwan - SBU AE Migas","Indra - SBU AE Migas"]', '"Sertifikat_HSE7.png"', '"Sertifikat-Prakualifikasi-CSMS7.jpg"', '"Sertifikat_HSE8.png"', null, '00:00:00', null, '00:00:00', null, '00:00:00', null, null, '00:00:00', '00:00:00', null, null, '00:00:00', null, '00:00:00', null, '00:00:00', null, '00:00:00', '00:00:00', '151343', '151343', '151343', '151343', null, null, null, null, null, '151311', '151310', '151334', '151341', '151311', '151331', '151352', '151323', '151323', '151312', '151343', '151323', '151343', '151334', '151343', '151311', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Kelud', '0', '["CUSTOMER7"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, '151331', '151323', '151334', '151343', '151323', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '151311', '151331', '151311', '151310', '151312', '151310', '151341', '-0.007929637681638263', '-0.021148495482813542', '0.019160632168719275', '-0.007269218823311724', '-0.013216761496930405', '-0.013217809676758464', '0.013216062802730438', '-0.027096509837354853', '-0.008591633071178375', '-0.007269747277149201', '90.00072697953222', '89.94257620712214', '90.00072697953222', '90.00726984336792', '90.00079306333933', '["1","1"]');
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('57', 'Calm', 'IWO/24/04/2008/007 	', '["LOI\/24\/04\/2008\/007"]', '["VOY\/24\/04\/2008\/007"]', 'Makasar', 'on', null, null, null, '["KONTRAK\/24\/04\/2008\/007"]', '["MFO"]', '2018-04-25', '02:00:00', '124353', '124353', 'FO/24/04/2008/007 	', '124315', '', 'single_port', '100', '124311', '124323', null, '124323', '7', null, '124323', '00:00:00', '2018-04-25', '03:00:00', null, null, '["Makasar"]', '125000', 'single_client', '124353', '124325', '123000', '00:00:00', null, null, '124324', 'single_product', '124342', '124354', '00:00:00', '00:00:00', '2018-04-25', '', 'yes', 'yes', '02:00:00', '125000', '125000', null, '2018-04-25', '', '123400', '122320', '124343', '124342', '00:00:00', '124353', '125000', '124300', '124300', '124323', '124356', '', '', '123000', '-0.00554255053856859', '-0.005445492788944926', '', null, null, '2018-04-25', '03:00:00', '124321', '', 'yes', '124354', '-0.005445492788944926', '00:00:00', '125000', '124300', '124300', null, null, '2018-04-25', '', '14', '123240', '00:00:00', '02:00:00', null, '00:00:00', '124312', '124321', '-0.005194846969136497', '125000', '125000', '2018-04-25', '02:00:00', '', null, null, null, null, '124323', '', '', '125343', '-0.005291856331730228', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '124300', '124300', '00:00:00', '00:00:00', null, null, '124300', '00:00:00', '00:00:00', '', '', '', '', '124300', '124300', null, null, '', '', '124300', '-0.00554255053856859', '-0.005445492788944926', '00:00:00', '00:00:00', '', '', '-0.005445492788944926', '', '', '-0.005194846969136497', '-0.005291856331730228', '0', '2018-04-25 02:39:53', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, null, '["Bagos W - SBU AE Migas","Indra - SBU AE Migas"]', '"chevron-certification7.jpg"', '"PENGHARGAAN_PERTAMINA8.JPG"', '"Sertifikat-Prakualifikasi-CSMS8.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Dobonsolo', '0', '["CUSTOMER7"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1","1"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('57', 'Calm', 'IWO/24/04/2008/007 	', '["LOI\/24\/04\/2008\/007"]', '["VOY\/24\/04\/2008\/007"]', 'Makasar', '["on"]', '["off"]', '["off"]', '["off"]', '["KONTRAK\/24\/04\/2008\/007"]', '["MFO"]', '2018-04-27', '04:00:00', '124353', '124353', 'FO/24/04/2008/007 	', '124315', 'Rainy', 'single_port', '["100"]', '124311', '124323', null, '124323', '7', null, '124323', '00:00:00', '2018-04-25', '03:00:00', null, null, '["Makasar"]', '125000', 'single_client', '124353', '124325', '123000', '00:00:00', null, null, '124324', 'single_product', '124342', '124354', '00:00:00', '00:00:00', '2018-04-26', '', 'yes', 'yes', '03:00:00', '125000', '125000', null, '2018-04-25', '', '123400', '122320', '124343', '124342', '00:00:00', '124353', '125000', '124300', '124300', '124323', '124356', '', '', '123000', '-0.00554255053856859', '-0.005445492788944926', '', null, null, '2018-04-25', '03:00:00', '124321', 'Cloudy', 'yes', '124354', '-0.005445492788944926', '00:00:00', '125000', '124300', '124300', null, null, '2018-04-25', '', '14', '123240', '00:00:00', '02:00:00', null, '00:00:00', '124312', '124321', '-0.005194846969136497', '125000', '125000', '2018-04-25', '02:00:00', '', null, null, null, null, '124323', '', 'Cloudy', '', '-0.005291856331730228', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '124300', '124300', '00:00:00', '00:00:00', null, null, '124300', '00:00:00', '00:00:00', '', '', '', '', '124300', '124300', null, null, '', '', '124300', '-0.00554255053856859', '-0.005445492788944926', '00:00:00', '00:00:00', '', '', '-0.005445492788944926', '', '', '-0.005194846969136497', '-0.005291856331730228', '0', '2018-04-29 16:43:38', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["20170430-0001.jpg"]', '["Bagos W - SBU AE Migas","Indra - SBU AE Migas"]', '"chevron-certification7.jpg"', '"PENGHARGAAN_PERTAMINA8.JPG"', '"Sertifikat-Prakualifikasi-CSMS8.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Dobonsolo', '0', '["CUSTOMER7"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["0","0"]');
 INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('58', 'Calm', 'IWO/24/04/2008/010', '["LOI\/24\/04\/2008\/011"]', '["VOY\/24\/04\/2008\/010"]', 'Semarang', '["off"]', '["off"]', '["off"]', '["on"]', '["KONTRAK\/24\/04\/2008\/010"]', '["MHO"]', '2018-04-26', '03:00:00', null, null, 'FO/24/04/2008/010', null, '', 'single_port', '["100"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-27', '00:00:00', '2018-04-26', null, '["Semarang"]', 'Premium', 'single_client', null, null, null, '04:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-26', '', 'yes', 'yes', '03:00:00', null, null, null, '2018-04-26', '', null, null, null, null, '00:00:00', null, null, '123000', '123000', '123002', '123002', null, null, null, '0.9016292153100712', '0.9008162336184189', '', null, null, '2018-04-26', '02:00:00', '123001', '', 'yes', null, '0.000008129750823137272', '00:00:00', null, '123000', '123000', null, null, '2018-04-26', '', '14', null, null, '03:00:00', null, '00:00:00', '123002', '123003', '0.9000040648754115', '123000', null, '2018-04-26', '02:00:00', '', null, null, null, null, '123004', null, '', null, '0.899189450663805', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '123000', '123000', '00:00:00', '00:00:00', null, null, '123000', null, null, '', '', '', '', '123000', '123000', null, null, '', '', '123000', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-25 13:52:05', null, null, 'admin', null, null, '123003', '123003', '123002', '123002', '123002', '123002', null, '123004', null, null, '123002', null, null, '00:00:00', null, '', '123002', '00:00:00', '123005', null, null, '', '', null, null, '0.9016292153100712', '0.9008162336184189', '00:00:00', '00:00:00', '0.000008129750823137272', '123003', null, null, '', '', '0.9000040648754115', '00:00:00', '00:00:00', '0.899189450663805', '', '', 'Y', null, null, '["chevron-certification8.jpg"]', '["Indra - SBU AE Migas","Bagos W - SBU AE Migas","",""]', '"PENGHARGAAN_PERTAMINA9.JPG"', '"Sertifikat-Prakualifikasi-CSMS9.jpg"', '"Sertifikat_HSE9.png"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Dobonsolo', '0', '["PELNI"]', '124000', '123003', '123000', '123320', '12301', '123004', '12200', '12100', '12300', '12400', '123002', '123004', '123002', '123001', '123004', '123005', '123002', '123006', '123002', '123004', '123003', '123004', '123004', '123003', '123003', '123003', '123005', '123005', '123004', '123004', '123005', '123003', '123003', '123003', '123002', '123004', '123005', '123002', '123003', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["0","0","0","0"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('59', '', '', '[""]', '[""]', '', null, null, null, null, '[""]', '[""]', null, '00:00:00', null, null, '', null, '', null, '100', null, null, null, null, '6', null, null, '00:00:00', null, '00:00:00', null, null, null, '', 'single_client', null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, '', null, null, '00:00:00', null, null, null, null, '', null, null, null, null, '00:00:00', null, null, '', '', '', '', null, null, null, '', '', '', null, null, null, '00:00:00', '', '', null, null, '', '00:00:00', null, '', '', null, null, null, '', '14', null, null, '00:00:00', null, '00:00:00', '', '', '', '', null, null, '00:00:00', '', null, null, null, null, '', null, '', null, '', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '', '', '00:00:00', '00:00:00', null, null, '', null, null, '', '', '', '', '', '', null, null, '', '', '', null, null, null, null, null, null, null, null, null, null, null, '1', '2018-04-29 12:43:58', null, null, 'admin', null, null, '', '', '', '', '', '', null, '', null, null, '', null, null, '00:00:00', null, '', '', '00:00:00', '', null, null, '', '', null, null, '', '', '00:00:00', '00:00:00', '', '', null, null, '', '', '', '00:00:00', '00:00:00', '', '', '', null, null, null, null, '[""]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '0', '["asdfasdfad"]', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["0"]');
 
 -- ----------------------------
 -- Table structure for "public"."gammu"
@@ -2375,22 +2429,24 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('4', 'bl_figure_crude_discharge', '
 					<td><input onkeyup="hitung(this)" style="width:100px;" type="text" name="sfal_metricton" class="" /></td>
 				</tr>
 			</table>', '0', null, null, null, null, null);
-INSERT INTO "public"."KOMPONEN_HTML" VALUES ('5', 'sf_product_loading', '			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
-				<tr>
-					<td>a)</td>
-					<td style="width:135px;">Shore Quantity</td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_quantity_klobs" class="" /></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_quantity_kl15" class="" /></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_quantity_bbls" class="" /></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_quantity_longton" class="" /></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_quantity_metricton	" class="" /></td>
-				</tr>
-				<tr>
-					<td>b)</td>
-					<td style="width:135px;">Shore Tanks Nomination</td>
-					<td colspan="5"><input onkeyup="hitung(this)" style="width:100%;" type="text" name="st_nomination" class="" /></td>
-				</tr>
-			</table>', '0', null, null, null, null, null);
+INSERT INTO "public"."KOMPONEN_HTML" VALUES ('5', 'sf_product_loading', '<table style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<td>a)</td>
+<td style="width: 135px;">Shore Quantity</td>
+<td><input class="" style="width: 100px;" name="sf_quantity_klobs" type="text" /></td>
+<td><input class="" style="width: 100px;" name="sf_quantity_kl15" type="text" /></td>
+<td><input class="" style="width: 100px;" name="sf_quantity_bbls" type="text" /></td>
+<td><input class="" style="width: 100px;" name="sf_quantity_longton" type="text" /></td>
+<td><input class="" style="width: 100px;" name="sf_quantity_metricton	" type="text" /></td>
+</tr>
+<tr>
+<td>b)</td>
+<td style="width: 135px;">Shore Tanks Nomination</td>
+<td colspan="5"><input class="" style="width: 100%;" name="st_nomination" type="text" /></td>
+</tr>
+</tbody>
+</table>', '0', null, null, null, null, null);
 INSERT INTO "public"."KOMPONEN_HTML" VALUES ('6', 'sf_product_discharge', '			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tr>
 					<td>a)</td>
@@ -2412,40 +2468,44 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('6', 'sf_product_discharge', '			<t
 					<td colspan="5"><input onkeyup="hitung(this)" style="width:100%;" type="text" name="sf_density_15c" class="" /></td>
 				</tr>
 			</table>', '0', null, null, null, null, null);
-INSERT INTO "public"."KOMPONEN_HTML" VALUES ('7', 'sf_crude_loading', '			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
-				<tr>
-					<td>a)</td>
-					<td style="width:150px;">Shore Quantity</td>
-					<td><!--<input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_sq_klobs" class="" />--></td>
-					<td><!--<input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_sq_kl15" class="" />--></td>
-					<td><!--<input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_sq_bbls" class="" />--></td>
-					<td><!--<input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_sq_longton" class="" />--></td>
-					<td><!--<input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_sq_metricton" class="" />--></td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td style="width:150px;">Gross Standard Volume</td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_gsv_klobs" class="" /></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_gsv_kl15" class="" /></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_gsv_bbls" class="" /></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_gsv_longton" class="" /></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_gsv_metricton" class="" /></td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td style="width:150px;">Net Standard Volume</td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_nsv_klobs" class="" /></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_nsv_kl15" class="" /></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_nsv_bbls" class="" /></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_nsv_longton" class="" /></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_nsv_metricton" class="" /></td>
-				</tr>
-				<tr>
-					<td>b)</td>
-					<td style="width:150px;">Shore Tanks Nomination</td>
-					<td colspan="5"><input onkeyup="hitung(this)" type="text" name="sf_shore_tanks_nomination_klobs" class="" /></td>
-				</tr>
-			</table>', '0', null, null, null, null, null);
+INSERT INTO "public"."KOMPONEN_HTML" VALUES ('7', 'sf_crude_loading', '<table style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<td>a)</td>
+<td style="width: 150px;">Shore Quantity</td>
+<td><!--<input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_sq_klobs" class="" />--></td>
+<td><!--<input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_sq_kl15" class="" />--></td>
+<td><!--<input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_sq_bbls" class="" />--></td>
+<td><!--<input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_sq_longton" class="" />--></td>
+<td><!--<input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_sq_metricton" class="" />--></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td style="width: 150px;">Gross Standard Volume</td>
+<td><input class="" style="width: 100px;" name="sf_gsv_klobs" type="text" /></td>
+<td><input class="" style="width: 100px;" name="sf_gsv_kl15" type="text" /></td>
+<td><input class="" style="width: 100px;" name="sf_gsv_bbls" type="text" /></td>
+<td><input class="" style="width: 100px;" name="sf_gsv_longton" type="text" /></td>
+<td><input class="" style="width: 100px;" name="sf_gsv_metricton" type="text" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td style="width: 150px;">Net Standard Volume</td>
+<td><input class="" style="width: 100px;" name="sf_nsv_klobs" type="text" /></td>
+<td><input class="" style="width: 100px;" name="sf_nsv_kl15" type="text" /></td>
+<td><input class="" style="width: 100px;" name="sf_nsv_bbls" type="text" /></td>
+<td><input class="" style="width: 100px;" name="sf_nsv_longton" type="text" /></td>
+<td><input class="" style="width: 100px;" name="sf_nsv_metricton" type="text" /></td>
+</tr>
+<tr>
+<td>b)</td>
+<td style="width: 150px;">Shore Tanks Nomination</td>
+<td colspan="5"><input class="" name="sf_shore_tanks_nomination_klobs" type="text" /></td>
+</tr>
+</tbody>
+</table>
+<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>', '0', null, null, null, null, null);
 INSERT INTO "public"."KOMPONEN_HTML" VALUES ('8', 'sf_crude_discharge', '			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tr>
 					<td>a)</td>
@@ -4672,6 +4732,1819 @@ In Any
 </td>
 </tr>
 </table>', null, null, null, null, null, null);
+INSERT INTO "public"."KOMPONEN_HTML" VALUES ('27', 'Timelog Product Discharge', '<table id="table_list_timelog" style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<th style="width: 25px;"><center>No</center></th>
+<th style="width: 250px;">&nbsp;&nbsp;Activities</th>
+<th style="width: 80px;">Time</th>
+<th style="width: 100px;">Date</th>
+<th>Remarks/Delays/Etc</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Vessel Arrived</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_vessel_arrived" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_vessel_arrived" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_vessel_arrived" type="text" /></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Vessel Anchoraged</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_anchoraged" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_anchoraged" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_anchoraged" type="text" /></td>
+</tr>
+<tr>
+<td>3</td>
+<td>NOR Tendered</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_nor" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_nor" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_nor" type="text" /></td>
+</tr>
+<tr>
+<td>4</td>
+<td>NOR Accepted</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_accepted" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_accepted" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_accepted" type="text" /></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Pilot On Board (for Berthing)</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_pob" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_pob" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_pob" type="text" /></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Anchors Aweigh</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_a_aweigh" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_a_aweigh" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_a_aweigh" type="text" /></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Vessel Berthing</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_berthing" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_berthing" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_berthing" type="text" /></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Surveyor on Board</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_surveyor_on_board" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_surveyor_on_board" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_surveyor_on_board" type="text" /></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Key Meeting</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_key_meeting" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_key_meeting" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_key_meeting" type="text" /></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Tanks Inspection and Calc. Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_inpection_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_inpection_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_inpection_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Tanks Inspection and Calc. Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_inspection_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_inspection_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_inspection_completed" type="text" /></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Sampling Before Discharge Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_sbd_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_sbd_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_sbd_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Sampling Before Discharge Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_sbd_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_sbd_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_sbd_completed" type="text" /></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Hose Connected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_hose_connected" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_hose_connected" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_hose_connected" type="text" /></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Hose Connected completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_connected_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_connected_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_connected_completed" type="text" /></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Discharge commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Discharge completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_completed" type="text" /></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Hose Disconnected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_hose_disconnected" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_hose_disconnected" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_hose_disconnected" type="text" /></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Tanks Inspection Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_tanks_ins_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_tanks_ins_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_tanks_ins_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>20</td>
+<td>Tanks Inspection Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_tanks_ins_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_tanks_ins_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_tanks_ins_completed" type="text" /></td>
+</tr>
+<tr>
+<td>21</td>
+<td>Documents Onboard</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_documents_onboard" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_documents_onboard" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_documents_onboard" type="text" /></td>
+</tr>
+<tr>
+<td>22</td>
+<td>Surveyour Left Vessel</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_svy_left_vessel" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_svy_left_vessel" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_svy_left_vessel" type="text" /></td>
+</tr>
+<tr>
+<td>23</td>
+<td>Vessel sail</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_vessel_sail" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_vessel_sail" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_vessel_sail" type="text" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Remarks</td>
+<td colspan="3"><input style="margin-left: -10px; width: 100%;" name="activities_remarks" type="text" /></td>
+</tr>
+</tbody>
+</table>', '0', null, null, null, null, null);
+INSERT INTO "public"."KOMPONEN_HTML" VALUES ('28', 'Timelog Petrokimia Loading', '<table id="table_list_timelog" style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<th style="width: 25px;"><center>No</center></th>
+<th style="width: 250px;">&nbsp;&nbsp;Activities</th>
+<th style="width: 80px;">Time</th>
+<th style="width: 100px;">Date</th>
+<th>Remarks/Delays/Etc</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Vessel Arrived</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_vessel_arrived" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_vessel_arrived" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_vessel_arrived" type="text" /></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Vessel Anchoraged</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_anchoraged" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_anchoraged" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_anchoraged" type="text" /></td>
+</tr>
+<tr>
+<td>3</td>
+<td>NOR Tendered</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_nor" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_nor" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_nor" type="text" /></td>
+</tr>
+<tr>
+<td>4</td>
+<td>NOR Accepted</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_accepted" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_accepted" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_accepted" type="text" /></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Vessel Berthed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_berthed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_berthed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_berthed" type="text" /></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Surveyor on Board</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_surveyor_on_board" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_surveyor_on_board" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_surveyor_on_board" type="text" /></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Key Meeting</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_key_meeting" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_key_meeting" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_key_meeting" type="text" /></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Tanks Inspection commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Tanks Inspection Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_completed" type="text" /></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Hose Connected commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_connected_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_connected_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_connected_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Hose Connected completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_connected_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_connected_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_connected_completed" type="text" /></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Loading commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Loading completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_completed" type="text" /></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Hose Disconnected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_hose_connected" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_hose_connected" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_hose_connected" type="text" /></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Sampling Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_sampling_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_sampling_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_sampling_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Sampling Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_sampling_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_sampling_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_sampling_completed" type="text" /></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Cargo measurement Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_measurement_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_measurement_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_measurement_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Cargo measurement Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_measurement_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_measurement_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_measurement_completed" type="text" /></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Documents Onboard</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_documents_onboard" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_documents_onboard" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_documents_onboard" type="text" /></td>
+</tr>
+<tr>
+<td>20</td>
+<td>Vessel sailed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_vessel_sailed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_vessel_sailed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_vessel_sailed" type="text" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Remarks</td>
+<td colspan="3"><input style="margin-left: -10px; width: 100%;" name="activities_remarks" type="text" /></td>
+</tr>
+</tbody>
+</table>', '0', null, null, null, null, null);
+INSERT INTO "public"."KOMPONEN_HTML" VALUES ('29', 'Timelog Petrokimia Discharge', '<table id="table_list_timelog" style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<th style="width: 25px;"><center>No</center></th>
+<th style="width: 250px;">&nbsp;&nbsp;Activities</th>
+<th style="width: 80px;">Time</th>
+<th style="width: 100px;">Date</th>
+<th>Remarks/Delays/Etc</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Vessel Arrived</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_vessel_arrived" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_vessel_arrived" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_vessel_arrived" type="text" /></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Vessel Anchoraged</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_anchoraged" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_anchoraged" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_anchoraged" type="text" /></td>
+</tr>
+<tr>
+<td>3</td>
+<td>NOR Tendered</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_nor" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_nor" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_nor" type="text" /></td>
+</tr>
+<tr>
+<td>4</td>
+<td>NOR Accepted</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_accepted" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_accepted" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_accepted" type="text" /></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Pilot On Board (for Berthing)</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_pob" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_pob" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_pob" type="text" /></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Anchors Aweigh</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_a_aweigh" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_a_aweigh" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_a_aweigh" type="text" /></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Vessel Berthing</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_berthing" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_berthing" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_berthing" type="text" /></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Surveyor on Board</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_surveyor_on_board" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_surveyor_on_board" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_surveyor_on_board" type="text" /></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Key Meeting</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_key_meeting" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_key_meeting" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_key_meeting" type="text" /></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Tanks Inspection and Calc. Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_inpection_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_inpection_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_inpection_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Tanks Inspection and Calc. Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_inspection_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_inspection_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_inspection_completed" type="text" /></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Sampling Before Discharge Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_sbd_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_sbd_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_sbd_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Sampling Before Discharge Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_sbd_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_sbd_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_sbd_completed" type="text" /></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Hose Connected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_hose_connected" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_hose_connected" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_hose_connected" type="text" /></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Hose Connected completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_connected_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_connected_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_connected_completed" type="text" /></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Discharge commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Discharge completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_completed" type="text" /></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Hose Disconnected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_hose_disconnected" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_hose_disconnected" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_hose_disconnected" type="text" /></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Tanks Inspection Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_tanks_ins_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_tanks_ins_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_tanks_ins_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>20</td>
+<td>Tanks Inspection Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_tanks_ins_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_tanks_ins_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_tanks_ins_completed" type="text" /></td>
+</tr>
+<tr>
+<td>21</td>
+<td>Documents Onboard</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_documents_onboard" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_documents_onboard" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_documents_onboard" type="text" /></td>
+</tr>
+<tr>
+<td>22</td>
+<td>Surveyour Left Vessel</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_svy_left_vessel" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_svy_left_vessel" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_svy_left_vessel" type="text" /></td>
+</tr>
+<tr>
+<td>23</td>
+<td>Vessel sail</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_vessel_sail" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_vessel_sail" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_vessel_sail" type="text" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Remarks</td>
+<td colspan="3"><input style="margin-left: -10px; width: 100%;" name="activities_remarks" type="text" /></td>
+</tr>
+</tbody>
+</table>', '0', null, null, null, null, null);
+INSERT INTO "public"."KOMPONEN_HTML" VALUES ('30', 'Timelog Gas Loading', '<table id="table_list_timelog" style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<th style="width: 25px;"><center>No</center></th>
+<th style="width: 250px;">&nbsp;&nbsp;Activities</th>
+<th style="width: 80px;">Time</th>
+<th style="width: 100px;">Date</th>
+<th>Remarks/Delays/Etc</th>
+</tr>
+<tr>
+<td>1</td>
+<td>@Loading - Vessel Arrived</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_vessel_arrived" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_vessel_arrived" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_vessel_arrived" type="text" /></td>
+</tr>
+<tr>
+<td>2</td>
+<td>@Loading - Vessel Anchoraged</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_vessel_anchoraged" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_vessel_anchoraged" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_vessel_anchoraged" type="text" /></td>
+</tr>
+<tr>
+<td>3</td>
+<td>@Loading - NOR Tendered</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_nor_tendered" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_nor_tendered" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_nor_tendered" type="text" /></td>
+</tr>
+<tr>
+<td>4</td>
+<td>@Loading - NOR Accepted</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_nor_accepted" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_nor_accepted" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_nor_accepted" type="text" /></td>
+</tr>
+<tr>
+<td>5</td>
+<td>@Loading - Vessel Berthed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_vessel_berthed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_vessel_berthed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_vessel_berthed" type="text" /></td>
+</tr>
+<tr>
+<td>6</td>
+<td>@Loading - Surveyor on Board</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_surveyor_on_board" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_surveyor_on_board" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_surveyor_on_board" type="text" /></td>
+</tr>
+<tr>
+<td>7</td>
+<td>@Loading - Key Meeting</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_key_meeting" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_key_meeting" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_key_meeting" type="text" /></td>
+</tr>
+<tr>
+<td>8</td>
+<td>@Loading - Connection of Vapor Arms Commence</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_connection_of_vapor_arms_commence" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_connection_of_vapor_arms_commence" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_connection_of_vapor_arms_commence" type="text" /></td>
+</tr>
+<tr>
+<td>9</td>
+<td>@Loading - Connection of Vapor Arms Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_connection_of_vapor_arms_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_connection_of_vapor_arms_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_connection_of_vapor_arms_completed" type="text" /></td>
+</tr>
+<tr>
+<td>10</td>
+<td>@Loading - Connection of Liquid Arms Commence</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_connection_of_liquid_arms_commence" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_connection_of_liquid_arms_commence" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_connection_of_liquid_arms_commence" type="text" /></td>
+</tr>
+<tr>
+<td>11</td>
+<td>@Loading - Connection of Liquid Arms Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_connection_of_liquid_arms_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_connection_of_liquid_arms_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_connection_of_liquid_arms_completed" type="text" /></td>
+</tr>
+<tr>
+<td>12</td>
+<td>@Loading - Cool down of Loading Arms Commence</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_cool_down_of_loading_arms_commence" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_cool_down_of_loading_arms_commence" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_cool_down_of_loading_arms_commence" type="text" /></td>
+</tr>
+<tr>
+<td>13</td>
+<td>@Loading - Cool down of Loading Arms Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_cool_down_of_loading_arms_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_cool_down_of_loading_arms_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_cool_down_of_loading_arms_completed" type="text" /></td>
+</tr>
+<tr>
+<td>14</td>
+<td>@Loading - Opening Custody Transfer Inspection</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_opening_custody_transfer_inspection" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_opening_custody_transfer_inspection" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_opening_custody_transfer_inspection" type="text" /></td>
+</tr>
+<tr>
+<td>15</td>
+<td>@Loading - Commenced Loading of Cargo</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_commenced_loading_of_cargo" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_commenced_loading_of_cargo" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_commenced_loading_of_cargo" type="text" /></td>
+</tr>
+<tr>
+<td>16</td>
+<td>@Loading - Completed Loading of Cargo</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_completed_loading_of_cargo" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_completed_loading_of_cargo" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_completed_loading_of_cargo" type="text" /></td>
+</tr>
+<tr>
+<td>17</td>
+<td>@Loading - Disconnection of Vapor Arms Commence</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_disconnection_of_vapor_arms_commence" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_disconnection_of_vapor_arms_commence" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_disconnection_of_vapor_arms_commence" type="text" /></td>
+</tr>
+<tr>
+<td>18</td>
+<td>@Loading - Disconnection of Vapor Arms Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_disconnection_of_vapor_arms_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_disconnection_of_vapor_arms_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_disconnection_of_vapor_arms_completed" type="text" /></td>
+</tr>
+<tr>
+<td>19</td>
+<td>@Loading - Disconnection of Liquid Arms Commence</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_disconnection_of_liquid_arms_commence" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_disconnection_of_liquid_arms_commence" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_disconnection_of_liquid_arms_commence" type="text" /></td>
+</tr>
+<tr>
+<td>20</td>
+<td>@Loading - Disconnection of Liquid Arms Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_disconnection_of_liquid_arms_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_disconnection_of_liquid_arms_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_disconnection_of_liquid_arms_completed" type="text" /></td>
+</tr>
+<tr>
+<td>21</td>
+<td>@Loading - Closing Custody Transfer Inspection</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_closing_custody_transfer_inspection" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_closing_custody_transfer_inspection" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_closing_custody_transfer_inspection" type="text" /></td>
+</tr>
+<tr>
+<td>22</td>
+<td>@Loading - Documents Onboard</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_documents_onboard" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_documents_onboard" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_documents_onboard" type="text" /></td>
+</tr>
+<tr>
+<td>23</td>
+<td>@Loading - Vessel sailed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_gas_vessel_sailed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_gas_vessel_sailed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_gas_vessel_sailed" type="text" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Remarks</td>
+<td colspan="3"><input style="margin-left: -10px; width: 100%;" name="activities_remarks" type="text" /></td>
+</tr>
+</tbody>
+</table>', '0', null, null, null, null, null);
+INSERT INTO "public"."KOMPONEN_HTML" VALUES ('31', 'Timelog Gas Discharge', '<table id="table_list_timelog" style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<th style="width: 25px;"><center>No</center></th>
+<th style="width: 250px;">&nbsp;&nbsp;Activities</th>
+<th style="width: 80px;">Time</th>
+<th style="width: 100px;">Date</th>
+<th>Remarks/Delays/Etc</th>
+</tr>
+<tr>
+<td>1</td>
+<td>@Discharge - Vessel Arrived</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_vessel_arrived" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_vessel_arrived" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_vessel_arrived" type="text" /></td>
+</tr>
+<tr>
+<td>2</td>
+<td>@Discharge - Vessel Anchoraged</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_vessel_anchoraged" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_vessel_anchoraged" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_vessel_anchoraged" type="text" /></td>
+</tr>
+<tr>
+<td>3</td>
+<td>@Discharge - NOR Tendered</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_nor_tendered" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_nor_tendered" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_nor_tendered" type="text" /></td>
+</tr>
+<tr>
+<td>4</td>
+<td>@Discharge - NOR Accepted</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_nor_accepted" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_nor_accepted" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_nor_accepted" type="text" /></td>
+</tr>
+<tr>
+<td>5</td>
+<td>@Discharge - Vessel Berthed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_vessel_berthed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_vessel_berthed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_vessel_berthed" type="text" /></td>
+</tr>
+<tr>
+<td>6</td>
+<td>@Discharge - Surveyor on Board</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_surveyor_on_board" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_surveyor_on_board" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_surveyor_on_board" type="text" /></td>
+</tr>
+<tr>
+<td>7</td>
+<td>@Discharge - Key Meeting</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_key_meeting" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_key_meeting" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_key_meeting" type="text" /></td>
+</tr>
+<tr>
+<td>8</td>
+<td>@Discharge - Connection of Vapor Arms Commence</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_connection_of_vapor_arms_commence" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_connection_of_vapor_arms_commence" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_connection_of_vapor_arms_commence" type="text" /></td>
+</tr>
+<tr>
+<td>9</td>
+<td>@Discharge - Connection of Vapor Arms Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_connection_of_vapor_arms_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_connection_of_vapor_arms_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_connection_of_vapor_arms_completed" type="text" /></td>
+</tr>
+<tr>
+<td>10</td>
+<td>@Discharge - Connection of Liquid Arms Commence</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_connection_of_liquid_arms_commence" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_connection_of_liquid_arms_commence" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_connection_of_liquid_arms_commence" type="text" /></td>
+</tr>
+<tr>
+<td>11</td>
+<td>@Discharge - Connection of Liquid Arms Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_connection_of_liquid_arms_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_connection_of_liquid_arms_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_connection_of_liquid_arms_completed" type="text" /></td>
+</tr>
+<tr>
+<td>12</td>
+<td>@Discharge - Cool down of Loading Arms Commence</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_cool_down_of_discharge_arms_commence" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_cool_down_of_discharge_arms_commence" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_cool_down_of_discharge_arms_commence" type="text" /></td>
+</tr>
+<tr>
+<td>13</td>
+<td>@Discharge - Cool down of Loading Arms Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_cool_down_of_discharge_arms_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_cool_down_of_discharge_arms_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_cool_down_of_discharge_arms_completed" type="text" /></td>
+</tr>
+<tr>
+<td>14</td>
+<td>@Discharge - Opening Custody Transfer Inspection</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_opening_custody_transfer_inspection" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_opening_custody_transfer_inspection" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_opening_custody_transfer_inspection" type="text" /></td>
+</tr>
+<tr>
+<td>15</td>
+<td>@Discharge - Commenced Loading of Cargo</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_commenced_discharge_of_cargo" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_commenced_discharge_of_cargo" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_commenced_discharge_of_cargo" type="text" /></td>
+</tr>
+<tr>
+<td>16</td>
+<td>@Discharge - Completed Loading of Cargo</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_completed_discharge_of_cargo" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_completed_discharge_of_cargo" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_completed_discharge_of_cargo" type="text" /></td>
+</tr>
+<tr>
+<td>17</td>
+<td>@Discharge - Disconnection of Vapor Arms Commence</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_disconnection_of_vapor_arms_commence" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_disconnection_of_vapor_arms_commence" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_disconnection_of_vapor_arms_commence" type="text" /></td>
+</tr>
+<tr>
+<td>18</td>
+<td>@Discharge - Disconnection of Vapor Arms Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_disconnection_of_vapor_arms_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_disconnection_of_vapor_arms_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_disconnection_of_vapor_arms_completed" type="text" /></td>
+</tr>
+<tr>
+<td>19</td>
+<td>@Discharge - Disconnection of Liquid Arms Commence</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_disconnection_of_liquid_arms_commence" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_disconnection_of_liquid_arms_commence" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_disconnection_of_liquid_arms_commence" type="text" /></td>
+</tr>
+<tr>
+<td>20</td>
+<td>@Discharge - Disconnection of Liquid Arms Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_disconnection_of_liquid_arms_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_disconnection_of_liquid_arms_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_disconnection_of_liquid_arms_completed" type="text" /></td>
+</tr>
+<tr>
+<td>21</td>
+<td>@Discharge - Closing Custody Transfer Inspection</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_closing_custody_transfer_inspection" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_closing_custody_transfer_inspection" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_closing_custody_transfer_inspection" type="text" /></td>
+</tr>
+<tr>
+<td>22</td>
+<td>@Discharge - Documents Onboard</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_documents_onboard" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_documents_onboard" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_documents_onboard" type="text" /></td>
+</tr>
+<tr>
+<td>23</td>
+<td>@Discharge - Vessel sailed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_gas_vessel_sailed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_gas_vessel_sailed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_gas_vessel_sailed" type="text" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Remarks</td>
+<td colspan="3"><input style="margin-left: -10px; width: 100%;" name="activities_remarks" type="text" /></td>
+</tr>
+</tbody>
+</table>', '0', null, null, null, null, null);
+INSERT INTO "public"."KOMPONEN_HTML" VALUES ('32', 'Timelog Crude Loading', '<table id="table_list_timelog" style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<th style="width: 25px;"><center>No</center></th>
+<th style="width: 250px;">&nbsp;&nbsp;Activities</th>
+<th style="width: 80px;">Time</th>
+<th style="width: 100px;">Date</th>
+<th>Remarks/Delays/Etc</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Vessel Arrived</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_vessel_arrived" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_vessel_arrived" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_vessel_arrived" type="text" /></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Vessel Anchoraged</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_anchoraged" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_anchoraged" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_anchoraged" type="text" /></td>
+</tr>
+<tr>
+<td>3</td>
+<td>NOR Tendered</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_nor" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_nor" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_nor" type="text" /></td>
+</tr>
+<tr>
+<td>4</td>
+<td>NOR Accepted</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_accepted" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_accepted" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_accepted" type="text" /></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Vessel Berthed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_berthed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_berthed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_berthed" type="text" /></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Surveyor on Board</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_surveyor_on_board" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_surveyor_on_board" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_surveyor_on_board" type="text" /></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Key Meeting</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_key_meeting" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_key_meeting" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_key_meeting" type="text" /></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Tanks Inspection Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_inpection_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_inpection_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_inpection_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Tanks Inspection Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_inspection_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_inspection_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_inspection_completed" type="text" /></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Hose Connected Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_hose_connected_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_hose_connected_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_hose_connected_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Hose Connected completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_hose_connected_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_hose_connected_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_hose_connected_completed" type="text" /></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Loading commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Loading completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_completed" type="text" /></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Hose Disconnected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_hose_disconnected" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_hose_disconnected" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_hose_disconnected" type="text" /></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Sampling Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_sampling_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_sampling_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_sampling_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Sampling Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_sampling_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_sampling_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_sampling_completed" type="text" /></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Cargo measurement Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_cargo_measurement_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_cargo_measurement_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_cargo_measurement_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Cargo measurement Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_cargo_measurement_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_cargo_measurement_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_cargo_measurement_completed" type="text" /></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Documents Onboard</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_documents_onboard" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_documents_onboard" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_documents_onboard" type="text" /></td>
+</tr>
+<tr>
+<td>20</td>
+<td>Vessel sailed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_vessel_sailed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_vessel_sailed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_vessel_sailed" type="text" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Remarks</td>
+<td colspan="3"><input style="margin-left: -10px; width: 100%;" name="activities_remarks" type="text" /></td>
+</tr>
+</tbody>
+</table>', '0', null, null, null, null, null);
+INSERT INTO "public"."KOMPONEN_HTML" VALUES ('34', 'TImelog Crude Discharge', '<table id="table_list_timelog" style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<th style="width: 25px;"><center>No</center></th>
+<th style="width: 250px;">&nbsp;&nbsp;Activities</th>
+<th style="width: 80px;">Time</th>
+<th style="width: 100px;">Date</th>
+<th>Remarks/Delays/Etc</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Vessel Arrived</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_vessel_arrived" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_vessel_arrived" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_vessel_arrived" type="text" /></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Vessel Anchoraged</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_anchoraged" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_anchoraged" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_anchoraged" type="text" /></td>
+</tr>
+<tr>
+<td>3</td>
+<td>NOR Tendered</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_nor" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_nor" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_nor" type="text" /></td>
+</tr>
+<tr>
+<td>4</td>
+<td>NOR Accepted</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_accepted" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_accepted" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_accepted" type="text" /></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Pilot On Board (for Berthing)</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_pob" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_pob" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_pob" type="text" /></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Anchors Aweigh</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_a_aweigh" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_a_aweigh" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_a_aweigh" type="text" /></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Vessel Berthing</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_berthing" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_berthing" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_berthing" type="text" /></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Surveyor on Board</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_surveyor_on_board" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_surveyor_on_board" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_surveyor_on_board" type="text" /></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Key Meeting</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_key_meeting" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_key_meeting" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_key_meeting" type="text" /></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Tanks Inspection and Calc. Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_inpection_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_inpection_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_inpection_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Tanks Inspection and Calc. Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_inspection_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_inspection_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_inspection_completed" type="text" /></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Sampling Before Discharge Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_sbd_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_sbd_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_sbd_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Sampling Before Discharge Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_sbd_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_sbd_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_sbd_completed" type="text" /></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Hose Connected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_hose_connected" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_hose_connected" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_hose_connected" type="text" /></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Hose Connected completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_connected_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_connected_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_connected_completed" type="text" /></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Discharge commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Discharge completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_completed" type="text" /></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Hose Disconnected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_hose_disconnected" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_hose_disconnected" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_hose_disconnected" type="text" /></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Tanks Inspection Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_tanks_ins_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_tanks_ins_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_tanks_ins_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>20</td>
+<td>Tanks Inspection Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_tanks_ins_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_tanks_ins_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_tanks_ins_completed" type="text" /></td>
+</tr>
+<tr>
+<td>21</td>
+<td>Documents Onboard</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_documents_onboard" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_documents_onboard" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_documents_onboard" type="text" /></td>
+</tr>
+<tr>
+<td>22</td>
+<td>Surveyour Left Vessel</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_svy_left_vessel" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_svy_left_vessel" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_svy_left_vessel" type="text" /></td>
+</tr>
+<tr>
+<td>23</td>
+<td>Vessel sail</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_vessel_sail" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_vessel_sail" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_vessel_sail" type="text" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Remarks</td>
+<td colspan="3"><input style="margin-left: -10px; width: 100%;" name="activities_remarks" type="text" /></td>
+</tr>
+</tbody>
+</table>', '0', null, null, null, null, null);
+INSERT INTO "public"."KOMPONEN_HTML" VALUES ('35', 'Timelog Crude Bunker Vessel', '<table id="table_list_timelog" style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<th style="width: 25px;"><center>No</center></th>
+<th style="width: 250px;">&nbsp;&nbsp;Activities</th>
+<th style="width: 80px;">Time</th>
+<th style="width: 100px;">Date</th>
+<th>Remarks/Delays/Etc</th>
+</tr>
+<tr>
+<td>1</td>
+<td>@Loading - Barge Arrived</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_barge_arrived" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_barge_arrived" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_barge_arrived" type="text" /></td>
+</tr>
+<tr>
+<td>2</td>
+<td>@Loading - NOR Tendered</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_nor_tendered" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_nor_tendered" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_nor_tendered" type="text" /></td>
+</tr>
+<tr>
+<td>3</td>
+<td>@Loading - Barge All Fast / Alongside</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_barge_all_fast_alongside" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_barge_all_fast_alongside" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_barge_all_fast_alongside" type="text" /></td>
+</tr>
+<tr>
+<td>4</td>
+<td>@Loading - Key Meeting</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_key_meeting" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_key_meeting" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_key_meeting" type="text" /></td>
+</tr>
+<tr>
+<td>5</td>
+<td>@Loading - Valve Seealed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_valve_seealed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_valve_seealed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_valve_seealed" type="text" /></td>
+</tr>
+<tr>
+<td>6</td>
+<td>@Loading - Tank Inspection and Measurement - Initial @Barge</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_tank_inspect_measure" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_tank_inspect_measure" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_tank_inspect_measure" type="text" /></td>
+</tr>
+<tr>
+<td>7</td>
+<td>@Loading - Tank Inspection and Meter Verification - Initial @Depot</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_tank_inspect_meter_verf" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_tank_inspect_meter_verf" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_tank_inspect_meter_verf" type="text" /></td>
+</tr>
+<tr>
+<td>8</td>
+<td>@Loading - Hose(s) Connected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_host_connected" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_host_connected" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_host_connected" type="text" /></td>
+</tr>
+<tr>
+<td>9</td>
+<td>@Loading - Loading Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_loading_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_loading_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_loading_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>10</td>
+<td>@Loading - Loading Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_loading_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_loading_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_loading_completed" type="text" /></td>
+</tr>
+<tr>
+<td>11</td>
+<td>@Loading - Hose(s) Arms Disconnected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_date_loading_hose_arms_disconnect" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_hose_arms_disconnect" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_date_loading_hose_arms_disconnect" type="text" /></td>
+</tr>
+<tr>
+<td>12</td>
+<td>@Loading - Visual Inspection &amp; Sampling - @Barge</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_visual_inspec_sampl" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_visual_inspec_sampl" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_visual_inspec_sampl" type="text" /></td>
+</tr>
+<tr>
+<td>13</td>
+<td>@Loading - Tank Inspection and Measurement - Final @Barge</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_tank_inspect_measr_final" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_tank_inspect_measr_final" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_tank_inspect_measr_final" type="text" /></td>
+</tr>
+<tr>
+<td>14</td>
+<td>@Loading - Tank Inspection and Meter Verification - Final @Depot</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_tank_inspect_meter_final" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_tank_inspect_meter_final" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_tank_inspect_meter_final" type="text" /></td>
+</tr>
+<tr>
+<td>15</td>
+<td>@Loading - Calculation completed &amp; Documents onboard</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_calcul_completed_doc_onboard" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_calcul_completed_doc_onboard" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_calcul_completed_doc_onboard" type="text" /></td>
+</tr>
+<tr>
+<td>16</td>
+<td>@Loading - Barge Leave Depot</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_barge_leave_depot" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_barge_leave_depot" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_barge_leave_depot" type="text" /></td>
+</tr>
+<tr>
+<td>17</td>
+<td>@discharge - Barge Arrived</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_barge_arrived" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_barge_arrived" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_barge_arrived" type="text" /></td>
+</tr>
+<tr>
+<td>18</td>
+<td>@discharge - NOR Tendered</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_nor_tendered" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_nor_tendered" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_nor_tendered" type="text" /></td>
+</tr>
+<tr>
+<td>19</td>
+<td>@discharge - Barge All Fast / Alongside</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_barge_all_fast_alongside" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_barge_all_fast_alongside" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_barge_all_fast_alongside" type="text" /></td>
+</tr>
+<tr>
+<td>20</td>
+<td>@discharge - Key Meeting</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_key_meeting" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_key_meeting" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_key_meeting" type="text" /></td>
+</tr>
+<tr>
+<td>21</td>
+<td>@discharge - Valve Seealed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_valve_seealed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_valve_seealed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_valve_seealed" type="text" /></td>
+</tr>
+<tr>
+<td>22</td>
+<td>@discharge - Tank Inspection and Measurement - Initial @Barge</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_tank_inspect_measure" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_tank_inspect_measure" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_tank_inspect_measure" type="text" /></td>
+</tr>
+<tr>
+<td>23</td>
+<td>@discharge - Tank Inspection and Meter Verification - Initial @Depot</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_tank_inspect_meter_verf" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_tank_inspect_meter_verf" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_tank_inspect_meter_verf" type="text" /></td>
+</tr>
+<tr>
+<td>24</td>
+<td>@discharge - Hose(s) Connected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_host_connected" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_host_connected" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_host_connected" type="text" /></td>
+</tr>
+<tr>
+<td>25</td>
+<td>@discharge - bunker Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_bunker_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_bunker_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_bunker_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>26</td>
+<td>@discharge - bunker Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_bunker_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_bunker_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_bunker_completed" type="text" /></td>
+</tr>
+<tr>
+<td>27</td>
+<td>@discharge - Hose(s) Arms Disconnected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_date_discharge_hose_arms_disconnect" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_hose_arms_disconnect" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_date_discharge_hose_arms_disconnect" type="text" /></td>
+</tr>
+<tr>
+<td>28</td>
+<td>@discharge - Visual Inspection &amp; Sampling - @Barge</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_visual_inspec_sampl" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_visual_inspec_sampl" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_visual_inspec_sampl" type="text" /></td>
+</tr>
+<tr>
+<td>29</td>
+<td>@discharge - Tank Inspection and Measurement - Final @Barge</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_tank_inspect_measr_final" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_tank_inspect_measr_final" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_tank_inspect_measr_final" type="text" /></td>
+</tr>
+<tr>
+<td>30</td>
+<td>@discharge - Tank Inspection and Meter Verification - Final @Depot</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_tank_inspect_meter_final" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_tank_inspect_meter_final" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_tank_inspect_meter_final" type="text" /></td>
+</tr>
+<tr>
+<td>31</td>
+<td>@discharge - Calculation completed &amp; Documents onboard</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_calcul_completed_doc_onboard" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_calcul_completed_doc_onboard" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_calcul_completed_doc_onboard" type="text" /></td>
+</tr>
+<tr>
+<td>32</td>
+<td>@discharge - Barge Leave Ship</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_barge_leave_ship" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_barge_leave_ship" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_barge_leave_ship" type="text" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Remarks</td>
+<td colspan="3"><input style="margin-left: -10px; width: 100%;" name="activities_remarks" type="text" /></td>
+</tr>
+</tbody>
+</table>
+<div id="selenium-highlight">&nbsp;</div>', '0', null, null, null, null, null);
+INSERT INTO "public"."KOMPONEN_HTML" VALUES ('36', 'Timelog Crude Bunker Pipe', '<table id="table_list_timelog" style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<th style="width: 25px;"><center>No</center></th>
+<th style="width: 250px;">&nbsp;&nbsp;Activities</th>
+<th style="width: 80px;">Time</th>
+<th style="width: 100px;">Date</th>
+<th>Remarks/Delays/Etc</th>
+</tr>
+<tr>
+<td>1</td>
+<td>@Loading - Barge Arrived</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_barge_arrived" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_barge_arrived" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_barge_arrived" type="text" /></td>
+</tr>
+<tr>
+<td>2</td>
+<td>@Loading - NOR Tendered</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_nor_tendered" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_nor_tendered" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_nor_tendered" type="text" /></td>
+</tr>
+<tr>
+<td>3</td>
+<td>@Loading - Barge All Fast / Alongside</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_barge_all_fast_alongside" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_barge_all_fast_alongside" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_barge_all_fast_alongside" type="text" /></td>
+</tr>
+<tr>
+<td>4</td>
+<td>@Loading - Key Meeting</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_key_meeting" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_key_meeting" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_key_meeting" type="text" /></td>
+</tr>
+<tr>
+<td>5</td>
+<td>@Loading - Nor Accepted</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_nor_accepted" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_nor_accepted" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_nor_accepted" type="text" /></td>
+</tr>
+<tr>
+<td>6</td>
+<td>@Loading - Valve Seealed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_valve_seealed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_valve_seealed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_valve_seealed" type="text" /></td>
+</tr>
+<tr>
+<td>7</td>
+<td>@Loading - Tank Inspection and Meter Verification - Initial @Depot</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_tank_inspect_meter_verification" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_tank_inspect_meter_verification" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_tank_inspect_meter_verification" type="text" /></td>
+</tr>
+<tr>
+<td>8</td>
+<td>@Loading - Hose Connected - Initial @Depot</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_hose_connected" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_hose_connected" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_hose_connected" type="text" /></td>
+</tr>
+<tr>
+<td>9</td>
+<td>@Loading - Hose(s) Connected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_host_connected" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_host_connected" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_host_connected" type="text" /></td>
+</tr>
+<tr>
+<td>10</td>
+<td>@Loading - Loading Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_loading_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_loading_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_loading_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>11</td>
+<td>@Loading - Loading Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_loading_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_loading_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_loading_completed" type="text" /></td>
+</tr>
+<tr>
+<td>12</td>
+<td>@Loading - Hose(s) Arms Disconnected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_date_loading_hose_arms_disconnect" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_hose_arms_disconnect" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_date_loading_hose_arms_disconnect" type="text" /></td>
+</tr>
+<tr>
+<td>13</td>
+<td>@Loading - Tank Inspection and Meter Verification - Final @Barge</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_tank_inspect_meter_verification_final" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_tank_inspect_meter_verification_final" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_tank_inspect_meter_verification_final" type="text" /></td>
+</tr>
+<tr>
+<td>14</td>
+<td>@Loading - Calculation completed &amp; Documents onboard</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_calcul_completed_doc_onboard" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_calcul_completed_doc_onboard" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_calcul_completed_doc_onboard" type="text" /></td>
+</tr>
+<tr>
+<td>15</td>
+<td>@discharge - NOR Tendered</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_barge_arrived" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_barge_arrived" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_barge_arrived" type="text" /></td>
+</tr>
+<tr>
+<td>16</td>
+<td>@discharge - NOR Tendered</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_nor_tendered" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_nor_tendered" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_nor_tendered" type="text" /></td>
+</tr>
+<tr>
+<td>17</td>
+<td>@discharge - Key Meeting</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_key_meeting" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_key_meeting" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_key_meeting" type="text" /></td>
+</tr>
+<tr>
+<td>18</td>
+<td>@discharge - NOR Accepted</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_nor_accepted" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_nor_accepted" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_nor_accepted" type="text" /></td>
+</tr>
+<tr>
+<td>19</td>
+<td>@discharge - Valve Seealed @Ship</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_valve_seealed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_valve_seealed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_valve_seealed" type="text" /></td>
+</tr>
+<tr>
+<td>20</td>
+<td>@discharge - Tank Inspection and Measurement - Initial @Ship</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_tank_inspect_measure" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_tank_inspect_measure" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_tank_inspect_measure" type="text" /></td>
+</tr>
+<tr>
+<td>21</td>
+<td>@discharge - Visual Inspection Sampling @Ship</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_visual_inspection_sampling" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_visual_inspection_sampling" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_visual_inspection_sampling" type="text" /></td>
+</tr>
+<tr>
+<td>22</td>
+<td>@discharge - Hose(s) Connected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_host_connected" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_host_connected" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_host_connected" type="text" /></td>
+</tr>
+<tr>
+<td>23</td>
+<td>@discharge - bunker Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_bunker_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_bunker_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_bunker_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>24</td>
+<td>@discharge - bunker Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_bunker_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_bunker_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_bunker_completed" type="text" /></td>
+</tr>
+<tr>
+<td>25</td>
+<td>@discharge - Hose(s) Arms Disconnected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_date_discharge_hose_disconnect" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_hose_disconnect" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_date_discharge_hose_disconnect" type="text" /></td>
+</tr>
+<tr>
+<td>26</td>
+<td>@discharge - Tank Inspection and Measurement - Final @Barge</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_tank_inspect_measr_final" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_tank_inspect_measr_final" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_tank_inspect_measr_final" type="text" /></td>
+</tr>
+<tr>
+<td>27</td>
+<td>@discharge - Visual Inspection &amp; Sampling @Ship</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_visual_inspection_sampling" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_visual_inspection_sampling" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_visual_inspection_sampling" type="text" /></td>
+</tr>
+<tr>
+<td>28</td>
+<td>@discharge - Calculation completed &amp; Documents onboard</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_calcul_completed_doc_onboard" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_calcul_completed_doc_onboard" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_calcul_completed_doc_onboard" type="text" /></td>
+</tr>
+<tr>
+<td>29</td>
+<td>@discharge - Barge Leave Ship</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_discharge_barge_leave_ship" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_discharge_barge_leave_ship" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_discharge_barge_leave_ship" type="text" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Remarks</td>
+<td colspan="3"><input style="margin-left: -10px; width: 100%;" name="activities_remarks" type="text" /></td>
+</tr>
+</tbody>
+</table>', '0', null, null, null, null, null);
+INSERT INTO "public"."KOMPONEN_HTML" VALUES ('37', 'Timelog Product Loading', '<table id="table_list_timelog" style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<th style="width: 25px;"><center>No</center></th>
+<th style="width: 250px;">&nbsp;&nbsp;Activities</th>
+<th style="width: 80px;">Time</th>
+<th style="width: 100px;">Date</th>
+<th>Remarks/Delays/Etc</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Vessel Arrived</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_vessel_arrived" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_vessel_arrived" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_vessel_arrived" type="text" /></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Vessel Anchoraged</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_anchoraged" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_anchoraged" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_anchoraged" type="text" /></td>
+</tr>
+<tr>
+<td>3</td>
+<td>NOR Tendered</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_nor" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_nor" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_nor" type="text" /></td>
+</tr>
+<tr>
+<td>4</td>
+<td>NOR Accepted</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_accepted" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_accepted" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_accepted" type="text" /></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Vessel Berthed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_berthed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_berthed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_berthed" type="text" /></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Surveyor on Board</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_surveyor_on_board" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_surveyor_on_board" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_surveyor_on_board" type="text" /></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Key Meeting</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_key_meeting" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_key_meeting" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_key_meeting" type="text" /></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Tanks Inspection commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Tanks Inspection Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_completed" type="text" /></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Hose Connected commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_connected_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_connected_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_connected_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Hose Connected completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_connected_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_connected_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_connected_completed" type="text" /></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Loading commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Loading completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_completed" type="text" /></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Hose Disconnected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_hose_connected" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_hose_connected" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_hose_connected" type="text" /></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Sampling Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_sampling_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_sampling_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_sampling_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Sampling Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_sampling_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_sampling_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_sampling_completed" type="text" /></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Cargo measurement Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_measurement_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_measurement_commenced" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_measurement_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Cargo measurement Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_measurement_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_measurement_completed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_measurement_completed" type="text" /></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Documents Onboard</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_documents_onboard" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_documents_onboard" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_documents_onboard" type="text" /></td>
+</tr>
+<tr>
+<td>20</td>
+<td>Vessel sailed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_vessel_sailed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_vessel_sailed" type="text" data-date-format="dd/mm/yyyy" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_vessel_sailed" type="text" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Remarks</td>
+<td colspan="3"><input style="margin-left: -10px; width: 100%;" name="activities_remarks" type="text" /></td>
+</tr>
+</tbody>
+</table>', '0', null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for "public"."KOMPONEN_JSON"
@@ -4763,8 +6636,10 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Records of MASTER_AREA
 -- ----------------------------
+INSERT INTO "public"."MASTER_AREA" VALUES ('4d48001b-3e6e-498c-8bc4-b6cd92e2ac8d', 'Makasar', null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_AREA" VALUES ('96954929-1eca-4c24-aea2-7986a5da2e07', 'Tulung Agung', '<p>asdfasdf</p>
 <div id=\"selenium-highlight\">&nbsp;</div>', '0', null, null, null, null, null);
+INSERT INTO "public"."MASTER_AREA" VALUES ('f3361af7-c3dc-43c4-b519-ac2e1f1f931d', 'Surabaya', null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for "public"."MASTER_BARGE"
@@ -4901,8 +6776,11 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 INSERT INTO "public"."MASTER_CLIENT" VALUES ('1acb464c-c8e7-4607-91a8-1b5ac13ba650', 'Pertamina', '<p>asdfasdfasd</p>
 <div id=\"selenium-highlight\">&nbsp;</div>', '0', null, null, null, null, null);
+INSERT INTO "public"."MASTER_CLIENT" VALUES ('4ee0d758-85aa-4478-8443-63d2cff16c6e', 'CUSTOMER4', null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_CLIENT" VALUES ('ce634285-7e49-42b0-9151-b71a7467e267', 'Pelni', '<p><strong>sadfasdfasd</strong></p>
 <div id=\"selenium-highlight\">&nbsp;</div>', '0', null, null, null, null, null);
+INSERT INTO "public"."MASTER_CLIENT" VALUES ('edd8c517-0a45-4ee7-abbe-f691146d7da8', 'CUSTOMER7', null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_CLIENT" VALUES ('fd203d0b-9ed4-48ac-b006-3a4f03dee729', 'asdfasdfad', null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for "public"."MASTER_CONTRACT"
@@ -5319,8 +7197,8 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Records of MASTER_PRODUCT
 -- ----------------------------
-INSERT INTO "public"."MASTER_PRODUCT" VALUES ('6', '1', '0', 'Crude', '0', '1', null, null, '0', null, '', null, '', null, null, '["14","15","21","23","24","25"]');
-INSERT INTO "public"."MASTER_PRODUCT" VALUES ('7', '1', '0', 'Product', '1', '1', null, null, '0', null, '', null, '', null, null, '["14","15","21","23","24","25"]');
+INSERT INTO "public"."MASTER_PRODUCT" VALUES ('6', '1', '0', 'Crude', '0', '1', null, null, '0', null, '', null, '', null, null, '["14","15","21","25"]');
+INSERT INTO "public"."MASTER_PRODUCT" VALUES ('7', '1', '0', 'Product', '1', '1', null, null, '0', null, '', null, '', null, null, '["14","15"]');
 INSERT INTO "public"."MASTER_PRODUCT" VALUES ('8', '1', '0', 'Petrokimia', '2', '1', null, null, '0', null, '', null, '', null, null, '["14","15"]');
 INSERT INTO "public"."MASTER_PRODUCT" VALUES ('9', '1', '0', 'Gas', '4', '1', null, null, '0', null, '', null, '', null, null, '["14","15"]');
 INSERT INTO "public"."MASTER_PRODUCT" VALUES ('10', '2', '9', 'LNG', '1', '1', null, null, '0', null, '', null, null, null, null, null);
@@ -6322,6 +8200,16 @@ ALTER TABLE "public"."APP_MENU" ADD PRIMARY KEY ("MENU_ID");
 -- Primary Key structure for table "public"."APP_ROUTE"
 -- ----------------------------
 ALTER TABLE "public"."APP_ROUTE" ADD PRIMARY KEY ("ROUTE_ID");
+
+-- ----------------------------
+-- Primary Key structure for table "public"."ELEMENT_CONNECTION"
+-- ----------------------------
+ALTER TABLE "public"."ELEMENT_CONNECTION" ADD PRIMARY KEY ("ID");
+
+-- ----------------------------
+-- Primary Key structure for table "public"."KOMPONEN_HTML"
+-- ----------------------------
+ALTER TABLE "public"."KOMPONEN_HTML" ADD PRIMARY KEY ("ID");
 
 -- ----------------------------
 -- Primary Key structure for table "public"."MASTER_AREA"
