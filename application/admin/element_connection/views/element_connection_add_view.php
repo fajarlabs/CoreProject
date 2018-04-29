@@ -38,7 +38,7 @@
 						<tr>
 							<td width="150px" style="padding-top:15px;"><?php echo form_label('Product*') ?></td>
 							<td>
-							<select name="product" class="form-control">
+							<select onchange="initParam()" name="product" class="form-control">
 								<option value="0">--Choose Product--</option>
 							<?php if($product->num_rows() > 0) : 
 								foreach($product->result() as $row) :
@@ -51,7 +51,7 @@
 						<tr>
 							<td width="150px" style="padding-top:15px;"><?php echo form_label('Intervention*') ?></td>
 							<td>
-							<select name="intervention" class="form-control">
+							<select onchange="initParam()" name="intervention" class="form-control">
 								<option value="0">--Choose Intervention--</option>
 							<?php if($intervention->num_rows() > 0) : 
 								foreach($intervention->result() as $row) :
@@ -85,6 +85,13 @@
 								endforeach;
 							endif; ?>
 							</select>
+							</td>
+						</tr>
+						<tr>
+							<td width="150px" style="padding-top:15px;"><?php echo form_label('Field Element*') ?></td>
+							<td>
+								<a href="javascript:;" onclick="getAll()" style="margin-bottom:2px;" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i> Get All</a>
+								<input class="form-control" value="" type="text" name="field_element" id="tags" />
 							</td>
 						</tr>
 						<tr>

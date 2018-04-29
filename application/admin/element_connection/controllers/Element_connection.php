@@ -39,6 +39,20 @@ class Element_connection extends MY_Controller
 					$("#url").empty().val($(this).val().toLowerCase().replace(/\s/g,"-"));
 				});
 
+				var intervention_id = 0;
+				var product_id = 0;
+
+				function initParam() {
+					intervention_id = $("select[name=\'intervention\']").val();
+					product_id = $("select[name=\'product\']").val();
+					$.ajaxSetup({
+						data:{
+							intervention_id: intervention_id,
+							product_id:product_id
+						}
+					});
+				}
+
 				$("#tags").select2({
 				    tags: true,
 				    tokenSeparators: [","],
@@ -49,11 +63,11 @@ class Element_connection extends MY_Controller
 				        };
 				    },
 				    ajax: {
-				        url: "https://api.myjson.com/bins/444cr",
-				        dataType: "json",
+				        url: "'.base_url().'index.php/element_connection/get_tags/",
+						dataType: "json",
 				        data: function(term, page) {
 				            return {
-				                q: term
+								q: term
 				            };
 				        },
 				        results: function(data, page) {
@@ -111,6 +125,27 @@ class Element_connection extends MY_Controller
 				    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | code"
 				});
 
+				function getAll() {
+					$("#tags").select2("val", "");
+					intervention_id = $("select[name=\'intervention\']").val();
+					product_id = $("select[name=\'product\']").val();
+					$.ajaxSetup({
+						data:{
+							intervention_id: intervention_id,
+							product_id:product_id
+						}
+					});
+				    $.getJSON(" '.base_url().'index.php/element_connection/get_tags/", function( data ) {
+						if(data.length > 0) {
+							var temp_data = [];
+							for(var i = 0; i < data.length; i++) {
+								temp_data.push(data[i].text);
+							}
+							$("#tags").select2("val", temp_data);
+						}
+					});
+				}
+
 
 			</script>';	
 		$this->data['csrf'] = array(
@@ -162,6 +197,8 @@ class Element_connection extends MY_Controller
 		$intervention_id = $this->input->post('intervention');
 		$el_timelog_id   = $this->input->post('element_timelog');
 		$el_quality_id   = $this->input->post('element_quality');
+		$field_element   = $this->input->post('field_element');
+		$field_element   = json_encode(explode(",",$field_element));
 
 		$insert = array(
 			'NAME'               => addslashes($title),
@@ -170,6 +207,7 @@ class Element_connection extends MY_Controller
 			'INTERVENTION_ID'    => $intervention_id,
 			'ELEMENT_TIMELOG_ID' => $el_timelog_id,
 			'ELEMENT_QUALITY_ID' => $el_quality_id,
+			'ELEMENT_FIELDS'     => $field_element,
 			'IS_DELETE'          => 0,
 		);
 
@@ -219,5 +257,26 @@ class Element_connection extends MY_Controller
 		$this->Element_connection_model->delete_by_id($id);
 		$this->session->set_flashdata('error_message', alert_success('Delete succeded.'));
 		redirect('element_connection');
+	}
+
+	public function get_tags()
+	{
+		$product_id = $this->input->get("product_id");
+		$intervention_id = $this->input->get("intervention_id");
+		$query = $this->Element_connection_model->get_item_by_product_intervention($product_id,$intervention_id);
+		$element_fields = array();
+		if($query->num_rows() > 0) :
+			foreach($query->result() as $row) :
+				$arr = json_decode($row->ELEMENT_FIELDS);
+				foreach($arr as $k => $v) :
+					$o = new stdClass();
+					$o->id = $k;
+					$o->text = $v;
+					$element_fields[] = $o;
+				endforeach;
+			endforeach;
+		endif;		
+		header('Content-Type: application/json');
+		echo json_encode($element_fields);
 	}
 }

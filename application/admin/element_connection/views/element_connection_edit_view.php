@@ -88,6 +88,13 @@
 							</td>
 						</tr>
 						<tr>
+							<td width="150px" style="padding-top:15px;"><?php echo form_label('Field Element*') ?></td>
+							<td>
+								<a href="javascript:;" onclick="getAll()" style="margin-bottom:2px;" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i> Get All</a>
+								<input class="form-control" value="<?php echo @implode(",",@json_decode(@$item->result()[0]->ELEMENT_FIELDS)); ?>" type="text" name="field_element" id="tags" />
+							</td>
+						</tr>
+						<tr>
 							<td width="150px" style="padding-top:15px;"><?php echo form_label('Description*') ?></td>
 							<td><?php echo form_textarea(array('id'=>'mytextarea','type' => 'text', 'name' => 'content','class' => 'form-control', 'value' =>  '<template>'.html_entity_decode(stripslashes(@$item->result()[0]->DATA)).'</template>' )); ?></td>
 						</tr>
