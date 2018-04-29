@@ -53,7 +53,7 @@ class Element_connection extends MY_Controller
 					});
 				}
 
-				for(var i=0; i< 3; i++) {
+				for(var i=0; i< 4; i++) {
 					$("#tags_r"+(i+1)).select2({
 						tags: true,
 						tokenSeparators: [","],
@@ -109,6 +109,8 @@ class Element_connection extends MY_Controller
 						formatSelectionTooBig: function (limit) {
 							return "Max tags is only " + limit;
 						}
+					}).on("select2-focus", function(e) {
+						initParam();
 					});
 				}
 
@@ -256,13 +258,21 @@ class Element_connection extends MY_Controller
 		$intervention_id = $this->input->post('intervention');
 		$el_timelog_id   = $this->input->post('element_timelog');
 		$el_quality_id   = $this->input->post('element_quality');
+
 		$field_element   = $this->input->post('field_element');
 		$field_element   = json_encode(explode(",",$field_element));
 		
 		$element_r1   = $this->input->post('element_r1');
+		$element_r1   = json_encode(explode(",",$element_r1));
+
 		$element_r2   = $this->input->post('element_r2');
+		$element_r2   = json_encode(explode(",",$element_r2));
+
 		$element_r3   = $this->input->post('element_r3');
+		$element_r3   = json_encode(explode(",",$element_r3));
+
 		$element_r4   = $this->input->post('element_r4');
+		$element_r4   = json_encode(explode(",",$element_r4));
 
 		$insert = array(
 			'NAME'               => addslashes($title),
@@ -294,10 +304,20 @@ class Element_connection extends MY_Controller
 		$el_timelog_id   = $this->input->post('element_timelog');
 		$el_quality_id   = $this->input->post('element_quality');
 
+		$field_element   = $this->input->post('field_element');
+		$field_element   = json_encode(explode(",",$field_element));
+
 		$element_r1   = $this->input->post('element_r1');
+		$element_r1   = json_encode(explode(",",$element_r1));
+
 		$element_r2   = $this->input->post('element_r2');
+		$element_r2   = json_encode(explode(",",$element_r2));
+
 		$element_r3   = $this->input->post('element_r3');
+		$element_r3   = json_encode(explode(",",$element_r3));
+
 		$element_r4   = $this->input->post('element_r4');
+		$element_r4   = json_encode(explode(",",$element_r4));
 
 		$insert = array(
 			'NAME'               => addslashes($title),
@@ -306,6 +326,7 @@ class Element_connection extends MY_Controller
 			'INTERVENTION_ID'    => $intervention_id,
 			'ELEMENT_TIMELOG_ID' => $el_timelog_id,
 			'ELEMENT_QUALITY_ID' => $el_quality_id,
+			'ELEMENT_FIELDS'     => $field_element,
 			'ELEMENT_R1'         => $element_r1,
 			'ELEMENT_R2'         => $element_r2,
 			'ELEMENT_R3'         => $element_r3,
@@ -345,12 +366,17 @@ class Element_connection extends MY_Controller
 		if($query->num_rows() > 0) :
 			foreach($query->result() as $row) :
 				$arr = json_decode($row->ELEMENT_FIELDS);
-				foreach($arr as $k => $v) :
-					$o = new stdClass();
-					$o->id = $k;
-					$o->text = $v;
-					$element_fields[] = $o;
-				endforeach;
+				if(is_array($arr)) :
+					if(count($arr) > 0) :
+						foreach($arr as $k => $v) :
+							$o = new stdClass();
+							// key val value is same
+							$o->id   = $v;
+							$o->text = $v;
+							$element_fields[] = $o;
+						endforeach;
+					endif;
+				endif;
 			endforeach;
 		endif;		
 		header('Content-Type: application/json');

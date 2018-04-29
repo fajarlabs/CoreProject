@@ -38,7 +38,7 @@
 						<tr>
 							<td width="150px" style="padding-top:15px;"><?php echo form_label('Product*') ?></td>
 							<td>
-							<select name="product" class="form-control">
+							<select onchange="initParam()" name="product" class="form-control">
 								<option value="0">--Choose Product--</option>
 							<?php if($product->num_rows() > 0) : 
 								foreach($product->result() as $row) :
@@ -51,7 +51,7 @@
 						<tr>
 							<td width="150px" style="padding-top:15px;"><?php echo form_label('Intervention*') ?></td>
 							<td>
-							<select name="intervention" class="form-control">
+							<select onchange="initParam()" name="intervention" class="form-control">
 								<option value="0">--Choose Intervention--</option>
 							<?php if($intervention->num_rows() > 0) : 
 								foreach($intervention->result() as $row) :
@@ -92,6 +92,30 @@
 							<td>
 								<a href="javascript:;" onclick="getAll()" style="margin-bottom:2px;" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i> Get All</a>
 								<input class="form-control" value="<?php echo @implode(",",@json_decode(@$item->result()[0]->ELEMENT_FIELDS)); ?>" type="text" name="field_element" id="tags" />
+							</td>
+						</tr>
+						<tr>
+							<td width="150px" style="padding-top:15px;"><?php echo form_label('Element R1*') ?></td>
+							<td>
+								<input class="form-control" value="<?php echo @implode(",",@json_decode(@$item->result()[0]->ELEMENT_R1)); ?>" type="text" name="element_r1" id="tags_r1" />
+							</td>
+						</tr>
+						<tr>
+							<td width="150px" style="padding-top:15px;"><?php echo form_label('Element R2*') ?></td>
+							<td>
+								<input class="form-control" value="<?php echo @implode(",",@json_decode(@$item->result()[0]->ELEMENT_R2)); ?>" type="text" name="element_r2" id="tags_r2" />
+							</td>
+						</tr>
+						<tr>
+							<td width="150px" style="padding-top:15px;"><?php echo form_label('Element R3*') ?></td>
+							<td>
+								<input class="form-control" value="<?php echo @implode(",",@json_decode(@$item->result()[0]->ELEMENT_R3)); ?>" type="text" name="element_r3" id="tags_r3" />
+							</td>
+						</tr>
+						<tr>
+							<td width="150px" style="padding-top:15px;"><?php echo form_label('Element R4*') ?></td>
+							<td>
+								<input class="form-control" value="<?php echo @implode(",",@json_decode(@$item->result()[0]->ELEMENT_R4)); ?>" type="text" name="element_r4" id="tags_r4" />
 							</td>
 						</tr>
 						<tr>
