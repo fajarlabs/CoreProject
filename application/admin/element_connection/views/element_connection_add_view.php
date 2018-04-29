@@ -95,6 +95,30 @@
 							</td>
 						</tr>
 						<tr>
+							<td width="150px" style="padding-top:15px;"><?php echo form_label('Element R1*') ?></td>
+							<td>
+								<input class="form-control" value="" type="text" name="element_r1" id="tags_r1" />
+							</td>
+						</tr>
+						<tr>
+							<td width="150px" style="padding-top:15px;"><?php echo form_label('Element R2*') ?></td>
+							<td>
+								<input class="form-control" value="" type="text" name="element_r2" id="tags_r2" />
+							</td>
+						</tr>
+						<tr>
+							<td width="150px" style="padding-top:15px;"><?php echo form_label('Element R3*') ?></td>
+							<td>
+								<input class="form-control" value="" type="text" name="element_r3" id="tags_r3" />
+							</td>
+						</tr>
+						<tr>
+							<td width="150px" style="padding-top:15px;"><?php echo form_label('Element R4*') ?></td>
+							<td>
+								<input class="form-control" value="" type="text" name="element_r4" id="tags_r4" />
+							</td>
+						</tr>
+						<tr>
 							<td width="150px" style="padding-top:15px;"><?php echo form_label('Description*') ?></td>
 							<td><?php echo form_textarea(array('id'=>'mytextarea','type' => 'text', 'name' => 'content','class' => 'form-control')); ?></td>
 						</tr>
