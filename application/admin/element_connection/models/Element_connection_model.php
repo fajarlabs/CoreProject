@@ -31,6 +31,15 @@ class Element_connection_model extends CI_Model
 	  return $this->db->get();
   }
 
+  public function update_fields_by_product_intervention($element_fields,$product_id,$intervention_id)
+  {
+    $array_col_val = array();
+    $array_col_val['ELEMENT_FIELDS'] = $element_fields;
+    $this->db->where('PRODUCT_ID', $product_id); 
+    $this->db->where('INTERVENTION_ID', $intervention_id); 
+		$this->db->update($this->table, $array_col_val); 
+  }
+
   public function save($array_col_val = array())
   {
   	$this->db->insert($this->table,$array_col_val);

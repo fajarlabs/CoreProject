@@ -480,6 +480,9 @@ class Form_entry extends MY_Controller
 
 		$id = $this->Form_entry_model->save($col_val);
 
+		// update field for references
+		$this->Element_connection_model->update_fields_by_product_intervention(json_encode($grab_column),@$col_val['PRODUCT_TYPE'],@$col_val['SELECT_INTERVENTION']);
+
 		// save history
 		$this->_register_history();
 
@@ -563,7 +566,17 @@ class Form_entry extends MY_Controller
 					}
 				} else {
 					// array value
-					$col_val[strtoupper($key)] = json_encode($val);
+					// filter array jika kosong
+					$temp_vval = array();
+					if(count($val) > 0) :
+						foreach($val as $kval => $vval):
+							$vval = trim($vval);
+							if(!empty($vval)) :
+								$temp_vval[] = $vval;
+							endif;
+						endforeach;
+					endif;
+					$col_val[strtoupper($key)] = json_encode($temp_vval);
 				}
 			}
 		}
@@ -580,6 +593,14 @@ class Form_entry extends MY_Controller
 		}
 
 		$this->Form_entry_model->update($col_val,$id);
+
+		$grab_column = array();
+		foreach($col_val as $kg => $vg):
+			$grab_column[] = $kg;
+		endforeach;
+
+		// update field for references
+		$this->Element_connection_model->update_fields_by_product_intervention(json_encode($grab_column),@$col_val['PRODUCT_TYPE'],@$col_val['SELECT_INTERVENTION']);
 
 		// update history
 		$this->_register_history();
