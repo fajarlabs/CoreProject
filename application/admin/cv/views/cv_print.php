@@ -7,8 +7,17 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/cv_assets_print/dep/normalize.css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/cv_assets_print/dep/Font-Awesome/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/cv_assets_print/style.css" />
+    <script src="<?php echo base_url() ?>assets/admin/plugins/jsPDF/dist/jquery-3.3.1.min.js" type="text/javascript"></script>
   </head>
+  <style>
+   @media print {
+         #no_print {display: none;}
+   }
+  </style>
   <body lang="en">
+    <p id="no_print" align="left">
+        <a onclick="window.print();" style="color:blue;cursor:pointer">Print</a> | <a onclick="printMe()"  style="color:blue;cursor:pointer">Download</a>
+    </p>
     <section id="main">
       <header id="title">
         <h1><?php echo  @$item->result()[0]->NAMA ?></h1>
@@ -41,64 +50,41 @@
       </section>
       <section class="main-block">
         <h2>
-          <i class="fa fa-folder-open"></i> Selected Projects
+          <i class="fa fa-folder-open"></i> List Job History
         </h2>
+         <?php 
+                $ix=1;
+                 foreach($list_history_work as $wr){ ?>   
         <section class="blocks">
           <div class="date">
-            <span>2015</span><span>2016</span>
+            <!--<span>2015</span><span>2016</span>-->
           </div>
           <div class="decorator">
           </div>
           <div class="details">
             <header>
-              <h3>Some Project 1</h3>
-              <span class="place">Some workplace</span>
+              <h3><?php echo $ix ?>. File Order : <?php echo $wr->FILE_ORDER ?></h3>
+              <h4>IWO : <?php echo $wr->IWO ?></h4>
+              <h4>AREA : <?php echo $wr->AREA ?></h4>
+              <span class="place"></span>
             </header>
             <div>
-              <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio eros, placerat eu metus id, gravida eleifend odio. Vestibulum dapibus pharetra odio, egestas ullamcorper ipsum congue ac</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio eros, placerat eu metus id, gravida eleifend odio</li>
-              </ul>
+                <?php 
+                     $arr_prod=json_decode($wr->PRODUCT);
+                          if (is_array($arr_prod) || is_object($arr_prod)) {
+                              $take='';
+                              foreach($arr_prod as $key => $value){
+                                 $take .= $value.', ';
+                                }
+                                echo rtrim($take,', ');
+                          } else {
+                                echo $wr->PRODUCT;
+                          } 
+                    ?>
             </div>
           </div>
         </section>
-        <section class="blocks">
-          <div class="date">
-            <span>2014</span><span>2015</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3>Some Project 2</h3>
-              <span class="place">Some workplace</span>
-            </header>
-            <div>
-              <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio eros, placerat eu metus id, gravida eleifend odio. Vestibulum dapibus pharetra odio, egestas ullamcorper ipsum congue ac. Maecenas viverra tortor eget convallis vestibulum. Donec pulvinar venenatis est, non sollicitudin metus laoreet sed. Fusce tincidunt felis nec neque aliquet porttitor</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section class="blocks">
-          <div class="date">
-            <span>2014</span>
-          </div>
-          <div class="decorator">
-          </div>
-          <div class="details">
-            <header>
-              <h3>Some Project 3</h3>
-              <span class="place">Some workplace</span>
-            </header>
-            <div>
-              <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio eros, placerat eu metus id, gravida eleifend odio</li>
-              </ul>
-            </div>
-          </div>
-        </section>
+         <?php $ix++; } ?>
       </section>
       <section class="main-block concise">
         <h2>
@@ -184,3 +170,24 @@
     </aside>
   </body>
 </html>
+
+<script type="text/javascript">
+    function printMe() {
+         $("#no_print").hide();
+         var send_param = $("#main").html();
+         var form = document.createElement("form");
+            form.setAttribute("method", "POST");
+            form.setAttribute("action", "<?php echo base_url() ?>assets/cv_assets_print/generatePDF.php?nama_cv=Curriculum Vitae - <?php echo  @$item->result()[0]->NAMA ?>");
+
+                    var hiddenField = document.createElement("input");
+                    hiddenField.setAttribute("type", "hidden");
+                    hiddenField.setAttribute("name", "link");
+                    hiddenField.setAttribute("value", send_param);
+
+                    form.appendChild(hiddenField);
+
+            document.body.appendChild(form);
+            form.submit();
+            $("#no_print").show();
+    }
+</script>
