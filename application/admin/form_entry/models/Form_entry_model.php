@@ -174,7 +174,7 @@ class Form_entry_model extends CI_Model
         $this->db->where('SELECT_INTERVENTION', $intervention_id); 
         $this->db->like('LOWER("CLIENTS")', strtolower($clients)); 
         $this->db->like('LOWER("AREA")', strtolower($area)); 
-        $this->db->where('LOADING_START_DATE', $loading_start_date); 
+        //$this->db->where('LOADING_START_DATE', $loading_start_date); 
 		return $this->db->get();
     }
 }
