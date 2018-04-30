@@ -93,9 +93,14 @@ class Dashboard extends MY_Controller
 				if((is_array($element_r1[$v])) && (count($element_r1[$v]) > 0) ) {
 					foreach($element_r1[$v] as $k1 => $v1) {
 						$q1 = $this->Form_entry_model->get_filter_chart($v1,$produk_id,$intervention_id,$client,$lokasi_kerja,$date_month,$date_year);
-						echo $this->db->last_query();
 						if($q1->num_rows() > 0) {
-							echo json_encode($q1->result());
+							$data = array();
+							$data[$v1] = array();
+							foreach($q1->result() as $row1) {
+								$v1 = strtoupper($v1);
+								array_push($data[$v1],$row1->$v1);
+							}
+							$array_json[$v] = json_encode($data);
 						}
 					}
 				}
@@ -104,7 +109,16 @@ class Dashboard extends MY_Controller
 			if(isset($element_r2[$v])) {
 				if((is_array($element_r2[$v])) && (count($element_r2[$v]) > 0) ) {
 					foreach($element_r2[$v] as $k2 => $v2) {
-						
+						$q2 = $this->Form_entry_model->get_filter_chart($v2,$produk_id,$intervention_id,$client,$lokasi_kerja,$date_month,$date_year);
+						if($q2->num_rows() > 0) {
+							$data = array();
+							$data[$v2] = array();
+							foreach($q2->result() as $row2) {
+								$v2 = strtoupper($v2);
+								array_push($data[$v2],$row1->$v2);
+							}
+							$array_json[$v] = json_encode($data);
+						}
 					}
 				}	
 			}
@@ -112,7 +126,16 @@ class Dashboard extends MY_Controller
 			if(isset($element_r3[$v])) {
 				if((is_array($element_r3[$v])) && (count($element_r3[$v]) > 0) ) {
 					foreach($element_r3[$v] as $k3 => $v3) {
-
+						$q3 = $this->Form_entry_model->get_filter_chart($v3,$produk_id,$intervention_id,$client,$lokasi_kerja,$date_month,$date_year);
+						if($q3->num_rows() > 0) {
+							$data = array();
+							$data[$v3] = array();
+							foreach($q3->result() as $row3) {
+								$v3 = strtoupper($v3);
+								array_push($data[$v3],$row1->$v3);
+							}
+							$array_json[$v] = json_encode($data);
+						}
 					}
 				}
 			}
@@ -120,69 +143,22 @@ class Dashboard extends MY_Controller
 			if(isset($element_r4[$v])) {
 				if((is_array($element_r4[$v])) && (count($element_r4[$v]) > 0) ) {
 					foreach($element_r4[$v] as $k4 => $v4) {
-						
+						$q4 = $this->Form_entry_model->get_filter_chart($v4,$produk_id,$intervention_id,$client,$lokasi_kerja,$date_month,$date_year);
+						if($q4->num_rows() > 0) {
+							$data = array();
+							$data[$v4] = array();
+							foreach($q4->result() as $row4) {
+								$v4 = strtoupper($v4);
+								array_push($data[$v4],$row1->$v4);
+							}
+							$array_json[$v] = json_encode($data);
+						}	
 					}	
 				}
 			}
 		}
 		
-
-		die();
-
-		$result = array();
-
-		$query = $this->Dashboard_model->loading_stats($date_month,$date_year,$intervensi,$cst_id,$produk,$lokasi_kerja);
-
-		/* chart column negative */
-		$array_data = array();
-		if($query->num_rows() > 0) {
-			foreach($query->result() as $row) {
-				$o = new stdClass();
-				$o->name = $row->AREA;
-				$o->data = [floatval($row->R1_KLOBS), floatval($row->R1_KL15), floatval($row->R1_BBLS), floatval($row->R1_LONGTON), floatval($row->R1_METRICTON), floatval($row->R1_VEF_KLOBS), floatval($row->R1_VEF_KL15), floatval($row->R1_VEF_BBLS), floatval($row->R1_VEF_LONGTON), floatval($row->R1_VEF_METRICTON)];
-				$array_data[] = $o;
-			}
-		}
-		$result[] = $array_data;
-
-		/* chart pie */
-		$query = $this->Dashboard_model->discharge_stats($date_month,$date_year,$intervensi,$cst_id,$produk,$lokasi_kerja);
-		
-		/* chart column negative */
-		$array_data = array();
-		if($query->num_rows() > 0) {
-			foreach($query->result() as $row) {
-				$o = new stdClass();
-				$o->name = $row->AREA;
-				$o->data = [
-					floatval($row->R1_KLOBS), 
-					floatval($row->R1_KL15), 
-					floatval($row->R1_BBLS), 
-					floatval($row->R1_LONGTON), 
-					floatval($row->R1_METRICTON), 
-					floatval($row->R2_KLOBS), 
-					floatval($row->R2_KL15), 
-					floatval($row->R2_BBLS), 
-					floatval($row->R2_LONGTON), 
-					floatval($row->R2_METRICTON), 
-					floatval($row->R3_KLOBS), 
-					floatval($row->R3_KL15), 
-					floatval($row->R3_BBLS), 
-					floatval($row->R3_LONGTON), 
-					floatval($row->R3_METRICTON), 
-					floatval($row->R4_KLOBS), 
-					floatval($row->R4_KL15), 
-					floatval($row->R4_BBLS), 
-					floatval($row->R4_LONGTON), 
-					floatval($row->R4_METRICTON)
-				];
-				$array_data[] = $o;
-			}
-		}
-		$result[] = $array_data;
-
-
 		header('Content-Type: application/json');
-		echo json_encode($result);
+		echo json_encode($array_json);
 	}
 }
