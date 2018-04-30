@@ -9,7 +9,7 @@ class Dashboard extends MY_Controller
 	public function __construct() 
 	{
 		parent::__construct();
-		$this->load->model(array("client_site/Client_site_model","Dashboard_model","element_connection/Element_connection_model"));
+		$this->load->model(array("client_site/Client_site_model","Dashboard_model","element_connection/Element_connection_model","form_entry/Form_entry_model"));
 		$this->data['html_css'] = '
 			<style>
 				.form-horizontal .control-label{
@@ -83,6 +83,7 @@ class Dashboard extends MY_Controller
 			}
 		}
 
+		
 		// fungsi untuk mendapatkan header KLOBS,BBLS dll
 		// patokan data SELECT "PRODUCT_TYPE","SELECT_INTERVENTION","CLIENTS","AREA","LOADING_START_DATE" FROM "FORM_ENTRY_FIELD"
 		$headers = get_header_fields();
@@ -92,7 +93,7 @@ class Dashboard extends MY_Controller
 			if(isset($element_r1[$v])) {
 				if((is_array($element_r1[$v])) && (count($element_r1[$v]) > 0) ) {
 					foreach($element_r1[$v] as $k1 => $v1) {
-						
+						$this->Form_entry_model->get_filter_chart();	
 					}
 				}
 			}
