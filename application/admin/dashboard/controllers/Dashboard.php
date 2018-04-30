@@ -82,8 +82,51 @@ class Dashboard extends MY_Controller
 				$element_r4         = get_split_element($row_setup->ELEMENT_R4);
 			}
 		}
+		
 		print_r($element_r1);
         die();
+
+		// fungsi untuk mendapatkan header KLOBS,BBLS dll
+		$headers = get_header_fields();
+		foreach($headers as $k => $v) {
+			// R1
+			if(isset($element_r1[$v])) {
+				if((is_array($element_r1[$v])) && (count($element_r1[$v]) > 0) ) {
+					foreach($element_r1[$v] as $k1 => $v1) {
+						
+					}
+				}
+			}
+			// R2
+			if(isset($element_r2[$v])) {
+				if((is_array($element_r2[$v])) && (count($element_r2[$v]) > 0) ) {
+					foreach($element_r2[$v] as $k2 => $v2) {
+						
+					}
+				}	
+			}
+			// R3
+			if(isset($element_r3[$v])) {
+				if((is_array($element_r3[$v])) && (count($element_r3[$v]) > 0) ) {
+					foreach($element_r3[$v] as $k3 => $v3) {
+
+					}
+				}
+			}
+			// R4
+			if(isset($element_r4[$v])) {
+				if((is_array($element_r4[$v])) && (count($element_r4[$v]) > 0) ) {
+					foreach($element_r4[$v] as $k4 => $v4) {
+						
+					}	
+				}
+			}
+		}
+		
+
+		die();
+
+>>>>>>> fea1e153823ab2877b304d69a5cec88fc37df733
 		$result = array();
 
 		$query = $this->Dashboard_model->loading_stats($date_month,$date_year,$intervensi,$cst_id,$produk,$lokasi_kerja);
