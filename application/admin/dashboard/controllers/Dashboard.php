@@ -75,18 +75,14 @@ class Dashboard extends MY_Controller
 			foreach($query_setup->result() as $row_setup) {
 				$element_timelog_id = json_decode($row_setup->ELEMENT_TIMELOG_ID);
 				$element_quality_id = json_decode($row_setup->ELEMENT_QUALITY_ID);
-				$element_fields     = json_decode($row_setup->ELEMENT_FIELDS);
-				$element_r1         = json_decode($row_setup->ELEMENT_R1);
-				$element_r2         = json_decode($row_setup->ELEMENT_R2);
-				$element_r3         = json_decode($row_setup->ELEMENT_R3);
-				$element_r4         = json_decode($row_setup->ELEMENT_R4);
+				$element_fields     = get_split_element($row_setup->ELEMENT_FIELDS);
+				$element_r1         = get_split_element($row_setup->ELEMENT_R1);
+				$element_r2         = get_split_element($row_setup->ELEMENT_R2);
+				$element_r3         = get_split_element($row_setup->ELEMENT_R3);
+				$element_r4         = get_split_element($row_setup->ELEMENT_R4);
 			}
 		}
 
-		echo "<pre>";
-		print_r($element_r1);
-		echo "</pre>";
-		die();
 		$result = array();
 
 		$query = $this->Dashboard_model->loading_stats($date_month,$date_year,$intervensi,$cst_id,$produk,$lokasi_kerja);
