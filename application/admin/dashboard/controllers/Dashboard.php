@@ -87,7 +87,9 @@ class Dashboard extends MY_Controller
         die();
 
 		// fungsi untuk mendapatkan header KLOBS,BBLS dll
+		// patokan data SELECT "PRODUCT_TYPE","SELECT_INTERVENTION","CLIENTS","AREA","LOADING_START_DATE" FROM "FORM_ENTRY_FIELD"
 		$headers = get_header_fields();
+		$array_json = array();
 		foreach($headers as $k => $v) {
 			// R1
 			if(isset($element_r1[$v])) {

@@ -165,4 +165,16 @@ class Form_entry_model extends CI_Model
     {
     	$this->db->delete($this->table, array('ID' => $id));
     }
+
+    public  function get_filter_chart($cols='',$product_id=0,$intervention_id=0,$clients='',$area='',$loading_start_date='') 
+    {
+		$this->db->select($cols);
+        $this->db->from($this->table);
+        $this->db->where('PRODUCT_TYPE', $product_id); 
+        $this->db->where('SELECT_INTERVENTION', $intervention_id); 
+        $this->db->like('LOWER("CLIENTS")', strtolower($clients)); 
+        $this->db->like('LOWER("AREA")', strtolower($area)); 
+        $this->db->where('LOADING_START_DATE', $loading_start_date); 
+		return $this->db->get();
+    }
 }
