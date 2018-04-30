@@ -82,9 +82,6 @@ class Dashboard extends MY_Controller
 				$element_r4         = get_split_element($row_setup->ELEMENT_R4);
 			}
 		}
-		
-		print_r($element_r1);
-        die();
 
 		// fungsi untuk mendapatkan header KLOBS,BBLS dll
 		// patokan data SELECT "PRODUCT_TYPE","SELECT_INTERVENTION","CLIENTS","AREA","LOADING_START_DATE" FROM "FORM_ENTRY_FIELD"
