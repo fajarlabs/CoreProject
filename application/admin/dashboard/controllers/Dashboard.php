@@ -126,7 +126,6 @@ class Dashboard extends MY_Controller
 
 		die();
 
->>>>>>> fea1e153823ab2877b304d69a5cec88fc37df733
 		$result = array();
 
 		$query = $this->Dashboard_model->loading_stats($date_month,$date_year,$intervensi,$cst_id,$produk,$lokasi_kerja);
