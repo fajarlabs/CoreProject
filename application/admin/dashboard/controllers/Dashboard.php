@@ -93,7 +93,7 @@ class Dashboard extends MY_Controller
 			if(isset($element_r1[$v])) {
 				if((is_array($element_r1[$v])) && (count($element_r1[$v]) > 0) ) {
 					foreach($element_r1[$v] as $k1 => $v1) {
-						$this->Form_entry_model->get_filter_chart();	
+						$this->Form_entry_model->get_filter_chart($v1,);	
 					}
 				}
 			}
