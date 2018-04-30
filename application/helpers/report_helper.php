@@ -13,12 +13,14 @@ function get_split_element($str_fields='') {
     if(count($str_fields) > 0) :
         foreach($str_fields as $k => $v) {
             $explode = explode("|",$v);
-            // search key
-            if(!isset($array_key[@$explode[1]])) {
-                @$array_key[@$explode[1]] = array(@$explode[0]);
-            } else {
-                @array_push(@$array_key[@$explode[1]],@$explode[0]);
-            }
+            if(isset($explode[1])):
+                // search key
+                if(!isset($array_key[$explode[1]])) {
+                    $array_key[$explode[1]] = array($explode[0]);
+                } else {
+                    array_push($array_key[$explode[1]],$explode[0]);
+                }
+            endif;
         }
     endif;
 
