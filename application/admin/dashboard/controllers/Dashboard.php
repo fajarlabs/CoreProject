@@ -82,7 +82,8 @@ class Dashboard extends MY_Controller
 				$element_r4         = get_split_element($row_setup->ELEMENT_R4);
 			}
 		}
-
+		print_r($element_r1);
+        die();
 		$result = array();
 
 		$query = $this->Dashboard_model->loading_stats($date_month,$date_year,$intervensi,$cst_id,$produk,$lokasi_kerja);
