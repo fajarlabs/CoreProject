@@ -166,15 +166,28 @@ class Form_entry_model extends CI_Model
     	$this->db->delete($this->table, array('ID' => $id));
     }
 
-    public  function get_filter_chart($cols='',$product_id=0,$intervention_id=0,$clients='',$area='',$loading_start_date='') 
+    public  function get_filter_chart($cols='',$product_id=0,$intervention_id=0,$clients='',$area='',$month='',$year='') 
     {
 		$this->db->select($cols);
         $this->db->from($this->table);
-        $this->db->where('PRODUCT_TYPE', $product_id); 
-        $this->db->where('SELECT_INTERVENTION', $intervention_id); 
-        $this->db->like('LOWER("CLIENTS")', strtolower($clients)); 
-        $this->db->like('LOWER("AREA")', strtolower($area)); 
-        $this->db->where('LOADING_START_DATE', $loading_start_date); 
+        if(($product_id != '0') || (!empty($product_id)) ) {
+            $this->db->where('PRODUCT_TYPE', (string)$product_id); 
+        }
+        if(($intervention_id != '0') || (!empty($intervention_id)) ) {
+            $this->db->where('SELECT_INTERVENTION',(string)$intervention_id); 
+        }
+        if(!empty($clients)) {
+            $this->db->like('LOWER("CLIENTS")', strtolower($clients)); 
+        }
+        if(($area != '0') || (!empty($area)) ) {
+            $this->db->like('LOWER("AREA")', strtolower($area)); 
+        }
+        if(!empty($month)) {
+            $this->db->where('to_char("LOADING_START_DATE", \'MM\')=', $month);
+        }
+        if(!empty($year)) {
+            $this->db->where('to_char("LOADING_START_DATE", \'YYYY\')=', $year);
+        } 
 		return $this->db->get();
     }
 }
