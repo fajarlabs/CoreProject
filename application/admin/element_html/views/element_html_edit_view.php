@@ -37,7 +37,14 @@
 						</tr>
 						<tr>
 							<td width="150px" style="padding-top:15px;"><?php echo form_label('HTML Content*') ?></td>
-							<td><?php echo form_textarea(array('id'=>'mytextarea','type' => 'text', 'name' => 'content','class' => 'form-control', 'value' =>  '<template>'.html_entity_decode(stripslashes(@$item->result()[0]->DATA)).'</template>' )); ?></td>
+							<td>
+							<?php 
+								//echo form_textarea(array('id'=>'mytextarea','type' => 'text', 'name' => 'content','class' => 'form-control', 'value' =>  '<template>'.html_entity_decode(stripslashes(@$item->result()[0]->DATA)).'</template>' )); 
+							?>
+							<textarea class="form-control" id="mytextarea" name="content">
+							<?php echo html_entity_decode(stripslashes(@$item->result()[0]->DATA)); ?>
+							</textarea>
+							</td>
 
 						</tr>
 						<tr style="display: none;">
