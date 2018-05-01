@@ -99,4 +99,9 @@ function downloadReport() {
     str_query += "&CTIME="+encodeURI($("input[name=CTIME]").val());
     window.location.href = "<?php echo base_url(); ?>index.php/report/downloadexcel/?"+str_query;
  } 
+
+ function callModal(id) {
+    $("#exampleModalDownload").modal("show");
+    $("#iframe-download").attr("src","<?php echo base_url(); ?>index.php/client_report/cetak/"+id);
+ }
 </script>
