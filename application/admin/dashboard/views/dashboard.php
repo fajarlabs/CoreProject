@@ -39,7 +39,7 @@
 								<tr>
 									<td >
 										<?php echo form_label('Product') ?><br/>
-										<select name="produk" style="height:33px;">	
+										<select name="produk" id="produk" style="height:33px;">	
 											<option value="">--Choose--</option>
 											<?php foreach($product as $pr){ ?>
 												<option  value='<?php echo $pr->PRODUCT_ID ?>'><?php echo $pr->PRODUCT_NAME ?></option>
@@ -57,7 +57,7 @@
 									</td>	
 									<td>
 										<?php echo form_label('Clients'); ?><br/>
-										<select name="client" style="height:33px;">
+										<select id="client" name="client" style="height:33px;">
 											<option value="">--Choose--</option>
 											<?php 
 											$ct =  $client[0]->CLIENTS;
@@ -70,7 +70,7 @@
 									<td>
 									<?php 
 									echo form_label('Job Location') ?><br/>
-										<select name="lokasi_kerja" style="height:33px;">
+										<select id="lokasi_kerja" name="lokasi_kerja" style="height:33px;">
 											<option  value='0'>--Choose--</option>
 									<?php foreach($area as $ar){ ?>
 												<option  value='<?php echo $ar->AREA ?>'><?php echo $ar->AREA ?></option>
@@ -79,7 +79,7 @@
 									</td>
 									<td >
 									<?php echo form_label('Month') ?><br/>
-									<select name="bulan" class="form-control" required id="bulan">
+									<select id="bulan" name="bulan" class="form-control" required >
 										<option value="">--Choose--</option>
 										<option value="01">January</option>
 										<option value="02">February</option>
@@ -95,12 +95,14 @@
 										<option value="12">December</option>
 									</select>
 										</td>
-										<td style="width:300px;">
+										<td style="width:400px;">
 										<?php echo form_label('Year') ?><br/>
 										<?php 
 											//$dtbarge=date("m/d/Y", strtotime($row->DATE_LOADING_BARGE));
-											echo form_input(array('type' => 'text', 'readonly' => 'true','maxlength' => '4', 'name' => 'tahun','class' => 'thn_picker', 'style' => ' min-width:100px !important;width:100px;height:33px;color:#000 !important;', 'value' => '')); ?>
+											echo form_input(array('type' => 'text', 'readonly' => 'true','maxlength' => '4', 'name' => 'tahun','class' => 'thn_picker','id' => 'tahun', 'style' => ' min-width:100px !important;width:100px;height:33px;color:#000 !important;', 'value' => '')); ?>
 											<a style="height:33px;margin-top:-3px;margin-left:5px;" href="#" onclick="$(this).closest('form').submit()" class="btn btn-primary"><i class="fa fa-dashboard"></i> Lihat</a>
+
+											<a  style="display:none" onclick="export_excel()" id="btn_excel" href="#"  class="btn btn-success"><i class="fa fa-file"></i> Export Excel</a>
 									</td>					
 								</tr>
 							</table>
@@ -178,6 +180,7 @@
 	 	    		$.get('<?php echo base_url(); ?>index.php/dashboard/chart_rest/?'+$(this).serialize(),function(data_json){
 
 
+	 	    			$("#btn_excel").show();
 	 	    			$("#div_chart").show();
 	 	    			var arr = JSON.parse(JSON.stringify(data_json));
 	 	    			var my_json="";
@@ -228,14 +231,6 @@
 
 
 	 	    			$(".tab-content").show();
-
-						//var categories1 = ['R1_KLOBS','R1_KL15','R1_BBLS','R1_LONGTON','R1_METRICTON','R1_VEF_KLOBS','R1_VEF_KL15','R1_VEF_BBLS','R1_VEF_LONGTON','R1_VEF_METRICTON'];
-						//var title1 = 'Statistik Data (R1) Loading';
-
-	 	    			//var categories2 = ['SLVS_BOL_R1_KLOBS','SLVS_BOL_R1_KL15','SLVS_BOL_R1_BBLS','SLVS_BOL_R1_LONGTON','SLVS_BOL_R1_METRICTON','SFAL_VS_SFBD_R2_KLOBS','SFAL_VS_SFBD_R2_KL15','SFAL_VS_SFBD_R2_BBLS','SFAL_VS_SFBD_R2_LONGTON','SFAL_VS_SFBD_R2_METRICTON','SFBD_VS_SR_R3_KLOBS','SFBD_VS_SR_R3_KL15','SFBD_VS_SR_R3_BBLS','SFBD_VS_SR_R3_LONGTON','SFBD_VS_SR_R3_METRICTON','SR_VS_BOL_R4_KLOBS','SR_VS_BOL_R4_KL15','SR_VS_BOL_R4_BBLS','SR_VS_BOL_R4_LONGTON','SR_VS_BOL_R4_METRICTON'];
-	 	    			//var title2 = 'Statistik Data (R1,R2,R3,R4) Discharge';
-
-
 
 	 	    		});
 	 	    		return false;
@@ -386,116 +381,60 @@
 				    }]
 				});
 		}
+		function export_excel(){
+			var  produk 	= $("#produk").val();
+			var  intervensi = $("#intervensi").val();
+			var  lokasi_kerja = $("#lokasi_kerja").val();
+			var  client = $("#client").val();
+			var  bulan = $("#bulan").val();
+			var  tahun = $("#tahun").val();
 
-		function chart_line(data,chart_id,categories,title){
-				Highcharts.chart(chart_id, {
-				    chart: {
-				        type: 'spline'
-				    },
-				    title: {
-				        text: 'Fuel Transaction Statistics'
-				    },
-				    credits: {
-				        enabled: false
-				    },
-				    xAxis: {
-				        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-				            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-				    },
-				    yAxis: {
-				        title: {
-				            text: 'Liter (x1000)'
-				        },
-				        labels: {
-				            formatter: function () {
-				                return this.value;
-				            }
-				        }
-				    },
-				    tooltip: {
-				        crosshairs: true,
-				        shared: true
-				    },
-				    plotOptions: {
-				        spline: {
-				            marker: {
-				                radius: 4,
-				                lineColor: '#666666',
-				                lineWidth: 1
-				            }
-				        }
-				    },
-				    series: [{
-				        name: 'Sending',
-				        marker: {
-				            symbol: 'diamond'
-				        },
-				        data: data
-				    }]
-				});
-		}
 
-		function column_curva(data,chart_id,categories,title) {
-		 	Highcharts.chart(chart_id, {
-			    chart: {
-			        type: 'area',
-			        spacingBottom: 30
-			    },
-			    title: {
-			        text: title
-			    },
-			    xAxis: {
-			        categories: categories
-			    },
-			    credits: {
-			        enabled: false
-			    },
-			    yAxis: {
-			        title: {
-			            text: 'Liter'
-			        },
-			        labels: {
-			            formatter: function () {
-			                return this.value;
-			            }
-			        }
-			    },
-			    tooltip: {
-			        formatter: function () {
-			            return '<b>' + this.series.name + '</b><br/>' +
-			                this.x + ': ' + this.y;
-			        }
-			    },
-			    plotOptions: {
-			        area: {
-			            fillOpacity: 0.5
-			        }
-			    },
-			    series: [{
-			        name: 'Target',
-			        data: [70340, 106900, 109000, 114000, 0.0,0.0, 0.0,0.0, 0.0, 0.0, 0.0,0.0]
-			    }, {
-			        name: 'Receive',
-			        data: [69030, 105800, 108980, 113300, 0.0,0.0, 0.0,0.0, 0.0, 0.0, 0.0,0.0]
-			    }]
-			});
-		}
+			var form = document.createElement("form");
+		    form.setAttribute("method", "POST");
+		    form.setAttribute("target", "_blank");
+		    form.setAttribute("action", "<?php echo base_url() ?>index.php/dashboard/export_excel");
 
-		function columnNegative(data,chart_id,categories,title) {
-			Highcharts.chart(chart_id, {
-			    chart: {
-			        type: 'column'
-			    },
-			    title: {
-			        text: title
-			    },
-			    xAxis: {
-			        categories: categories
-			    },
-			    credits: {
-			        enabled: false
-			    },
-			    series: data
-			});
+		   
+	            var hiddenField1 = document.createElement("input");
+	            hiddenField1.setAttribute("type", "hidden");
+	            hiddenField1.setAttribute("name", "produk");
+	            hiddenField1.setAttribute("value", produk); 
+
+	            var hiddenField2 = document.createElement("input");
+	            hiddenField2.setAttribute("type", "hidden");
+	            hiddenField2.setAttribute("name", "intervensi");
+	            hiddenField2.setAttribute("value", intervensi);
+
+	            var hiddenField3 = document.createElement("input");
+	            hiddenField3.setAttribute("type", "hidden");
+	            hiddenField3.setAttribute("name", "lokasi_kerja");
+	            hiddenField3.setAttribute("value", lokasi_kerja);
+
+	            var hiddenField4 = document.createElement("input");
+	            hiddenField4.setAttribute("type", "hidden");
+	            hiddenField4.setAttribute("name", "client");
+	            hiddenField4.setAttribute("value", client);
+				
+				var hiddenField5 = document.createElement("input");
+	            hiddenField5.setAttribute("type", "hidden");
+	            hiddenField5.setAttribute("name", "bulan");
+	            hiddenField5.setAttribute("value", bulan);
+
+	            var hiddenField6 = document.createElement("input");
+	            hiddenField6.setAttribute("type", "hidden");
+	            hiddenField6.setAttribute("name", "tahun");
+	            hiddenField6.setAttribute("value", tahun);
+
+		   	  form.appendChild(hiddenField1);
+		   	  form.appendChild(hiddenField2);
+		   	  form.appendChild(hiddenField3);
+		   	  form.appendChild(hiddenField4);
+		   	  form.appendChild(hiddenField5);
+		   	  form.appendChild(hiddenField6);
+
+		    document.body.appendChild(form);
+		    form.submit();
+
 		}
 		</script>

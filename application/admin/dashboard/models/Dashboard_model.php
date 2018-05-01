@@ -10,7 +10,7 @@ class Dashboard_model extends CI_Model
 	{
         return $this->db->get($this->table);
 	}
-
+	
     public  function get_table_name($table,$col_name='',$order_type='',$where_col='',$where_data='') {
         $this->db->select('*');
         $this->db->from($table);
