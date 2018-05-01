@@ -48,7 +48,7 @@
 									</td>
 									<td>
 										<?php echo form_label('Intervention') ?><br/>
-										<select name="intervensi" style="height:33px;">
+										<select id="intervensi" name="intervensi" style="height:33px;">
 											<option value="">--Choose--</option>
 											<?php foreach($intervensi as $itv){ ?>
 												<option  value='<?php echo $itv->ID ?>'><?php echo $itv->INTERVENTION_NAME ?></option>
@@ -106,81 +106,19 @@
 							</table>
 							<?php echo form_close(); ?>
 							<br/>
-							<ul style="display:none;" id="tabs_menu" class="nav nav-tabs">
-							  <li class="active"><a data-toggle="tab" href="#menu_klobs">KL @obs</a></li>
-							  <li><a data-toggle="tab" href="#menu_kl15c">KL @15° C</a></li>
-							  <li><a data-toggle="tab" href="#menu_bbls60f">BBLS @60°F</a></li>
-							  <li><a data-toggle="tab" href="#menu_longton">Long Ton</a></li>
-							  <li><a data-toggle="tab" href="#menu_metric_ton">Metric Ton</a></li>
-							</ul>
 
-							<div style="display:none;" class="tab-content">
-							    <div id="menu_klobs" class="tab-pane fade in active">
-								    <table id="div_chart_kl_obs" style="display:none;width:100%;margin-top:3px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
-										<tr>
-											<td><div style="width:500px;height:400px;" id="chart_kl_obs_1">No Data</div></td>
-											<td><div style="width:500px;height:400px;" id="chart_kl_obs_2">No Data</div></td>
-										</tr>
-										<tr>
-											<td colspan="2">
-												<div style="width:1000px;height:400px;" id="chart_kl_obs_3">No Data</div>
-											</td>
-										</tr>
-									</table>
-							    </div>
-							    <div id="menu_kl15c" class="tab-pane fade">
-							   		<table id="div_chart_kl15c" style="display:none;width:100%;margin-top:3px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
-										<tr>
-											<td><div style="width:500px;height:400px;" id="chart_kl15c_1">No Data</div></td>
-											<td><div style="width:500px;height:400px;" id="chart_kl15c_2">No Data</div></td>
-										</tr>
-										<tr>
-											<td colspan="2">
-												<div style="width:1000px;height:400px;" id="chart_kl15c_3">No Data</div>
-											</td>
-										</tr>
-									</table>
-							    </div>
-							  <div id="menu_bbls60f" class="tab-pane fade">
-							        <table id="div_chart_bbls60f" style="display:none;width:100%;margin-top:3px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
-										<tr>
-											<td><div style="width:500px;height:400px;" id="chart_bbls60f_1">No Data</div></td>
-											<td><div style="width:500px;height:400px;" id="chart_bbls60f_2">No Data</div></td>
-										</tr>
-										<tr>
-											<td colspan="2">
-												<div style="width:1000px;height:400px;" id="chart_bbls60f_3">No Data</div>
-											</td>
-										</tr>
-									</table>
-							  </div>
-							  <div id="menu_longton" class="tab-pane fade">
-							    <table id="div_chart_longton" style="display:none;width:100%;margin-top:3px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
-										<tr>
-											<td><div style="width:500px;height:400px;" id="chart_longton_1">No Data</div></td>
-											<td><div style="width:500px;height:400px;" id="chart_longton_2">No Data</div></td>
-										</tr>
-										<tr>
-											<td colspan="2">
-												<div style="width:1000px;height:400px;" id="chart_longton_3">No Data</div>
-											</td>
-										</tr>
-								</table>
-							  </div>
-							  <div id="menu_metric_ton" class="tab-pane fade">
-							     <table id="div_chart_metric_ton" style="display:none;width:100%;margin-top:3px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
-										<tr>
-											<td><div style="width:500px;height:400px;" id="chart_metric_ton_1">No Data</div></td>
-											<td><div style="width:500px;height:400px;" id="chart_metric_ton_2">No Data</div></td>
-										</tr>
-										<tr>
-											<td colspan="2">
-												<div style="width:1000px;height:400px;" id="chart_metric_ton_3">No Data</div>
-											</td>
-										</tr>
-								</table>
-							  </div>
-							</div>
+							<table id="div_chart" style="display:none;width:100%;margin-top:3px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
+								<tr>
+									<td><div style="width:500px;height:400px;" id="chart_pie">No Data</div></td>
+									<td><div style="width:500px;height:400px;" id="chart_bar">No Data</div></td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<div style="width:1000px;height:400px;" id="chart_double_line">No Data</div>
+									</td>
+								</tr>
+							</table>
+
 						</div>
 					</div>                
 				</div>
@@ -238,57 +176,54 @@
 	 	    		}
 	 	    		
 	 	    		$.get('<?php echo base_url(); ?>index.php/dashboard/chart_rest/?'+$(this).serialize(),function(data_json){
+	 	    			$("#div_chart").show();
 	 	    			var arr = JSON.parse(JSON.stringify(data_json));
-	 	    			console.log(arr);
-
+	 	    			var my_json="";
 	 				    Object.keys(arr).forEach(function(key, value) {
-					      console.log(key);
-					      Object.keys(arr[key]).forEach(function(val) {
-					        arr[key][val].forEach(function(data) {
-					          console.log(data);
-					        });
-					      });
+	 				      	
+	 				      	 Object.keys(arr[key]).forEach(function(val) {
+
+		 				      	 	if(key){
+		 				      	 		my_json += '{ "name": "'+key+'",';	
+		 				      	 	}
+			 				      	 	var sum_data=0;
+			 				      	 	var total_data=0;
+								        arr[key][val].forEach(function(data) {
+								        	sum_data += parseFloat(data);
+								        	total_data++;
+								        });
+								        var hasil = sum_data/total_data;
+								        var num = hasil.toFixed(3);
+							        if(num) {
+							        	my_json  +=  '"y" : '+num+' },';	
+						       		}
+						      });
 					    });
-						
 
-	 	    			$("#tabs_menu").show();
+	 				    my_json = my_json.replace(/(^[,\s]+)|([,\s]+$)/g, '');
+	 				    my_json = "["+my_json+"]";
+
+	 				    var series = $("#intervensi").find("option:selected").text();
+
+ 				        //Pie Chart
+ 				        column_pie(my_json,'chart_pie','','Loss Statistics Percentage',series);
+
+ 				        //Bar Chart
+ 				        column_bar(my_json,'chart_bar','','Loss Statistics Percentage',series);
+ 				       	
+ 				       	//Double Line Chart
+ 				        column_double_line('','chart_double_line','','Loss Statistics Percentage',series);
+
+
 	 	    			$(".tab-content").show();
-
-	 	    			$("#div_chart_kl_obs").show();
-	 	    			$("#div_chart_kl15c").show();
-	 	    			$("#div_chart_bbls60f").show();
-	 	    			$("#div_chart_longton").show();
-	 	    			$("#div_chart_metric_ton").show();
-
 
 						var categories1 = ['R1_KLOBS','R1_KL15','R1_BBLS','R1_LONGTON','R1_METRICTON','R1_VEF_KLOBS','R1_VEF_KL15','R1_VEF_BBLS','R1_VEF_LONGTON','R1_VEF_METRICTON'];
 						var title1 = 'Statistik Data (R1) Loading';
-	 	    			//columnNegative(json[0],"chart1",categories1,title1);
 
 	 	    			var categories2 = ['SLVS_BOL_R1_KLOBS','SLVS_BOL_R1_KL15','SLVS_BOL_R1_BBLS','SLVS_BOL_R1_LONGTON','SLVS_BOL_R1_METRICTON','SFAL_VS_SFBD_R2_KLOBS','SFAL_VS_SFBD_R2_KL15','SFAL_VS_SFBD_R2_BBLS','SFAL_VS_SFBD_R2_LONGTON','SFAL_VS_SFBD_R2_METRICTON','SFBD_VS_SR_R3_KLOBS','SFBD_VS_SR_R3_KL15','SFBD_VS_SR_R3_BBLS','SFBD_VS_SR_R3_LONGTON','SFBD_VS_SR_R3_METRICTON','SR_VS_BOL_R4_KLOBS','SR_VS_BOL_R4_KL15','SR_VS_BOL_R4_BBLS','SR_VS_BOL_R4_LONGTON','SR_VS_BOL_R4_METRICTON'];
 	 	    			var title2 = 'Statistik Data (R1,R2,R3,R4) Discharge';
 
-	 	    			//columnNegative(json[1],"chart2",categories2,title2);
 
-	 	    			column_pie('','chart_kl_obs_1','','Loss Statistics Percentage');
-	 	    			column_curva('','chart_kl_obs_2','','Statistics');
-	 	    			chart_dobule_line('','chart_kl_obs_3','','Statistics');
-
-	 	    			column_pie('','chart_kl15c_1','','Loss Statistics Percentage');
-	 	    			column_curva('','chart_kl15c_2','','Statistics');
-	 	    			chart_dobule_line('','chart_kl15c_3','','Statistics');
-
-	 	    			column_pie('','chart_bbls60f_1','','Loss Statistics Percentage');
-	 	    			column_curva('','chart_bbls60f_2','','Statistics');
-	 	    			chart_dobule_line('','chart_bbls60f_3','','Statistics');
-
-	 	    			column_pie('','chart_longton_1','','Loss Statistics Percentage');
-	 	    			column_curva('','chart_longton_2','','Statistics');
-	 	    			chart_dobule_line('','chart_longton_3','','Statistics');
-
-	 	    			column_pie('','chart_metric_ton_1','','Loss Statistics Percentage');
-	 	    			column_curva('','chart_metric_ton_2','','Statistics');
-	 	    			chart_dobule_line('','chart_metric_ton_3','','Statistics');
 
 	 	    		});
 	 	    		return false;
@@ -298,25 +233,94 @@
 	        }
 		 })();
 
-		 function columnNegative(data,chart_id,categories,title) {
-			Highcharts.chart(chart_id, {
-			    chart: {
-			        type: 'column'
-			    },
-			    title: {
-			        text: title
-			    },
-			    xAxis: {
-			        categories: categories
-			    },
-			    credits: {
-			        enabled: false
-			    },
-			    series: data
-			});
-		 }
+		function column_pie(mydata,chart_id,categories,title,series_name) {
+			mydata = JSON.parse(mydata);
+		 	Highcharts.chart(chart_id, {
+				    chart: {
+				        plotBackgroundColor: null,
+				        plotBorderWidth: null,
+				        plotShadow: false,
+				        type: 'pie'
+				    },
+				    title: {
+				        text: title
+				    },
+				    credits: {
+				        enabled: false
+				    },
+				    tooltip: {
+				        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+				    },
+				    plotOptions: {
+				        pie: {
+				            allowPointSelect: true,
+				            cursor: 'pointer',
+				            dataLabels: {
+				                enabled: true,
+				                format: '<b>{point.name}</b>: {point.percentage:.1f}%',
+				                style: {
+				                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+				                }
+				            }
+				        }
+				    },
+				    series: [{
+				        name: series_name,
+				        colorByPoint: true,
+				        data: mydata
+				    }]
+				});
+		}
+		
+		function column_bar(mydata,chart_id,categories,title,series_name) {
+				mydata = JSON.parse(mydata);
+				Highcharts.chart(chart_id, {
+				    chart: {
+				        type: 'column'
+				    },
+				    title: {
+				        text: title
+				    },
+				    xAxis: {
+				        type: 'category'
+				    },
+				    yAxis: {
+				        title: {
+				            text: 'Value'
+				        }
+				    },
+				    credits: {
+						enabled: false
+					},
+				    legend: {
+				        enabled: false
+				    },
+				    plotOptions: {
+				        series: {
+				            borderWidth: 0,
+				            dataLabels: {
+				                enabled: true,
+				                format: '{point.y:0f}'
+				            }
+				        }
+				    },
 
-		 function chart_dobule_line(data,chart_id,categories,title){
+				    tooltip: {
+				        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+				        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:0f}</b><br/>'
+				    },
+
+				    "series": [
+				        {
+				            "name": series_name,
+				            "colorByPoint": true,
+				            "data":  mydata
+				        }
+				    ]
+				});
+		}
+
+		function column_double_line(data,chart_id,categories,title){
 				Highcharts.chart(chart_id, {
 				    chart: {
 				        type: 'spline'
@@ -369,9 +373,9 @@
 				        data: [74.2, 107.3, 110.32, 115.9, 0.0,0.0, 0.0,0.0, 0.0, 0.0, 0.0,0.0]
 				    }]
 				});
-		 }
+		}
 
-		 function chart_line(data,chart_id,categories,title){
+		function chart_line(data,chart_id,categories,title){
 				Highcharts.chart(chart_id, {
 				    chart: {
 				        type: 'spline'
@@ -414,12 +418,12 @@
 				        marker: {
 				            symbol: 'diamond'
 				        },
-				        data: [70.340, 106.9, 109.5, 114.5, 0.0,0.0, 0.0,0.0, 0.0, 0.0, 0.0,0.0]
+				        data: data
 				    }]
 				});
-		 }
+		}
 
-		 function column_curva(data,chart_id,categories,title) {
+		function column_curva(data,chart_id,categories,title) {
 		 	Highcharts.chart(chart_id, {
 			    chart: {
 			        type: 'area',
@@ -463,57 +467,23 @@
 			        data: [69030, 105800, 108980, 113300, 0.0,0.0, 0.0,0.0, 0.0, 0.0, 0.0,0.0]
 			    }]
 			});
-		 }
+		}
 
-		 function column_pie(data,chart_id,categories,title) {
-		 	Highcharts.chart(chart_id, {
-				    chart: {
-				        plotBackgroundColor: null,
-				        plotBorderWidth: null,
-				        plotShadow: false,
-				        type: 'pie'
-				    },
-				    title: {
-				        text: title
-				    },
-				    credits: {
-				        enabled: false
-				    },
-				    tooltip: {
-				        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-				    },
-				    plotOptions: {
-				        pie: {
-				            allowPointSelect: true,
-				            cursor: 'pointer',
-				            dataLabels: {
-				                enabled: true,
-				                format: '<b>{point.name}</b>: {point.percentage:.1f}%',
-				                style: {
-				                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-				                }
-				            }
-				        }
-				    },
-				    series: [{
-				        name: 'Discharge',
-				        colorByPoint: true,
-				        data: [{
-				            name: 'R1',
-				            y: 11.84
-				        }, {
-				            name: 'R2',
-				            y: 10.85
-				        }, {
-				            name: 'R3',
-				            y: 4.67
-				        }, {
-				            name: 'R4',
-				            y: 4.18
-				        }]
-				    }]
-				});
-		 }
-
-	
+		function columnNegative(data,chart_id,categories,title) {
+			Highcharts.chart(chart_id, {
+			    chart: {
+			        type: 'column'
+			    },
+			    title: {
+			        text: title
+			    },
+			    xAxis: {
+			        categories: categories
+			    },
+			    credits: {
+			        enabled: false
+			    },
+			    series: data
+			});
+		}
 		</script>
