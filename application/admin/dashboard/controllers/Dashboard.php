@@ -52,6 +52,15 @@ class Dashboard extends MY_Controller
 		$this->load->view("admin/footer", $this->data);
 	}
 
+
+	public function standard_reference()
+	{ 	
+		$this->data['title'] 		= "Standard Reference";
+		$this->load->view("admin/header",$this->data);
+		$this->load->view("standard_reference", $this->data);
+		$this->load->view("admin/footer", $this->data);
+	}
+
 	function export_excel(){
 		header("Content-type: application/vnd-ms-excel");
 		header("Content-Disposition: attachment; filename=Dashboard_Report-".date('ymdhis').".xls");

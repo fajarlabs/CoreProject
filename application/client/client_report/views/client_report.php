@@ -85,10 +85,6 @@
     }
  })();
 
- function callModal(id) {
-    $("#exampleModalDownload").modal("show");
-    $("#iframe-download").attr("src","<?php echo base_url(); ?>index.php/report/cetak/"+id);
- }
 
 function downloadReport() {
     var str_query = "INTERVENTION_NAME="+encodeURI($("input[name=INTERVENTION_NAME]").val());
