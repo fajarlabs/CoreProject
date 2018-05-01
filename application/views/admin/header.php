@@ -218,10 +218,14 @@
 							</div>
 						</form>
 					</li>
+
 					<li class="dropdown">
-						<?php 
-						$notify = get_notify();
-						?>
+						<a href="<?php echo base_url() ?>index.php/dashboard/standard_reference" >
+							<i style="color:white" class="fa fa-file"></i>
+						</a>	
+					</li>
+					<li class="dropdown">
+						<?php $notify = get_notify(); ?>
 						<a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle f-s-14">
 							<i class="fa fa-bell-o"></i>
 							<span class="label"><?php echo $notify->total; ?></span>

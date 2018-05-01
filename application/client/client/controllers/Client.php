@@ -436,7 +436,7 @@ class Client extends MY_Controller
 			redirect('/client_dashboard', 'refresh');
 		} else {
 			$this->session->set_flashdata('error_login_client', 'Username or password incorrect !');
-			redirect('/company/page/client-room/', 'refresh');
+			redirect('/login', 'refresh');
 		}
 	}
 

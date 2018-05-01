@@ -47,10 +47,6 @@ class Client_report extends CI_Controller
 
 				});
 
- function callModalClient(id) {
-    $("#exampleModalDownload").modal("show");
-    $("#iframe-download").attr("src","http://localhost/index.php/client_report/cetak/"+id);
- }
 			</script>';
 	}
 
@@ -91,7 +87,7 @@ class Client_report extends CI_Controller
 				$row->SURVEYOR_IN_CHARGE = implode(", ",json_decode($row->SURVEYOR_IN_CHARGE));
 				$row->CTIME  = date('d-m-Y H:i:s',strtotime($row->CTIME));
 				$row->FUNGSI = '<a href="'.base_url().'index.php/client_report/detil/'.$row->FEFID.'" class="btn btn-primary btn-xs"><i class="fa fa-eye"> View</i></a> '; 
-				$row->FUNGSI .= '<a href="javascript:;" onclick="callModalClient('.$row->FEFID.')" class="btn btn-success btn-xs"><i class="fa fa-print"></i> Print</a>'; 
+				$row->FUNGSI .= '<a href="javascript:;" onclick="callModal('.$row->FEFID.')" class="btn btn-success btn-xs"><i class="fa fa-print"></i> Print</a>'; 
 				$row->PRODUCT_TYPE = ucfirst($row->PRODUCT_TYPE);
 				$row->SELECT_CARGO = ucwords(str_replace("_", " ", $row->SELECT_CARGO));
 				$array_list[] = $row;
