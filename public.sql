@@ -18,7 +18,7 @@ Date: 2018-04-30 23:37:20
 -- ----------------------------
 -- Sequence structure for "public"."ALERT_SUBSCRIBER_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."ALERT_SUBSCRIBER_ID_seq";
+-- DROP SEQUENCE "public"."ALERT_SUBSCRIBER_ID_seq";
 CREATE SEQUENCE "public"."ALERT_SUBSCRIBER_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -29,7 +29,7 @@ CREATE SEQUENCE "public"."ALERT_SUBSCRIBER_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq";
+-- DROP SEQUENCE "public"."APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -40,7 +40,7 @@ CREATE SEQUENCE "public"."APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq";
+-- DROP SEQUENCE "public"."APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -51,7 +51,7 @@ CREATE SEQUENCE "public"."APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_CLIENT_MENU_CLIENT_MENU_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_CLIENT_MENU_CLIENT_MENU_ID_seq";
+-- DROP SEQUENCE "public"."APP_CLIENT_MENU_CLIENT_MENU_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_MENU_CLIENT_MENU_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -62,7 +62,7 @@ CREATE SEQUENCE "public"."APP_CLIENT_MENU_CLIENT_MENU_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_CLIENT_SITE_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_CLIENT_SITE_ID_seq";
+-- DROP SEQUENCE "public"."APP_CLIENT_SITE_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_SITE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -73,7 +73,7 @@ CREATE SEQUENCE "public"."APP_CLIENT_SITE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq";
+-- DROP SEQUENCE "public"."APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -84,7 +84,7 @@ CREATE SEQUENCE "public"."APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_seq";
+-- DROP SEQUENCE "public"."APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -95,7 +95,7 @@ CREATE SEQUENCE "public"."APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_se
 -- ----------------------------
 -- Sequence structure for "public"."APP_CLIENT_USER_CLIENT_USER_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_CLIENT_USER_CLIENT_USER_ID_seq";
+-- DROP SEQUENCE "public"."APP_CLIENT_USER_CLIENT_USER_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_USER_CLIENT_USER_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -106,7 +106,7 @@ CREATE SEQUENCE "public"."APP_CLIENT_USER_CLIENT_USER_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq";
+-- DROP SEQUENCE "public"."APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -117,7 +117,7 @@ CREATE SEQUENCE "public"."APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_FUNCTION_ACCESS_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_FUNCTION_ACCESS_ID_seq";
+-- DROP SEQUENCE "public"."APP_FUNCTION_ACCESS_ID_seq";
 CREATE SEQUENCE "public"."APP_FUNCTION_ACCESS_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -128,7 +128,7 @@ CREATE SEQUENCE "public"."APP_FUNCTION_ACCESS_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_LOG_CLIENT_LOG_CLIENT_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_LOG_CLIENT_LOG_CLIENT_ID_seq";
+-- DROP SEQUENCE "public"."APP_LOG_CLIENT_LOG_CLIENT_ID_seq";
 CREATE SEQUENCE "public"."APP_LOG_CLIENT_LOG_CLIENT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -139,7 +139,7 @@ CREATE SEQUENCE "public"."APP_LOG_CLIENT_LOG_CLIENT_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_LOG_LOG_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_LOG_LOG_ID_seq";
+-- DROP SEQUENCE "public"."APP_LOG_LOG_ID_seq";
 CREATE SEQUENCE "public"."APP_LOG_LOG_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -150,7 +150,7 @@ CREATE SEQUENCE "public"."APP_LOG_LOG_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_MENU_MENU_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_MENU_MENU_ID_seq";
+-- DROP SEQUENCE "public"."APP_MENU_MENU_ID_seq";
 CREATE SEQUENCE "public"."APP_MENU_MENU_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -161,7 +161,7 @@ CREATE SEQUENCE "public"."APP_MENU_MENU_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_ROUTE_ROUTE_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_ROUTE_ROUTE_ID_seq";
+-- DROP SEQUENCE "public"."APP_ROUTE_ROUTE_ID_seq";
 CREATE SEQUENCE "public"."APP_ROUTE_ROUTE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -172,7 +172,7 @@ CREATE SEQUENCE "public"."APP_ROUTE_ROUTE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_SETTING_SETTING_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_SETTING_SETTING_ID_seq";
+-- DROP SEQUENCE "public"."APP_SETTING_SETTING_ID_seq";
 CREATE SEQUENCE "public"."APP_SETTING_SETTING_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -183,7 +183,7 @@ CREATE SEQUENCE "public"."APP_SETTING_SETTING_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq";
+-- DROP SEQUENCE "public"."APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq";
 CREATE SEQUENCE "public"."APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -194,7 +194,7 @@ CREATE SEQUENCE "public"."APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_USER_GROUP_GROUP_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_USER_GROUP_GROUP_ID_seq";
+-- DROP SEQUENCE "public"."APP_USER_GROUP_GROUP_ID_seq";
 CREATE SEQUENCE "public"."APP_USER_GROUP_GROUP_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -205,7 +205,7 @@ CREATE SEQUENCE "public"."APP_USER_GROUP_GROUP_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."APP_USER_USER_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."APP_USER_USER_ID_seq";
+-- DROP SEQUENCE "public"."APP_USER_USER_ID_seq";
 CREATE SEQUENCE "public"."APP_USER_USER_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -216,7 +216,7 @@ CREATE SEQUENCE "public"."APP_USER_USER_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq";
+-- DROP SEQUENCE "public"."CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq";
 CREATE SEQUENCE "public"."CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -227,7 +227,7 @@ CREATE SEQUENCE "public"."CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."FILE_MANAGER_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."FILE_MANAGER_ID_seq";
+-- DROP SEQUENCE "public"."FILE_MANAGER_ID_seq";
 CREATE SEQUENCE "public"."FILE_MANAGER_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -238,7 +238,7 @@ CREATE SEQUENCE "public"."FILE_MANAGER_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."FORM_ENTRY_FIELD_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."FORM_ENTRY_FIELD_ID_seq";
+-- DROP SEQUENCE "public"."FORM_ENTRY_FIELD_ID_seq";
 CREATE SEQUENCE "public"."FORM_ENTRY_FIELD_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -249,7 +249,7 @@ CREATE SEQUENCE "public"."FORM_ENTRY_FIELD_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."FORM_ENTRY_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."FORM_ENTRY_ID_seq";
+-- DROP SEQUENCE "public"."FORM_ENTRY_ID_seq";
 CREATE SEQUENCE "public"."FORM_ENTRY_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -260,7 +260,7 @@ CREATE SEQUENCE "public"."FORM_ENTRY_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."HEADER_INFO_CLIENT_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."HEADER_INFO_CLIENT_ID_seq";
+-- DROP SEQUENCE "public"."HEADER_INFO_CLIENT_ID_seq";
 CREATE SEQUENCE "public"."HEADER_INFO_CLIENT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -271,7 +271,7 @@ CREATE SEQUENCE "public"."HEADER_INFO_CLIENT_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."inbox_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."inbox_ID_seq";
+-- DROP SEQUENCE "public"."inbox_ID_seq";
 CREATE SEQUENCE "public"."inbox_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -282,7 +282,7 @@ CREATE SEQUENCE "public"."inbox_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."KOMPONEN_HTML_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."KOMPONEN_HTML_ID_seq";
+-- DROP SEQUENCE "public"."KOMPONEN_HTML_ID_seq";
 CREATE SEQUENCE "public"."KOMPONEN_HTML_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -293,7 +293,7 @@ CREATE SEQUENCE "public"."KOMPONEN_HTML_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."KOMPONEN_JSON_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."KOMPONEN_JSON_ID_seq";
+-- DROP SEQUENCE "public"."KOMPONEN_JSON_ID_seq";
 CREATE SEQUENCE "public"."KOMPONEN_JSON_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -304,7 +304,7 @@ CREATE SEQUENCE "public"."KOMPONEN_JSON_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MAP_POINT_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MAP_POINT_ID_seq";
+-- DROP SEQUENCE "public"."MAP_POINT_ID_seq";
 CREATE SEQUENCE "public"."MAP_POINT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -315,7 +315,7 @@ CREATE SEQUENCE "public"."MAP_POINT_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_BARGE_BARGE_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_BARGE_BARGE_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_BARGE_BARGE_ID_seq";
 CREATE SEQUENCE "public"."MASTER_BARGE_BARGE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -326,7 +326,7 @@ CREATE SEQUENCE "public"."MASTER_BARGE_BARGE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_BBM_BBM_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_BBM_BBM_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_BBM_BBM_ID_seq";
 CREATE SEQUENCE "public"."MASTER_BBM_BBM_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -337,7 +337,7 @@ CREATE SEQUENCE "public"."MASTER_BBM_BBM_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_CABANG_CABANG_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_CABANG_CABANG_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_CABANG_CABANG_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CABANG_CABANG_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -348,7 +348,7 @@ CREATE SEQUENCE "public"."MASTER_CABANG_CABANG_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_CONTRACT_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_CONTRACT_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_CONTRACT_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CONTRACT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -359,7 +359,7 @@ CREATE SEQUENCE "public"."MASTER_CONTRACT_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_CV_CERTIFICATE_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_CV_CERTIFICATE_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_CV_CERTIFICATE_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_CERTIFICATE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -370,7 +370,7 @@ CREATE SEQUENCE "public"."MASTER_CV_CERTIFICATE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_CV_EDUCATION_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_CV_EDUCATION_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_CV_EDUCATION_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_EDUCATION_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -381,7 +381,7 @@ CREATE SEQUENCE "public"."MASTER_CV_EDUCATION_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_CV_EXPERIENCE_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_CV_EXPERIENCE_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_CV_EXPERIENCE_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_EXPERIENCE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -392,7 +392,7 @@ CREATE SEQUENCE "public"."MASTER_CV_EXPERIENCE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_CV_HISTORY_OF_WORK_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_CV_HISTORY_OF_WORK_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_CV_HISTORY_OF_WORK_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_HISTORY_OF_WORK_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -403,7 +403,7 @@ CREATE SEQUENCE "public"."MASTER_CV_HISTORY_OF_WORK_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_CV_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_CV_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_CV_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -414,7 +414,7 @@ CREATE SEQUENCE "public"."MASTER_CV_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_CV_REGION_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_CV_REGION_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_CV_REGION_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_REGION_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -425,7 +425,7 @@ CREATE SEQUENCE "public"."MASTER_CV_REGION_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_ICON_MARKER_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_ICON_MARKER_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_ICON_MARKER_ID_seq";
 CREATE SEQUENCE "public"."MASTER_ICON_MARKER_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -436,7 +436,7 @@ CREATE SEQUENCE "public"."MASTER_ICON_MARKER_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_INTERVENTION_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_INTERVENTION_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_INTERVENTION_ID_seq";
 CREATE SEQUENCE "public"."MASTER_INTERVENTION_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -447,7 +447,7 @@ CREATE SEQUENCE "public"."MASTER_INTERVENTION_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_LOCATION_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_LOCATION_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_LOCATION_ID_seq";
 CREATE SEQUENCE "public"."MASTER_LOCATION_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -458,7 +458,7 @@ CREATE SEQUENCE "public"."MASTER_LOCATION_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_PERSONIL_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_PERSONIL_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_PERSONIL_ID_seq";
 CREATE SEQUENCE "public"."MASTER_PERSONIL_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -469,7 +469,7 @@ CREATE SEQUENCE "public"."MASTER_PERSONIL_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_PORT_PORT_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_PORT_PORT_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_PORT_PORT_ID_seq";
 CREATE SEQUENCE "public"."MASTER_PORT_PORT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -480,7 +480,7 @@ CREATE SEQUENCE "public"."MASTER_PORT_PORT_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_PRODUCT_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_PRODUCT_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_PRODUCT_ID_seq";
 CREATE SEQUENCE "public"."MASTER_PRODUCT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -491,7 +491,7 @@ CREATE SEQUENCE "public"."MASTER_PRODUCT_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_SBU_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_SBU_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_SBU_ID_seq";
 CREATE SEQUENCE "public"."MASTER_SBU_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -502,7 +502,7 @@ CREATE SEQUENCE "public"."MASTER_SBU_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_STD_REF_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_STD_REF_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_STD_REF_ID_seq";
 CREATE SEQUENCE "public"."MASTER_STD_REF_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -513,7 +513,7 @@ CREATE SEQUENCE "public"."MASTER_STD_REF_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_STDREF_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_STDREF_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_STDREF_ID_seq";
 CREATE SEQUENCE "public"."MASTER_STDREF_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -524,7 +524,7 @@ CREATE SEQUENCE "public"."MASTER_STDREF_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_TOOL_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_TOOL_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_TOOL_ID_seq";
 CREATE SEQUENCE "public"."MASTER_TOOL_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -535,7 +535,7 @@ CREATE SEQUENCE "public"."MASTER_TOOL_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."MASTER_VESSEL_VESSEL_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_VESSEL_VESSEL_ID_seq";
+-- DROP SEQUENCE "public"."MASTER_VESSEL_VESSEL_ID_seq";
 CREATE SEQUENCE "public"."MASTER_VESSEL_VESSEL_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -546,7 +546,7 @@ CREATE SEQUENCE "public"."MASTER_VESSEL_VESSEL_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."outbox_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."outbox_ID_seq";
+-- DROP SEQUENCE "public"."outbox_ID_seq";
 CREATE SEQUENCE "public"."outbox_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -557,7 +557,7 @@ CREATE SEQUENCE "public"."outbox_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."outbox_multipart_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."outbox_multipart_ID_seq";
+-- DROP SEQUENCE "public"."outbox_multipart_ID_seq";
 CREATE SEQUENCE "public"."outbox_multipart_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -568,7 +568,7 @@ CREATE SEQUENCE "public"."outbox_multipart_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."pbk_groups_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."pbk_groups_ID_seq";
+-- DROP SEQUENCE "public"."pbk_groups_ID_seq";
 CREATE SEQUENCE "public"."pbk_groups_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -579,7 +579,7 @@ CREATE SEQUENCE "public"."pbk_groups_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."pbk_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."pbk_ID_seq";
+-- DROP SEQUENCE "public"."pbk_ID_seq";
 CREATE SEQUENCE "public"."pbk_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -590,7 +590,7 @@ CREATE SEQUENCE "public"."pbk_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."pelni_info_id_info_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."pelni_info_id_info_seq";
+-- DROP SEQUENCE "public"."pelni_info_id_info_seq";
 CREATE SEQUENCE "public"."pelni_info_id_info_seq"
  INCREMENT 1
  MINVALUE 1
@@ -601,7 +601,7 @@ CREATE SEQUENCE "public"."pelni_info_id_info_seq"
 -- ----------------------------
 -- Sequence structure for "public"."pelni_info_id_info_seq1"
 -- ----------------------------
-DROP SEQUENCE "public"."pelni_info_id_info_seq1";
+-- DROP SEQUENCE "public"."pelni_info_id_info_seq1";
 CREATE SEQUENCE "public"."pelni_info_id_info_seq1"
  INCREMENT 1
  MINVALUE 1
@@ -612,7 +612,7 @@ CREATE SEQUENCE "public"."pelni_info_id_info_seq1"
 -- ----------------------------
 -- Sequence structure for "public"."REF_EXP_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."REF_EXP_ID_seq";
+-- DROP SEQUENCE "public"."REF_EXP_ID_seq";
 CREATE SEQUENCE "public"."REF_EXP_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -623,7 +623,7 @@ CREATE SEQUENCE "public"."REF_EXP_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."REF_POSITION_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."REF_POSITION_ID_seq";
+-- DROP SEQUENCE "public"."REF_POSITION_ID_seq";
 CREATE SEQUENCE "public"."REF_POSITION_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -634,7 +634,7 @@ CREATE SEQUENCE "public"."REF_POSITION_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."REF_REGION_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."REF_REGION_ID_seq";
+-- DROP SEQUENCE "public"."REF_REGION_ID_seq";
 CREATE SEQUENCE "public"."REF_REGION_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -645,7 +645,7 @@ CREATE SEQUENCE "public"."REF_REGION_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq";
+-- DROP SEQUENCE "public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq";
 CREATE SEQUENCE "public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -656,7 +656,7 @@ CREATE SEQUENCE "public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."sentitems_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."sentitems_ID_seq";
+-- DROP SEQUENCE "public"."sentitems_ID_seq";
 CREATE SEQUENCE "public"."sentitems_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -667,7 +667,7 @@ CREATE SEQUENCE "public"."sentitems_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WA_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."WA_ID_seq";
+-- DROP SEQUENCE "public"."WA_ID_seq";
 CREATE SEQUENCE "public"."WA_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -678,7 +678,7 @@ CREATE SEQUENCE "public"."WA_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WEBSITE_ARTICLE_CATEGORY_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."WEBSITE_ARTICLE_CATEGORY_ID_seq";
+-- DROP SEQUENCE "public"."WEBSITE_ARTICLE_CATEGORY_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_ARTICLE_CATEGORY_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -689,7 +689,7 @@ CREATE SEQUENCE "public"."WEBSITE_ARTICLE_CATEGORY_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WEBSITE_ARTICLE_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."WEBSITE_ARTICLE_ID_seq";
+-- DROP SEQUENCE "public"."WEBSITE_ARTICLE_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_ARTICLE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -700,7 +700,7 @@ CREATE SEQUENCE "public"."WEBSITE_ARTICLE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WEBSITE_MENU_MENU_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."WEBSITE_MENU_MENU_ID_seq";
+-- DROP SEQUENCE "public"."WEBSITE_MENU_MENU_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_MENU_MENU_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -711,7 +711,7 @@ CREATE SEQUENCE "public"."WEBSITE_MENU_MENU_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WEBSITE_PAGE_STATIC_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."WEBSITE_PAGE_STATIC_ID_seq";
+-- DROP SEQUENCE "public"."WEBSITE_PAGE_STATIC_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_PAGE_STATIC_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -722,7 +722,7 @@ CREATE SEQUENCE "public"."WEBSITE_PAGE_STATIC_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WEBSITE_SLIDER_DETAIL_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."WEBSITE_SLIDER_DETAIL_ID_seq";
+-- DROP SEQUENCE "public"."WEBSITE_SLIDER_DETAIL_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_SLIDER_DETAIL_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -733,7 +733,7 @@ CREATE SEQUENCE "public"."WEBSITE_SLIDER_DETAIL_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WEBSITE_SLIDER_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."WEBSITE_SLIDER_ID_seq";
+-- DROP SEQUENCE "public"."WEBSITE_SLIDER_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_SLIDER_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -744,7 +744,7 @@ CREATE SEQUENCE "public"."WEBSITE_SLIDER_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WEBSITE_TAG_ARTICLE_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."WEBSITE_TAG_ARTICLE_ID_seq";
+-- DROP SEQUENCE "public"."WEBSITE_TAG_ARTICLE_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_TAG_ARTICLE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -755,7 +755,7 @@ CREATE SEQUENCE "public"."WEBSITE_TAG_ARTICLE_ID_seq"
 -- ----------------------------
 -- Sequence structure for "public"."WEBSITE_TAG_ID_seq"
 -- ----------------------------
-DROP SEQUENCE "public"."WEBSITE_TAG_ID_seq";
+-- DROP SEQUENCE "public"."WEBSITE_TAG_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_TAG_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -766,7 +766,7 @@ CREATE SEQUENCE "public"."WEBSITE_TAG_ID_seq"
 -- ----------------------------
 -- Table structure for "public"."ALERT_SUBSCRIBER"
 -- ----------------------------
-DROP TABLE "public"."ALERT_SUBSCRIBER";
+-- DROP TABLE "public"."ALERT_SUBSCRIBER";
 CREATE TABLE "public"."ALERT_SUBSCRIBER" (
 "ALERT_SUBSCRIBER_ID" int4 DEFAULT nextval('"ALERT_SUBSCRIBER_ID_seq"'::regclass) NOT NULL,
 "USER_ID" int4,
@@ -794,7 +794,7 @@ INSERT INTO "public"."ALERT_SUBSCRIBER" VALUES ('9', '4', '0', '2018-01-02 17:06
 -- ----------------------------
 -- Table structure for "public"."APP_CLIENT_ACCESS"
 -- ----------------------------
-DROP TABLE "public"."APP_CLIENT_ACCESS";
+-- DROP TABLE "public"."APP_CLIENT_ACCESS";
 CREATE TABLE "public"."APP_CLIENT_ACCESS" (
 "ID" int4 DEFAULT nextval('"APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq"'::regclass) NOT NULL,
 "NAME" text,
@@ -842,7 +842,7 @@ INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('59', 'Pelni', '1', '1', '1', '
 -- ----------------------------
 -- Table structure for "public"."APP_CLIENT_FORM_UPLOAD_DETAIL"
 -- ----------------------------
-DROP TABLE "public"."APP_CLIENT_FORM_UPLOAD_DETAIL";
+-- DROP TABLE "public"."APP_CLIENT_FORM_UPLOAD_DETAIL";
 CREATE TABLE "public"."APP_CLIENT_FORM_UPLOAD_DETAIL" (
 "FILE_UPLOAD_DETAIL_ID" int4 DEFAULT nextval('"CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq"'::regclass) NOT NULL,
 "PATH" text,
@@ -873,7 +873,7 @@ INSERT INTO "public"."APP_CLIENT_FORM_UPLOAD_DETAIL" VALUES ('9', 'uploads/form_
 -- ----------------------------
 -- Table structure for "public"."APP_CLIENT_HEADER_ACCESS"
 -- ----------------------------
-DROP TABLE "public"."APP_CLIENT_HEADER_ACCESS";
+-- DROP TABLE "public"."APP_CLIENT_HEADER_ACCESS";
 CREATE TABLE "public"."APP_CLIENT_HEADER_ACCESS" (
 "HEADER_ACCESS_ID" int4 DEFAULT nextval('"APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq"'::regclass) NOT NULL,
 "CLIENT_SITE_ID" int4,
@@ -902,7 +902,7 @@ INSERT INTO "public"."APP_CLIENT_HEADER_ACCESS" VALUES ('12', '5', '3', '7', nul
 -- ----------------------------
 -- Table structure for "public"."APP_CLIENT_MENU"
 -- ----------------------------
-DROP TABLE "public"."APP_CLIENT_MENU";
+-- DROP TABLE "public"."APP_CLIENT_MENU";
 CREATE TABLE "public"."APP_CLIENT_MENU" (
 "MENU_ID" int4 DEFAULT nextval('"APP_CLIENT_MENU_CLIENT_MENU_ID_seq"'::regclass) NOT NULL,
 "MENU_LEVEL" int4,
@@ -939,7 +939,7 @@ INSERT INTO "public"."APP_CLIENT_MENU" VALUES ('7', '1', '0', 'Peta Indonesia', 
 -- ----------------------------
 -- Table structure for "public"."APP_CLIENT_SITE"
 -- ----------------------------
-DROP TABLE "public"."APP_CLIENT_SITE";
+-- DROP TABLE "public"."APP_CLIENT_SITE";
 CREATE TABLE "public"."APP_CLIENT_SITE" (
 "CLIENT_SITE_ID" int4 DEFAULT nextval('"APP_CLIENT_SITE_ID_seq"'::regclass) NOT NULL,
 "CLIENT_SITE_NAME" text,
@@ -969,7 +969,7 @@ INSERT INTO "public"."APP_CLIENT_SITE" VALUES ('3', 'Pelni', '0', null, 'admin',
 -- ----------------------------
 -- Table structure for "public"."APP_CLIENT_USER"
 -- ----------------------------
-DROP TABLE "public"."APP_CLIENT_USER";
+-- DROP TABLE "public"."APP_CLIENT_USER";
 CREATE TABLE "public"."APP_CLIENT_USER" (
 "USER_ID" int4 DEFAULT nextval('"APP_CLIENT_USER_CLIENT_USER_ID_seq"'::regclass) NOT NULL,
 "USERNAME" text,
@@ -1009,7 +1009,7 @@ INSERT INTO "public"."APP_CLIENT_USER" VALUES ('4', 'PLN-12346', 'admin@gmail.co
 -- ----------------------------
 -- Table structure for "public"."APP_CLIENT_USER_GROUP"
 -- ----------------------------
-DROP TABLE "public"."APP_CLIENT_USER_GROUP";
+-- DROP TABLE "public"."APP_CLIENT_USER_GROUP";
 CREATE TABLE "public"."APP_CLIENT_USER_GROUP" (
 "GROUP_ID" int4 DEFAULT nextval('"APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq"'::regclass) NOT NULL,
 "GROUP_NAME" text,
@@ -1036,7 +1036,7 @@ INSERT INTO "public"."APP_CLIENT_USER_GROUP" VALUES ('4', 'Coloco', '0', null, n
 -- ----------------------------
 -- Table structure for "public"."APP_FILE_MANAGER"
 -- ----------------------------
-DROP TABLE "public"."APP_FILE_MANAGER";
+-- DROP TABLE "public"."APP_FILE_MANAGER";
 CREATE TABLE "public"."APP_FILE_MANAGER" (
 "FILE_MANAGER_ID" int4 DEFAULT nextval('"FILE_MANAGER_ID_seq"'::regclass) NOT NULL,
 "NAME" text,
@@ -1068,7 +1068,7 @@ INSERT INTO "public"."APP_FILE_MANAGER" VALUES ('12', 'KD_20-2015-Penetapan_Port
 -- ----------------------------
 -- Table structure for "public"."APP_FUNCTION_ACCESS"
 -- ----------------------------
-DROP TABLE "public"."APP_FUNCTION_ACCESS";
+-- DROP TABLE "public"."APP_FUNCTION_ACCESS";
 CREATE TABLE "public"."APP_FUNCTION_ACCESS" (
 "ID" int4 DEFAULT nextval('"APP_FUNCTION_ACCESS_ID_seq"'::regclass) NOT NULL,
 "NAME" text,
@@ -1211,7 +1211,7 @@ INSERT INTO "public"."APP_FUNCTION_ACCESS" VALUES ('1548', 'admin', '1', '1', '1
 -- ----------------------------
 -- Table structure for "public"."APP_LOG"
 -- ----------------------------
-DROP TABLE "public"."APP_LOG";
+-- DROP TABLE "public"."APP_LOG";
 CREATE TABLE "public"."APP_LOG" (
 "LOG_ID" int4 DEFAULT nextval('"APP_LOG_LOG_ID_seq"'::regclass) NOT NULL,
 "CREATE_TIME" timestamp(6),
@@ -1232,7 +1232,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."APP_LOG_CLIENT"
 -- ----------------------------
-DROP TABLE "public"."APP_LOG_CLIENT";
+-- DROP TABLE "public"."APP_LOG_CLIENT";
 CREATE TABLE "public"."APP_LOG_CLIENT" (
 "LOG_ID" int4 DEFAULT nextval('"APP_LOG_CLIENT_LOG_CLIENT_ID_seq"'::regclass) NOT NULL,
 "CREATE_TIME" timestamp(6),
@@ -1254,7 +1254,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."APP_MENU"
 -- ----------------------------
-DROP TABLE "public"."APP_MENU";
+-- DROP TABLE "public"."APP_MENU";
 CREATE TABLE "public"."APP_MENU" (
 "MENU_ID" int4 DEFAULT nextval('"APP_MENU_MENU_ID_seq"'::regclass) NOT NULL,
 "MENU_LEVEL" int4,
@@ -1340,7 +1340,7 @@ INSERT INTO "public"."APP_MENU" VALUES ('161', '2', '115', 'Strategi Business Un
 -- ----------------------------
 -- Table structure for "public"."APP_ROUTE"
 -- ----------------------------
-DROP TABLE "public"."APP_ROUTE";
+-- DROP TABLE "public"."APP_ROUTE";
 CREATE TABLE "public"."APP_ROUTE" (
 "ROUTE_ID" int4 DEFAULT nextval('"APP_ROUTE_ROUTE_ID_seq"'::regclass) NOT NULL,
 "SLUG" text,
@@ -1364,7 +1364,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."APP_SETTING"
 -- ----------------------------
-DROP TABLE "public"."APP_SETTING";
+-- DROP TABLE "public"."APP_SETTING";
 CREATE TABLE "public"."APP_SETTING" (
 "SETTING_ID" int4 DEFAULT nextval('"APP_SETTING_SETTING_ID_seq"'::regclass) NOT NULL,
 "SETTING_NAME" text,
@@ -1388,7 +1388,7 @@ INSERT INTO "public"."APP_SETTING" VALUES ('10', 'APP_SCREEN_SAVER_IMAGE', 'http
 -- ----------------------------
 -- Table structure for "public"."APP_USER"
 -- ----------------------------
-DROP TABLE "public"."APP_USER";
+-- DROP TABLE "public"."APP_USER";
 CREATE TABLE "public"."APP_USER" (
 "USER_ID" int4 DEFAULT nextval('"APP_USER_USER_ID_seq"'::regclass) NOT NULL,
 "USERNAME" text,
@@ -1427,7 +1427,7 @@ INSERT INTO "public"."APP_USER" VALUES ('8', 'tubagus', 'tubagus@gmail.com', 'Tu
 -- ----------------------------
 -- Table structure for "public"."APP_USER_GROUP"
 -- ----------------------------
-DROP TABLE "public"."APP_USER_GROUP";
+-- DROP TABLE "public"."APP_USER_GROUP";
 CREATE TABLE "public"."APP_USER_GROUP" (
 "GROUP_ID" int4 DEFAULT nextval('"APP_USER_GROUP_GROUP_ID_seq"'::regclass) NOT NULL,
 "GROUP_NAME" text,
@@ -1453,7 +1453,7 @@ INSERT INTO "public"."APP_USER_GROUP" VALUES ('2', 'admin', '0', null, null, nul
 -- ----------------------------
 -- Table structure for "public"."daemons"
 -- ----------------------------
-DROP TABLE "public"."daemons";
+-- DROP TABLE "public"."daemons";
 CREATE TABLE "public"."daemons" (
 "Start" text NOT NULL,
 "Info" text NOT NULL
@@ -1469,7 +1469,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."ELEMENT_CONNECTION"
 -- ----------------------------
-DROP TABLE "public"."ELEMENT_CONNECTION";
+-- DROP TABLE "public"."ELEMENT_CONNECTION";
 CREATE TABLE "public"."ELEMENT_CONNECTION" (
 "ID" text DEFAULT gen_random_uuid() NOT NULL,
 "NAME" text,
@@ -1540,7 +1540,7 @@ INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('dd727c4c-34c0-4917-82d5-abcf9
 -- ----------------------------
 -- Table structure for "public"."FORM_ENTRY_FIELD"
 -- ----------------------------
-DROP TABLE "public"."FORM_ENTRY_FIELD";
+-- DROP TABLE "public"."FORM_ENTRY_FIELD";
 CREATE TABLE "public"."FORM_ENTRY_FIELD" (
 "ID" int4 DEFAULT nextval('"FORM_ENTRY_FIELD_ID_seq"'::regclass) NOT NULL,
 "SC" text,
@@ -2106,7 +2106,7 @@ INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('59', '', '', '[""]', '[""]', ''
 -- ----------------------------
 -- Table structure for "public"."gammu"
 -- ----------------------------
-DROP TABLE "public"."gammu";
+-- DROP TABLE "public"."gammu";
 CREATE TABLE "public"."gammu" (
 "Version" int2 DEFAULT '0'::smallint NOT NULL
 )
@@ -2122,7 +2122,7 @@ INSERT INTO "public"."gammu" VALUES ('15');
 -- ----------------------------
 -- Table structure for "public"."HEADER_INFO_CLIENT"
 -- ----------------------------
-DROP TABLE "public"."HEADER_INFO_CLIENT";
+-- DROP TABLE "public"."HEADER_INFO_CLIENT";
 CREATE TABLE "public"."HEADER_INFO_CLIENT" (
 "ID" int4 DEFAULT nextval('"HEADER_INFO_CLIENT_ID_seq"'::regclass) NOT NULL,
 "INTERVENTION_ID" text,
@@ -2155,7 +2155,7 @@ INSERT INTO "public"."HEADER_INFO_CLIENT" VALUES ('5', null, null, null, null, n
 -- ----------------------------
 -- Table structure for "public"."inbox"
 -- ----------------------------
-DROP TABLE "public"."inbox";
+-- DROP TABLE "public"."inbox";
 CREATE TABLE "public"."inbox" (
 "UpdatedInDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "ReceivingDateTime" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
@@ -2181,7 +2181,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."INFO_CLIENT"
 -- ----------------------------
-DROP TABLE "public"."INFO_CLIENT";
+-- DROP TABLE "public"."INFO_CLIENT";
 CREATE TABLE "public"."INFO_CLIENT" (
 "ID_INFO" int4 DEFAULT nextval('pelni_info_id_info_seq1'::regclass) NOT NULL,
 "VESSEL" int4 DEFAULT 0 NOT NULL,
@@ -2278,7 +2278,7 @@ INSERT INTO "public"."INFO_CLIENT" VALUES ('81', '26', '1', '6', '2017-02-09', '
 -- ----------------------------
 -- Table structure for "public"."KOMPONEN_HTML"
 -- ----------------------------
-DROP TABLE "public"."KOMPONEN_HTML";
+-- DROP TABLE "public"."KOMPONEN_HTML";
 CREATE TABLE "public"."KOMPONEN_HTML" (
 "ID" int4 DEFAULT nextval('"KOMPONEN_HTML_ID_seq"'::regclass) NOT NULL,
 "NAME" text,
@@ -6567,7 +6567,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('37', 'Timelog Product Loading', '<
 -- ----------------------------
 -- Table structure for "public"."KOMPONEN_JSON"
 -- ----------------------------
-DROP TABLE "public"."KOMPONEN_JSON";
+-- DROP TABLE "public"."KOMPONEN_JSON";
 CREATE TABLE "public"."KOMPONEN_JSON" (
 "ID" int4 DEFAULT nextval('"KOMPONEN_JSON_ID_seq"'::regclass) NOT NULL,
 "NAME" text,
@@ -6600,7 +6600,7 @@ INSERT INTO "public"."KOMPONEN_JSON" VALUES ('10', 'timelog_crude_bunker_vessel'
 -- ----------------------------
 -- Table structure for "public"."MAP_POINT"
 -- ----------------------------
-DROP TABLE "public"."MAP_POINT";
+-- DROP TABLE "public"."MAP_POINT";
 CREATE TABLE "public"."MAP_POINT" (
 "ID" int4 DEFAULT nextval('"MAP_POINT_ID_seq"'::regclass) NOT NULL,
 "NAME" text,
@@ -6635,7 +6635,7 @@ INSERT INTO "public"."MAP_POINT" VALUES ('13', 'Semarang', '-1.10058359450581', 
 -- ----------------------------
 -- Table structure for "public"."MASTER_AREA"
 -- ----------------------------
-DROP TABLE "public"."MASTER_AREA";
+-- DROP TABLE "public"."MASTER_AREA";
 CREATE TABLE "public"."MASTER_AREA" (
 "AREA_ID" text DEFAULT gen_random_uuid() NOT NULL,
 "AREA_NAME" text,
@@ -6663,7 +6663,7 @@ INSERT INTO "public"."MASTER_AREA" VALUES ('f3361af7-c3dc-43c4-b519-ac2e1f1f931d
 -- ----------------------------
 -- Table structure for "public"."MASTER_BARGE"
 -- ----------------------------
-DROP TABLE "public"."MASTER_BARGE";
+-- DROP TABLE "public"."MASTER_BARGE";
 CREATE TABLE "public"."MASTER_BARGE" (
 "BARGE_ID" int4 DEFAULT nextval('"MASTER_BARGE_BARGE_ID_seq"'::regclass) NOT NULL,
 "BARGE_NAME" name,
@@ -6699,7 +6699,7 @@ INSERT INTO "public"."MASTER_BARGE" VALUES ('13', 'TK KBT I', 'Standard', '0', n
 -- ----------------------------
 -- Table structure for "public"."MASTER_BBM"
 -- ----------------------------
-DROP TABLE "public"."MASTER_BBM";
+-- DROP TABLE "public"."MASTER_BBM";
 CREATE TABLE "public"."MASTER_BBM" (
 "BBM_ID" int4 DEFAULT nextval('"MASTER_BBM_BBM_ID_seq"'::regclass) NOT NULL,
 "BBM_NAME" text,
@@ -6723,7 +6723,7 @@ INSERT INTO "public"."MASTER_BBM" VALUES ('1', 'Solar', '<p>Grade A</p>', '0', n
 -- ----------------------------
 -- Table structure for "public"."MASTER_CABANG"
 -- ----------------------------
-DROP TABLE "public"."MASTER_CABANG";
+-- DROP TABLE "public"."MASTER_CABANG";
 CREATE TABLE "public"."MASTER_CABANG" (
 "CABANG_ID" int4 DEFAULT nextval('"MASTER_CABANG_CABANG_ID_seq"'::regclass) NOT NULL,
 "BRANCH_NAME" text,
@@ -6774,7 +6774,7 @@ INSERT INTO "public"."MASTER_CABANG" VALUES ('29', 'Sumatera Utara', '<p>-</p>',
 -- ----------------------------
 -- Table structure for "public"."MASTER_CLIENT"
 -- ----------------------------
-DROP TABLE "public"."MASTER_CLIENT";
+-- DROP TABLE "public"."MASTER_CLIENT";
 CREATE TABLE "public"."MASTER_CLIENT" (
 "CLIENT_ID" text DEFAULT gen_random_uuid() NOT NULL,
 "CLIENT_NAME" text,
@@ -6806,7 +6806,7 @@ INSERT INTO "public"."MASTER_CLIENT" VALUES ('fd203d0b-9ed4-48ac-b006-3a4f03dee7
 -- ----------------------------
 -- Table structure for "public"."MASTER_CONTRACT"
 -- ----------------------------
-DROP TABLE "public"."MASTER_CONTRACT";
+-- DROP TABLE "public"."MASTER_CONTRACT";
 CREATE TABLE "public"."MASTER_CONTRACT" (
 "ID" int4 DEFAULT nextval('"MASTER_CONTRACT_ID_seq"'::regclass) NOT NULL,
 "CONTRACT" text,
@@ -6834,7 +6834,7 @@ INSERT INTO "public"."MASTER_CONTRACT" VALUES ('5', 'K0005/03/2017/SUC', 'Screen
 -- ----------------------------
 -- Table structure for "public"."MASTER_CV"
 -- ----------------------------
-DROP TABLE "public"."MASTER_CV";
+-- DROP TABLE "public"."MASTER_CV";
 CREATE TABLE "public"."MASTER_CV" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_ID_seq"'::regclass) NOT NULL,
 "NAMA" text,
@@ -6874,7 +6874,7 @@ INSERT INTO "public"."MASTER_CV" VALUES ('5', 'Bagos W', '180416082526_cv_5ad4a4
 -- ----------------------------
 -- Table structure for "public"."MASTER_CV_CERTIFICATE"
 -- ----------------------------
-DROP TABLE "public"."MASTER_CV_CERTIFICATE";
+-- DROP TABLE "public"."MASTER_CV_CERTIFICATE";
 CREATE TABLE "public"."MASTER_CV_CERTIFICATE" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_CERTIFICATE_ID_seq"'::regclass) NOT NULL,
 "ID_CV" int4,
@@ -6896,7 +6896,7 @@ INSERT INTO "public"."MASTER_CV_CERTIFICATE" VALUES ('15', '5', 'Sertifikat B', 
 -- ----------------------------
 -- Table structure for "public"."MASTER_CV_EDUCATION"
 -- ----------------------------
-DROP TABLE "public"."MASTER_CV_EDUCATION";
+-- DROP TABLE "public"."MASTER_CV_EDUCATION";
 CREATE TABLE "public"."MASTER_CV_EDUCATION" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_EDUCATION_ID_seq"'::regclass) NOT NULL,
 "ID_CV" int4,
@@ -6916,7 +6916,7 @@ INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES ('102', '5', '5', 'BSI Margond
 -- ----------------------------
 -- Table structure for "public"."MASTER_CV_EXPERIENCE"
 -- ----------------------------
-DROP TABLE "public"."MASTER_CV_EXPERIENCE";
+-- DROP TABLE "public"."MASTER_CV_EXPERIENCE";
 CREATE TABLE "public"."MASTER_CV_EXPERIENCE" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_EXPERIENCE_ID_seq"'::regclass) NOT NULL,
 "ID_CV" int4,
@@ -6938,7 +6938,7 @@ INSERT INTO "public"."MASTER_CV_EXPERIENCE" VALUES ('81', '5', '3', '2');
 -- ----------------------------
 -- Table structure for "public"."MASTER_CV_HISTORY_OF_WORK"
 -- ----------------------------
-DROP TABLE "public"."MASTER_CV_HISTORY_OF_WORK";
+-- DROP TABLE "public"."MASTER_CV_HISTORY_OF_WORK";
 CREATE TABLE "public"."MASTER_CV_HISTORY_OF_WORK" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_HISTORY_OF_WORK_ID_seq"'::regclass),
 "COMPANY_NAME" varchar(150),
@@ -6961,7 +6961,7 @@ INSERT INTO "public"."MASTER_CV_HISTORY_OF_WORK" VALUES ('70', 'PT B', '2018-03-
 -- ----------------------------
 -- Table structure for "public"."MASTER_CV_REGION"
 -- ----------------------------
-DROP TABLE "public"."MASTER_CV_REGION";
+-- DROP TABLE "public"."MASTER_CV_REGION";
 CREATE TABLE "public"."MASTER_CV_REGION" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_REGION_ID_seq"'::regclass) NOT NULL,
 "ID_REF_REGION" int4,
@@ -7047,7 +7047,7 @@ INSERT INTO "public"."MASTER_CV_REGION" VALUES ('80', '15', '5');
 -- ----------------------------
 -- Table structure for "public"."MASTER_ICON_MARKER"
 -- ----------------------------
-DROP TABLE "public"."MASTER_ICON_MARKER";
+-- DROP TABLE "public"."MASTER_ICON_MARKER";
 CREATE TABLE "public"."MASTER_ICON_MARKER" (
 "ID" int4 DEFAULT nextval('"MASTER_ICON_MARKER_ID_seq"'::regclass) NOT NULL,
 "NAMA" text,
@@ -7078,7 +7078,7 @@ INSERT INTO "public"."MASTER_ICON_MARKER" VALUES ('8', 'Cabang', 'cityscape.png'
 -- ----------------------------
 -- Table structure for "public"."MASTER_INTERVENTION"
 -- ----------------------------
-DROP TABLE "public"."MASTER_INTERVENTION";
+-- DROP TABLE "public"."MASTER_INTERVENTION";
 CREATE TABLE "public"."MASTER_INTERVENTION" (
 "ID" int4 DEFAULT nextval('"MASTER_INTERVENTION_ID_seq"'::regclass) NOT NULL,
 "INTERVENTION_NAME" text,
@@ -7107,7 +7107,7 @@ INSERT INTO "public"."MASTER_INTERVENTION" VALUES ('25', 'Bunker Vessel', '0', n
 -- ----------------------------
 -- Table structure for "public"."MASTER_LOCATION"
 -- ----------------------------
-DROP TABLE "public"."MASTER_LOCATION";
+-- DROP TABLE "public"."MASTER_LOCATION";
 CREATE TABLE "public"."MASTER_LOCATION" (
 "ID" int4 DEFAULT nextval('"MASTER_LOCATION_ID_seq"'::regclass) NOT NULL,
 "LOCATION_NAME" text,
@@ -7134,7 +7134,7 @@ INSERT INTO "public"."MASTER_LOCATION" VALUES ('5', 'Kapal', '<p>-</p>', '0', nu
 -- ----------------------------
 -- Table structure for "public"."MASTER_PERSONIL"
 -- ----------------------------
-DROP TABLE "public"."MASTER_PERSONIL";
+-- DROP TABLE "public"."MASTER_PERSONIL";
 CREATE TABLE "public"."MASTER_PERSONIL" (
 "ID" int4 DEFAULT nextval('"MASTER_PERSONIL_ID_seq"'::regclass) NOT NULL,
 "POSISI" text,
@@ -7159,7 +7159,7 @@ INSERT INTO "public"."MASTER_PERSONIL" VALUES ('3', 'Jakarta', '10', 'Screenshot
 -- ----------------------------
 -- Table structure for "public"."MASTER_PORT"
 -- ----------------------------
-DROP TABLE "public"."MASTER_PORT";
+-- DROP TABLE "public"."MASTER_PORT";
 CREATE TABLE "public"."MASTER_PORT" (
 "PORT_ID" int4 DEFAULT nextval('"MASTER_PORT_PORT_ID_seq"'::regclass) NOT NULL,
 "PORT_NAME" name,
@@ -7192,7 +7192,7 @@ INSERT INTO "public"."MASTER_PORT" VALUES ('12', 'PORTB', null, null, null, null
 -- ----------------------------
 -- Table structure for "public"."MASTER_PRODUCT"
 -- ----------------------------
-DROP TABLE "public"."MASTER_PRODUCT";
+-- DROP TABLE "public"."MASTER_PRODUCT";
 CREATE TABLE "public"."MASTER_PRODUCT" (
 "PRODUCT_ID" int4 DEFAULT nextval('"MASTER_PRODUCT_ID_seq"'::regclass) NOT NULL,
 "PRODUCT_LEVEL" int4,
@@ -7234,7 +7234,7 @@ INSERT INTO "public"."MASTER_PRODUCT" VALUES ('20', '2', '7', 'HSD', '1', '1', n
 -- ----------------------------
 -- Table structure for "public"."MASTER_SBU"
 -- ----------------------------
-DROP TABLE "public"."MASTER_SBU";
+-- DROP TABLE "public"."MASTER_SBU";
 CREATE TABLE "public"."MASTER_SBU" (
 "ID" int4 DEFAULT nextval('"MASTER_SBU_ID_seq"'::regclass),
 "NAMA_SBU" varchar(150),
@@ -7264,7 +7264,7 @@ INSERT INTO "public"."MASTER_SBU" VALUES ('12', 'SBU Industri', '2018-04-21 23:2
 -- ----------------------------
 -- Table structure for "public"."MASTER_STDREF"
 -- ----------------------------
-DROP TABLE "public"."MASTER_STDREF";
+-- DROP TABLE "public"."MASTER_STDREF";
 CREATE TABLE "public"."MASTER_STDREF" (
 "ID" int4 DEFAULT nextval('"MASTER_STDREF_ID_seq"'::regclass) NOT NULL,
 "STD_REF" text,
@@ -7290,7 +7290,7 @@ INSERT INTO "public"."MASTER_STDREF" VALUES ('5', 'PERATURAN PEMERINTAH NO.50 TA
 -- ----------------------------
 -- Table structure for "public"."MASTER_TOOL"
 -- ----------------------------
-DROP TABLE "public"."MASTER_TOOL";
+-- DROP TABLE "public"."MASTER_TOOL";
 CREATE TABLE "public"."MASTER_TOOL" (
 "ID" int4 DEFAULT nextval('"MASTER_TOOL_ID_seq"'::regclass) NOT NULL,
 "JENIS" text,
@@ -7329,7 +7329,7 @@ INSERT INTO "public"."MASTER_TOOL" VALUES ('4', '-', 'Ullage Temperature Interfa
 -- ----------------------------
 -- Table structure for "public"."MASTER_VESSEL"
 -- ----------------------------
-DROP TABLE "public"."MASTER_VESSEL";
+-- DROP TABLE "public"."MASTER_VESSEL";
 CREATE TABLE "public"."MASTER_VESSEL" (
 "VESSEL_ID" int4 DEFAULT nextval('"MASTER_VESSEL_VESSEL_ID_seq"'::regclass) NOT NULL,
 "VESSEL_NAME" name,
@@ -7380,7 +7380,7 @@ INSERT INTO "public"."MASTER_VESSEL" VALUES ('27', 'KM Sangiang', null, null, nu
 -- ----------------------------
 -- Table structure for "public"."outbox"
 -- ----------------------------
-DROP TABLE "public"."outbox";
+-- DROP TABLE "public"."outbox";
 CREATE TABLE "public"."outbox" (
 "UpdatedInDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "InsertIntoDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
@@ -7419,7 +7419,7 @@ INSERT INTO "public"."outbox" VALUES ('2018-01-03 09:35:44', '2018-01-03 09:33:4
 -- ----------------------------
 -- Table structure for "public"."outbox_multipart"
 -- ----------------------------
-DROP TABLE "public"."outbox_multipart";
+-- DROP TABLE "public"."outbox_multipart";
 CREATE TABLE "public"."outbox_multipart" (
 "Text" text,
 "Coding" varchar(255) DEFAULT 'Default_No_Compression'::character varying NOT NULL,
@@ -7440,7 +7440,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."pbk"
 -- ----------------------------
-DROP TABLE "public"."pbk";
+-- DROP TABLE "public"."pbk";
 CREATE TABLE "public"."pbk" (
 "ID" int4 DEFAULT nextval('"pbk_ID_seq"'::regclass) NOT NULL,
 "GroupID" int4 DEFAULT '-1'::integer NOT NULL,
@@ -7458,7 +7458,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."pbk_groups"
 -- ----------------------------
-DROP TABLE "public"."pbk_groups";
+-- DROP TABLE "public"."pbk_groups";
 CREATE TABLE "public"."pbk_groups" (
 "Name" text NOT NULL,
 "ID" int4 DEFAULT nextval('"pbk_groups_ID_seq"'::regclass) NOT NULL
@@ -7474,7 +7474,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."phones"
 -- ----------------------------
-DROP TABLE "public"."phones";
+-- DROP TABLE "public"."phones";
 CREATE TABLE "public"."phones" (
 "ID" text NOT NULL,
 "UpdatedInDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
@@ -7503,7 +7503,7 @@ INSERT INTO "public"."phones" VALUES ('', '2018-01-03 09:35:49', '2018-01-03 09:
 -- ----------------------------
 -- Table structure for "public"."REF_EDUCATION"
 -- ----------------------------
-DROP TABLE "public"."REF_EDUCATION";
+-- DROP TABLE "public"."REF_EDUCATION";
 CREATE TABLE "public"."REF_EDUCATION" (
 "ID_REF_EDUCATION" int4 NOT NULL,
 "EDUCATION_TYPE" varchar(50)
@@ -7527,7 +7527,7 @@ INSERT INTO "public"."REF_EDUCATION" VALUES ('8', 'S3');
 -- ----------------------------
 -- Table structure for "public"."REF_EXP"
 -- ----------------------------
-DROP TABLE "public"."REF_EXP";
+-- DROP TABLE "public"."REF_EXP";
 CREATE TABLE "public"."REF_EXP" (
 "ID_REF_EXP" int4 DEFAULT nextval('"REF_EXP_ID_seq"'::regclass) NOT NULL,
 "EXP_TYPE" varchar(50)
@@ -7547,7 +7547,7 @@ INSERT INTO "public"."REF_EXP" VALUES ('5', 'Writer');
 -- ----------------------------
 -- Table structure for "public"."REF_POSITION"
 -- ----------------------------
-DROP TABLE "public"."REF_POSITION";
+-- DROP TABLE "public"."REF_POSITION";
 CREATE TABLE "public"."REF_POSITION" (
 "ID_REF_POSITION" int4 DEFAULT nextval('"REF_POSITION_ID_seq"'::regclass) NOT NULL,
 "POSITION" varchar(100)
@@ -7567,7 +7567,7 @@ INSERT INTO "public"."REF_POSITION" VALUES ('4', 'Project Manager');
 -- ----------------------------
 -- Table structure for "public"."REF_REGION"
 -- ----------------------------
-DROP TABLE "public"."REF_REGION";
+-- DROP TABLE "public"."REF_REGION";
 CREATE TABLE "public"."REF_REGION" (
 "ID_REF_REGION" int4 DEFAULT nextval('"REF_REGION_ID_seq"'::regclass),
 "REGION" varchar(100)
@@ -7614,7 +7614,7 @@ INSERT INTO "public"."REF_REGION" VALUES ('31', 'Gresik');
 -- ----------------------------
 -- Table structure for "public"."RUNNING_TEXT"
 -- ----------------------------
-DROP TABLE "public"."RUNNING_TEXT";
+-- DROP TABLE "public"."RUNNING_TEXT";
 CREATE TABLE "public"."RUNNING_TEXT" (
 "RUNNING_TEXT_ID" int4 DEFAULT nextval('"RUNNING_TEXT_RUNNING_TEXT_ID_seq"'::regclass) NOT NULL,
 "MESSAGE" text,
@@ -7641,7 +7641,7 @@ INSERT INTO "public"."RUNNING_TEXT" VALUES ('87', '<p>PLN Losses 312 litter hari
 -- ----------------------------
 -- Table structure for "public"."sentitems"
 -- ----------------------------
-DROP TABLE "public"."sentitems";
+-- DROP TABLE "public"."sentitems";
 CREATE TABLE "public"."sentitems" (
 "UpdatedInDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "InsertIntoDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
@@ -7674,7 +7674,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Table structure for "public"."WA"
 -- ----------------------------
-DROP TABLE "public"."WA";
+-- DROP TABLE "public"."WA";
 CREATE TABLE "public"."WA" (
 "ID" int4 DEFAULT nextval('"WA_ID_seq"'::regclass) NOT NULL,
 "CONTACT" varchar(255),
@@ -7703,7 +7703,7 @@ INSERT INTO "public"."WA" VALUES ('11', 'Pak Ewing', 'DUNKIN DONUTS, BAYAR 9 UNT
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_ARTICLE"
 -- ----------------------------
-DROP TABLE "public"."WEBSITE_ARTICLE";
+-- DROP TABLE "public"."WEBSITE_ARTICLE";
 CREATE TABLE "public"."WEBSITE_ARTICLE" (
 "ARTICLE_ID" int4 DEFAULT nextval('"WEBSITE_ARTICLE_ID_seq"'::regclass) NOT NULL,
 "ARTICLE_CATEGORY_ID" int4 NOT NULL,
@@ -7730,7 +7730,7 @@ INSERT INTO "public"."WEBSITE_ARTICLE" VALUES ('2', '1', 'Terjadi pencurian miny
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_ARTICLE_CATEGORY"
 -- ----------------------------
-DROP TABLE "public"."WEBSITE_ARTICLE_CATEGORY";
+-- DROP TABLE "public"."WEBSITE_ARTICLE_CATEGORY";
 CREATE TABLE "public"."WEBSITE_ARTICLE_CATEGORY" (
 "ARTICLE_CATEGORY_ID" int4 DEFAULT nextval('"WEBSITE_ARTICLE_CATEGORY_ID_seq"'::regclass) NOT NULL,
 "CATEGORY_NAME" text,
@@ -7755,7 +7755,7 @@ INSERT INTO "public"."WEBSITE_ARTICLE_CATEGORY" VALUES ('2', 'Non Public', '0', 
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_MENU"
 -- ----------------------------
-DROP TABLE "public"."WEBSITE_MENU";
+-- DROP TABLE "public"."WEBSITE_MENU";
 CREATE TABLE "public"."WEBSITE_MENU" (
 "MENU_ID" int4 DEFAULT nextval('"WEBSITE_MENU_MENU_ID_seq"'::regclass) NOT NULL,
 "MENU_LEVEL" int4,
@@ -7796,7 +7796,7 @@ INSERT INTO "public"."WEBSITE_MENU" VALUES ('22', '2', '5', 'Standard & Referenc
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_PAGE_STATIC"
 -- ----------------------------
-DROP TABLE "public"."WEBSITE_PAGE_STATIC";
+-- DROP TABLE "public"."WEBSITE_PAGE_STATIC";
 CREATE TABLE "public"."WEBSITE_PAGE_STATIC" (
 "PAGE_STATIC_ID" int4 DEFAULT nextval('"WEBSITE_PAGE_STATIC_ID_seq"'::regclass) NOT NULL,
 "TITLE" text,
@@ -8017,7 +8017,7 @@ INSERT INTO "public"."WEBSITE_PAGE_STATIC" VALUES ('17', 'Standard Reference', '
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_SLIDER"
 -- ----------------------------
-DROP TABLE "public"."WEBSITE_SLIDER";
+-- DROP TABLE "public"."WEBSITE_SLIDER";
 CREATE TABLE "public"."WEBSITE_SLIDER" (
 "SLIDER_ID" int4 DEFAULT nextval('"WEBSITE_SLIDER_ID_seq"'::regclass) NOT NULL,
 "NAME" text,
@@ -8042,7 +8042,7 @@ INSERT INTO "public"."WEBSITE_SLIDER" VALUES ('4', 'Profile Slider', '0', null, 
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_SLIDER_DETAIL"
 -- ----------------------------
-DROP TABLE "public"."WEBSITE_SLIDER_DETAIL";
+-- DROP TABLE "public"."WEBSITE_SLIDER_DETAIL";
 CREATE TABLE "public"."WEBSITE_SLIDER_DETAIL" (
 "SLIDER_DETAIL_ID" int4 DEFAULT nextval('"WEBSITE_SLIDER_DETAIL_ID_seq"'::regclass) NOT NULL,
 "SLIDER_ID" int4,
@@ -8088,7 +8088,7 @@ INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('18', '4', 'SUCOFINDO | <sm
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_TAG"
 -- ----------------------------
-DROP TABLE "public"."WEBSITE_TAG";
+-- DROP TABLE "public"."WEBSITE_TAG";
 CREATE TABLE "public"."WEBSITE_TAG" (
 "TAG_ID" int4 DEFAULT nextval('"WEBSITE_TAG_ID_seq"'::regclass) NOT NULL,
 "TAG_NAME" text,
@@ -8116,7 +8116,7 @@ INSERT INTO "public"."WEBSITE_TAG" VALUES ('6', 'Pemilu', '0', null, null, null,
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_TAG_ARTICLE"
 -- ----------------------------
-DROP TABLE "public"."WEBSITE_TAG_ARTICLE";
+-- DROP TABLE "public"."WEBSITE_TAG_ARTICLE";
 CREATE TABLE "public"."WEBSITE_TAG_ARTICLE" (
 "TAG_ARTICLE_ID" int4 DEFAULT nextval('"WEBSITE_TAG_ARTICLE_ID_seq"'::regclass) NOT NULL,
 "ARTICLE_ID" int4,

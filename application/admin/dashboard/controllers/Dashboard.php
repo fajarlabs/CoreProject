@@ -93,6 +93,7 @@ class Dashboard extends MY_Controller
 				if((is_array($element_r1[$v])) && (count($element_r1[$v]) > 0) ) {
 					foreach($element_r1[$v] as $k1 => $v1) {
 						$q1 = $this->Form_entry_model->get_filter_chart($v1,$produk_id,$intervention_id,$client,$lokasi_kerja,$date_month,$date_year);
+						//echo $this->db->last_query();
 						if($q1->num_rows() > 0) {
 							$data = array();
 							$data[$v1] = array();

@@ -237,8 +237,20 @@
 	 	    			return false;
 	 	    		}
 	 	    		
-	 	    		$.get('<?php echo base_url(); ?>index.php/dashboard/chart_rest/?'+$(this).serialize(),function(json){
-	 	    			
+	 	    		$.get('<?php echo base_url(); ?>index.php/dashboard/chart_rest/?'+$(this).serialize(),function(data_json){
+	 	    			var arr = JSON.parse(JSON.stringify(data_json));
+	 	    			console.log(arr);
+
+	 				    Object.keys(arr).forEach(function(key, value) {
+					      console.log(key);
+					      Object.keys(arr[key]).forEach(function(val) {
+					        arr[key][val].forEach(function(data) {
+					          console.log(data);
+					        });
+					      });
+					    });
+						
+
 	 	    			$("#tabs_menu").show();
 	 	    			$(".tab-content").show();
 
@@ -247,6 +259,7 @@
 	 	    			$("#div_chart_bbls60f").show();
 	 	    			$("#div_chart_longton").show();
 	 	    			$("#div_chart_metric_ton").show();
+
 
 						var categories1 = ['R1_KLOBS','R1_KL15','R1_BBLS','R1_LONGTON','R1_METRICTON','R1_VEF_KLOBS','R1_VEF_KL15','R1_VEF_BBLS','R1_VEF_LONGTON','R1_VEF_METRICTON'];
 						var title1 = 'Statistik Data (R1) Loading';
