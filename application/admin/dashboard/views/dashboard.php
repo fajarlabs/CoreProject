@@ -116,7 +116,7 @@
 								</tr>
 								<tr>
 									<td colspan="2">
-										<div style="width:1000px;height:400px;" id="chart_double_line">No Data</div>
+										<div style="display:none;width:1000px;height:400px;" id="chart_double_line">No Data</div>
 									</td>
 								</tr>
 							</table>
