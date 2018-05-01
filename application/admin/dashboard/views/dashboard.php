@@ -227,7 +227,7 @@
 
  				       	
  				       	//Double Line Chart
- 				        column_double_line('','chart_double_line','','Loss Statistics Percentage',series);
+ 				        //column_double_line('','chart_double_line','','Loss Statistics Percentage',series);
 
 
 	 	    			$(".tab-content").show();
