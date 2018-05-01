@@ -44,7 +44,28 @@ class Dashboard extends MY_Controller
 		$this->data['sites'] 		= $this->Client_site_model->get_all_items();
 		$this->data['product'] 		= $this->Dashboard_model->get_table_name('MASTER_PRODUCT');
 		$this->data['intervensi'] 	= $this->Dashboard_model->get_table_name('MASTER_INTERVENTION');
-		$this->data['client'] 		= $this->Dashboard_model->get_table_name_one('FORM_ENTRY_FIELD');
+		$query = $this->Dashboard_model->get_table_name('FORM_ENTRY_FIELD');
+		
+		$data_client = array();
+		if(count($query) > 0) {
+			foreach($query as $row) {
+				if(!in_array($row->CLIENTS,$data_client)) {
+					$o = json_decode($row->CLIENTS);
+					if(is_array($o)) {
+						foreach($o as $k => $v) {
+							if(!in_array($v,$data_client)) {
+								array_push($data_client,$v);
+							}
+						}
+					} else {
+						array_push($data_client,$o);
+					}
+				}
+			}
+		}
+
+		$this->data['client'] 		= $data_client;
+
 		$this->data['area'] 		= $this->Dashboard_model->get_table_group_by('FORM_ENTRY_FIELD','AREA');
 		$this->data['title'] 		= "Dashboard";
 		$this->load->view("admin/header",$this->data);

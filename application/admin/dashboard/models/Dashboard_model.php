@@ -38,7 +38,7 @@ class Dashboard_model extends CI_Model
         return $this->db->get()->result();
     }
 	
-
+	
 
 	public function loading_stats($month='',$year='',$intervensi='',$cst_id='',$produk='',$lokasi_kerja='') 
 	{
