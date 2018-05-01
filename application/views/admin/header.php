@@ -220,8 +220,8 @@
 					</li>
 
 					<li class="dropdown">
-						<a href="<?php echo base_url() ?>index.php/dashboard/standard_reference" >
-							<i style="color:white" class="fa fa-file"></i>
+						<a title="Standard Reference" href="<?php echo base_url() ?>index.php/dashboard/standard_reference" class="f-s-14" >
+							<i class="fa fa-book"></i>
 						</a>	
 					</li>
 					<li class="dropdown">

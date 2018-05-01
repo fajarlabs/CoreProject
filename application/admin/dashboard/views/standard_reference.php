@@ -16,7 +16,7 @@
 			<!-- end breadcrumb -->
 			
 			<!-- begin page-header -->
-			<h1 class="page-header">Standard Reference</h1>
+			<h1 class="page-header">Standard Reference <small>contains a collection of public reference</small></h1>
 			<!-- end page-header -->
 
 			<!-- begin row -->
