@@ -79,7 +79,7 @@
 									</td>
 									<td >
 									<?php echo form_label('Month') ?><br/>
-									<select name="bulan" class="form-control" required="">
+									<select name="bulan" class="form-control" required id="bulan">
 										<option value="">--Choose--</option>
 										<option value="01">January</option>
 										<option value="02">February</option>
@@ -176,6 +176,8 @@
 	 	    		}
 	 	    		
 	 	    		$.get('<?php echo base_url(); ?>index.php/dashboard/chart_rest/?'+$(this).serialize(),function(data_json){
+
+
 	 	    			$("#div_chart").show();
 	 	    			var arr = JSON.parse(JSON.stringify(data_json));
 	 	    			var my_json="";
@@ -210,6 +212,16 @@
 
  				        //Bar Chart
  				        column_bar(my_json,'chart_bar','','Loss Statistics Percentage',series);
+
+
+	 	    			var data_bln = $("#bulan").val();
+	 	    			bln = data_bln;
+	 	    			if(data_bln<10){
+	 	    				bln = data_bln.substr(1);
+	 	    			}
+
+	 	    		
+
  				       	
  				       	//Double Line Chart
  				        column_double_line('','chart_double_line','','Loss Statistics Percentage',series);
@@ -217,11 +229,11 @@
 
 	 	    			$(".tab-content").show();
 
-						var categories1 = ['R1_KLOBS','R1_KL15','R1_BBLS','R1_LONGTON','R1_METRICTON','R1_VEF_KLOBS','R1_VEF_KL15','R1_VEF_BBLS','R1_VEF_LONGTON','R1_VEF_METRICTON'];
-						var title1 = 'Statistik Data (R1) Loading';
+						//var categories1 = ['R1_KLOBS','R1_KL15','R1_BBLS','R1_LONGTON','R1_METRICTON','R1_VEF_KLOBS','R1_VEF_KL15','R1_VEF_BBLS','R1_VEF_LONGTON','R1_VEF_METRICTON'];
+						//var title1 = 'Statistik Data (R1) Loading';
 
-	 	    			var categories2 = ['SLVS_BOL_R1_KLOBS','SLVS_BOL_R1_KL15','SLVS_BOL_R1_BBLS','SLVS_BOL_R1_LONGTON','SLVS_BOL_R1_METRICTON','SFAL_VS_SFBD_R2_KLOBS','SFAL_VS_SFBD_R2_KL15','SFAL_VS_SFBD_R2_BBLS','SFAL_VS_SFBD_R2_LONGTON','SFAL_VS_SFBD_R2_METRICTON','SFBD_VS_SR_R3_KLOBS','SFBD_VS_SR_R3_KL15','SFBD_VS_SR_R3_BBLS','SFBD_VS_SR_R3_LONGTON','SFBD_VS_SR_R3_METRICTON','SR_VS_BOL_R4_KLOBS','SR_VS_BOL_R4_KL15','SR_VS_BOL_R4_BBLS','SR_VS_BOL_R4_LONGTON','SR_VS_BOL_R4_METRICTON'];
-	 	    			var title2 = 'Statistik Data (R1,R2,R3,R4) Discharge';
+	 	    			//var categories2 = ['SLVS_BOL_R1_KLOBS','SLVS_BOL_R1_KL15','SLVS_BOL_R1_BBLS','SLVS_BOL_R1_LONGTON','SLVS_BOL_R1_METRICTON','SFAL_VS_SFBD_R2_KLOBS','SFAL_VS_SFBD_R2_KL15','SFAL_VS_SFBD_R2_BBLS','SFAL_VS_SFBD_R2_LONGTON','SFAL_VS_SFBD_R2_METRICTON','SFBD_VS_SR_R3_KLOBS','SFBD_VS_SR_R3_KL15','SFBD_VS_SR_R3_BBLS','SFBD_VS_SR_R3_LONGTON','SFBD_VS_SR_R3_METRICTON','SR_VS_BOL_R4_KLOBS','SR_VS_BOL_R4_KL15','SR_VS_BOL_R4_BBLS','SR_VS_BOL_R4_LONGTON','SR_VS_BOL_R4_METRICTON'];
+	 	    			//var title2 = 'Statistik Data (R1,R2,R3,R4) Discharge';
 
 
 
