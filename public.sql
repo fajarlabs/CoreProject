@@ -11,7 +11,7 @@ Target Server Type    : PGSQL
 Target Server Version : 90608
 File Encoding         : 65001
 
-Date: 2018-05-01 22:06:30
+Date: 2018-05-02 02:53:38
 */
 
 
@@ -2881,240 +2881,244 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('16', 'dpc_crude_discharge', '			<t
 				</tr>
 			</table>', '0', null, null, null, null, null);
 INSERT INTO "public"."KOMPONEN_HTML" VALUES ('17', 'quantity_crude_loading', '<table>
+<tbody>
 <tr>
 <td>BL Figure</td>
 <td>
-<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
-	<thead>
-		<tr>
-			<th style="width:5;">&nbsp;</th>
-			<th style="width:200px;">&nbsp;</th>
-			<th style="width:160px;text-align: left;">&nbsp;&nbsp;&nbsp;KL @obs</th>
-			<th style="width:160px;text-align: left;">&nbsp;&nbsp;&nbsp;KL @15° C</th>
-			<th style="width:160px;text-align: left;">&nbsp;&nbsp;&nbsp;BBLS @60°F</th>
-			<th style="width:160px;text-align: left;">&nbsp;&nbsp;&nbsp;Long Ton</th>
-			<th>&nbsp;&nbsp;&nbsp;Metric Ton</th>
-		</tr>
-	</thead>
-				<tbody><tr>
-					<td>a)</td>
-					<td colspan="6" style="width:150px;text-alignment:left">BL Quantity</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td style="width:150px;">Gross Standard Volume</td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="bl_gsv_klobs" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="bl_gsv_kl15" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="bl_gsv_bbls" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="bl_gsv_longton" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="bl_gsv_metricton" class="" type="text"></td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td style="width:150px;">Net Standard Volume</td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="bl_nsv_klobs" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="bl_nsv_kl15" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="bl_nsv_bbls" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="bl_nsv_longton" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="bl_nsv_metricton" class="" type="text"></td>
-				</tr>
-				<tr>
-					<td>b)</td>
-					<td>BL Figure based on</td>
-					<td colspan="10">
-						<input name="bl_flow_meter" value="Y" type="checkbox">
-						Flow Meter
-						<input name="bl_shore_tank" value="Y" type="checkbox">
-						Shore Tank
-						<input name="bl_ship_tank" value="Y" type="checkbox">
-						Ship Tank
-					</td>
-				</tr>
-				<tr>
-					<td>c)</td>
-					<td>density@15°C</td>
-					<td colspan="10">
-						<input onkeyup="hitung(this)" style="width:100%;" class="" name="bl_15_derajat_celcius" type="text">
-					</td>
-				</tr>
-			</tbody></table>
+<table style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<thead>
+<tr>
+<th style="width: 5;">&nbsp;</th>
+<th style="width: 200px;">&nbsp;</th>
+<th style="width: 160px; text-align: left;">&nbsp;&nbsp;&nbsp;KL @obs</th>
+<th style="width: 160px; text-align: left;">&nbsp;&nbsp;&nbsp;KL @15&deg; C</th>
+<th style="width: 160px; text-align: left;">&nbsp;&nbsp;&nbsp;BBLS @60&deg;F</th>
+<th style="width: 160px; text-align: left;">&nbsp;&nbsp;&nbsp;Long Ton</th>
+<th>&nbsp;&nbsp;&nbsp;Metric Ton</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a)</td>
+<td style="width: 150px; text-alignment: left;" colspan="6">BL Quantity</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td style="width: 150px;">Gross Standard Volume</td>
+<td><input class="" style="width: 100px;" name="bl_gsv_klobs" type="text" /></td>
+<td><input class="" style="width: 100px;" name="bl_gsv_kl15" type="text" /></td>
+<td><input class="" style="width: 100px;" name="bl_gsv_bbls" type="text" /></td>
+<td><input class="" style="width: 100px;" name="bl_gsv_longton" type="text" /></td>
+<td><input class="" style="width: 100px;" name="bl_gsv_metricton" type="text" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td style="width: 150px;">Net Standard Volume</td>
+<td><input class="" style="width: 100px;" name="bl_nsv_klobs" type="text" /></td>
+<td><input class="" style="width: 100px;" name="bl_nsv_kl15" type="text" /></td>
+<td><input class="" style="width: 100px;" name="bl_nsv_bbls" type="text" /></td>
+<td><input class="" style="width: 100px;" name="bl_nsv_longton" type="text" /></td>
+<td><input class="" style="width: 100px;" name="bl_nsv_metricton" type="text" /></td>
+</tr>
+<tr>
+<td>b)</td>
+<td>BL Figure based on</td>
+<td colspan="10"><input name="bl_flow_meter" value="Y" type="checkbox" /> Flow Meter <input name="bl_shore_tank" value="Y" type="checkbox" /> Shore Tank <input name="bl_ship_tank" value="Y" type="checkbox" /> Ship Tank</td>
+</tr>
+<tr>
+<td>c)</td>
+<td>density@15&deg;C</td>
+<td colspan="10"><input class="" style="width: 100%;" name="bl_15_derajat_celcius" type="text" /></td>
+</tr>
+</tbody>
+</table>
 </td>
 </tr>
-<tr><td colspan="2" style="height:10px;"></td></tr>
+<tr>
+<td style="height: 10px;" colspan="2">&nbsp;</td>
+</tr>
 <tr>
 <td>Shore Figure</td>
 <td>
-<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
-				<tbody><tr>
-					<td>a)</td>
-					<td style="width:150px;">Shore Quantity</td>
-					<td><!--<input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_sq_klobs" class="" />--></td>
-					<td><!--<input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_sq_kl15" class="" />--></td>
-					<td><!--<input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_sq_bbls" class="" />--></td>
-					<td><!--<input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_sq_longton" class="" />--></td>
-					<td><!--<input onkeyup="hitung(this)" style="width:100px;" type="text" name="sf_sq_metricton" class="" />--></td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td style="width:150px;">Gross Standard Volume</td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_gsv_klobs" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_gsv_kl15" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_gsv_bbls" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_gsv_longton" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_gsv_metricton" class="" type="text"></td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td style="width:150px;">Net Standard Volume</td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_nsv_klobs" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_nsv_kl15" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_nsv_bbls" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_nsv_longton" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_nsv_metricton" class="" type="text"></td>
-				</tr>
-				<tr>
-					<td>b)</td>
-					<td style="width:150px;">Shore Tanks Nomination</td>
-					<td colspan="5"><input onkeyup="hitung(this)" name="sf_shore_tanks_nomination_klobs" class="" type="text"></td>
-				</tr>
-			</tbody></table>
+<table style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<td>a)</td>
+<td style="width: 150px;">Shore Quantity</td>
+<td><input onkeyup="hitung(this)" style="width: 100px;" name="sf_sq_klobs" class="" type="text" /></td>
+<td><input onkeyup="hitung(this)" style="width: 100px;" name="sf_sq_kl15" class="" type="text" /></td>
+<td><input onkeyup="hitung(this)" style="width: 100px;" name="sf_sq_bbls" class="" type="text" /></td>
+<td><input onkeyup="hitung(this)" style="width: 100px;" name="sf_sq_longton" class="" type="text" /></td>
+<td><input onkeyup="hitung(this)" style="width: 100px;" name="sf_sq_metricton" class="" type="text" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td style="width: 150px;">Gross Standard Volume</td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_gsv_klobs" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_gsv_kl15" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_gsv_bbls" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_gsv_longton" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_gsv_metricton" type="text" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td style="width: 150px;">Net Standard Volume</td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_nsv_klobs" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_nsv_kl15" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_nsv_bbls" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_nsv_longton" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_nsv_metricton" type="text" /></td>
+</tr>
+<tr>
+<td>b)</td>
+<td style="width: 150px;">Shore Tanks Nomination</td>
+<td colspan="5"><input onkeyup="hitung(this)" class="" name="sf_shore_tanks_nomination_klobs" type="text" /></td>
+</tr>
+</tbody>
+</table>
 </td>
 </tr>
-<tr><td colspan="2" style="height:10px;"></td></tr>
+<tr>
+<td style="height: 10px;" colspan="2">&nbsp;</td>
+</tr>
 <tr>
 <td>Ship Figure</td>
 <td>
-<table style="width:900px !important;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
-				<tbody><tr>
-					<td>a)</td>
-					<td style="width:150px;">Onboard Quantity (OBQ)</td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="obq_quantity_klobs" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="obq_quantity_kl15" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="obq_quantity_bbls" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="obq_quantity_longton" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="obq_quantity_metricton" class="" type="text"></td>
-				</tr>
-				<tr>
-					<td>b)</td>
-					<td style="width:150px;">Ship''s Figure After Loading (SFAL)</td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_sfal_tov_klobs" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_sfal_tov_kl15" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_sfal_tov_bbls" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_sfal_tov_longton" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_sfal_tov_metricton" class="" type="text"></td>
-				</tr>
-				<tr>
-					<td>c)</td>
-					<td style="width:150px;">Free Water</td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_free_water_al_klobs" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_free_water_al_kl15" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_free_water_al_bbls" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_free_water_al_longton" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sf_free_water_al_metricton" class="" type="text"></td>
-				</tr>
-				<tr>
-					<td>d)</td>
-					<td style="width:150px;">Ship''s Figure After Loading (SFAL)</td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_gsv_klobs" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_gsv_kl15" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_gsv_bbls" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_gsv_longton" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_gsv_metricton" class="" type="text"></td>
-				</tr>
-				<tr>
-					<td>e)</td>
-					<td style="width:150px;">Ship''s Figure After Loading (SFAL) </td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_nsv_klobs" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_nsv_kl15" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_nsv_bbls" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_nsv_longton" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sfal_nsv_metricton" class="" type="text"></td>
-				</tr>
-				<tr>
-					<td>f)</td>
-					<td style="width:150px;">Vessel Experience Factor</td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="vefl_klobs" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="vefl_kl15" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="vefl_bbls" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="vefl_longton" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="vefl_metricton" class="" type="text"></td>
-				</tr>
-				<tr>
-					<td>g)</td>
-					<td style="width:150px;">Ship''s Loaded (applied VEF-L)</td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sl_applied_vefl_klobs" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sl_applied_vefl_kl15" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sl_applied_vefl_bbls" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sl_applied_vefl_longton" class="" type="text"></td>
-					<td><input onkeyup="hitung(this)" style="width:100px;" name="sl_applied_vefl_metricton" class="" type="text"></td>
-				</tr>
-			</tbody></table>
+<table style="width: 900px !important; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<td>a)</td>
+<td style="width: 150px;">Onboard Quantity (OBQ)</td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="obq_quantity_klobs" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="obq_quantity_kl15" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="obq_quantity_bbls" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="obq_quantity_longton" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="obq_quantity_metricton" type="text" /></td>
+</tr>
+<tr>
+<td>b)</td>
+<td style="width: 150px;">Ship''''s Figure After Loading (SFAL)</td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_sfal_tov_klobs" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_sfal_tov_kl15" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_sfal_tov_bbls" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_sfal_tov_longton" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_sfal_tov_metricton" type="text" /></td>
+</tr>
+<tr>
+<td>c)</td>
+<td style="width: 150px;">Free Water</td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_free_water_al_klobs" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_free_water_al_kl15" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_free_water_al_bbls" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_free_water_al_longton" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sf_free_water_al_metricton" type="text" /></td>
+</tr>
+<tr>
+<td>d)</td>
+<td style="width: 150px;">Ship''''s Figure After Loading (SFAL)</td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sfal_gsv_klobs" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sfal_gsv_kl15" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sfal_gsv_bbls" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sfal_gsv_longton" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sfal_gsv_metricton" type="text" /></td>
+</tr>
+<tr>
+<td>e)</td>
+<td style="width: 150px;">Ship''''s Figure After Loading (SFAL)</td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sfal_nsv_klobs" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sfal_nsv_kl15" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sfal_nsv_bbls" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sfal_nsv_longton" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sfal_nsv_metricton" type="text" /></td>
+</tr>
+<tr>
+<td>f)</td>
+<td style="width: 150px;">Vessel Experience Factor</td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="vefl_klobs" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="vefl_kl15" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="vefl_bbls" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="vefl_longton" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="vefl_metricton" type="text" /></td>
+</tr>
+<tr>
+<td>g)</td>
+<td style="width: 150px;">Ship''''s Loaded (applied VEF-L)</td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sl_applied_vefl_klobs" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sl_applied_vefl_kl15" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sl_applied_vefl_bbls" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sl_applied_vefl_longton" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sl_applied_vefl_metricton" type="text" /></td>
+</tr>
+</tbody>
+</table>
 </td>
 </tr>
-<tr><td colspan="2" style="height:10px;"></td></tr>
+<tr>
+<td style="height: 10px;" colspan="2">&nbsp;</td>
+</tr>
 <tr>
 <td>Discrepancy</td>
 <td>
-<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
-				<tbody><tr>
-					<td>a)</td>
-					<td style="width:150px;">Ship''s Loaded vs Bill of Lading (R1)</td>
-					<td><input style="width:100px;" name="sl_vs_bol_r1_klobs" class="" type="text"></td>
-					<td><input style="width:100px;" name="sl_vs_bol_r1_kl15" class="" type="text"></td>
-					<td><input style="width:100px;" name="sl_vs_bol_r1_bbls" class="" type="text"></td>
-					<td><input style="width:100px;" name="sl_vs_bol_r1_longton" class="" type="text"></td>
-					<td><input style="width:100px;" name="sl_vs_bol_r1_metricton" class="" type="text"></td>
-				</tr>
-				<tr>
-					<td>b)</td>
-					<td style="width:150px;">Ship''s Loaded (VEF applied) vs Bill of Lading (R1)</td>
-					<td><input style="width:100px;" name="sl_vef_applied_vs_bol_r1_klobs" class="" type="text"></td>
-					<td><input style="width:100px;" name="sl_vef_applied_vs_bol_r1_kl15" class="" type="text"></td>
-					<td><input style="width:100px;" name="sl_vef_applied_vs_bol_r1_bbls" class="" type="text"></td>
-					<td><input style="width:100px;" name="sl_vef_applied_vs_bol_r1_longton" class="" type="text"></td>
-					<td><input style="width:100px;" name="sl_vef_applied_vs_bol_r1_metricton" class="" type="text"></td>
-				</tr>
-			</tbody></table>
+<table style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<td>a)</td>
+<td style="width: 150px;">Ship''''s Loaded vs Bill of Lading (R1)</td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sl_vs_bol_r1_klobs" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sl_vs_bol_r1_kl15" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sl_vs_bol_r1_bbls" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sl_vs_bol_r1_longton" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sl_vs_bol_r1_metricton" type="text" /></td>
+</tr>
+<tr>
+<td>b)</td>
+<td style="width: 150px;">Ship''''s Loaded (VEF applied) vs Bill of Lading (R1)</td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sl_vef_applied_vs_bol_r1_klobs" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sl_vef_applied_vs_bol_r1_kl15" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sl_vef_applied_vs_bol_r1_bbls" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sl_vef_applied_vs_bol_r1_longton" type="text" /></td>
+<td><input onkeyup="hitung(this)" class="" style="width: 100px;" name="sl_vef_applied_vs_bol_r1_metricton" type="text" /></td>
+</tr>
+</tbody>
+</table>
 </td>
 </tr>
-<tr><td colspan="2" style="height:10px;"></td></tr>
+<tr>
+<td style="height: 10px;" colspan="2">&nbsp;</td>
+</tr>
 <tr>
 <td>Quality</td>
 <td>
-			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
-				<tr>
-					<td style="width:135px;">Sample Source</td>
-					<td>
-						<input style="width:100%" type="text" class="" name="sample_source" />
-					</td>
-				</tr>
-				<tr>
-					<td style="width:135px;">Date of Analysis</td>
-					<td>
-						<input style="min-width:100px !important;width:100px;" data-date-format="dd/mm/yyyy" type="text" class="datepicker" name="date_of_analysis" />
-					</td>
-				</tr>
-				<tr>
-					<td style="width:135px;">Certificate Of Quality</td>
-					<td>
-						<a style="margin-bottom:2px;" href="javascript:;" class="btn btn-success btn-xs" onclick="add_tb_certificate()"><i class="fa fa-plus"></i></a>
-						<table id="tb_certificate" style="width:100%;margin-left:-20px;"></table>
-					</td>
-				</tr>
-			</table>
-			<script type="text/javascript">
-				function add_tb_certificate() {
-					$("#tb_certificate").append("<tr><td><table style=\"width:100%;margin-bottom:2px;\"><tr><td style=\"width:100px;\"><input type=\"file\" name=\"fsoq[]\" /></td><td><a href=\"javascript:;\" onclick=\"delete_tb_certificate(this)\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i> </a></td></tr></table></td></tr>");
+<table style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<td style="width: 135px;">Sample Source</td>
+<td><input class="" style="width: 100%;" name="sample_source" type="text" /></td>
+</tr>
+<tr>
+<td style="width: 135px;">Date of Analysis</td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px;" name="date_of_analysis" data-date-format="dd/mm/yyyy" type="text" /></td>
+</tr>
+<tr>
+<td style="width: 135px;">Certificate Of Quality</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<script type="text/javascript">// <![CDATA[
+function add_tb_certificate() {
+					$("#tb_certificate").append("<tr><td><table style="width:100%;margin-bottom:2px;"><tr><td style="width:100px;"><input type="file" name="fsoq[]" /></td><td><a href="javascript:;" onclick="delete_tb_certificate(this)" class="btn btn-danger btn-xs"><i class="fa fa-minus"></i> </a></td></tr></table></td></tr>");
 				}
 
 				function delete_tb_certificate(e) {
 					$(e).parent().parent().parent().parent().remove();
 				}
-			</script>
-
+// ]]></script>
 </td>
 </tr>
-</table>', '0', null, null, null, null, null);
+</tbody>
+</table>
+<div id="selenium-highlight"></div>', '0', null, null, null, null, null);
 INSERT INTO "public"."KOMPONEN_HTML" VALUES ('18', 'quantity_crude_discharge', '<table>
 <tr>
 <td>BL Figure</td>
@@ -4756,11 +4760,7 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('26', 'quantity_crude_bunker_vessel
 <td>In Any</td>
 </tr>
 </tbody>
-</table>
-<div id="selenium-highlight">&nbsp;</div>
-<script type="text/javascript">// <![CDATA[
-alert("OK"); 
-// ]]></script>', '0', null, null, null, null, null);
+</table>', '0', null, null, null, null, null);
 INSERT INTO "public"."KOMPONEN_HTML" VALUES ('27', 'Timelog Product Discharge', '<table id="table_list_timelog" style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
 <tbody>
 <tr>
@@ -8078,23 +8078,32 @@ WITH (OIDS=FALSE)
 -- Records of WEBSITE_SLIDER_DETAIL
 -- ----------------------------
 INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('9', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>PT. Sucofindo (Persero) | SUCOFINDO melakukan verifikasi, </strong><br /><strong>review, pemeriksaan dan evaluasi terhadap fasilitas produksi </strong><br /><strong>migas hulu,seperti pada fasilitas ekstrasi, mulai tahap disain,</strong><br /><strong> pabrikasi, instalasi, operasional sampai dengan pemeliharaannya </strong><br /><strong>untuk memastikan peralatan dan fasilitas bekerja sesuai dengan </strong><br /><strong>spesifikasi dan aman untuk dioperasikan</strong>
+<div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>', '0', null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_47.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_47.jpeg', 'Y');
 INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('10', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>Inspeksi dapat dilakukan dengan berbagai cara sesuai dengan </strong><br /><strong>kebutuhan dan diutamakan dengan pengujian tanpa rusak sehingga </strong><br /><strong>tidak membawa dampak bagi kegiatan operasional perusahaan</strong>
+<div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_49.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_49.jpeg', 'Y');
 INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('11', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '- Kalibrasi Alat Ukur dan Alat Uji <br /> - Uji Tanpa Rusak <br /> - Inspeksi dan Audit atas Menara Pengeboran (Rig) <br /> - Inspeksi OCTG
+<div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_48.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_48.jpeg', 'Y');
 INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('12', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>PT. Sucofindo (Persero) | SUCOFINDO melakukan verifikasi, </strong><br /><strong>review, pemeriksaan dan evaluasi terhadap fasilitas produksi </strong><br /><strong>migas hulu,seperti pada fasilitas ekstrasi, mulai tahap disain,</strong><br /><strong> pabrikasi, instalasi, operasional sampai dengan pemeliharaannya </strong><br /><strong>untuk memastikan peralatan dan fasilitas bekerja sesuai dengan </strong><br /><strong>spesifikasi dan aman untuk dioperasikan</strong>
+<div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_55.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_55.jpeg', 'Y');
 INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('13', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>Inspeksi dapat dilakukan dengan berbagai cara sesuai dengan </strong><br /><strong>kebutuhan dan diutamakan dengan pengujian tanpa rusak sehingga </strong><br /><strong>tidak membawa dampak bagi kegiatan operasional perusahaan</strong>
+<div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_54.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_54.jpeg', 'Y');
 INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('14', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '- Kalibrasi Alat Ukur dan Alat Uji <br /> - Uji Tanpa Rusak <br /> - Inspeksi dan Audit atas Menara Pengeboran (Rig) <br /> - Inspeksi OCTG
+<div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_53.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_53.jpeg', 'Y');
 INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('16', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>Inspeksi dapat dilakukan dengan berbagai cara sesuai dengan </strong><br /><strong>kebutuhan dan diutamakan dengan pengujian tanpa rusak sehingga </strong><br /><strong>tidak membawa dampak bagi kegiatan operasional perusahaan</strong>
+<div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_52.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_52.jpeg', 'Y');
 INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('17', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>Inspeksi dapat dilakukan dengan berbagai cara sesuai dengan </strong><br /><strong>kebutuhan dan diutamakan dengan pengujian tanpa rusak sehingga </strong><br /><strong>tidak membawa dampak bagi kegiatan operasional perusahaan</strong>
+<div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_51.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_51.jpeg', 'Y');
 INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('18', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>PT. Sucofindo (Persero) | SUCOFINDO melakukan verifikasi, </strong><br /><strong>review, pemeriksaan dan evaluasi terhadap fasilitas produksi </strong><br /><strong>migas hulu,seperti pada fasilitas ekstrasi, mulai tahap disain,</strong><br /><strong> pabrikasi, instalasi, operasional sampai dengan pemeliharaannya </strong><br /><strong>untuk memastikan peralatan dan fasilitas bekerja sesuai dengan </strong><br /><strong>spesifikasi dan aman untuk dioperasikan</strong>
-<div id="selenium-highlight">&nbsp;</div>', null, null, null, null, null, null, null, 'uploads/slider/Desert.jpg', 'Desert.jpg', 'Y');
+<div id="selenium-highlight">&nbsp;</div>
+<div id="selenium-highlight">&nbsp;</div>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_491.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_491.jpeg', 'Y');
 
 -- ----------------------------
 -- Table structure for "public"."WEBSITE_TAG"
