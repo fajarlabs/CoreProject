@@ -16,7 +16,7 @@
   </style>
   <body lang="en">
     <p id="no_print" align="left">
-        <a onclick="window.print();" style="color:blue;cursor:pointer">Print</a> | <a onclick="printMe()"  style="color:blue;cursor:pointer">Download</a>
+        <a onclick="window.print();" style="color:blue;cursor:pointer">Print</a><!-- | <a onclick="printMe()"  style="color:blue;cursor:pointer">Download</a>-->
     </p>
     <section id="main">
       <header id="title">
