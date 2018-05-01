@@ -100,7 +100,7 @@ class Dashboard extends MY_Controller
 								$v1 = strtoupper($v1);
 								array_push($data[$v1],$row1->$v1);
 							}
-							$array_json[$v] = json_encode($data);
+							$array_json[$v] = $data;
 						}
 					}
 				}
@@ -117,7 +117,7 @@ class Dashboard extends MY_Controller
 								$v2 = strtoupper($v2);
 								array_push($data[$v2],$row1->$v2);
 							}
-							$array_json[$v] = json_encode($data);
+							$array_json[$v] = $data;
 						}
 					}
 				}	
@@ -134,7 +134,7 @@ class Dashboard extends MY_Controller
 								$v3 = strtoupper($v3);
 								array_push($data[$v3],$row1->$v3);
 							}
-							$array_json[$v] = json_encode($data);
+							$array_json[$v] = $data;
 						}
 					}
 				}
@@ -151,7 +151,7 @@ class Dashboard extends MY_Controller
 								$v4 = strtoupper($v4);
 								array_push($data[$v4],$row1->$v4);
 							}
-							$array_json[$v] = json_encode($data);
+							$array_json[$v] = $data;
 						}	
 					}	
 				}
