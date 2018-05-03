@@ -244,7 +244,9 @@ foreach($cv_cr as $my_cv_cr){
  	    if (window.jQuery) {
 
 	 	$('.datepicker2').datepicker({
-		    format: 'dd/mm/yyyy'
+		    format: 'dd/mm/yyyy',
+		    changeMonth: true,
+    		changeYear: true
 		 }); 	   	
 	var data_cr 	 = <?php echo json_encode($cr); ?>;
 	var data_exp 	 = <?php echo json_encode($exp); ?>;
@@ -277,7 +279,9 @@ foreach($cv_cr as $my_cv_cr){
 				html +='			</div>';
 				$("#data_certificate").after(html);
 				$('.datepicker').datepicker({
-				    format: 'dd/mm/yyyy'
+				    format: 'dd/mm/yyyy',
+				    changeMonth: true,
+    				changeYear: true
 				 });
 				$('#certificate_id_'+Ids4).val(data_cr[i].ID)
 				$('#certificate_name_'+Ids4).val(data_cr[i].CERTIFICATE_NAME)
@@ -348,6 +352,8 @@ foreach($cv_cr as $my_cv_cr){
 					$("#data_work").after(html);
 					$('.datepicker').datepicker({
 					    format: 'dd/mm/yyyy',
+					    changeMonth: true,
+  						changeYear: true,
 					    autoUpdateInput: false
 					});
 					$('#desc_work_'+Ids3).val(data_history[i].DESCRIPTION)
