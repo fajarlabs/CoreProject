@@ -84,7 +84,7 @@ class Tool extends MY_Controller
 
         $this->load->library('upload', $config);
 
-        if ( ! $this->upload->do_upload('sertifikat_upload')) {
+        if ( ! $this->upload->do_upload('file_upload')) {
                 $msg_upload = array('error' => $this->upload->display_errors());
         } else {
                 $msg_upload = array('upload_data' => $this->upload->data());

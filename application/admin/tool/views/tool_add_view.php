@@ -78,7 +78,7 @@
 						<tr>
 							<td width="150px" style="padding-top:15px;"><?php echo form_label('Photo *') ?></td>
 							<td>
-								<?php echo form_upload(array('type' => 'file', 'name' => 'sertifikat_upload','class' => 'file','id' => 'upload_file')); ?>
+								<?php echo form_upload(array('type' => 'file', 'name' => 'file_upload','class' => 'file','id' => 'upload_file')); ?>
 								* 5MB Maximum for Attachment File Size
 							</td>
 						</tr>

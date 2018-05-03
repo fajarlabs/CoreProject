@@ -76,9 +76,9 @@
 							</td>
 						</tr>
 						<tr>
-							<td width="150px" style="padding-top:15px;"><?php echo form_label('Certificate Upload*') ?></td>
+							<td width="150px" style="padding-top:15px;"><?php echo form_label('Photo *') ?></td>
 							<td>
-								<?php echo form_upload(array('type' => 'file', 'name' => 'sertifikat_upload','class' => 'file','id' => 'upload_file')); ?>
+								<?php echo form_upload(array('type' => 'file', 'name' => 'file_upload','class' => 'file','id' => 'upload_file')); ?>
 								* 5MB Maximum for Attachment File Size
 								<br /><br />
 								<?php echo anchor(base_url().'uploads/tool_files/'.@$item->result()[0]->UPLOAD_SERTIFIKAT, 'Preview or download', 'class="btn btn-xs btn-success" title="Preview or download"'); ?>
