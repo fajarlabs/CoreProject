@@ -38,7 +38,7 @@
 						</tr>
 						<tr>
 							<td width="150px" style="padding-top:15px;"><?php echo form_label('Last Update Calibration*') ?></td>
-							<td><?php echo form_input(array('type' => 'text', 'name' => 'date_calibration','class' => 'form-control datepicker','required' => 'required')); ?></td>
+							<td><?php echo form_input(array('type' => 'id','dt' => 'text', 'name' => 'date_calibration','class' => 'form-control','required' => 'required')); ?></td>
 						</tr>
 						<tr>
 							<td width="150px" style="padding-top:15px;"><?php echo form_label('Location*') ?></td>
@@ -78,7 +78,7 @@
 						<tr>
 							<td width="150px" style="padding-top:15px;"><?php echo form_label('Photo *') ?></td>
 							<td>
-								<?php echo form_upload(array('type' => 'file', 'name' => 'sertifikat_upload','class' => 'file','id' => 'upload_file')); ?>
+								<?php echo form_upload(array('type' => 'file', 'name' => 'file_upload','class' => 'file','id' => 'upload_file')); ?>
 								* 5MB Maximum for Attachment File Size
 							</td>
 						</tr>
@@ -99,7 +99,14 @@
     </div>
 </div>
 <script>
-	$('.datepicker').datepicker();
+	(function defer() {
+ 	    if (window.jQuery) {
+			$('#dt').datepicker({
+		    changeMonth: true,
+		    changeYear: true,
+		 	});
+		}
+	});
 	function get_type_location(){
 		var type =	$('input[name=type_location]:checked', '#form_add').val();
 		if(type=="1"){

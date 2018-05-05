@@ -283,7 +283,11 @@
 					html+=	'</div>';
 					html +='			</div>';
 			$("#data_certificate").append(html);
-			$('.datepicker').datepicker();
+			$('.datepicker').datepicker({
+				    format: 'dd/mm/yyyy',
+				    changeMonth: true,
+    				changeYear: true
+			});
 			Ids4++;
 	}
 	function generate_work(){
@@ -315,7 +319,11 @@
 					html +='	</div>';			
 					html +=	'</div>';
 			$("#data_work").append(html);
-			$('.datepicker').datepicker();
+			$('.datepicker').datepicker({
+				    format: 'dd/mm/yyyy',
+				    changeMonth: true,
+    				changeYear: true
+			});
 			Ids3++;
 	}
 	function generate_edu(){
