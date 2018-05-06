@@ -63,7 +63,7 @@
 										<?php echo form_input(array('type' => 'text', 'name' => 'placedate','class' => 'form-control','required' => 'required','placeholder' => 'Place of birth','maxlength' => 100)); ?>
 									</div>
 									<div class="col-md-4">
-										<?php echo form_input(array('type' => 'text', 'name' => 'birthdate','class' => 'form-control datepicker','required' => 'required','placeholder' => 'Birthdate')); ?>
+										<?php echo form_input(array('type' => 'text', 'name' => 'birthdate','class' => 'form-control mydatepicker','required' => 'required','placeholder' => 'Birthdate')); ?>
 									</div>
 								</div>
 							</td>
@@ -183,12 +183,12 @@
 									</div>
 								</div><br/>
 								<div class="row">
-									<div class="col-md-1">
-										<?php echo form_input(array('type' => 'text', 'name' => 'start_work[]','class' => 'form-control datepicker','readonly' => 'true','placeholder' => 'Start Work','style' => 'background-color:white')); ?>
+									<div class="col-md-2">
+										<?php echo form_input(array('type' => 'text', 'name' => 'start_work[]','class' => 'form-control mydatepicker','readonly' => 'true','placeholder' => 'Start Work','style' => 'background-color:white')); ?>
 									</div>
-									<div class="col-md-5">&nbsp;&nbsp;</div>
-									<div class="col-md-1">
-										<?php echo form_input(array('type' => 'text', 'name' => 'end_work[]','class' => 'form-control datepicker','readonly' => 'true','placeholder' => 'End Work','style' => 'background-color:white')); ?>
+									<div class="col-md-4">&nbsp;&nbsp;</div>
+									<div class="col-md-2">
+										<?php echo form_input(array('type' => 'text', 'name' => 'end_work[]','class' => 'form-control mydatepicker','readonly' => 'true','placeholder' => 'End Work','style' => 'background-color:white')); ?>
 									</div>
 								</div><br/>
 								<div class="row">
@@ -210,7 +210,7 @@
 										<?php echo form_input(array('type' => 'text', 'name' => 'certificate_name[]','class' => 'form-control','maxlength' => 150,'placeholder' => 'Certificate Name')); ?>
 									</div>
 									<div class="col-md-6">
-										<?php echo form_input(array('type' => 'text', 'name' => 'expired_date_certificate[]','class' => 'form-control datepicker','placeholder' => 'Expired Certificate')); ?>
+										<?php echo form_input(array('type' => 'text', 'name' => 'expired_date_certificate[]','class' => 'form-control mydatepicker','placeholder' => 'Expired Certificate')); ?>
 									</div>
 								</div><br/>
 								<div class="row">
@@ -258,6 +258,19 @@
     </div>
 </div>
 <script type="text/javascript">
+	(function defer() {
+		if (window.jQuery) {
+			$('.mydatepicker').datepicker({
+				    format: 'dd/mm/yyyy',
+				    changeMonth: true,
+					changeYear: true
+			});	
+		} else {
+           setTimeout(function() { defer() }, 2000);
+        }
+	 })();
+
+
 	var Ids4 = 1;
 	var Ids3 = 1;
 	var Ids2 = 1;
@@ -300,11 +313,11 @@
 						html +='			</div>';
 						html +='		</div><br>';
 						html +='		<div class="row">';
-						html +='			<div class="col-md-1">';
+						html +='			<div class="col-md-2">';
 						html +='				<input name="start_work[]" value="" class="form-control datepicker"  readonly="true" placeholder="Start Work" style="background-color:white" type="text">';
 						html +='			</div>';
-						html +='			<div class="col-md-5">&nbsp;&nbsp;</div>';
-						html +='			<div class="col-md-1">';
+						html +='			<div class="col-md-4">&nbsp;&nbsp;</div>';
+						html +='			<div class="col-md-2">';
 						html +='				<input name="end_work[]" value="" class="form-control datepicker" readonly="true" placeholder="End Work" style="background-color:white" type="text">';
 						html +='			</div>';
 						html +='		</div><br>';
