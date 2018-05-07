@@ -85,6 +85,12 @@
 		    display: none;
 		}
 
+		.autocomplete_text{
+			background-image: url(<?php echo base_url() ?>img/autocomplete_leftcap.gif);
+			background-position: right;
+			background-repeat: no-repeat;
+		}
+
 		.sidebar .nav > li.expand > a, .sidebar .nav > li > a:focus, .sidebar .nav > li > a:hover {
 			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#607b99+0,77add6+50,aecce2+100 */
 			background: rgb(96,123,153); /* Old browsers */
