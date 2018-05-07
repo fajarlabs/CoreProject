@@ -15,6 +15,11 @@ class Personil extends MY_Controller
 					App.init();
 				});
 
+				function newPersonil(id)
+				{
+					window.open("'.base_url().'index.php/personil/newpersonil/","_self");
+				}
+
 				function newCv(id)
 				{
 					window.open("'.base_url().'index.php/personil/add/"+id,"_self");
@@ -71,6 +76,19 @@ class Personil extends MY_Controller
 		$this->load->view('personil_view',$this->data);
 		$this->load->view('admin/footer',$this->data);
 	}
+
+	public function newpersonil()
+	{
+		$this->data['title'] = "Personil Management";
+		$this->data['position'] = $this->Personil_model->get_table_name('REF_POSITION');
+		$this->data['region'] = $this->Personil_model->get_table_name('REF_REGION','REGION','asc');
+		$this->data['cabang'] = $this->Personil_model->get_table_name('MASTER_CABANG');
+		$this->data['sbu'] = $this->Personil_model->get_table_name('MASTER_SBU');
+		$this->load->view('admin/header',$this->data);
+		$this->load->view('personil_add_view2',$this->data);
+		$this->load->view('admin/footer',$this->data);
+	}
+
 
 	public function add($id)
 	{
@@ -135,6 +153,8 @@ class Personil extends MY_Controller
 		$this->session->set_flashdata('error_message', alert_success('Update succeded.'));
 		redirect("personil/detail/".$type_location);	
 	}
+
+	
 
 	public function save()
 	{
