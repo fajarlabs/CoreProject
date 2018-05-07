@@ -27,7 +27,7 @@
                 </div>
                 <div class="panel-body">
 				    <table id="dg" class="easyui-datagrid" style="width:100%;min-height:400px"
-				            url="<?php echo base_url(); ?>index.php/Personil/page_list_rest"
+				            url="<?php echo base_url(); ?>index.php/personil/page_list_rest"
 				            toolbar="#toolbar" pagination="true"
 				            rownumbers="true" fitColumns="true" singleSelect="true">
 				        <thead>
