@@ -12,6 +12,8 @@ class Personil_model extends CI_Model
         $this->db->group_by('"TYPE_LOCATION"');    
         return $this->db->get($this->table);
     }
+    
+
 
     public function get_all_items_by_area($id)
 	{

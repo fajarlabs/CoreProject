@@ -38,6 +38,9 @@
 				            </tr>
 				        </thead>
 				    </table>
+                    <div id="toolbar">
+                        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newPersonil()">Add</a>
+                    </div>
                 </div>
             </div>
         </div>
