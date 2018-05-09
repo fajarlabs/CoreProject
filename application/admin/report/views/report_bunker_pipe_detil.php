@@ -50,7 +50,7 @@
   <tr>
     <td width="307"><img src="<?php echo base_url(); ?>/assets/admin/images/logo_suco_report.png" width="150px"/></td>
     <td class="span" colspan="6"><strong>PT. SUPERINTENDING COMPANY OF INDONESIA<br>SBU Hulu Migas Dan Produk Migas<br>
-    BUNKER VESSEL SUMMARY</strong></td>
+    BUNKER PIPE SUMMARY</strong></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -176,7 +176,7 @@
     <td class="span">&nbsp;</td>
   </tr>
   <tr>
-    <td class="span" colspan="7"><strong>II. BUNKER VESSEL MONITORING</strong></td>
+    <td class="span" colspan="7"><strong>II. BUNKER PIPE MONITORING</strong></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -279,14 +279,6 @@
     <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_LOADING_TANK_INSPECT_METER_VERIFICATION); ?></td>
   </tr>
   <tr>
-    <td class="span">Hose  Connected</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_HOSE_CONNECTED); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_HOSE_CONNECTED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_HOSE_CONNECTED); ?></td>
-  </tr>
-  <tr>
     <td class="span">Loading Host Connected</td>
     <td class="span">&nbsp;</td>
     <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_LOADING_HOST_CONNECTED); ?></td>
@@ -320,22 +312,6 @@
     <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DATE_LOADING_HOSE_ARMS_DISCONNECT); ?></td>
   </tr> 
   <tr>
-    <td class="span">Loading Visual Inspection & Sampling</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_VISUAL_INSPEC_SAMPL); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_LOADING_VISUAL_INSPEC_SAMPL); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_LOADING_VISUAL_INSPEC_SAMPL); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Loading Tank Inspection and Measurement - Final</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_TANK_INSPECT_MEASR_FINAL); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_LOADING_TANK_INSPECT_MEASR_FINAL); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_LOADING_TANK_INSPECT_MEASR_FINAL); ?></td>
-  </tr>
-  <tr>
     <td class="span">Loading Tank Inspection and Meter Verification - Final</td>
     <td class="span">&nbsp;</td>
     <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_TANK_INSPECT_METER_FINAL); ?></td>
@@ -350,15 +326,7 @@
     <td class="span">&nbsp;</td>
     <td class="span"><?php echo check_exist($item->result()[0]->TIME_LOADING_CALCUL_COMPLETED_DOC_ONBOARD); ?></td>
     <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_LOADING_CALCUL_COMPLETED_DOC_ONBOARD); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Loading Barge Leave Depot</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_BARGE_LEAVE_DEPOT); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_LOADING_BARGE_LEAVE_DEPOT); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_LOADING_BARGE_LEAVE_DEPOT); ?></td>
-  </tr>
+  </tr>  
   <tr>
     <td class="span">Discharge Barge Arrived</td>
     <td class="span">&nbsp;</td>
@@ -408,14 +376,6 @@
     <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_TANK_INSPECT_MEASURE); ?></td>
   </tr> 
   <tr>
-    <td class="span">Discharge Tank Inspection and Meter Verification - Initial </td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_TANK_INSPECT_METER_VERF); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_TANK_INSPECT_METER_VERF); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_TANK_INSPECT_METER_VERF); ?></td>
-  </tr> 
-  <tr>
     <td class="span">Discharge Host Connected</td>
     <td class="span">&nbsp;</td>
     <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_HOST_CONNECTED); ?></td>
@@ -448,14 +408,6 @@
     <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DATE_DISCHARGE_HOSE_ARMS_DISCONNECT); ?></td>
   </tr> 
   <tr>
-    <td class="span">Discharge Visual Inspection & Sampling</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_VISUAL_INSPEC_SAMPL); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_VISUAL_INSPEC_SAMPL); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_VISUAL_INSPEC_SAMPL); ?></td>
-  </tr> 
-  <tr>
     <td class="span">Discharge Tank Inspect Measr Final</td>
     <td class="span">&nbsp;</td>
     <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_TANK_INSPECT_MEASR_FINAL); ?></td>
@@ -464,13 +416,13 @@
     <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_TANK_INSPECT_MEASR_FINAL); ?></td>
   </tr> 
   <tr>
-    <td class="span">Discharge Tank Inspect Meter Final</td>
+    <td class="span">Discharge Visual Inspection & Sampling</td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_TANK_INSPECT_METER_FINAL); ?></td>
+    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DISCHARGE_VISUAL_INSPEC_SAMPL); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_TANK_INSPECT_METER_FINAL); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_TANK_INSPECT_METER_FINAL); ?></td>
-  </tr>
+    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DISCHARGE_VISUAL_INSPEC_SAMPL); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DISCHARGE_VISUAL_INSPEC_SAMPL); ?></td>
+  </tr> 
   <tr>
     <td class="span">Discharge Calcul Completed Doc Onboard</td>
     <td class="span">&nbsp;</td>
