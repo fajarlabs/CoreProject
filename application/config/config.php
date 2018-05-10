@@ -39,8 +39,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //-----------------------------------------------
 // Set config base url for development
 //-----------------------------------------------	
+<<<<<<< HEAD
 //$config['base_url'] = "http://localhost/";
 //$config['base_url'] = "http://localhost:8089/fw3/";
+=======
+$config['base_url'] = "http://localhost/";
+//$config['base_url'] = "http://localhost:8089/fw3/";
+
+>>>>>>> e68105d3b8a3d38d41f84e5f4dde6b06d21b0d9c
 
 //cloudkilat
 $config['base_url'] = "http://103.43.46.75/";

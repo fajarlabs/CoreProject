@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Strategi_Business_Unit extends MY_Controller 
+class Strategi_business_unit extends MY_Controller 
 {
 	public function __construct() 
 	{

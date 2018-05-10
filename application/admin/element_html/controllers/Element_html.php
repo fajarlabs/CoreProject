@@ -156,8 +156,8 @@ class Element_html extends MY_Controller
 		$content = $this->input->post('content');
 
 		$insert = array(
-			'NAME'     => addslashes($title),
-			'DATA'   => pg_escape_string ($content),
+			'NAME'     => stripslashes($title),
+			'DATA'   => stripslashes($content),
 			'IS_DELETE' => 0,
 		);
 
@@ -173,8 +173,8 @@ class Element_html extends MY_Controller
 		$content = $this->input->post('content');
 
 		$insert = array(
-			'NAME'     => addslashes($title),
-			'DATA'   => pg_escape_string ($content),
+			'NAME'     => stripslashes($title),
+			'DATA'   => stripslashes($content),
 			'IS_DELETE' => 0,
 		);
 		$this->Element_html_model->update($insert,$id);
