@@ -1,0 +1,97 @@
+<table>
+	<tbody>
+		<tr>
+			<td>Delivery Order (DO)</td>
+			<td>
+				<table style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+					<thead>
+						<tr>
+							<th style="width: 5px;">&nbsp;</th>
+							<th style="width: 180px;">&nbsp;</th>
+							<th style="width: 150px; text-align: left;">&nbsp;&nbsp;&nbsp;KL @obsv</th>
+							<th style="width: 150px; text-align: left;">&nbsp;&nbsp;&nbsp;KL @15&deg; C</th>
+							<th style="text-align: left;">&nbsp;&nbsp;Metric Ton</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>a)</td>
+							<td style="width: 150px;">Initial Readout</td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="initial_readout_klobs" class="" type="text" /></td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="initial_readout_kl15" class="" type="text" /></td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="initial_readout_metric_tons" class="" type="text" /></td>
+						</tr>
+						<tr>
+							<td>b)</td>
+							<td style="width: 150px;">Final Readout</td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="final_readout_klobs" class="" type="text" /></td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="final_readout_kl15" class="" type="text" /></td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="final_readout_metric_tons" class="" type="text" /></td>
+						</tr>
+						<tr>
+							<td>c)</td>
+							<td style="width: 150px;">Difference</td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="difference_klobs" class="" type="text" /></td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="difference_kl15" class="" type="text" /></td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="difference_metric_tons" class="" type="text" /></td>
+						</tr>
+						<tr>
+							<td>d)</td>
+							<td style="width: 150px;">Meter Factor</td>
+							<td colspan="3"><input onkeyup="hitung(this)" style="width: 100px;" name="meter_factor_klobs" class="" type="text" /></td>
+						</tr>
+						<tr>
+							<td>e)</td>
+							<td style="width: 150px;">Cord. Vol.Delivered</td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="cord_vol_delivered_klobs" class="" type="text" /></td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="cord_vol_delivered_kl15" class="" type="text" /></td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="cord_vol_delivered_metric_tons" class="" type="text" /></td>
+						</tr>
+						<tr>
+							<td>f)</td>
+							<td style="width: 150px;">Density @15deg C</td>
+							<td colspan="3"><input onkeyup="hitung(this)" style="width: 100px;" name="density15deg_klobs" class="" type="text" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height: 10px;"></td>
+		</tr>
+		<tr>
+			<td>Discrepancy</td>
+			<td>
+				<table style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+					<tbody>
+						<tr>
+							<td style="width: 5px;">e)</td>
+							<td style="width: 180px;">Supply Loss (R4)</td>
+							<td style="width: 150px; text-align: left;"><input style="width: 100px;" name="supply_loss_klobs" class="" type="text" /></td>
+							<td style="width: 150px; text-align: left;"><input style="width: 100px;" name="supply_loss_kl15" class="" type="text" /></td>
+							<td><input style="width: 100px;" name="supply_loss_metric_tons" class="" type="text" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height: 10px;"></td>
+		</tr>
+		<tr>
+			<td>Quality</td>
+			<td>In Any</td>
+		</tr>
+	</tbody>
+</table>
+<script type="text/javascript">// <![CDATA[
+	function add_tb_certificate() {
+		$("#tb_certificate").append('<tr><td><table style="width:100%;margin-bottom:2px;"><tr><td style="width:100px;"><input type="file" name="fsoq[]" /></td><td><a href="javascript:;" onclick="delete_tb_certificate(this)" class="btn btn-danger btn-xs"><i class="fa fa-minus"></i> </a></td></tr></table></td></tr>');
+	}
+
+	function delete_tb_certificate(e) {
+		$(e).parent().parent().parent().parent().remove();
+	}
+			
+// ]]>
+</script>

@@ -1,0 +1,256 @@
+<table>
+	<tbody>
+		<tr>
+			<td>BL Figure</td>
+			<td>
+				<table style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+					<thead>
+						<tr>
+							<th style="width: 5px;">&nbsp;</th>
+							<th style="width: 420px;">&nbsp;</th>
+							<th style="width: 160px; text-align: left;">&nbsp;&nbsp;&nbsp;Gross Vol.</th>
+							<th style="width: 160px; text-align: left;">&nbsp;&nbsp;&nbsp;Nett. Vol</th>
+							<th style="width: 160px; text-align: left;">&nbsp;&nbsp;&nbsp;Metric Ton</th>
+							<th style="width: 160px; text-align: left;">&nbsp;&nbsp;&nbsp;Calorie/MMBTU</th>
+							<th style="text-align: left;">&nbsp;&nbsp;&nbsp;GHV (Btu/kg)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>a)</td>
+							<td>BL Quantity, Gross Standard Volume</td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="gsv_gross_vol" class="" type="text" /></td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="gsv_nett_vol" class="" type="text" /></td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="gsv_metric_ton" class="" type="text" /></td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="gsv_calorie_mmbtu" class="" type="text" /></td>
+							<td><input onkeyup="hitung(this)" style="width: 100px;" name="gsv_ghv" class="" type="text" /></td>
+						</tr>
+						<tr>
+							<td>b)</td>
+							<td>BL Figure based on</td>
+							<td colspan="5"><input name="bl_flow_meter" value="Y" type="checkbox" /> Flow Meter <input name="bl_shore_tank" value="Y" type="checkbox" /> Shore Tank <input name="bl_ship_tank" value="Y" type="checkbox" /> Ship Tank</td>
+						</tr>
+						<tr>
+							<td>c)</td>
+							<td>Density</td>
+							<td colspan="5"><input onkeyup="hitung(this)" style="width: 100px;" name="density" class="" type="text" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height: 10px;"></td>
+		</tr>
+		<tr>
+			<td>Ship Figure</td>
+			<td>
+				<table style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+					<tbody>
+						<tr>
+							<td style="width: 5px;">a)</td>
+							<td style="width: 160px;">Ship's Figure Before Loading, Tank Volume Corrected (m3)</td>
+							<td colspan="5"><input onkeyup="hitung(this)" style="width: 100px;" name="sfbl_tank_volume_corrected" class="" type="text" /></td>
+						</tr>
+						<tr>
+							<td>b)</td>
+							<td>Ship's Figure After Loading, Tank Volume Corrected (m3)</td>
+							<td colspan="5"><input onkeyup="hitung(this)" style="width: 100px;" name="sfal_tank_volume_corrected" class="" type="text" /></td>
+						</tr>
+						<tr>
+							<td>c)</td>
+							<td>Gauging Type</td>
+							<td colspan="5"><input onkeyup="hitung(this)" style="width: 100%;" name="density" class="" type="text" /> <input name="gauging_type_capacitance" value="capacitance" type="checkbox" /> Capacitance <input name="gauging_type_float_gauge" value="float_gauge" type="checkbox" /> Float Gauge <input name="gauging_type_radar" value="radar" type="checkbox" /> Radar <input name="gauging_type_laser" value="laser" type="checkbox" /> Laser</td>
+						</tr>
+						<tr>
+							<td>d)</td>
+							<td>Transferred Volume)</td>
+							<td colspan="5">&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>Gross Standard Volume Loaded</td>
+							<td colspan="5"><input onkeyup="hitung(this)" style="width: 100px;" name="gros_standard_volume_loaded" class="" type="text" /></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>Net Standard Volume Loaded</td>
+							<td colspan="5"><input onkeyup="hitung(this)" style="width: 100px;" name="net_standard_volume_loaded" class="" type="text" /></td>
+						</tr>
+						<tr>
+							<td>e)</td>
+							<td>Thermal Expansion Factor</td>
+							<td colspan="5"><input onkeyup="hitung(this)" style="width: 100px;" name="thermal_expansion_volume_loading" class="" type="text" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height: 10px;"></td>
+		</tr>
+		<tr>
+			<td>Volume Of Gas Consumed During Loading</td>
+			<td>
+				<table style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+					<tbody>
+						<tr>
+							<td style="width: 5px;">a)</td>
+							<td style="width: 160px;">Volume Gas During Loading (m3)</td>
+							<td><input style="width: 100px;" name="volume_gas_during_loading" class="" type="text" /></td>
+						</tr>
+						<tr>
+							<td>b)</td>
+							<td style="width: 135px;">Energy of Gas Consummed (MMBTU)</td>
+							<td><input style="width: 100px;" name="energy_gas_consumed_during_loading" class="" type="text" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height: 10px;"></td>
+		</tr>
+		<tr>
+			<td>Quality</td>
+			<td>
+				<table style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+					<tbody>
+						<tr>
+							<td style="width: 5px;">a)</td>
+							<td style="width: 160px;">Sample Source</td>
+							<td><input style="width: 100px;" name="quality_sample_source" class="" type="text" /></td>
+						</tr>
+						<tr>
+							<td>b)</td>
+							<td>Date Of Analysis</td>
+							<td><input style="width: 100px;" name="quality_date_of_analisys" class="" type="text" /></td>
+						</tr>
+						<tr>
+							<td>c)</td>
+							<td>Sampling Method</td>
+							<td><input style="width: 100px;" name="quality_sampling_method" class="" type="text" /></td>
+						</tr>
+						<tr>
+							<td>d)</td>
+							<td>Analysis Results</td>
+							<td>
+								<table style="width: 500px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+									<thead>
+										<tr>
+											<th>No.</th>
+											<th>Parameters</th>
+											<th>Mol %</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>C1</td>
+											<td><input onkeyup="hitung_total(this)" name="analysis_result_c1" style="width: 200px;" type="number" /></td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>C2</td>
+											<td><input onkeyup="hitung_total(this)" name="analysis_result_c2" style="width: 200px;" type="number" /></td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>C3</td>
+											<td><input onkeyup="hitung_total(this)" name="analysis_result_c3" style="width: 200px;" type="number" /></td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>i-C4</td>
+											<td><input onkeyup="hitung_total(this)" name="analysis_result_ic4" style="width: 200px;" type="number" /></td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>n-C4</td>
+											<td><input onkeyup="hitung_total(this)" name="analysis_result_nc4" style="width: 200px;" type="number" /></td>
+										</tr>
+										<tr>
+											<td>6</td>
+											<td>i-C5</td>
+											<td><input onkeyup="hitung_total(this)" name="analysis_result_ic5" style="width: 200px;" type="number" /></td>
+										</tr>
+										<tr>
+											<td>7</td>
+											<td>n-C5</td>
+											<td><input onkeyup="hitung_total(this)" name="analysis_result_nc5" style="width: 200px;" type="number" /></td>
+										</tr>
+										<tr>
+											<td>8</td>
+											<td>N2</td>
+											<td><input onkeyup="hitung_total(this)" name="analysis_result_n2" style="width: 200px;" type="number" /></td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+											<td>Total</td>
+											<td><input name="analysis_result_total" style="width: 200px;" type="number" /></td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+											<td>H2S</td>
+											<td><input onkeyup="hitung_total_sulfur(this)" name="analysis_result_h2s" style="width: 200px;" type="number" /></td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+											<td>Total Sulfur</td>
+											<td><input name="analysis_result_total_sulfur" style="width: 200px;" type="number" /></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<script type="text/javascript">// <![CDATA[
+
+	function hitung_total(e) {
+		// element value
+		var analysis_result_c1  = parseInt(document.getElementsByName("analysis_result_c1")[0].value);
+		var analysis_result_c2  = parseInt(document.getElementsByName("analysis_result_c2")[0].value);
+		var analysis_result_c3  = parseInt(document.getElementsByName("analysis_result_c3")[0].value);
+		var analysis_result_ic4 = parseInt(document.getElementsByName("analysis_result_ic4")[0].value);
+		var analysis_result_nc4 = parseInt(document.getElementsByName("analysis_result_nc4")[0].value);
+		var analysis_result_ic5 = parseInt(document.getElementsByName("analysis_result_ic5")[0].value);
+		var analysis_result_nc5 = parseInt(document.getElementsByName("analysis_result_nc5")[0].value);
+		var analysis_result_n2  = parseInt(document.getElementsByName("analysis_result_n2")[0].value);
+
+		analysis_result_c1  = isNaN(analysis_result_c1) ? 0 : analysis_result_c1;
+		analysis_result_c2  = isNaN(analysis_result_c2) ? 0 : analysis_result_c2;
+		analysis_result_c3  = isNaN(analysis_result_c3) ? 0 : analysis_result_c3;
+		analysis_result_ic4 = isNaN(analysis_result_ic4) ? 0 : analysis_result_ic4;
+		analysis_result_nc4 = isNaN(analysis_result_nc4) ? 0 : analysis_result_nc4;
+		analysis_result_ic5 = isNaN(analysis_result_ic5) ? 0 : analysis_result_ic5;
+		analysis_result_nc5 = isNaN(analysis_result_nc5) ? 0 : analysis_result_nc5;
+		analysis_result_n2  = isNaN(analysis_result_n2) ? 0 : analysis_result_n2;
+
+		// total
+		var analysis_result_total = document.getElementsByName("analysis_result_total")[0];
+		var total = analysis_result_c1+analysis_result_c2+analysis_result_c3+analysis_result_ic4+analysis_result_nc4+analysis_result_ic5+analysis_result_nc5+analysis_result_n2;
+		analysis_result_total.value = total;
+	}
+
+	function hitung_total_sulfur(e) {
+		// total sulfur
+		var analysis_result_h2s = document.getElementsByName("analysis_result_h2s")[0].value;
+		var analysis_result_total_sulfur = document.getElementsByName("analysis_result_total_sulfur")[0];
+		analysis_result_total_sulfur.value = isNaN(analysis_result_h2s) ? 0 : analysis_result_h2s;
+	}
+
+	function add_tb_certificate() {
+		$("#tb_certificate").append('<tr><td><table style="width:100%;margin-bottom:2px;"><tr><td style="width:100px;"><input type="file" name="fsoq[]" /></td><td><a href="javascript:;" onclick="delete_tb_certificate(this)" class="btn btn-danger btn-xs"><i class="fa fa-minus"></i> </a></td></tr></table></td></tr>');
+	}
+
+	function delete_tb_certificate(e) {
+		$(e).parent().parent().parent().parent().remove();
+	}
+			
+// ]]>
+</script>

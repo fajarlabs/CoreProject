@@ -95,12 +95,19 @@ $db['default'] = array(
 	// 'database' => 'sucofindo',
 
 	//Server cloudkilat
+<<<<<<< HEAD
 	//'hostname' => 'pgsql:host=103.43.46.75;dbname=db_custody',
 	//'username' => 'sucofindo',	
 	//'password' => 'P@ssw0rd2018',
 	//'database' => 'db_custody',
+=======
+	'hostname' => 'pgsql:host=127.0.0.1;dbname=db_custody',
+	'username' => 'sucofindo',	
+	'password' => 'P@ssw0rd2018',
+	'database' => 'db_custody',
+>>>>>>> e2ee45a5a70ef3bd8f1b5f9bc30ab4ef4afed421
 
-	//Ridwansyah Localhost DB
+	//Fajar CloudKilat
 	// 'hostname' => 'pgsql:host=localhost;dbname=sucofindo',
 	// 'username' => 'postgres',
 	// 'password' => 'postgres',
@@ -118,6 +125,7 @@ $db['default'] = array(
         'password' => 'P@ssw0rd2018',
         'database' => 'db_custody',
 
+<<<<<<< HEAD
 	// cloudkilat PGSQL | comment if using localhost
 	//-----------------------------------------------	
 	// 'hostname' => 'pgsql:host=localhost;dbname=sucofindo',
@@ -125,6 +133,8 @@ $db['default'] = array(
 	// 'password' => '123456', 
 	// 'database' => 'sucofindo',
 
+=======
+>>>>>>> e2ee45a5a70ef3bd8f1b5f9bc30ab4ef4afed421
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
