@@ -100,7 +100,7 @@ $db['default'] = array(
 	'password' => 'P@ssw0rd2018',
 	'database' => 'db_custody',
 
-	//Ridwansyah Localhost DB
+	//Fajar CloudKilat
 	// 'hostname' => 'pgsql:host=localhost;dbname=sucofindo',
 	// 'username' => 'postgres',
 	// 'password' => 'postgres',
@@ -110,14 +110,6 @@ $db['default'] = array(
 	// 'hostname' => 'pgsql:host=localhost;dbname=sucofindo',
 	// 'username' => 'postgres',
 	// 'password' => 'qwerty147',
-	// 'database' => 'sucofindo',
-
-	//-----------------------------------------------
-	// cloudkilat PGSQL | comment if using localhost
-	//-----------------------------------------------	
-	// 'hostname' => 'pgsql:host=localhost;dbname=sucofindo',
-	// 'username' => 'postgres',
-	// 'password' => '123456', 
 	// 'database' => 'sucofindo',
 
 	'dbdriver' => 'pdo',

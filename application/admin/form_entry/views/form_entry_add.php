@@ -59,6 +59,94 @@
 	      }
 	 })();
 
+// rumus untuk loading product
+function product_loading() {
+	proses("sl_gsv_klobs","bl_quantity_klobs","sl_vs_bol_r1_klobs",1);
+	proses("sl_gsv_klobs","bl_quantity_klobs","sl_vef_applied_vs_bol_klobs",1);
+	proses("sl_gsv_kl15","bl_quantity_kl15","sl_vs_bol_r1_kl15",1);
+	proses("sl_gsv_kl15","bl_quantity_kl15","sl_vef_applied_vs_bol_kl15",1);
+	proses("sl_gsv_bbls","bl_quantity_bbls","sl_vs_bol_r1_bbls",1);
+	proses("sl_gsv_bbls","bl_quantity_bbls","sl_vef_applied_vs_bol_bbls",1);
+	proses("sl_gsv_longton","bl_quantity_longton","sl_vs_bol_r1_longton",1);
+	proses("sl_gsv_longton","bl_quantity_longton","sl_vef_applied_vs_bol_longton",1);
+	proses("sl_gsv_metricton","bl_quantity_metricton","sl_vs_bol_r1_metricton",1);
+	proses("sl_gsv_metricton","bl_quantity_metricton","sl_vef_applied_vs_bol_metricton",1);
+}
+
+// rumus untuk discharge produk
+function product_discharge() {
+	proses("free_water_klobs","bl_quantity_klobs","sl_vs_bol_r1_klobs",100);
+	proses("sfbd_gsv_klobs","bl_sfal_klobs","sfal_vs_sf_klobs",100);
+	proses("sf_shore_received_klobs","sfbd_gsv_klobs","sfbd_vs_sr_klobs",100);
+	proses("sf_shore_received_klobs","bl_quantity_klobs","sr_vs_bol_klobs",100);
+
+	proses("free_water_kl15","bl_quantity_kl15","sl_vs_bol_r1_kl15",100);		
+	proses("sfbd_gsv_kl15","robq_kl15","sfal_vs_sf_kl15",100);	
+	proses("sf_shore_received_kl15","sfbd_gsv_kl15","sfbd_vs_sr_kl15",100);	
+	proses("sf_shore_received_kl15","bl_quantity_kl15","sr_vs_bol_kl15",100);
+
+	proses("free_water_bbls","bl_quantity_bbls","sl_vs_bol_r1_bbls",100);		
+	proses("sfbd_gsv_bbls","robq_bbls","sfal_vs_sf_bbls",100);	
+	proses("sf_shore_received_bbls","sfbd_gsv_bbls","sfbd_vs_sr_bbls",100);	
+	proses("sf_shore_received_bbls","bl_quantity_bbls","sr_vs_bol_bbls",100);
+
+	proses("free_water_longton","bl_quantity_longton","sl_vs_bol_r1_longton",100);		
+	proses("sfbd_gsv_longton","robq_longton","sfal_vs_sf_longton",100);	
+	proses("sf_shore_received_longton","sfbd_gsv_longton","sfbd_vs_sr_longton",100);	
+	proses("sf_shore_received_longton","bl_quantity_longton","sr_vs_bol_longton",100);
+
+	proses("free_water_metricton","bl_quantity_metricton","sl_vs_bol_r1_metricton",100);		
+	proses("sfbd_gsv_metricton","robq_metricton","sfal_vs_sf_metricton",100);	
+	proses("sf_shore_received_metricton","sfbd_gsv_metricton","sfbd_vs_sr_metricton",100);	
+	proses("sf_shore_received_metricton","bl_quantity_metricton","sr_vs_bol_metricton",100);
+}
+
+// rumus untuk loading crude
+function crude_loading() {
+	proses("sfal_nsv_klobs","bl_nsv_klobs","sl_vs_bol_r1_klobs",1);
+	proses("sfal_nsv_klobs","bl_nsv_klobs","sl_vef_applied_vs_bol_r1_klobs",1);
+
+	proses("sfal_nsv_kl15","bl_nsv_kl15","sl_vs_bol_r1_kl15",1);
+	proses("sfal_nsv_kl15","bl_nsv_kl15","sl_vef_applied_vs_bol_r1_kl15",1);
+
+	proses("sfal_nsv_bbls","bl_nsv_bbls","sl_vs_bol_r1_bbls",1);
+	proses("sfal_nsv_bbls","bl_nsv_bbls","sl_vef_applied_vs_bol_r1_bbls",1);
+
+	proses("sfal_nsv_longton","bl_nsv_longton","sl_vs_bol_r1_longton",1);
+	proses("sfal_nsv_longton","bl_nsv_longton","sl_vef_applied_vs_bol_r1_longton",1);
+
+	proses("sfal_nsv_metricton","bl_nsv_metricton","sl_vs_bol_r1_metricton",1);
+	proses("sfal_nsv_metricton","bl_nsv_metricton","sl_vef_applied_vs_bol_r1_metricton",1);
+}
+
+// rumus untuk discharge crude
+function crude_discharge() {
+	proses("sfal_klobs","bl_nsv_klobs","slvs_bol_r1_klobs",1);
+	proses("sfbd_nsv_klobs","bl_nsv_klobs","sfal_vs_sfbd_r2_klobs",1);
+	proses("sf_nsv_klobs","sfbd_nsv_klobs","sfbd_vs_sr_r3_klobs",1);
+	proses("sf_nsv_klobs","bl_nsv_klobs","sr_vs_bol_r4_klobs",1);
+
+	proses("sfal_kl15","bl_nsv_kl15","slvs_bol_r1_kl15",1);
+	proses("sfbd_nsv_kl15","bl_nsv_kl15","sfal_vs_sfbd_r2_kl15",1);
+	proses("sf_nsv_kl15","sfbd_nsv_kl15","sfbd_vs_sr_r3_kl15",1);
+	proses("sf_nsv_kl15","bl_nsv_kl15","sr_vs_bol_r4_kl15",1);
+
+	proses("sfal_bbls","bl_nsv_bbls","slvs_bol_r1_bbls",1);
+	proses("sfbd_nsv_bbls","bl_nsv_bbls","sfal_vs_sfbd_r2_bbls",1);
+	proses("sf_nsv_bbls","sfbd_nsv_bbls","sfbd_vs_sr_r3_bbls",1);
+	proses("sf_nsv_bbls","bl_nsv_bbls","sr_vs_bol_r4_bbls",1);
+
+	proses("sfal_longton","bl_nsv_longton","slvs_bol_r1_longton",1);
+	proses("sfbd_nsv_longton","bl_nsv_longton","sfal_vs_sfbd_r2_longton",1);
+	proses("sf_nsv_longton","sfbd_nsv_longton","sfbd_vs_sr_r3_longton",1);
+	proses("sf_nsv_longton","bl_nsv_longton","sr_vs_bol_r4_longton",1);
+
+	proses("sfal_metricton","bl_nsv_metricton","slvs_bol_r1_metricton",1);
+	proses("sfbd_nsv_metricton","bl_nsv_metricton","sfal_vs_sfbd_r2_metricton",1);
+	proses("sf_nsv_metricton","sfbd_nsv_metricton","sfbd_vs_sr_r3_metricton",1);
+	proses("sf_nsv_metricton","bl_nsv_metricton","sr_vs_bol_r4_metricton",1);
+}
+
 // fungsi untuk menambahkan rumus pada elemen html
 function hitung(e) {
   	var select_intervention = "<?php echo @$select_intervention; ?>";
@@ -67,7 +155,6 @@ function hitung(e) {
 
     // case intervention
     switch(product_interv) {
-
     	//crude division
     	case "crude-loading"           : crude_loading(); break;
     	case "crude-discharge"         : crude_discharge(); break;
@@ -75,7 +162,6 @@ function hitung(e) {
     	case "crude-pipeline"          : break;
     	case "crude-trucking"          : break;
     	case "crude-transhipment"      : break;
-
     	// product division
     	case "product-loading"         : product_loading(); break;
     	case "product-discharge"       : product_discharge(); break;
@@ -83,7 +169,6 @@ function hitung(e) {
     	case "product-pipeline"        : break;
     	case "product-trucking"        : break;
     	case "product-transhipment"    : break;
-
     	// pretrokimia
     	case "petrokimia-loading"      : break;
     	case "petrokimia-discharge"    : break;
@@ -91,7 +176,6 @@ function hitung(e) {
     	case "petrokimia-pipeline"     : break;
     	case "petrokimia-trucking"     : break;
     	case "petrokimia-transhipment" : break;
-
     	// gas
     	case "gas-loading"      : break;
     	case "gas-discharge"    : break;
@@ -99,96 +183,7 @@ function hitung(e) {
     	case "gas-pipeline"     : break;
     	case "gas-trucking"     : break;
     	case "gas-transhipment" : break;
-
     }
-
-    // rumus untuk loading product
-    function product_loading() {
-		proses("sl_gsv_klobs","bl_quantity_klobs","sl_vs_bol_r1_klobs",1);
-		proses("sl_gsv_klobs","bl_quantity_klobs","sl_vef_applied_vs_bol_klobs",1);
-		proses("sl_gsv_kl15","bl_quantity_kl15","sl_vs_bol_r1_kl15",1);
-		proses("sl_gsv_kl15","bl_quantity_kl15","sl_vef_applied_vs_bol_kl15",1);
-		proses("sl_gsv_bbls","bl_quantity_bbls","sl_vs_bol_r1_bbls",1);
-		proses("sl_gsv_bbls","bl_quantity_bbls","sl_vef_applied_vs_bol_bbls",1);
-		proses("sl_gsv_longton","bl_quantity_longton","sl_vs_bol_r1_longton",1);
-		proses("sl_gsv_longton","bl_quantity_longton","sl_vef_applied_vs_bol_longton",1);
-		proses("sl_gsv_metricton","bl_quantity_metricton","sl_vs_bol_r1_metricton",1);
-		proses("sl_gsv_metricton","bl_quantity_metricton","sl_vef_applied_vs_bol_metricton",1);
-	}
-
-	// rumus untuk discharge produk
-	function product_discharge() {
-		proses("free_water_klobs","bl_quantity_klobs","sl_vs_bol_r1_klobs",100);
-		proses("sfbd_gsv_klobs","bl_sfal_klobs","sfal_vs_sf_klobs",100);
-		proses("sf_shore_received_klobs","sfbd_gsv_klobs","sfbd_vs_sr_klobs",100);
-		proses("sf_shore_received_klobs","bl_quantity_klobs","sr_vs_bol_klobs",100);
-
-		proses("free_water_kl15","bl_quantity_kl15","sl_vs_bol_r1_kl15",100);		
-		proses("sfbd_gsv_kl15","robq_kl15","sfal_vs_sf_kl15",100);	
-		proses("sf_shore_received_kl15","sfbd_gsv_kl15","sfbd_vs_sr_kl15",100);	
-		proses("sf_shore_received_kl15","bl_quantity_kl15","sr_vs_bol_kl15",100);
-
-		proses("free_water_bbls","bl_quantity_bbls","sl_vs_bol_r1_bbls",100);		
-		proses("sfbd_gsv_bbls","robq_bbls","sfal_vs_sf_bbls",100);	
-		proses("sf_shore_received_bbls","sfbd_gsv_bbls","sfbd_vs_sr_bbls",100);	
-		proses("sf_shore_received_bbls","bl_quantity_bbls","sr_vs_bol_bbls",100);
-
-		proses("free_water_longton","bl_quantity_longton","sl_vs_bol_r1_longton",100);		
-		proses("sfbd_gsv_longton","robq_longton","sfal_vs_sf_longton",100);	
-		proses("sf_shore_received_longton","sfbd_gsv_longton","sfbd_vs_sr_longton",100);	
-		proses("sf_shore_received_longton","bl_quantity_longton","sr_vs_bol_longton",100);
-
-		proses("free_water_metricton","bl_quantity_metricton","sl_vs_bol_r1_metricton",100);		
-		proses("sfbd_gsv_metricton","robq_metricton","sfal_vs_sf_metricton",100);	
-		proses("sf_shore_received_metricton","sfbd_gsv_metricton","sfbd_vs_sr_metricton",100);	
-		proses("sf_shore_received_metricton","bl_quantity_metricton","sr_vs_bol_metricton",100);
-	}
-
-	// rumus untuk loading crude
-	function crude_loading() {
-		proses("sfal_nsv_klobs","bl_nsv_klobs","sl_vs_bol_r1_klobs",1);
-		proses("sfal_nsv_klobs","bl_nsv_klobs","sl_vef_applied_vs_bol_r1_klobs",1);
-
-		proses("sfal_nsv_kl15","bl_nsv_kl15","sl_vs_bol_r1_kl15",1);
-		proses("sfal_nsv_kl15","bl_nsv_kl15","sl_vef_applied_vs_bol_r1_kl15",1);
-
-		proses("sfal_nsv_bbls","bl_nsv_bbls","sl_vs_bol_r1_bbls",1);
-		proses("sfal_nsv_bbls","bl_nsv_bbls","sl_vef_applied_vs_bol_r1_bbls",1);
-
-		proses("sfal_nsv_longton","bl_nsv_longton","sl_vs_bol_r1_longton",1);
-		proses("sfal_nsv_longton","bl_nsv_longton","sl_vef_applied_vs_bol_r1_longton",1);
-
-		proses("sfal_nsv_metricton","bl_nsv_metricton","sl_vs_bol_r1_metricton",1);
-		proses("sfal_nsv_metricton","bl_nsv_metricton","sl_vef_applied_vs_bol_r1_metricton",1);
-	}
-
-	// rumus untuk discharge crude
-	function crude_discharge() {
-		proses("sfal_klobs","bl_nsv_klobs","slvs_bol_r1_klobs",1);
-		proses("sfbd_nsv_klobs","bl_nsv_klobs","sfal_vs_sfbd_r2_klobs",1);
-		proses("sf_nsv_klobs","sfbd_nsv_klobs","sfbd_vs_sr_r3_klobs",1);
-		proses("sf_nsv_klobs","bl_nsv_klobs","sr_vs_bol_r4_klobs",1);
-
-		proses("sfal_kl15","bl_nsv_kl15","slvs_bol_r1_kl15",1);
-		proses("sfbd_nsv_kl15","bl_nsv_kl15","sfal_vs_sfbd_r2_kl15",1);
-		proses("sf_nsv_kl15","sfbd_nsv_kl15","sfbd_vs_sr_r3_kl15",1);
-		proses("sf_nsv_kl15","bl_nsv_kl15","sr_vs_bol_r4_kl15",1);
-
-		proses("sfal_bbls","bl_nsv_bbls","slvs_bol_r1_bbls",1);
-		proses("sfbd_nsv_bbls","bl_nsv_bbls","sfal_vs_sfbd_r2_bbls",1);
-		proses("sf_nsv_bbls","sfbd_nsv_bbls","sfbd_vs_sr_r3_bbls",1);
-		proses("sf_nsv_bbls","bl_nsv_bbls","sr_vs_bol_r4_bbls",1);
-
-		proses("sfal_longton","bl_nsv_longton","slvs_bol_r1_longton",1);
-		proses("sfbd_nsv_longton","bl_nsv_longton","sfal_vs_sfbd_r2_longton",1);
-		proses("sf_nsv_longton","sfbd_nsv_longton","sfbd_vs_sr_r3_longton",1);
-		proses("sf_nsv_longton","bl_nsv_longton","sr_vs_bol_r4_longton",1);
-
-		proses("sfal_metricton","bl_nsv_metricton","slvs_bol_r1_metricton",1);
-		proses("sfbd_nsv_metricton","bl_nsv_metricton","sfal_vs_sfbd_r2_metricton",1);
-		proses("sf_nsv_metricton","sfbd_nsv_metricton","sfbd_vs_sr_r3_metricton",1);
-		proses("sf_nsv_metricton","bl_nsv_metricton","sr_vs_bol_r4_metricton",1);
-	}
 }
 
 // fungsi rumus pada kolom input
@@ -381,7 +376,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tr>
 					<td valign="middle">
-						<input type="text" id="vessel" onkeydown="initVessel(this,'vessel')" style="width:40%;" name="vessel" /> 
+						<input class="autocomplete_text" type="text" id="vessel" onkeydown="initVessel(this,'vessel')" style="width:40%;" name="vessel" /> 
 						<div style="display:none;">
 						Multi Cargo <input type="radio" name="select_cargo" value="multi_cargo" />
 						Single Cargo <input type="radio" name="select_cargo" value="single_cargo" />
@@ -410,7 +405,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 				<tr>
 					<td style="width:135px;">Area</td>
 					<td colspan="2">
-						<input onkeydown="initArea(this)" type="text" style="width:300px;" name="area" />
+						<input class="autocomplete_text" onkeydown="initArea(this)" type="text" style="width:300px;" name="area" />
 					</td>
 				</tr>
 				<tr>
