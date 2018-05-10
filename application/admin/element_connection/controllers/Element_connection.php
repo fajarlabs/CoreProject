@@ -275,8 +275,8 @@ class Element_connection extends MY_Controller
 		$element_r4   = json_encode(explode(",",$element_r4));
 
 		$insert = array(
-			'NAME'               => addslashes($title),
-			'DATA'               => pg_escape_string ($content),
+			'NAME'               => stripslashes($title),
+			'DATA'               => stripslashes($content),
 			'PRODUCT_ID'         => $product_id,
 			'INTERVENTION_ID'    => $intervention_id,
 			'ELEMENT_TIMELOG_ID' => $el_timelog_id,
@@ -320,8 +320,8 @@ class Element_connection extends MY_Controller
 		$element_r4   = json_encode(explode(",",$element_r4));
 
 		$insert = array(
-			'NAME'               => addslashes($title),
-			'DATA'               => pg_escape_string ($content),
+			'NAME'               => stripslashes($title),
+			'DATA'               => stripslashes($content),
 			'PRODUCT_ID'         => $product_id,
 			'INTERVENTION_ID'    => $intervention_id,
 			'ELEMENT_TIMELOG_ID' => $el_timelog_id,

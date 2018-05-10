@@ -1,3 +1,4 @@
+
 <?php 
 
 if($item->num_rows() > 0) { 
@@ -63,7 +64,7 @@ $object = @$item->result()[0];
 	  					var djson = JSON.parse(val_data_column);
 	  					for(var i=0;i<djson.length;i++) {
 	  						$("#tb_certificate").find('td:last').after('<td><a target="_blank" class="btn btn-xs btn-primary" href="<?php echo base_url(); ?>uploads/form_entry/'+djson[i]+'"><i class="fa fa-eye"></i> view</a> <i><b>*if you do not want to change the file do not upload</b></i></td>');
-	  						add_tb_certificate();
+	  						//();
 	  					}
 	  				}
 	  			}
@@ -104,7 +105,7 @@ $object = @$item->result()[0];
 	  					var djson = JSON.parse(val_data_column);
 	  					for(var i=0;i<djson.length;i++) {
 	  						$("#tb_certificate").find('td:last').after('<td><a target="_blank" class="btn btn-xs btn-primary" href="<?php echo base_url(); ?>uploads/form_entry/'+djson[i]+'"><i class="fa fa-eye"></i> view</a> <i><b>*if you do not want to change the file do not upload</b></i></td>');
-	  						add_tb_certificate();
+	  						//();
 	  					}
 	  				}
 	  			}
