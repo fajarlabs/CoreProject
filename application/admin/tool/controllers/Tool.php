@@ -194,7 +194,7 @@ class Tool extends MY_Controller
 	{
 		$this->Tool_model->delete_by_id($id);
 		$this->session->set_flashdata('error_message', alert_success('Delete succeded.'));
-		redirect('Tool');
+		redirect('tool');
 	}
 
 	public function detail_gbr($id)
