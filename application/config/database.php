@@ -89,7 +89,7 @@ $db['default'] = array(
 	//-----------------------------------------------	
 
 	//Server cloudkilat
-	'hostname' => 'pgsql:host=103.43.46.75;dbname=db_custody',
+	'hostname' => 'pgsql:host=127.0.0.1;dbname=db_custody',
 	'username' => 'sucofindo',	
 	'password' => 'P@ssw0rd2018',
 	'database' => 'db_custody',
