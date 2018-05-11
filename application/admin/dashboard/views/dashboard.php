@@ -235,7 +235,7 @@
 	 	    		return false;
 	 	    	}); 
 	        } else {
-	           setTimeout(function() { defer() }, 2000);
+	           setTimeout(function() { defer() }, 1000);
 	        }
 		 })();
 

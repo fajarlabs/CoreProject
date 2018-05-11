@@ -38,7 +38,7 @@
 						</tr>
 						<tr>
 							<td width="150px" style="padding-top:15px;"><?php echo form_label('Last Update Calibration*') ?></td>
-							<td><?php echo form_input(array('type' => 'id','dt' => 'text', 'name' => 'date_calibration','class' => 'form-control','required' => 'required')); ?></td>
+							<td><?php echo form_input(array('type' => 'text','id' => 'dt', 'name' => 'date_calibration','class' => 'form-control dt','required' => 'required')); ?></td>
 						</tr>
 						<tr>
 							<td width="150px" style="padding-top:15px;"><?php echo form_label('Location*') ?></td>
@@ -105,8 +105,11 @@
 		    changeMonth: true,
 		    changeYear: true,
 		 	});
-		}
-	});
+		}  
+	else {
+	           setTimeout(function() { defer() }, 1000);
+	      }
+	})();
 	function get_type_location(){
 		var type =	$('input[name=type_location]:checked', '#form_add').val();
 		if(type=="1"){
