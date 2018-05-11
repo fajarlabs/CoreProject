@@ -102,8 +102,9 @@
 	(function defer() {
  	    if (window.jQuery) {
 			$('#dt').datepicker({
-		    changeMonth: true,
-		    changeYear: true,
+				changeMonth: true,
+				changeYear: true,
+				dateFormat: 'dd/mm/yy',
 		 	});
 		}  
 	else {

@@ -143,7 +143,8 @@ class Tool extends MY_Controller
         } else {
                 $msg_upload = array('upload_data' => $this->upload->data());
         }
-
+		
+		
 		$array_col_val = array(
 			'JENIS'  => $type,
 			'NAMA'   => $name,
