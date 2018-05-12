@@ -88,7 +88,7 @@ class Client_report extends CI_Controller
 				$row->CTIME  = date('d-m-Y H:i:s',strtotime($row->CTIME));
 				$row->FUNGSI = '<a href="'.base_url().'index.php/client_report/detil/'.$row->FEFID.'" class="btn btn-primary btn-xs"><i class="fa fa-eye"> View</i></a> '; 
 				$row->FUNGSI .= '<a href="javascript:;" onclick="callModal('.$row->FEFID.')" class="btn btn-success btn-xs"><i class="fa fa-print"></i> Print</a>'; 
-				$row->PRODUCT_TYPE = ucfirst($row->PRODUCT_TYPE);
+				$row->PRODUCT_TYPE = $this->get_product_name($row->PRODUCT_TYPE);
 				$row->SELECT_CARGO = ucwords(str_replace("_", " ", $row->SELECT_CARGO));
 				$array_list[] = $row;
 				$i++;
@@ -100,6 +100,16 @@ class Client_report extends CI_Controller
 		header('Content-Type: application/json');
 		echo json_encode($json_object);
 	}
+	
+	public function get_product_name($id){
+				$data ="";
+				$arr = $this->Report_model->get_product_name($id);
+				foreach ($arr as $key => $value) {
+				 	$data =  $value->PRODUCT_NAME;
+				}
+			return $data;
+	}
+
 	
 	public function detil($id_item)
 	{
