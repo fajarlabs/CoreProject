@@ -85,6 +85,15 @@ class Report_model extends CI_Model {
         return $this->db->query($query);
 	}
 	
+	  public  function get_product_name($id) 
+	{
+        $this->db->select('*');
+        $this->db->from('MASTER_PRODUCT');
+        $this->db->where('PRODUCT_ID', $id);   
+        return $this->db->get()->result();
+    }
+
+	
 	public  function get_item_primary($id_item) 
     {
 		$sql='SELECT *, 
