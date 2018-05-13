@@ -68,7 +68,23 @@ class Client_report extends CI_Controller
 		$offset = $page < 2 ? 1 : $page;
 		$offset = ($rows * $offset) - $rows; 
 		$filterRules = $this->input->post('filterRules');
-
+		
+		if($filterRules==""){	
+			$filterRules = '[{"field":"CLIENT","op":"contains","value":"'.strtolower($_GET['client']).'"}]';
+		}
+		else if($filterRules=="[]"){	
+			$filterRules = '[{"field":"CLIENT","op":"contains","value":"'.strtolower($_GET['client']).'"}]';
+		}
+		else {
+			$filterRules	= str_replace("[","",$filterRules);
+			$filterRules	= str_replace("]","",$filterRules);
+			$client = ',{"field":"CLIENT","op":"contains","value":"'.strtolower($_GET['client']).'"}';
+			$filterRules .= $client;
+			$filterRules = "[".$filterRules."]";
+		}
+		
+		
+		
 		/* get query */
 		$total = 0;
 		$json_object = new stdClass();

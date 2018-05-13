@@ -62,7 +62,7 @@
 											<?php 
 											foreach($client as $ck => $vk){ 
 												?>
-												<option value="<?php echo $ck; ?>"><?php echo $vk; ?></option>
+												<option value="<?php echo strtolower($vk); ?>"><?php echo $vk; ?></option>
 											<?php } ?>	
 										</select>
 									</td>		

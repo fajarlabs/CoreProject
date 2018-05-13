@@ -29,9 +29,9 @@
                 <div class="panel-body" style="overflow-x: hidden;">
 
                     <table id="dg" class="easyui-datagrid" style="width:100%;min-height:400px"
-                    url="<?php echo base_url(); ?>index.php/client_report/list_rest"
+                    url="<?php echo base_url(); ?>index.php/client_report/list_rest?client=<?php echo strtolower(get_client_site_name()) ?>"
                     toolbar="#toolbar" pagination="true"
-                    rownumbers="true" fitColumns="true" singleSelect="true">
+                    rownumbers="true"  fitColumns="true" singleSelect="true">
                     <thead>
                         <tr>
                             <th field="AREA" width="30">AREA</th>
