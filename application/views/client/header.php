@@ -165,6 +165,7 @@
 	<!-- end #page-loader -->
 	
 	<!-- begin #page-container -->
+	<img id="displayed" style="display:none" src="<?php echo get_app_ss_wallpaper() ?>">
 	<div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
 		<!-- begin #header -->
 			<div id="header" class="header navbar navbar-default navbar-fixed-top" style="background-image: url('<?php echo base_url(); ?>assets/admin/images/bg-header.png');background-size:cover;">

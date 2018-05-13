@@ -188,6 +188,7 @@ class Form_entry_model extends CI_Model
         if(!empty($year)) {
             $this->db->where('to_char("LOADING_START_DATE", \'YYYY\')=', $year);
         } 
+		// echo $this->db->last_query();
 		return $this->db->get();
     }
 }

@@ -56,7 +56,7 @@
 										</select>
 									</td>		
 									<td>
-									<input type="hidden" value="PLN" id="client" name="client">	
+									<input type="hidden" value="<?php echo strtolower(get_client_site_name()) ?>" id="client" name="client">	
 									<?php 
 									echo form_label('Job Location') ?><br/>
 										<select id="lokasi_kerja" name="lokasi_kerja" style="height:33px;">
