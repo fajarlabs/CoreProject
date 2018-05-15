@@ -29,9 +29,9 @@
                 <div class="panel-body" style="overflow-x: hidden;">
 
                     <table id="dg" class="easyui-datagrid" style="width:100%;min-height:400px"
-                    url="<?php echo base_url(); ?>index.php/client_report/list_rest"
+                    url="<?php echo base_url(); ?>index.php/client_report/list_rest?client=<?php echo strtolower(get_client_site_name()) ?>"
                     toolbar="#toolbar" pagination="true"
-                    rownumbers="true" fitColumns="true" singleSelect="true">
+                    rownumbers="true"  fitColumns="true" singleSelect="true">
                     <thead>
                         <tr>
                             <th field="AREA" width="30">AREA</th>
@@ -85,10 +85,6 @@
     }
  })();
 
- function callModal(id) {
-    $("#exampleModalDownload").modal("show");
-    $("#iframe-download").attr("src","<?php echo base_url(); ?>index.php/report/cetak/"+id);
- }
 
 function downloadReport() {
     var str_query = "INTERVENTION_NAME="+encodeURI($("input[name=INTERVENTION_NAME]").val());
@@ -99,4 +95,9 @@ function downloadReport() {
     str_query += "&CTIME="+encodeURI($("input[name=CTIME]").val());
     window.location.href = "<?php echo base_url(); ?>index.php/report/downloadexcel/?"+str_query;
  } 
+
+ function callModal(id) {
+    $("#exampleModalDownload").modal("show");
+    $("#iframe-download").attr("src","<?php echo base_url(); ?>index.php/client_report/cetak/"+id);
+ }
 </script>

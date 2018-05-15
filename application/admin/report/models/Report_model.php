@@ -50,28 +50,31 @@ class Report_model extends CI_Model {
 					$query .= "\"fef\".\"CREATE_TIME\" >= timestamp '".$array_datetime."' AND \"fef\".\"CREATE_TIME\" < timestamp '".$array_endtime."' ";
 				}
 				if($row->field == "SPK") {
-					$query .= "\"fef\".\"SPK\" LIKE '%".$row->value."%' ";
+					$query .= "LOWER(fef.\"SPK\") LIKE '%".strtolower($row->value)."%' ";
 				}
 				if($row->field == "AREA") {
-					$query .= "\"fef\".\"AREA\" LIKE '%".$row->value."%' ";
+					$query .= "LOWER(fef.\"AREA\") LIKE '%".strtolower($row->value)."%' ";
+				}
+				if($row->field == "CLIENT") {
+					$query .= "LOWER(fef.\"CLIENTS\") LIKE '%".strtolower($row->value)."%' ";
 				}
 				if($row->field == "KONTRAK") {
-					$query .= "\"fef\".\"KONTRAK\" LIKE '%".$row->value."%' ";
+					$query .= "LOWER(fef.\"KONTRAK\") LIKE '%".strtolower($row->value)."%' ";
 				}
 				if($row->field == "INTERVENTION_NAME") {
-					$query .= "\"mi\".\"INTERVENTION_NAME\" LIKE '%".$row->value."%' ";
+					$query .= "LOWER(mi.\"INTERVENTION_NAME\")  LIKE '%".strtolower($row->value)."%' ";
 				}
 				if($row->field == "PRODUCT_TYPE") {
-					$query .= "\"fef\".\"PRODUCT_TYPE\" LIKE '%".$row->value."%' ";
+					$query .= "LOWER(fef.\"PRODUCT_TYPE\") LIKE '%".strtolower($row->value)."%' ";
 				}
 				if($row->field == "FILE_ORDER") {
-					$query .= "\"fef\".\"FILE_ORDER\" LIKE '%".$row->value."%' ";
+					$query .=  "LOWER(fef.\"FILE_ORDER\") LIKE '%".strtolower($row->value)."%' ";
 				}	
 				if($row->field == "IWO") {
-					$query .= "\"fef\".\"IWO\" LIKE '%".$row->value."%' ";
+					$query .= "LOWER(fef.\"IWO\") LIKE  '%".strtolower($row->value)."%' ";
 				}
 				if($row->field == "SURVEYOR_IN_CHARGE") {
-					$query .= "\"fef\".\"SURVEYOR_IN_CHARGE\" LIKE '%".$row->value."%' ";
+					$query .=  "LOWER(fef.\"SURVEYOR_IN_CHARGE\") LIKE  '%".strtolower($row->value)."%' ";
 				}
 				if($count > 1) {
 					$query .= "AND ";
@@ -79,11 +82,20 @@ class Report_model extends CI_Model {
 				$count--;
 			}
         }
-
+		
         $query .= ($cp_count > 0 ? "AND " : " ")." \"fef\".\"IS_DELETE\" = '0' LIMIT $limit OFFSET $offset ";
-
-        return $this->db->query($query);
+        //echo $query;
+		return $this->db->query($query);
 	}
+	
+	  public  function get_product_name($id) 
+	{
+        $this->db->select('*');
+        $this->db->from('MASTER_PRODUCT');
+        $this->db->where('PRODUCT_ID', $id);   
+        return $this->db->get()->result();
+    }
+
 	
 	public  function get_item_primary($id_item) 
     {

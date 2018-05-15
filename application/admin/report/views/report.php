@@ -34,8 +34,9 @@
 					rownumbers="true" fitColumns="true" singleSelect="true">
 					<thead>
 						<tr>
-							<th field="AREA" width="30">AREA</th>
-							<th field="FILE_ORDER" width="30">FILE ORDER</th>
+							<th field="CLIENTS" width="20">CLIENTS</th>
+							<th field="AREA" width="20">AREA</th>
+							<th field="FILE_ORDER" width="20">FILE ORDER</th>
 							<th field="IWO" width="30">IWO</th>
 							<th field="KONTRAK" width="30">KONTRAK</th>
 							<th field="SPK" width="30">SPK</th>
@@ -47,10 +48,10 @@
 						</tr>
 					</thead>
 				</table>
-				 <div id="mm" class="easyui-menu">
+				 <!--<div id="mm" class="easyui-menu">
 				    <div>Edit</div>
 				    <div>Delete</div>
-				  </div>
+				  </div>-->
 				<!--<div id="toolbar">
 					<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newData()">Add</a>
 					<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editData()">Edit</a>

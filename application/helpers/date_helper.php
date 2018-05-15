@@ -9,12 +9,13 @@
 */
 
 function convert_date($date,$format){  
-		$newDate = date($format, strtotime($date));
+		$newDate=""; 
 		if($date==null or $date==""){
 			return "";
 		}
 		else {
-			return $newDate;  
+			$date = str_replace('/', '-', $date);
+			$newDate =  date('Y-m-d', strtotime($date));
 		}
 	    return($newDate);
 }

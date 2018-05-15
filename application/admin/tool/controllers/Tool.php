@@ -84,7 +84,7 @@ class Tool extends MY_Controller
 
         $this->load->library('upload', $config);
 
-        if ( ! $this->upload->do_upload('sertifikat_upload')) {
+        if ( ! $this->upload->do_upload('file_upload')) {
                 $msg_upload = array('error' => $this->upload->display_errors());
         } else {
                 $msg_upload = array('upload_data' => $this->upload->data());
@@ -143,7 +143,8 @@ class Tool extends MY_Controller
         } else {
                 $msg_upload = array('upload_data' => $this->upload->data());
         }
-
+		
+		
 		$array_col_val = array(
 			'JENIS'  => $type,
 			'NAMA'   => $name,
@@ -194,7 +195,7 @@ class Tool extends MY_Controller
 	{
 		$this->Tool_model->delete_by_id($id);
 		$this->session->set_flashdata('error_message', alert_success('Delete succeded.'));
-		redirect('Tool');
+		redirect('tool');
 	}
 
 	public function detail_gbr($id)

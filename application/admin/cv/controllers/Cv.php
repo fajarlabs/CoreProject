@@ -72,19 +72,19 @@ class Cv extends MY_Controller
 		$this->load->view('admin/footer',$this->data);
 	}
 
-	public function add()
-	{
-		$this->data['title'] = "Cv Management";
-		$this->data['position'] = $this->Cv_model->get_table_name('REF_POSITION');
-		$this->data['region'] = $this->Cv_model->get_table_name('REF_REGION','REGION','asc');
-		$this->data['education'] = $this->Cv_model->get_table_name('REF_EDUCATION','ID_REF_EDUCATION','asc');
-		$this->data['experience'] = $this->Cv_model->get_table_name('REF_EXP','EXP_TYPE','asc');
-		$this->data['cabang'] = $this->Cv_model->get_table_name('MASTER_CABANG');
-		$this->data['sbu'] = $this->Cv_model->get_table_name('MASTER_SBU');
-		$this->load->view('admin/header',$this->data);
-		$this->load->view('cv_add_view',$this->data);
-		$this->load->view('admin/footer',$this->data);
-	}
+	// public function add()
+	// {
+	// 	$this->data['title'] = "Cv Management";
+	// 	$this->data['position'] = $this->Cv_model->get_table_name('REF_POSITION');
+	// 	$this->data['region'] = $this->Cv_model->get_table_name('REF_REGION','REGION','asc');
+	// 	$this->data['education'] = $this->Cv_model->get_table_name('REF_EDUCATION','ID_REF_EDUCATION','asc');
+	// 	$this->data['experience'] = $this->Cv_model->get_table_name('REF_EXP','EXP_TYPE','asc');
+	// 	$this->data['cabang'] = $this->Cv_model->get_table_name('MASTER_CABANG');
+	// 	$this->data['sbu'] = $this->Cv_model->get_table_name('MASTER_SBU');
+	// 	$this->load->view('admin/header',$this->data);
+	// 	$this->load->view('cv_add_view',$this->data);
+	// 	$this->load->view('admin/footer',$this->data);
+	// }
 
 	public function edit($id=0)
 	{
@@ -165,33 +165,18 @@ class Cv extends MY_Controller
    		}
 
         $position 			 = $this->input->post('position');
-		$name     			 = $this->input->post('nama');
-		$email     			 = $this->input->post('email');
-		$birthdate     		 = $this->input->post('birthdate');
-		$birthdate_place     = $this->input->post('placedate');
 		$contact_1     		 = $this->input->post('contact_1');
 		$contact_2     		 = @$this->input->post('contact_2');
 		$address     		 = $this->input->post('address');
 		$gender     		 = $this->input->post('gender');
 		$region     		 = $this->input->post('region');
-		$type_location    	 = $this->input->post('type_location');	
-		$sbu    			 = (!empty($this->input->post('sbu'))  ? $this->input->post('sbu') : null);	 
-		$cabang    			 = (!empty($this->input->post('cabang'))  ? $this->input->post('cabang') : null);
 
 		
 		$array_col_val = array(
 				'POSISI' => $position,
-				'NAMA' => $name,
-				'EMAIL' => $email,
-				'BIRTHDATE'=>convert_date($birthdate,'Y-m-d'),
-				'PLACE_BIRTHDATE'=>$birthdate_place,
 				'CONTACT_1'=>$contact_1,
 				'CONTACT_2'=>$contact_2,
-				'TYPE_LOCATION' => $type_location,
-				'ID_SBU' => $sbu,
-				'ID_CABANG' => $cabang,
 				'ADDRESS'=>$address,
-				'GENDER'=>$gender,
 				'REGION'=>$region,
 				'IS_DELETE'   => 0,
 		);
@@ -685,12 +670,12 @@ class Cv extends MY_Controller
 		echo "OK";
 	}
 
-	public function delete($id)
-	{
-		$this->Cv_model->delete_by_id($id);
-		$this->session->set_flashdata('error_message', alert_success('Delete succeded.'));
-		redirect('Cv');
-	}
+	// public function delete($id)
+	// {
+	// 	$this->Cv_model->delete_by_id($id);
+	// 	$this->session->set_flashdata('error_message', alert_success('Delete succeded.'));
+	// 	redirect('Cv');
+	// }
 
 	public function view($id)
 	{

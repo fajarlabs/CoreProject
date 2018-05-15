@@ -5,7 +5,7 @@
 	<!-- end breadcrumb -->
 
 	<!-- begin page-header -->
-	<h1 class="page-header">Personil Management <small>Function to create Personil</small></h1>
+	<h1 class="page-header">Personil Management Area <small>Function to view Personil by Area</small></h1>
 	<!-- end page-header -->
 
 	<!-- begin row -->
@@ -17,7 +17,7 @@
             <div class="panel panel-inverse">
                 <div class="panel-heading">
                     <div class="panel-heading-btn">
-                    	<a href="<?php echo base_url(); ?>index.php/personil/add" class="btn btn-xs btn-icon btn-circle btn-primary" ><i class="fa fa-plus"></i></a>
+                    	<!--<a href="<?php echo base_url(); ?>index.php/cv/add" class="btn btn-xs btn-icon btn-circle btn-primary" ><i class="fa fa-plus"></i></a>-->
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
@@ -32,16 +32,14 @@
 				            rownumbers="true" fitColumns="true" singleSelect="true">
 				        <thead>
 				            <tr>
-				                <th field="POSISI" width="30">BRANCH</th>
-                                <th field="UPLOAD_FILE" width="30">FILE</th>
-                                <th field="NAMA" width="30">TOTAL</th>
+                                <th field="TYPE_LOCATION" width="30">TYPE</th>
+                                <th field="total" width="10">Total</th>
+                                <th field="link" width="10">Detail</th>
 				            </tr>
 				        </thead>
 				    </table>
                     <div id="toolbar">
                         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newPersonil()">Add</a>
-                        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editPersonil()">Edit</a>
-                        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyPersonil()">Remove</a>
                     </div>
                 </div>
             </div>

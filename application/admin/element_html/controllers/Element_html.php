@@ -102,7 +102,9 @@ class Element_html extends MY_Controller
 					remove_script_host : false,
 					convert_urls : true,
 					forced_root_block : "",
-					extended_valid_elements:"script[language|type|src]",
+					extended_valid_elements : "*[*]", // allow event
+					cleanup : false,      // allow event
+					verify_html : false,  // allow event
 				    plugins: [
 				        "advlist autolink lists link image charmap print preview anchor",
 				        "searchreplace visualblocks code fullscreen",
@@ -154,8 +156,8 @@ class Element_html extends MY_Controller
 		$content = $this->input->post('content');
 
 		$insert = array(
-			'NAME'     => addslashes($title),
-			'DATA'   => pg_escape_string ($content),
+			'NAME'     => stripslashes($title),
+			'DATA'   => stripslashes($content),
 			'IS_DELETE' => 0,
 		);
 
@@ -171,8 +173,8 @@ class Element_html extends MY_Controller
 		$content = $this->input->post('content');
 
 		$insert = array(
-			'NAME'     => addslashes($title),
-			'DATA'   => pg_escape_string ($content),
+			'NAME'     => stripslashes($title),
+			'DATA'   => stripslashes($content),
 			'IS_DELETE' => 0,
 		);
 		$this->Element_html_model->update($insert,$id);

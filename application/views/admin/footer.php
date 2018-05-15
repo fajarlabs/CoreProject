@@ -146,7 +146,7 @@
 	// fungsi untuk tambah elemen surveyor
 	function add_tb_surveyor() {
 		var xcv = random_id();
-		var element_surveyor = "<tr><td><select id=\"loc_"+xcv+"\" style=\"height:24px;\" name=\"type_location[]\"><option value=\"0\">--Choose Level--</option><option value=\"1\">Pusat</option><option value=\"2\">Cabang</option></select> <input onkeydown=\"initSurveyor(this,'loc_"+xcv+"')\" id=\"autocomplete_"+xcv+"\" style=\"width:300px;margin-bottom: 3px;\" type=\"text\" name=\"surveyor_in_charge[]\" /><a onclick=\"delete_tb_surveyor(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
+		var element_surveyor = "<tr><td><select id=\"loc_"+xcv+"\" style=\"height:24px;\" name=\"type_location[]\"><option value=\"0\">--Choose Level--</option><option value=\"1\">Pusat</option><option value=\"2\">Cabang</option></select> <input class=\"autocomplete_text\" onkeydown=\"initSurveyor(this,'loc_"+xcv+"')\" id=\"autocomplete_"+xcv+"\" style=\"width:300px;margin-bottom: 3px;\" type=\"text\" name=\"surveyor_in_charge[]\" /><a onclick=\"delete_tb_surveyor(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
 
 		$("#tb_surveyor").append(element_surveyor);
 	}
@@ -192,7 +192,7 @@
 	// fungsi untuk menambahkan produk
 	function add_tb_product() {
 		var xcp = random_id();
-		var element_product = "<tr><td style=\"padding-top:2px;\"><input onkeydown=\"initProduct(this,'product_"+xcp+"')\" id=\"product_"+xcp+"\" style=\"width:300px;\" type=\"text\" name=\"product[]\"/><a onclick=\"delete_tb_product(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
+		var element_product = "<tr><td style=\"padding-top:2px;\"><input class=\"autocomplete_text\" onkeydown=\"initProduct(this,'product_"+xcp+"')\" id=\"product_"+xcp+"\" style=\"width:300px;\" type=\"text\" name=\"product[]\"/><a onclick=\"delete_tb_product(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
 
 		$("#tb_product").append(element_product);
 	}
@@ -273,7 +273,7 @@
 		var xpp = random_id();
 
 		// inisialisasi element html port
-		var element_port = "<tr><td style=\"padding-top:2px;\"><input onkeydown=\"initPort(this,'port_"+xpp+"')\" id=\"port_"+xpp+"\" type=\"text\" style=\"width:300px;\" name=\"port_terminal[]\" /><a onclick=\"delete_tb_port(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i> </a></td></tr>";
+		var element_port = "<tr><td style=\"padding-top:2px;\"><input class=\"autocomplete_text\" onkeydown=\"initPort(this,'port_"+xpp+"')\" id=\"port_"+xpp+"\" type=\"text\" style=\"width:300px;\" name=\"port_terminal[]\" /><a onclick=\"delete_tb_port(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i> </a></td></tr>";
     	$("#tb_port").append(element_port);
     }
 

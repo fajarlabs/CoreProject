@@ -1,3 +1,4 @@
+
 <?php 
 
 if($item->num_rows() > 0) { 
@@ -63,7 +64,7 @@ $object = @$item->result()[0];
 	  					var djson = JSON.parse(val_data_column);
 	  					for(var i=0;i<djson.length;i++) {
 	  						$("#tb_certificate").find('td:last').after('<td><a target="_blank" class="btn btn-xs btn-primary" href="<?php echo base_url(); ?>uploads/form_entry/'+djson[i]+'"><i class="fa fa-eye"></i> view</a> <i><b>*if you do not want to change the file do not upload</b></i></td>');
-	  						add_tb_certificate();
+	  						//();
 	  					}
 	  				}
 	  			}
@@ -104,7 +105,7 @@ $object = @$item->result()[0];
 	  					var djson = JSON.parse(val_data_column);
 	  					for(var i=0;i<djson.length;i++) {
 	  						$("#tb_certificate").find('td:last').after('<td><a target="_blank" class="btn btn-xs btn-primary" href="<?php echo base_url(); ?>uploads/form_entry/'+djson[i]+'"><i class="fa fa-eye"></i> view</a> <i><b>*if you do not want to change the file do not upload</b></i></td>');
-	  						add_tb_certificate();
+	  						//();
 	  					}
 	  				}
 	  			}
@@ -540,7 +541,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tr>
 					<td valign="middle">
-						<input onkeydown="initVessel(this,'vessel')" type="text" id="vessel" style="width:40%;" name="vessel" value="<?php echo @$object->VESSEL; ?>" /> 
+						<input class="autocomplete_text" onkeydown="initVessel(this,'vessel')" type="text" id="vessel" style="width:40%;" name="vessel" value="<?php echo @$object->VESSEL; ?>" /> 
 						<div style="display:none;">
 						Multi Cargo <input type="radio" name="select_cargo" value="multi_cargo" />
 						Single Cargo <input type="radio" name="select_cargo" value="single_cargo" />
@@ -569,7 +570,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 				<tr>
 					<td style="width:135px;">Area</td>
 					<td colspan="2">
-						<input type="text" style="width:300px;" name="area" value="<?php echo @$object->AREA; ?>" />
+						<input class="autocomplete_text"  onkeydown="initArea(this)" type="text" style="width:300px;" name="area" value="<?php echo @$object->AREA; ?>" />
 					</td>
 				</tr>
 				<tr>
@@ -588,7 +589,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 							if(count($port) > 0) :
 								$i = 0;
 								foreach($port as $key => $val):
-									echo "<tr><td style=\"padding-top:2px;\"><input onkeydown=\"initPort(this,'port_".$i."')\" type=\"text\" style=\"width:300px;\" name=\"port_terminal[]\" value=\"".$val."\" /><a onclick=\"delete_tb_port(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i> </a></td></tr>";
+									echo "<tr><td style=\"padding-top:2px;\"><input class=\"autocomplete_text\" onkeydown=\"initPort(this,'port_".$i."')\" type=\"text\" style=\"width:300px;\" name=\"port_terminal[]\" value=\"".$val."\" /><a onclick=\"delete_tb_port(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i> </a></td></tr>";
 									$i++;
 								endforeach;
 							endif;
@@ -625,7 +626,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 										foreach($product_array as $key => $val) : ?>
 										<tr>
 											<td style="padding-top:2px;">
-												<input onkeydown="initProduct(this,'product_'+<?php echo $i; ?>)" style="width:300px;" type="text" name="product[]" value="<?php echo $val; ?>"/>
+												<input class="autocomplete_text" onkeydown="initProduct(this,'product_'+<?php echo $i; ?>)" style="width:300px;" type="text" name="product[]" value="<?php echo $val; ?>"/>
 												<a onclick="delete_tb_product(this)" style="margin-top:-2px;" href="javascript:;" class="btn btn-danger btn-xs"><i class="fa fa-minus"></i></a>
 											</td>
 										</tr>
@@ -738,7 +739,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 							if(count($data_surveyor) > 0) :
 								$i = 0;
 								foreach($data_surveyor as $key => $val):
-									echo "<tr><td><select id=\"loc_".$i."\" style=\"height:24px;\" name=\"type_location[]\"><option value=\"0\">--Choose Level--</option><option value=\"1\">Pusat</option><option value=\"2\">Cabang</option></select><input id=\"autocomplete_".$i."\" onkeydown=\"initSurveyor(this,'loc_".$i."')\" style=\"width:300px;margin-bottom: 3px;\" type=\"text\" name=\"surveyor_in_charge[]\" value=\"".$val."\" /><a onclick=\"delete_tb_surveyor(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
+									echo "<tr><td><select id=\"loc_".$i."\" style=\"height:24px;\" name=\"type_location[]\"><option value=\"0\">--Choose Level--</option><option value=\"1\">Pusat</option><option value=\"2\">Cabang</option></select><input class=\"autocomplete_text\" id=\"autocomplete_".$i."\" onkeydown=\"initSurveyor(this,'loc_".$i."')\" style=\"width:300px;margin-bottom: 3px;\" type=\"text\" name=\"surveyor_in_charge[]\" value=\"".$val."\" /><a onclick=\"delete_tb_surveyor(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
 									$i++;
 								endforeach; 
 							endif;

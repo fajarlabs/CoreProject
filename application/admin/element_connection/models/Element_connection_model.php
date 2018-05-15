@@ -38,6 +38,7 @@ class Element_connection_model extends CI_Model
     $this->db->where('PRODUCT_ID', $product_id); 
     $this->db->where('INTERVENTION_ID', $intervention_id); 
 		$this->db->update($this->table, $array_col_val); 
+	 // echo $this->db->last_query();
   }
 
   public function save($array_col_val = array())

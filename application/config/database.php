@@ -94,13 +94,25 @@ $db['default'] = array(
 	'password' => 'postgres',
 	'database' => 'postgres',
 
-	//Ridwansyah Localhost DB
+	//Server cloudkilat
+	// 'hostname' => 'pgsql:host=127.0.0.1;dbname=db_custody',
+	// 'username' => 'sucofindo',	
+	// 'password' => 'P@ssw0rd2018',
+	// 'database' => 'db_custody',
+
+	//Fajar CloudKilat
 	// 'hostname' => 'pgsql:host=localhost;dbname=sucofindo',
 	// 'username' => 'postgres',
-	// 'password' => 'qwerty147',
-	// 'database' => 'sucofindo',
+	// 'password' => 'postgres',
+	// 'database' => 'postgres',
 
-	//-----------------------------------------------
+	//Ridwansyah Localhost DB
+	//'hostname' => 'pgsql:host=localhost;dbname=sucofindo',
+	//'username' => 'postgres',
+	//'password' => 'qwerty147',
+	//'database' => 'sucofindo',
+
+
 	// cloudkilat PGSQL | comment if using localhost
 	//-----------------------------------------------	
 	// 'hostname' => 'pgsql:host=localhost;dbname=sucofindo',

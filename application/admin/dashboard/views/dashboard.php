@@ -60,10 +60,9 @@
 										<select id="client" name="client" style="height:33px;">
 											<option value="">--Choose--</option>
 											<?php 
-											$ct =  $client[0]->CLIENTS;
-											$clnt = json_decode($ct);
-											foreach($clnt as $clt){ ?>
-												<option value="<?php echo $clt ?>"><?php echo $clt ?></option>
+											foreach($client as $ck => $vk){ 
+												?>
+												<option value="<?php echo strtolower($vk); ?>"><?php echo $vk; ?></option>
 											<?php } ?>	
 										</select>
 									</td>		
@@ -116,7 +115,7 @@
 								</tr>
 								<tr>
 									<td colspan="2">
-										<div style="width:1000px;height:400px;" id="chart_double_line">No Data</div>
+										<div style="display:none;width:1000px;height:400px;" id="chart_double_line">No Data</div>
 									</td>
 								</tr>
 							</table>
@@ -211,10 +210,10 @@
 	 				    var series = $("#intervensi").find("option:selected").text();
 
  				        //Pie Chart
- 				        column_pie(my_json,'chart_pie','','Loss Statistics Percentage',series);
+ 				        column_pie(my_json,'chart_pie','','Loss Statistics Information',series);
 
  				        //Bar Chart
- 				        column_bar(my_json,'chart_bar','','Loss Statistics Percentage',series);
+ 				        column_bar(my_json,'chart_bar','','Total Losses Information',series);
 
 
 	 	    			var data_bln = $("#bulan").val();
@@ -227,7 +226,7 @@
 
  				       	
  				       	//Double Line Chart
- 				        column_double_line('','chart_double_line','','Loss Statistics Percentage',series);
+ 				        //column_double_line('','chart_double_line','','Loss Statistics Percentage',series);
 
 
 	 	    			$(".tab-content").show();
@@ -236,7 +235,7 @@
 	 	    		return false;
 	 	    	}); 
 	        } else {
-	           setTimeout(function() { defer() }, 2000);
+	           setTimeout(function() { defer() }, 1000);
 	        }
 		 })();
 

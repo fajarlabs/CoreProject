@@ -159,6 +159,7 @@ class Form_entry_model extends CI_Model
     {
         $this->db->where('ID', $id);
         $this->db->update($this->table, $array_col_val); 
+		// echo $this->db->last_query();
     }
 
     public function delete_by_id($id)
@@ -183,11 +184,12 @@ class Form_entry_model extends CI_Model
             $this->db->like('LOWER("AREA")', strtolower($area)); 
         }
         if(!empty($month)) {
-            $this->db->where('to_char("LOADING_START_DATE", \'MM\')=', $month);
+            $this->db->where('to_char("CREATE_TIME", \'MM\')=', $month);
         }
         if(!empty($year)) {
-            $this->db->where('to_char("LOADING_START_DATE", \'YYYY\')=', $year);
+            $this->db->where('to_char("CREATE_TIME", \'YYYY\')=', $year);
         } 
+		 // echo $this->db->last_query();
 		return $this->db->get();
     }
 }
