@@ -88,6 +88,12 @@ $db['default'] = array(
 	// localhost PGSQL | comment if using localhost
 	//-----------------------------------------------	
 
+	//Fajar Localhost DB
+	'hostname' => 'pgsql:host=localhost;dbname=postgres',
+	'username' => 'postgres',
+	'password' => 'postgres',
+	'database' => 'postgres',
+
 	//Server cloudkilat
 	// 'hostname' => 'pgsql:host=127.0.0.1;dbname=db_custody',
 	// 'username' => 'sucofindo',	

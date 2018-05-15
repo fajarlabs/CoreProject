@@ -8515,3 +8515,5 @@ ALTER TABLE "public"."MASTER_AREA" ADD PRIMARY KEY ("AREA_ID");
 -- Primary Key structure for table MASTER_CLIENT
 -- ----------------------------
 ALTER TABLE "public"."MASTER_CLIENT" ADD PRIMARY KEY ("CLIENT_ID");
+=======
+>>>>>>> e129ea6276120636dcc029f0d0c8efe0dde8c779
