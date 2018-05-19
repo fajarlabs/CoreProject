@@ -42,6 +42,7 @@ class Dashboard extends MY_Controller
 	public function index()
 	{ 	
 		$this->data['sites'] 		= $this->Client_site_model->get_all_items();
+		//$this->data['product'] 		= $this->Dashboard_model->get_product_name_except();
 		$this->data['product'] 		= $this->Dashboard_model->get_table_name('MASTER_PRODUCT');
 		$this->data['intervensi'] 	= $this->Dashboard_model->get_table_name('MASTER_INTERVENTION');
 		$query = $this->Dashboard_model->get_table_name('FORM_ENTRY_FIELD');
@@ -65,7 +66,6 @@ class Dashboard extends MY_Controller
 		}
 
 		$this->data['client'] 		= $data_client;
-
 		$this->data['area'] 		= $this->Dashboard_model->get_table_group_by('FORM_ENTRY_FIELD','AREA');
 		$this->data['title'] 		= "Dashboard";
 		$this->load->view("admin/header",$this->data);
@@ -135,20 +135,21 @@ class Dashboard extends MY_Controller
 	            $where .= ' AND "SELECT_INTERVENTION" ='."'".$intervention_id."'"; 
 	        }
 	        if((!empty($client))) {
-	            $where .= ' AND LOWER("CLIENTS") ='."'".$strtolower($client)."'"; 
+	            $where .= ' AND LOWER("CLIENTS") LIKE '."'%".strtolower($client)."%'"; 
 	        }
 	        if(($lokasi_kerja != '0') || (!empty($lokasi_kerja)) ) {
-	            $where .= ' AND LOWER("AREA") ='."'".$strtolower($lokasi_kerja)."'"; 
+	            $where .= ' AND LOWER("AREA") LIKE '."'%".strtolower($lokasi_kerja)."%'"; 
 	        }
 
 	        if(!empty($date_month)) {
-	            $where .=' AND to_char("LOADING_START_DATE", \'MM\')  ='."'".$date_month."'"; 
+	            $where .=' AND to_char("CREATE_TIME", \'MM\')  ='."'".$date_month."'"; 
 	        }
 	        if(!empty($date_year)) {
-	            $where .=' AND to_char("LOADING_START_DATE", \'YYYY\')  ='."'".$date_year."'"; 
+	            $where .=' AND to_char("CREATE_TIME", \'YYYY\')  ='."'".$date_year."'"; 
 	        } 
 
 			$sql2 = 'SELECT '.$col.' FROM "FORM_ENTRY_FIELD" WHERE 1=1  '.$where;
+			// ECHO $sql2;
 			$query2 = $this->db->query($sql2);
 			foreach ($query2->result() as $row){
 				echo "<tr>";
@@ -165,6 +166,38 @@ class Dashboard extends MY_Controller
 		
 	}
 
+	public function sum_sl_gsv_klobs(){
+		$produk_id 	 	 = (int)$_POST['produk'];
+		$intervention_id = (int)$_POST['intervensi'];
+		$date_month  	 = $_POST['bulan'];
+		$date_year   	 = $_POST['tahun'];
+		$client  	 	 = $_POST['client'];
+		$lokasi_kerja 	 = $_POST['lokasi_kerja'];
+		
+		$sum =  $this->Dashboard_model->sum_sl_gsv_klobs($produk_id,$intervention_id,$client,$lokasi_kerja,$date_month,$date_year);
+		$result =0;
+		if(!empty($sum[0]->total)){
+			$result=$sum[0]->total;
+		}
+		echo $result;
+	}
+	
+	public function count_frekuensi(){
+		$produk_id 	 	 = (int)$_POST['produk'];
+		$intervention_id = (int)$_POST['intervensi'];
+		$date_month  	 = $_POST['bulan'];
+		$date_year   	 = $_POST['tahun'];
+		$client  	 	 = $_POST['client'];
+		$lokasi_kerja 	 = $_POST['lokasi_kerja'];
+		
+		$count  =  $this->Dashboard_model->count_frekuensi($produk_id,$intervention_id,$client,$lokasi_kerja,$date_month,$date_year);
+		$result = 0;
+		if(!empty($count[0]->total)){
+			$result=$count[0]->total;
+		}
+		echo $result;
+	}
+	
 	public function chart_rest()
 	{
 		$produk_id 	 	 = (int)$this->input->get("produk");
@@ -198,6 +231,7 @@ class Dashboard extends MY_Controller
 		
 		// fungsi untuk mendapatkan header KLOBS,BBLS dll
 		// patokan data SELECT "PRODUCT_TYPE","SELECT_INTERVENTION","CLIENTS","AREA","LOADING_START_DATE" FROM "FORM_ENTRY_FIELD"
+		
 		$headers = get_header_fields();
 		$array_json = array();
 		foreach($headers as $k => $v) {
@@ -271,6 +305,7 @@ class Dashboard extends MY_Controller
 				}
 			}
 		}
+		
 		
 		header('Content-Type: application/json');
 		echo json_encode($array_json);

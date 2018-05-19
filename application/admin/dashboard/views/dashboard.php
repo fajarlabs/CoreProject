@@ -38,7 +38,7 @@
 							<table style="width:100%;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 								<tr>
 									<td >
-										<?php echo form_label('Product') ?><br/>
+										<?php echo form_label('Cargo') ?><br/>
 										<select name="produk" id="produk" style="height:33px;">	
 											<option value="">--Choose--</option>
 											<?php foreach($product as $pr){ ?>
@@ -47,7 +47,7 @@
 										</select>
 									</td>
 									<td>
-										<?php echo form_label('Intervention') ?><br/>
+										<?php echo form_label('Mode') ?><br/>
 										<select id="intervensi" name="intervensi" style="height:33px;">
 											<option value="">--Choose--</option>
 											<?php foreach($intervensi as $itv){ ?>
@@ -115,7 +115,18 @@
 								</tr>
 								<tr>
 									<td colspan="2">
-										<div style="display:none;width:1000px;height:400px;" id="chart_double_line">No Data</div>
+										<table>
+											<tr>
+												<td><div style="width:950px;height:400px;" id="chart_line">No Data</div></td>
+												<td>
+													<div style="padding: 13px;border: 3px solid black;margin-bottom: 250px;margin-left: 100px;">
+														X  : <span id="x_lokasi"></span> <br/>
+														Y  : <span id="y_sl_gsv_klobs">-</span>  <br/>
+														Frekuensi : <span id="frekuensi_val"></span>
+													</div>
+												</td>
+											</tr>
+										</table>
 									</td>
 								</tr>
 							</table>
@@ -214,8 +225,46 @@
 
  				        //Bar Chart
  				        column_bar(my_json,'chart_bar','','Total Losses Information',series);
-
-
+						
+						
+						//Line Chart
+ 				        column_line(my_json,'chart_line','','Losses Periode',series);
+						var lok_kerja = $("#lokasi_kerja").val();
+						if(lok_kerja=="0"){
+							$("#x_lokasi").html("-");
+							
+						}
+						else {
+							var place_data = $("#lokasi_kerja").val();
+							$("#x_lokasi").html(place_data);
+						}
+						
+						//SUM SL_GSV_KLOBS
+						$.ajax({
+								url: '<?php echo base_url(); ?>index.php/dashboard/sum_sl_gsv_klobs',
+								type: 'POST',
+								data:  new FormData($('#chart_form')[0]),
+								processData: false,
+                                contentType: false,
+								success: function(mydata) {
+									 $("#y_sl_gsv_klobs").html(mydata);
+								}
+						});
+						
+						//Count Frekuensi
+						$.ajax({
+								url: '<?php echo base_url(); ?>index.php/dashboard/count_frekuensi',
+								type: 'POST',
+								data:  new FormData($('#chart_form')[0]),
+								processData: false,
+                                contentType: false,
+								success: function(mydata) {
+									 $("#frekuensi_val").html(mydata);
+								}
+						});
+						
+						
+						
 	 	    			var data_bln = $("#bulan").val();
 	 	    			bln = data_bln;
 	 	    			if(data_bln<10){
@@ -235,7 +284,7 @@
 	 	    		return false;
 	 	    	}); 
 	        } else {
-	           setTimeout(function() { defer() }, 1000);
+	           setTimeout(function() { defer() }, 3000);
 	        }
 		 })();
 
@@ -325,7 +374,58 @@
 				    ]
 				});
 		}
+		
+		function column_line(mydata,chart_id,categories,title,series_name) { 
+			//mydata = JSON.parse(mydata);
+				Highcharts.chart(chart_id, {
+					title: {
+						text: title
+					},
 
+
+					yAxis: {
+						title: {
+							text: 'Kilo Liter'
+						}
+					},
+					legend: {
+				        enabled: false
+				    },
+
+					plotOptions: {
+						series: {
+							label: {
+								connectorAllowed: false
+							},
+							pointStart: 2010
+						}
+					},
+					credits: {
+						enabled: false
+					},
+					series: [{
+						name: 'Installation',
+						data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+					}],
+
+					responsive: {
+						rules: [{
+							condition: {
+								maxWidth: 500
+							},
+							chartOptions: {
+								legend: {
+									layout: 'horizontal',
+									align: 'center',
+									verticalAlign: 'bottom'
+								}
+							}
+						}]
+					}
+
+				});
+		}
+		
 		function column_double_line(data,chart_id,categories,title){
 				Highcharts.chart(chart_id, {
 				    chart: {

@@ -26,8 +26,8 @@ class Element_connection_model extends CI_Model
   {
 	  $this->db->select('*');
 	  $this->db->from($this->table);
-    $this->db->where('PRODUCT_ID', $product_id); 
-    $this->db->where('INTERVENTION_ID', $intervention_id); 
+      $this->db->where('PRODUCT_ID', $product_id); 
+      $this->db->where('INTERVENTION_ID', $intervention_id); 
 	  return $this->db->get();
   }
 

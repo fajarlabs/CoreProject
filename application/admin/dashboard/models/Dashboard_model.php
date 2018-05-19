@@ -11,6 +11,68 @@ class Dashboard_model extends CI_Model
         return $this->db->get($this->table);
 	}
 	
+	public  function sum_sl_gsv_klobs($product_id=0,$intervention_id=0,$clients='',$area='',$month='',$year=''){
+		$this->db->select(' sum("SL_GSV_KLOBS"::INT) as total ');
+        $this->db->from('FORM_ENTRY_FIELD');
+		
+		if(($product_id != '0') || (!empty($product_id)) ) {
+            $this->db->where('PRODUCT_TYPE', (string)$product_id); 
+        }
+        if(($intervention_id != '0') || (!empty($intervention_id)) ) {
+            $this->db->where('SELECT_INTERVENTION',(string)$intervention_id); 
+        }
+        if(!empty($clients)) {
+            $this->db->like('LOWER("CLIENTS")', strtolower($clients)); 
+        }
+        if(($area != '0') || (!empty($area)) ) {
+            $this->db->like('LOWER("AREA")', strtolower($area)); 
+        }
+        if(!empty($month)) {
+            $this->db->where('to_char("CREATE_TIME", \'MM\')=', $month);
+        }
+        if(!empty($year)) {
+            $this->db->where('to_char("CREATE_TIME", \'YYYY\')=', $year);
+        } 
+		
+        return $this->db->get()->result();
+		 
+	}
+	
+	public  function count_frekuensi($product_id=0,$intervention_id=0,$clients='',$area='',$month='',$year=''){
+		$this->db->select(' count("SELECT_INTERVENTION") as total ');
+        $this->db->from('FORM_ENTRY_FIELD');
+		
+		if(($product_id != '0') || (!empty($product_id)) ) {
+            $this->db->where('PRODUCT_TYPE', (string)$product_id); 
+        }
+        if(($intervention_id != '0') || (!empty($intervention_id)) ) {
+            $this->db->where('SELECT_INTERVENTION',(string)$intervention_id); 
+        }
+        if(!empty($clients)) {
+            $this->db->like('LOWER("CLIENTS")', strtolower($clients)); 
+        }
+        if(($area != '0') || (!empty($area)) ) {
+            $this->db->like('LOWER("AREA")', strtolower($area)); 
+        }
+        if(!empty($month)) {
+            $this->db->where('to_char("CREATE_TIME", \'MM\')=', $month);
+        }
+        if(!empty($year)) {
+            $this->db->where('to_char("CREATE_TIME", \'YYYY\')=', $year);
+        } 
+		
+        return $this->db->get()->result();
+		 
+	}
+	
+	public  function get_product_name_except(){
+		$this->db->select('*');
+        $this->db->from('MASTER_PRODUCT');
+		$ID = array('15', '20');
+        $this->db->where_in('PRODUCT_ID', $ID);
+        return $this->db->get()->result();
+	}
+	
     public  function get_table_name($table,$col_name='',$order_type='',$where_col='',$where_data='') {
         $this->db->select('*');
         $this->db->from($table);
