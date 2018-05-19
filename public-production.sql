@@ -11,7 +11,7 @@ Target Server Type    : PGSQL
 Target Server Version : 90512
 File Encoding         : 65001
 
-Date: 2018-05-19 13:50:13
+Date: 2018-05-16 10:16:00
 */
 
 
@@ -375,7 +375,7 @@ CREATE SEQUENCE "public"."MASTER_CV_EDUCATION_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 105
+ START 104
  CACHE 1;
 
 -- ----------------------------
@@ -408,7 +408,7 @@ CREATE SEQUENCE "public"."MASTER_CV_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 8
+ START 7
  CACHE 1;
 
 -- ----------------------------
@@ -419,7 +419,7 @@ CREATE SEQUENCE "public"."MASTER_CV_REGION_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 83
+ START 82
  CACHE 1;
 
 -- ----------------------------
@@ -7102,10 +7102,9 @@ COMMENT ON COLUMN "public"."MASTER_CV"."GENDER" IS 'L = Male, P = Female';
 -- ----------------------------
 -- Records of MASTER_CV
 -- ----------------------------
-INSERT INTO "public"."MASTER_CV" VALUES ('1', 'Bagos W', '180416082526_cv_5ad4a4460c58e_sea_1.jpg', '0', null, null, null, null, null, null, '08348328', '0214243', 'Gandaria 3', '1995-07-06', 'Jakarta', 'L', null, '180516111203_photo_5afbaf935d79e_corporate.png', 'bagos24@gmail.com', '1', '5', null);
+INSERT INTO "public"."MASTER_CV" VALUES ('1', 'Bagos W', '180416082526_cv_5ad4a4460c58e_sea_1.jpg', '0', null, null, null, null, null, null, '08348328', '0214243', 'Gandaria 3', '1995-07-06', 'Jakarta', 'L', null, '180514093521_photo_5af8f5e97003c_corporate.png', 'bagos24@gmail.com', '1', '5', null);
 INSERT INTO "public"."MASTER_CV" VALUES ('2', 'Indra', null, '0', null, null, null, null, null, '1', null, null, null, '1990-05-01', 'Jakarta', 'L', null, null, 'indra@gmail.com', '1', '5', null);
 INSERT INTO "public"."MASTER_CV" VALUES ('3', 'Tugiman', null, '0', null, null, null, null, null, '2', '081234459021', '', 'Jalan Batuarab No. 13', '1979-03-01', 'Temanggung', 'L', null, null, 'tugitugi@gmail.com', '1', '2', null);
-INSERT INTO "public"."MASTER_CV" VALUES ('8', 'Lukmanur Hakim', null, '0', null, null, null, null, null, '4', null, null, null, '1970-01-01', 'Jakarta', 'L', null, null, 'hakim@sucofindo.co.id', '1', '7', null);
 
 -- ----------------------------
 -- Table structure for "public"."MASTER_CV_CERTIFICATE"
@@ -7149,7 +7148,7 @@ WITH (OIDS=FALSE)
 INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES ('101', '5', '4', 'SMKN 24');
 INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES ('102', '3', '6', 'ITB (Petroleum Enginering)');
 INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES ('102', '5', '5', 'BSI Margonda Depok');
-INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES ('105', '1', '6', 'UI (Petroleum Engineering)');
+INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES ('104', '1', '6', 'UI (Petroleum Engineering)');
 
 -- ----------------------------
 -- Table structure for "public"."MASTER_CV_EXPERIENCE"
@@ -7284,7 +7283,6 @@ INSERT INTO "public"."MASTER_CV_REGION" VALUES ('80', '15', '5');
 INSERT INTO "public"."MASTER_CV_REGION" VALUES ('80', null, '3');
 INSERT INTO "public"."MASTER_CV_REGION" VALUES ('81', null, '1');
 INSERT INTO "public"."MASTER_CV_REGION" VALUES ('82', null, '1');
-INSERT INTO "public"."MASTER_CV_REGION" VALUES ('83', null, '1');
 
 -- ----------------------------
 -- Table structure for "public"."MASTER_ICON_MARKER"
