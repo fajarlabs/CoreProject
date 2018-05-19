@@ -785,6 +785,7 @@ class Form_entry extends MY_Controller
 				$o = new stdClass();
 				$o->label = $row->AREA_NAME;
 				//$o->value = $row->AREA_ID;
+				$o->id = $row->AREA_ID;
 				$json_array[] = $o;
 			}
 		}

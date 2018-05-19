@@ -39,6 +39,7 @@ class Product extends MY_Controller
 				$o = new stdClass();
 				$o->label = $row->PRODUCT_NAME;
 				//$o->value = $row->PRODUCT_ID;
+				$o->id = $row->PRODUCT_ID;
 				$json_array[] = $o;
 			}
 		}

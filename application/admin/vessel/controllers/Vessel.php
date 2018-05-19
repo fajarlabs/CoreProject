@@ -196,6 +196,7 @@ class Vessel extends MY_Controller
 			foreach($query->result() as $row) {
 				$o = new stdClass();
 				$o->label = $row->VESSEL_NAME;
+				$o->id = $row->VESSEL_ID;
 				//$o->value = $row->VESSEL_ID;
 				$json_array[] = $o;
 			}

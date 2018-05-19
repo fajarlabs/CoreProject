@@ -113,7 +113,7 @@
 <!-- SURVEYOR -->
 <script type="text/javascript">
 
-	function initSurveyor(e,r) {
+	function initSurveyor(e,r,refid) {
 		$(e).autocomplete({
 	      source: function( request, response ) {
 	      		var loc =$('#'+r).val();
@@ -133,6 +133,7 @@
 	      select: function( event, ui ) {
 		    var label = ui.item.label;
 		    var value = ui.item.value;
+			$("#"+refid).val(ui.item.id);
 		    // tukar value jadi label
 		    ui.item.value = label;
 	      },
@@ -146,7 +147,10 @@
 	// fungsi untuk tambah elemen surveyor
 	function add_tb_surveyor() {
 		var xcv = random_id();
-		var element_surveyor = "<tr><td><select id=\"loc_"+xcv+"\" style=\"height:24px;\" name=\"type_location[]\"><option value=\"0\">--Choose Level--</option><option value=\"1\">Pusat</option><option value=\"2\">Cabang</option></select> <input class=\"autocomplete_text\" onkeydown=\"initSurveyor(this,'loc_"+xcv+"')\" id=\"autocomplete_"+xcv+"\" style=\"width:300px;margin-bottom: 3px;\" type=\"text\" name=\"surveyor_in_charge[]\" /><a onclick=\"delete_tb_surveyor(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
+		var element_surveyor = "<tr><td><select id=\"loc_"+xcv+"\" style=\"height:24px;\" name=\"type_location[]\"><option value=\"0\">--Choose Level--</option><option value=\"1\">Pusat</option><option value=\"2\">Cabang</option></select>";
+		element_surveyor += "<input class=\"autocomplete_text\" onkeydown=\"initSurveyor(this,'loc_"+xcv+"','surveyor_id_"+xcv+"')\" id=\"autocomplete_"+xcv+"\" style=\"width:300px;margin-bottom: 3px;\" type=\"text\" name=\"surveyor_in_charge[]\" />";
+		element_surveyor += "<input type=\"hidden\" name=\"surveyor_id[]\" id=\"surveyor_id_"+xcv+"\" />";
+		element_surveyor += "<a onclick=\"delete_tb_surveyor(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
 
 		$("#tb_surveyor").append(element_surveyor);
 	}
@@ -161,7 +165,7 @@
 
 <!-- PRODUCT -->
 <script type="text/javascript">
-	function initProduct(e,r) {
+	function initProduct(e,r,refid) {
 	    $(e).autocomplete({
 	      source: function( request, response ) {
 		 		$.ajax({
@@ -179,6 +183,7 @@
 	      select: function( event, ui ) {
 		    var label = ui.item.label;
 		    var value = ui.item.value;
+			$("#"+refid).val(ui.item.id);
 		    // tukar value jadi label
 		    ui.item.value = label;
 	      },
@@ -192,7 +197,11 @@
 	// fungsi untuk menambahkan produk
 	function add_tb_product() {
 		var xcp = random_id();
-		var element_product = "<tr><td style=\"padding-top:2px;\"><input class=\"autocomplete_text\" onkeydown=\"initProduct(this,'product_"+xcp+"')\" id=\"product_"+xcp+"\" style=\"width:300px;\" type=\"text\" name=\"product[]\"/><a onclick=\"delete_tb_product(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
+		var element_product = "<tr><td style=\"padding-top:2px;\">";
+		element_product += "<input class=\"autocomplete_text\" onkeydown=\"initProduct(this,'product_"+xcp+"','product_id_"+xcp+"')\" id=\"product_"+xcp+"\" style=\"width:300px;\" type=\"text\" name=\"product[]\"/>";
+		element_product += "<input type=\"hidden\" name=\"product_id[]\" id=\"product_id_"+xcp+"\" />";
+		element_product += "<a onclick=\"delete_tb_product(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a>";
+		element_product += "</td></tr>";
 
 		$("#tb_product").append(element_product);
 	}
@@ -225,7 +234,7 @@
 <!-- Multiport -->
 <script type="text/javascript">
 
-	function initPort(e,r) {
+	function initPort(e,r,refid) {
 	    $(e).autocomplete({
 	      source: function( request, response ) {
 		 		$.ajax({
@@ -243,6 +252,7 @@
 	      select: function( event, ui ) {
 		    var label = ui.item.label;
 		    var value = ui.item.value;
+			$("#"+refid).val(ui.item.id);
 		    // tukar value jadi label
 		    ui.item.value = label;
 	      },
@@ -273,7 +283,11 @@
 		var xpp = random_id();
 
 		// inisialisasi element html port
-		var element_port = "<tr><td style=\"padding-top:2px;\"><input class=\"autocomplete_text\" onkeydown=\"initPort(this,'port_"+xpp+"')\" id=\"port_"+xpp+"\" type=\"text\" style=\"width:300px;\" name=\"port_terminal[]\" /><a onclick=\"delete_tb_port(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i> </a></td></tr>";
+		var element_port = "<tr><td style=\"padding-top:2px;\">";
+		element_port += "<input class=\"autocomplete_text\" onkeydown=\"initPort(this,'port_"+xpp+"','port_id_"+xpp+"')\" id=\"port_"+xpp+"\" type=\"text\" style=\"width:300px;\" name=\"port_terminal[]\" />";
+		element_port += "<input type=\"hidden\" name=\"port_id[]\" id=\"port_id_"+xpp+"\" />";
+		element_port += "<a onclick=\"delete_tb_port(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i> </a>";
+		element_port += "</td></tr>";
     	$("#tb_port").append(element_port);
     }
 
@@ -285,7 +299,7 @@
 
 <!-- Vessel -->
 <script type="text/javascript">
-	function initVessel(e,r) {
+	function initVessel(e,r,refid) {
 	    $(e).autocomplete({
 			source: function( request, response ) {
 				$.ajax({
@@ -303,6 +317,8 @@
 			select: function( event, ui ) {
 				var label = ui.item.label;
 				var value = ui.item.value;
+				// insert vessel id
+				$('#'+refid).val(ui.item.id);
 				// tukar value jadi label
 				ui.item.value = label;
 			},
@@ -357,7 +373,7 @@
 
 <!-- AREA -->
 <script type="text/javascript">
-	function initArea(e,r) {
+	function initArea(e,r,refid) {
 	    $(e).autocomplete({
 			source: function( request, response ) {
 				$.ajax({
@@ -375,6 +391,7 @@
 			select: function( event, ui ) {
 				var label = ui.item.label;
 				var value = ui.item.value;
+				$("#"+refid).val(ui.item.id);
 				// tukar value jadi label
 				ui.item.value = label;
 			},

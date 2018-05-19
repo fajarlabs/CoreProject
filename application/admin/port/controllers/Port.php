@@ -122,6 +122,7 @@ class Port extends MY_Controller
 				$o = new stdClass();
 				$o->label = $row->PORT_NAME;
 				//$o->value = $row->PORT_ID;
+				$o->id = $row->PORT_ID;
 				$json_array[] = $o;
 			}
 		}

@@ -376,11 +376,12 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tr>
 					<td valign="middle">
-						<input class="autocomplete_text" type="text" id="vessel" onkeydown="initVessel(this,'vessel')" style="width:40%;" name="vessel" /> 
-						<div style="display:none;">
-						Multi Cargo <input type="radio" name="select_cargo" value="multi_cargo" />
-						Single Cargo <input type="radio" name="select_cargo" value="single_cargo" />
-						</div>
+						<div>
+							Multi Cargo <input type="radio" name="select_cargo" value="multi_cargo" />
+							Single Cargo <input type="radio" name="select_cargo" value="single_cargo" />
+						</div>					
+						<input class="autocomplete_text" type="text" id="vessel" onkeydown="initVessel(this,'vessel','vessel_id')" style="width:40%;" name="vessel" /> 
+						<input type="hidden" id="vessel_id" name="vessel_id" />
 					</td>
 				</tr>
 			</table>
@@ -405,7 +406,8 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 				<tr>
 					<td style="width:135px;">Area</td>
 					<td colspan="2">
-						<input class="autocomplete_text" onkeydown="initArea(this)" type="text" style="width:300px;" name="area" />
+						<input class="autocomplete_text" onkeydown="initArea(this,null,'area_id')" type="text" style="width:300px;" name="area" />
+				 		<input type="hidden" name="area_id" id="area_id" />
 					</td>
 				</tr>
 				<tr>

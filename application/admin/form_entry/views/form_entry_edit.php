@@ -541,11 +541,12 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tr>
 					<td valign="middle">
-						<input class="autocomplete_text" onkeydown="initVessel(this,'vessel')" type="text" id="vessel" style="width:40%;" name="vessel" value="<?php echo @$object->VESSEL; ?>" /> 
-						<div style="display:none;">
+					<div>
 						Multi Cargo <input type="radio" name="select_cargo" value="multi_cargo" />
 						Single Cargo <input type="radio" name="select_cargo" value="single_cargo" />
-						</div>
+						</div>					
+						<input class="autocomplete_text" onkeydown="initVessel(this,'vessel','vessel_id')" type="text" id="vessel" style="width:40%;" name="vessel" value="<?php echo @$object->VESSEL; ?>" /> 
+						<input type="hidden" id="vessel_id" name="vessel_id" />
 					</td>
 				</tr>
 			</table>
@@ -570,7 +571,8 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 				<tr>
 					<td style="width:135px;">Area</td>
 					<td colspan="2">
-						<input class="autocomplete_text"  onkeydown="initArea(this)" type="text" style="width:300px;" name="area" value="<?php echo @$object->AREA; ?>" />
+						<input class="autocomplete_text"  onkeydown="initArea(this,null,'area_id')" type="text" style="width:300px;" name="area" value="<?php echo @$object->AREA; ?>" />
+						<input type="hidden" name="area_id" id="area_id" />
 					</td>
 				</tr>
 				<tr>
@@ -589,7 +591,12 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 							if(count($port) > 0) :
 								$i = 0;
 								foreach($port as $key => $val):
-									echo "<tr><td style=\"padding-top:2px;\"><input class=\"autocomplete_text\" onkeydown=\"initPort(this,'port_".$i."')\" type=\"text\" style=\"width:300px;\" name=\"port_terminal[]\" value=\"".$val."\" /><a onclick=\"delete_tb_port(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i> </a></td></tr>";
+									echo "<tr><td style=\"padding-top:2px;\"><input class=\"autocomplete_text\" ";
+									echo "onkeydown=\"initPort(this,'port_".$i."','port_id_".$i."')\" type=\"text\" style=\"width:300px;\" ";
+									echo "name=\"port_terminal[]\" value=\"".$val."\" />";
+									echo "<input type=\"hidden\" name=\"port_id[]\" id=\"port_id_".$i."\" />";
+									echo "<a onclick=\"delete_tb_port(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" ";
+									echo "class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i> </a></td></tr>";
 									$i++;
 								endforeach;
 							endif;
@@ -626,7 +633,8 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 										foreach($product_array as $key => $val) : ?>
 										<tr>
 											<td style="padding-top:2px;">
-												<input class="autocomplete_text" onkeydown="initProduct(this,'product_'+<?php echo $i; ?>)" style="width:300px;" type="text" name="product[]" value="<?php echo $val; ?>"/>
+												<input class="autocomplete_text" onkeydown="initProduct(this,'product_'+<?php echo $i; ?>,'product_id_<?php echo $i; ?>')" style="width:300px;" type="text" name="product[]" value="<?php echo $val; ?>"/>
+												<input type="hidden" name="product_id[]" id="product_id_<?php echo $i; ?>" />
 												<a onclick="delete_tb_product(this)" style="margin-top:-2px;" href="javascript:;" class="btn btn-danger btn-xs"><i class="fa fa-minus"></i></a>
 											</td>
 										</tr>
@@ -736,10 +744,20 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 						<table id="tb_surveyor" style="width:100%;margin-left:-10px;">
 							<?php 
 							$data_surveyor = json_decode(@$object->SURVEYOR_IN_CHARGE);
+							$type_location = json_decode($object->TYPE_LOCATION);
 							if(count($data_surveyor) > 0) :
 								$i = 0;
 								foreach($data_surveyor as $key => $val):
-									echo "<tr><td><select id=\"loc_".$i."\" style=\"height:24px;\" name=\"type_location[]\"><option value=\"0\">--Choose Level--</option><option value=\"1\">Pusat</option><option value=\"2\">Cabang</option></select><input class=\"autocomplete_text\" id=\"autocomplete_".$i."\" onkeydown=\"initSurveyor(this,'loc_".$i."')\" style=\"width:300px;margin-bottom: 3px;\" type=\"text\" name=\"surveyor_in_charge[]\" value=\"".$val."\" /><a onclick=\"delete_tb_surveyor(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a></td></tr>";
+									$level = 0;
+									if(isset($type_location[$i])) {
+										$level = $type_location[$i];
+									}
+									echo "<tr><td><select id=\"loc_".$i."\" style=\"height:24px;\" name=\"type_location[]\">";
+									echo "<option value=\"0\" ".($level == 0 ? 'selected' : '').">--Choose Level--</option><option value=\"1\" ".($level == 1 ? 'selected' : '').">Pusat</option><option value=\"2\" ".($level == 2 ? 'selected' : '').">Cabang</option></select>";
+									echo "<input class=\"autocomplete_text\" id=\"autocomplete_".$i."\" onkeydown=\"initSurveyor(this,'loc_".$i."','surveyor_id_".$i."')\" style=\"width:300px;margin-bottom: 3px;\" type=\"text\" name=\"surveyor_in_charge[]\" value=\"".$val."\" />";
+									echo "<input type=\"hidden\" name=\"surveyor_id[]\" id=\"surveyor_id_".$i."\" />";
+									echo "<a onclick=\"delete_tb_surveyor(this)\" style=\"margin-top:-2px;\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\">";
+									echo "<i class=\"fa fa-minus\"></i></a></td></tr>";
 									$i++;
 								endforeach; 
 							endif;
