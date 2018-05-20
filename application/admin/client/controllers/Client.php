@@ -132,6 +132,7 @@ class Client extends MY_Controller
 				}
 
 				$o = new stdClass();
+				$o->client_user_id       = $row->USER_ID;
 				$o->client_username      = $row->USERNAME;
 				$o->client_firstname     = $row->FIRST_NAME;
 				$o->client_lastname      = $row->LAST_NAME;

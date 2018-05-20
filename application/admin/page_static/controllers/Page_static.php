@@ -168,11 +168,11 @@ class Page_static extends MY_Controller
 		$url     = $this->input->post('url');
 
 		$insert = array(
-			'TITLE'     => addslashes($title),
-			'CONTENT'   => addslashes($content),
+			'TITLE'     => stripslashes($title),
+			'CONTENT'   => stripslashes($content),
 			'SEO_TITLE' => str_replace(" ", "-", strtolower($title)),
-			'STATUS'    => addslashes($status),
-			'URL'       => addslashes($url),
+			'STATUS'    => stripslashes($status),
+			'URL'       => stripslashes($url),
 			'IS_DELETE' => 0,
 		);
 
@@ -190,11 +190,11 @@ class Page_static extends MY_Controller
 		$url     = $this->input->post('url');
 
 		$insert = array(
-			'TITLE'     => addslashes($title), 
+			'TITLE'     => stripslashes($title), 
 			'SEO_TITLE' => str_replace(" ", "-", strtolower($title)),
-			'CONTENT'   => addslashes($content),
-			'STATUS'    => addslashes($status),
-			'URL'       => addslashes($url),
+			'CONTENT'   => stripslashes($content),
+			'STATUS'    => stripslashes($status),
+			'URL'       => stripslashes($url),
 			'IS_DELETE' => 0,
 		);
 		$this->Page_static_model->update($insert,$id);

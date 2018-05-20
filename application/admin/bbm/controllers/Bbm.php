@@ -145,8 +145,8 @@ class Bbm extends MY_Controller
 		$bbm_description = $this->input->post('bbm_description');
 
 		$insert = array(
-			'BBM_NAME' => addslashes($bbm_name),
-			'BBM_DESCRIPTION' => addslashes($bbm_description),
+			'BBM_NAME' => stripslashes($bbm_name),
+			'BBM_DESCRIPTION' => stripslashes($bbm_description),
 			'IS_DELETE'   => 0,
 		);
 
@@ -161,8 +161,8 @@ class Bbm extends MY_Controller
 		$bbm_description   = $this->input->post('bbm_description');
 
 		$insert = array(
-			'BBM_NAME' => addslashes($bbm_name),
-			'BBM_DESCRIPTION' => addslashes($bbm_description),
+			'BBM_NAME' => stripslashes($bbm_name),
+			'BBM_DESCRIPTION' => stripslashes($bbm_description),
 			'IS_DELETE'     => 0,
 		);
 

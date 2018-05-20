@@ -75,7 +75,7 @@ class Intervention extends MY_Controller
 		$intervention_name = $this->input->post('intervention_name');
 
 		$insert = array(
-			'INTERVENTION_NAME' => addslashes($intervention_name),
+			'INTERVENTION_NAME' => stripslashes($intervention_name),
 			'IS_DELETE'   => 0,
 		);
 
@@ -89,7 +89,7 @@ class Intervention extends MY_Controller
 		$intervention_name   = $this->input->post('intervention_name');
 
 		$insert = array(
-			'INTERVENTION_NAME' => addslashes($intervention_name),
+			'INTERVENTION_NAME' => stripslashes($intervention_name),
 			'IS_DELETE'     => 0,
 		);
 

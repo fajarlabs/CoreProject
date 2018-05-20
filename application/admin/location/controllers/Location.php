@@ -145,8 +145,8 @@ class Location extends MY_Controller
 		$location_description = $this->input->post('location_description');
 
 		$insert = array(
-			'LOCATION_NAME' => addslashes($location_name),
-			'LOCATION_DESCRIPTION' => addslashes($location_description),
+			'LOCATION_NAME' => stripslashes($location_name),
+			'LOCATION_DESCRIPTION' => stripslashes($location_description),
 			'IS_DELETE'   => 0,
 		);
 
@@ -161,8 +161,8 @@ class Location extends MY_Controller
 		$location_description   = $this->input->post('location_description');
 
 		$insert = array(
-			'LOCATION_NAME' => addslashes($location_name),
-			'LOCATION_DESCRIPTION' => addslashes($location_description),
+			'LOCATION_NAME' => stripslashes($location_name),
+			'LOCATION_DESCRIPTION' => stripslashes($location_description),
 			'IS_DELETE'     => 0,
 		);
 

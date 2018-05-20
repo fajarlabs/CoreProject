@@ -168,7 +168,7 @@ class Running_text extends MY_Controller
 		$stop_time  = $stop_time->format('Y-m-d H:i:s');
 
 		$insert = array(
-			'MESSAGE'            => addslashes($message),
+			'MESSAGE'            => stripslashes($message),
 			'DISPLAY_START_TIME' => $start_time,
 			'DISPLAY_STOP_TIME'  => $stop_time,
 			'CLIENT_SITE_ID'     => $client_site_id,
@@ -195,7 +195,7 @@ class Running_text extends MY_Controller
 		$stop_time  = $stop_time->format('Y-m-d H:i:s');
 
 		$insert = array(
-			'MESSAGE'            => addslashes($message),
+			'MESSAGE'            => stripslashes($message),
 			'DISPLAY_START_TIME' => $start_time,
 			'DISPLAY_STOP_TIME'  => $stop_time,
 			'CLIENT_SITE_ID'     => $client_site_id,

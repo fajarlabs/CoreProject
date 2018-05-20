@@ -385,13 +385,13 @@ class Map_point extends MY_Controller
 		$cabang_id  = $this->input->post('cabang_id');
 
 		$insert = array(
-			'NAME'      => addslashes($name),
-			'TYPE'      => addslashes($type),
-			'LATITUDE'  => addslashes($latitude),
-			'LONGITUDE' => addslashes($longitude),
-			'ICON_ID'   => addslashes($icon_id),
-			'SITE_ID'   => addslashes($site_id),
-			'CABANG_ID' => addslashes($cabang_id)
+			'NAME'      => stripslashes($name),
+			'TYPE'      => stripslashes($type),
+			'LATITUDE'  => stripslashes($latitude),
+			'LONGITUDE' => stripslashes($longitude),
+			'ICON_ID'   => stripslashes($icon_id),
+			'SITE_ID'   => stripslashes($site_id),
+			'CABANG_ID' => stripslashes($cabang_id)
 		);
 
 		$this->Map_point_model->save($insert);
@@ -410,13 +410,13 @@ class Map_point extends MY_Controller
 		$cabang_id  = $this->input->post('cabang_id');
 
 		$insert = array(
-			'NAME'      => addslashes($name),
-			'TYPE'      => addslashes($type),
-			'LATITUDE'  => addslashes($latitude),
-			'LONGITUDE' => addslashes($longitude),
-			'ICON_ID'   => addslashes($icon_id),
-			'SITE_ID'   => addslashes($site_id),
-			'CABANG_ID' => addslashes($cabang_id)
+			'NAME'      => stripslashes($name),
+			'TYPE'      => stripslashes($type),
+			'LATITUDE'  => stripslashes($latitude),
+			'LONGITUDE' => stripslashes($longitude),
+			'ICON_ID'   => stripslashes($icon_id),
+			'SITE_ID'   => stripslashes($site_id),
+			'CABANG_ID' => stripslashes($cabang_id)
 		);
 
 		$this->Map_point_model->update($insert,$id);

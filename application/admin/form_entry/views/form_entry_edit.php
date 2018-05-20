@@ -372,6 +372,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 							<?php 
 
 								$clients = json_decode(@$object->CLIENTS);
+								$client_id = json_decode(@$object->CLIENT_ID);
 								if(count($clients) > 0) :
 									$i = 0;
 									foreach($clients as $key => $vl) : 
@@ -405,9 +406,15 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 										$buyer = isset(json_decode(@$object->BUYER)[$i]) ? json_decode(@$object->BUYER)[$i] : '';
 										$seller = isset(json_decode(@$object->SELLER)[$i]) ? json_decode(@$object->SELLER)[$i] : '';
 										$sharing_fee = isset(json_decode(@$object->SHARING_FEE)[$i]) ? json_decode(@$object->SHARING_FEE)[$i] : '';
+										
+										$clientid = 0;
+										if(isset($client_id[$i])) {
+											$clientid = $client_id[$i];
+										}
 										echo "<tr>
 												<td>
-													Client <input name=\"clients[]\" type=\"\" value=\"".$clients."\"  /> 
+													Client <input type=\"hidden\" id=\"client_id_".$i."\" name=\"client_id[]\" value=\"".$clientid."\" />
+													<input name=\"clients[]\" onkeydown=\"initClient(this,null,'client_id_".$i."')\" type=\"\" value=\"".$clients."\"  /> 
 
 													<input class=\"supp_deft_".$i."\" type=\"hidden\" name=\"supplier[]\" value=\"off\" ".(@$supplier == 'on' ? 'disabled=""' : '')." />
 													<input onclick='check_state(this,\"supp_deft_".$i."\")' type=\"checkbox\" name=\"supplier[]\" ".(@$supplier == 'on' ? 'checked' : '')." />Supplier&nbsp;
@@ -504,14 +511,17 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 			     })();
 
 			    // inisialisasi untuk multi client
-				var str_tr_principle = "<tr><td>Client <input name=\"clients[]\" type=\"\" value=\"\" /> <input type=\"checkbox\" name=\"supplier[]\" />Supplier&nbsp;<input type=\"checkbox\" name=\"trader[]\" />Trader&nbsp;<input type=\"checkbox\" name=\"buyer[]\" />Buyer&nbsp;<input type=\"checkbox\" name=\"seller[]\" />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee[]\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> "+file_ref+"</td></tr>";
-
-				// inisialisasi elemen jika single client maka sharing fee otomatis 100%
-				var str_tr_principle_100 = "<tr><td>Client <input name=\"clients[]\" type=\"\" value=\"\" /> <input type=\"checkbox\" name=\"supplier\" />Supplier&nbsp;<input type=\"checkbox\" name=\"trader\" />Trader&nbsp;<input type=\"checkbox\" name=\"buyer\" />Buyer&nbsp;<input type=\"checkbox\" name=\"seller\" />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee\" value=\"100\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> "+file_ref+"</td></tr>";
-				
 				// fungsi untuk menambahkan elemen html pada prinsipal
 				function add_tb_principle() {
+					var id_gen = random_id();
+					var str_tr_principle = "<tr><td>Client <input type=\"hidden\" id=\"client_id_"+id_gen+"\" name=\"client_id[]\" /> <input onkeydown=\"initClient(this,null,'client_id_"+id_gen+"')\" name=\"clients[]\" type=\"\" value=\"\" /> <input type=\"checkbox\" name=\"supplier[]\" />Supplier&nbsp;<input type=\"checkbox\" name=\"trader[]\" />Trader&nbsp;<input type=\"checkbox\" name=\"buyer[]\" />Buyer&nbsp;<input type=\"checkbox\" name=\"seller[]\" />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee[]\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> "+file_ref+"</td></tr>";
 					$("#tb_principle").append(str_tr_principle);
+				}
+				function add_tb_principle100() {
+					var id_gen = random_id();
+					// inisialisasi elemen jika single client maka sharing fee otomatis 100%
+					var str_tr_principle_100 = "<tr><td>Client <input type=\"hidden\" id=\"client_id_"+id_gen+"\" name=\"client_id[]\" /> <input name=\"client_id[]\" onkeydown=\"initClient(this,null,'client_id_"+id_gen+"')\" name=\"clients[]\" type=\"\" value=\"\" /> <input type=\"checkbox\" name=\"supplier\" />Supplier&nbsp;<input type=\"checkbox\" name=\"trader\" />Trader&nbsp;<input type=\"checkbox\" name=\"buyer\" />Buyer&nbsp;<input type=\"checkbox\" name=\"seller\" />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee\" value=\"100\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> "+file_ref+"</td></tr>";
+					$("#tb_principle").append(str_tr_principle_100);
 				}
 
 				// fungsi untuk menghapus element html pada prinsipal
@@ -525,10 +535,10 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 					$("#tb_principle tr").remove();
 					if(select_principle == "single_client") {
 						$("#id_single_principle").hide();
-						$("#tb_principle").append(str_tr_principle_100);
+						add_tb_principle100();
 					} else {
 						// tambahkan 1 baris elemen sebagai defaultnya
-						$("#tb_principle").append(str_tr_principle);
+						add_tb_principle();
 						$("#id_single_principle").show();
 					}	
 				}

@@ -183,7 +183,7 @@ class File_manager_basic extends MY_Controller
 		$title   = $this->input->post('title');
 
 		$insert = array(
-			'TITLE'     => addslashes($title),
+			'TITLE'     => stripslashes($title),
 			'NAME'      => @$msg_upload['upload_data']['file_name'],
 			'SIZE'      => @$msg_upload['upload_data']['file_size'],
 			'EXTENSION' => @$msg_upload['upload_data']['file_ext'],
@@ -217,7 +217,7 @@ class File_manager_basic extends MY_Controller
 		$title   = $this->input->post('title');
 
 		$insert = array(
-			'TITLE'     => addslashes($title),
+			'TITLE'     => stripslashes($title),
 			'NAME'      => @$msg_upload['upload_data']['file_name'],
 			'SIZE'      => @$msg_upload['upload_data']['file_size'],
 			'EXTENSION' => @$msg_upload['upload_data']['file_ext'],
@@ -228,7 +228,7 @@ class File_manager_basic extends MY_Controller
 
 		if(isset($msg_upload['error'])) {
 			$insert = array(
-				'TITLE'     => addslashes($title),
+				'TITLE'     => stripslashes($title),
 				'IS_DELETE' => 0,
 			);
 			$this->File_manager_model->update($insert,$id);

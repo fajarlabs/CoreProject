@@ -163,8 +163,8 @@ class Port extends MY_Controller
 		$port_type   = $this->input->post('port_type');
 
 		$insert = array(
-			'PORT_NAME' => addslashes($port_name),
-			'PORT_TYPE' => addslashes($port_type),
+			'PORT_NAME' => stripslashes($port_name),
+			'PORT_TYPE' => stripslashes($port_type),
 			'IS_DELETE'     => 0,
 		);
 
@@ -179,8 +179,8 @@ class Port extends MY_Controller
 		$port_type   = $this->input->post('port_type');
 
 		$insert = array(
-			'PORT_NAME' => addslashes($port_name),
-			'PORT_TYPE' => addslashes($port_type),
+			'PORT_NAME' => stripslashes($port_name),
+			'PORT_TYPE' => stripslashes($port_type),
 			'IS_DELETE'     => 0,
 		);
 

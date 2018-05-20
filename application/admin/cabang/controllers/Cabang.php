@@ -146,9 +146,9 @@ class Cabang extends MY_Controller
 		$address = $this->input->post('address');
 
 		$insert = array(
-			'BRANCH_NAME' => addslashes($cabang_name),
-			'BRANCH_DESCRIPTION' => addslashes($cabang_description),
-			'ADDRESS' => addslashes($address),
+			'BRANCH_NAME' => stripslashes($cabang_name),
+			'BRANCH_DESCRIPTION' => stripslashes($cabang_description),
+			'ADDRESS' => stripslashes($address),
 			'IS_DELETE'   => 0,
 		);
 
@@ -164,9 +164,9 @@ class Cabang extends MY_Controller
 		$address = $this->input->post('address');
 
 		$insert = array(
-			'BRANCH_NAME' => addslashes($cabang_name),
-			'BRANCH_DESCRIPTION' => addslashes($cabang_description),
-			'ADDRESS' => addslashes($address),
+			'BRANCH_NAME' => stripslashes($cabang_name),
+			'BRANCH_DESCRIPTION' => stripslashes($cabang_description),
+			'ADDRESS' => stripslashes($address),
 			'IS_DELETE'     => 0,
 		);
 

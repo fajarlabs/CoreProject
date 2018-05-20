@@ -144,7 +144,7 @@ class Tag extends MY_Controller
 		$tag_name   = $this->input->post('tag_name');
 
 		$insert = array(
-			'TAG_NAME'  => addslashes($tag_name),
+			'TAG_NAME'  => stripslashes($tag_name),
 			'IS_DELETE' => 0,
 		);
 
@@ -159,7 +159,7 @@ class Tag extends MY_Controller
 		$tag_name   = $this->input->post('tag_name');
 
 		$insert = array(
-			'TAG_NAME'  => addslashes($tag_name),
+			'TAG_NAME'  => stripslashes($tag_name),
 			'IS_DELETE' => 0,
 		);
 

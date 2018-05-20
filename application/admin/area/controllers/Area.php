@@ -145,8 +145,8 @@ class Area extends MY_Controller
 		$area_description = $this->input->post('area_description');
 
 		$insert = array(
-			'AREA_NAME' => addslashes($area_name),
-			'AREA_DESCRIPTION' => addslashes($area_description),
+			'AREA_NAME' => stripslashes($area_name),
+			'AREA_DESCRIPTION' => stripslashes($area_description),
 			'IS_DELETE'   => 0,
 		);
 
@@ -161,8 +161,8 @@ class Area extends MY_Controller
 		$area_description   = $this->input->post('area_description');
 
 		$insert = array(
-			'AREA_NAME' => addslashes($area_name),
-			'AREA_DESCRIPTION' => addslashes($area_description),
+			'AREA_NAME' => stripslashes($area_name),
+			'AREA_DESCRIPTION' => stripslashes($area_description),
 			'IS_DELETE'     => 0,
 		);
 

@@ -145,8 +145,8 @@ class Vessel extends MY_Controller
 		$vessel_type   = $this->input->post('vessel_type');
 
 		$insert = array(
-			'VESSEL_NAME' => addslashes($vessel_name),
-			'VESSEL_TYPE' => addslashes($vessel_type),
+			'VESSEL_NAME' => stripslashes($vessel_name),
+			'VESSEL_TYPE' => stripslashes($vessel_type),
 			'IS_DELETE'     => 0,
 		);
 
@@ -161,8 +161,8 @@ class Vessel extends MY_Controller
 		$vessel_type   = $this->input->post('vessel_type');
 
 		$insert = array(
-			'VESSEL_NAME' => addslashes($vessel_name),
-			'VESSEL_TYPE' => addslashes($vessel_type),
+			'VESSEL_NAME' => stripslashes($vessel_name),
+			'VESSEL_TYPE' => stripslashes($vessel_type),
 			'IS_DELETE'     => 0,
 		);
 

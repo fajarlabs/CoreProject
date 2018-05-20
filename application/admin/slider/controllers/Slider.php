@@ -286,7 +286,7 @@ class Slider extends MY_Controller
 		$name    = $this->input->post('slider_name');
 
 		$insert = array(
-			'NAME'     => addslashes($name),
+			'NAME'     => stripslashes($name),
 			'IS_DELETE' => 0,
 		);
 

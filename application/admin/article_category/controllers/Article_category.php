@@ -144,7 +144,7 @@ class Article_category extends MY_Controller
 		$category_name   = $this->input->post('category_name');
 
 		$insert = array(
-			'CATEGORY_NAME' => addslashes($category_name),
+			'CATEGORY_NAME' => stripslashes($category_name),
 			'IS_DELETE'     => 0,
 		);
 
@@ -157,7 +157,7 @@ class Article_category extends MY_Controller
 		$category_name   = $this->input->post('category_name');
 
 		$insert = array(
-			'CATEGORY_NAME' => addslashes($category_name),
+			'CATEGORY_NAME' => stripslashes($category_name),
 			'IS_DELETE'     => 0,
 		);
 

@@ -200,7 +200,7 @@ class Alert_confirmation extends MY_Controller
 					$message = $row->AREA.",".$row->PRODUCT.",".($row->VESSEL != "" ? $row->VESSEL."," : "").$new_dateformat.",".implode(",",$arr_string);
 
 					$insert = array(
-						'MESSAGE'            => addslashes($message),
+						'MESSAGE'            => stripslashes($message),
 						'DISPLAY_START_TIME' => $start_time,
 						'DISPLAY_STOP_TIME'  => $stop_time,
 						'CLIENT_SITE_ID'     => $row->CLIENT_SITE_ID,
@@ -300,7 +300,7 @@ class Alert_confirmation extends MY_Controller
 					$new_dateformat = $date->format('d-m-Y H:i:s');
 					$message = $row->AREA.",".$row->PRODUCT.",".($row->VESSEL != "" ? $row->VESSEL."," : "").$new_dateformat.",".implode(",",$arr_string);
 					$insert = array(
-						'MESSAGE'            => addslashes($message),
+						'MESSAGE'            => stripslashes($message),
 						'DISPLAY_START_TIME' => $start_time,
 						'DISPLAY_STOP_TIME'  => $stop_time,
 						'CLIENT_SITE_ID'     => $row->CLIENT_SITE_ID,

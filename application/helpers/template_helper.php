@@ -393,6 +393,15 @@ if(!function_exists('get_client_session'))
 	} 
 }
 
+if(!function_exists('get_client_user_id'))
+{
+	function get_client_user_id() 
+	{
+		$oclient = get_client_session();
+		return isset($oclient) ? $oclient->client_user_id : '';
+	} 
+}
+
 if(!function_exists('get_client_username'))
 {
 	function get_client_username() 

@@ -145,8 +145,8 @@ class Barge extends MY_Controller
 		$barge_type   = $this->input->post('barge_type');
 
 		$insert = array(
-			'BARGE_NAME' => addslashes($barge_name),
-			'BARGE_TYPE' => addslashes($barge_type),
+			'BARGE_NAME' => stripslashes($barge_name),
+			'BARGE_TYPE' => stripslashes($barge_type),
 			'IS_DELETE'     => 0,
 		);
 
@@ -161,8 +161,8 @@ class Barge extends MY_Controller
 		$barge_type   = $this->input->post('barge_type');
 
 		$insert = array(
-			'BARGE_NAME' => addslashes($barge_name),
-			'BARGE_TYPE' => addslashes($barge_type),
+			'BARGE_NAME' => stripslashes($barge_name),
+			'BARGE_TYPE' => stripslashes($barge_type),
 			'IS_DELETE'     => 0,
 		);
 

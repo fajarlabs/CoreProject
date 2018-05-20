@@ -32,3 +32,35 @@ ALTER COLUMN "CLIENT_SITE_ID" TYPE INTEGER USING CAST("CLIENT_SITE_ID" AS intege
 nextval('"APP_CLIENT_MENU_CLIENT_MENU_ID_seq"'::regclass) or gen_random_uuid()
 
 # apabila menggunakan guid, this->db->insert_id(); // definisikan nama kolomnya
+
+# module baru
+
+# tambah menu client ticket di client menu
+
+#ticket table 
+DROP TABLE "public"."CLIENT_TICKET";
+CREATE TABLE public."CLIENT_TICKET"
+(
+    "CLIENT_TICKET_ID" text NOT NULL DEFAULT gen_random_uuid(),
+    "CLIENT_TICKET_NAME" text COLLATE pg_catalog."default",
+    "CLIENT_TICKET_DESCRIPTION" text COLLATE pg_catalog."default",
+    "IS_DELETE" integer,
+    "USER_ID" integer DEFAULT 0,
+	"ADMIN_READ_ID" integer DEFAULT 0,
+	"IS_TICKET_OPEN" integer DEFAULT 0,
+    "IS_TICKET_READ" integer DEFAULT 0,
+    "CREATE_TIME" timestamp(6) without time zone,
+    "CREATE_USER" text COLLATE pg_catalog."default",
+    "MODIFY_TIME" timestamp(6) without time zone,
+    "MODIFY_USER" text COLLATE pg_catalog."default",
+    "DELETE_TIME" timestamp(6) without time zone
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."CLIENT_TICKET"
+    OWNER to postgres;
+
+ALTER TABLE "CLIENT_TICKET" ADD PRIMARY KEY ("CLIENT_TICKET_ID");
