@@ -150,6 +150,10 @@
 			$('select[name="port_terminal"]').find('option').remove().end();
 			var area = $(e).val();
 			$.getJSON('<?php echo base_url(); ?>index.php/form_entry/grab_port_terminal/'+area,function(json){
+				$('select[name="port_terminal"]').append($('<option>', { 
+						value: 0,
+						text : '--Choose--' 
+					}));
 				for(var i = 0; i < json.length; i++) {
 					$('select[name="port_terminal"]').append($('<option>', { 
 						value: json[i],
@@ -252,7 +256,6 @@
 						var re_intervensi    = $('select[name="intervensi"]').val();
 						var re_client        = $('select[name="client"]').val();
 						var re_area          = $('select[name="lokasi_kerja"]').val();
-						alert(re_area);
 						var re_port_terminal = $('select[name="port_terminal"]').val();
 						var re_bulan         = $('select[name="bulan"]').val();
 						var re_tahun         = $('select[name="tahun"]').val();

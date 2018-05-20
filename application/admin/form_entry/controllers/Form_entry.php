@@ -853,7 +853,7 @@ class Form_entry extends MY_Controller
 	}
 
 	public function grab_chart_port_terminal() {
-		// produk=6&intervensi=14&client=customer1&lokasi_kerja=Semarang&port_terminal=Semarang&bulan=&tahun=2018
+		// parameter data
 		$product       = $this->input->get("produk");
 		$intervensi    = $this->input->get("intervensi");
 		$client        = $this->input->get("client");
@@ -879,6 +879,8 @@ class Form_entry extends MY_Controller
 				}
 			}
 		}
+
+		
 	}
 	
 }
