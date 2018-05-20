@@ -1,3 +1,10 @@
+<?php 
+$is_ticket_open = 0;
+if($ticket_query->num_rows() > 0) {
+    foreach($ticket_query->result() as $row_ticket) {
+        $is_ticket_open = $row_ticket->IS_TICKET_OPEN;
+    }
+}?>
 <!-- begin #content -->
 <div id="content" class="content">
 	<!-- begin breadcrumb -->
@@ -68,9 +75,13 @@
                         endif;
                         endforeach;
                         endif; ?>
+                        <?php if($is_ticket_open == 1) : ?>
+                        <li><span class="badge badge-danger">Ticket has been closed.</span></li>
+                        <?php endif; ?>
                     </ul>
                     </div>
                 	<br />
+                    <?php if($is_ticket_open == 0) : ?>
                 	<?php echo form_open_multipart('client_ticket/reply_save/'.$reply_id,array('id' => 'form_add')); ?>
 					<table class="table table-striped  table-bordered">
 						<tr>
@@ -87,6 +98,7 @@
 						</tr>
 					</table>
 					<?php echo form_close(); ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

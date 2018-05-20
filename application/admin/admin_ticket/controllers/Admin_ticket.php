@@ -196,6 +196,9 @@ class Admin_ticket extends MY_Controller
 		// update is_ticket_read and admin_read_id
 		$this->Admin_ticket_model->update(array("ADMIN_READ_ID" => get_admin_userid(), "IS_TICKET_READ" => 1),$reply_id);
 		
+		// get ticket
+		$this->data['ticket_query'] = $this->Admin_ticket_model->get_item_by_id($reply_id);
+
 		// get message 
 		$this->data['message_query'] = $this->Admin_message_model->get_item_by_ticket_id($reply_id);
 
@@ -241,6 +244,17 @@ class Admin_ticket extends MY_Controller
 		redirect("admin_ticket");	
 	}
 
+	public function set_closed($reply_id='') {
+
+		$insert = array(
+			'IS_TICKET_OPEN' => 1
+		);
+
+		$this->Admin_ticket_model->update($insert,$reply_id);
+		$this->session->set_flashdata('error_message', alert_success('ticket have been closed.'));
+		redirect("admin_ticket");
+	}
+
 	public function reply_save($reply_id='')
 	{
 		$client_ticket_description = $this->input->post('admin_ticket_description');
@@ -283,10 +297,19 @@ class Admin_ticket extends MY_Controller
 			$total = count($result);
 			for($i=0; $i < $total; $i++) {
         		$ticket_read = $result[$i]->IS_TICKET_READ;
-        		$ticket_open = $result[$i]->IS_TICKET_OPEN;
+				$ticket_open = $result[$i]->IS_TICKET_OPEN;
+				
+				$ticket_element = '';
+				if($result[$i]->IS_TICKET_OPEN == 0) :
+					$ticket_element = '<a class="btn-xs btn btn-warning" onclick="return confirm(\'Are you sure?\')" href="'.base_url().'index.php/admin_ticket/set_closed/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-close"></i> Closed</a>';
+					$ticket_element .= ' <a class="btn-xs btn btn-primary" href="'.base_url().'index.php/admin_ticket/reply/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+					View & Reply</a>';
+				else :
+					$ticket_element .= '<a class="btn-xs btn btn-primary" href="'.base_url().'index.php/admin_ticket/reply/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+					View</a>';
+				endif;
 
-          		$result[$i]->FUNCTION = '<a class="btn-xs btn btn-primary" href="'.base_url().'index.php/admin_ticket/reply/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-envelope-o" aria-hidden="true"></i>
-				  View & Reply</a> <a class="btn-xs btn btn-warning" onclick="return confirm(\'Are you sure?\')" href="'.base_url().'index.php/admin_ticket/set_closed/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-close"></i> Closed</a> <a class="btn-xs btn btn-danger" onclick="return confirm(\'Are you sure?\')" href="'.base_url().'index.php/admin_ticket/delete/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-trash-o"></i> Remove</a>';
+          		$result[$i]->FUNCTION = $ticket_element.' <a class="btn-xs btn btn-danger" onclick="return confirm(\'Are you sure?\')" href="'.base_url().'index.php/admin_ticket/delete/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-trash-o"></i> Remove</a>';
 
 			}
 		}

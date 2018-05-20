@@ -227,6 +227,7 @@ class Client_ticket extends MY_Controller
 	public function view_response($reply_id=0)
 	{
 		// get message 
+		$this->data['ticket_query'] = $this->Client_ticket_model->get_item_by_id($reply_id);
 		$this->data['message_query'] = $this->Client_message_model->get_item_by_ticket_id($reply_id);
 
 		$this->data['title'] = "Client Ticket Management";
