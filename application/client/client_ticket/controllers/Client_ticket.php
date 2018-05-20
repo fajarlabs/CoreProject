@@ -292,27 +292,30 @@ class Client_ticket extends MY_Controller
 			$total = count($result);
 			for($i=0; $i < $total; $i++) {
 
-        $ticket_read = $result[$i]->IS_TICKET_READ;
-        $ticket_open = $result[$i]->IS_TICKET_OPEN;
+				$element_read = '';
+
+        		$ticket_read = $result[$i]->IS_TICKET_READ;
+        		$ticket_open = $result[$i]->IS_TICKET_OPEN;
 
 				if($ticket_read == 1) {
 					$result[$i]->IS_TICKET_READ = '<span class="badge badge-success">Read By '.get_admin_name_by_id($result[$i]->ADMIN_READ_ID).'</span>';
 				} else {
 					$result[$i]->IS_TICKET_READ = '<span class="badge badge-danger">Unread</span>';
-        }
+        		}
 
 				if($ticket_open == 0) {
 					$result[$i]->IS_TICKET_OPEN = '<span class="badge badge-success">Open</span>';
+					$element_read .= '<a class="btn-xs btn btn-primary" href="'.base_url().'index.php/client_ticket/edit/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-edit"></i> Edit</a> <a class="btn-xs btn btn-warning" onclick="return confirm(\'Are you sure?\')" href="'.base_url().'index.php/client_ticket/set_closed/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-lock"></i> Closed</a>';
 				} else {
 					$result[$i]->IS_TICKET_OPEN = '<span class="badge badge-danger">Closed</span>';
-        }
+        		}
 
-		$element_read = '<a class="btn-xs btn btn-primary" href="'.base_url().'index.php/client_ticket/view_response/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-eye"></i> View</a>';
+				$element_read .= ' <a class="btn-xs btn btn-primary" href="'.base_url().'index.php/client_ticket/view_response/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-eye"></i> View</a> ';
 				if($ticket_read == 0) {
-          $result[$i]->FUNCTION = $element_read.'<a class="btn-xs btn btn-primary" href="'.base_url().'index.php/client_ticket/edit/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-edit"></i> Edit</a> <a class="btn-xs btn btn-danger" onclick="return confirm(\'Are you sure?\')" href="'.base_url().'index.php/client_ticket/delete/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-trash-o"></i> Delete</a>';
+          			$result[$i]->FUNCTION = $element_read.' <a class="btn-xs btn btn-danger" onclick="return confirm(\'Are you sure?\')" href="'.base_url().'index.php/client_ticket/delete/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-trash-o"></i> Delete</a>';
 				} else {
 					$result[$i]->FUNCTION = $element_read;
-        }
+        		}
         
 			}
 		}
@@ -320,6 +323,17 @@ class Client_ticket extends MY_Controller
 		$json_object->rows  = @$result;
 		header('Content-Type: application/json');
 		echo json_encode($json_object);
+	}
+
+	public function set_closed($reply_id='') {
+
+		$insert = array(
+			'IS_TICKET_OPEN' => 1
+		);
+
+		$this->Client_ticket_model->update($insert,$reply_id);
+		$this->session->set_flashdata('error_message', alert_success('ticket have been closed.'));
+		redirect("client_ticket");
 	}
 
 	public function delete($id)
