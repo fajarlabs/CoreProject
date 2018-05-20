@@ -65,7 +65,7 @@ class Dashboard_model extends CI_Model
 		 
 	}
 
-	public  function count_frekuensi($product_id=0,$intervention_id=0,$clients='',$area='',$port_terminal='',$month='',$year=''){
+	public  function count_kl_area($product_id=0,$intervention_id=0,$clients='',$area='',$port_terminal='',$month='',$year=''){
 		$this->db->select(' count("SELECT_INTERVENTION") as total ');
         $this->db->from('FORM_ENTRY_FIELD');
 		
