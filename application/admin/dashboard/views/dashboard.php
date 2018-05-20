@@ -68,17 +68,24 @@
 									</td>		
 									<td>
 									<?php 
-									echo form_label('Job Location') ?><br/>
-										<select id="lokasi_kerja" name="lokasi_kerja" style="height:33px;">
+									echo form_label('Area') ?><br/>
+										<select onchange="get_port_terminal(this)" id="lokasi_kerja" name="lokasi_kerja" style="height:33px;">
 											<option  value='0'>--Choose--</option>
 									<?php foreach($area as $ar){ ?>
 												<option  value='<?php echo $ar->AREA ?>'><?php echo $ar->AREA ?></option>
 											<?php } ?>		
 										</select>
 									</td>
+									<td>
+									<?php 
+									echo form_label('Port Terminal') ?><br/>
+										<select id="port_terminal" name="port_terminal" style="height:33px;">
+											<option  value='0'>--Choose--</option>	
+										</select>
+									</td>
 									<td >
 									<?php echo form_label('Month') ?><br/>
-									<select id="bulan" name="bulan" class="form-control" required >
+									<select id="bulan" name="bulan" style="height:33px;" required >
 										<option value="">--Choose--</option>
 										<option value="01">January</option>
 										<option value="02">February</option>
@@ -139,6 +146,19 @@
 	</div>
 
 	<script type="text/javascript">
+		function get_port_terminal(e) {
+			$('select[name="port_terminal"]').find('option').remove().end();
+			var area = $(e).val();
+			$.getJSON('<?php echo base_url(); ?>index.php/form_entry/grab_port_terminal/'+area,function(json){
+				for(var i = 0; i < json.length; i++) {
+					$('select[name="port_terminal"]').append($('<option>', { 
+						value: json[i],
+						text : json[i] 
+					}));
+				}
+			});
+		}
+
 		 (function defer() {
 	 	    if (window.jQuery) {
 	 	    		var mousetimeout;
@@ -225,10 +245,10 @@
 
  				        //Bar Chart
  				        column_bar(my_json,'chart_bar','','Total Losses Information',series);
-						
-						
+					
 						//Line Chart
  				        column_line(my_json,'chart_line','','Losses Periode',series);
+
 						var lok_kerja = $("#lokasi_kerja").val();
 						if(lok_kerja=="0"){
 							$("#x_lokasi").html("-");
@@ -377,53 +397,37 @@
 		
 		function column_line(mydata,chart_id,categories,title,series_name) { 
 			//mydata = JSON.parse(mydata);
-				Highcharts.chart(chart_id, {
+			Highcharts.chart(chart_id, {
+				chart: {
+					type: 'line'
+				},
+				title: {
+					text: 'Area Losses Information'
+				},
+				subtitle: {
+					text: 'Source: Data Pusat'
+				},
+				xAxis: {
+					categories: ['Surabaya','Semarang','Jakarta']
+				},
+				yAxis: {
 					title: {
-						text: title
-					},
-
-
-					yAxis: {
-						title: {
-							text: 'Kilo Liter'
-						}
-					},
-					legend: {
-				        enabled: false
-				    },
-
-					plotOptions: {
-						series: {
-							label: {
-								connectorAllowed: false
-							},
-							pointStart: 2010
-						}
-					},
-					credits: {
-						enabled: false
-					},
-					series: [{
-						name: 'Installation',
-						data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-					}],
-
-					responsive: {
-						rules: [{
-							condition: {
-								maxWidth: 500
-							},
-							chartOptions: {
-								legend: {
-									layout: 'horizontal',
-									align: 'center',
-									verticalAlign: 'bottom'
-								}
-							}
-						}]
+						text: 'KL (Kilo Liter)'
 					}
-
-				});
+				},
+				plotOptions: {
+					line: {
+						dataLabels: {
+							enabled: true
+						},
+						enableMouseTracking: false
+					}
+				},
+				series: [{
+					name: 'MFO',
+					data: [7.0, 6.9, 9.5]
+				}]
+			});
 		}
 		
 		function column_double_line(data,chart_id,categories,title){

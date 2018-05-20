@@ -26,6 +26,14 @@ class Client_site_model extends CI_Model
 		$this->db->where('CLIENT_SITE_ID', $id); 
 		return $this->db->get();
 	}
+
+    public  function get_item_by_name($name) 
+    {
+		$this->db->select('*');
+		$this->db->from($this->table);
+		$this->db->where('CLIENT_SITE_NAME', $name); 
+		return $this->db->get();
+	}
 	
 	public function save_client_history($client='') 
 	{

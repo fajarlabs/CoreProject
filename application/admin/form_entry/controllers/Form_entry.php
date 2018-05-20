@@ -32,7 +32,8 @@ class Form_entry extends MY_Controller
 				'Komponen_json_model',
 				'Komponen_html_model',
 				'element_connection/Element_connection_model',
-				'element_html/Element_html_model'
+				'element_html/Element_html_model',
+				'Port_terminal_detail_model'
 			));
 
 		$this->data['csrf'] = array(
@@ -408,7 +409,7 @@ class Form_entry extends MY_Controller
 		$this->Element_connection_model->update_fields_by_product_intervention(json_encode($grab_column),@$col_val['PRODUCT_TYPE'],@$col_val['SELECT_INTERVENTION']);
 
 		// save history
-		$this->_register_history();
+		$this->_register_history($id);
 
 		$this->session->set_flashdata('error_message', alert_success('Save Succeded'));
 		$this->load->library('user_agent');
@@ -527,14 +528,14 @@ class Form_entry extends MY_Controller
 		$this->Element_connection_model->update_fields_by_product_intervention(json_encode($grab_column),@$col_val['PRODUCT_TYPE'],@$col_val['SELECT_INTERVENTION']);
 
 		// update history
-		$this->_register_history();
+		$this->_register_history($id);
 		
 		/* development process */
 		$this->session->set_flashdata('error_message', alert_success('Update Succeded'));
 		redirect('/form_entry');
 	}
 
-	private function _register_history() {
+	private function _register_history($id=0) {
 		// save product history
 		$products = $this->input->post("product");
 		if(is_array($products)) {
@@ -573,6 +574,24 @@ class Form_entry extends MY_Controller
 				}
 			}
 		}
+
+		// save detail port
+		$port_id = $this->input->post("port_id");
+		if(is_array($port_id)) {
+			if(count($port_id) > 0) {
+				// delete history
+				$this->Port_terminal_detail_model->delete_by_fefid($id);
+				foreach($port_id as $k => $v) {
+					$insert = array(
+						'FEF_ID' => $id,
+						'PORT_ID'=> $v
+					);
+					$this->Port_terminal_detail_model->save($insert);
+				}
+			}
+		}
+		
+
 	}
 	
 	public function edit($id=0)
@@ -810,6 +829,27 @@ class Form_entry extends MY_Controller
 
 		header('Content-Type: application/json');
 		echo json_encode($json_array);
+	}
+
+	public function grab_port_terminal($area) {
+		$query_area = $this->Form_entry_model->grab_port_by_area($area);
+		$result = array();
+		if($query_area->num_rows() > 0) {
+			foreach($query_area->result() as $row) {
+				$data = json_decode($row->PORT_TERMINAL);
+				if(is_array($data)) {
+					if(count($data) > 0) {
+						foreach($data as $k => $v) {
+							if(!in_array($v,$result)) {
+								$result[]=$v;
+							}
+						}
+					}
+				}
+			}
+		}
+		header('Content-Type: application/json');
+		echo json_encode($result);
 	}
 	
 }

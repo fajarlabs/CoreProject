@@ -167,6 +167,14 @@ class Form_entry_model extends CI_Model
     	$this->db->delete($this->table, array('ID' => $id));
     }
 
+    public function grab_port_by_area($area='') 
+    {
+		$this->db->select('ID,PORT_TERMINAL');
+		$this->db->from($this->table);
+		$this->db->where('LOWER("AREA")',strtolower($area)); 
+		return $this->db->get();
+    }
+
     public  function get_filter_chart($cols='',$product_id=0,$intervention_id=0,$clients='',$area='',$month='',$year='') 
     {
 		$this->db->select($cols);
@@ -192,4 +200,5 @@ class Form_entry_model extends CI_Model
 		  //echo $this->db->last_query();
 		return $this->db->get();
     }
+
 }

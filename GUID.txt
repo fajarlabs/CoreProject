@@ -91,3 +91,26 @@ ALTER TABLE public."CLIENT_MESSAGE_TICKET"
     OWNER to postgres;
 
 ALTER TABLE "CLIENT_MESSAGE_TICKET" ADD PRIMARY KEY ("CLIENT_MESSAGE_ID");
+
+#port terminal detail
+CREATE TABLE public."PORT_TERMINAL_DETAIL"
+(
+	"PORT_TERMINAL_DETAIL_ID" text NOT NULL DEFAULT gen_random_uuid(),
+    "FEF_ID" integer,
+    "PORT_ID" integer,
+    "IS_DELETE" integer,
+    "CREATE_TIME" timestamp(6) without time zone default CURRENT_TIMESTAMP,
+    "CREATE_USER" text COLLATE pg_catalog."default",
+    "MODIFY_TIME" timestamp(6) without time zone,
+    "MODIFY_USER" text COLLATE pg_catalog."default",
+    "DELETE_TIME" timestamp(6) without time zone
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."PORT_TERMINAL_DETAIL"
+    OWNER to postgres;
+
+ALTER TABLE "PORT_TERMINAL_DETAIL" ADD PRIMARY KEY ("PORT_TERMINAL_DETAIL_ID");
