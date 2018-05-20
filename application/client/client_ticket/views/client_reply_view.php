@@ -51,7 +51,7 @@
 
                         if($row->USER_ID > 0) : ?>
                         <li class="right clearfix"><span class="chat-img pull-right">
-                            <img style="width:45px;height:45px;" src="<?php echo base_url().'uploads/client_profile/'.get_client_photo(); ?>" alt="User Avatar" class="img-circle" />
+                            <img style="width:45px;height:45px;" src="<?php echo get_client_photo(); ?>" alt="User Avatar" class="img-circle" />
                         </span>
                             <div class="chat-body clearfix">
                                 <div class="header">
