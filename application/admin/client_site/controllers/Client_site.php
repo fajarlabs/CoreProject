@@ -156,11 +156,11 @@ class Client_site extends MY_Controller
 		$client_wallpaper   = $this->input->post('client_wallpaper');
 
 		$insert = array(
-			'CLIENT_SITE_NAME' => addslashes($client_site_name),
-			'CLIENT_LOGO' => addslashes($client_logo),
-			'CLIENT_LOGO_WIDTH' => addslashes($client_logo_width),
-			'CLIENT_LOGO_HEIGHT' => addslashes($client_logo_height),
-			'CLIENT_WALLPAPER' => addslashes($client_wallpaper),
+			'CLIENT_SITE_NAME' => stripslashes($client_site_name),
+			'CLIENT_LOGO' => stripslashes($client_logo),
+			'CLIENT_LOGO_WIDTH' => stripslashes($client_logo_width),
+			'CLIENT_LOGO_HEIGHT' => stripslashes($client_logo_height),
+			'CLIENT_WALLPAPER' => stripslashes($client_wallpaper),
 			'IS_DELETE'     => 0,
 		);
 
@@ -179,11 +179,11 @@ class Client_site extends MY_Controller
 		$client_wallpaper   = $this->input->post('client_wallpaper');
 
 		$insert = array(
-			'CLIENT_SITE_NAME' => addslashes($client_site_name),
-			'CLIENT_LOGO' => addslashes($client_logo),
-			'CLIENT_LOGO_WIDTH' => addslashes($client_logo_width),
-			'CLIENT_LOGO_HEIGHT' => addslashes($client_logo_height),
-			'CLIENT_WALLPAPER' => addslashes($client_wallpaper),
+			'CLIENT_SITE_NAME' => stripslashes($client_site_name),
+			'CLIENT_LOGO' => stripslashes($client_logo),
+			'CLIENT_LOGO_WIDTH' => stripslashes($client_logo_width),
+			'CLIENT_LOGO_HEIGHT' => stripslashes($client_logo_height),
+			'CLIENT_WALLPAPER' => stripslashes($client_wallpaper),
 			'IS_DELETE'     => 0,
 		);
 

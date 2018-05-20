@@ -337,7 +337,7 @@
 
 <!-- CLIENTS -->
 <script type="text/javascript">
-	function initClient(e,r) {
+	function initClient(e,r,refid) {
 	    $(e).autocomplete({
 			source: function( request, response ) {
 				$.ajax({
@@ -355,6 +355,7 @@
 			select: function( event, ui ) {
 				var label = ui.item.label;
 				var value = ui.item.value;
+				$("#"+refid).val(ui.item.id);
 				// tukar value jadi label
 				ui.item.value = label;
 			},

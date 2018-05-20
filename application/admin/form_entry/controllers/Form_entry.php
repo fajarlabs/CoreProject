@@ -569,7 +569,7 @@ class Form_entry extends MY_Controller
 		if(is_array($clients)) {
 			if(count($clients) > 0) {
 				foreach($clients as $kc => $vc) {
-					if(!empty($vc)) $this->Client_model->save_client_history($vc);
+					if(!empty($vc)) $this->Client_site_model->save_client_history($vc);
 				}
 			}
 		}
@@ -797,13 +797,13 @@ class Form_entry extends MY_Controller
 	// rest client 
 	public function get_client() {
 		$query = trim($this->input->get('q', TRUE));
-		$query = $this->Client_model->search_by_client_name($query);
+		$query = $this->Client_site_model->search_by_client_name($query);
 		$json_array = array();
 		if($query->num_rows() > 0) {
 			foreach($query->result() as $row) {
 				$o = new stdClass();
-				$o->label = $row->CLIENT_NAME;
-				//$o->value = $row->AREA_ID;
+				$o->label = $row->CLIENT_SITE_NAME;
+				$o->id = $row->CLIENT_SITE_ID;
 				$json_array[] = $o;
 			}
 		}

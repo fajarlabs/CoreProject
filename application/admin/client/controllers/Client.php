@@ -6,7 +6,7 @@ class Client extends MY_Controller
 	public function __construct() 
 	{
 		parent::__construct();
-		$this->load->model(array("Client_model","client_user/Client_user_model"));
+		$this->load->model(array("client_user/Client_user_model"));
 
 		$this->data['html_css'] = '';
 
@@ -114,79 +114,7 @@ class Client extends MY_Controller
 	}
 
 	public function index()
-	{
-		$this->data['title'] = "Client Management";
-		$this->load->view('admin/header',$this->data);
-		$this->load->view('client_view',$this->data);
-		$this->load->view('admin/footer',$this->data);
-	}
-
-	public function add()
-	{
-		$this->data['title'] = "Client Management";
-		$this->load->view('admin/header',$this->data);
-		$this->load->view('client_add_view',$this->data);
-		$this->load->view('admin/footer',$this->data);
-	}
-
-	public function edit($id=0)
-	{
-		$this->data['title'] = "Client Management";
-		$this->data['id']    = $id;
-		$this->data['item']  = $this->Client_model->get_item_by_id($id);
-		$this->load->view('admin/header',$this->data);
-		$this->load->view('client_edit_view',$this->data);
-		$this->load->view('admin/footer',$this->data);
-	}
-
-	public function save()
-	{
-		$client_name = $this->input->post('client_name');
-		$client_description = $this->input->post('client_description');
-
-		$insert = array(
-			'CLIENT_NAME' => addslashes($client_name),
-			'CLIENT_DESCRIPTION' => addslashes($client_description),
-			'IS_DELETE'   => 0,
-		);
-
-		$this->Client_model->save($insert);
-		$this->session->set_flashdata('error_message', alert_success('Save succeded.'));
-		redirect("client");	
-	}
-
-	public function update($id=0) 
-	{
-		$client_name   = $this->input->post('client_name');
-		$client_description   = $this->input->post('client_description');
-
-		$insert = array(
-			'CLIENT_NAME' => addslashes($client_name),
-			'CLIENT_DESCRIPTION' => addslashes($client_description),
-			'IS_DELETE'     => 0,
-		);
-
-		$this->Client_model->update($insert,$id);
-		$this->session->set_flashdata('error_message', alert_success('Update succeded.'));
-		redirect("client");
-	}
-
-	public function page_list_rest()
-	{
-		$query = $this->Client_model->get_all_items();
-		$json_object = new stdClass();
-		$json_object->total = @$query->num_rows();		
-		$json_object->rows  = @$query->result();
-		header('Content-Type: application/json');
-		echo json_encode($json_object);
-	}
-
-	public function delete($id)
-	{
-		$this->Client_model->delete_by_id($id);
-		$this->session->set_flashdata('error_message', alert_success('Delete succeded.'));
-		redirect('client');
-	}
+	{}
 
 	public function auth() 
 	{

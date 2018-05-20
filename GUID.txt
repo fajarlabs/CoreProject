@@ -21,3 +21,14 @@ TABLESPACE pg_default;
 
 ALTER TABLE public."MASTER_AREA"
     OWNER to postgres;
+
+ALTER TABLE "MASTER_CLIENT_PROJECT" ADD PRIMARY KEY ("CLIENT_PROJECT_ID");
+
+#casting from text to integer 
+ALTER TABLE "RUNNING_TEXT" 
+ALTER COLUMN "CLIENT_SITE_ID" TYPE INTEGER USING CAST("CLIENT_SITE_ID" AS integer)
+
+#set default
+nextval('"APP_CLIENT_MENU_CLIENT_MENU_ID_seq"'::regclass) or gen_random_uuid()
+
+# apabila menggunakan guid, this->db->insert_id(); // definisikan nama kolomnya

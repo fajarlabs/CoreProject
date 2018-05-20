@@ -339,14 +339,17 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 			     })();
 
 			    // inisialisasi untuk multi client
-				var str_tr_principle = "<tr><td>Client <input onkeydown=\"initClient(this)\" name=\"clients[]\" type=\"\" value=\"\" /> <input type=\"checkbox\" name=\"supplier[]\" />Supplier&nbsp;<input type=\"checkbox\" name=\"trader[]\" />Trader&nbsp;<input type=\"checkbox\" name=\"buyer[]\" />Buyer&nbsp;<input type=\"checkbox\" name=\"seller[]\" />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee[]\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> "+file_ref+"</td></tr>";
-
-				// inisialisasi elemen jika single client maka sharing fee otomatis 100%
-				var str_tr_principle_100 = "<tr><td>Client <input onkeydown=\"initClient(this)\" name=\"clients[]\" type=\"\" value=\"\" /> <input type=\"checkbox\" name=\"supplier\" />Supplier&nbsp;<input type=\"checkbox\" name=\"trader\" />Trader&nbsp;<input type=\"checkbox\" name=\"buyer\" />Buyer&nbsp;<input type=\"checkbox\" name=\"seller\" />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee\" value=\"100\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> "+file_ref+"</td></tr>";
-				
 				// fungsi untuk menambahkan elemen html pada prinsipal
 				function add_tb_principle() {
+					var id_gen = random_id();
+					var str_tr_principle = "<tr><td>Client <input type=\"hidden\" id=\"client_id_"+id_gen+"\" name=\"client_id[]\" /> <input onkeydown=\"initClient(this,null,'client_id_"+id_gen+"')\" name=\"clients[]\" type=\"\" value=\"\" /> <input type=\"checkbox\" name=\"supplier[]\" />Supplier&nbsp;<input type=\"checkbox\" name=\"trader[]\" />Trader&nbsp;<input type=\"checkbox\" name=\"buyer[]\" />Buyer&nbsp;<input type=\"checkbox\" name=\"seller[]\" />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee[]\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> "+file_ref+"</td></tr>";
 					$("#tb_principle").append(str_tr_principle);
+				}
+				function add_tb_principle100() {
+					var id_gen = random_id();
+					// inisialisasi elemen jika single client maka sharing fee otomatis 100%
+					var str_tr_principle_100 = "<tr><td>Client <input type=\"hidden\" id=\"client_id_"+id_gen+"\" name=\"client_id[]\" /> <input name=\"client_id[]\" onkeydown=\"initClient(this,null,'client_id_"+id_gen+"')\" name=\"clients[]\" type=\"\" value=\"\" /> <input type=\"checkbox\" name=\"supplier\" />Supplier&nbsp;<input type=\"checkbox\" name=\"trader\" />Trader&nbsp;<input type=\"checkbox\" name=\"buyer\" />Buyer&nbsp;<input type=\"checkbox\" name=\"seller\" />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee\" value=\"100\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> "+file_ref+"</td></tr>";
+					$("#tb_principle").append(str_tr_principle_100);
 				}
 
 				// fungsi untuk menghapus element html pada prinsipal
@@ -360,10 +363,10 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 					$("#tb_principle tr").remove();
 					if(select_principle == "single_client") {
 						$("#id_single_principle").hide();
-						$("#tb_principle").append(str_tr_principle_100);
+						add_tb_principle100();
 					} else {
 						// tambahkan 1 baris elemen sebagai defaultnya
-						$("#tb_principle").append(str_tr_principle);
+						add_tb_principle();
 						$("#id_single_principle").show();
 					}	
 				}
@@ -376,10 +379,11 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 			<table style="width:900px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 				<tr>
 					<td valign="middle">
-						<div>
-							Multi Cargo <input type="radio" name="select_cargo" value="multi_cargo" />
+						<div style="margin-bottom:7px;">
 							Single Cargo <input type="radio" name="select_cargo" value="single_cargo" />
-						</div>					
+							Multi Cargo <input type="radio" name="select_cargo" value="multi_cargo" />
+						</div>	
+										
 						<input class="autocomplete_text" type="text" id="vessel" onkeydown="initVessel(this,'vessel','vessel_id')" style="width:40%;" name="vessel" /> 
 						<input type="hidden" id="vessel_id" name="vessel_id" />
 					</td>
