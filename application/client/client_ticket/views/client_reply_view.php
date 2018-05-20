@@ -33,11 +33,11 @@
 
                         <?php   if($row->ADMIN_ID > 0) : ?>
                         <li class="left clearfix"><span class="chat-img pull-left">
-                            <img style="width:45px;height:45px;" src="<?php echo base_url().'uploads/profile/'.get_admin_photo(); ?>" alt="User Avatar" class="img-circle" />
+                            <img style="width:45px;height:45px;" src="<?php echo get_admin_foto_by_id($row->ADMIN_ID); ?>" alt="User Avatar" class="img-circle" />
                         </span>
                             <div class="chat-body clearfix">
                                 <div class="header">
-                                    <strong class="primary-font"><?php echo get_admin_firstname().' '.get_admin_lastname(); ?></strong> <small class="pull-right text-muted">
+                                    <strong class="primary-font"><?php echo get_admin_name_by_id($row->ADMIN_ID); ?></strong> <small class="pull-right text-muted">
                                         <span class="glyphicon glyphicon-time"></span>  <?php echo time_since($row->CREATE_TIME); ?> ago</small>
                                 </div>
                                 <div style="width:100%;" >
@@ -51,11 +51,11 @@
 
                         if($row->USER_ID > 0) : ?>
                         <li class="right clearfix"><span class="chat-img pull-right">
-                            <img style="width:45px;height:45px;" src="<?php echo get_client_foto_by_id($row->USER_ID); ?>" alt="User Avatar" class="img-circle" />
+                            <img style="width:45px;height:45px;" src="<?php echo base_url().'uploads/client_profile/'.get_client_photo(); ?>" alt="User Avatar" class="img-circle" />
                         </span>
                             <div class="chat-body clearfix">
                                 <div class="header">
-                                <strong class="pull-right primary-font"><?php echo get_client_name_by_id($row->USER_ID); ?></strong>
+                                <strong class="pull-right primary-font"><?php echo get_client_firstname().' '.get_client_lastname(); ?></strong>
                                     <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>
                                     <?php echo time_since($row->CREATE_TIME); ?> ago</small>
                                 </div>
