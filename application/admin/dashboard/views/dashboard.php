@@ -247,7 +247,24 @@
  				        column_bar(my_json,'chart_bar','','Total Losses Information',series);
 					
 						//Line Chart
- 				        column_line(my_json,'chart_line','','Losses Periode',series);
+						// dapatkan filter area global
+						var re_produk        = $('select[name="produk"]').val();
+						var re_intervensi    = $('select[name="intervensi"]').val();
+						var re_client        = $('select[name="client"]').val();
+						var re_area          = $('select[name="lokasi_kerja"]').val();
+						alert(re_area);
+						var re_port_terminal = $('select[name="port_terminal"]').val();
+						var re_bulan         = $('select[name="bulan"]').val();
+						var re_tahun         = $('select[name="tahun"]').val();
+
+						$.getJSON('<?php echo base_url(); ?>index.php/form_entry/grab_chart_port_terminal/?produk='+re_produk+'&intervensi='+re_intervensi+'&client='+re_client+'&area='+re_area+'&port_terminal='+re_port_terminal+'bulan='+re_bulan+'tahun='+re_tahun,function(json){
+							// munculkan chart line
+							var categorie_areas = [];
+							for(var i = 0; i < json.length; i++) {
+								categorie_areas.push(json[i]);
+							}
+							column_line(my_json,'chart_line',categorie_areas,'Losses Periode',series);
+						});
 
 						var lok_kerja = $("#lokasi_kerja").val();
 						if(lok_kerja=="0"){
@@ -408,7 +425,7 @@
 					text: 'Source: Data Pusat'
 				},
 				xAxis: {
-					categories: ['Surabaya','Semarang','Jakarta']
+					categories: categories
 				},
 				yAxis: {
 					title: {
@@ -426,6 +443,9 @@
 				series: [{
 					name: 'MFO',
 					data: [7.0, 6.9, 9.5]
+				},{
+					name: 'HSD',
+					data: [0.0, 0.0, 0.0]
 				}]
 			});
 		}

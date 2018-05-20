@@ -851,5 +851,34 @@ class Form_entry extends MY_Controller
 		header('Content-Type: application/json');
 		echo json_encode($result);
 	}
+
+	public function grab_chart_port_terminal() {
+		// produk=6&intervensi=14&client=customer1&lokasi_kerja=Semarang&port_terminal=Semarang&bulan=&tahun=2018
+		$product       = $this->input->get("produk");
+		$intervensi    = $this->input->get("intervensi");
+		$client        = $this->input->get("client");
+		$area          = $this->input->get("area");
+		$port_terminal = $this->input->get("port_terminal");
+		$bulan         = $this->input->get("bulan");
+		$tahun         = $this->input->get("tahun");
+		
+		// dapatkan area terlebih dahulu
+		$query_area = $this->Form_entry_model->grab_port_by_area($area);
+		$result = array();
+		if($query_area->num_rows() > 0) {
+			foreach($query_area->result() as $row) {
+				$data = json_decode($row->PORT_TERMINAL);
+				if(is_array($data)) {
+					if(count($data) > 0) {
+						foreach($data as $k => $v) {
+							if(!in_array($v,$result)) {
+								$result[]=$v;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	
 }
