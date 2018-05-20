@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Client_ticket extends MY_Controller 
+class Admin_ticket extends MY_Controller 
 {
 	public function __construct() 
 	{
 		parent::__construct();
-		$this->load->model(array("Client_ticket_model","Client_message_model"));
+		$this->load->model(array("Admin_ticket_model","Admin_message_model"));
 
 		$this->data['html_css'] = '
 		<style>
@@ -72,7 +72,7 @@ class Client_ticket extends MY_Controller
 			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 			background-color: #555;
 		}
-		</style>		
+		</style>				
 		';
 
     	$this->data['html_js'] = '
@@ -86,22 +86,22 @@ class Client_ticket extends MY_Controller
           },1000);
         });
 
-				function newClientTicket()
+				function newAdminTicket()
 				{
-					window.open("'.base_url().'index.php/client_ticket/add","_self");
+					window.open("'.base_url().'index.php/admin_ticket/add","_self");
 				}
 
-				function editClientTicket()
+				function editAdminTicket()
 				{
 					var row = $("#dg").datagrid("getSelected");
-					window.open("'.base_url().'index.php/client_ticket/edit/"+row.CLIENT_TICKET_ID,"_self");
+					window.open("'.base_url().'index.php/admin_ticket/edit/"+row.CLIENT_TICKET_ID,"_self");
 				}
 
-				function destroyClientTicket()
+				function destroyAdminTicket()
 				{
 					if(confirm("Are you sure ?")) {
 						var row = $("#dg").datagrid("getSelected");
-						window.open("'.base_url().'index.php/client_ticket/delete/"+row.CLIENT_TICKET_ID,"_self");
+						window.open("'.base_url().'index.php/admin_ticket/delete/"+row.CLIENT_TICKET_ID,"_self");
 					}
 				}
 
@@ -185,104 +185,96 @@ class Client_ticket extends MY_Controller
 
 	public function index()
 	{
-		$this->data['title'] = "Client Ticket Management";
-		$this->load->view('client/header',$this->data);
-		$this->load->view('client_ticket_view',$this->data);
-		$this->load->view('client/footer',$this->data);
+		$this->data['title'] = "Admin Ticket Management";
+		$this->load->view('admin/header',$this->data);
+		$this->load->view('admin_ticket_view',$this->data);
+		$this->load->view('admin/footer',$this->data);
+	}
+
+	public function reply($reply_id='')
+	{
+		// update is_ticket_read and admin_read_id
+		$this->Admin_ticket_model->update(array("ADMIN_READ_ID" => get_admin_userid(), "IS_TICKET_READ" => 1),$reply_id);
+		
+		// get message 
+		$this->data['message_query'] = $this->Admin_message_model->get_item_by_ticket_id($reply_id);
+
+		$this->data['title'] = "Admin Ticket Management";
+		$this->data['reply_id'] = $reply_id;
+		$this->load->view('admin/header',$this->data);
+		$this->load->view('admin_reply_view',$this->data);
+		$this->load->view('admin/footer',$this->data);
 	}
 
 	public function add()
 	{
-		$this->data['title'] = "Client Ticket Management";
-		$this->load->view('client/header',$this->data);
-		$this->load->view('client_ticket_add_view',$this->data);
-		$this->load->view('client/footer',$this->data);
+		$this->data['title'] = "Admin Ticket Management";
+		$this->load->view('admin/header',$this->data);
+		$this->load->view('admin_ticket_add_view',$this->data);
+		$this->load->view('admin/footer',$this->data);
 	}
 
 	public function edit($id=0)
 	{
-		$this->data['title'] = "Client Ticket Management";
+		$this->data['title'] = "Admin Ticket Management";
 		$this->data['id']    = $id;
-		$this->data['item']  = $this->Client_ticket_model->get_item_by_id($id);
-		$this->load->view('client/header',$this->data);
-		$this->load->view('client_ticket_edit_view',$this->data);
-		$this->load->view('client/footer',$this->data);
-	}
-
-	public function reply_save($reply_id='')
-	{
-		$client_ticket_description = $this->input->post('client_ticket_description');
-		$insert = array(
-			'CLIENT_TICKET_ID' => $reply_id, 
-			'CLIENT_TICKET_MESSAGE' => stripslashes($client_ticket_description),
-			'USER_ID' => get_client_user_id()
-		);
-
-		$message_id = $this->Client_message_model->save($insert);
-
-		$this->session->set_flashdata('error_message', alert_success('Save succeded.'));
-		redirect("client_ticket/view_response/".$reply_id);
-	}
-
-	public function view_response($reply_id=0)
-	{
-		// get message 
-		$this->data['message_query'] = $this->Client_message_model->get_item_by_ticket_id($reply_id);
-
-		$this->data['title'] = "Client Ticket Management";
-		$this->data['reply_id'] = $reply_id;
-		$this->load->view('client/header',$this->data);
-		$this->load->view('client_reply_view',$this->data);
-		$this->load->view('client/footer',$this->data);
+		$this->data['item']  = $this->Admin_ticket_model->get_item_by_id($id);
+		$this->load->view('admin/header',$this->data);
+		$this->load->view('admin_ticket_edit_view',$this->data);
+		$this->load->view('admin/footer',$this->data);
 	}
 
 	public function save()
 	{
-		$client_ticket_name = $this->input->post('client_ticket_name');
-		$client_ticket_description = $this->input->post('client_ticket_description');
-
-		$uuid = get_uuid_postgres();
+		$admin_ticket_name = $this->input->post('admin_ticket_name');
+		$admin_ticket_description = $this->input->post('admin_ticket_description');
 
 		$insert = array(
-			'CLIENT_TICKET_ID' => $uuid,
-			'CLIENT_TICKET_NAME' => stripslashes($client_ticket_name),
-      		'CLIENT_TICKET_DESCRIPTION' => stripslashes($client_ticket_description),
-      		'USER_ID' => get_client_user_id(),
+			'CLIENT_TICKET_NAME' => stripslashes($admin_ticket_name),
+      'CLIENT_TICKET_DESCRIPTION' => stripslashes($admin_ticket_description),
+      'USER_ID' => get_client_user_id(),
 			'IS_DELETE'   => 0,
 		);
-		$this->Client_ticket_model->save($insert);
 
+		$this->Admin_ticket_model->save($insert);
+		$this->session->set_flashdata('error_message', alert_success('Save succeded.'));
+		redirect("admin_ticket");	
+	}
+
+	public function reply_save($reply_id='')
+	{
+		$client_ticket_description = $this->input->post('admin_ticket_description');
 		$insert = array(
-			'CLIENT_TICKET_ID' => $uuid, 
+			'CLIENT_TICKET_ID' => $reply_id, 
 			'CLIENT_TICKET_MESSAGE' => stripslashes($client_ticket_description),
-			'USER_ID' => get_client_user_id()
+			'ADMIN_ID' => get_admin_userid()
 		);
 
-		$message_id = $this->Client_message_model->save($insert);
+		$message_id = $this->Admin_message_model->save($insert);
 
 		$this->session->set_flashdata('error_message', alert_success('Save succeded.'));
-		redirect("client_ticket");	
+		redirect("admin_ticket/reply/".$reply_id);
 	}
 
 	public function update($id=0) 
 	{
-		$client_ticket_name   = $this->input->post('client_ticket_name');
-		$client_ticket_description   = $this->input->post('client_ticket_description');
+		$admin_ticket_name   = $this->input->post('admin_ticket_name');
+		$admin_ticket_description   = $this->input->post('admin_ticket_description');
 
 		$insert = array(
-			'CLIENT_TICKET_NAME' => stripslashes($client_ticket_name),
-			'CLIENT_TICKET_DESCRIPTION' => stripslashes($client_ticket_description),
+			'CLIENT_TICKET_NAME' => stripslashes($admin_ticket_name),
+			'CLIENT_TICKET_DESCRIPTION' => stripslashes($admin_ticket_description),
 			'IS_DELETE'     => 0,
 		);
 
-		$this->Client_ticket_model->update($insert,$id);
+		$this->Admin_ticket_model->update($insert,$id);
 		$this->session->set_flashdata('error_message', alert_success('Update succeded.'));
-		redirect("client_ticket");
+		redirect("admin_ticket");
 	}
 
 	public function page_list_rest()
 	{
-		$query = $this->Client_ticket_model->get_all_items_by_client_id(get_client_user_id());
+		$query = $this->Admin_ticket_model->get_all_items();
 		$json_object = new stdClass();
 		$json_object->total = @$query->num_rows();		
 
@@ -290,29 +282,12 @@ class Client_ticket extends MY_Controller
 		if(is_array($result)) {
 			$total = count($result);
 			for($i=0; $i < $total; $i++) {
+        		$ticket_read = $result[$i]->IS_TICKET_READ;
+        		$ticket_open = $result[$i]->IS_TICKET_OPEN;
 
-        $ticket_read = $result[$i]->IS_TICKET_READ;
-        $ticket_open = $result[$i]->IS_TICKET_OPEN;
+          		$result[$i]->FUNCTION = '<a class="btn-xs btn btn-primary" href="'.base_url().'index.php/admin_ticket/reply/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+				  View & Reply</a> <a class="btn-xs btn btn-warning" onclick="return confirm(\'Are you sure?\')" href="'.base_url().'index.php/admin_ticket/set_closed/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-close"></i> Closed</a> <a class="btn-xs btn btn-danger" onclick="return confirm(\'Are you sure?\')" href="'.base_url().'index.php/admin_ticket/delete/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-trash-o"></i> Remove</a>';
 
-				if($ticket_read == 1) {
-					$result[$i]->IS_TICKET_READ = '<span class="badge badge-success">Read By '.get_admin_name_by_id($result[$i]->ADMIN_READ_ID).'</span>';
-				} else {
-					$result[$i]->IS_TICKET_READ = '<span class="badge badge-danger">Unread</span>';
-        }
-
-				if($ticket_open == 0) {
-					$result[$i]->IS_TICKET_OPEN = '<span class="badge badge-success">Open</span>';
-				} else {
-					$result[$i]->IS_TICKET_OPEN = '<span class="badge badge-danger">Closed</span>';
-        }
-
-		$element_read = '<a class="btn-xs btn btn-primary" href="'.base_url().'index.php/client_ticket/view_response/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-eye"></i> View</a>';
-				if($ticket_read == 0) {
-          $result[$i]->FUNCTION = $element_read.'<a class="btn-xs btn btn-primary" href="'.base_url().'index.php/client_ticket/edit/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-edit"></i> Edit</a> <a class="btn-xs btn btn-danger" onclick="return confirm(\'Are you sure?\')" href="'.base_url().'index.php/client_ticket/delete/'.$result[$i]->CLIENT_TICKET_ID.'"><i class="fa fa-trash-o"></i> Delete</a>';
-				} else {
-					$result[$i]->FUNCTION = $element_read;
-        }
-        
 			}
 		}
 		
@@ -323,8 +298,8 @@ class Client_ticket extends MY_Controller
 
 	public function delete($id)
 	{
-		$this->Client_ticket_model->delete_by_id($id);
+		$this->Admin_ticket_model->delete_by_id($id);
 		$this->session->set_flashdata('error_message', alert_success('Delete succeded.'));
-		redirect('client_ticket');
+		redirect('admin_ticket');
 	}
 }

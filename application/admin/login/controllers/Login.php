@@ -69,6 +69,7 @@ class Login extends MY_Controller
 					|--------------------------------------------------|
 					*/
 					$o = new stdClass();
+					$o->admin_userid          = $row->USER_ID;
 					$o->admin_username        = $row->USERNAME;
 					$o->admin_firstname       = $row->FIRST_NAME;
 					$o->admin_lastname        = $row->LAST_NAME;

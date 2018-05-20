@@ -295,6 +295,15 @@ if(!function_exists('get_admin_session'))
 	} 
 }
 
+if(!function_exists('get_admin_userid'))
+{
+	function get_admin_userid() 
+	{
+		$oadmin = get_admin_session();
+		return isset($oadmin) ? $oadmin->admin_userid : '';
+	} 
+}
+
 if(!function_exists('get_admin_username'))
 {
 	function get_admin_username() 
@@ -373,6 +382,101 @@ if(!function_exists('get_admin_inquiry_access'))
 	{
 		$oadmin = get_admin_session();
 		return isset($oadmin) ? $oadmin->admin_inquiry_access : '';
+	} 
+}
+
+/*
+|--------------------------------------------------------------------------------|
+|
+| POSTGRES FUNCTION
+|
+|--------------------------------------------------------------------------------|
+*/
+
+if(!function_exists('get_uuid_postgres'))
+{
+	function get_uuid_postgres() 
+	{
+		$CI =& get_instance();
+		$query = $CI->db->query('SELECT gen_random_uuid() as gen');
+		if($query->num_rows() > 0) {
+			foreach($query->result() as $row) {
+				return $row->gen;
+			}
+		}
+		
+		return '';
+	} 
+}
+
+/*
+|--------------------------------------------------------------------------------|
+|
+| CLIENT QUERY FUNCTION
+|
+|--------------------------------------------------------------------------------|
+*/
+if(!function_exists('get_client_name_by_id'))
+{
+	function get_client_name_by_id($user_id=0) 
+	{
+		$CI =& get_instance();
+		$query = $CI->db->query('SELECT CONCAT_WS(\' \',"FIRST_NAME", "LAST_NAME") as fullname FROM "APP_CLIENT_USER" WHERE "USER_ID" = \''.$user_id.'\'');
+		if($query->num_rows() > 0) {
+			foreach($query->result() as $row) {
+				return $row->fullname;
+			}
+		}
+		
+		return '';
+	} 
+}
+
+if(!function_exists('get_admin_name_by_id'))
+{
+	function get_admin_name_by_id($user_id=0) 
+	{
+		$CI =& get_instance();
+		$query = $CI->db->query('SELECT CONCAT_WS(\' \',"FIRST_NAME", "LAST_NAME") as fullname FROM "APP_USER" WHERE "USER_ID" = \''.$user_id.'\'');
+		if($query->num_rows() > 0) {
+			foreach($query->result() as $row) {
+				return $row->fullname;
+			}
+		}
+		
+		return '';
+	} 
+}
+
+if(!function_exists('get_client_foto_by_id'))
+{
+	function get_client_foto_by_id($user_id=0) 
+	{
+		$CI =& get_instance();
+		$query = $CI->db->query('SELECT \''.base_url().'uploads/client_profile/\' || "PHOTO" as photo_profile FROM "APP_CLIENT_USER" WHERE "USER_ID" = \''.$user_id.'\'');
+		if($query->num_rows() > 0) {
+			foreach($query->result() as $row) {
+				return $row->photo_profile;
+			}
+		}
+		
+		return '';
+	} 
+}
+
+if(!function_exists('get_admin_foto_by_id'))
+{
+	function get_admin_foto_by_id($user_id=0) 
+	{
+		$CI =& get_instance();
+		$query = $CI->db->query('SELECT \''.base_url().'uploads/profile/\' || "PHOTO" as photo_profile FROM "APP_USER" WHERE "USER_ID" = \''.$user_id.'\'');
+		if($query->num_rows() > 0) {
+			foreach($query->result() as $row) {
+				return $row->photo_profile;
+			}
+		}
+		
+		return '';
 	} 
 }
 
@@ -579,4 +683,35 @@ function check_exist_date($var){
 	}
 	
 }
+/*
+|--------------------------------------------------------------------------------|
+|
+| POSTGRES FUNCTION
+|
+|--------------------------------------------------------------------------------|
+*/
+function time_since($str_timestamp=NULL) {
+	$since = time() - strtotime($str_timestamp);
+    $chunks = array(
+        array(60 * 60 * 24 * 365 , 'year'),
+        array(60 * 60 * 24 * 30 , 'month'),
+        array(60 * 60 * 24 * 7, 'week'),
+        array(60 * 60 * 24 , 'day'),
+        array(60 * 60 , 'hour'),
+        array(60 , 'minute'),
+        array(1 , 'second')
+    );
+
+    for ($i = 0, $j = count($chunks); $i < $j; $i++) {
+        $seconds = $chunks[$i][0];
+        $name = $chunks[$i][1];
+        if (($count = floor($since / $seconds)) != 0) {
+            break;
+        }
+    }
+
+    $print = ($count == 1) ? '1 '.$name : "$count {$name}s";
+    return $print;
+}
+
 ?>

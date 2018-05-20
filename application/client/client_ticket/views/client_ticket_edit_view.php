@@ -29,7 +29,7 @@
                 	<?php echo form_open('client_ticket/update/'.$id,array('id' => 'form_add')); ?>
 					<table class="table table-striped  table-bordered">
 						<tr>
-							<td width="150px" style="padding-top:15px;"><?php echo form_label('Client Ticket Name*') ?></td>
+							<td width="150px" style="padding-top:15px;"><?php echo form_label('Client Ticket Title*') ?></td>
 							<td><?php echo form_input(array('value' => @$item->result()[0]->CLIENT_TICKET_NAME,'type' => 'text', 'name' => 'client_ticket_name','class' => 'form-control','required' => 'required')); ?></td>
 						</tr>
 						<tr>
