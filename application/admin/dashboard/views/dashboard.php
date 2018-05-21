@@ -162,7 +162,7 @@
 																	<td><span id="year_info"></span></td>
 																</tr>	
 																<tr>
-																	<td colspan="2"><button class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> View Detail</button></td>
+																	<td colspan="2"><button data-toggle="modal" data-target="#myModal" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> View Detail</button></td>
 																</tr>					
 														</table>
 													</div>
@@ -179,6 +179,27 @@
 				<!-- end col-8 -->
 			</div>
 	</div>
+	
+	<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div style="width:500px;height:400px;" id="chart_pie_detail">No Data</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 
 	<script type="text/javascript">
 		function get_port_terminal(e) {
@@ -278,7 +299,8 @@
 	 				    my_json = "["+my_json+"]";
 
 	 				    var series = $("#intervensi").find("option:selected").text();
-
+						
+						column_pie_detail();
  				        //Pie Chart
  				        column_pie(my_json,'chart_pie','','Loss Statistics Information',series);
 
@@ -364,6 +386,56 @@
 	        }
 		 })();
 
+		function column_pie_detail() {
+		 	Highcharts.chart('chart_pie_detail', {
+					colors: ['#ed1b1b','#ede91b','#3ab432'],
+				    chart: {
+				        plotBackgroundColor: null,
+				        plotBorderWidth: null,
+				        plotShadow: false,
+				        type: 'pie'
+				    },
+				    title: {
+				        text: 'Looses'
+				    },
+				    credits: {
+				        enabled: false
+				    },
+				    tooltip: {
+				        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+				    },
+				    plotOptions: {
+				        pie: {
+				            allowPointSelect: true,
+				            cursor: 'pointer',
+				            dataLabels: {
+				                enabled: true,
+				                format: '<b>{point.name}</b>: {point.percentage:.1f}%',
+				                style: {
+				                    color: ['#ed1b1b','#ede91b','#3ab432']
+				                }
+				            }
+				        }
+				    },
+				    series: [{
+				        name: 'Looses',
+				        colorByPoint: true,
+				        data: [{
+								name: ' > 0.3 ',
+								y: 61.41,
+								sliced: true,
+								selected: true
+							}, {
+								name: '==0.3',
+								y: 11.84
+							}, {
+								name: '< 0.3',
+								y: 10.85
+							}]
+				    }]
+				});
+		}
+		
 		function column_pie(mydata,chart_id,categories,title,series_name) {
 			mydata = JSON.parse(mydata);
 		 	Highcharts.chart(chart_id, {
