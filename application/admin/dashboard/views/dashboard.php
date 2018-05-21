@@ -115,7 +115,8 @@
 							<?php echo form_close(); ?>
 							<br/>
 
-							<table id="div_chart" style="display:none;width:100%;margin-top:3px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
+							
+							<table id="div_chart" class="table" >
 								<tr>
 									<td><div style="width:500px;height:400px;" id="chart_pie">No Data</div></td>
 									<td><div style="width:500px;height:400px;" id="chart_bar">No Data</div></td>
@@ -125,11 +126,28 @@
 										<table>
 											<tr>
 												<td><div style="width:950px;height:400px;" id="chart_line">No Data</div></td>
-												<td>
-													<div style="padding: 13px;border: 3px solid black;margin-bottom: 250px;margin-left: 100px;">
-														X  : <span id="x_lokasi"></span> <br/>
-														Y  : <span id="y_sl_gsv_klobs">-</span>  <br/>
-														Frekuensi : <span id="frekuensi_val"></span>
+												<td valign="top">
+													<div id="div_charts" class="table-responsive">
+														<table class="table">
+																<tr>
+																	<th colspan="2"><strong>Information</stronog></td>
+																</tr>
+																<tr>
+																	<td>Area</td>
+																	<td><span id="x_lokasi"></span></td>
+																</tr>
+																<tr>
+																	<td>Port</td>
+																	<td><span id="y_sl_gsv_klobs">-</span></td>
+																</tr>
+																<tr>
+																	<td>Frequency</td>
+																	<td><span id="frekuensi_val"></span></td>
+																</tr>	
+																<tr>
+																	<td colspan="2"><button class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> View Detail</button></td>
+																</tr>					
+														</table>
 													</div>
 												</td>
 											</tr>
