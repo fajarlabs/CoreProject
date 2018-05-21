@@ -102,6 +102,7 @@
 									</select>
 										</td>
 										<td style="width:400px;">
+										
 										<?php echo form_label('Year') ?><br/>
 										<?php 
 											//$dtbarge=date("m/d/Y", strtotime($row->DATE_LOADING_BARGE));
@@ -273,8 +274,8 @@
 						var re_produk        = $('select[name="produk"]').val();
 						var re_intervensi    = $('select[name="intervensi"]').val();
 						var re_client        = $('select[name="client"]').val();
-						var re_area          = $('select[name="lokasi_kerja"]').val();
-						var re_port_terminal = $('select[name="port_terminal"]').val();
+						var re_area          = $('#lokasi_kerja').val();
+						var re_port_terminal = $('#port_terminal').val();
 						var re_bulan         = $('select[name="bulan"]').val();
 						var re_tahun         = $('select[name="tahun"]').val();
 
@@ -455,6 +456,9 @@
 						},
 						enableMouseTracking: false
 					}
+				},
+				credits: {
+						enabled: false
 				},
 				series: [{
 					name: 'MFO',
