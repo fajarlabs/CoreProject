@@ -126,12 +126,12 @@
 									<td colspan="2">
 										<table>
 											<tr>
-												<td><div style="width:950px;height:400px;" id="chart_line">No Data</div></td>
+												<td><div style="width:850px;height:400px;" id="chart_line">No Data</div></td>
 												<td valign="top">
 													<div id="div_charts" class="table-responsive">
 														<table class="table">
 																<tr>
-																	<th colspan="2"><strong>Information</stronog></td>
+																	<th colspan="2"><strong>Information</strong></td>
 																</tr>
 																<tr>
 																	<td>Area</td>
