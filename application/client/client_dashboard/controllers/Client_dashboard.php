@@ -157,6 +157,80 @@ class Client_dashboard extends MY_Controller
 		
 	}
 	
+	public function grab_chart_port_terminal_detail() {
+		// parameter data
+		$product       = $this->input->get("produk");
+		$intervensi    = $this->input->get("intervensi");
+		$client        = $this->input->get("client");
+		$area          = $this->input->get("area");
+		$port_terminal = $this->input->get("port_terminal");
+		$bulan         = $this->input->get("bulan");
+		$tahun         = $this->input->get("tahun");
+
+		// ini query untuk mendapatkan semua area berdasarkan parameter filter
+		$query_all_area = $this->Form_entry_model->grab_area_detail($product,$intervensi,$client,$area,$port_terminal,$bulan,$tahun);
+		
+		// dapatkan semua area berdasarkan filter
+		$area = array();
+		if($query_all_area->num_rows() > 0) {
+			foreach($query_all_area->result() as $row) {
+				if(!in_array($row->AREA,$area)) {
+					$area[] = $row->AREA;
+				}
+			}
+		}
+		$hijau="0";
+		$kuning="0";
+		$merah="0";
+		$total_bbm    = array();
+		$losses 	  = array();
+		
+		foreach($area as $ka => $va) {
+			$query_bl = $this->Dashboard_model->count_kl_area($product,$intervensi,$client,$va,$port_terminal,$bulan,$tahun);
+			if($query_bl->num_rows() > 0) {
+				foreach($query_bl->result() as $row_bl) {
+					$total_bbm[] = (float)$row_bl->total_bl;
+					$losses[]    = (float)$row_bl->rata_losses;
+					if($row_bl->rata_losses<0.3){
+						$hijau += 1 ;
+					}
+					else if($row_bl->rata_losse==0.3){
+						$kuning += 1 ;
+					}
+					else if($row_bl->rata_losse>0.3){
+						$merah += 1 ;
+					}
+				}
+			} else {
+				$total_bbm = 0;
+			}
+		}
+		$total_warna = $merah+$kuning+$hijau;
+		
+		$bagi_merah    = $merah/$total_warna;
+		$bagi_kuning   = $kuning/$total_warna;
+		$bagi_hijau    = $hijau/$total_warna;
+		
+		//error_reporting(null);
+		$warna =array();
+		$arr_return = array();
+		$warna[0]['name'] = 'Greater than 0.3';
+		$warna[0]['y']    = $bagi_merah;
+		 
+		$warna[1]['name'] = 'Equals 0.3';
+		$warna[1]['y'] = $bagi_kuning;
+		
+		$warna[2]['name'] = 'Less than 0.3';
+		$warna[2]['y'] = $bagi_hijau;
+		$arr_return = $warna;
+		$result = new stdClass();
+		$result->warna    = $arr_return;
+
+		header('Content-Type: application/json');
+		echo json_encode($result);
+	}
+	
+	
 	public function grab_chart_port_terminal() {
 		// parameter data
 		$product       = $this->input->get("produk");

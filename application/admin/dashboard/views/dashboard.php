@@ -300,7 +300,6 @@
 
 	 				    var series = $("#intervensi").find("option:selected").text();
 						
-						column_pie_detail();
  				        //Pie Chart
  				        column_pie(my_json,'chart_pie','','Loss Statistics Information',series);
 
@@ -324,7 +323,7 @@
 							$("#month_info").html($('select[name="bulan"] option:selected').text());
 							$("#year_info").html(re_tahun);
 
-							column_line(my_json,'chart_line',json.area,'Losses Periode',json.total);
+							column_line(my_json,'chart_line',json.area,'Transfer Periodic',json.total);
 						});
 
 						var lok_kerja = $("#lokasi_kerja").val();
@@ -336,6 +335,12 @@
 							var place_data = $("#lokasi_kerja").val();
 							$("#x_lokasi").html(place_data);
 						}
+						
+						$.getJSON('<?php echo base_url(); ?>index.php/form_entry/grab_chart_port_terminal_detail/?produk='+re_produk+'&intervensi='+re_intervensi+'&client='+re_client+'&area='+re_area+'&port_terminal='+re_port_terminal+'&bulan='+re_bulan+'&tahun='+re_tahun,function(json){
+							column_pie_detail(my_json,'chart_pie_detail','Losses',json.warna);
+						});
+						
+						
 						
 						//SUM SL_GSV_KLOBS
 						$.ajax({
@@ -386,8 +391,8 @@
 	        }
 		 })();
 
-		function column_pie_detail() {
-		 	Highcharts.chart('chart_pie_detail', {
+		function column_pie_detail(mydata,chart_id,mytitle,single_series_data) {
+		 	Highcharts.chart(chart_id, {
 					colors: ['#ed1b1b','#ede91b','#3ab432'],
 				    chart: {
 				        plotBackgroundColor: null,
@@ -396,7 +401,7 @@
 				        type: 'pie'
 				    },
 				    title: {
-				        text: 'Looses'
+				        text: mytitle  
 				    },
 				    credits: {
 				        enabled: false
@@ -420,18 +425,7 @@
 				    series: [{
 				        name: 'Looses',
 				        colorByPoint: true,
-				        data: [{
-								name: ' > 0.3 ',
-								y: 61.41,
-								sliced: true,
-								selected: true
-							}, {
-								name: '==0.3',
-								y: 11.84
-							}, {
-								name: '< 0.3',
-								y: 10.85
-							}]
+				        data: single_series_data
 				    }]
 				});
 		}
@@ -523,14 +517,14 @@
 				});
 		}
 		
-		function column_line(mydata,chart_id,categories,title,single_series_data) { 
+		function column_line(mydata,chart_id,categories,mytitle,single_series_data) { 
 			//mydata = JSON.parse(mydata);
 			Highcharts.chart(chart_id, {
 				chart: {
 					type: 'line'
 				},
 				title: {
-					text: 'Transfer Periodic'
+					text: mytitle
 				},
 				subtitle: {
 					text: 'Source: Sucofindo'

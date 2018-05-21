@@ -254,7 +254,6 @@
 	 				    my_json = "["+my_json+"]";
 
 	 				    var series = $("#intervensi").find("option:selected").text();
-						column_pie_detail();
  				        //Pie Chart
  				        column_pie(my_json,'chart_pie','','Loss Statistics Percentage',series);
 
@@ -280,6 +279,11 @@
 
 							column_line(my_json,'chart_line',json.area,'Losses Periode',json.total);
 						});	
+						
+						
+						$.getJSON('<?php echo base_url(); ?>index.php/client_dashboard/grab_chart_port_terminal_detail/?produk='+re_produk+'&intervensi='+re_intervensi+'&client='+re_client+'&area='+re_area+'&port_terminal='+re_port_terminal+'&bulan='+re_bulan+'&tahun='+re_tahun,function(json){
+							column_pie_detail(my_json,'chart_pie_detail','Losses',json.warna);
+						});
 						
 						$("#x_lokasi").html("-");
 						
@@ -453,8 +457,8 @@
 			});
 		}
 		
-		function column_pie_detail() {
-		 	Highcharts.chart('chart_pie_detail', {
+		function column_pie_detail(mydata,chart_id,mytitle,single_series_data) {
+		 	Highcharts.chart(chart_id, {
 					colors: ['#ed1b1b','#ede91b','#3ab432'],
 				    chart: {
 				        plotBackgroundColor: null,
@@ -463,7 +467,7 @@
 				        type: 'pie'
 				    },
 				    title: {
-				        text: 'Looses'
+				        text: mytitle  
 				    },
 				    credits: {
 				        enabled: false
@@ -487,18 +491,7 @@
 				    series: [{
 				        name: 'Looses',
 				        colorByPoint: true,
-				        data: [{
-								name: ' > 0.3 ',
-								y: 61.41,
-								sliced: true,
-								selected: true
-							}, {
-								name: '==0.3',
-								y: 11.84
-							}, {
-								name: '< 0.3',
-								y: 10.85
-							}]
+				        data: single_series_data
 				    }]
 				});
 		}

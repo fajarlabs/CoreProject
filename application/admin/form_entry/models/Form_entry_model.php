@@ -207,6 +207,39 @@ class Form_entry_model extends CI_Model
 		  //echo $this->db->last_query();
 		return $this->db->get();
     }
+	
+	public  function grab_area_detail($product_id=0,$intervention_id=0,$clients='',$area='',$port_terminal='',$month='',$year='') 
+    {
+		$this->db->select('*');
+        $this->db->from($this->table);
+        if(($product_id != '0') || (!empty($product_id)) ) {
+            $this->db->where('PRODUCT_TYPE', (string)$product_id); 
+        }
+        if(($intervention_id != '0') || (!empty($intervention_id)) ) {
+            $this->db->where('SELECT_INTERVENTION',(string)$intervention_id); 
+        }
+        if(!empty($clients)) {
+            $this->db->like('LOWER("CLIENTS")', strtolower($clients)); 
+        }
+        if(($area != '0') || (!empty($area)) ) {
+            $this->db->like('LOWER("AREA")', strtolower($area)); 
+        }
+        if(($port_terminal != '0') || (!empty($port_terminal)) ) {
+            $this->db->like('LOWER("PORT_TERMINAL")', strtolower($port_terminal)); 
+        }
+        if(!empty($month)) {
+            if($month != 'undefined') {
+                $this->db->where('to_char("CREATE_TIME", \'MM\')=', $month);
+            }
+        }
+        if(!empty($year)) {
+            if($year != 'undefined'){
+                $this->db->where('to_char("CREATE_TIME", \'YYYY\')=', $year);
+            }
+        } 
+		  //echo $this->db->last_query();
+		return $this->db->get();
+    }
 
     public  function get_filter_chart($cols='',$product_id=0,$intervention_id=0,$clients='',$area='',$month='',$year='') 
     {
