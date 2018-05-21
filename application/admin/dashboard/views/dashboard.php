@@ -191,7 +191,23 @@
           <h4 class="modal-title">Detail</h4>
         </div>
         <div class="modal-body">
-          <div style="width:500px;height:400px;" id="chart_pie_detail">No Data</div>
+			<div class="row">
+				<div class="col-xs-6">
+         			<div style="width:auto;height:400px;" id="chart_pie_detail">No Data</div>
+				</div>
+				<div class="col-xs-6">
+					<table class="table">
+						<tr><td>Area</td><td id="i_area"></td></tr>
+						<tr><td>Surveyor In Charges</td><td id="i_surveyor_in_charge"></td></tr>
+						<tr><td>Activites Remarks</td><td id="i_activities_remarks"></td></tr>
+						<tr><td>Sea Condition</td><td id="i_sea_condition"></td></tr>
+						<tr><td>Port Terminal</td><td id="i_port_terminal"></td></tr>
+						<tr><td>Product</td><td id="i_product"></td></tr>
+						<tr><td>Vessel</td><td id="i_vessel"></td></tr>
+						<tr><td>Date Of Analysis</td><td id="i_date_of_analysis"></td></tr>
+					</table>
+				</div>
+			</div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -337,10 +353,19 @@
 						}
 						
 						$.getJSON('<?php echo base_url(); ?>index.php/form_entry/grab_chart_port_terminal_detail/?produk='+re_produk+'&intervensi='+re_intervensi+'&client='+re_client+'&area='+re_area+'&port_terminal='+re_port_terminal+'&bulan='+re_bulan+'&tahun='+re_tahun,function(json){
-							column_pie_detail(my_json,'chart_pie_detail','Losses',json.warna);
+							column_pie_detail(my_json,'chart_pie_detail','Losses Information Statistics',json.warna);
 						});
 						
-						
+						$.getJSON('<?php echo base_url(); ?>index.php/form_entry/grab_chart_information_detail/?produk='+re_produk+'&intervensi='+re_intervensi+'&client='+re_client+'&area='+re_area+'&port_terminal='+re_port_terminal+'&bulan='+re_bulan+'&tahun='+re_tahun,function(json){
+							$("#i_area").html(json.AREA.toString());
+							$("#i_surveyor_in_charge").html(json.SURVEYOR_IN_CHARGES.toString());
+							$("#i_activities_remarks").html(json.ACTIVITIES_REMARKS.toString());
+							$("#i_sea_condition").html(json.SEA_CONDITION.toString());
+							$("#i_port_terminal").html(json.PORT_TERMINAL.toString());
+							$("#i_product").html(json.PRODUCT.toString());
+							$("#i_vessel").html(json.VESSEL.toString());
+							$("#i_date_of_analysis").html(json.DATE_OF_ANALYSIS.toString());
+						});
 						
 						//SUM SL_GSV_KLOBS
 						$.ajax({
