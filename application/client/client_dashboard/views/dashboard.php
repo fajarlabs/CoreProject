@@ -34,11 +34,12 @@
 							<h4 class="panel-title">Dashboard Chart</h4>
 						</div>
 						<div class="panel-body" style="padding:5px;">
+						<div style="width:100%;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 		                	<?php echo form_open('',array('id' => 'chart_form')); ?>
-							<table style="width:100%;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
+							<table style="border-collapse: separate;border-spacing: 8px;">
 								<tr>
 									<td >
-										<?php echo form_label('Product') ?><br/>
+										<?php echo form_label('Cargo') ?><br/>
 										<select id="produk" name="produk" style="height:33px;">	
 											<option value="">--Choose--</option>
 											<?php foreach($product as $pr){ ?>
@@ -47,24 +48,15 @@
 										</select>
 									</td>
 									<td>
-										<?php echo form_label('Intervention') ?><br/>
+										<?php echo form_label('Mode') ?><br/>
 										<select id="intervensi" name="intervensi" style="height:33px;">
 											<option value="">--Choose--</option>
 											<?php foreach($intervensi as $itv){ ?>
 												<option  value='<?php echo $itv->ID ?>'><?php echo $itv->INTERVENTION_NAME ?></option>
 											<?php } ?>		
 										</select>
-									</td>		
-									<td>
-									<input type="hidden" value="<?php echo strtolower(get_client_site_name()) ?>" id="client" name="client">	
-									<?php 
-									echo form_label('Job Location') ?><br/>
-										<select id="lokasi_kerja" name="lokasi_kerja" style="height:33px;">
-									<?php foreach($area as $ar){ ?>
-												<option  value='<?php echo $ar->AREA ?>'><?php echo $ar->AREA ?></option>
-											<?php } ?>		
-										</select>
-									</td>
+										<input type="hidden" value="<?php echo strtolower(get_client_site_name()) ?>" id="client" name="client">
+									</td>	
 									<td >
 									<?php echo form_label('Month') ?><br/>
 									<select id="bulan" name="bulan" class="form-control" required="">
@@ -94,6 +86,7 @@
 									</td>					
 								</tr>
 							</table>
+							</div>
 							<?php echo form_close(); ?>
 
 							<!-- Tempat Chart -->
@@ -104,7 +97,51 @@
 								</tr>
 								<tr>
 									<td colspan="2">
-										<div style="display:none;width:1000px;height:400px;" id="chart_double_line">No Data</div>
+										<table>
+											<tr>
+												<td><div style="width:850px;height:400px;" id="chart_line">No Data</div></td>
+												<td valign="top">
+													<div id="div_charts" class="table-responsive">
+														<table class="table">
+																<tr>
+																	<th colspan="2"><strong>Information</strong></td>
+																</tr>
+																<tr>
+																	<td>Area</td>
+																	<td><span id="x_lokasi"></span></td>
+																</tr>
+																<tr>
+																	<td>Port</td>
+																	<td><span id="y_sl_gsv_klobs">-</span></td>
+																</tr>
+																<tr>
+																	<td>Frequency</td>
+																	<td><span id="frekuensi_val"></span></td>
+																</tr>	
+																<tr>
+																	<td>Cargo</td>
+																	<td><span id="cargo_info"></span></td>
+																</tr>
+																<tr>
+																	<td>Intervenion</td>
+																	<td><span id="intervention_info"></span></td>
+																</tr>
+																<tr>
+																	<td>Month</td>
+																	<td><span id="month_info"></span></td>
+																</tr>	
+																<tr>
+																	<td>Year</td>
+																	<td><span id="year_info"></span></td>
+																</tr>	
+																<tr>
+																	<td colspan="2"><button class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> View Detail</button></td>
+																</tr>					
+														</table>
+													</div>
+												</td>
+											</tr>
+										</table>
 									</td>
 								</tr>
 							</table>
@@ -202,8 +239,53 @@
 
  				        //Bar Chart
  				        column_bar(my_json,'chart_bar','','Loss Statistics Percentage',series);
+						
+						//Line Chart
+						// dapatkan filter area global
+						var re_produk        = $('select[name="produk"]').val();
+						var re_intervensi    = $('select[name="intervensi"]').val();
+						var re_client        = $('#client').val();
+						var re_area          = "0";
+						var re_port_terminal = "0";
+						var re_bulan         = $('select[name="bulan"]').val();
+						var re_tahun         = $('input[name="tahun"]').val();
 
+						$.getJSON('<?php echo base_url(); ?>index.php/client_dashboard/grab_chart_port_terminal/?produk='+re_produk+'&intervensi='+re_intervensi+'&client='+re_client+'&area='+re_area+'&port_terminal='+re_port_terminal+'&bulan='+re_bulan+'&tahun='+re_tahun,function(json){
+							// info dikanan chart line
+							$("#cargo_info").html($('select[name="produk"] option:selected').text());
+							$("#intervention_info").html($('select[name="intervensi"] option:selected').text());
+							$("#month_info").html($('select[name="bulan"] option:selected').text());
+							$("#year_info").html(re_tahun);
 
+							column_line(my_json,'chart_line',json.area,'Losses Periode',json.total);
+						});	
+						
+						$("#x_lokasi").html("-");
+						
+						//SUM SL_GSV_KLOBS
+						$.ajax({
+								url: '<?php echo base_url(); ?>index.php/dashboard/sum_sl_gsv_klobs',
+								type: 'POST',
+								data:  new FormData($('#chart_form')[0]),
+								processData: false,
+                                contentType: false,
+								success: function(mydata) {
+									 $("#y_sl_gsv_klobs").html(mydata);
+								}
+						});
+						
+						//Count Frekuensi
+						$.ajax({
+								url: '<?php echo base_url(); ?>index.php/dashboard/count_frekuensi',
+								type: 'POST',
+								data:  new FormData($('#chart_form')[0]),
+								processData: false,
+                                contentType: false,
+								success: function(mydata) {
+									 $("#frekuensi_val").html(mydata);
+								}
+						});
+						
 	 	    			var data_bln = $("#bulan").val();
 	 	    			bln = data_bln;
 	 	    			if(data_bln<10){
@@ -311,6 +393,45 @@
 				    ]
 				});
 		}
+		
+		function column_line(mydata,chart_id,categories,title,single_series_data) { 
+			//mydata = JSON.parse(mydata);
+			Highcharts.chart(chart_id, {
+				chart: {
+					type: 'line'
+				},
+				title: {
+					text: 'Transfer Periodic'
+				},
+				subtitle: {
+					text: 'Source: Sucofindo'
+				},
+				xAxis: {
+					categories: categories
+				},
+				yAxis: {
+					title: {
+						text: 'KL (Kilo Liter)'
+					}
+				},
+				plotOptions: {
+					line: {
+						dataLabels: {
+							enabled: true
+						},
+						enableMouseTracking: false
+					}
+				},
+				credits: {
+						enabled: false
+				},
+				series: [{
+					name: 'MFO',
+					data: single_series_data
+				}]
+			});
+		}
+		
 
 		function column_double_line(data,chart_id,categories,title){
 				Highcharts.chart(chart_id, {
@@ -369,7 +490,7 @@
 		function export_excel(){
 			var  produk 	= $("#produk").val();
 			var  intervensi = $("#intervensi").val();
-			var  lokasi_kerja = $("#lokasi_kerja").val();
+			var  lokasi_kerja = "0";
 			var  client = $("#client").val();
 			var  bulan = $("#bulan").val();
 			var  tahun = $("#tahun").val();
@@ -394,7 +515,7 @@
 	            var hiddenField3 = document.createElement("input");
 	            hiddenField3.setAttribute("type", "hidden");
 	            hiddenField3.setAttribute("name", "lokasi_kerja");
-	            hiddenField3.setAttribute("value", lokasi_kerja);
+	            hiddenField3.setAttribute("value", "0");
 
 	            var hiddenField4 = document.createElement("input");
 	            hiddenField4.setAttribute("type", "hidden");

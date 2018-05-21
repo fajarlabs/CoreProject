@@ -156,7 +156,76 @@ class Client_dashboard extends MY_Controller
 		}
 		
 	}
+	
+	public function grab_chart_port_terminal() {
+		// parameter data
+		$product       = $this->input->get("produk");
+		$intervensi    = $this->input->get("intervensi");
+		$client        = $this->input->get("client");
+		$area          = $this->input->get("area");
+		$port_terminal = $this->input->get("port_terminal");
+		$bulan         = $this->input->get("bulan");
+		$tahun         = $this->input->get("tahun");
+		// ini query untuk mendapatkan semua area berdasarkan parameter filter
+		$query_all_area = $this->Form_entry_model->grab_area($product,$intervensi,$client,$area,$port_terminal,$bulan,$tahun);
+		
+		// dapatkan semua area berdasarkan filter
+		$area = array();
+		if($query_all_area->num_rows() > 0) {
+			foreach($query_all_area->result() as $row) {
+				if(!in_array($row->AREA,$area)) {
+					$area[] = $row->AREA;
+				}
+			}
+		}
 
+		$total_bbm    = array();
+		$losses = array();
+		foreach($area as $ka => $va) {
+			$query_bl = $this->Dashboard_model->count_kl_area($product,$intervensi,$client,$va,$port_terminal,$bulan,$tahun);
+			if($query_bl->num_rows() > 0) {
+				foreach($query_bl->result() as $row_bl) {
+					$total_bbm[] = (float)$row_bl->total_bl;
+					$losses[]    = (float)$row_bl->rata_losses; 
+				}
+			} else {
+				$total_bbm = 0;
+			}
+		}
+
+		$result = new stdClass();
+		$result->area   = $area;
+		$result->total  = $total_bbm;
+		$result->losses = $losses;
+
+		// setelah semua area didapatkan looping dapatkan semua port dan areanya
+		// ini untuk looping semua port
+		// $query_area = $this->Form_entry_model->grab_port_by_area($area);
+		// $result = array();
+		// if($query_area->num_rows() > 0) {
+		// 	foreach($query_area->result() as $row) {
+		// 		$data = json_decode($row->PORT_TERMINAL);
+		// 		if(is_array($data)) {
+		// 			if(count($data) > 0) {
+		// 				foreach($data as $k => $v) {
+		// 					if(!in_array($v,$result)) {
+		// 						$result[]=$v;
+		// 					}
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// }
+
+		// // iterasi berdasarkan port terminal
+		// foreach($result as $kr => $vr) {
+		// 	echo $vr;
+		// }
+
+		header('Content-Type: application/json');
+		echo json_encode($result);
+	}
+	
 	public function chart_rest()
 	{
 		$produk_id 	 	 = (int)$this->input->get("produk");

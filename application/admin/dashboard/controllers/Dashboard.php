@@ -172,7 +172,7 @@ class Dashboard extends MY_Controller
 		$date_month  	 = $_POST['bulan'];
 		$date_year   	 = $_POST['tahun'];
 		$client  	 	 = $_POST['client'];
-		$lokasi_kerja 	 = $_POST['lokasi_kerja'];
+		$lokasi_kerja 	 = (!empty($_POST['lokasi_kerja']) ? $_POST['lokasi_kerja'] : '0');
 		
 		$sum =  $this->Dashboard_model->sum_sl_gsv_klobs($produk_id,$intervention_id,$client,$lokasi_kerja,$date_month,$date_year);
 		$result =0;
@@ -188,7 +188,7 @@ class Dashboard extends MY_Controller
 		$date_month  	 = $_POST['bulan'];
 		$date_year   	 = $_POST['tahun'];
 		$client  	 	 = $_POST['client'];
-		$lokasi_kerja 	 = $_POST['lokasi_kerja'];
+		$lokasi_kerja 	 = (!empty($_POST['lokasi_kerja']) ? $_POST['lokasi_kerja'] : '0');
 		
 		$count  =  $this->Dashboard_model->count_frekuensi($produk_id,$intervention_id,$client,$lokasi_kerja,$date_month,$date_year);
 		$result = 0;
