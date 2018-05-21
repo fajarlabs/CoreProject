@@ -861,26 +861,42 @@ class Form_entry extends MY_Controller
 		$port_terminal = $this->input->get("port_terminal");
 		$bulan         = $this->input->get("bulan");
 		$tahun         = $this->input->get("tahun");
+
+		// ini query untuk mendapatkan semua area berdasarkan parameter filter
+		$query_all_area = $this->Form_entry_model->grab_area($product,$intervensi,$client,$area,$port_terminal,$bulan,$tahun);
 		
-		// dapatkan area terlebih dahulu
-		$query_area = $this->Form_entry_model->grab_port_by_area($area);
-		$result = array();
-		if($query_area->num_rows() > 0) {
-			foreach($query_area->result() as $row) {
-				$data = json_decode($row->PORT_TERMINAL);
-				if(is_array($data)) {
-					if(count($data) > 0) {
-						foreach($data as $k => $v) {
-							if(!in_array($v,$result)) {
-								$result[]=$v;
-							}
-						}
-					}
+		// dapatkan semua area berdasarkan filter
+		$area = array();
+		if($query_all_area->num_rows() > 0) {
+			foreach($query_all_area->result() as $row) {
+				if(!in_array($row->AREA)) {
+					$area[] = $row->AREA;
 				}
 			}
 		}
 
-		
+		// // dapatkan area terlebih dahulu
+		// $query_area = $this->Form_entry_model->grab_port_by_area($area);
+		// $result = array();
+		// if($query_area->num_rows() > 0) {
+		// 	foreach($query_area->result() as $row) {
+		// 		$data = json_decode($row->PORT_TERMINAL);
+		// 		if(is_array($data)) {
+		// 			if(count($data) > 0) {
+		// 				foreach($data as $k => $v) {
+		// 					if(!in_array($v,$result)) {
+		// 						$result[]=$v;
+		// 					}
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// }
+
+		// // iterasi berdasarkan port terminal
+		// foreach($result as $kr => $vr) {
+		// 	echo $vr;
+		// }
 	}
 	
 }
