@@ -869,11 +869,15 @@ class Form_entry extends MY_Controller
 		$area = array();
 		if($query_all_area->num_rows() > 0) {
 			foreach($query_all_area->result() as $row) {
-				if(!in_array($row->AREA)) {
+				if(!in_array($row->AREA,$area)) {
 					$area[] = $row->AREA;
 				}
 			}
 		}
+
+		echo "<pre>";
+		print_r($area);
+		echo "</pre>";
 
 		// // dapatkan area terlebih dahulu
 		// $query_area = $this->Form_entry_model->grab_port_by_area($area);
