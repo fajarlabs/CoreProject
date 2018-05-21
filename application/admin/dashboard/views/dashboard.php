@@ -146,6 +146,22 @@
 																	<td><span id="frekuensi_val"></span></td>
 																</tr>	
 																<tr>
+																	<td>Cargo</td>
+																	<td><span id="cargo_info"></span></td>
+																</tr>
+																<tr>
+																	<td>Intervenion</td>
+																	<td><span id="intervention_info"></span></td>
+																</tr>
+																<tr>
+																	<td>Month</td>
+																	<td><span id="month_info"></span></td>
+																</tr>	
+																<tr>
+																	<td>Year</td>
+																	<td><span id="year_info"></span></td>
+																</tr>	
+																<tr>
 																	<td colspan="2"><button class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> View Detail</button></td>
 																</tr>					
 														</table>
@@ -277,9 +293,15 @@
 						var re_area          = $('#lokasi_kerja').val();
 						var re_port_terminal = $('#port_terminal').val();
 						var re_bulan         = $('select[name="bulan"]').val();
-						var re_tahun         = $('select[name="tahun"]').val();
+						var re_tahun         = $('input[name="tahun"]').val();
 
 						$.getJSON('<?php echo base_url(); ?>index.php/form_entry/grab_chart_port_terminal/?produk='+re_produk+'&intervensi='+re_intervensi+'&client='+re_client+'&area='+re_area+'&port_terminal='+re_port_terminal+'&bulan='+re_bulan+'&tahun='+re_tahun,function(json){
+							// info dikanan chart line
+							$("#cargo_info").html($('select[name="produk"] option:selected').text());
+							$("#intervention_info").html($('select[name="intervensi"] option:selected').text());
+							$("#month_info").html($('select[name="bulan"] option:selected').text());
+							$("#year_info").html(re_tahun);
+
 							column_line(my_json,'chart_line',json.area,'Losses Periode',json.total);
 						});
 
