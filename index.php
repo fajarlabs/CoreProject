@@ -57,7 +57,7 @@ ini_set('max_execution_time', 0); //no limit
  * NOTE: If you change these, also change the error_reporting() code below
  */
 	//define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
-	define('ENVIRONMENT', 'production');
+	define('ENVIRONMENT', 'development');
 
 /*
  *---------------------------------------------------------------

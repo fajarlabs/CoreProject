@@ -33,7 +33,8 @@ class Form_entry extends MY_Controller
 				'Komponen_html_model',
 				'element_connection/Element_connection_model',
 				'element_html/Element_html_model',
-				'Port_terminal_detail_model'
+				'Port_terminal_detail_model',
+				'dashboard/Dashboard_model'
 			));
 
 		$this->data['csrf'] = array(
@@ -875,13 +876,27 @@ class Form_entry extends MY_Controller
 			}
 		}
 
-		echo "<pre>";
-		print_r($area);
-		echo "</pre>";
+		$total_bbm    = array();
+		$losses = array();
+		foreach($area as $ka => $va) {
+			$query_bl = $this->Dashboard_model->count_kl_area($product,$intervensi,$client,$va,$port_terminal,$bulan,$tahun);
+			if($query_bl->num_rows() > 0) {
+				foreach($query_bl->result() as $row_bl) {
+					$total_bbm[] = (float)$row_bl->total_bl;
+					$losses[]    = (float)$row_bl->rata_losses; 
+				}
+			} else {
+				$total_bbm = 0;
+			}
+		}
+
+		$result = new stdClass();
+		$result->area   = $area;
+		$result->total  = $total_bbm;
+		$result->losses = $losses;
 
 		// setelah semua area didapatkan looping dapatkan semua port dan areanya
-
-		// // dapatkan area terlebih dahulu
+		// ini untuk looping semua port
 		// $query_area = $this->Form_entry_model->grab_port_by_area($area);
 		// $result = array();
 		// if($query_area->num_rows() > 0) {
@@ -903,6 +918,9 @@ class Form_entry extends MY_Controller
 		// foreach($result as $kr => $vr) {
 		// 	echo $vr;
 		// }
+
+		header('Content-Type: application/json');
+		echo json_encode($result);
 	}
 	
 }

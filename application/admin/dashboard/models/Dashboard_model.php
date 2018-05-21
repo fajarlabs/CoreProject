@@ -76,7 +76,7 @@ class Dashboard_model extends CI_Model
 	// untuk perhitungan GSV KLOBS bisa jadi nanti berubah
 	// menggunakan GSV KLOBS ini tidak tetap sebagai acuan karena jenis intervensi yg berbeda-beda
 	public  function count_kl_area($product_id=0,$intervention_id=0,$clients='',$area='',$port_terminal='',$month='',$year=''){
-		$this->db->select('SUM((0 || "BL_GSV_KLOBS")::integer) as total_bl ');
+		$this->db->select('SUM((0 || "BL_GSV_KLOBS")::integer) as total_bl, AVG(NULLIF("SL_VS_BOL_R1_KLOBS", \'\')::float) as rata_losses ');
         $this->db->from('FORM_ENTRY_FIELD');
 		
 		if(($product_id != '0') || (!empty($product_id)) ) {
@@ -105,7 +105,7 @@ class Dashboard_model extends CI_Model
             }
         } 
 		
-        return $this->db->get()->result();
+        return $this->db->get();
 		 
 	}
 	

@@ -260,13 +260,8 @@
 						var re_bulan         = $('select[name="bulan"]').val();
 						var re_tahun         = $('select[name="tahun"]').val();
 
-						$.getJSON('<?php echo base_url(); ?>index.php/form_entry/grab_chart_port_terminal/?produk='+re_produk+'&intervensi='+re_intervensi+'&client='+re_client+'&area='+re_area+'&port_terminal='+re_port_terminal+'bulan='+re_bulan+'tahun='+re_tahun,function(json){
-							// munculkan chart line
-							var categorie_areas = [];
-							for(var i = 0; i < json.length; i++) {
-								categorie_areas.push(json[i]);
-							}
-							column_line(my_json,'chart_line',categorie_areas,'Losses Periode',series);
+						$.getJSON('<?php echo base_url(); ?>index.php/form_entry/grab_chart_port_terminal/?produk='+re_produk+'&intervensi='+re_intervensi+'&client='+re_client+'&area='+re_area+'&port_terminal='+re_port_terminal+'&bulan='+re_bulan+'&tahun='+re_tahun,function(json){
+							column_line(my_json,'chart_line',json.area,'Losses Periode',json.total);
 						});
 
 						var lok_kerja = $("#lokasi_kerja").val();
@@ -415,17 +410,17 @@
 				});
 		}
 		
-		function column_line(mydata,chart_id,categories,title,series_name) { 
+		function column_line(mydata,chart_id,categories,title,single_series_data) { 
 			//mydata = JSON.parse(mydata);
 			Highcharts.chart(chart_id, {
 				chart: {
 					type: 'line'
 				},
 				title: {
-					text: 'Area Losses Information'
+					text: 'Transfer Periodic'
 				},
 				subtitle: {
-					text: 'Source: Data Pusat'
+					text: 'Source: Sucofindo'
 				},
 				xAxis: {
 					categories: categories
@@ -445,10 +440,7 @@
 				},
 				series: [{
 					name: 'MFO',
-					data: [7.0, 6.9, 9.5]
-				},{
-					name: 'HSD',
-					data: [0.0, 0.0, 0.0]
+					data: single_series_data
 				}]
 			});
 		}
