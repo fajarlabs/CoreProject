@@ -190,10 +190,12 @@ class Dashboard extends MY_Controller
 		$client  	 	 = $_POST['client'];
 		$lokasi_kerja 	 = (!empty($_POST['lokasi_kerja']) ? $_POST['lokasi_kerja'] : '0');
 		
-		$count  =  $this->Dashboard_model->count_frekuensi($produk_id,$intervention_id,$client,$lokasi_kerja,$date_month,$date_year);
+		$query  =  $this->Dashboard_model->count_frekuensi($produk_id,$intervention_id,$client,$lokasi_kerja,$date_month,$date_year);
 		$result = 0;
-		if(!empty($count[0]->total)){
-			$result=$count[0]->total;
+		if($query->num_rows() > 0) {
+			foreach($query->result() as $row) {
+				$result = $row->total;
+			}
 		}
 		echo $result;
 	}

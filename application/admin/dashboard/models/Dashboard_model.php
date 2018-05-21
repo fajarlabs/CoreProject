@@ -69,8 +69,7 @@ class Dashboard_model extends CI_Model
             }
         } 
 		
-        return $this->db->get()->result();
-		 
+		return $this->db->get();
 	}
 
 	// untuk perhitungan GSV KLOBS bisa jadi nanti berubah

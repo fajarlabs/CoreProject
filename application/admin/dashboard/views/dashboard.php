@@ -139,7 +139,7 @@
 																</tr>
 																<tr>
 																	<td>Port</td>
-																	<td><span id="y_sl_gsv_klobs">-</span></td>
+																	<td><span id="port_val">-</span></td>
 																</tr>
 																<tr>
 																	<td>Frequency</td>
@@ -333,10 +333,34 @@
 						var re_tahun         = $('input[name="tahun"]').val();
 
 						$.getJSON('<?php echo base_url(); ?>index.php/form_entry/grab_chart_port_terminal/?produk='+re_produk+'&intervensi='+re_intervensi+'&client='+re_client+'&area='+re_area+'&port_terminal='+re_port_terminal+'&bulan='+re_bulan+'&tahun='+re_tahun,function(json){
+							var port_terminal = $('select[name="port_terminal"] option:selected').text();
+							if(port_terminal == '--Choose--') {
+								$("#port_val").html('-');
+							} else {
+								$("#port_val").html(port_terminal);
+							}							
+
 							// info dikanan chart line
-							$("#cargo_info").html($('select[name="produk"] option:selected').text());
-							$("#intervention_info").html($('select[name="intervensi"] option:selected').text());
-							$("#month_info").html($('select[name="bulan"] option:selected').text());
+							var cargo_info = $('select[name="produk"] option:selected').text();
+							if(cargo_info == '--Choose--') {
+								$("#cargo_info").html('-');
+							} else {
+								$("#cargo_info").html(cargo_info);
+							}
+							
+							var intervention_info = $('select[name="intervensi"] option:selected').text();
+							if(intervention_info == '--Choose--') {
+								$("#intervention_info").html('-');
+							} else {
+								$("#intervention_info").html(intervention_info);
+							}
+
+							var month_info = $('select[name="bulan"] option:selected').text();
+							if(month_info == '--Choose--'){
+								$("#month_info").html('-');
+							} else {
+								$("#month_info").html(month_info);
+							}
 							$("#year_info").html(re_tahun);
 
 							column_line(my_json,'chart_line',json.area,'Transfer Periodic',json.total);
@@ -348,7 +372,10 @@
 							
 						}
 						else {
-							var place_data = $("#lokasi_kerja").val();
+							var place_data = $("#lokasi_kerja option:selected").text();
+							if(place_data == '--Choose--') {
+								place_data = '-';
+							}
 							$("#x_lokasi").html(place_data);
 						}
 						
@@ -375,7 +402,7 @@
 								processData: false,
                                 contentType: false,
 								success: function(mydata) {
-									 $("#y_sl_gsv_klobs").html(mydata);
+									 //$("#y_sl_gsv_klobs").html(mydata);
 								}
 						});
 						
