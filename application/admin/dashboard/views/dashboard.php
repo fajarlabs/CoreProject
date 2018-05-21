@@ -117,8 +117,8 @@
 							<br/>
 
 							
-							<table id="div_chart" class="table" >
-								<tr>
+							<table style="display:none;" id="div_chart" class="table" >
+								<tr style="display:none;">
 									<td><div style="width:500px;height:400px;" id="chart_pie">No Data</div></td>
 									<td><div style="width:500px;height:400px;" id="chart_bar">No Data</div></td>
 								</tr>
@@ -276,6 +276,7 @@
 					});
 
 	 	    	$("#chart_form").on("submit",function(e) {
+					$("#div_chart").slideUp('slow');
 	 	    		var tahun = $('input[name="tahun"');
 	 	    		var tahun_int = parseInt(tahun.val());
 	 	    		if(tahun_int < 2018) {
@@ -436,6 +437,8 @@
 	 	    			$(".tab-content").show();
 
 	 	    		});
+
+					  $("#div_chart").slideDown('slow');
 	 	    		return false;
 	 	    	}); 
 	        } else {
