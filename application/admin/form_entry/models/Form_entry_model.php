@@ -225,10 +225,14 @@ class Form_entry_model extends CI_Model
             $this->db->like('LOWER("AREA")', strtolower($area)); 
         }
         if(!empty($month)) {
-            $this->db->where('to_char("CREATE_TIME", \'MM\')=', $month);
+            if($month != 'undefined') {
+                $this->db->where('to_char("CREATE_TIME", \'MM\')=', $month);
+            }
         }
         if(!empty($year)) {
-            $this->db->where('to_char("CREATE_TIME", \'YYYY\')=', $year);
+            if($year != 'undefined'){
+                $this->db->where('to_char("CREATE_TIME", \'YYYY\')=', $year);
+            }
         } 
 		  //echo $this->db->last_query();
 		return $this->db->get();

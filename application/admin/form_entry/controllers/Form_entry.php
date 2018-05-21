@@ -879,6 +879,8 @@ class Form_entry extends MY_Controller
 		print_r($area);
 		echo "</pre>";
 
+		// setelah semua area didapatkan looping dapatkan semua port dan areanya
+
 		// // dapatkan area terlebih dahulu
 		// $query_area = $this->Form_entry_model->grab_port_by_area($area);
 		// $result = array();

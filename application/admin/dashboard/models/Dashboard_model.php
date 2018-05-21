@@ -28,10 +28,14 @@ class Dashboard_model extends CI_Model
             $this->db->like('LOWER("AREA")', strtolower($area)); 
         }
         if(!empty($month)) {
-            $this->db->where('to_char("CREATE_TIME", \'MM\')=', $month);
+            if($month != 'undefined') {
+                $this->db->where('to_char("CREATE_TIME", \'MM\')=', $month);
+            }
         }
         if(!empty($year)) {
-            $this->db->where('to_char("CREATE_TIME", \'YYYY\')=', $year);
+            if($year != 'undefined'){
+                $this->db->where('to_char("CREATE_TIME", \'YYYY\')=', $year);
+            }
         } 
 		
         return $this->db->get()->result();
@@ -55,18 +59,24 @@ class Dashboard_model extends CI_Model
             $this->db->like('LOWER("AREA")', strtolower($area)); 
         }
         if(!empty($month)) {
-            $this->db->where('to_char("CREATE_TIME", \'MM\')=', $month);
+            if($month != 'undefined') {
+                $this->db->where('to_char("CREATE_TIME", \'MM\')=', $month);
+            }
         }
         if(!empty($year)) {
-            $this->db->where('to_char("CREATE_TIME", \'YYYY\')=', $year);
+            if($year != 'undefined'){
+                $this->db->where('to_char("CREATE_TIME", \'YYYY\')=', $year);
+            }
         } 
 		
         return $this->db->get()->result();
 		 
 	}
 
+	// untuk perhitungan GSV KLOBS bisa jadi nanti berubah
+	// menggunakan GSV KLOBS ini tidak tetap sebagai acuan karena jenis intervensi yg berbeda-beda
 	public  function count_kl_area($product_id=0,$intervention_id=0,$clients='',$area='',$port_terminal='',$month='',$year=''){
-		$this->db->select(' count("SELECT_INTERVENTION") as total ');
+		$this->db->select('SUM((0 || "BL_GSV_KLOBS")::integer) as total_bl ');
         $this->db->from('FORM_ENTRY_FIELD');
 		
 		if(($product_id != '0') || (!empty($product_id)) ) {
@@ -85,10 +95,14 @@ class Dashboard_model extends CI_Model
             $this->db->like('LOWER("PORT_TERMINAL")', strtolower($port_terminal)); 
 		}
         if(!empty($month)) {
-            $this->db->where('to_char("CREATE_TIME", \'MM\')=', $month);
+            if($month != 'undefined') {
+                $this->db->where('to_char("CREATE_TIME", \'MM\')=', $month);
+            }
         }
         if(!empty($year)) {
-            $this->db->where('to_char("CREATE_TIME", \'YYYY\')=', $year);
+            if($year != 'undefined'){
+                $this->db->where('to_char("CREATE_TIME", \'YYYY\')=', $year);
+            }
         } 
 		
         return $this->db->get()->result();
