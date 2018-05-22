@@ -138,7 +138,7 @@
  	   	var tgl = convert_date('<?Php echo @$item->result()[0]->BIRTHDATE ?>');	
  	    $("#birthdate").val(tgl);	
 	 	$('.mydatepicker').datepicker({
-		    format: 'dd/mm/yyyy',
+		    dateFormat: 'dd/mm/yy',
 		    changeMonth: true,
     		changeYear: true,
     		yearRange: "-100:+0"

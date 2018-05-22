@@ -405,7 +405,13 @@ class Form_entry extends MY_Controller
 		}
 
 		$id = $this->Form_entry_model->save($col_val);
+		
+		$grab_column = array();
+		foreach($col_val as $kg => $vg):
+			$grab_column[] = $kg;
+		endforeach;
 
+		
 		// update field for references
 		$this->Element_connection_model->update_fields_by_product_intervention(json_encode($grab_column),@$col_val['PRODUCT_TYPE'],@$col_val['SELECT_INTERVENTION']);
 
@@ -583,6 +589,7 @@ class Form_entry extends MY_Controller
 				// delete history
 				$this->Port_terminal_detail_model->delete_by_fefid($id);
 				foreach($port_id as $k => $v) {
+					$v = (int)$v;
 					$insert = array(
 						'FEF_ID' => $id,
 						'PORT_ID'=> $v
