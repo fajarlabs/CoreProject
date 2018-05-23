@@ -394,6 +394,12 @@ class Form_entry extends MY_Controller
 			}
 		}
 
+		echo "<pre>";
+		print_r($col_val);
+		echo "</pre>";
+
+		die();
+
 		// additional column
 		$col_val['CREATE_TIME'] = date('Y-m-d H:i:s');
 		$col_val['MODIFY_USER'] = get_admin_username();

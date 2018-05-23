@@ -348,7 +348,7 @@ function proses(arg1='',arg2='',output='',multiply=0) {
 				function add_tb_principle100() {
 					var id_gen = random_id();
 					// inisialisasi elemen jika single client maka sharing fee otomatis 100%
-					var str_tr_principle_100 = "<tr><td>Client <input type=\"hidden\" id=\"client_id_"+id_gen+"\" name=\"client_id[]\" /> <input name=\"client_id[]\" onkeydown=\"initClient(this,null,'client_id_"+id_gen+"')\" name=\"clients[]\" type=\"\" value=\"\" /> <input type=\"checkbox\" name=\"supplier\" />Supplier&nbsp;<input type=\"checkbox\" name=\"trader\" />Trader&nbsp;<input type=\"checkbox\" name=\"buyer\" />Buyer&nbsp;<input type=\"checkbox\" name=\"seller\" />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee\" value=\"100\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> "+file_ref+"</td></tr>";
+					var str_tr_principle_100 = "<tr><td>Client <input type=\"hidden\" id=\"client_id_"+id_gen+"\" name=\"client_id[]\" /> <input onkeydown=\"initClient(this,null,'client_id_"+id_gen+"')\" name=\"clients[]\" type=\"\" value=\"\" /> <input type=\"checkbox\" name=\"supplier\" />Supplier&nbsp;<input type=\"checkbox\" name=\"trader\" />Trader&nbsp;<input type=\"checkbox\" name=\"buyer\" />Buyer&nbsp;<input type=\"checkbox\" name=\"seller\" />Seller &nbsp;&nbsp;Sharing Fee <input type=\"text\" name=\"sharing_fee\" value=\"100\" />% <a onclick=\"delete_tb_principle(this)\" href=\"javascript:;\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-minus\"></i></a> "+file_ref+"</td></tr>";
 					$("#tb_principle").append(str_tr_principle_100);
 				}
 
