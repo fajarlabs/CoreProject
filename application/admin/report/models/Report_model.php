@@ -84,7 +84,7 @@ class Report_model extends CI_Model {
         }
 		
         $query .= ($cp_count > 0 ? "AND " : " ")." \"fef\".\"IS_DELETE\" = '0' LIMIT $limit OFFSET $offset ";
-        //echo $query;
+        // echo $query;
 		return $this->db->query($query);
 	}
 	
