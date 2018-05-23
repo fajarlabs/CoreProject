@@ -293,7 +293,7 @@
 							$("#month_info").html($('select[name="bulan"] option:selected').text());
 							$("#year_info").html(re_tahun);
 
-							column_line(my_json,'chart_line',json.area,'Losses Periode',json.total);
+							column_line(my_json,'chart_line',json.area,'Transfer Periodic',json.total);
 						});	
 						
 						
@@ -446,14 +446,14 @@
 				});
 		}
 		
-		function column_line(mydata,chart_id,categories,title,single_series_data) { 
+		function column_line(mydata,chart_id,categories,mytitle,single_series_data) { 
 			//mydata = JSON.parse(mydata);
 			Highcharts.chart(chart_id, {
 				chart: {
-					type: 'line'
+					type: 'column'
 				},
 				title: {
-					text: 'Transfer Periodic'
+					text: mytitle
 				},
 				subtitle: {
 					text: 'Source: Sucofindo'
@@ -467,12 +467,13 @@
 					}
 				},
 				plotOptions: {
-					line: {
-						dataLabels: {
-							enabled: true
-						},
-						enableMouseTracking: false
-					}
+				        series: {
+				            borderWidth: 0,
+				            dataLabels: {
+				                enabled: true,
+				                format: '{point.y:0f}'
+				            }
+				        }
 				},
 				credits: {
 						enabled: false
