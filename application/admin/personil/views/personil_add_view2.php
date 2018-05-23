@@ -120,7 +120,7 @@
 	(function defer() {
 		if (window.jQuery) {
 			$('.mydatepicker').datepicker({
-				    format: 'dd/mm/yyyy',
+				    dateFormat: 'dd/mm/yy',
 				    changeMonth: true,
 					changeYear: true,
 					yearRange: "-100:+0"

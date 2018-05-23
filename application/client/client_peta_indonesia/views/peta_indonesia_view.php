@@ -57,7 +57,7 @@
                         </thead>
                     </table>
                     <div id="toolbar">
-                        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newArticleCategory()">Add</a>
+                        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newData()">Add</a>
                         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editArticleCategory()">Edit</a>
                         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyArticleCategory()">Remove</a>
                     </div>

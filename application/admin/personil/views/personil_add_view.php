@@ -120,7 +120,7 @@
 		if (window.jQuery) {
 			get_type_location(<?php echo $id ?>);
 			$('.mydatepicker').datepicker({
-				    format: 'dd/mm/yyyy',
+				    dateFormat: 'dd/mm/yy',
 				    changeMonth: true,
 					changeYear: true,
 					yearRange: "-100:+0"

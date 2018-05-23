@@ -247,7 +247,7 @@ foreach($cv_cr as $my_cv_cr){
  	    $("#birthdate").val(tgl);		
 
 	 	$('.datepicker2').datepicker({
-		    format: 'dd/mm/yyyy',
+		    dateFormat: 'dd/mm/yy',
 		    changeMonth: true,
     		changeYear: true
 		 }); 	   	
@@ -282,7 +282,7 @@ foreach($cv_cr as $my_cv_cr){
 				html +='			</div>';
 				$("#data_certificate").after(html);
 				$('.datepicker').datepicker({
-				    format: 'dd/mm/yyyy',
+				    dateFormat: 'dd/mm/yy',
 				    changeMonth: true,
     				changeYear: true
 				 });
@@ -335,11 +335,11 @@ foreach($cv_cr as $my_cv_cr){
 						html +='		</div><br>';
 						html +='		<div class="row">';
 						html +='			<div class="col-md-1">';
-						html +='				<input id="start_work_'+Ids3+'"  name="start_work[]" value="" class="form-control datepicker"  readonly="true" placeholder="Start Work" style="background-color:white" type="text">';
+						html +='				<input id="start_work_'+Ids3+'"  name="start_work[]" value="" class="form-control datepicker"   placeholder="Start Work" style="background-color:white" type="text">';
 						html +='			</div>';
 						html +='			<div class="col-md-5">&nbsp;&nbsp;</div>';
 						html +='			<div class="col-md-1">';
-						html +='				<input id="end_work_'+Ids3+'" name="end_work[]" value="" class="form-control datepicker" readonly="true" placeholder="End Work" style="background-color:white" type="text">';
+						html +='				<input id="end_work_'+Ids3+'" name="end_work[]" value="" class="form-control datepicker"  placeholder="End Work" style="background-color:white" type="text">';
 						html +='			</div>';
 						html +='		</div><br>';
 						html +='		<div class="row">';
@@ -354,7 +354,7 @@ foreach($cv_cr as $my_cv_cr){
 					html +=	'</div>';
 					$("#data_work").after(html);
 					$('.datepicker').datepicker({
-					    format: 'dd/mm/yyyy',
+					    dateFormat: 'dd/mm/yy',
 					    changeMonth: true,
   						changeYear: true,
 					    autoUpdateInput: false
@@ -498,7 +498,11 @@ foreach($cv_cr as $my_cv_cr){
 					html+=	'</div>';
 					html +='			</div>';
 			$("#data_certificate").append(html);
-			$('.datepicker').datepicker();
+			$('.datepicker').datepicker({
+				    dateFormat: 'dd/mm/yy',
+				    changeMonth: true,
+    				changeYear: true
+				 });
 			Ids4++;
 	}
 
@@ -513,11 +517,11 @@ foreach($cv_cr as $my_cv_cr){
 						html +='		</div><br>';
 						html +='		<div class="row">';
 						html +='			<div class="col-md-1">';
-						html +='				<input name="start_work[]" value="" class="form-control datepicker"  readonly="true" placeholder="Start Work" style="background-color:white" type="text">';
+						html +='				<input name="start_work[]" value="" class="form-control datepicker"   placeholder="Start Work" style="background-color:white" type="text">';
 						html +='			</div>';
 						html +='			<div class="col-md-5">&nbsp;&nbsp;</div>';
 						html +='			<div class="col-md-1">';
-						html +='				<input name="end_work[]" value="" class="form-control datepicker" readonly="true" placeholder="End Work" style="background-color:white" type="text">';
+						html +='				<input name="end_work[]" value="" class="form-control datepicker"  placeholder="End Work" style="background-color:white" type="text">';
 						html +='			</div>';
 						html +='		</div><br>';
 						html +='		<div class="row">';
@@ -531,7 +535,11 @@ foreach($cv_cr as $my_cv_cr){
 					html +='	</div>';			
 					html +=	'</div>';
 			$("#data_work").append(html);
-			$('.datepicker').datepicker();
+			$('.datepicker').datepicker({
+				    dateFormat: 'dd/mm/yy',
+				    changeMonth: true,
+    				changeYear: true
+				 });
 			Ids3++;
 	}
 

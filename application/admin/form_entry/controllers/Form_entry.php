@@ -405,6 +405,11 @@ class Form_entry extends MY_Controller
 		}
 
 		$id = $this->Form_entry_model->save($col_val);
+		
+		$grab_column = array();
+		foreach($col_val as $kg => $vg):
+			$grab_column[] = $kg;
+		endforeach;
 
 		$grab_column = array();
 		foreach($col_val as $kg => $vg):
@@ -588,6 +593,7 @@ class Form_entry extends MY_Controller
 				// delete history
 				$this->Port_terminal_detail_model->delete_by_fefid($id);
 				foreach($port_id as $k => $v) {
+					$v = (int)$v;
 					$insert = array(
 						'FEF_ID' => (int)$id,
 						'PORT_ID'=> (int)$v

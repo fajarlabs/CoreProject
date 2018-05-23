@@ -318,10 +318,10 @@
 	 				    var series = $("#intervensi").find("option:selected").text();
 						
  				        //Pie Chart
- 				        column_pie(my_json,'chart_pie','','Loss Statistics Information',series);
+ 				        //column_pie(my_json,'chart_pie','','Loss Statistics Information',series);
 
  				        //Bar Chart
- 				        column_bar(my_json,'chart_bar','','Total Losses Information',series);
+ 				        //column_bar(my_json,'chart_bar','','Total Losses Information',series);
 					
 						//Line Chart
 						// dapatkan filter area global
@@ -576,7 +576,7 @@
 			//mydata = JSON.parse(mydata);
 			Highcharts.chart(chart_id, {
 				chart: {
-					type: 'line'
+					type: 'column'
 				},
 				title: {
 					text: mytitle
@@ -593,12 +593,13 @@
 					}
 				},
 				plotOptions: {
-					line: {
-						dataLabels: {
-							enabled: true
-						},
-						enableMouseTracking: false
-					}
+				        series: {
+				            borderWidth: 0,
+				            dataLabels: {
+				                enabled: true,
+				                format: '{point.y:0f}'
+				            }
+				        }
 				},
 				credits: {
 						enabled: false

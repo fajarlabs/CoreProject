@@ -230,6 +230,143 @@ class Client_dashboard extends MY_Controller
 		echo json_encode($result);
 	}
 	
+	public function grab_chart_information_detail() {
+		// parameter data
+		$product       = $this->input->get("produk");
+		$intervensi    = $this->input->get("intervensi");
+		$client        = $this->input->get("client");
+		$area          = $this->input->get("area");
+		$port_terminal = $this->input->get("port_terminal");
+		$bulan         = $this->input->get("bulan");
+		$tahun         = $this->input->get("tahun");
+
+		// ini query untuk mendapatkan semua area berdasarkan parameter filter
+		$query_all_area = $this->Form_entry_model->grab_area_detail($product,$intervensi,$client,$area,$port_terminal,$bulan,$tahun);
+		// dapatkan semua area berdasarkan filter
+		
+		// area
+		$area = array();
+		if($query_all_area->num_rows() > 0) {
+			foreach($query_all_area->result() as $row) {
+				if(!in_array($row->AREA,$area)) {
+					if(!empty($row->AREA))
+						$area[] = $row->AREA;
+				}
+			}
+		}		
+		
+		// surveyor in charges
+		$surveyor_in_charges = array();
+		if($query_all_area->num_rows() > 0) {
+			foreach($query_all_area->result() as $row) {
+				$data_surveyor = json_decode($row->SURVEYOR_IN_CHARGE);
+				if (is_array($data_surveyor)) {
+					foreach($data_surveyor as $ks => $vs) {
+						if(!in_array($vs,$surveyor_in_charges)) {
+							if(!empty($vs))
+								$surveyor_in_charges[] = $vs;
+						}
+					}
+				}
+			}
+		}
+
+		// activities remarks
+		$activities_remarks = array();
+		if($query_all_area->num_rows() > 0) {
+			foreach($query_all_area->result() as $row_activities) {
+				if(!in_array($row_activities->ACTIVITIES_REMARKS,$activities_remarks)) {
+					if(!empty($row_activities->ACTIVITIES_REMARKS))
+						$activities_remarks[] = $row_activities->ACTIVITIES_REMARKS;
+				}
+			}
+		}		
+
+		// sea condition
+		$sea_condition = array();
+		if($query_all_area->num_rows() > 0) {
+			foreach($query_all_area->result() as $row_sc) {
+				if(!in_array($row_sc->SC,$sea_condition)) {
+					if(!empty($row_sc->SC))
+						$sea_condition[] = $row_sc->SC;
+				}
+			}
+		}	
+		
+		// date_of_analysis
+		$date_of_analysis = array();
+		if($query_all_area->num_rows() > 0) {
+			foreach($query_all_area->result() as $row_sc) {
+				if(!in_array($row_sc->DATE_OF_ANALYSIS,$date_of_analysis)) {
+					if(!empty($row_sc->DATE_OF_ANALYSIS))
+						$date_of_analysis[] = date('d-m-Y', strtotime($row_sc->DATE_OF_ANALYSIS));
+				}
+			}
+		}	
+		
+
+		// port terminal
+		$port_terminal = array();
+		if($query_all_area->num_rows() > 0) {
+			foreach($query_all_area->result() as $row_port_terminal) {
+				$data = json_decode($row_port_terminal->PORT_TERMINAL);
+				if(is_array($data)) {
+					if(count($data) > 0) {
+						foreach($data as $k => $v) {
+							if(!in_array($v,$port_terminal)) {
+								if(!empty($v))
+									$port_terminal[]=$v;
+							}
+						}
+					}
+				}
+			}
+		}			
+		
+		// product
+		$product = array();
+		if($query_all_area->num_rows() > 0) {
+			foreach($query_all_area->result() as $row_product) {
+				$data = json_decode($row_product->PRODUCT);
+				if(is_array($data)) {
+					if(count($data) > 0) {
+						foreach($data as $k => $v) {
+							if(!in_array($v,$product)) {
+								if(!empty($v))
+									$product[]=$v;
+							}
+						}
+					}
+				}
+			}
+		}	
+
+		// vessel
+		$vessel = array();
+		if($query_all_area->num_rows() > 0) {
+			foreach($query_all_area->result() as $row_vessel) {
+				if(!in_array($row_vessel->VESSEL,$vessel)) {
+					if(!empty($row_vessel->VESSEL))
+						$vessel[] = $row_vessel->VESSEL;
+				}
+			}
+		}	
+
+		$result = new stdClass();
+		$result->AREA                = $area;
+		$result->SURVEYOR_IN_CHARGES = $surveyor_in_charges;
+		$result->ACTIVITIES_REMARKS  = $activities_remarks;
+		$result->SEA_CONDITION       = $sea_condition;
+		$result->PORT_TERMINAL       = $port_terminal;
+		$result->PRODUCT             = $product;
+		$result->VESSEL              = $vessel;
+		$result->DATE_OF_ANALYSIS    = $date_of_analysis;
+
+		header('Content-Type: application/json');
+		echo json_encode($result);
+
+	}
+	
 	
 	public function grab_chart_port_terminal() {
 		// parameter data

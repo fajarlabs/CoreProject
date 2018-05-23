@@ -92,8 +92,8 @@
 							<!-- Tempat Chart -->
 							<table id="div_chart" style="display:none;width:100%;margin-top:3px;border-collapse: separate;border-spacing: 8px;border:4px solid #ccc;border-radius:5px;">
 								<tr>
-									<td><div style="width:500px;height:400px;" id="chart_pie">No Data</div></td>
-									<td><div style="width:500px;height:400px;" id="chart_bar">No Data</div></td>
+									<td><div style="display:none;width:500px;height:400px;" id="chart_pie">No Data</div></td>
+									<td><div style="display:none;width:500px;height:400px;" id="chart_bar">No Data</div></td>
 								</tr>
 								<tr>
 									<td colspan="2">
@@ -152,7 +152,7 @@
 			</div>
 	</div>
 	
-	<!-- Modal -->
+		<!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
@@ -163,7 +163,23 @@
           <h4 class="modal-title">Detail</h4>
         </div>
         <div class="modal-body">
-          <div style="width:500px;height:400px;" id="chart_pie_detail">No Data</div>
+			<div class="row">
+				<div class="col-xs-6">
+         			<div style="width:auto;height:400px;" id="chart_pie_detail">No Data</div>
+				</div>
+				<div class="col-xs-6">
+					<table class="table">
+						<tr><td>Area</td><td id="i_area"></td></tr>
+						<tr><td>Surveyor In Charges</td><td id="i_surveyor_in_charge"></td></tr>
+						<tr><td>Activites Remarks</td><td id="i_activities_remarks"></td></tr>
+						<tr><td>Sea Condition</td><td id="i_sea_condition"></td></tr>
+						<tr><td>Port Terminal</td><td id="i_port_terminal"></td></tr>
+						<tr><td>Product</td><td id="i_product"></td></tr>
+						<tr><td>Vessel</td><td id="i_vessel"></td></tr>
+						<tr><td>Date Of Analysis</td><td id="i_date_of_analysis"></td></tr>
+					</table>
+				</div>
+			</div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -255,10 +271,10 @@
 
 	 				    var series = $("#intervensi").find("option:selected").text();
  				        //Pie Chart
- 				        column_pie(my_json,'chart_pie','','Loss Statistics Percentage',series);
+ 				        ///column_pie(my_json,'chart_pie','','Loss Statistics Percentage',series);
 
  				        //Bar Chart
- 				        column_bar(my_json,'chart_bar','','Loss Statistics Percentage',series);
+ 				        //column_bar(my_json,'chart_bar','','Loss Statistics Percentage',series);
 						
 						//Line Chart
 						// dapatkan filter area global
@@ -277,12 +293,23 @@
 							$("#month_info").html($('select[name="bulan"] option:selected').text());
 							$("#year_info").html(re_tahun);
 
-							column_line(my_json,'chart_line',json.area,'Losses Periode',json.total);
+							column_line(my_json,'chart_line',json.area,'Transfer Periodic',json.total);
 						});	
 						
 						
 						$.getJSON('<?php echo base_url(); ?>index.php/client_dashboard/grab_chart_port_terminal_detail/?produk='+re_produk+'&intervensi='+re_intervensi+'&client='+re_client+'&area='+re_area+'&port_terminal='+re_port_terminal+'&bulan='+re_bulan+'&tahun='+re_tahun,function(json){
 							column_pie_detail(my_json,'chart_pie_detail','Losses',json.warna);
+						});
+						
+						$.getJSON('<?php echo base_url(); ?>index.php/client_dashboard/grab_chart_information_detail/?produk='+re_produk+'&intervensi='+re_intervensi+'&client='+re_client+'&area='+re_area+'&port_terminal='+re_port_terminal+'&bulan='+re_bulan+'&tahun='+re_tahun,function(json){
+							$("#i_area").html(json.AREA.toString());
+							$("#i_surveyor_in_charge").html(json.SURVEYOR_IN_CHARGES.toString());
+							$("#i_activities_remarks").html(json.ACTIVITIES_REMARKS.toString());
+							$("#i_sea_condition").html(json.SEA_CONDITION.toString());
+							$("#i_port_terminal").html(json.PORT_TERMINAL.toString());
+							$("#i_product").html(json.PRODUCT.toString());
+							$("#i_vessel").html(json.VESSEL.toString());
+							$("#i_date_of_analysis").html(json.DATE_OF_ANALYSIS.toString());
 						});
 						
 						$("#x_lokasi").html("-");
@@ -419,14 +446,14 @@
 				});
 		}
 		
-		function column_line(mydata,chart_id,categories,title,single_series_data) { 
+		function column_line(mydata,chart_id,categories,mytitle,single_series_data) { 
 			//mydata = JSON.parse(mydata);
 			Highcharts.chart(chart_id, {
 				chart: {
-					type: 'line'
+					type: 'column'
 				},
 				title: {
-					text: 'Transfer Periodic'
+					text: mytitle
 				},
 				subtitle: {
 					text: 'Source: Sucofindo'
@@ -440,12 +467,13 @@
 					}
 				},
 				plotOptions: {
-					line: {
-						dataLabels: {
-							enabled: true
-						},
-						enableMouseTracking: false
-					}
+				        series: {
+				            borderWidth: 0,
+				            dataLabels: {
+				                enabled: true,
+				                format: '{point.y:0f}'
+				            }
+				        }
 				},
 				credits: {
 						enabled: false
