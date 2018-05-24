@@ -1,17 +1,27 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Peta_indonesia_model extends CI_Model 
+class Client_point_model extends CI_Model 
 {
 
-	private $table = "CLIENT_COORDINATES";
+	private $table = "MAP_POINT";
 
 	public function get_all_items()
 	{
         $this->db->select('*');
-        $this->db->from($this->table);
+        $this->db->from($this->table);  
         return $this->db->get();
 	}
+
+    public function get_by_type($type)
+    {
+        $this->db->select('*');
+        $this->db->from($this->table .' mp');
+        $this->db->join('APP_CLIENT_SITE acs', 'acs.CLIENT_SITE_ID = mp.SITE_ID','left');
+        $this->db->join('MASTER_ICON_MARKER mim', 'mim.ID = mp.ICON_ID','left');
+        $this->db->where('TYPE', $type);
+        return $this->db->get();
+    }
 
     public  function get_item_by_id($id) 
     {
