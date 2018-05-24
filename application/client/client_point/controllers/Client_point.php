@@ -358,11 +358,11 @@ class Client_point extends MY_Controller
 		$this->data['title'] = "Map Point Management";
 		$this->data['lat']   = $this->input->get("lat");
 		$this->data['lon']   = $this->input->get("lon");
-		$this->load->view('client/header',$this->data);
+		$this->load->view('admin/header',$this->data);
 		$this->load->view('client_point_add_view',$this->data);
-		$this->load->view('client/footer',$this->data);
+		$this->load->view('admin/footer',$this->data);
 	}
-	
+
 	public function edit($id=0)
 	{
 		$this->data['basic'] = true;
