@@ -175,7 +175,80 @@
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
   </tr>
-  
+  <tr>
+    <td class="span" colspan="7"><strong>II. DISCHARGE MONITORING</strong></td>
+  </tr>
+  <tr>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="span"><strong>A. TIME  LOG</strong></td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="span"><strong>Description</strong></td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><strong>Date</strong></td>
+    <td class="span"></td>
+    <td class="span"><strong>Time</strong></td>
+    <td class="span" colspan="2"><strong>Remarks/Delays/Etc</strong></td>
+  </tr>
+  <tr>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+  </tr>
+  <?php  foreach($el_connection_timelog as $key => $value){  
+		 $label = str_replace('_',' ',substr($value[0],5));
+  ?>
+  <tr>
+    <td class="span"><?php echo ucwords(strtolower($label)); ?></td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist_date($item->result()[0]->$value[1]); ?></td>
+    <td class="span">&nbsp;</td>
+    <td class="span"><?php echo check_exist($item->result()[0]->$value[0]); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->$value[2]); ?></td>
+  </tr>
+<?php 	} ?>
+  <tr>
+    <td class="span">Remarks</td>
+    <td class="span">:</td>
+    <td class="span" colspan="5">
+      <?php echo check_exist($item->result()[0]->ACTIVITIES_REMARKS); ?></td>
+  </tr>
+  <tr>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+  </tr>
   <tr>
     <td class="span"><strong>REMARKS  NOTE</strong></td>
     <td class="span">&nbsp;</td>

@@ -106,7 +106,7 @@ class Report extends MY_Controller
 			foreach($query_items->result() as $row) {
 				$row->KONTRAK = implode(", ",json_decode($row->KONTRAK));
 				$row->SPK = implode(", ",json_decode($row->SPK));
-				$row->CLIENTS = implode(", ",json_decode($row->CLIENTS));
+				$row->CLIENTS = @implode(", ",json_decode($row->CLIENTS));
 				$row->SURVEYOR_IN_CHARGE = implode(", ",json_decode($row->SURVEYOR_IN_CHARGE));
 				$row->CTIME  = date('d-m-Y H:i:s',strtotime($row->CTIME));
 				$row->FUNGSI = '<a href="'.base_url().'index.php/report/detil/'.$row->FEFID.'" class="btn btn-primary btn-xs"><i class="fa fa-eye"> View</i></a> '; 
@@ -140,15 +140,18 @@ class Report extends MY_Controller
         		$this->session->set_userdata('site_id',$row->CLIENT_SITE_ID);
         		$this->session->set_userdata('site_name',$row->CLIENT_SITE_NAME);
         	}
-        }		
+        }
+
+		$intervensi_id="";
+		$product_type="";
 		$intervention=$this->Report_model->get_intervention($id_item);
 		if($intervention->num_rows() > 0) {
         	foreach($intervention->result() as $row) {
-        		$intervensi=$row->SELECT_INTERVENTION;		
+        		$intervensi_id	= $row->SELECT_INTERVENTION;		
+        		$product_type	= $row->PRODUCT_TYPE;		
         	}
         }
-        // $intervensi = 25;
-		switch($intervensi){
+		switch($intervensi_id){
 			case 14:	// loading
 				$tplreport='report_loading_detil';
 				break;
@@ -166,6 +169,8 @@ class Report extends MY_Controller
         $this->data['site_id']     = $this->session->userdata("site_id");
         $this->data['site_name']   = $this->session->userdata("site_name");
 		$this->data['item']  = $this->Report_model->get_item_primary($id_item);
+		// $this->data['el_connection']  = $this->Report_model->get_el_connection($product_type,$intervensi_id);
+		$this->data['el_connection_timelog']  = get_filter_timelog($product_type,$intervensi_id);
 		$this->data['form_layout'] = 'list';
 		$this->load->view('admin/header',$this->data);
 		$this->load->view($tplreport,$this->data);
@@ -174,8 +179,19 @@ class Report extends MY_Controller
 	
 	public function cetak($id_item)
 	{
+		
 		$query_site = $this->Report_model->get_item_primary($id_item);
         if($query_site->num_rows() > 0) {
+			$intervensi_id="";
+			$product_type="";
+			$intervention=$this->Report_model->get_intervention($id_item);
+			if($intervention->num_rows() > 0) {
+				foreach($intervention->result() as $row) {
+					$intervensi_id	= $row->SELECT_INTERVENTION;		
+					$product_type	= $row->PRODUCT_TYPE;		
+				}
+			}
+			$this->data['el_connection_timelog']  = get_filter_timelog($product_type,$intervensi_id);
         	foreach($query_site->result() as $row) {
         		$ref="REPORT-00000".check_exist($row->ID);
 
@@ -217,254 +233,20 @@ class Report extends MY_Controller
 				$lcd=$row->lcd;
 				$blsd=$row->blsd;
 				
+			$time_log_data='';
+			 foreach($this->data['el_connection_timelog'] as $key => $value){  
+						$label = str_replace('_',' ',substr($value[0],5));
+				$time_log_data .='<tr>
+					<td class="span">'.ucwords(strtolower($label)).'</td>
+					<td class="span">&nbsp;</td>
+					<td class="span">'.check_exist_date($row->$value[1]).'</td>
+					<td class="span">&nbsp;</td>
+					<td class="span">'.check_exist($row->$value[0]).'</td>
+					<td class="span" colspan="2">'.check_exist($row->$value[2]).'</td>
+				  </tr>';
+					}
 
-				$date_va		= check_exist_date($row->DATE_VESSEL_ARRIVED);
-				$tm_va			= check_exist($row->TIME_VESSEL_ARRIVED);
-				$rmk_va			= check_exist($row->REMARKS_VESSEL_ARRIVED);
 				
-				$date_anchor		= check_exist_date($row->DATE_ANCHORAGED);
-				$tm_anchor			= check_exist($row->TIME_ANCHORAGED);
-				$rmk_anchor			= check_exist($row->REMARKS_ANCHORAGED);
-				
-				$date_nor  			= check_exist_date($row->DATE_NOR);
-				$tm_nor				= check_exist($row->TIME_NOR);
-				$rmk_nor			= check_exist($row->REMARKS_NOR);
-				
-				$date_acc  			= check_exist_date($row->DATE_ACCEPTED);
-				$tm_acc				= check_exist($row->TIME_ACCEPTED);
-				$rmk_acc			= check_exist($row->REMARKS_ACCEPTED);
-				
-				$date_brthed  		= check_exist_date($row->DATE_BERTHED);
-				$tm_brthed			= check_exist($row->TIME_BERTHED);
-				$rmk_brthed			= check_exist($row->REMARKS_BERTHED);
-				
-				$date_svyb  		= check_exist_date($row->DATE_SURVEYOR_ON_BOARD);
-				$tm_svyb			= check_exist($row->TIME_SURVEYOR_ON_BOARD);
-				$rmk_svyb			= check_exist($row->REMARKS_SURVEYOR_ON_BOARD);
-				
-				$date_dkm  			= check_exist_date($row->DATE_KEY_MEETING);
-				$tm_dkm				= check_exist($row->TIME_KEY_MEETING);
-				$rmk_dkm			= check_exist($row->REMARKS_KEY_MEETING);
-				
-				$date_dkm  			= check_exist_date($row->DATE_KEY_MEETING);
-				$tm_dkm				= check_exist($row->TIME_KEY_MEETING);
-				$rmk_dkm			= check_exist($row->REMARKS_KEY_MEETING);
-				
-				$date_tip_comm  	= check_exist_date($row->DATE_INPECTION_COMMENCED);
-				$tm_tip_comm		= check_exist($row->TIME_INPECTION_COMMENCED);
-				$rmk_tip_comm		= check_exist($row->REMARKS_INPECTION_COMMENCED);
-				
-				$date_tip_compl  	= check_exist_date($row->DATE_INSPECTION_COMPLETED);
-				$tm_tip_compl		= check_exist($row->TIME_INSPECTION_COMPLETED);
-				$rmk_tip_compl		= check_exist($row->REMARKS_INSPECTION_COMPLETED);
-				
-				$date_hs_comm  		= check_exist_date($row->DATE_CONNECTED_COMMENCED);
-				$tm_hs_comm			= check_exist($row->TIME_CONNECTED_COMMENCED);
-				$rmk_hs_comm		= check_exist($row->REMARKS_CONNECTED_COMMENCED);
-				
-				$date_hs_compl  	= check_exist_date($row->DATE_CONNECTED_COMPLETED);
-				$tm_hs_compl		= check_exist($row->TIME_CONNECTED_COMPLETED);
-				$rmk_hs_compl		= check_exist($row->REMARKS_CONNECTED_COMPLETED);
-				
-				$date_ld_comm  		= check_exist_date($row->DATE_LOADING_COMMENCED);
-				$tm_ld_comm			= check_exist($row->TIME_LOADING_COMMENCED);
-				$rmk_ld_comm		= check_exist($row->REMARKS_LOADING_COMMENCED);
-				
-				$date_ld_compl  	= check_exist_date($row->DATE_LOADING_COMPLETED);
-				$tm_ld_compl		= check_exist($row->TIME_LOADING_COMPLETED);
-				$rmk_ld_compl		= check_exist($row->REMARKS_LOADING_COMPLETED);
-				
-				$date_ld_hs_dc  	= check_exist_date($row->DATE_LOADING_HOSE_ARMS_DISCONNECT);
-				$tm_ld_hs_dc		= check_exist($row->TIME_DATE_LOADING_HOSE_ARMS_DISCONNECT);
-				$rmk_ld_hs_dc		= check_exist($row->REMARKS_DATE_LOADING_HOSE_ARMS_DISCONNECT);
-				
-				$date_lv_inspec_sampl  	= check_exist_date($row->DATE_LOADING_VISUAL_INSPEC_SAMPL);
-				$tm_lv_inspec_sampl		= check_exist($row->TIME_LOADING_VISUAL_INSPEC_SAMPL);
-				$rmk_lv_inspec_sampl		= check_exist($row->REMARKS_LOADING_VISUAL_INSPEC_SAMPL);
-				
-				$date_lv_inspec_mf  	= check_exist_date($row->DATE_LOADING_TANK_INSPECT_METER_FINAL);
-				$tm_lv_inspec_mf		= check_exist($row->TIME_LOADING_TANK_INSPECT_METER_FINAL);
-				$rmk_lv_inspec_mf		= check_exist($row->REMARKS_LOADING_TANK_INSPECT_METER_FINAL);
-				
-				$date_ld_calcul_doc_onboard	= check_exist_date($row->DATE_LOADING_CALCUL_COMPLETED_DOC_ONBOARD);
-				$tm_ld_calcul_doc_onboard		= check_exist($row->TIME_LOADING_CALCUL_COMPLETED_DOC_ONBOARD);
-				$rmk_ld_calcul_doc_onboard		= check_exist($row->REMARKS_LOADING_CALCUL_COMPLETED_DOC_ONBOARD);
-				
-				$date_ld_bg_lv_depot	= check_exist_date($row->DATE_LOADING_BARGE_LEAVE_DEPOT);
-				$tm_ld_bg_lv_depot		= check_exist($row->TIME_LOADING_BARGE_LEAVE_DEPOT);
-				$rmk_ld_bg_lv_depot		= check_exist($row->REMARKS_LOADING_BARGE_LEAVE_DEPOT);
-				
-				$date_dg_bg_arr		= check_exist_date($row->DATE_DISCHARGE_BARGE_ARRIVED);
-				$tm_dg_bg_arr		= check_exist($row->TIME_DISCHARGE_BARGE_ARRIVED);
-				$rmk_dg_bg_arr		= check_exist($row->REMARKS_DISCHARGE_BARGE_ARRIVED);
-				
-				$date_dg_nor_td		= check_exist_date($row->DATE_DISCHARGE_NOR_TENDERED);
-				$tm_dg_nor_td		= check_exist($row->TIME_DISCHARGE_NOR_TENDERED);
-				$rmk_dg_nor_td		= check_exist($row->REMARKS_DISCHARGE_NOR_TENDERED);
-				
-				$date_dg_AFA		= check_exist_date($row->DATE_DISCHARGE_BARGE_ALL_FAST_ALONGSIDE);
-				$tm_dg_AFA			= check_exist($row->TIME_DISCHARGE_BARGE_ALL_FAST_ALONGSIDE);
-				$rmk_dg_AFA			= check_exist($row->REMARKS_DISCHARGE_BARGE_ALL_FAST_ALONGSIDE);
-				
-				$date_dg_km			= check_exist_date($row->DATE_DISCHARGE_KEY_MEETING);
-				$tm_dg_km			= check_exist($row->TIME_DISCHARGE_KEY_MEETING);
-				$rmk_dg_km			= check_exist($row->REMARKS_DISCHARGE_KEY_MEETING);
-				
-				$date_dg_valve_seealed	= check_exist_date($row->DATE_DISCHARGE_VALVE_SEEALED);
-				$tm_dg_valve_seealed	= check_exist($row->TIME_DISCHARGE_VALVE_SEEALED);
-				$rmk_dg_valve_seealed	= check_exist($row->REMARKS_DISCHARGE_VALVE_SEEALED);
-				
-				$date_dg_tank_inspect_measure	= check_exist_date($row->DATE_DISCHARGE_TANK_INSPECT_MEASURE);
-				$tm_dg_tank_inspect_measure	= check_exist($row->TIME_DISCHARGE_TANK_INSPECT_MEASURE);
-				$rmk_dg_tank_inspect_measure	= check_exist($row->REMARKS_DISCHARGE_TANK_INSPECT_MEASURE);
-				
-				$date_dg_tank_inspect_meter_verf	= check_exist_date($row->DATE_DISCHARGE_TANK_INSPECT_METER_VERF);
-				$tm_dg_tank_inspect_meter_verf	= check_exist($row->TIME_DISCHARGE_TANK_INSPECT_METER_VERF);
-				$rmk_dg_tank_inspect_meter_verf	= check_exist($row->REMARKS_DISCHARGE_TANK_INSPECT_METER_VERF);
-				
-				$date_dg_bk_comm	= check_exist_date($row->DATE_DISCHARGE_BUNKER_COMMENCED);
-				$tm_dg_bk_comm		= check_exist($row->TIME_DISCHARGE_BUNKER_COMMENCED);
-				$rmk_dg_bk_comm		= check_exist($row->REMARKS_DISCHARGE_BUNKER_COMMENCED);
-				
-				$date_dg_bk_compl	= check_exist_date($row->DATE_DISCHARGE_BUNKER_COMPLETED);
-				$tm_dg_bk_compl		= check_exist($row->TIME_DISCHARGE_BUNKER_COMPLETED);
-				$rmk_dg_bk_compl	= check_exist($row->REMARKS_DISCHARGE_BUNKER_COMPLETED);
-				
-				$date_dg_hs_arm_dc	= check_exist_date($row->DATE_DISCHARGE_HOSE_ARMS_DISCONNECT);
-				$tm_dg_hs_arm_dc	= check_exist($row->TIME_DATE_DISCHARGE_HOSE_ARMS_DISCONNECT);
-				$rmk_dg_hs_arm_dc	= check_exist($row->REMARKS_DATE_DISCHARGE_HOSE_ARMS_DISCONNECT);
-				
-				$date_dg_vl_inspec_sampl = check_exist_date($row->DATE_DISCHARGE_VISUAL_INSPEC_SAMPL);
-				$tm_dg_vl_inspec_sampl	 = check_exist($row->TIME_DISCHARGE_VISUAL_INSPEC_SAMPL);
-				$rmk_dg_vl_inspec_sampl  = check_exist($row->REMARKS_DISCHARGE_VISUAL_INSPEC_SAMPL);
-				
-				$date_tanks_measr_fn = check_exist_date($row->DATE_DISCHARGE_TANK_INSPECT_MEASR_FINAL);
-				$tm_tanks_measr_fn	 = check_exist($row->TIME_DISCHARGE_TANK_INSPECT_MEASR_FINAL);
-				$rmk_tanks_measr_fn  = check_exist($row->REMARKS_DISCHARGE_TANK_INSPECT_MEASR_FINAL);
-				
-				$date_tanks_meter_fn = check_exist_date($row->DATE_DISCHARGE_TANK_INSPECT_METER_FINAL);
-				$tm_tanks_meter_fn	 = check_exist($row->TIME_DISCHARGE_TANK_INSPECT_METER_FINAL);
-				$rmk_tanks_meter_fn  = check_exist($row->REMARKS_DISCHARGE_TANK_INSPECT_METER_FINAL);
-				
-				$date_dg_calcul_compl_doc = check_exist_date($row->DATE_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD);
-				$tm_dg_calcul_compl_doc	 = check_exist($row->TIME_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD);
-				$rmk_dg_calcul_compl_doc  = check_exist($row->REMARKS_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD);
-				
-				$date_dg_bg_lv_ship = check_exist_date($row->DATE_DISCHARGE_BARGE_LEAVE_SHIP);
-				$tm_dg_bg_lv_ship	 = check_exist($row->TIME_DISCHARGE_BARGE_LEAVE_SHIP);
-				$rmk_dg_bg_lv_ship = check_exist($row->REMARKS_DISCHARGE_BARGE_LEAVE_SHIP);
-				
-				$date_dg_host_conn	= check_exist_date($row->DATE_DISCHARGE_HOST_CONNECTED);
-				$tm_dg_host_conn	= check_exist($row->TIME_DISCHARGE_HOST_CONNECTED);
-				$rmk_dg_host_conn	= check_exist($row->REMARKS_DISCHARGE_HOST_CONNECTED);
-				
-				$date_hs_con  		= check_exist_date($row->DATE_HOSE_CONNECTED);
-				$tm_hs_con			= check_exist($row->TIME_HOSE_CONNECTED);
-				$rmk_hs_con			= check_exist($row->REMARKS_HOSE_CONNECTED);
-				
-				$date_hs_dc  		= check_exist_date($row->DATE_HOSE_DISCONNECTED);
-				$tm_hs_dc			= check_exist($row->TIME_HOSE_DISCONNECTED);
-				$rmk_hs_dc			= check_exist($row->REMARKS_HOSE_DISCONNECTED);
-				
-				$date_ld_hs_con  	= check_exist_date($row->DATE_LOADING_HOST_CONNECTED);
-				$tm_ld_hs_con		= check_exist($row->TIME_LOADING_HOST_CONNECTED);
-				$rmk_ld_hs_con		= check_exist($row->REMARKS_LOADING_HOST_CONNECTED);
-				
-				$date_smpl_comm  	= check_exist_date($row->DATE_SAMPLING_COMMENCED);
-				$tm_smpl_comm		= check_exist($row->TIME_SAMPLING_COMMENCED);
-				$rmk_smpl_comm		= check_exist($row->REMARKS_SAMPLING_COMMENCED);
-				
-				$date_smpl_compl  	= check_exist_date($row->DATE_SAMPLING_COMPLETED);
-				$tm_smpl_compl		= check_exist($row->TIME_SAMPLING_COMPLETED);
-				$rmk_smpl_compl		= check_exist($row->REMARKS_SAMPLING_COMPLETED);
-				
-				$date_cgm_comm  	= check_exist_date($row->DATE_MEASUREMENT_COMMENCED);
-				$tm_cgm_comm		= check_exist($row->TIME_MEASUREMENT_COMMENCED);
-				$rmk_cgm_comm		= check_exist($row->REMARKS_MEASUREMENT_COMMENCED);
-				
-				$date_cgm_compl  	= check_exist_date($row->DATE_MEASUREMENT_COMPLETED);
-				$tm_cgm_compl		= check_exist($row->TIME_MEASUREMENT_COMPLETED);
-				$rmk_cgm_compl		= check_exist($row->REMARKS_MEASUREMENT_COMPLETED);
-				
-				$date_doc_on_board  = check_exist_date($row->DATE_DOCUMENTS_ONBOARD);
-				$tm_doc_on_board	= check_exist($row->TIME_DOCUMENTS_ONBOARD);
-				$rmk_doc_on_board	= check_exist($row->REMARKS_DOCUMENTS_ONBOARD);
-				
-				$date_vs_sailed  	= check_exist_date($row->DATE_VESSEL_SAILED);
-				$tm_vs_sailed		= check_exist($row->TIME_VESSEL_SAILED);
-				$rmk_vs_sailed		= check_exist($row->REMARKS_VESSEL_SAILED);
-				
-				$date_pob  			= check_exist_date($row->DATE_POB);
-				$tm_pob				= check_exist($row->TIME_POB);
-				$rmk_pob			= check_exist($row->REMARKS_POB);
-				
-				$date_aweigh 		= check_exist_date($row->DATE_A_AWEIGH);
-				$tm_aweigh			= check_exist($row->TIME_A_AWEIGH);
-				$rmk_aweigh			= check_exist($row->REMARKS_A_AWEIGH);
-				
-				$date_sbd_comm 		= check_exist_date($row->DATE_SBD_COMMENCED);
-				$tm_sbd_comm		= check_exist($row->TIME_SBD_COMMENCED);
-				$rmk_sbd_comm		= check_exist($row->REMARKS_SBD_COMMENCED);
-				
-				$date_sbd_compl		= check_exist_date($row->DATE_SBD_COMPLETED);
-				$tm_sbd_compl		= check_exist($row->TIME_SBD_COMPLETED);
-				$rmk_sbd_compl		= check_exist($row->REMARKS_SBD_COMPLETED);
-				
-				$date_dsc_comm		= check_exist_date($row->DATE_DISCHARGE_COMMENCED);
-				$tm_dsc_comm		= check_exist($row->TIME_DISCHARGE_COMMENCED);
-				$rmk_dsc_comm		= check_exist($row->REMARKS_DISCHARGE_COMMENCED);
-				
-				$date_dsc_compl		= check_exist_date($row->DATE_DISCHARGE_COMPLETED);
-				$tm_dsc_compl		= check_exist($row->TIME_DISCHARGE_COMPLETED);
-				$rmk_dsc_compl		= check_exist($row->REMARKS_DISCHARGE_COMPLETED);
-				
-				$date_tanks_ins_comm	= check_exist_date($row->DATE_TANKS_INS_COMMENCED);
-				$tm_tanks_ins_comm		= check_exist($row->TIME_TANKS_INS_COMMENCED);
-				$rmk_tanks_ins_comm		= check_exist($row->REMARKS_TANKS_INS_COMMENCED);
-				
-				$date_tanks_ins_compl	= check_exist_date($row->DATE_TANKS_INS_COMPLETED);
-				$tm_tanks_ins_compl		= check_exist($row->TIME_TANKS_INS_COMPLETED);
-				$rmk_tanks_ins_compl	= check_exist($row->REMARKS_TANKS_INS_COMPLETED);
-				
-				$date_tanks_ins_compl	= check_exist_date($row->DATE_TANKS_INS_COMPLETED);
-				$tm_tanks_ins_compl		= check_exist($row->TIME_TANKS_INS_COMPLETED);
-				$rmk_tanks_ins_compl	= check_exist($row->REMARKS_TANKS_INS_COMPLETED);
-				
-				$date_svy_left_vessel	= check_exist_date($row->DATE_SVY_LEFT_VESSEL);
-				$tm_svy_left_vessel		= check_exist($row->TIME_SVY_LEFT_VESSEL);
-				$rmk_svy_left_vessel	= check_exist($row->REMARKS_SVY_LEFT_VESSEL);
-				
-				$date_vs_sail	= check_exist_date($row->DATE_VESSEL_SAIL);
-				$tm_vs_sail		= check_exist($row->TIME_VESSEL_SAIL);
-				$rmk_vs_sail	= check_exist($row->REMARKS_VESSEL_SAIL);	
-				
-				$date_bd_ar	= check_exist_date($row->DATE_LOADING_BARGE_ARRIVED);
-				$tm_bd_ar		= check_exist($row->TIME_LOADING_BARGE_ARRIVED);
-				$rmk_bd_ar	= check_exist($row->REMARKS_LOADING_BARGE_ARRIVED);
-				
-				$date_bd_nor_td	= check_exist_date($row->DATE_LOADING_NOR_TENDERED);
-				$tm_bd_nor_td		= check_exist($row->TIME_LOADING_NOR_TENDERED);
-				$rmk_bd_nor_td	= check_exist($row->REMARKS_LOADING_NOR_TENDERED);
-				
-				$date_bd_alongside	= check_exist_date($row->DATE_LOADING_BARGE_ALL_FAST_ALONGSIDE);
-				$tm_bd_alongside	= check_exist($row->TIME_LOADING_BARGE_ALL_FAST_ALONGSIDE);
-				$rmk_bd_alongside	= check_exist($row->REMARKS_LOADING_BARGE_ALL_FAST_ALONGSIDE);
-				
-				$date_ld_key_meeting	= check_exist_date($row->DATE_LOADING_KEY_MEETING);
-				$tm_ld_key_meeting		= check_exist($row->TIME_LOADING_KEY_MEETING);
-				$rmk_ld_key_meeting		= check_exist($row->REMARKS_LOADING_KEY_MEETING);
-				
-				$date_ld_nor_acc	= check_exist_date($row->DATE_LOADING_NOR_ACCEPTED);
-				$tm_ld_nor_acc		= check_exist($row->TIME_LOADING_NOR_ACCEPTED);
-				$rmk_ld_nor_acc		= check_exist($row->REMARKS_LOADING_NOR_ACCEPTED);
-				
-				$date_ld_vl_seal	= check_exist_date($row->DATE_LOADING_VALVE_SEEALED);
-				$tm_ld_vl_seal		= check_exist($row->TIME_LOADING_VALVE_SEEALED);
-				$rmk_ld_vl_seal		= check_exist($row->REMARKS_LOADING_VALVE_SEEALED);
-				
-				$date_ld_tk_ipv		= check_exist_date($row->DATE_LOADING_TANK_INSPECT_METER_VERIFICATION);
-				$tm_ld_tk_ipv		= check_exist($row->TIME_LOADING_TANK_INSPECT_METER_VERIFICATION);
-				$rmk_ld_tk_ipv		= check_exist($row->REMARKS_LOADING_TANK_INSPECT_METER_VERIFICATION);
 				
 				$bl_flow_meter		= ($row->BL_FLOW_METER=="Y"  ? "V"  : "X");
 				$bl_shore_tank		= ($row->BL_SHORE_TANK=="Y"  ? "V"  : "X");
@@ -883,145 +665,20 @@ $intervention=$this->Report_model->get_intervention($id_item);
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
+  $time_log_data
   <tr>
-  <td>Vessel Arrived</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+  <td>Remarks</td>
   <td>&nbsp;</td>
-  <td>$date_va</td>  <td>&nbsp;</td>
-  <td>$tm_va</td>  
-  <td  colspan="2">$rmk_va</td>
- </tr>
- <tr>
-  <td>Vessel Anchoraged</td>
-  <td>&nbsp;</td>
-  <td>$date_anchor</td>  <td>&nbsp;</td>
-  <td>$tm_anchor</td> 
-  <td  colspan="2">$rmk_anchor</td>
- </tr>
- <tr>
-  <td>Notice of Readiness Tendered</td>
-  <td>&nbsp;</td>
-  <td>$date_nor</td>  <td>&nbsp;</td>
-  <td>$tm_nor</td>  
-  <td  colspan="2">$rmk_nor</td>
- </tr>
- <tr>
-  <td>Notice of Readiness Accepted</td>
-  <td>&nbsp;</td>
-  <td>$date_acc</td>  <td>&nbsp;</td>
-  <td>$tm_acc</td>  
-  <td  colspan="2">$rmk_acc</td>
- </tr>
- <tr>
-  <td>Vessel Berthed</td>
-  <td>&nbsp;</td>
-  <td>$date_brthed </td>  <td>&nbsp;</td>
-  <td>$tm_brthed</td>  
-  <td  colspan="2">$rmk_brthed</td>
- </tr>
- <tr>
-  <td>Surveyor On Board</td>
-  <td>&nbsp;</td>
-  <td>$date_svyb</td>  <td>&nbsp;</td>
-  <td>$tm_svyb</td>  
-  <td  colspan="2">$rmk_svyb</td>
- </tr>
- <tr>
-  <td>Key Meeting</td>
-  <td>&nbsp;</td>
-  <td>$date_dkm</td>  <td>&nbsp;</td>
-  <td>$tm_dkm</td> 
-  <td  colspan="2">$rmk_dkm</td>
- </tr>
- <tr>
-  <td>Tanks Inspection Commenced</td>
-  <td>&nbsp;</td>
-  <td>$date_tip_comm</td>  <td>&nbsp;</td>
-  <td>$tm_tip_comm</td> 
-  <td colspan=2>$rmk_tip_comm</td>
- </tr>
- <tr>
-  <td>Tanks Inspection Completed</td>
-  <td>&nbsp;</td>
-  <td>$date_tip_compl</td>  <td>&nbsp;</td>
-  <td>$tm_tip_compl</td>
-  <td colspan=2>$rmk_tip_compl</td>
- </tr>
- <tr>
-  <td>Hose Connected Commenced</td>
-  <td>&nbsp;</td>
-  <td>$date_hs_comm</td>  <td>&nbsp;</td>
-  <td>$tm_hs_comm</td>
-  <td colspan=2>$rmk_hs_comm</td>
- </tr>
- <tr>
-  <td>Hose Connected Completed</td>
-  <td>&nbsp;</td>
-  <td>$date_hs_compl</td>  <td>&nbsp;</td>
-  <td>$tm_hs_compl</td>
-  <td colspan=2>$rmk_hs_compl</td>
- </tr>
- <tr>
-  <td>Loading Commenced</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_comm</td>  <td>&nbsp;</td>
-  <td>$tm_ld_comm</td>
-  <td colspan=2>$rmk_ld_comm</td>
- </tr>
- <tr>
-  <td>Loading Completed</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_compl</td>  <td>&nbsp;</td>
-  <td>$tm_ld_compl</td>
-  <td colspan=2>$rmk_ld_compl</td>
- </tr>
- <tr>
-  <td>Hose Disconnected</td>
-  <td>&nbsp;</td>
-  <td>$date_hs_dc</td>  <td>&nbsp;</td>
-  <td>$tm_hs_dc</td>
-  <td colspan=2>$rmk_hs_dc</td>
- </tr>
- <tr>
-  <td>Sampling Commenced</td>
-  <td>&nbsp;</td>
-  <td>$date_smpl_comm</td>  <td>&nbsp;</td>
-  <td>$tm_smpl_comm</td>
-  <td colspan=2>$rmk_smpl_comm</td>
- </tr>
- <tr>
-  <td>Sampling Completed</td>
-  <td>&nbsp;</td>
-  <td>$date_smpl_compl</td>  <td>&nbsp;</td>
-  <td>$tm_smpl_compl</td>
-  <td colspan=2>$rmk_smpl_compl</td>
- </tr>
- <tr>
-  <td>Cargo Measurement Commenced</td>
-  <td>&nbsp;</td>
-  <td>$date_cgm_comm</td>  <td>&nbsp;</td>
-  <td>$tm_cgm_comm</td>
-  <td colspan=2>$rmk_cgm_comm</td>
- </tr>
- <tr>
-  <td>Cargo Measurement Completed</td>
-  <td>&nbsp;</td>
-  <td>$date_cgm_compl</td>  <td>&nbsp;</td>
-  <td>$tm_cgm_compl</td>
-  <td colspan=2>$rmk_cgm_compl</td>
- </tr>
- <tr>
-  <td>Document OnBoard</td>
-  <td>&nbsp;</td>
-  <td>$date_doc_on_board</td>  <td>&nbsp;</td>
-  <td>$tm_doc_on_board</td>  
-  <td colspan=2>$rmk_doc_on_board</td>
- </tr>
- <tr>
-  <td>Vessel Sailed</td>
-  <td>&nbsp;</td>
-  <td>$date_vs_sailed</td>  <td>&nbsp;</td>
-  <td>$tm_vs_sailed</td>  
-  <td colspan=2>$rmk_vs_sailed</td>
+  <td colspan=5>$activities_remarks</td>
  </tr>
   <tr>
     <td>&nbsp;</td>
@@ -1453,168 +1110,17 @@ EOD;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
+   $time_log_data
   <tr>
-  <td>Vessel Arrived</td>
-  <td>&nbsp;</td>
-  <td>$date_va</td>  <td>&nbsp;</td>
-  <td>$tm_va</td>  
-  <td  colspan="2">$rmk_va</td>
- </tr>
- <tr>
-  <td>Vessel Anchoraged</td>
-  <td>&nbsp;</td>
-  <td>$date_anchor</td>  <td>&nbsp;</td>
-  <td>$tm_anchor</td> 
-  <td  colspan="2">$rmk_anchor</td>
- </tr>
- <tr>
-  <td>Notice of Readiness Tendered</td>
-  <td>&nbsp;</td>
-  <td>$date_nor</td>  <td>&nbsp;</td>
-  <td>$tm_nor</td>  
-  <td  colspan="2">$rmk_nor</td>
- </tr>
- <tr>
-  <td>Notice of Readiness Accepted</td>
-  <td>&nbsp;</td>
-  <td>$date_acc</td>  <td>&nbsp;</td>
-  <td>$tm_acc</td>  
-  <td  colspan="2">$rmk_acc</td>
- </tr>
- <tr>
-  <td>Pilot on Board for Berthing</td>
-  <td>&nbsp;</td>
-  <td>$date_pob</td>  <td>&nbsp;</td>
-  <td>$tm_pob</td>  
-  <td  colspan="2">$rmk_pob</td>
- </tr>
- <tr>
-  <td>Anchors Aweigh</td>
-  <td>&nbsp;</td>
-  <td>$date_aweigh</td>  <td>&nbsp;</td>
-  <td>$tm_aweigh</td>  
-  <td  colspan="2">$rmk_aweigh</td>
- </tr>
- <tr>
-  <td>Vessel Berthed</td>
-  <td>&nbsp;</td>
-  <td>$date_brthed </td>  <td>&nbsp;</td>
-  <td>$tm_brthed</td>  
-  <td  colspan="2">$rmk_brthed</td>
- </tr>
- <tr>
-  <td>Surveyor On Board</td>
-  <td>&nbsp;</td>
-  <td>$date_svyb</td>  <td>&nbsp;</td>
-  <td>$tm_svyb</td>  
-  <td  colspan="2">$rmk_svyb</td>
- </tr>
- <tr>
-  <td>Key Meeting</td>
-  <td>&nbsp;</td>
-  <td>$date_dkm</td>  <td>&nbsp;</td>
-  <td>$tm_dkm</td> 
-  <td  colspan="2">$rmk_dkm</td>
- </tr>
- <tr>
-  <td>Tanks Inspection Commenced</td>
-  <td>&nbsp;</td>
-  <td>$date_tip_comm</td>  <td>&nbsp;</td>
-  <td>$tm_tip_comm</td> 
-  <td colspan=2>$rmk_tip_comm</td>
- </tr>
- <tr>
-  <td>Tanks Inspection Completed</td>
-  <td>&nbsp;</td>
-  <td>$date_tip_compl</td>  <td>&nbsp;</td>
-  <td>$tm_tip_compl</td>
-  <td colspan=2>$rmk_tip_compl</td>
- </tr>
- <tr>
-  <td>Sampling  Before Discharge Commenced</td>
-  <td>&nbsp;</td>
-  <td>$date_sbd_comm</td>  <td>&nbsp;</td>
-  <td>$tm_sbd_comm</td>
-  <td colspan=2>$rmk_sbd_comm</td>
- </tr>
- <tr>
-  <td>Sampling  Before Discharge Completed</td>
-  <td>&nbsp;</td>
-  <td>$date_sbd_compl</td>  <td>&nbsp;</td>
-  <td>$tm_sbd_compl</td>
-  <td colspan=2>$rmk_sbd_compl</td>
- </tr>
- <tr>
-  <td>Hose Connected</td>
-  <td>&nbsp;</td>
-  <td>$date_hs_con</td>  <td>&nbsp;</td>
-  <td>$tm_hs_con</td>
-  <td colspan=2>$rmk_hs_con</td>
- </tr>
- <tr>
-  <td>Discharge Commenced</td>
-  <td>&nbsp;</td>
-  <td>$date_dsc_comm</td>  <td>&nbsp;</td>
-  <td>$tm_dsc_comm</td>
-  <td colspan=2>$rmk_dsc_comm</td>
- </tr>
- <tr>
-  <td>Discharge Completed</td>
-  <td>&nbsp;</td>
-  <td>$date_dsc_compl</td>  <td>&nbsp;</td>
-  <td>$tm_dsc_compl</td>
-  <td colspan=2>$rmk_dsc_compl</td>
- </tr>
- <tr>
-  <td>Hose Disconnected</td>
-  <td>&nbsp;</td>
-  <td>$date_hs_dc</td>  <td>&nbsp;</td>
-  <td>$tm_hs_dc</td>
-  <td colspan=2>$rmk_hs_dc</td>
- </tr>
- <tr>
-  <td>Tanks  Inspection Commenced</td>
-  <td>&nbsp;</td>
-  <td>$date_tanks_ins_comm</td>  <td>&nbsp;</td>
-  <td>$tm_tanks_ins_comm</td>
-  <td colspan=2>$rmk_tanks_ins_comm</td>
- </tr>
- <tr>
-  <td>Tanks  Inspection Completed</td>
-  <td>&nbsp;</td>
-  <td>$date_tanks_ins_compl</td>  <td>&nbsp;</td>
-  <td>$tm_tanks_ins_compl</td>
-  <td colspan=2>$rmk_tanks_ins_compl</td>
- </tr>
- <tr>
-  <td>Documents  OnBoard</td>
-  <td>&nbsp;</td>
-  <td>$date_doc_on_board</td>  <td>&nbsp;</td>
-  <td>$tm_doc_on_board</td>
-  <td colspan=2>$rmk_doc_on_board</td>
- </tr>
- <tr>
-  <td>Surveyour  Left Vessel</td>
-  <td>&nbsp;</td>
-  <td>$date_svy_left_vessel</td>  <td>&nbsp;</td>
-  <td>$tm_svy_left_vessel</td>
-  <td colspan=2>$rmk_svy_left_vessel</td>
- </tr>
- <tr>
-  <td>Document OnBoard</td>
-  <td>&nbsp;</td>
-  <td>$date_doc_on_board</td>  <td>&nbsp;</td>
-  <td>$tm_doc_on_board</td>  
-  <td colspan=2>$rmk_doc_on_board</td>
- </tr>
- <tr>
-  <td>Vessel Sail</td>
-  <td>&nbsp;</td>
-  <td>$date_vs_sail</td>  <td>&nbsp;</td>
-  <td>$tm_vs_sail</td>  
-  <td colspan=2>$rmk_vs_sail</td>
- </tr>
- <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
   <td>Remarks</td>
   <td>&nbsp;</td>
   <td colspan=5>$activities_remarks</td>
@@ -2145,239 +1651,17 @@ EOD;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
+   $time_log_data
   <tr>
-  <td>Loading Barge Arrived</td>
-  <td>&nbsp;</td>
-  <td>$date_bd_ar</td>  
-  <td>&nbsp;</td>
-  <td>$tm_bd_ar</td>  
-  <td  colspan="2">$rmk_bd_ar</td>
- </tr>
- <tr>
-  <td>Loading Nor Tendered</td>
-  <td>&nbsp;</td>
-  <td>$date_bd_nor_td</td>  <td>&nbsp;</td>
-  <td>$tm_bd_nor_td</td> 
-  <td  colspan="2">$rmk_bd_nor_td</td>
- </tr>
- <tr>
-  <td>Loading Barge All Fast Alongside</td>
-  <td>&nbsp;</td>
-  <td>$date_bd_alongside</td>  <td>&nbsp;</td>
-  <td>$tm_bd_alongside</td>  
-  <td  colspan="2">$rmk_bd_alongside</td>
- </tr>
- <tr>
-  <td>Loading Key Meeting</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_key_meeting</td>  <td>&nbsp;</td>
-  <td>$tm_ld_key_meeting</td>  
-  <td  colspan="2">$rmk_ld_key_meeting</td>
- </tr>
- <tr>
-  <td>Loading NOR Accepted</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_nor_acc</td>  <td>&nbsp;</td>
-  <td>$tm_ld_nor_acc</td>  
-  <td  colspan="2">$rmk_ld_nor_acc</td>
- </tr>
- <tr>
-  <td>Loading Valve Sealed</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_vl_seal</td>  <td>&nbsp;</td>
-  <td>$tm_ld_vl_seal</td>  
-  <td  colspan="2">$rmk_ld_vl_seal</td>
- </tr>
- <tr>
-  <td>Loading Tank Inspect Meter Verification</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_tk_ipv </td>  <td>&nbsp;</td>
-  <td>$tm_ld_tk_ipv</td>  
-  <td  colspan="2">$rmk_ld_tk_ipv</td>
- </tr>
- <tr>
-  <td>Hose Connected</td>
-  <td>&nbsp;</td>
-  <td>$date_hs_con</td>  <td>&nbsp;</td>
-  <td>$tm_hs_con</td>  
-  <td  colspan="2">$rmk_hs_con</td>
- </tr>
- <tr>
-  <td>Loading Host Connected</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_hs_con</td>  <td>&nbsp;</td>
-  <td>$tm_ld_hs_con</td> 
-  <td  colspan="2">$rmk_ld_hs_con</td>
- </tr>
- <tr>
-  <td>Loading Commenced</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_comm</td>  <td>&nbsp;</td>
-  <td>$tm_ld_comm</td> 
-  <td colspan=2>$rmk_ld_comm</td>
- </tr>
- <tr>
-  <td>Loading Completed</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_compl</td>  <td>&nbsp;</td>
-  <td>$tm_ld_compl</td>
-  <td colspan=2>$rmk_ld_compl</td>
- </tr>
- <tr>
-  <td>Loading Hose Arms Disconnect</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_hs_dc</td>  <td>&nbsp;</td>
-  <td>$tm_ld_hs_dc</td>
-  <td colspan=2>$rmk_ld_hs_dc</td>
- </tr>
- <tr>
-  <td>Loading Visual Inspection & Sampling</td>
-  <td>&nbsp;</td>
-  <td>$date_lv_inspec_sampl</td>  <td>&nbsp;</td>
-  <td>$tm_lv_inspec_sampl</td>
-  <td colspan=2>$rmk_lv_inspec_sampl</td>
- </tr>
- <tr>
-  <td>Loading Tank Inspection and Measurement - Final</td>
-  <td>&nbsp;</td>
-  <td>$date_lv_inspec_mf</td>  <td>&nbsp;</td>
-  <td>$tm_lv_inspec_mf</td>
-  <td colspan=2>$rmk_lv_inspec_mf</td>
- </tr>
- <tr>
-  <td>Loading Calculation completed & Documents onboard</td>
-  <td>&nbsp;</td>
-  <td>$date_hs_con</td>  <td>&nbsp;</td>
-  <td>$tm_hs_con</td>
-  <td colspan=2>$rmk_hs_con</td>
- </tr>
- <tr>
-  <td>Loading Calculation completed & Documents onboard</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_calcul_doc_onboard</td>  <td>&nbsp;</td>
-  <td>$tm_ld_calcul_doc_onboard</td>
-  <td colspan=2>$rmk_ld_calcul_doc_onboard</td>
- </tr>
- <tr>
-  <td>Loading Barge Leave Depot</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_bg_lv_depot</td>  <td>&nbsp;</td>
-  <td>$tm_ld_bg_lv_depot</td>
-  <td colspan=2>$rmk_ld_bg_lv_depot</td>
- </tr>
- <tr>
-  <td>Discharge Barge Arrived</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_bg_arr</td>  <td>&nbsp;</td>
-  <td>$tm_dg_bg_arr</td>
-  <td colspan=2>$rmk_dg_bg_arr</td>
- </tr>
- <tr>
-  <td>Discharge Nor Tendered</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_nor_td</td>  <td>&nbsp;</td>
-  <td>$tm_dg_nor_td</td>
-  <td colspan=2>$rmk_dg_nor_td</td>
- </tr>
- <tr>
-  <td>Discharge Barge All Fast / Alongside</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_AFA</td>  <td>&nbsp;</td>
-  <td>$tm_dg_AFA</td>
-  <td colspan=2>$rmk_dg_AFA</td>
- </tr>
- <tr>
-  <td>Discharge Key Meeting</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_km</td>  <td>&nbsp;</td>
-  <td>$tm_dg_km</td>
-  <td colspan=2>$rmk_dg_km</td>
- </tr>
- <tr>
-  <td>Discharge Valve Seealed</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_valve_seealed</td>  <td>&nbsp;</td>
-  <td>$tm_dg_valve_seealed</td>
-  <td colspan=2>$rmk_dg_valve_seealed</td>
- </tr>
- <tr>
-  <td>Discharge Tank Inspect Measure - Initial</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_tank_inspect_measure</td>  <td>&nbsp;</td>
-  <td>$tm_dg_tank_inspect_measure</td>  
-  <td colspan=2>$rmk_dg_tank_inspect_measure</td>
- </tr>
- <tr>
-  <td>Discharge Tank Inspection and Meter Verification - Initial</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_tank_inspect_meter_verf</td>  <td>&nbsp;</td>
-  <td>$tm_dg_tank_inspect_meter_verf</td>  
-  <td colspan=2>$rmk_dg_tank_inspect_meter_verf</td>
- </tr>
- <tr>
-  <td>Discharge Host Connected</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_host_conn</td>  <td>&nbsp;</td>
-  <td>$tm_dg_host_conn</td>  
-  <td colspan=2>$rmk_dg_host_conn</td>
- </tr>
- <tr>
-  <td>Discharge Host Commenced</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_bk_comm</td>  <td>&nbsp;</td>
-  <td>$tm_dg_bk_comm</td>  
-  <td colspan=2>$rmk_dg_bk_comm</td>
- </tr> 
- <tr>
-  <td>Discharge Host Completed</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_bk_compl</td>  <td>&nbsp;</td>
-  <td>$tm_dg_bk_compl</td>  
-  <td colspan=2>$rmk_dg_bk_compl</td>
- </tr>
- <tr>
-  <td>Discharge Hose(s) Arms Disconnected</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_hs_arm_dc</td>  <td>&nbsp;</td>
-  <td>$tm_dg_hs_arm_dc</td>  
-  <td colspan=2>$rmk_dg_hs_arm_dc</td>
- </tr>
- <tr>
-  <td>Discharge Visual Inspection & Sampling</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_vl_inspec_sampl</td>  <td>&nbsp;</td>
-  <td>$tm_dg_vl_inspec_sampl</td>  
-  <td colspan=2>$rmk_dg_vl_inspec_sampl</td>
- </tr>
- <tr>
-  <td>Discharge Tank Inspect Measr Final</td>
-  <td>&nbsp;</td>
-  <td>$date_tanks_measr_fn</td>  <td>&nbsp;</td>
-  <td>$tm_tanks_measr_fn</td>  
-  <td colspan=2>$rmk_tanks_measr_fn</td>
- </tr>
- <tr>
-  <td>Discharge Tank Inspect Meter Final</td>
-  <td>&nbsp;</td>
-  <td>$date_tanks_meter_fn</td>  <td>&nbsp;</td>
-  <td>$tm_tanks_meter_fn</td>  
-  <td colspan=2>$rmk_tanks_meter_fn</td>
- </tr>
- <tr>
-  <td>Discharge Calcul Completed Doc Onboard</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_calcul_compl_doc</td>  <td>&nbsp;</td>
-  <td>$tm_dg_calcul_compl_doc</td>  
-  <td colspan=2>$rmk_dg_calcul_compl_doc</td>
- </tr>
- <tr>
-  <td>Discharge Barge Leave Ship</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_bg_lv_ship</td>  <td>&nbsp;</td>
-  <td>$tm_dg_bg_lv_ship</td>  
-  <td colspan=2>$rmk_dg_bg_lv_ship</td>
- </tr>
- <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
   <td>Remarks</td>
   <td>&nbsp;</td>
   <td colspan=5>$activities_remarks</td>
@@ -2758,218 +2042,17 @@ EOD;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
+  $time_log_data
   <tr>
-  <td>Loading Barge Arrived</td>
-  <td>&nbsp;</td>
-  <td>$date_bd_ar</td>  
-  <td>&nbsp;</td>
-  <td>$tm_bd_ar</td>  
-  <td  colspan="2">$rmk_bd_ar</td>
- </tr>
- <tr>
-  <td>Loading Nor Tendered</td>
-  <td>&nbsp;</td>
-  <td>$date_bd_nor_td</td>  <td>&nbsp;</td>
-  <td>$tm_bd_nor_td</td> 
-  <td  colspan="2">$rmk_bd_nor_td</td>
- </tr>
- <tr>
-  <td>Loading Barge All Fast Alongside</td>
-  <td>&nbsp;</td>
-  <td>$date_bd_alongside</td>  <td>&nbsp;</td>
-  <td>$tm_bd_alongside</td>  
-  <td  colspan="2">$rmk_bd_alongside</td>
- </tr>
- <tr>
-  <td>Loading Key Meeting</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_key_meeting</td>  <td>&nbsp;</td>
-  <td>$tm_ld_key_meeting</td>  
-  <td  colspan="2">$rmk_ld_key_meeting</td>
- </tr>
- <tr>
-  <td>Loading NOR Accepted</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_nor_acc</td>  <td>&nbsp;</td>
-  <td>$tm_ld_nor_acc</td>  
-  <td  colspan="2">$rmk_ld_nor_acc</td>
- </tr>
- <tr>
-  <td>Loading Valve Sealed</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_vl_seal</td>  <td>&nbsp;</td>
-  <td>$tm_ld_vl_seal</td>  
-  <td  colspan="2">$rmk_ld_vl_seal</td>
- </tr>
- <tr>
-  <td>Loading Tank Inspect Meter Verification</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_tk_ipv </td>  <td>&nbsp;</td>
-  <td>$tm_ld_tk_ipv</td>  
-  <td  colspan="2">$rmk_ld_tk_ipv</td>
- </tr>
- <tr>
-  <td>Loading Host Connected</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_hs_con</td>  <td>&nbsp;</td>
-  <td>$tm_ld_hs_con</td> 
-  <td  colspan="2">$rmk_ld_hs_con</td>
- </tr>
- <tr>
-  <td>Loading Commenced</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_comm</td>  <td>&nbsp;</td>
-  <td>$tm_ld_comm</td> 
-  <td colspan=2>$rmk_ld_comm</td>
- </tr>
- <tr>
-  <td>Loading Completed</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_compl</td>  <td>&nbsp;</td>
-  <td>$tm_ld_compl</td>
-  <td colspan=2>$rmk_ld_compl</td>
- </tr>
- <tr>
-  <td>Loading Hose Arms Disconnect</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_hs_dc</td>  <td>&nbsp;</td>
-  <td>$tm_ld_hs_dc</td>
-  <td colspan=2>$rmk_ld_hs_dc</td>
- </tr>
- <tr>
-  <td>Loading Visual Inspection & Sampling</td>
-  <td>&nbsp;</td>
-  <td>$date_lv_inspec_sampl</td>  <td>&nbsp;</td>
-  <td>$tm_lv_inspec_sampl</td>
-  <td colspan=2>$rmk_lv_inspec_sampl</td>
- </tr>
- <tr>
-  <td>Loading Tank Inspection and Measurement - Final</td>
-  <td>&nbsp;</td>
-  <td>$date_lv_inspec_mf</td>  <td>&nbsp;</td>
-  <td>$tm_lv_inspec_mf</td>
-  <td colspan=2>$rmk_lv_inspec_mf</td>
- </tr>
- <tr>
-  <td>Loading Calculation completed & Documents onboard</td>
-  <td>&nbsp;</td>
-  <td>$date_hs_con</td>  <td>&nbsp;</td>
-  <td>$tm_hs_con</td>
-  <td colspan=2>$rmk_hs_con</td>
- </tr>
- <tr>
-  <td>Loading Calculation completed & Documents onboard</td>
-  <td>&nbsp;</td>
-  <td>$date_ld_calcul_doc_onboard</td>  <td>&nbsp;</td>
-  <td>$tm_ld_calcul_doc_onboard</td>
-  <td colspan=2>$rmk_ld_calcul_doc_onboard</td>
- </tr>
- <tr>
-  <td>Discharge Barge Arrived</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_bg_arr</td>  <td>&nbsp;</td>
-  <td>$tm_dg_bg_arr</td>
-  <td colspan=2>$rmk_dg_bg_arr</td>
- </tr>
- <tr>
-  <td>Discharge Nor Tendered</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_nor_td</td>  <td>&nbsp;</td>
-  <td>$tm_dg_nor_td</td>
-  <td colspan=2>$rmk_dg_nor_td</td>
- </tr>
- <tr>
-  <td>Discharge Barge All Fast / Alongside</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_AFA</td>  <td>&nbsp;</td>
-  <td>$tm_dg_AFA</td>
-  <td colspan=2>$rmk_dg_AFA</td>
- </tr>
- <tr>
-  <td>Discharge Key Meeting</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_km</td>  <td>&nbsp;</td>
-  <td>$tm_dg_km</td>
-  <td colspan=2>$rmk_dg_km</td>
- </tr>
- <tr>
-  <td>Discharge Valve Seealed</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_valve_seealed</td>  <td>&nbsp;</td>
-  <td>$tm_dg_valve_seealed</td>
-  <td colspan=2>$rmk_dg_valve_seealed</td>
- </tr>
- <tr>
-  <td>Discharge Tank Inspect Measure - Initial</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_tank_inspect_measure</td>  <td>&nbsp;</td>
-  <td>$tm_dg_tank_inspect_measure</td>  
-  <td colspan=2>$rmk_dg_tank_inspect_measure</td>
- </tr>
- <tr>
-  <td>Discharge Host Connected</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_host_conn</td>  <td>&nbsp;</td>
-  <td>$tm_dg_host_conn</td>  
-  <td colspan=2>$rmk_dg_host_conn</td>
- </tr>
- <tr>
-  <td>Discharge Host Commenced</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_bk_comm</td>  <td>&nbsp;</td>
-  <td>$tm_dg_bk_comm</td>  
-  <td colspan=2>$rmk_dg_bk_comm</td>
- </tr> 
- <tr>
-  <td>Discharge Host Completed</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_bk_compl</td>  <td>&nbsp;</td>
-  <td>$tm_dg_bk_compl</td>  
-  <td colspan=2>$rmk_dg_bk_compl</td>
- </tr>
- <tr>
-  <td>Discharge Hose(s) Arms Disconnected</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_hs_arm_dc</td>  <td>&nbsp;</td>
-  <td>$tm_dg_hs_arm_dc</td>  
-  <td colspan=2>$rmk_dg_hs_arm_dc</td>
- </tr>
- <tr>
-  <td>Discharge Tank Inspect Measr Final</td>
-  <td>&nbsp;</td>
-  <td>$date_tanks_measr_fn</td>  <td>&nbsp;</td>
-  <td>$tm_tanks_measr_fn</td>  
-  <td colspan=2>$rmk_tanks_measr_fn</td>
- </tr>
- <tr>
-  <td>Discharge Tank Inspect Meter Final</td>
-  <td>&nbsp;</td>
-  <td>$date_tanks_meter_fn</td>  <td>&nbsp;</td>
-  <td>$tm_tanks_meter_fn</td>  
-  <td colspan=2>$rmk_tanks_meter_fn</td>
- </tr>
- <tr>
-  <td>Discharge Visual Inspection & Sampling</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_vl_inspec_sampl</td>  <td>&nbsp;</td>
-  <td>$tm_dg_vl_inspec_sampl</td>  
-  <td colspan=2>$rmk_dg_vl_inspec_sampl</td>
- </tr>
- <tr>
-  <td>Discharge Calcul Completed Doc Onboard</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_calcul_compl_doc</td>  <td>&nbsp;</td>
-  <td>$tm_dg_calcul_compl_doc</td>  
-  <td colspan=2>$rmk_dg_calcul_compl_doc</td>
- </tr>
- <tr>
-  <td>Discharge Barge Leave Ship</td>
-  <td>&nbsp;</td>
-  <td>$date_dg_bg_lv_ship</td>  <td>&nbsp;</td>
-  <td>$tm_dg_bg_lv_ship</td>  
-  <td colspan=2>$rmk_dg_bg_lv_ship</td>
- </tr>
- <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
   <td>Remarks</td>
   <td>&nbsp;</td>
   <td colspan=5>$activities_remarks</td>

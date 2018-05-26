@@ -71,7 +71,10 @@
     <td class="span">Referensi</td>
     <td class="span">:</td>
     <td class="span" colspan="5">
-    REPORT-00000<?php echo check_exist($item->result()[0]->ID) ?></td>
+    REPORT-00000<?php echo check_exist($item->result()[0]->ID) ?>
+	
+	
+	</td>
   </tr>
   <tr>
     <td class="span">Principal</td>
@@ -260,167 +263,20 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
-   <tr>
-    <td class="span">Vessel Arrived</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_VESSEL_ARRIVED); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_VESSEL_ARRIVED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_VESSEL_ARRIVED); ?></td>
-  </tr>
+   
+  <?php  foreach($el_connection_timelog as $key => $value){  
+		$label = str_replace('_',' ',substr($value[0],5));
+  ?>
   <tr>
-    <td class="span">Vessel Anchorage</td>
+    <td class="span"><?php echo ucwords(strtolower($label)); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_ANCHORAGED); ?></td>
+    <td class="span"><?php echo check_exist_date($item->result()[0]->$value[1]); ?></td>
     <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_ANCHORAGED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_ANCHORAGED); ?></td>
+    <td class="span"><?php echo check_exist($item->result()[0]->$value[0]); ?></td>
+    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->$value[2]); ?></td>
   </tr>
-  <tr>
-    <td class="span">Notice of Readiness Tendered</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_NOR); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_NOR); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_NOR); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Notice of Readiness Accepted</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_ACCEPTED); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_ACCEPTED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_ACCEPTED); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Vessel Berthed</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_BERTHED); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_BERTHED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_BERTHED); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Surveyor On Board</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_SURVEYOR_ON_BOARD); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_SURVEYOR_ON_BOARD); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_SURVEYOR_ON_BOARD); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Key Meeting</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_KEY_MEETING); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_KEY_MEETING); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_KEY_MEETING); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Tanks Inspection Commenced</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_COMMENCED); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_COMMENCED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_COMMENCED); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Tanks Inspection Completed</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_COMPLETED); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_COMPLETED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_COMPLETED); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Hose  Connected Commenced</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_CONNECTED_COMMENCED); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_CONNECTED_COMMENCED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_CONNECTED_COMMENCED); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Hose  Connected Completed</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date($item->result()[0]->DATE_CONNECTED_COMPLETED); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_CONNECTED_COMPLETED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_CONNECTED_COMPLETED); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Loading  Commenced</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_COMMENCED); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_COMMENCED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_COMMENCED); ?></td>
-
-  </tr>
-  <tr>
-    <td class="span"> Loading  Completed</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_LOADING_COMPLETED); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_LOADING_COMPLETED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_COMPLETED); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Hose  Disconnected</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_HOSE_CONNECTED); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_HOSE_CONNECTED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_HOSE_CONNECTED); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Sampling  Commenced</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_SAMPLING_COMMENCED); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_SAMPLING_COMMENCED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_SAMPLING_COMMENCED); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Sampling  Completed</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_SAMPLING_COMPLETED); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_SAMPLING_COMPLETED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_SAMPLING_COMPLETED); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Cargo  Measurement Commenced</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_MEASUREMENT_COMMENCED); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_MEASUREMENT_COMMENCED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_MEASUREMENT_COMMENCED); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Cargo  Measurement Completed</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_MEASUREMENT_COMPLETED); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_MEASUREMENT_COMPLETED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_MEASUREMENT_COMPLETED); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Document  OnBoard</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_DOCUMENTS_ONBOARD); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_DOCUMENTS_ONBOARD); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_DOCUMENTS_ONBOARD); ?></td>
-  </tr>
-  <tr>
-    <td class="span">Vessel  Sailed</td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist_date(@$item->result()[0]->DATE_VESSEL_SAILED); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span"><?php echo check_exist($item->result()[0]->TIME_VESSEL_SAILED); ?></td>
-    <td class="span" colspan="2"><?php echo check_exist($item->result()[0]->REMARKS_VESSEL_SAILED); ?></td>
-  </tr>
+<?php 	} ?>
+	
     <tr>
     <td class="span">Remarks</td>
     <td class="span">:</td>

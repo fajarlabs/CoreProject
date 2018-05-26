@@ -144,12 +144,12 @@ class Report_model extends CI_Model {
 	
 	public  function get_intervention($id_item) 
     {
-		$this->db->select('SELECT_INTERVENTION');
+		$this->db->select('SELECT_INTERVENTION,PRODUCT_TYPE');
 		$this->db->from($this->table);
 		$this->db->where('ID', $id_item); 
 		return $this->db->get();
     }
-
+	
 	public function get_all_items_to_excell($site_id=0,$filter_rules=array())
     {      
         $query = "SELECT *, \"fef\".\"CREATE_TIME\" \"CTIME\", \"fef\".\"ID\" \"FEFID\" FROM \"$this->table\" \"fef\" ";
