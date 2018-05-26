@@ -9,7 +9,7 @@
 */
 
 if(!function_exists('get_filter_timelog')) {
-	function get_filter_timelog($product_id=6,$intervention_id=14) {
+	function get_filter_timelog($product_id=0,$intervention_id=0) {
 		$result = array();
 		$result['TIME'] = [];
 		$result['DATE'] = [];
