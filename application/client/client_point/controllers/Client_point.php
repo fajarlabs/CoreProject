@@ -7,11 +7,11 @@ class Client_point extends MY_Controller
 	public function  __construct()
 	{
 		parent::__construct();
-		// kick if session is expired
-		// if(empty(get_admin_session())) {
-		// 	$this->session->set_flashdata('error_message', alert_success('Session expired'));
-		// 	redirect('company');
-		// }
+		//kick if session is expired
+		if(empty(get_client_session())) {
+			$this->session->set_flashdata('error_message', alert_success('Session expired'));
+			redirect('company');
+		}
 
 		$this->load->model(array('Client_point_model','icon/Icon_model','client_site/Client_site_model','cabang/Cabang_model'));
 

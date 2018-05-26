@@ -8,6 +8,54 @@
 |--------------------------------------------------------------------------------|
 */
 
+if(!function_exists('get_filter_timelog')) {
+	function get_filter_timelog($product_id=6,$intervention_id=14) {
+		$result = array();
+		$result['TIME'] = [];
+		$result['DATE'] = [];
+		$result['REMARKS'] = [];
+		$CI =& get_instance();
+		$CI->load->model(array('element_connection/Element_connection_model'));
+		$query = $CI->Element_connection_model->get_item_by_product_intervention($product_id,$intervention_id);
+		if($query->num_rows() > 0) {
+			foreach($query->result() as $row) {
+				$element_fields = $row->ELEMENT_FIELDS;
+				$element_decode = json_decode($element_fields);
+				if(count($element_decode) > 0) {
+					foreach($element_decode as $key => $val) {
+						if (stripos($val, "TIME_") !== false) {
+							$result['TIME'][] = $val;
+						}
+						if (stripos($val, "DATE_") !== false) {
+							$result['DATE'][] = $val;
+						}
+						if (stripos($val, "REMARKS_") !== false) {
+							$result['REMARKS'][] = $val;
+						}
+					}
+				}
+			}
+
+			$result_final = array();
+			$total = count($result['TIME']);
+			if($total > 0) {
+				if(isset($result['TIME'])) {
+					foreach($result['TIME'] as $kt => $vt) {
+						$result_final[$kt] = array();
+						$result_final[$kt][] = $vt;
+						$result_final[$kt][] = $result['DATE'][$kt];
+						$result_final[$kt][] = $result['REMARKS'][$kt];
+					}
+				}
+			}
+
+			return $result_final;
+		}
+
+		
+	}
+}
+
 if(!function_exists('get_notify')) {
 	function get_notify() {
 		$CI =& get_instance();
