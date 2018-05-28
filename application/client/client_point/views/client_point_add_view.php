@@ -9,6 +9,7 @@
 							<td><?php
 							$type_array = array();
 							$type_array[]         = '--Select Type--';
+							$type_array['cabang'] = 'Cabang';
 							$type_array['port']   = 'Port';
 							$type_array['barge']  = 'Barge';
 							$type_array['vessel'] = 'Vessel';
