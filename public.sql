@@ -1,7 +1,7 @@
 /*
 Navicat PGSQL Data Transfer
 
-Source Server         : Custody Transfer
+Source Server         : 103.43.46.75 - Sucofindo
 Source Server Version : 90512
 Source Host           : 103.43.46.75:5432
 Source Database       : db_custody
@@ -11,14 +11,14 @@ Target Server Type    : PGSQL
 Target Server Version : 90512
 File Encoding         : 65001
 
-Date: 2018-05-21 13:04:31
+Date: 2018-05-28 10:03:47
 */
 
 
 -- ----------------------------
--- Sequence structure for "public"."ALERT_SUBSCRIBER_ID_seq"
+-- Sequence structure for ALERT_SUBSCRIBER_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."ALERT_SUBSCRIBER_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."ALERT_SUBSCRIBER_ID_seq";
 CREATE SEQUENCE "public"."ALERT_SUBSCRIBER_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -27,20 +27,21 @@ CREATE SEQUENCE "public"."ALERT_SUBSCRIBER_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq"
+-- Sequence structure for APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 69
+ START 90
  CACHE 1;
+SELECT setval('"public"."APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq"', 90, true);
 
 -- ----------------------------
--- Sequence structure for "public"."APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq"
+-- Sequence structure for APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -49,31 +50,33 @@ CREATE SEQUENCE "public"."APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."APP_CLIENT_MENU_CLIENT_MENU_ID_seq"
+-- Sequence structure for APP_CLIENT_MENU_CLIENT_MENU_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_CLIENT_MENU_CLIENT_MENU_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_CLIENT_MENU_CLIENT_MENU_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_MENU_CLIENT_MENU_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
  START 9
  CACHE 1;
+SELECT setval('"public"."APP_CLIENT_MENU_CLIENT_MENU_ID_seq"', 9, true);
 
 -- ----------------------------
--- Sequence structure for "public"."APP_CLIENT_SITE_ID_seq"
+-- Sequence structure for APP_CLIENT_SITE_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_CLIENT_SITE_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_CLIENT_SITE_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_SITE_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 6
+ START 8
  CACHE 1;
+SELECT setval('"public"."APP_CLIENT_SITE_ID_seq"', 8, true);
 
 -- ----------------------------
--- Sequence structure for "public"."APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq"
+-- Sequence structure for APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -82,9 +85,9 @@ CREATE SEQUENCE "public"."APP_CLIENT_TEMPLATE_CLIENT_TEMPLATE_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_seq"
+-- Sequence structure for APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -93,20 +96,21 @@ CREATE SEQUENCE "public"."APP_CLIENT_TEMPLATE_COMPONENT_TEMPLATE_COMPONENT_ID_se
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."APP_CLIENT_USER_CLIENT_USER_ID_seq"
+-- Sequence structure for APP_CLIENT_USER_CLIENT_USER_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_CLIENT_USER_CLIENT_USER_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_CLIENT_USER_CLIENT_USER_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_USER_CLIENT_USER_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
  START 4
  CACHE 1;
+SELECT setval('"public"."APP_CLIENT_USER_CLIENT_USER_ID_seq"', 4, true);
 
 -- ----------------------------
--- Sequence structure for "public"."APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq"
+-- Sequence structure for APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq";
 CREATE SEQUENCE "public"."APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -115,20 +119,21 @@ CREATE SEQUENCE "public"."APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."APP_FUNCTION_ACCESS_ID_seq"
+-- Sequence structure for APP_FUNCTION_ACCESS_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_FUNCTION_ACCESS_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_FUNCTION_ACCESS_ID_seq";
 CREATE SEQUENCE "public"."APP_FUNCTION_ACCESS_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
  START 1601
  CACHE 1;
+SELECT setval('"public"."APP_FUNCTION_ACCESS_ID_seq"', 1601, true);
 
 -- ----------------------------
--- Sequence structure for "public"."APP_LOG_CLIENT_LOG_CLIENT_ID_seq"
+-- Sequence structure for APP_LOG_CLIENT_LOG_CLIENT_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_LOG_CLIENT_LOG_CLIENT_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_LOG_CLIENT_LOG_CLIENT_ID_seq";
 CREATE SEQUENCE "public"."APP_LOG_CLIENT_LOG_CLIENT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -137,9 +142,9 @@ CREATE SEQUENCE "public"."APP_LOG_CLIENT_LOG_CLIENT_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."APP_LOG_LOG_ID_seq"
+-- Sequence structure for APP_LOG_LOG_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_LOG_LOG_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_LOG_LOG_ID_seq";
 CREATE SEQUENCE "public"."APP_LOG_LOG_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -148,20 +153,21 @@ CREATE SEQUENCE "public"."APP_LOG_LOG_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."APP_MENU_MENU_ID_seq"
+-- Sequence structure for APP_MENU_MENU_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_MENU_MENU_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_MENU_MENU_ID_seq";
 CREATE SEQUENCE "public"."APP_MENU_MENU_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
  START 162
  CACHE 1;
+SELECT setval('"public"."APP_MENU_MENU_ID_seq"', 162, true);
 
 -- ----------------------------
--- Sequence structure for "public"."APP_ROUTE_ROUTE_ID_seq"
+-- Sequence structure for APP_ROUTE_ROUTE_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_ROUTE_ROUTE_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_ROUTE_ROUTE_ID_seq";
 CREATE SEQUENCE "public"."APP_ROUTE_ROUTE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -170,9 +176,9 @@ CREATE SEQUENCE "public"."APP_ROUTE_ROUTE_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."APP_SETTING_SETTING_ID_seq"
+-- Sequence structure for APP_SETTING_SETTING_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_SETTING_SETTING_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_SETTING_SETTING_ID_seq";
 CREATE SEQUENCE "public"."APP_SETTING_SETTING_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -181,9 +187,9 @@ CREATE SEQUENCE "public"."APP_SETTING_SETTING_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq"
+-- Sequence structure for APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq";
 CREATE SEQUENCE "public"."APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -192,9 +198,9 @@ CREATE SEQUENCE "public"."APP_TEMPLATE_ACCESS_TEMPLATE_ACCESS_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."APP_USER_GROUP_GROUP_ID_seq"
+-- Sequence structure for APP_USER_GROUP_GROUP_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_USER_GROUP_GROUP_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_USER_GROUP_GROUP_ID_seq";
 CREATE SEQUENCE "public"."APP_USER_GROUP_GROUP_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -203,9 +209,9 @@ CREATE SEQUENCE "public"."APP_USER_GROUP_GROUP_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."APP_USER_USER_ID_seq"
+-- Sequence structure for APP_USER_USER_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."APP_USER_USER_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."APP_USER_USER_ID_seq";
 CREATE SEQUENCE "public"."APP_USER_USER_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -214,9 +220,9 @@ CREATE SEQUENCE "public"."APP_USER_USER_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq"
+-- Sequence structure for CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq";
 CREATE SEQUENCE "public"."CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -225,31 +231,33 @@ CREATE SEQUENCE "public"."CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."FILE_MANAGER_ID_seq"
+-- Sequence structure for FILE_MANAGER_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."FILE_MANAGER_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."FILE_MANAGER_ID_seq";
 CREATE SEQUENCE "public"."FILE_MANAGER_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
  START 16
  CACHE 1;
+SELECT setval('"public"."FILE_MANAGER_ID_seq"', 16, true);
 
 -- ----------------------------
--- Sequence structure for "public"."FORM_ENTRY_FIELD_ID_seq"
+-- Sequence structure for FORM_ENTRY_FIELD_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."FORM_ENTRY_FIELD_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."FORM_ENTRY_FIELD_ID_seq";
 CREATE SEQUENCE "public"."FORM_ENTRY_FIELD_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 70
+ START 80
  CACHE 1;
+SELECT setval('"public"."FORM_ENTRY_FIELD_ID_seq"', 80, true);
 
 -- ----------------------------
--- Sequence structure for "public"."FORM_ENTRY_ID_seq"
+-- Sequence structure for FORM_ENTRY_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."FORM_ENTRY_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."FORM_ENTRY_ID_seq";
 CREATE SEQUENCE "public"."FORM_ENTRY_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -258,9 +266,9 @@ CREATE SEQUENCE "public"."FORM_ENTRY_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."HEADER_INFO_CLIENT_ID_seq"
+-- Sequence structure for HEADER_INFO_CLIENT_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."HEADER_INFO_CLIENT_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."HEADER_INFO_CLIENT_ID_seq";
 CREATE SEQUENCE "public"."HEADER_INFO_CLIENT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -269,9 +277,9 @@ CREATE SEQUENCE "public"."HEADER_INFO_CLIENT_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."inbox_ID_seq"
+-- Sequence structure for inbox_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."inbox_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."inbox_ID_seq";
 CREATE SEQUENCE "public"."inbox_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -280,20 +288,21 @@ CREATE SEQUENCE "public"."inbox_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."KOMPONEN_HTML_ID_seq"
+-- Sequence structure for KOMPONEN_HTML_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."KOMPONEN_HTML_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."KOMPONEN_HTML_ID_seq";
 CREATE SEQUENCE "public"."KOMPONEN_HTML_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 37
+ START 39
  CACHE 1;
+SELECT setval('"public"."KOMPONEN_HTML_ID_seq"', 39, true);
 
 -- ----------------------------
--- Sequence structure for "public"."KOMPONEN_JSON_ID_seq"
+-- Sequence structure for KOMPONEN_JSON_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."KOMPONEN_JSON_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."KOMPONEN_JSON_ID_seq";
 CREATE SEQUENCE "public"."KOMPONEN_JSON_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -302,20 +311,21 @@ CREATE SEQUENCE "public"."KOMPONEN_JSON_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."MAP_POINT_ID_seq"
+-- Sequence structure for MAP_POINT_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MAP_POINT_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MAP_POINT_ID_seq";
 CREATE SEQUENCE "public"."MAP_POINT_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 13
+ START 23
  CACHE 1;
+SELECT setval('"public"."MAP_POINT_ID_seq"', 23, true);
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_BARGE_BARGE_ID_seq"
+-- Sequence structure for MASTER_BARGE_BARGE_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_BARGE_BARGE_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_BARGE_BARGE_ID_seq";
 CREATE SEQUENCE "public"."MASTER_BARGE_BARGE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -324,9 +334,9 @@ CREATE SEQUENCE "public"."MASTER_BARGE_BARGE_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_BBM_BBM_ID_seq"
+-- Sequence structure for MASTER_BBM_BBM_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_BBM_BBM_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_BBM_BBM_ID_seq";
 CREATE SEQUENCE "public"."MASTER_BBM_BBM_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -335,9 +345,9 @@ CREATE SEQUENCE "public"."MASTER_BBM_BBM_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_CABANG_CABANG_ID_seq"
+-- Sequence structure for MASTER_CABANG_CABANG_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_CABANG_CABANG_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_CABANG_CABANG_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CABANG_CABANG_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -346,9 +356,9 @@ CREATE SEQUENCE "public"."MASTER_CABANG_CABANG_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_CONTRACT_ID_seq"
+-- Sequence structure for MASTER_CONTRACT_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_CONTRACT_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_CONTRACT_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CONTRACT_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -357,75 +367,81 @@ CREATE SEQUENCE "public"."MASTER_CONTRACT_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_CV_CERTIFICATE_ID_seq"
+-- Sequence structure for MASTER_CV_CERTIFICATE_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_CV_CERTIFICATE_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_CV_CERTIFICATE_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_CERTIFICATE_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
  START 15
  CACHE 1;
+SELECT setval('"public"."MASTER_CV_CERTIFICATE_ID_seq"', 15, true);
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_CV_EDUCATION_ID_seq"
+-- Sequence structure for MASTER_CV_EDUCATION_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_CV_EDUCATION_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_CV_EDUCATION_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_EDUCATION_ID_seq"
+ INCREMENT 1
+ MINVALUE 1
+ MAXVALUE 9223372036854775807
+ START 126
+ CACHE 1;
+SELECT setval('"public"."MASTER_CV_EDUCATION_ID_seq"', 126, true);
+
+-- ----------------------------
+-- Sequence structure for MASTER_CV_EXPERIENCE_ID_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."MASTER_CV_EXPERIENCE_ID_seq";
+CREATE SEQUENCE "public"."MASTER_CV_EXPERIENCE_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
  START 105
  CACHE 1;
+SELECT setval('"public"."MASTER_CV_EXPERIENCE_ID_seq"', 105, true);
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_CV_EXPERIENCE_ID_seq"
+-- Sequence structure for MASTER_CV_HISTORY_OF_WORK_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_CV_EXPERIENCE_ID_seq";
-CREATE SEQUENCE "public"."MASTER_CV_EXPERIENCE_ID_seq"
- INCREMENT 1
- MINVALUE 1
- MAXVALUE 9223372036854775807
- START 81
- CACHE 1;
-
--- ----------------------------
--- Sequence structure for "public"."MASTER_CV_HISTORY_OF_WORK_ID_seq"
--- ----------------------------
-DROP SEQUENCE "public"."MASTER_CV_HISTORY_OF_WORK_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_CV_HISTORY_OF_WORK_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_HISTORY_OF_WORK_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 70
+ START 77
  CACHE 1;
+SELECT setval('"public"."MASTER_CV_HISTORY_OF_WORK_ID_seq"', 77, true);
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_CV_ID_seq"
+-- Sequence structure for MASTER_CV_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_CV_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_CV_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 8
+ START 9
  CACHE 1;
+SELECT setval('"public"."MASTER_CV_ID_seq"', 9, true);
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_CV_REGION_ID_seq"
+-- Sequence structure for MASTER_CV_REGION_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_CV_REGION_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_CV_REGION_ID_seq";
 CREATE SEQUENCE "public"."MASTER_CV_REGION_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 83
+ START 97
  CACHE 1;
+SELECT setval('"public"."MASTER_CV_REGION_ID_seq"', 97, true);
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_ICON_MARKER_ID_seq"
+-- Sequence structure for MASTER_ICON_MARKER_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_ICON_MARKER_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_ICON_MARKER_ID_seq";
 CREATE SEQUENCE "public"."MASTER_ICON_MARKER_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -434,9 +450,9 @@ CREATE SEQUENCE "public"."MASTER_ICON_MARKER_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_INTERVENTION_ID_seq"
+-- Sequence structure for MASTER_INTERVENTION_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_INTERVENTION_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_INTERVENTION_ID_seq";
 CREATE SEQUENCE "public"."MASTER_INTERVENTION_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -445,9 +461,9 @@ CREATE SEQUENCE "public"."MASTER_INTERVENTION_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_LOCATION_ID_seq"
+-- Sequence structure for MASTER_LOCATION_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_LOCATION_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_LOCATION_ID_seq";
 CREATE SEQUENCE "public"."MASTER_LOCATION_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -456,9 +472,9 @@ CREATE SEQUENCE "public"."MASTER_LOCATION_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_PERSONIL_ID_seq"
+-- Sequence structure for MASTER_PERSONIL_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_PERSONIL_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_PERSONIL_ID_seq";
 CREATE SEQUENCE "public"."MASTER_PERSONIL_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -467,31 +483,33 @@ CREATE SEQUENCE "public"."MASTER_PERSONIL_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_PORT_PORT_ID_seq"
+-- Sequence structure for MASTER_PORT_PORT_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_PORT_PORT_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_PORT_PORT_ID_seq";
 CREATE SEQUENCE "public"."MASTER_PORT_PORT_ID_seq"
- INCREMENT 1
- MINVALUE 1
- MAXVALUE 9223372036854775807
- START 15
- CACHE 1;
-
--- ----------------------------
--- Sequence structure for "public"."MASTER_PRODUCT_ID_seq"
--- ----------------------------
-DROP SEQUENCE "public"."MASTER_PRODUCT_ID_seq";
-CREATE SEQUENCE "public"."MASTER_PRODUCT_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
  START 21
  CACHE 1;
+SELECT setval('"public"."MASTER_PORT_PORT_ID_seq"', 21, true);
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_SBU_ID_seq"
+-- Sequence structure for MASTER_PRODUCT_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_SBU_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_PRODUCT_ID_seq";
+CREATE SEQUENCE "public"."MASTER_PRODUCT_ID_seq"
+ INCREMENT 1
+ MINVALUE 1
+ MAXVALUE 9223372036854775807
+ START 23
+ CACHE 1;
+SELECT setval('"public"."MASTER_PRODUCT_ID_seq"', 23, true);
+
+-- ----------------------------
+-- Sequence structure for MASTER_SBU_ID_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."MASTER_SBU_ID_seq";
 CREATE SEQUENCE "public"."MASTER_SBU_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -500,9 +518,9 @@ CREATE SEQUENCE "public"."MASTER_SBU_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_STD_REF_ID_seq"
+-- Sequence structure for MASTER_STD_REF_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_STD_REF_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_STD_REF_ID_seq";
 CREATE SEQUENCE "public"."MASTER_STD_REF_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -511,9 +529,9 @@ CREATE SEQUENCE "public"."MASTER_STD_REF_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_STDREF_ID_seq"
+-- Sequence structure for MASTER_STDREF_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_STDREF_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_STDREF_ID_seq";
 CREATE SEQUENCE "public"."MASTER_STDREF_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -522,31 +540,33 @@ CREATE SEQUENCE "public"."MASTER_STDREF_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_TOOL_ID_seq"
+-- Sequence structure for MASTER_TOOL_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_TOOL_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_TOOL_ID_seq";
 CREATE SEQUENCE "public"."MASTER_TOOL_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
  START 3
  CACHE 1;
+SELECT setval('"public"."MASTER_TOOL_ID_seq"', 3, true);
 
 -- ----------------------------
--- Sequence structure for "public"."MASTER_VESSEL_VESSEL_ID_seq"
+-- Sequence structure for MASTER_VESSEL_VESSEL_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."MASTER_VESSEL_VESSEL_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."MASTER_VESSEL_VESSEL_ID_seq";
 CREATE SEQUENCE "public"."MASTER_VESSEL_VESSEL_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 31
+ START 33
  CACHE 1;
+SELECT setval('"public"."MASTER_VESSEL_VESSEL_ID_seq"', 33, true);
 
 -- ----------------------------
--- Sequence structure for "public"."outbox_ID_seq"
+-- Sequence structure for outbox_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."outbox_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."outbox_ID_seq";
 CREATE SEQUENCE "public"."outbox_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -555,9 +575,9 @@ CREATE SEQUENCE "public"."outbox_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."outbox_multipart_ID_seq"
+-- Sequence structure for outbox_multipart_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."outbox_multipart_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."outbox_multipart_ID_seq";
 CREATE SEQUENCE "public"."outbox_multipart_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -566,9 +586,9 @@ CREATE SEQUENCE "public"."outbox_multipart_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."pbk_groups_ID_seq"
+-- Sequence structure for pbk_groups_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."pbk_groups_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."pbk_groups_ID_seq";
 CREATE SEQUENCE "public"."pbk_groups_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -577,9 +597,9 @@ CREATE SEQUENCE "public"."pbk_groups_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."pbk_ID_seq"
+-- Sequence structure for pbk_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."pbk_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."pbk_ID_seq";
 CREATE SEQUENCE "public"."pbk_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -588,9 +608,9 @@ CREATE SEQUENCE "public"."pbk_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."pelni_info_id_info_seq"
+-- Sequence structure for pelni_info_id_info_seq
 -- ----------------------------
-DROP SEQUENCE "public"."pelni_info_id_info_seq";
+DROP SEQUENCE IF EXISTS "public"."pelni_info_id_info_seq";
 CREATE SEQUENCE "public"."pelni_info_id_info_seq"
  INCREMENT 1
  MINVALUE 1
@@ -599,9 +619,9 @@ CREATE SEQUENCE "public"."pelni_info_id_info_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."pelni_info_id_info_seq1"
+-- Sequence structure for pelni_info_id_info_seq1
 -- ----------------------------
-DROP SEQUENCE "public"."pelni_info_id_info_seq1";
+DROP SEQUENCE IF EXISTS "public"."pelni_info_id_info_seq1";
 CREATE SEQUENCE "public"."pelni_info_id_info_seq1"
  INCREMENT 1
  MINVALUE 1
@@ -610,31 +630,33 @@ CREATE SEQUENCE "public"."pelni_info_id_info_seq1"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."REF_EXP_ID_seq"
+-- Sequence structure for REF_EXP_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."REF_EXP_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."REF_EXP_ID_seq";
 CREATE SEQUENCE "public"."REF_EXP_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
- START 5
+ START 7
  CACHE 1;
+SELECT setval('"public"."REF_EXP_ID_seq"', 7, true);
 
 -- ----------------------------
--- Sequence structure for "public"."REF_POSITION_ID_seq"
+-- Sequence structure for REF_POSITION_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."REF_POSITION_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."REF_POSITION_ID_seq";
 CREATE SEQUENCE "public"."REF_POSITION_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
  START 6
  CACHE 1;
+SELECT setval('"public"."REF_POSITION_ID_seq"', 6, true);
 
 -- ----------------------------
--- Sequence structure for "public"."REF_REGION_ID_seq"
+-- Sequence structure for REF_REGION_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."REF_REGION_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."REF_REGION_ID_seq";
 CREATE SEQUENCE "public"."REF_REGION_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -643,20 +665,21 @@ CREATE SEQUENCE "public"."REF_REGION_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq"
+-- Sequence structure for RUNNING_TEXT_RUNNING_TEXT_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq";
 CREATE SEQUENCE "public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq"
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
  START 88
  CACHE 1;
+SELECT setval('"public"."RUNNING_TEXT_RUNNING_TEXT_ID_seq"', 88, true);
 
 -- ----------------------------
--- Sequence structure for "public"."sentitems_ID_seq"
+-- Sequence structure for sentitems_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."sentitems_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."sentitems_ID_seq";
 CREATE SEQUENCE "public"."sentitems_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -665,9 +688,9 @@ CREATE SEQUENCE "public"."sentitems_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."WA_ID_seq"
+-- Sequence structure for WA_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."WA_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."WA_ID_seq";
 CREATE SEQUENCE "public"."WA_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -676,9 +699,9 @@ CREATE SEQUENCE "public"."WA_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."WEBSITE_ARTICLE_CATEGORY_ID_seq"
+-- Sequence structure for WEBSITE_ARTICLE_CATEGORY_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."WEBSITE_ARTICLE_CATEGORY_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."WEBSITE_ARTICLE_CATEGORY_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_ARTICLE_CATEGORY_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -687,9 +710,9 @@ CREATE SEQUENCE "public"."WEBSITE_ARTICLE_CATEGORY_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."WEBSITE_ARTICLE_ID_seq"
+-- Sequence structure for WEBSITE_ARTICLE_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."WEBSITE_ARTICLE_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."WEBSITE_ARTICLE_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_ARTICLE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -698,9 +721,9 @@ CREATE SEQUENCE "public"."WEBSITE_ARTICLE_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."WEBSITE_MENU_MENU_ID_seq"
+-- Sequence structure for WEBSITE_MENU_MENU_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."WEBSITE_MENU_MENU_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."WEBSITE_MENU_MENU_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_MENU_MENU_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -709,9 +732,9 @@ CREATE SEQUENCE "public"."WEBSITE_MENU_MENU_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."WEBSITE_PAGE_STATIC_ID_seq"
+-- Sequence structure for WEBSITE_PAGE_STATIC_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."WEBSITE_PAGE_STATIC_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."WEBSITE_PAGE_STATIC_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_PAGE_STATIC_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -720,9 +743,9 @@ CREATE SEQUENCE "public"."WEBSITE_PAGE_STATIC_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."WEBSITE_SLIDER_DETAIL_ID_seq"
+-- Sequence structure for WEBSITE_SLIDER_DETAIL_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."WEBSITE_SLIDER_DETAIL_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."WEBSITE_SLIDER_DETAIL_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_SLIDER_DETAIL_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -731,9 +754,9 @@ CREATE SEQUENCE "public"."WEBSITE_SLIDER_DETAIL_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."WEBSITE_SLIDER_ID_seq"
+-- Sequence structure for WEBSITE_SLIDER_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."WEBSITE_SLIDER_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."WEBSITE_SLIDER_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_SLIDER_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -742,9 +765,9 @@ CREATE SEQUENCE "public"."WEBSITE_SLIDER_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."WEBSITE_TAG_ARTICLE_ID_seq"
+-- Sequence structure for WEBSITE_TAG_ARTICLE_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."WEBSITE_TAG_ARTICLE_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."WEBSITE_TAG_ARTICLE_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_TAG_ARTICLE_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -753,9 +776,9 @@ CREATE SEQUENCE "public"."WEBSITE_TAG_ARTICLE_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Sequence structure for "public"."WEBSITE_TAG_ID_seq"
+-- Sequence structure for WEBSITE_TAG_ID_seq
 -- ----------------------------
-DROP SEQUENCE "public"."WEBSITE_TAG_ID_seq";
+DROP SEQUENCE IF EXISTS "public"."WEBSITE_TAG_ID_seq";
 CREATE SEQUENCE "public"."WEBSITE_TAG_ID_seq"
  INCREMENT 1
  MINVALUE 1
@@ -764,20 +787,20 @@ CREATE SEQUENCE "public"."WEBSITE_TAG_ID_seq"
  CACHE 1;
 
 -- ----------------------------
--- Table structure for "public"."ALERT_SUBSCRIBER"
+-- Table structure for ALERT_SUBSCRIBER
 -- ----------------------------
-DROP TABLE "public"."ALERT_SUBSCRIBER";
+DROP TABLE IF EXISTS "public"."ALERT_SUBSCRIBER";
 CREATE TABLE "public"."ALERT_SUBSCRIBER" (
 "ALERT_SUBSCRIBER_ID" int4 DEFAULT nextval('"ALERT_SUBSCRIBER_ID_seq"'::regclass) NOT NULL,
 "USER_ID" int4,
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text,
-"SUBSCRIBE" text,
+"DELETE_USER" text COLLATE "default",
+"SUBSCRIBE" text COLLATE "default",
 "LAST_SEND" timestamp(6),
 "CLIENT_SITE_ID" int4
 )
@@ -792,22 +815,22 @@ INSERT INTO "public"."ALERT_SUBSCRIBER" VALUES ('7', '1', '0', '2018-01-02 16:55
 INSERT INTO "public"."ALERT_SUBSCRIBER" VALUES ('9', '4', '0', '2018-01-02 17:06:41', null, null, null, null, null, 'Y', null, '2');
 
 -- ----------------------------
--- Table structure for "public"."APP_CLIENT_ACCESS"
+-- Table structure for APP_CLIENT_ACCESS
 -- ----------------------------
-DROP TABLE "public"."APP_CLIENT_ACCESS";
+DROP TABLE IF EXISTS "public"."APP_CLIENT_ACCESS";
 CREATE TABLE "public"."APP_CLIENT_ACCESS" (
 "ID" int4 DEFAULT nextval('"APP_CLIENT_ACCESS_CLIENT_ACCESS_ID_seq"'::regclass) NOT NULL,
-"NAME" text,
+"NAME" text COLLATE "default",
 "READ_PRIV" int4 DEFAULT 0,
 "EDIT_PRIV" int4 DEFAULT 0,
 "DELETE_PRIV" int4 DEFAULT 0,
 "ADD_PRIV" int4 DEFAULT 0,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text,
+"DELETE_USER" text COLLATE "default",
 "MENU_ID" int4,
 "IS_DELETE" int4
 )
@@ -832,31 +855,37 @@ INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('50', 'Coloco', '1', '0', '0', 
 INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('51', 'Coloco', '1', '0', '0', '0', null, '', null, null, null, null, '1', '0');
 INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('52', 'Coloco', '1', '0', '0', '0', null, '', null, null, null, null, '3', '0');
 INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('53', 'Coloco', '1', '0', '0', '0', null, '', null, null, null, null, '7', '0');
-INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('54', 'Pertamina', '1', '1', '1', '1', null, '', null, null, null, null, '2', '0');
-INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('55', 'Pertamina', '1', '1', '1', '1', null, '', null, null, null, null, '1', '0');
-INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('58', 'Pelni', '1', '1', '1', '1', null, '', null, null, null, null, '2', '0');
-INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('59', 'Pelni', '1', '1', '1', '1', null, '', null, null, null, null, '1', '0');
-INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('64', 'Pelindo', '1', '0', '0', '0', null, '', null, null, null, null, '1', '0');
-INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('65', 'Pelindo', '1', '0', '0', '0', null, '', null, null, null, null, '2', '0');
-INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('67', 'PLN', '1', '1', '1', '1', null, '', null, null, null, null, '1', '0');
-INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('68', 'PLN', '1', '1', '1', '1', null, '', null, null, null, null, '2', '0');
-INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('69', 'PLN', '1', '1', '1', '1', null, '', null, null, null, null, '9', '0');
+INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('76', 'PLN', '1', '1', '1', '1', null, '', null, null, null, null, '1', '0');
+INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('77', 'PLN', '1', '1', '1', '1', null, '', null, null, null, null, '2', '0');
+INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('78', 'PLN', '1', '1', '1', '1', null, '', null, null, null, null, '7', '0');
+INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('79', 'PLN', '1', '1', '1', '1', null, '', null, null, null, null, '9', '0');
+INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('80', 'Pelindo', '1', '0', '0', '0', null, '', null, null, null, null, '1', '0');
+INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('81', 'Pelindo', '1', '0', '0', '0', null, '', null, null, null, null, '2', '0');
+INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('82', 'Pelindo', '1', '1', '1', '1', null, '', null, null, null, null, '7', '0');
+INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('83', 'Pelni', '1', '1', '1', '1', null, '', null, null, null, null, '1', '0');
+INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('84', 'Pelni', '1', '1', '1', '1', null, '', null, null, null, null, '2', '0');
+INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('85', 'Pelni', '1', '1', '1', '1', null, '', null, null, null, null, '7', '0');
+INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('86', 'Pelni', '1', '1', '1', '1', null, '', null, null, null, null, '9', '0');
+INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('87', 'Pertamina', '1', '1', '1', '1', null, '', null, null, null, null, '1', '0');
+INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('88', 'Pertamina', '1', '1', '1', '1', null, '', null, null, null, null, '2', '0');
+INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('89', 'Pertamina', '1', '1', '1', '1', null, '', null, null, null, null, '7', '0');
+INSERT INTO "public"."APP_CLIENT_ACCESS" VALUES ('90', 'Pertamina', '1', '1', '1', '1', null, '', null, null, null, null, '9', '0');
 
 -- ----------------------------
--- Table structure for "public"."APP_CLIENT_FORM_UPLOAD_DETAIL"
+-- Table structure for APP_CLIENT_FORM_UPLOAD_DETAIL
 -- ----------------------------
-DROP TABLE "public"."APP_CLIENT_FORM_UPLOAD_DETAIL";
+DROP TABLE IF EXISTS "public"."APP_CLIENT_FORM_UPLOAD_DETAIL";
 CREATE TABLE "public"."APP_CLIENT_FORM_UPLOAD_DETAIL" (
 "FILE_UPLOAD_DETAIL_ID" int4 DEFAULT nextval('"CLIENT_UPLOAD_FILE_UPLOAD_FILE_ID_seq"'::regclass) NOT NULL,
-"PATH" text,
-"FILE_NAME" text,
+"PATH" text COLLATE "default",
+"FILE_NAME" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text,
+"DELETE_USER" text COLLATE "default",
 "INFO_CLIENT_ID" int4
 )
 WITH (OIDS=FALSE)
@@ -874,9 +903,9 @@ INSERT INTO "public"."APP_CLIENT_FORM_UPLOAD_DETAIL" VALUES ('8', 'uploads/form_
 INSERT INTO "public"."APP_CLIENT_FORM_UPLOAD_DETAIL" VALUES ('9', 'uploads/form_entry_file/Screenshot_from_2017-09-08_09-00-46.png', 'Screenshot_from_2017-09-08_09-00-46.png', '0', null, null, null, null, null, null, '78');
 
 -- ----------------------------
--- Table structure for "public"."APP_CLIENT_HEADER_ACCESS"
+-- Table structure for APP_CLIENT_HEADER_ACCESS
 -- ----------------------------
-DROP TABLE "public"."APP_CLIENT_HEADER_ACCESS";
+DROP TABLE IF EXISTS "public"."APP_CLIENT_HEADER_ACCESS";
 CREATE TABLE "public"."APP_CLIENT_HEADER_ACCESS" (
 "HEADER_ACCESS_ID" int4 DEFAULT nextval('"APP_CLIENT_HEADER_ACCESS_HEADER_ACCESS_ID_seq"'::regclass) NOT NULL,
 "CLIENT_SITE_ID" int4,
@@ -884,11 +913,11 @@ CREATE TABLE "public"."APP_CLIENT_HEADER_ACCESS" (
 "CLIENT_TEMPLATE_ID" int4,
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text
+"DELETE_USER" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -903,29 +932,29 @@ INSERT INTO "public"."APP_CLIENT_HEADER_ACCESS" VALUES ('11', '1', '3', '7', nul
 INSERT INTO "public"."APP_CLIENT_HEADER_ACCESS" VALUES ('12', '5', '3', '7', null, null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."APP_CLIENT_MENU"
+-- Table structure for APP_CLIENT_MENU
 -- ----------------------------
-DROP TABLE "public"."APP_CLIENT_MENU";
+DROP TABLE IF EXISTS "public"."APP_CLIENT_MENU";
 CREATE TABLE "public"."APP_CLIENT_MENU" (
 "MENU_ID" int4 DEFAULT nextval('"APP_CLIENT_MENU_CLIENT_MENU_ID_seq"'::regclass) NOT NULL,
 "MENU_LEVEL" int4,
 "REFERENCE" int4,
-"TITLE" text,
-"URL" text,
-"REMARK" text,
-"TARGET" text,
-"IMAGE" text,
+"TITLE" text COLLATE "default",
+"URL" text COLLATE "default",
+"REMARK" text COLLATE "default",
+"TARGET" text COLLATE "default",
+"IMAGE" text COLLATE "default",
 "WEIGHT" int4,
 "SHOW" int4,
 "HIERARCHY" int4,
 "BASICHIERARCHY" int4,
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text
+"DELETE_USER" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -937,27 +966,27 @@ WITH (OIDS=FALSE)
 INSERT INTO "public"."APP_CLIENT_MENU" VALUES ('1', '1', '0', 'Dashboard', '/client_dashboard', 'Dashboard', '_self', '<i class="fa fa-dashboard"></i>', '0', '1', null, null, '0', null, '', null, '', null, null);
 INSERT INTO "public"."APP_CLIENT_MENU" VALUES ('2', '1', '0', 'Report', '/client_report', 'Client Report', '_self', '<i class="fa fa-bar-chart"></i>', '1', '1', null, null, '0', null, '', null, null, null, null);
 INSERT INTO "public"."APP_CLIENT_MENU" VALUES ('3', '1', '0', 'Form', '/client_form', 'Client Form', '_self', '<i class="fa fa-pencil"></i>', '2', '1', null, null, '0', null, '', null, '', null, null);
-INSERT INTO "public"."APP_CLIENT_MENU" VALUES ('7', '1', '0', 'Peta Indonesia', 'client_peta_indonesia', 'Peta Indonesia', '_self', '<i class="fa fa-globe"></i>', '0', '1', null, null, '0', null, '', null, '', null, null);
+INSERT INTO "public"."APP_CLIENT_MENU" VALUES ('7', '1', '0', 'Peta Indonesia', 'client_point', 'Peta Indonesia', '_self', '<i class="fa fa-globe"></i>', '0', '1', null, null, '0', null, '', null, '', null, null);
 INSERT INTO "public"."APP_CLIENT_MENU" VALUES ('9', '1', '0', 'Service Ticket', 'client_ticket', 'Client Ticket', '_self', '<i class="fa fa-user"></i>', '7', '1', null, null, '0', null, '', null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."APP_CLIENT_SITE"
+-- Table structure for APP_CLIENT_SITE
 -- ----------------------------
-DROP TABLE "public"."APP_CLIENT_SITE";
+DROP TABLE IF EXISTS "public"."APP_CLIENT_SITE";
 CREATE TABLE "public"."APP_CLIENT_SITE" (
 "CLIENT_SITE_ID" int4 DEFAULT nextval('"APP_CLIENT_SITE_ID_seq"'::regclass) NOT NULL,
-"CLIENT_SITE_NAME" text,
+"CLIENT_SITE_NAME" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text,
-"CLIENT_LOGO" text,
+"DELETE_USER" text COLLATE "default",
+"CLIENT_LOGO" text COLLATE "default",
 "CLIENT_LOGO_WIDTH" int4,
 "CLIENT_LOGO_HEIGHT" int4,
-"CLIENT_WALLPAPER" text
+"CLIENT_WALLPAPER" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -969,33 +998,35 @@ WITH (OIDS=FALSE)
 INSERT INTO "public"."APP_CLIENT_SITE" VALUES ('1', 'Pertamina', '0', null, 'admin', '2017-10-16 07:31:00', null, null, null, 'http://103.43.46.75/uploads/file_manager/pertamina-logo.png', '190', '40', 'http://mediatataruang.com/wp-content/uploads/2017/08/pertamina1.jpg');
 INSERT INTO "public"."APP_CLIENT_SITE" VALUES ('2', 'PLN', '0', null, 'admin', '2017-10-16 07:31:00', null, null, null, 'http://103.43.46.75/uploads/file_manager/pln-logo.png', '170', '40', 'https://redkal.com/wp-content/uploads/2017/09/IMG-20170906-WA0030.jpg');
 INSERT INTO "public"."APP_CLIENT_SITE" VALUES ('3', 'Pelni', '0', null, 'admin', '2017-10-16 07:31:00', null, null, null, 'http://103.43.46.75/uploads/file_manager/pelni-logo.png', '180', '40', 'http://1.bp.blogspot.com/-k3DU7DtJNus/UxpjhBX7D2I/AAAAAAAAAW8/joo_nXra-yE/s1600/Cermai.jpg');
+INSERT INTO "public"."APP_CLIENT_SITE" VALUES ('7', 'CUSTOMER7', null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."APP_CLIENT_SITE" VALUES ('8', 'CUSTOMER6', null, null, null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."APP_CLIENT_USER"
+-- Table structure for APP_CLIENT_USER
 -- ----------------------------
-DROP TABLE "public"."APP_CLIENT_USER";
+DROP TABLE IF EXISTS "public"."APP_CLIENT_USER";
 CREATE TABLE "public"."APP_CLIENT_USER" (
 "USER_ID" int4 DEFAULT nextval('"APP_CLIENT_USER_CLIENT_USER_ID_seq"'::regclass) NOT NULL,
-"USERNAME" text,
-"EMAIL" text,
-"FIRST_NAME" text,
-"LAST_NAME" text,
-"PASSWORD" text,
+"USERNAME" text COLLATE "default",
+"EMAIL" text COLLATE "default",
+"FIRST_NAME" text COLLATE "default",
+"LAST_NAME" text COLLATE "default",
+"PASSWORD" text COLLATE "default",
 "COUNTER" int4,
-"STATUS" text,
-"REMARK" text,
-"CHANGE_PASSWORD" text,
-"FUNCTION_ACCESS" text,
-"INQUIRY_ACCESS" text,
+"STATUS" text COLLATE "default",
+"REMARK" text COLLATE "default",
+"CHANGE_PASSWORD" text COLLATE "default",
+"FUNCTION_ACCESS" text COLLATE "default",
+"INQUIRY_ACCESS" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text,
-"PHONE" text,
-"PHOTO" text,
+"DELETE_USER" text COLLATE "default",
+"PHONE" text COLLATE "default",
+"PHOTO" text COLLATE "default",
 "CLIENT_SITE_ID" int4
 )
 WITH (OIDS=FALSE)
@@ -1008,22 +1039,22 @@ WITH (OIDS=FALSE)
 INSERT INTO "public"."APP_CLIENT_USER" VALUES ('1', 'PLN-12345', 'admin@gmail.com', 'Tugiman', 'Jayanto', '21232f297a57a5a743894a0e4a801fc3', null, 'Y', 'Client Test', null, 'PLN', null, '0', null, '', null, null, null, null, '08121076201', 'employee2.jpg', '2');
 INSERT INTO "public"."APP_CLIENT_USER" VALUES ('2', 'PTM-12345', 'pertamina@gmail.com', 'Wira', 'Widodo', '21232f297a57a5a743894a0e4a801fc3', null, 'Y', '', null, 'Pertamina', null, '0', null, '', null, null, null, null, '090980450455', 'employee.jpg', '1');
 INSERT INTO "public"."APP_CLIENT_USER" VALUES ('3', 'PNI-12345', 'indra@pln.co.id', 'Indra', 'Setiawan', '21232f297a57a5a743894a0e4a801fc3', null, 'Y', '', null, 'Pelni', null, '0', null, '', null, null, null, null, '08795567454', 'employee1.jpg', '3');
-INSERT INTO "public"."APP_CLIENT_USER" VALUES ('4', 'Pelindo', 'haripurno@yahoo.com', 'Harianto', 'Purnomo', 'd20285fb389bddc5c78edf92b17eb61b', null, 'Y', '', null, 'Pelindo', null, '0', null, '', null, null, null, null, '081236098835', null, '5');
+INSERT INTO "public"."APP_CLIENT_USER" VALUES ('4', 'Pelindo', 'haripurno@yahoo.com', 'Harianto', 'Purnomo', '21232f297a57a5a743894a0e4a801fc3', null, 'Y', '', null, 'Pelindo', null, '0', null, '', null, null, null, null, '081236098835', null, '5');
 
 -- ----------------------------
--- Table structure for "public"."APP_CLIENT_USER_GROUP"
+-- Table structure for APP_CLIENT_USER_GROUP
 -- ----------------------------
-DROP TABLE "public"."APP_CLIENT_USER_GROUP";
+DROP TABLE IF EXISTS "public"."APP_CLIENT_USER_GROUP";
 CREATE TABLE "public"."APP_CLIENT_USER_GROUP" (
 "GROUP_ID" int4 DEFAULT nextval('"APP_CLIENT_USER_GROUP_CLIENT_USER_GROUP_ID_seq"'::regclass) NOT NULL,
-"GROUP_NAME" text,
+"GROUP_NAME" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text
+"DELETE_USER" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -1038,24 +1069,24 @@ INSERT INTO "public"."APP_CLIENT_USER_GROUP" VALUES ('3', 'PLN', '0', null, null
 INSERT INTO "public"."APP_CLIENT_USER_GROUP" VALUES ('4', 'Pelindo', '0', null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."APP_FILE_MANAGER"
+-- Table structure for APP_FILE_MANAGER
 -- ----------------------------
-DROP TABLE "public"."APP_FILE_MANAGER";
+DROP TABLE IF EXISTS "public"."APP_FILE_MANAGER";
 CREATE TABLE "public"."APP_FILE_MANAGER" (
 "FILE_MANAGER_ID" int4 DEFAULT nextval('"FILE_MANAGER_ID_seq"'::regclass) NOT NULL,
-"NAME" text,
+"NAME" text COLLATE "default",
 "SIZE" int4,
-"EXTENSION" text,
-"PATH" text,
+"EXTENSION" text COLLATE "default",
+"PATH" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text,
-"TITLE" text,
-"TYPE" text
+"DELETE_USER" text COLLATE "default",
+"TITLE" text COLLATE "default",
+"TYPE" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -1072,22 +1103,22 @@ INSERT INTO "public"."APP_FILE_MANAGER" VALUES ('14', 'logo_suco_SS4.png', '99',
 INSERT INTO "public"."APP_FILE_MANAGER" VALUES ('16', null, null, null, 'uploads/file_manager/', '0', null, null, null, null, null, null, 'Pelindo Logo', null);
 
 -- ----------------------------
--- Table structure for "public"."APP_FUNCTION_ACCESS"
+-- Table structure for APP_FUNCTION_ACCESS
 -- ----------------------------
-DROP TABLE "public"."APP_FUNCTION_ACCESS";
+DROP TABLE IF EXISTS "public"."APP_FUNCTION_ACCESS";
 CREATE TABLE "public"."APP_FUNCTION_ACCESS" (
 "ID" int4 DEFAULT nextval('"APP_FUNCTION_ACCESS_ID_seq"'::regclass) NOT NULL,
-"NAME" text,
+"NAME" text COLLATE "default",
 "READ_PRIV" int4 DEFAULT 0,
 "EDIT_PRIV" int4 DEFAULT 0,
 "DELETE_PRIV" int4 DEFAULT 0,
 "ADD_PRIV" int4 DEFAULT 0,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text,
+"DELETE_USER" text COLLATE "default",
 "MENU_ID" int4,
 "IS_DELETE" int4
 )
@@ -1216,17 +1247,17 @@ INSERT INTO "public"."APP_FUNCTION_ACCESS" VALUES ('1600', 'admin', '1', '1', '1
 INSERT INTO "public"."APP_FUNCTION_ACCESS" VALUES ('1601', 'admin', '1', '1', '1', '1', null, '', null, null, null, null, '162', '0');
 
 -- ----------------------------
--- Table structure for "public"."APP_LOG"
+-- Table structure for APP_LOG
 -- ----------------------------
-DROP TABLE "public"."APP_LOG";
+DROP TABLE IF EXISTS "public"."APP_LOG";
 CREATE TABLE "public"."APP_LOG" (
 "LOG_ID" int4 DEFAULT nextval('"APP_LOG_LOG_ID_seq"'::regclass) NOT NULL,
 "CREATE_TIME" timestamp(6),
-"ACTIVITY" text,
-"IP" text,
-"DETAIL" text,
-"USERNAME" text,
-"METHOD" text
+"ACTIVITY" text COLLATE "default",
+"IP" text COLLATE "default",
+"DETAIL" text COLLATE "default",
+"USERNAME" text COLLATE "default",
+"METHOD" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -1237,18 +1268,18 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for "public"."APP_LOG_CLIENT"
+-- Table structure for APP_LOG_CLIENT
 -- ----------------------------
-DROP TABLE "public"."APP_LOG_CLIENT";
+DROP TABLE IF EXISTS "public"."APP_LOG_CLIENT";
 CREATE TABLE "public"."APP_LOG_CLIENT" (
 "LOG_ID" int4 DEFAULT nextval('"APP_LOG_CLIENT_LOG_CLIENT_ID_seq"'::regclass) NOT NULL,
 "CREATE_TIME" timestamp(6),
-"ACTIVITY" text,
-"IP" text,
-"DETAIL" text,
-"USERNAME" text,
-"CLIENT_SITE_NAME" text,
-"METHOD" text
+"ACTIVITY" text COLLATE "default",
+"IP" text COLLATE "default",
+"DETAIL" text COLLATE "default",
+"USERNAME" text COLLATE "default",
+"CLIENT_SITE_NAME" text COLLATE "default",
+"METHOD" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -1259,29 +1290,29 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for "public"."APP_MENU"
+-- Table structure for APP_MENU
 -- ----------------------------
-DROP TABLE "public"."APP_MENU";
+DROP TABLE IF EXISTS "public"."APP_MENU";
 CREATE TABLE "public"."APP_MENU" (
 "MENU_ID" int4 DEFAULT nextval('"APP_MENU_MENU_ID_seq"'::regclass) NOT NULL,
 "MENU_LEVEL" int4,
 "REFERENCE" int4,
-"TITLE" text,
-"URL" text,
-"REMARK" text,
-"TARGET" text,
-"IMAGE" text,
+"TITLE" text COLLATE "default",
+"URL" text COLLATE "default",
+"REMARK" text COLLATE "default",
+"TARGET" text COLLATE "default",
+"IMAGE" text COLLATE "default",
 "WEIGHT" int4,
 "SHOW" int4,
 "HIERARCHY" int4,
 "BASICHIERARCHY" int4,
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text
+"DELETE_USER" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -1346,20 +1377,20 @@ INSERT INTO "public"."APP_MENU" VALUES ('161', '2', '115', 'Strategi Business Un
 INSERT INTO "public"."APP_MENU" VALUES ('162', '1', '0', 'Ticket Manager', 'admin_ticket', 'Ticket Manager', '_self', '<i class="fa fa-users"></i>', '7', '1', null, null, '0', null, '', null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."APP_ROUTE"
+-- Table structure for APP_ROUTE
 -- ----------------------------
-DROP TABLE "public"."APP_ROUTE";
+DROP TABLE IF EXISTS "public"."APP_ROUTE";
 CREATE TABLE "public"."APP_ROUTE" (
 "ROUTE_ID" int4 DEFAULT nextval('"APP_ROUTE_ROUTE_ID_seq"'::regclass) NOT NULL,
-"SLUG" text,
-"CONTROLLER" text,
+"SLUG" text COLLATE "default",
+"CONTROLLER" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text
+"DELETE_USER" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -1370,13 +1401,13 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for "public"."APP_SETTING"
+-- Table structure for APP_SETTING
 -- ----------------------------
-DROP TABLE "public"."APP_SETTING";
+DROP TABLE IF EXISTS "public"."APP_SETTING";
 CREATE TABLE "public"."APP_SETTING" (
 "SETTING_ID" int4 DEFAULT nextval('"APP_SETTING_SETTING_ID_seq"'::regclass) NOT NULL,
-"SETTING_NAME" text,
-"SETTING_VALUE" text
+"SETTING_NAME" text COLLATE "default",
+"SETTING_VALUE" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -1394,31 +1425,31 @@ INSERT INTO "public"."APP_SETTING" VALUES ('9', 'APP_SCREEN_SAVER_TIMEOUT', '5')
 INSERT INTO "public"."APP_SETTING" VALUES ('10', 'APP_SCREEN_SAVER_IMAGE', 'http://103.43.46.75/uploads/file_manager/logo_suco_SS4.png');
 
 -- ----------------------------
--- Table structure for "public"."APP_USER"
+-- Table structure for APP_USER
 -- ----------------------------
-DROP TABLE "public"."APP_USER";
+DROP TABLE IF EXISTS "public"."APP_USER";
 CREATE TABLE "public"."APP_USER" (
 "USER_ID" int4 DEFAULT nextval('"APP_USER_USER_ID_seq"'::regclass) NOT NULL,
-"USERNAME" text,
-"EMAIL" text,
-"FIRST_NAME" text,
-"LAST_NAME" text,
-"PASSWORD" text,
+"USERNAME" text COLLATE "default",
+"EMAIL" text COLLATE "default",
+"FIRST_NAME" text COLLATE "default",
+"LAST_NAME" text COLLATE "default",
+"PASSWORD" text COLLATE "default",
 "COUNTER" int4,
-"STATUS" text,
-"REMARK" text,
-"CHANGE_PASSWORD" text,
-"FUNCTION_ACCESS" text,
-"INQUIRY_ACCESS" text,
+"STATUS" text COLLATE "default",
+"REMARK" text COLLATE "default",
+"CHANGE_PASSWORD" text COLLATE "default",
+"FUNCTION_ACCESS" text COLLATE "default",
+"INQUIRY_ACCESS" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text,
-"PHONE" text,
-"PHOTO" text
+"DELETE_USER" text COLLATE "default",
+"PHONE" text COLLATE "default",
+"PHOTO" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -1433,21 +1464,21 @@ INSERT INTO "public"."APP_USER" VALUES ('7', 'teguh', 'teguh@gmail.com', 'Teguh'
 INSERT INTO "public"."APP_USER" VALUES ('8', 'tubagus', 'tubagus@gmail.com', 'Tubagus', '', '21232f297a57a5a743894a0e4a801fc3', null, 'Y', '', null, 'admin', null, '0', null, '', null, null, null, null, '', 'user-icon-png-pnglogocom.png');
 
 -- ----------------------------
--- Table structure for "public"."APP_USER_GROUP"
+-- Table structure for APP_USER_GROUP
 -- ----------------------------
-DROP TABLE "public"."APP_USER_GROUP";
+DROP TABLE IF EXISTS "public"."APP_USER_GROUP";
 CREATE TABLE "public"."APP_USER_GROUP" (
 "GROUP_ID" int4 DEFAULT nextval('"APP_USER_GROUP_GROUP_ID_seq"'::regclass) NOT NULL,
-"GROUP_NAME" text,
+"GROUP_NAME" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text,
-"PHONE" text,
-"PHOTO" text
+"DELETE_USER" text COLLATE "default",
+"PHONE" text COLLATE "default",
+"PHOTO" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -1459,21 +1490,21 @@ WITH (OIDS=FALSE)
 INSERT INTO "public"."APP_USER_GROUP" VALUES ('2', 'admin', '0', null, null, null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."CLIENT_MESSAGE_TICKET"
+-- Table structure for CLIENT_MESSAGE_TICKET
 -- ----------------------------
-DROP TABLE "public"."CLIENT_MESSAGE_TICKET";
+DROP TABLE IF EXISTS "public"."CLIENT_MESSAGE_TICKET";
 CREATE TABLE "public"."CLIENT_MESSAGE_TICKET" (
-"CLIENT_MESSAGE_ID" text DEFAULT gen_random_uuid() NOT NULL,
-"CLIENT_TICKET_ID" text,
-"CLIENT_TICKET_MESSAGE" text,
+"CLIENT_MESSAGE_ID" text COLLATE "default" DEFAULT gen_random_uuid() NOT NULL,
+"CLIENT_TICKET_ID" text COLLATE "default",
+"CLIENT_TICKET_MESSAGE" text COLLATE "default",
 "IS_DELETE" int4,
 "USER_ID" int4 DEFAULT 0,
 "ADMIN_ID" int4 DEFAULT 0,
 "IS_TICKET_READ" int4 DEFAULT 0,
 "CREATE_TIME" timestamp(6) DEFAULT now(),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6)
 )
 WITH (OIDS=FALSE)
@@ -1485,6 +1516,8 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 INSERT INTO "public"."CLIENT_MESSAGE_TICKET" VALUES ('21a9d152-ef8e-49a5-9e95-b5a7ac392551', 'c5ad5da0-c748-4acf-a7e4-7922f47becf5', '<p>ok</p>
 <div id="selenium-highlight">&nbsp;</div>', null, '0', '1', '0', '2018-05-21 09:38:00.125948', null, null, null, null);
+INSERT INTO "public"."CLIENT_MESSAGE_TICKET" VALUES ('413e6a3d-75a2-4ef9-b5dc-52f97679fee8', '58ac4404-fa2e-49a2-b09a-ec5c8330da59', '<p>Mohon untuk ditambahkan user atas nama Irwan Ardiansyah NIK 123000000123123124. Terimakasih</p>', null, '2', '0', '0', '2018-05-22 06:21:15.745984', null, null, null, null);
+INSERT INTO "public"."CLIENT_MESSAGE_TICKET" VALUES ('4e2ac8e7-5e9a-46c6-beb3-9d7bf88fdc6a', '58ac4404-fa2e-49a2-b09a-ec5c8330da59', '<p>Permintaan tambah user dengan di proses tunggu 1x24 jam.</p>', null, '0', '1', '0', '2018-05-22 06:22:42.265813', null, null, null, null);
 INSERT INTO "public"."CLIENT_MESSAGE_TICKET" VALUES ('5250b31b-7444-419b-82a8-a3cca631bb2c', 'b53cedc5-e60d-46b2-9de4-a2a1c0d11fc0', '<p>Mohon untuk dibuat user atas nama Siswanto dengan NIK 1200000023423423. Terimakasih</p>', null, '1', '0', '0', '2018-05-20 18:35:02.172292', null, null, null, null);
 INSERT INTO "public"."CLIENT_MESSAGE_TICKET" VALUES ('895bb406-8cac-4fbb-9cd1-3324c9e0e6e3', '984ca7df-3f56-46e3-bdc5-2e21f7474e39', '<p>Mohon untuk penggantian password atas nama Iwan Gunawan ID.1234323</p>', null, '1', '0', '0', '2018-05-20 20:01:36.731836', null, null, null, null);
 INSERT INTO "public"."CLIENT_MESSAGE_TICKET" VALUES ('93d2a45c-5666-4a86-ad98-f9635d169ef7', 'b53cedc5-e60d-46b2-9de4-a2a1c0d11fc0', '<p>Terimakasih Bp. Tugiman. Request anda segera kami proses. Tunggu 2x24 jam.</p>', null, '0', '1', '0', '2018-05-20 18:39:58.711301', null, null, null, null);
@@ -1494,22 +1527,22 @@ INSERT INTO "public"."CLIENT_MESSAGE_TICKET" VALUES ('abacd180-940c-4762-b69f-41
 INSERT INTO "public"."CLIENT_MESSAGE_TICKET" VALUES ('f0014678-c990-4826-bb2d-be6c52dbfa2b', '984ca7df-3f56-46e3-bdc5-2e21f7474e39', '<p>Baik, request akan diproses 1 x 24 jam. Terimakasih.</p>', null, '0', '1', '0', '2018-05-20 20:13:08.860302', null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."CLIENT_TICKET"
+-- Table structure for CLIENT_TICKET
 -- ----------------------------
-DROP TABLE "public"."CLIENT_TICKET";
+DROP TABLE IF EXISTS "public"."CLIENT_TICKET";
 CREATE TABLE "public"."CLIENT_TICKET" (
-"CLIENT_TICKET_ID" text DEFAULT gen_random_uuid() NOT NULL,
-"CLIENT_TICKET_NAME" text,
-"CLIENT_TICKET_DESCRIPTION" text,
+"CLIENT_TICKET_ID" text COLLATE "default" DEFAULT gen_random_uuid() NOT NULL,
+"CLIENT_TICKET_NAME" text COLLATE "default",
+"CLIENT_TICKET_DESCRIPTION" text COLLATE "default",
 "IS_DELETE" int4,
 "USER_ID" int4 DEFAULT 0,
 "ADMIN_READ_ID" int4 DEFAULT 0,
 "IS_TICKET_OPEN" int4 DEFAULT 0,
 "IS_TICKET_READ" int4 DEFAULT 0,
 "CREATE_TIME" timestamp(6) DEFAULT now(),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6)
 )
 WITH (OIDS=FALSE)
@@ -1519,18 +1552,19 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Records of CLIENT_TICKET
 -- ----------------------------
+INSERT INTO "public"."CLIENT_TICKET" VALUES ('58ac4404-fa2e-49a2-b09a-ec5c8330da59', 'Permintaan tambah user', '<p>Mohon untuk ditambahkan user atas nama Irwan Ardiansyah NIK 123000000123123124. Terimakasih</p>', '0', '2', '1', '0', '1', '2018-05-22 06:21:15.742246', null, null, null, null);
 INSERT INTO "public"."CLIENT_TICKET" VALUES ('984ca7df-3f56-46e3-bdc5-2e21f7474e39', 'Permintaan ganti password', '<p>Mohon untuk penggantian password atas nama Iwan Gunawan ID.1234323</p>', '0', '1', '1', '0', '1', '2018-05-20 20:01:36.72941', null, null, null, null);
 INSERT INTO "public"."CLIENT_TICKET" VALUES ('b53cedc5-e60d-46b2-9de4-a2a1c0d11fc0', 'PERMINTAAN TAMBAH USER', '<p>Mohon untuk dibuat user atas nama Siswanto dengan NIK 1200000023423423. Terimakasih</p>', '0', '1', '1', '1', '1', '2018-05-20 18:35:02.168868', null, null, null, null);
 INSERT INTO "public"."CLIENT_TICKET" VALUES ('c5ad5da0-c748-4acf-a7e4-7922f47becf5', 'coba untuk ticketing', '<p>asdfghh</p>
 <div id="selenium-highlight">&nbsp;</div>', '0', '1', '1', '0', '1', '2018-05-21 09:34:35.119049', null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."daemons"
+-- Table structure for daemons
 -- ----------------------------
-DROP TABLE "public"."daemons";
+DROP TABLE IF EXISTS "public"."daemons";
 CREATE TABLE "public"."daemons" (
-"Start" text NOT NULL,
-"Info" text NOT NULL
+"Start" text COLLATE "default" NOT NULL,
+"Info" text COLLATE "default" NOT NULL
 )
 WITH (OIDS=FALSE)
 
@@ -1541,29 +1575,29 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for "public"."ELEMENT_CONNECTION"
+-- Table structure for ELEMENT_CONNECTION
 -- ----------------------------
-DROP TABLE "public"."ELEMENT_CONNECTION";
+DROP TABLE IF EXISTS "public"."ELEMENT_CONNECTION";
 CREATE TABLE "public"."ELEMENT_CONNECTION" (
-"ID" text DEFAULT gen_random_uuid() NOT NULL,
-"NAME" text,
-"DATA" text,
+"ID" text COLLATE "default" DEFAULT gen_random_uuid() NOT NULL,
+"NAME" text COLLATE "default",
+"DATA" text COLLATE "default",
 "PRODUCT_ID" int4,
 "INTERVENTION_ID" int4,
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"ELEMENT_TIMELOG_ID" text,
-"ELEMENT_QUALITY_ID" text,
-"ELEMENT_FIELDS" text,
-"ELEMENT_JS" text,
-"ELEMENT_R1" text,
-"ELEMENT_R2" text,
-"ELEMENT_R3" text,
-"ELEMENT_R4" text
+"ELEMENT_TIMELOG_ID" text COLLATE "default",
+"ELEMENT_QUALITY_ID" text COLLATE "default",
+"ELEMENT_FIELDS" text COLLATE "default",
+"ELEMENT_JS" text COLLATE "default",
+"ELEMENT_R1" text COLLATE "default",
+"ELEMENT_R2" text COLLATE "default",
+"ELEMENT_R3" text COLLATE "default",
+"ELEMENT_R4" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -1574,7 +1608,7 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('044736a3-df87-4b8f-9a24-a74ac39a29b6', 'Setup Crude Bunker Pipe', '<div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>
-<div id="selenium-highlight">&nbsp;</div>', '6', '21', '0', null, null, null, null, null, '36', '21', '["PRODUCT_TYPE","SELECT_INTERVENTION","SELECT_CLIENT","CLIENT_ID","BUYER","SHARING_FEE","KONTRAK","SPK","VOY","FILE_ORDER","IWO","VESSEL","VESSEL_ID","AREA","AREA_ID","SELECT_PORT","PORT_TERMINAL","PORT_ID","SELECT_PRODUCT","PRODUCT","PRODUCT_ID","LOADING_START_DATE","LOADING_START_TIME","LOADING_COMPLETE_DATE","LOADING_COMPLETE_TIME","DISCHARGE_START_DATE","DISCHARGE_START_TIME","DISCHARGE_COMPLETE_DATE","DISCHARGE_COMPLETE_TIME","BL_START_DATE","BL_START_TIME","TYPE_LOCATION","SURVEYOR_IN_CHARGE","SURVEYOR_ID","TIME_LOADING_BARGE_ARRIVED","DATE_LOADING_BARGE_ARRIVED","REMARKS_LOADING_BARGE_ARRIVED","TIME_LOADING_NOR_TENDERED","DATE_LOADING_NOR_TENDERED","REMARKS_LOADING_NOR_TENDERED","TIME_LOADING_BARGE_ALL_FAST_ALONGSIDE","DATE_LOADING_BARGE_ALL_FAST_ALONGSIDE","REMARKS_LOADING_BARGE_ALL_FAST_ALONGSIDE","TIME_LOADING_KEY_MEETING","DATE_LOADING_KEY_MEETING","REMARKS_LOADING_KEY_MEETING","TIME_LOADING_NOR_ACCEPTED","DATE_LOADING_NOR_ACCEPTED","REMARKS_LOADING_NOR_ACCEPTED","TIME_LOADING_VALVE_SEEALED","DATE_LOADING_VALVE_SEEALED","REMARKS_LOADING_VALVE_SEEALED","TIME_LOADING_TANK_INSPECT_METER_VERIFICATION","DATE_LOADING_TANK_INSPECT_METER_VERIFICATION","REMARKS_LOADING_TANK_INSPECT_METER_VERIFICATION","TIME_HOSE_CONNECTED","DATE_HOSE_CONNECTED","REMARKS_HOSE_CONNECTED","TIME_LOADING_HOST_CONNECTED","DATE_LOADING_HOST_CONNECTED","REMARKS_LOADING_HOST_CONNECTED","TIME_LOADING_LOADING_COMMENCED","DATE_LOADING_LOADING_COMMENCED","REMARKS_LOADING_LOADING_COMMENCED","TIME_LOADING_LOADING_COMPLETED","DATE_LOADING_LOADING_COMPLETED","REMARKS_LOADING_LOADING_COMPLETED","TIME_DATE_LOADING_HOSE_ARMS_DISCONNECT","DATE_LOADING_HOSE_ARMS_DISCONNECT","REMARKS_DATE_LOADING_HOSE_ARMS_DISCONNECT","TIME_LOADING_TANK_INSPECT_METER_VERIFICATION_FINAL","DATE_LOADING_TANK_INSPECT_METER_VERIFICATION_FINAL","REMARKS_LOADING_TANK_INSPECT_METER_VERIFICATION_FINAL","TIME_LOADING_CALCUL_COMPLETED_DOC_ONBOARD","DATE_LOADING_CALCUL_COMPLETED_DOC_ONBOARD","REMARKS_LOADING_CALCUL_COMPLETED_DOC_ONBOARD","TIME_DISCHARGE_BARGE_ARRIVED","DATE_DISCHARGE_BARGE_ARRIVED","REMARKS_DISCHARGE_BARGE_ARRIVED","TIME_DISCHARGE_NOR_TENDERED","DATE_DISCHARGE_NOR_TENDERED","REMARKS_DISCHARGE_NOR_TENDERED","TIME_DISCHARGE_KEY_MEETING","DATE_DISCHARGE_KEY_MEETING","REMARKS_DISCHARGE_KEY_MEETING","TIME_DISCHARGE_NOR_ACCEPTED","DATE_DISCHARGE_NOR_ACCEPTED","REMARKS_DISCHARGE_NOR_ACCEPTED","TIME_DISCHARGE_VALVE_SEEALED","DATE_DISCHARGE_VALVE_SEEALED","REMARKS_DISCHARGE_VALVE_SEEALED","TIME_DISCHARGE_TANK_INSPECT_MEASURE","DATE_DISCHARGE_TANK_INSPECT_MEASURE","REMARKS_DISCHARGE_TANK_INSPECT_MEASURE","TIME_VISUAL_INSPECTION_SAMPLING","DATE_VISUAL_INSPECTION_SAMPLING","REMARKS_VISUAL_INSPECTION_SAMPLING","TIME_DISCHARGE_HOST_CONNECTED","DATE_DISCHARGE_HOST_CONNECTED","REMARKS_DISCHARGE_HOST_CONNECTED","TIME_DISCHARGE_BUNKER_COMMENCED","DATE_DISCHARGE_BUNKER_COMMENCED","REMARKS_DISCHARGE_BUNKER_COMMENCED","TIME_DISCHARGE_BUNKER_COMPLETED","DATE_DISCHARGE_BUNKER_COMPLETED","REMARKS_DISCHARGE_BUNKER_COMPLETED","TIME_DATE_DISCHARGE_HOSE_DISCONNECT","DATE_DISCHARGE_HOSE_DISCONNECT","REMARKS_DATE_DISCHARGE_HOSE_DISCONNECT","TIME_DISCHARGE_TANK_INSPECT_MEASR_FINAL","DATE_DISCHARGE_TANK_INSPECT_MEASR_FINAL","REMARKS_DISCHARGE_TANK_INSPECT_MEASR_FINAL","TIME_DISCHARGE_VISUAL_INSPECTION_SAMPLING","DATE_DISCHARGE_VISUAL_INSPECTION_SAMPLING","REMARKS_DISCHARGE_VISUAL_INSPECTION_SAMPLING","TIME_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD","DATE_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD","REMARKS_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD","TIME_DISCHARGE_BARGE_LEAVE_SHIP","DATE_DISCHARGE_BARGE_LEAVE_SHIP","REMARKS_DISCHARGE_BARGE_LEAVE_SHIP","ACTIVITIES_REMARKS","INITIAL_READOUT_KLOBS","INITIAL_READOUT_KL15","INITIAL_READOUT_METRIC_TONS","FINAL_READOUT_KLOBS","FINAL_READOUT_KL15","FINAL_READOUT_METRIC_TONS","DIFFERENCE_KLOBS","DIFFERENCE_KL15","DIFFERENCE_METRIC_TONS","METER_FACTOR_KLOBS","CORD_VOL_DELIVERED_KLOBS","CORD_VOL_DELIVERED_KL15","CORD_VOL_DELIVERED_METRIC_TONS","DENSITY15DEG_KLOBS","SUPPLY_LOSS_KLOBS","SUPPLY_LOSS_KL15","SUPPLY_LOSS_METRIC_TONS","RN_NOTICE_ISSUE","RN_LETTER_ISSUE","RN_STATEMENT_ISSUE","BO_MFO_ON_ARRIVAL","BO_MDO_ON_ARRIVAL","BO_MFO_ON_DEPARTURE","BO_MDO_ON_DEPARTURE","SC_ON_ARRIVAL_DRAFT_FWD","SC_ON_ARRIVAL_DRAFT_AFT","SC_ON_ARRIVAL_DRAFT_LIST","SC_ON_DEPARTURE_DRAFT_FWD","SC_ON_DEPARTURE_DRAFT_AFT","SC_ON_DEPARTURE_DRAFT_LIST","SC","CREATE_TIME","MODIFY_USER","IS_DELETE"]', null, '[""]', '[""]', '[""]', '["SUPPLY_LOSS_KLOBS|KLOBS","SUPPLY_LOSS_KL15|KL15","SUPPLY_LOSS_METRIC_TONS|METRICTON"]');
+<div id="selenium-highlight">&nbsp;</div>', '6', '21', '0', null, null, null, null, null, '36', '21', '["PRODUCT_TYPE","SELECT_INTERVENTION","SELECT_CLIENT","CLIENT_ID","SHARING_FEE","KONTRAK","SPK","VOY","FILE_ORDER","IWO","VESSEL","VESSEL_ID","AREA","AREA_ID","SELECT_PORT","PORT_TERMINAL","PORT_ID","SELECT_PRODUCT","PRODUCT","PRODUCT_ID","LOADING_START_DATE","LOADING_START_TIME","LOADING_COMPLETE_DATE","LOADING_COMPLETE_TIME","DISCHARGE_START_DATE","DISCHARGE_START_TIME","DISCHARGE_COMPLETE_DATE","DISCHARGE_COMPLETE_TIME","BL_START_DATE","BL_START_TIME","TYPE_LOCATION","SURVEYOR_IN_CHARGE","SURVEYOR_ID","TIME_LOADING_BARGE_ARRIVED","DATE_LOADING_BARGE_ARRIVED","REMARKS_LOADING_BARGE_ARRIVED","TIME_LOADING_NOR_TENDERED","DATE_LOADING_NOR_TENDERED","REMARKS_LOADING_NOR_TENDERED","TIME_LOADING_BARGE_ALL_FAST_ALONGSIDE","DATE_LOADING_BARGE_ALL_FAST_ALONGSIDE","REMARKS_LOADING_BARGE_ALL_FAST_ALONGSIDE","TIME_LOADING_KEY_MEETING","DATE_LOADING_KEY_MEETING","REMARKS_LOADING_KEY_MEETING","TIME_LOADING_NOR_ACCEPTED","DATE_LOADING_NOR_ACCEPTED","REMARKS_LOADING_NOR_ACCEPTED","TIME_LOADING_VALVE_SEEALED","DATE_LOADING_VALVE_SEEALED","REMARKS_LOADING_VALVE_SEEALED","TIME_LOADING_TANK_INSPECT_METER_VERIFICATION","DATE_LOADING_TANK_INSPECT_METER_VERIFICATION","REMARKS_LOADING_TANK_INSPECT_METER_VERIFICATION","TIME_HOSE_CONNECTED","DATE_HOSE_CONNECTED","REMARKS_HOSE_CONNECTED","TIME_LOADING_HOST_CONNECTED","DATE_LOADING_HOST_CONNECTED","REMARKS_LOADING_HOST_CONNECTED","TIME_LOADING_LOADING_COMMENCED","DATE_LOADING_LOADING_COMMENCED","REMARKS_LOADING_LOADING_COMMENCED","TIME_LOADING_LOADING_COMPLETED","DATE_LOADING_LOADING_COMPLETED","REMARKS_LOADING_LOADING_COMPLETED","TIME_DATE_LOADING_HOSE_ARMS_DISCONNECT","DATE_LOADING_HOSE_ARMS_DISCONNECT","REMARKS_DATE_LOADING_HOSE_ARMS_DISCONNECT","TIME_LOADING_TANK_INSPECT_METER_VERIFICATION_FINAL","DATE_LOADING_TANK_INSPECT_METER_VERIFICATION_FINAL","REMARKS_LOADING_TANK_INSPECT_METER_VERIFICATION_FINAL","TIME_LOADING_CALCUL_COMPLETED_DOC_ONBOARD","DATE_LOADING_CALCUL_COMPLETED_DOC_ONBOARD","REMARKS_LOADING_CALCUL_COMPLETED_DOC_ONBOARD","TIME_DISCHARGE_BARGE_ARRIVED","DATE_DISCHARGE_BARGE_ARRIVED","REMARKS_DISCHARGE_BARGE_ARRIVED","TIME_DISCHARGE_NOR_TENDERED","DATE_DISCHARGE_NOR_TENDERED","REMARKS_DISCHARGE_NOR_TENDERED","TIME_DISCHARGE_KEY_MEETING","DATE_DISCHARGE_KEY_MEETING","REMARKS_DISCHARGE_KEY_MEETING","TIME_DISCHARGE_NOR_ACCEPTED","DATE_DISCHARGE_NOR_ACCEPTED","REMARKS_DISCHARGE_NOR_ACCEPTED","TIME_DISCHARGE_VALVE_SEEALED","DATE_DISCHARGE_VALVE_SEEALED","REMARKS_DISCHARGE_VALVE_SEEALED","TIME_DISCHARGE_TANK_INSPECT_MEASURE","DATE_DISCHARGE_TANK_INSPECT_MEASURE","REMARKS_DISCHARGE_TANK_INSPECT_MEASURE","TIME_VISUAL_INSPECTION_SAMPLING","DATE_VISUAL_INSPECTION_SAMPLING","REMARKS_VISUAL_INSPECTION_SAMPLING","TIME_DISCHARGE_HOST_CONNECTED","DATE_DISCHARGE_HOST_CONNECTED","REMARKS_DISCHARGE_HOST_CONNECTED","TIME_DISCHARGE_BUNKER_COMMENCED","DATE_DISCHARGE_BUNKER_COMMENCED","REMARKS_DISCHARGE_BUNKER_COMMENCED","TIME_DISCHARGE_BUNKER_COMPLETED","DATE_DISCHARGE_BUNKER_COMPLETED","REMARKS_DISCHARGE_BUNKER_COMPLETED","TIME_DATE_DISCHARGE_HOSE_DISCONNECT","DATE_DISCHARGE_HOSE_DISCONNECT","REMARKS_DATE_DISCHARGE_HOSE_DISCONNECT","TIME_DISCHARGE_TANK_INSPECT_MEASR_FINAL","DATE_DISCHARGE_TANK_INSPECT_MEASR_FINAL","REMARKS_DISCHARGE_TANK_INSPECT_MEASR_FINAL","TIME_DISCHARGE_VISUAL_INSPECTION_SAMPLING","DATE_DISCHARGE_VISUAL_INSPECTION_SAMPLING","REMARKS_DISCHARGE_VISUAL_INSPECTION_SAMPLING","TIME_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD","DATE_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD","REMARKS_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD","TIME_DISCHARGE_BARGE_LEAVE_SHIP","DATE_DISCHARGE_BARGE_LEAVE_SHIP","REMARKS_DISCHARGE_BARGE_LEAVE_SHIP","ACTIVITIES_REMARKS","INITIAL_READOUT_KLOBS","INITIAL_READOUT_KL15","INITIAL_READOUT_METRIC_TONS","FINAL_READOUT_KLOBS","FINAL_READOUT_KL15","FINAL_READOUT_METRIC_TONS","DIFFERENCE_KLOBS","DIFFERENCE_KL15","DIFFERENCE_METRIC_TONS","METER_FACTOR_KLOBS","CORD_VOL_DELIVERED_KLOBS","CORD_VOL_DELIVERED_KL15","CORD_VOL_DELIVERED_METRIC_TONS","DENSITY15DEG_KLOBS","SUPPLY_LOSS_KLOBS","SUPPLY_LOSS_KL15","SUPPLY_LOSS_METRIC_TONS","RN_NOTICE_ISSUE","RN_LETTER_ISSUE","RN_STATEMENT_ISSUE","BO_MFO_ON_ARRIVAL","BO_MDO_ON_ARRIVAL","BO_MFO_ON_DEPARTURE","BO_MDO_ON_DEPARTURE","SC_ON_ARRIVAL_DRAFT_FWD","SC_ON_ARRIVAL_DRAFT_AFT","SC_ON_ARRIVAL_DRAFT_LIST","SC_ON_DEPARTURE_DRAFT_FWD","SC_ON_DEPARTURE_DRAFT_AFT","SC_ON_DEPARTURE_DRAFT_LIST","SC","CREATE_TIME","MODIFY_USER","IS_DELETE"]', null, '[""]', '[""]', '[""]', '["SUPPLY_LOSS_KLOBS|KLOBS","SUPPLY_LOSS_KL15|KL15","SUPPLY_LOSS_METRIC_TONS|METRICTON"]');
 INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('1b11c5f9-7ca9-4463-8d3d-7d0bfb2eca53', 'Setup Product Bunker Pipe', '<div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>', '7', '21', '0', null, null, null, null, null, '36', '21', '[""]', null, '[""]', '[""]', '[""]', '[""]');
 INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('25b45faa-235f-461c-84da-2fe52255ee9c', 'Setup Petrokimia Loading', '<div id="selenium-highlight">&nbsp;</div>
@@ -1590,7 +1624,7 @@ INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('4d877458-bafc-4542-acf0-b93d5
 <div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>
-<div id="selenium-highlight">&nbsp;</div>', '6', '14', '0', null, null, null, null, null, '32', '17', '["PRODUCT_TYPE","SELECT_INTERVENTION","SELECT_CLIENT","CLIENT_ID","BUYER","SHARING_FEE","KONTRAK","SPK","VOY","FILE_ORDER","IWO","SELECT_CARGO","VESSEL","VESSEL_ID","AREA","AREA_ID","SELECT_PORT","PORT_TERMINAL","PORT_ID","SELECT_PRODUCT","PRODUCT","PRODUCT_ID","LOADING_START_DATE","LOADING_START_TIME","LOADING_COMPLETE_DATE","LOADING_COMPLETE_TIME","DISCHARGE_START_DATE","DISCHARGE_START_TIME","DISCHARGE_COMPLETE_DATE","DISCHARGE_COMPLETE_TIME","BL_START_DATE","BL_START_TIME","TYPE_LOCATION","SURVEYOR_IN_CHARGE","SURVEYOR_ID","TIME_VESSEL_ARRIVED","DATE_VESSEL_ARRIVED","REMARKS_VESSEL_ARRIVED","TIME_ANCHORAGED","DATE_ANCHORAGED","REMARKS_ANCHORAGED","TIME_NOR","DATE_NOR","REMARKS_NOR","TIME_ACCEPTED","DATE_ACCEPTED","REMARKS_ACCEPTED","TIME_BERTHED","DATE_BERTHED","REMARKS_BERTHED","TIME_SURVEYOR_ON_BOARD","DATE_SURVEYOR_ON_BOARD","REMARKS_SURVEYOR_ON_BOARD","TIME_KEY_MEETING","DATE_KEY_MEETING","REMARKS_KEY_MEETING","TIME_INPECTION_COMMENCED","DATE_INPECTION_COMMENCED","REMARKS_INPECTION_COMMENCED","TIME_INSPECTION_COMPLETED","DATE_INSPECTION_COMPLETED","REMARKS_INSPECTION_COMPLETED","TIME_HOSE_CONNECTED_COMMENCED","DATE_HOSE_CONNECTED_COMMENCED","REMARKS_HOSE_CONNECTED_COMMENCED","TIME_HOSE_CONNECTED_COMPLETED","DATE_HOSE_CONNECTED_COMPLETED","REMARKS_HOSE_CONNECTED_COMPLETED","TIME_LOADING_COMMENCED","DATE_LOADING_COMMENCED","REMARKS_LOADING_COMMENCED","TIME_LOADING_COMPLETED","DATE_LOADING_COMPLETED","REMARKS_LOADING_COMPLETED","TIME_HOSE_DISCONNECTED","DATE_HOSE_DISCONNECTED","REMARKS_HOSE_DISCONNECTED","TIME_SAMPLING_COMMENCED","DATE_SAMPLING_COMMENCED","REMARKS_SAMPLING_COMMENCED","TIME_SAMPLING_COMPLETED","DATE_SAMPLING_COMPLETED","REMARKS_SAMPLING_COMPLETED","TIME_CARGO_MEASUREMENT_COMMENCED","DATE_CARGO_MEASUREMENT_COMMENCED","REMARKS_CARGO_MEASUREMENT_COMMENCED","TIME_CARGO_MEASUREMENT_COMPLETED","DATE_CARGO_MEASUREMENT_COMPLETED","REMARKS_CARGO_MEASUREMENT_COMPLETED","TIME_DOCUMENTS_ONBOARD","DATE_DOCUMENTS_ONBOARD","REMARKS_DOCUMENTS_ONBOARD","TIME_VESSEL_SAILED","DATE_VESSEL_SAILED","REMARKS_VESSEL_SAILED","ACTIVITIES_REMARKS","BL_GSV_KLOBS","BL_GSV_KL15","BL_GSV_BBLS","BL_GSV_LONGTON","BL_GSV_METRICTON","BL_NSV_KLOBS","BL_NSV_KL15","BL_NSV_BBLS","BL_NSV_LONGTON","BL_NSV_METRICTON","BL_FLOW_METER","BL_15_DERAJAT_CELCIUS","SF_SQ_KLOBS","SF_SQ_KL15","SF_SQ_BBLS","SF_SQ_LONGTON","SF_SQ_METRICTON","SF_GSV_KLOBS","SF_GSV_KL15","SF_GSV_BBLS","SF_GSV_LONGTON","SF_GSV_METRICTON","SF_NSV_KLOBS","SF_NSV_KL15","SF_NSV_BBLS","SF_NSV_LONGTON","SF_NSV_METRICTON","SF_SHORE_TANKS_NOMINATION_KLOBS","OBQ_QUANTITY_KLOBS","OBQ_QUANTITY_KL15","OBQ_QUANTITY_BBLS","OBQ_QUANTITY_LONGTON","OBQ_QUANTITY_METRICTON","SF_SFAL_TOV_KLOBS","SF_SFAL_TOV_KL15","SF_SFAL_TOV_BBLS","SF_SFAL_TOV_LONGTON","SF_SFAL_TOV_METRICTON","SF_FREE_WATER_AL_KLOBS","SF_FREE_WATER_AL_KL15","SF_FREE_WATER_AL_BBLS","SF_FREE_WATER_AL_LONGTON","SF_FREE_WATER_AL_METRICTON","SFAL_GSV_KLOBS","SFAL_GSV_KL15","SFAL_GSV_BBLS","SFAL_GSV_LONGTON","SFAL_GSV_METRICTON","SFAL_NSV_KLOBS","SFAL_NSV_KL15","SFAL_NSV_BBLS","SFAL_NSV_LONGTON","SFAL_NSV_METRICTON","VEFL_KLOBS","VEFL_KL15","VEFL_BBLS","VEFL_LONGTON","VEFL_METRICTON","SL_APPLIED_VEFL_KLOBS","SL_APPLIED_VEFL_KL15","SL_APPLIED_VEFL_BBLS","SL_APPLIED_VEFL_LONGTON","SL_APPLIED_VEFL_METRICTON","SL_VS_BOL_R1_KLOBS","SL_VS_BOL_R1_KL15","SL_VS_BOL_R1_BBLS","SL_VS_BOL_R1_LONGTON","SL_VS_BOL_R1_METRICTON","SL_VEF_APPLIED_VS_BOL_R1_KLOBS","SL_VEF_APPLIED_VS_BOL_R1_KL15","SL_VEF_APPLIED_VS_BOL_R1_BBLS","SL_VEF_APPLIED_VS_BOL_R1_LONGTON","SL_VEF_APPLIED_VS_BOL_R1_METRICTON","SAMPLE_SOURCE","DATE_OF_ANALYSIS","RN_NOTICE_ISSUE","RN_LETTER_ISSUE","RN_STATEMENT_ISSUE","BO_MFO_ON_ARRIVAL","BO_MDO_ON_ARRIVAL","BO_MFO_ON_DEPARTURE","BO_MDO_ON_DEPARTURE","SC_ON_ARRIVAL_DRAFT_FWD","SC_ON_ARRIVAL_DRAFT_AFT","SC_ON_ARRIVAL_DRAFT_LIST","SC_ON_DEPARTURE_DRAFT_FWD","SC_ON_DEPARTURE_DRAFT_AFT","SC_ON_DEPARTURE_DRAFT_LIST","SC","CREATE_TIME","MODIFY_USER","IS_DELETE"]', null, '["SL_VS_BOL_R1_KLOBS|KLOBS","SL_VS_BOL_R1_KL15|KL15","SL_VS_BOL_R1_BBLS|BBLS","SL_VS_BOL_R1_LONGTON|LONGTON","SL_VS_BOL_R1_METRICTON|METRICTON","SL_VEF_APPLIED_VS_BOL_R1_KLOBS|KLOBS","SL_VEF_APPLIED_VS_BOL_R1_KL15|KL15","SL_VEF_APPLIED_VS_BOL_R1_BBLS|BBLS","SL_VEF_APPLIED_VS_BOL_R1_LONGTON|LONGTON","SL_VEF_APPLIED_VS_BOL_R1_METRICTON|METRICTON"]', '[""]', '[""]', '[""]');
+<div id="selenium-highlight">&nbsp;</div>', '6', '14', '0', null, null, null, null, null, '32', '17', '["PRODUCT_TYPE","SELECT_INTERVENTION","SELECT_CLIENT","CLIENT_ID","CLIENTS","SUPPLIER","SHARING_FEE","KONTRAK","SPK","VOY","FILE_ORDER","IWO","SELECT_CARGO","VESSEL","VESSEL_ID","AREA","AREA_ID","SELECT_PORT","PORT_TERMINAL","PORT_ID","PRODUCT","LOADING_START_DATE","LOADING_START_TIME","LOADING_COMPLETE_DATE","LOADING_COMPLETE_TIME","DISCHARGE_START_DATE","DISCHARGE_START_TIME","DISCHARGE_COMPLETE_DATE","DISCHARGE_COMPLETE_TIME","BL_START_DATE","BL_START_TIME","TYPE_LOCATION","SURVEYOR_IN_CHARGE","SURVEYOR_ID","TIME_VESSEL_ARRIVED","DATE_VESSEL_ARRIVED","REMARKS_VESSEL_ARRIVED","TIME_ANCHORAGED","DATE_ANCHORAGED","REMARKS_ANCHORAGED","TIME_NOR","DATE_NOR","REMARKS_NOR","TIME_ACCEPTED","DATE_ACCEPTED","REMARKS_ACCEPTED","TIME_BERTHED","DATE_BERTHED","REMARKS_BERTHED","TIME_SURVEYOR_ON_BOARD","DATE_SURVEYOR_ON_BOARD","REMARKS_SURVEYOR_ON_BOARD","TIME_KEY_MEETING","DATE_KEY_MEETING","REMARKS_KEY_MEETING","TIME_INPECTION_COMMENCED","DATE_INPECTION_COMMENCED","REMARKS_INPECTION_COMMENCED","TIME_INSPECTION_COMPLETED","DATE_INSPECTION_COMPLETED","REMARKS_INSPECTION_COMPLETED","TIME_HOSE_CONNECTED_COMMENCED","DATE_HOSE_CONNECTED_COMMENCED","REMARKS_HOSE_CONNECTED_COMMENCED","TIME_HOSE_CONNECTED_COMPLETED","DATE_HOSE_CONNECTED_COMPLETED","REMARKS_HOSE_CONNECTED_COMPLETED","TIME_LOADING_COMMENCED","DATE_LOADING_COMMENCED","REMARKS_LOADING_COMMENCED","TIME_LOADING_COMPLETED","DATE_LOADING_COMPLETED","REMARKS_LOADING_COMPLETED","TIME_HOSE_DISCONNECTED","DATE_HOSE_DISCONNECTED","REMARKS_HOSE_DISCONNECTED","TIME_SAMPLING_COMMENCED","DATE_SAMPLING_COMMENCED","REMARKS_SAMPLING_COMMENCED","TIME_SAMPLING_COMPLETED","DATE_SAMPLING_COMPLETED","REMARKS_SAMPLING_COMPLETED","TIME_CARGO_MEASUREMENT_COMMENCED","DATE_CARGO_MEASUREMENT_COMMENCED","REMARKS_CARGO_MEASUREMENT_COMMENCED","TIME_CARGO_MEASUREMENT_COMPLETED","DATE_CARGO_MEASUREMENT_COMPLETED","REMARKS_CARGO_MEASUREMENT_COMPLETED","TIME_DOCUMENTS_ONBOARD","DATE_DOCUMENTS_ONBOARD","REMARKS_DOCUMENTS_ONBOARD","TIME_VESSEL_SAILED","DATE_VESSEL_SAILED","REMARKS_VESSEL_SAILED","ACTIVITIES_REMARKS","BL_GSV_KLOBS","BL_GSV_KL15","BL_GSV_BBLS","BL_GSV_LONGTON","BL_GSV_METRICTON","BL_NSV_KLOBS","BL_NSV_KL15","BL_NSV_BBLS","BL_NSV_LONGTON","BL_NSV_METRICTON","BL_FLOW_METER","BL_15_DERAJAT_CELCIUS","SF_SQ_KLOBS","SF_SQ_KL15","SF_SQ_BBLS","SF_SQ_LONGTON","SF_SQ_METRICTON","SF_GSV_KLOBS","SF_GSV_KL15","SF_GSV_BBLS","SF_GSV_LONGTON","SF_GSV_METRICTON","SF_NSV_KLOBS","SF_NSV_KL15","SF_NSV_BBLS","SF_NSV_LONGTON","SF_NSV_METRICTON","SF_SHORE_TANKS_NOMINATION_KLOBS","OBQ_QUANTITY_KLOBS","OBQ_QUANTITY_KL15","OBQ_QUANTITY_BBLS","OBQ_QUANTITY_LONGTON","OBQ_QUANTITY_METRICTON","SF_SFAL_TOV_KLOBS","SF_SFAL_TOV_KL15","SF_SFAL_TOV_BBLS","SF_SFAL_TOV_LONGTON","SF_SFAL_TOV_METRICTON","SF_FREE_WATER_AL_KLOBS","SF_FREE_WATER_AL_KL15","SF_FREE_WATER_AL_BBLS","SF_FREE_WATER_AL_LONGTON","SF_FREE_WATER_AL_METRICTON","SFAL_GSV_KLOBS","SFAL_GSV_KL15","SFAL_GSV_BBLS","SFAL_GSV_LONGTON","SFAL_GSV_METRICTON","SFAL_NSV_KLOBS","SFAL_NSV_KL15","SFAL_NSV_BBLS","SFAL_NSV_LONGTON","SFAL_NSV_METRICTON","VEFL_KLOBS","VEFL_KL15","VEFL_BBLS","VEFL_LONGTON","VEFL_METRICTON","SL_APPLIED_VEFL_KLOBS","SL_APPLIED_VEFL_KL15","SL_APPLIED_VEFL_BBLS","SL_APPLIED_VEFL_LONGTON","SL_APPLIED_VEFL_METRICTON","SL_VS_BOL_R1_KLOBS","SL_VS_BOL_R1_KL15","SL_VS_BOL_R1_BBLS","SL_VS_BOL_R1_LONGTON","SL_VS_BOL_R1_METRICTON","SL_VEF_APPLIED_VS_BOL_R1_KLOBS","SL_VEF_APPLIED_VS_BOL_R1_KL15","SL_VEF_APPLIED_VS_BOL_R1_BBLS","SL_VEF_APPLIED_VS_BOL_R1_LONGTON","SL_VEF_APPLIED_VS_BOL_R1_METRICTON","SAMPLE_SOURCE","DATE_OF_ANALYSIS","RN_NOTICE_ISSUE","RN_LETTER_ISSUE","RN_STATEMENT_ISSUE","BO_MFO_ON_ARRIVAL","BO_MDO_ON_ARRIVAL","BO_MFO_ON_DEPARTURE","BO_MDO_ON_DEPARTURE","SC_ON_ARRIVAL_DRAFT_FWD","SC_ON_ARRIVAL_DRAFT_AFT","SC_ON_ARRIVAL_DRAFT_LIST","SC_ON_DEPARTURE_DRAFT_FWD","SC_ON_DEPARTURE_DRAFT_AFT","SC_ON_DEPARTURE_DRAFT_LIST","SC","CREATE_TIME","MODIFY_USER","IS_DELETE","RN_NOTICE_ISSUE_DESCRIPTION","RN_LETTER_ISSUE_DESCRIPTION","RN_STATEMENT_ISSUE_DESCRIPTION"]', null, '["SL_VS_BOL_R1_KLOBS|KLOBS","SL_VS_BOL_R1_KL15|KL15","SL_VS_BOL_R1_BBLS|BBLS","SL_VS_BOL_R1_LONGTON|LONGTON","SL_VS_BOL_R1_METRICTON|METRICTON","SL_VEF_APPLIED_VS_BOL_R1_KLOBS|KLOBS","SL_VEF_APPLIED_VS_BOL_R1_KL15|KL15","SL_VEF_APPLIED_VS_BOL_R1_BBLS|BBLS","SL_VEF_APPLIED_VS_BOL_R1_LONGTON|LONGTON","SL_VEF_APPLIED_VS_BOL_R1_METRICTON|METRICTON"]', '[""]', '[""]', '[""]');
 INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('523c5a99-2fd8-4e59-af75-36a308c00641', 'Setup Gas Loading', '<div id="selenium-highlight">&nbsp;</div>', '9', '14', '0', null, null, null, null, null, '30', '22', '["PRODUCT_TYPE","SELECT_INTERVENTION","SELECT_CLIENT","CLIENTS","SUPPLIER","TRADER","BUYER","SELLER","SHARING_FEE","KONTRAK","SPK","VOY","FILE_ORDER","IWO","VESSEL","AREA","SELECT_PORT","PORT_TERMINAL","SELECT_PRODUCT","PRODUCT","LOADING_START_DATE","LOADING_START_TIME","LOADING_COMPLETE_DATE","LOADING_COMPLETE_TIME","DISCHARGE_START_DATE","DISCHARGE_START_TIME","DISCHARGE_COMPLETE_DATE","DISCHARGE_COMPLETE_TIME","BL_START_DATE","BL_START_TIME","TYPE_LOCATION","SURVEYOR_IN_CHARGE","TIME_LOADING_GAS_VESSEL_ARRIVED","DATE_LOADING_GAS_VESSEL_ARRIVED","REMARKS_LOADING_GAS_VESSEL_ARRIVED","TIME_LOADING_GAS_VESSEL_ANCHORAGED","DATE_LOADING_GAS_VESSEL_ANCHORAGED","REMARKS_LOADING_GAS_VESSEL_ANCHORAGED","TIME_LOADING_GAS_NOR_TENDERED","DATE_LOADING_GAS_NOR_TENDERED","REMARKS_LOADING_GAS_NOR_TENDERED","TIME_LOADING_GAS_NOR_ACCEPTED","DATE_LOADING_GAS_NOR_ACCEPTED","REMARKS_LOADING_GAS_NOR_ACCEPTED","TIME_LOADING_GAS_VESSEL_BERTHED","DATE_LOADING_GAS_VESSEL_BERTHED","REMARKS_LOADING_GAS_VESSEL_BERTHED","TIME_LOADING_GAS_SURVEYOR_ON_BOARD","DATE_LOADING_GAS_SURVEYOR_ON_BOARD","REMARKS_LOADING_GAS_SURVEYOR_ON_BOARD","TIME_LOADING_GAS_KEY_MEETING","DATE_LOADING_GAS_KEY_MEETING","REMARKS_LOADING_GAS_KEY_MEETING","TIME_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMMENCE","DATE_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMMENCE","REMARKS_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMMENCE","TIME_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMPLETED","DATE_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMPLETED","REMARKS_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMPLETED","TIME_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMMENCE","DATE_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMMENCE","REMARKS_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMMENCE","TIME_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMPLETED","DATE_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMPLETED","REMARKS_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMPLETED","TIME_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMMENCE","DATE_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMMENCE","REMARKS_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMMENCE","TIME_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMPLETED","DATE_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMPLETED","REMARKS_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMPLETED","TIME_LOADING_GAS_OPENING_CUSTODY_TRANSFER_INSPECTION","DATE_LOADING_GAS_OPENING_CUSTODY_TRANSFER_INSPECTION","REMARKS_LOADING_GAS_OPENING_CUSTODY_TRANSFER_INSPECTION","TIME_LOADING_GAS_COMMENCED_LOADING_OF_CARGO","DATE_LOADING_GAS_COMMENCED_LOADING_OF_CARGO","REMARKS_LOADING_GAS_COMMENCED_LOADING_OF_CARGO","TIME_LOADING_GAS_COMPLETED_LOADING_OF_CARGO","DATE_LOADING_GAS_COMPLETED_LOADING_OF_CARGO","REMARKS_LOADING_GAS_COMPLETED_LOADING_OF_CARGO","TIME_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMMENCE","DATE_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMMENCE","REMARKS_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMMENCE","TIME_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMPLETED","DATE_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMPLETED","REMARKS_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMPLETED","TIME_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMMENCE","DATE_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMMENCE","REMARKS_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMMENCE","TIME_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMPLETED","DATE_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMPLETED","REMARKS_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMPLETED","TIME_LOADING_GAS_CLOSING_CUSTODY_TRANSFER_INSPECTION","DATE_LOADING_GAS_CLOSING_CUSTODY_TRANSFER_INSPECTION","REMARKS_LOADING_GAS_CLOSING_CUSTODY_TRANSFER_INSPECTION","TIME_LOADING_GAS_DOCUMENTS_ONBOARD","DATE_LOADING_GAS_DOCUMENTS_ONBOARD","REMARKS_LOADING_GAS_DOCUMENTS_ONBOARD","TIME_LOADING_GAS_VESSEL_SAILED","DATE_LOADING_GAS_VESSEL_SAILED","REMARKS_LOADING_GAS_VESSEL_SAILED","ACTIVITIES_REMARKS","GSV_GROSS_VOL","GSV_NETT_VOL","GSV_METRIC_TON","GSV_CALORIE_MMBTU","GSV_GHV","BL_FLOW_METER","DENSITY","SFBL_TANK_VOLUME_CORRECTED","SFAL_TANK_VOLUME_CORRECTED","GROS_STANDARD_VOLUME_LOADED","NET_STANDARD_VOLUME_LOADED","THERMAL_EXPANSION_VOLUME_LOADING","VOLUME_GAS_DURING_LOADING","ENERGY_GAS_CONSUMED_DURING_LOADING","QUALITY_SAMPLE_SOURCE","QUALITY_DATE_OF_ANALISYS","QUALITY_SAMPLING_METHOD","ANALYSIS_RESULT_C1","ANALYSIS_RESULT_C2","ANALYSIS_RESULT_C3","ANALYSIS_RESULT_IC4","ANALYSIS_RESULT_NC4","ANALYSIS_RESULT_IC5","ANALYSIS_RESULT_NC5","ANALYSIS_RESULT_N2","ANALYSIS_RESULT_TOTAL","ANALYSIS_RESULT_H2S","ANALYSIS_RESULT_TOTAL_SULFUR","RN_NOTICE_ISSUE","RN_LETTER_ISSUE","RN_STATEMENT_ISSUE","BO_MFO_ON_ARRIVAL","BO_MDO_ON_ARRIVAL","BO_MFO_ON_DEPARTURE","BO_MDO_ON_DEPARTURE","SC_ON_ARRIVAL_DRAFT_FWD","SC_ON_ARRIVAL_DRAFT_AFT","SC_ON_ARRIVAL_DRAFT_LIST","SC_ON_DEPARTURE_DRAFT_FWD","SC_ON_DEPARTURE_DRAFT_AFT","SC_ON_DEPARTURE_DRAFT_LIST","SC","CREATE_TIME","MODIFY_USER","IS_DELETE"]', null, null, null, null, null);
 INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('5ba15f93-c5aa-41c0-be10-f4323f63f45a', 'Setup Crude Discharge', '<div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>
@@ -1598,142 +1632,142 @@ INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('5ba15f93-c5aa-41c0-be10-f4323
 <div id="selenium-highlight">&nbsp;</div>', '6', '15', '0', null, null, null, null, null, '34', '18', '["PRODUCT_TYPE","SELECT_INTERVENTION","SELECT_CLIENT","CLIENTS","SUPPLIER","TRADER","BUYER","SELLER","SHARING_FEE","KONTRAK","SPK","VOY","FILE_ORDER","IWO","VESSEL","AREA","SELECT_PORT","PORT_TERMINAL","SELECT_PRODUCT","PRODUCT","LOADING_START_DATE","LOADING_START_TIME","LOADING_COMPLETE_DATE","LOADING_COMPLETE_TIME","DISCHARGE_START_DATE","DISCHARGE_START_TIME","DISCHARGE_COMPLETE_DATE","DISCHARGE_COMPLETE_TIME","BL_START_DATE","BL_START_TIME","TYPE_LOCATION","SURVEYOR_IN_CHARGE","TIME_VESSEL_ARRIVED","DATE_VESSEL_ARRIVED","REMARKS_VESSEL_ARRIVED","TIME_ANCHORAGED","DATE_ANCHORAGED","REMARKS_ANCHORAGED","TIME_NOR","DATE_NOR","REMARKS_NOR","TIME_ACCEPTED","DATE_ACCEPTED","REMARKS_ACCEPTED","TIME_POB","DATE_POB","REMARKS_POB","TIME_A_AWEIGH","DATE_A_AWEIGH","REMARKS_A_AWEIGH","TIME_BERTHING","DATE_BERTHING","REMARKS_BERTHING","TIME_SURVEYOR_ON_BOARD","DATE_SURVEYOR_ON_BOARD","REMARKS_SURVEYOR_ON_BOARD","TIME_KEY_MEETING","DATE_KEY_MEETING","REMARKS_KEY_MEETING","TIME_INPECTION_COMMENCED","DATE_INPECTION_COMMENCED","REMARKS_INPECTION_COMMENCED","TIME_INSPECTION_COMPLETED","DATE_INSPECTION_COMPLETED","REMARKS_INSPECTION_COMPLETED","TIME_SBD_COMMENCED","DATE_SBD_COMMENCED","REMARKS_SBD_COMMENCED","TIME_SBD_COMPLETED","DATE_SBD_COMPLETED","REMARKS_SBD_COMPLETED","TIME_HOSE_CONNECTED","DATE_HOSE_CONNECTED","REMARKS_HOSE_CONNECTED","TIME_CONNECTED_COMPLETED","DATE_CONNECTED_COMPLETED","REMARKS_CONNECTED_COMPLETED","TIME_DISCHARGE_COMMENCED","DATE_DISCHARGE_COMMENCED","REMARKS_DISCHARGE_COMMENCED","TIME_DISCHARGE_COMPLETED","DATE_DISCHARGE_COMPLETED","REMARKS_DISCHARGE_COMPLETED","TIME_HOSE_DISCONNECTED","DATE_HOSE_DISCONNECTED","REMARKS_HOSE_DISCONNECTED","TIME_TANKS_INS_COMMENCED","DATE_TANKS_INS_COMMENCED","REMARKS_TANKS_INS_COMMENCED","TIME_TANKS_INS_COMPLETED","DATE_TANKS_INS_COMPLETED","REMARKS_TANKS_INS_COMPLETED","TIME_DOCUMENTS_ONBOARD","DATE_DOCUMENTS_ONBOARD","REMARKS_DOCUMENTS_ONBOARD","TIME_SVY_LEFT_VESSEL","DATE_SVY_LEFT_VESSEL","REMARKS_SVY_LEFT_VESSEL","TIME_VESSEL_SAIL","DATE_VESSEL_SAIL","REMARKS_VESSEL_SAIL","ACTIVITIES_REMARKS","BL_GSV_KLOBS","BL_GSV_KL15","BL_GSV_BBLS","BL_GSV_LONGTON","BL_GSV_METRICTON","BL_NSV_KLOBS","BL_NSV_KL15","BL_NSV_BBLS","BL_NSV_LONGTON","BL_NSV_METRICTON","BL_FLOW_METER","SFAL_KLOBS","SFAL_KL15","SFAL_BBLS","SFAL_LONGTON","SFAL_METRICTON","SF_SQ_KLOBS","SF_SQ_KL15","SF_SQ_BBLS","SF_SQ_LONGTON","SF_SQ_METRICTON","SF_GSV_KLOBS","SF_GSV_KL15","SF_GSV_BBLS","SF_GSV_LONGTON","SF_GSV_METRICTON","SF_NSV_KLOBS","SF_NSV_KL15","SF_NSV_BBLS","SF_NSV_LONGTON","SF_NSV_METRICTON","SF_SFAL_KLOBS","SF_SFAL_KL15","SF_SFAL_BBLS","SF_SFAL_LONGTON","SF_SFAL_METRICTON","SFBD_TOV_KLOBS","SFBD_TOV_KL15","SFBD_TOV_BBLS","SFBD_TOV_LONGTON","SFBD_TOV_METRICTON","FREE_WATER_KLOBS","FREE_WATER_KL15","FREE_WATER_BBLS","FREE_WATER_LONGTON","FREE_WATER_METRICTON","ROBQ_KLOBS","ROBQ_KL15","ROBQ_BBLS","ROBQ_LONGTON","ROBQ_METRICTON","SFBD_GSV_KLOBS","SFBD_GSV_KL15","SFBD_GSV_BBLS","SFBD_GSV_LONGTON","SFBD_GSV_METRICTON","SFBD_NSV_KLOBS","SFBD_NSV_KL15","SFBD_NSV_BBLS","SFBD_NSV_LONGTON","SFBD_NSV_METRICTON","SLVS_BOL_R1_KLOBS","SLVS_BOL_R1_KL15","SLVS_BOL_R1_BBLS","SLVS_BOL_R1_LONGTON","SLVS_BOL_R1_METRICTON","SFAL_VS_SFBD_R2_KLOBS","SFAL_VS_SFBD_R2_KL15","SFAL_VS_SFBD_R2_BBLS","SFAL_VS_SFBD_R2_LONGTON","SFAL_VS_SFBD_R2_METRICTON","SFBD_VS_SR_R3_KLOBS","SFBD_VS_SR_R3_KL15","SFBD_VS_SR_R3_BBLS","SFBD_VS_SR_R3_LONGTON","SFBD_VS_SR_R3_METRICTON","SR_VS_BOL_R4_KLOBS","SR_VS_BOL_R4_KL15","SR_VS_BOL_R4_BBLS","SR_VS_BOL_R4_LONGTON","SR_VS_BOL_R4_METRICTON","SAMPLE_SOURCE","DATE_OF_ANALYSIS","RN_NOTICE_ISSUE","RN_LETTER_ISSUE","RN_STATEMENT_ISSUE","BO_MFO_ON_ARRIVAL","BO_MDO_ON_ARRIVAL","BO_MFO_ON_DEPARTURE","BO_MDO_ON_DEPARTURE","SC_ON_ARRIVAL_DRAFT_FWD","SC_ON_ARRIVAL_DRAFT_AFT","SC_ON_ARRIVAL_DRAFT_LIST","SC_ON_DEPARTURE_DRAFT_FWD","SC_ON_DEPARTURE_DRAFT_AFT","SC_ON_DEPARTURE_DRAFT_LIST","SC","CREATE_TIME","MODIFY_USER","IS_DELETE"]', null, '["SL_VS_BOL_R1_KLOBS|KLOBS","SL_VS_BOL_R1_KL15|KL15","SL_VS_BOL_R1_BBLS|BBLS","SL_VS_BOL_R1_LONGTON|LONGTON","SL_VS_BOL_R1_METRICTON|METRICTON","SL_VEF_APPLIED_VS_BOL_R1_KLOBS|KLOBS","SL_VEF_APPLIED_VS_BOL_R1_KL15|KL15","SL_VEF_APPLIED_VS_BOL_R1_BBLS|BBLS","SL_VEF_APPLIED_VS_BOL_R1_LONGTON|LONGTON","SL_VEF_APPLIED_VS_BOL_R1_METRICTON|METRICTON"]', '[""]', '[""]', '[""]');
 INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('9828f26c-4361-4c4c-9267-c1bedc4aa617', 'Setup Product Loading', '<div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>
-<div id="selenium-highlight">&nbsp;</div>', '7', '14', '0', null, null, null, null, null, '37', '19', '["PRODUCT_TYPE","SELECT_INTERVENTION","SELECT_CLIENT","CLIENTS","SUPPLIER","TRADER","BUYER","SELLER","SHARING_FEE","KONTRAK","SPK","VOY","FILE_ORDER","IWO","VESSEL","VESSEL_ID","AREA","AREA_ID","SELECT_PORT","PORT_TERMINAL","PORT_ID","SELECT_PRODUCT","PRODUCT","PRODUCT_ID","LOADING_START_DATE","LOADING_START_TIME","LOADING_COMPLETE_DATE","LOADING_COMPLETE_TIME","DISCHARGE_START_DATE","DISCHARGE_START_TIME","DISCHARGE_COMPLETE_DATE","DISCHARGE_COMPLETE_TIME","BL_START_DATE","BL_START_TIME","TYPE_LOCATION","SURVEYOR_IN_CHARGE","SURVEYOR_ID","TIME_VESSEL_ARRIVED","DATE_VESSEL_ARRIVED","REMARKS_VESSEL_ARRIVED","TIME_ANCHORAGED","DATE_ANCHORAGED","REMARKS_ANCHORAGED","TIME_NOR","DATE_NOR","REMARKS_NOR","TIME_ACCEPTED","DATE_ACCEPTED","REMARKS_ACCEPTED","TIME_BERTHED","DATE_BERTHED","REMARKS_BERTHED","TIME_SURVEYOR_ON_BOARD","DATE_SURVEYOR_ON_BOARD","REMARKS_SURVEYOR_ON_BOARD","TIME_KEY_MEETING","DATE_KEY_MEETING","REMARKS_KEY_MEETING","TIME_COMMENCED","DATE_COMMENCED","REMARKS_COMMENCED","TIME_COMPLETED","DATE_COMPLETED","REMARKS_COMPLETED","TIME_CONNECTED_COMMENCED","DATE_CONNECTED_COMMENCED","REMARKS_CONNECTED_COMMENCED","TIME_CONNECTED_COMPLETED","DATE_CONNECTED_COMPLETED","REMARKS_CONNECTED_COMPLETED","TIME_LOADING_COMMENCED","DATE_LOADING_COMMENCED","REMARKS_LOADING_COMMENCED","TIME_LOADING_COMPLETED","DATE_LOADING_COMPLETED","REMARKS_LOADING_COMPLETED","TIME_HOSE_CONNECTED","DATE_HOSE_CONNECTED","REMARKS_HOSE_CONNECTED","TIME_SAMPLING_COMMENCED","DATE_SAMPLING_COMMENCED","REMARKS_SAMPLING_COMMENCED","TIME_SAMPLING_COMPLETED","DATE_SAMPLING_COMPLETED","REMARKS_SAMPLING_COMPLETED","TIME_MEASUREMENT_COMMENCED","DATE_MEASUREMENT_COMMENCED","REMARKS_MEASUREMENT_COMMENCED","TIME_MEASUREMENT_COMPLETED","DATE_MEASUREMENT_COMPLETED","REMARKS_MEASUREMENT_COMPLETED","TIME_DOCUMENTS_ONBOARD","DATE_DOCUMENTS_ONBOARD","REMARKS_DOCUMENTS_ONBOARD","TIME_VESSEL_SAILED","DATE_VESSEL_SAILED","REMARKS_VESSEL_SAILED","ACTIVITIES_REMARKS","BL_QUANTITY_KLOBS","BL_QUANTITY_KL15","BL_QUANTITY_BBLS","BL_QUANTITY_LONGTON","BL_QUANTITY_METRICTON","BL_FLOW_METER","BL_15_DERAJAT_CELCIUS","SF_QUANTITY_KLOBS","SF_QUANTITY_KL15","SF_QUANTITY_BBLS","SF_QUANTITY_LONGTON","SF_QUANTITY_METRICTON\t","ST_NOMINATION","OBQ_QUANTITY_KLOBS","OBQ_QUANTITY_KL15","OBQ_QUANTITY_BBLS","OBQ_QUANTITY_LONGTON","OBQ_QUANTITY_METRICTON","SFAL_TOV_KLOBS","SFAL_TOV_KL15","SFAL_TOV_BBLS","SFAL_TOV_LONGTON","SFAL_TOV_METRICTON","FWAL_KLOBS","FWAL_KL15","FWAL_BBLS","FWAL_LONGTON","FWAL_METRICTON","SL_GSV_KLOBS","SL_GSV_KL15","SL_GSV_BBLS","SL_GSV_LONGTON","SL_GSV_METRICTON","VEF_LOADING_BBLS","SL_APPLIED_VEFL_BBLS","SL_VS_BOL_R1_KLOBS","SL_VS_BOL_R1_KL15","SL_VS_BOL_R1_BBLS","SL_VS_BOL_R1_LONGTON","SL_VS_BOL_R1_METRICTON","SL_VEF_APPLIED_VS_BOL_KLOBS","SL_VEF_APPLIED_VS_BOL_KL15","SL_VEF_APPLIED_VS_BOL_BBLS","SL_VEF_APPLIED_VS_BOL_LONGTON","SL_VEF_APPLIED_VS_BOL_METRICTON","SAMPLE_SOURCE","DATE_OF_ANALYSIS","RN_NOTICE_ISSUE","RN_LETTER_ISSUE","RN_STATEMENT_ISSUE","BO_MFO_ON_ARRIVAL","BO_MDO_ON_ARRIVAL","BO_MFO_ON_DEPARTURE","BO_MDO_ON_DEPARTURE","SC_ON_ARRIVAL_DRAFT_FWD","SC_ON_ARRIVAL_DRAFT_AFT","SC_ON_ARRIVAL_DRAFT_LIST","SC_ON_DEPARTURE_DRAFT_FWD","SC_ON_DEPARTURE_DRAFT_AFT","SC_ON_DEPARTURE_DRAFT_LIST","SC","CREATE_TIME","MODIFY_USER","IS_DELETE"]', null, '["SL_VS_BOL_R1_KLOBS|KLOBS","SL_VS_BOL_R1_KL15|KL15","SL_VS_BOL_R1_BBLS|BBLS","SL_VS_BOL_R1_LONGTON|LONGTON","SL_VS_BOL_R1_METRICTON|METRICTON","SL_VEF_APPLIED_VS_BOL_KLOBS|KLOBS","SL_VEF_APPLIED_VS_BOL_KL15|KL15","SL_VEF_APPLIED_VS_BOL_BBLS|BBLS","SL_VEF_APPLIED_VS_BOL_LONGTON|LONGTON","SL_VEF_APPLIED_VS_BOL_METRICTON|METRICTON"]', '[""]', '[""]', '[""]');
+<div id="selenium-highlight">&nbsp;</div>', '7', '14', '0', null, null, null, null, null, '37', '19', '["PRODUCT_TYPE","SELECT_INTERVENTION","SELECT_CLIENT","CLIENT_ID","CLIENTS","SUPPLIER","TRADER","BUYER","SELLER","SHARING_FEE","KONTRAK","SPK","VOY","FILE_ORDER","IWO","VESSEL","VESSEL_ID","AREA","AREA_ID","SELECT_PORT","PORT_TERMINAL","PORT_ID","SELECT_PRODUCT","PRODUCT","PRODUCT_ID","LOADING_START_DATE","LOADING_START_TIME","LOADING_COMPLETE_DATE","LOADING_COMPLETE_TIME","DISCHARGE_START_DATE","DISCHARGE_START_TIME","DISCHARGE_COMPLETE_DATE","DISCHARGE_COMPLETE_TIME","BL_START_DATE","BL_START_TIME","TYPE_LOCATION","SURVEYOR_IN_CHARGE","SURVEYOR_ID","TIME_VESSEL_ARRIVED","DATE_VESSEL_ARRIVED","REMARKS_VESSEL_ARRIVED","TIME_ANCHORAGED","DATE_ANCHORAGED","REMARKS_ANCHORAGED","TIME_NOR","DATE_NOR","REMARKS_NOR","TIME_ACCEPTED","DATE_ACCEPTED","REMARKS_ACCEPTED","TIME_BERTHED","DATE_BERTHED","REMARKS_BERTHED","TIME_SURVEYOR_ON_BOARD","DATE_SURVEYOR_ON_BOARD","REMARKS_SURVEYOR_ON_BOARD","TIME_KEY_MEETING","DATE_KEY_MEETING","REMARKS_KEY_MEETING","TIME_COMMENCED","DATE_COMMENCED","REMARKS_COMMENCED","TIME_COMPLETED","DATE_COMPLETED","REMARKS_COMPLETED","TIME_CONNECTED_COMMENCED","DATE_CONNECTED_COMMENCED","REMARKS_CONNECTED_COMMENCED","TIME_CONNECTED_COMPLETED","DATE_CONNECTED_COMPLETED","REMARKS_CONNECTED_COMPLETED","TIME_LOADING_COMMENCED","DATE_LOADING_COMMENCED","REMARKS_LOADING_COMMENCED","TIME_LOADING_COMPLETED","DATE_LOADING_COMPLETED","REMARKS_LOADING_COMPLETED","TIME_HOSE_CONNECTED","DATE_HOSE_CONNECTED","REMARKS_HOSE_CONNECTED","TIME_SAMPLING_COMMENCED","DATE_SAMPLING_COMMENCED","REMARKS_SAMPLING_COMMENCED","TIME_SAMPLING_COMPLETED","DATE_SAMPLING_COMPLETED","REMARKS_SAMPLING_COMPLETED","TIME_MEASUREMENT_COMMENCED","DATE_MEASUREMENT_COMMENCED","REMARKS_MEASUREMENT_COMMENCED","TIME_MEASUREMENT_COMPLETED","DATE_MEASUREMENT_COMPLETED","REMARKS_MEASUREMENT_COMPLETED","TIME_DOCUMENTS_ONBOARD","DATE_DOCUMENTS_ONBOARD","REMARKS_DOCUMENTS_ONBOARD","TIME_VESSEL_SAILED","DATE_VESSEL_SAILED","REMARKS_VESSEL_SAILED","ACTIVITIES_REMARKS","BL_QUANTITY_KLOBS","BL_QUANTITY_KL15","BL_QUANTITY_BBLS","BL_QUANTITY_LONGTON","BL_QUANTITY_METRICTON","BL_FLOW_METER","BL_15_DERAJAT_CELCIUS","SF_QUANTITY_KLOBS","SF_QUANTITY_KL15","SF_QUANTITY_BBLS","SF_QUANTITY_LONGTON","SF_QUANTITY_METRICTON\t","ST_NOMINATION","OBQ_QUANTITY_KLOBS","OBQ_QUANTITY_KL15","OBQ_QUANTITY_BBLS","OBQ_QUANTITY_LONGTON","OBQ_QUANTITY_METRICTON","SFAL_TOV_KLOBS","SFAL_TOV_KL15","SFAL_TOV_BBLS","SFAL_TOV_LONGTON","SFAL_TOV_METRICTON","FWAL_KLOBS","FWAL_KL15","FWAL_BBLS","FWAL_LONGTON","FWAL_METRICTON","SL_GSV_KLOBS","SL_GSV_KL15","SL_GSV_BBLS","SL_GSV_LONGTON","SL_GSV_METRICTON","VEF_LOADING_BBLS","SL_APPLIED_VEFL_BBLS","SL_VS_BOL_R1_KLOBS","SL_VS_BOL_R1_KL15","SL_VS_BOL_R1_BBLS","SL_VS_BOL_R1_LONGTON","SL_VS_BOL_R1_METRICTON","SL_VEF_APPLIED_VS_BOL_KLOBS","SL_VEF_APPLIED_VS_BOL_KL15","SL_VEF_APPLIED_VS_BOL_BBLS","SL_VEF_APPLIED_VS_BOL_LONGTON","SL_VEF_APPLIED_VS_BOL_METRICTON","SAMPLE_SOURCE","DATE_OF_ANALYSIS","RN_NOTICE_ISSUE","RN_LETTER_ISSUE","RN_STATEMENT_ISSUE","BO_MFO_ON_ARRIVAL","BO_MDO_ON_ARRIVAL","BO_MFO_ON_DEPARTURE","BO_MDO_ON_DEPARTURE","SC_ON_ARRIVAL_DRAFT_FWD","SC_ON_ARRIVAL_DRAFT_AFT","SC_ON_ARRIVAL_DRAFT_LIST","SC_ON_DEPARTURE_DRAFT_FWD","SC_ON_DEPARTURE_DRAFT_AFT","SC_ON_DEPARTURE_DRAFT_LIST","SC","CREATE_TIME","MODIFY_USER","IS_DELETE"]', null, '["SL_VS_BOL_R1_KLOBS|KLOBS","SL_VS_BOL_R1_KL15|KL15","SL_VS_BOL_R1_BBLS|BBLS","SL_VS_BOL_R1_LONGTON|LONGTON","SL_VS_BOL_R1_METRICTON|METRICTON","SL_VEF_APPLIED_VS_BOL_KLOBS|KLOBS","SL_VEF_APPLIED_VS_BOL_KL15|KL15","SL_VEF_APPLIED_VS_BOL_BBLS|BBLS","SL_VEF_APPLIED_VS_BOL_LONGTON|LONGTON","SL_VEF_APPLIED_VS_BOL_METRICTON|METRICTON"]', '[""]', '[""]', '[""]');
 INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('acf5720f-f572-4c42-b8b4-f6afe3ab7191', 'Setup Product Bunker Vessel', '<div id="selenium-highlight">&nbsp;</div>', '7', '25', '0', null, null, null, null, null, '35', '26', '[""]', null, '[""]', '[""]', '[""]', '[""]');
 INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('b061ea1d-da64-400b-ae09-3338a15e7e7d', 'Setup Crude Bunker Vessel', '<div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>
-<div id="selenium-highlight">&nbsp;</div>', '6', '25', '0', null, null, null, null, null, '35', '26', '["PRODUCT_TYPE","SELECT_INTERVENTION","SELECT_CLIENT","CLIENT_ID","BUYER","SHARING_FEE","KONTRAK","SPK","VOY","FILE_ORDER","IWO","VESSEL","VESSEL_ID","AREA","AREA_ID","SELECT_PORT","PORT_TERMINAL","PORT_ID","SELECT_PRODUCT","PRODUCT","PRODUCT_ID","LOADING_START_DATE","LOADING_START_TIME","LOADING_COMPLETE_DATE","LOADING_COMPLETE_TIME","DISCHARGE_START_DATE","DISCHARGE_START_TIME","DISCHARGE_COMPLETE_DATE","DISCHARGE_COMPLETE_TIME","BL_START_DATE","BL_START_TIME","TYPE_LOCATION","SURVEYOR_IN_CHARGE","SURVEYOR_ID","TIME_LOADING_BARGE_ARRIVED","DATE_LOADING_BARGE_ARRIVED","REMARKS_LOADING_BARGE_ARRIVED","TIME_LOADING_NOR_TENDERED","DATE_LOADING_NOR_TENDERED","REMARKS_LOADING_NOR_TENDERED","TIME_LOADING_BARGE_ALL_FAST_ALONGSIDE","DATE_LOADING_BARGE_ALL_FAST_ALONGSIDE","REMARKS_LOADING_BARGE_ALL_FAST_ALONGSIDE","TIME_LOADING_KEY_MEETING","DATE_LOADING_KEY_MEETING","REMARKS_LOADING_KEY_MEETING","TIME_LOADING_VALVE_SEEALED","DATE_LOADING_VALVE_SEEALED","REMARKS_LOADING_VALVE_SEEALED","TIME_LOADING_TANK_INSPECT_MEASURE","DATE_LOADING_TANK_INSPECT_MEASURE","REMARKS_LOADING_TANK_INSPECT_MEASURE","TIME_LOADING_TANK_INSPECT_METER_VERF","DATE_LOADING_TANK_INSPECT_METER_VERF","REMARKS_LOADING_TANK_INSPECT_METER_VERF","TIME_LOADING_HOST_CONNECTED","DATE_LOADING_HOST_CONNECTED","REMARKS_LOADING_HOST_CONNECTED","TIME_LOADING_LOADING_COMMENCED","DATE_LOADING_LOADING_COMMENCED","REMARKS_LOADING_LOADING_COMMENCED","TIME_LOADING_LOADING_COMPLETED","DATE_LOADING_LOADING_COMPLETED","REMARKS_LOADING_LOADING_COMPLETED","TIME_DATE_LOADING_HOSE_ARMS_DISCONNECT","DATE_LOADING_HOSE_ARMS_DISCONNECT","REMARKS_DATE_LOADING_HOSE_ARMS_DISCONNECT","TIME_LOADING_VISUAL_INSPEC_SAMPL","DATE_LOADING_VISUAL_INSPEC_SAMPL","REMARKS_LOADING_VISUAL_INSPEC_SAMPL","TIME_LOADING_TANK_INSPECT_MEASR_FINAL","DATE_LOADING_TANK_INSPECT_MEASR_FINAL","REMARKS_LOADING_TANK_INSPECT_MEASR_FINAL","TIME_LOADING_TANK_INSPECT_METER_FINAL","DATE_LOADING_TANK_INSPECT_METER_FINAL","REMARKS_LOADING_TANK_INSPECT_METER_FINAL","TIME_LOADING_CALCUL_COMPLETED_DOC_ONBOARD","DATE_LOADING_CALCUL_COMPLETED_DOC_ONBOARD","REMARKS_LOADING_CALCUL_COMPLETED_DOC_ONBOARD","TIME_LOADING_BARGE_LEAVE_DEPOT","DATE_LOADING_BARGE_LEAVE_DEPOT","REMARKS_LOADING_BARGE_LEAVE_DEPOT","TIME_DISCHARGE_BARGE_ARRIVED","DATE_DISCHARGE_BARGE_ARRIVED","REMARKS_DISCHARGE_BARGE_ARRIVED","TIME_DISCHARGE_NOR_TENDERED","DATE_DISCHARGE_NOR_TENDERED","REMARKS_DISCHARGE_NOR_TENDERED","TIME_DISCHARGE_BARGE_ALL_FAST_ALONGSIDE","DATE_DISCHARGE_BARGE_ALL_FAST_ALONGSIDE","REMARKS_DISCHARGE_BARGE_ALL_FAST_ALONGSIDE","TIME_DISCHARGE_KEY_MEETING","DATE_DISCHARGE_KEY_MEETING","REMARKS_DISCHARGE_KEY_MEETING","TIME_DISCHARGE_VALVE_SEEALED","DATE_DISCHARGE_VALVE_SEEALED","REMARKS_DISCHARGE_VALVE_SEEALED","TIME_DISCHARGE_TANK_INSPECT_MEASURE","DATE_DISCHARGE_TANK_INSPECT_MEASURE","REMARKS_DISCHARGE_TANK_INSPECT_MEASURE","TIME_DISCHARGE_TANK_INSPECT_METER_VERF","DATE_DISCHARGE_TANK_INSPECT_METER_VERF","REMARKS_DISCHARGE_TANK_INSPECT_METER_VERF","TIME_DISCHARGE_HOST_CONNECTED","DATE_DISCHARGE_HOST_CONNECTED","REMARKS_DISCHARGE_HOST_CONNECTED","TIME_DISCHARGE_BUNKER_COMMENCED","DATE_DISCHARGE_BUNKER_COMMENCED","REMARKS_DISCHARGE_BUNKER_COMMENCED","TIME_DISCHARGE_BUNKER_COMPLETED","DATE_DISCHARGE_BUNKER_COMPLETED","REMARKS_DISCHARGE_BUNKER_COMPLETED","TIME_DATE_DISCHARGE_HOSE_ARMS_DISCONNECT","DATE_DISCHARGE_HOSE_ARMS_DISCONNECT","REMARKS_DATE_DISCHARGE_HOSE_ARMS_DISCONNECT","TIME_DISCHARGE_VISUAL_INSPEC_SAMPL","DATE_DISCHARGE_VISUAL_INSPEC_SAMPL","REMARKS_DISCHARGE_VISUAL_INSPEC_SAMPL","TIME_DISCHARGE_TANK_INSPECT_MEASR_FINAL","DATE_DISCHARGE_TANK_INSPECT_MEASR_FINAL","REMARKS_DISCHARGE_TANK_INSPECT_MEASR_FINAL","TIME_DISCHARGE_TANK_INSPECT_METER_FINAL","DATE_DISCHARGE_TANK_INSPECT_METER_FINAL","REMARKS_DISCHARGE_TANK_INSPECT_METER_FINAL","TIME_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD","DATE_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD","REMARKS_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD","TIME_DISCHARGE_BARGE_LEAVE_SHIP","DATE_DISCHARGE_BARGE_LEAVE_SHIP","REMARKS_DISCHARGE_BARGE_LEAVE_SHIP","ACTIVITIES_REMARKS","INITIAL_READOUT_KLOBS","INITIAL_READOUT_KL15","INITIAL_READOUT_METRIC_TONS","FINAL_READOUT_KLOBS","FINAL_READOUT_KL15","FINAL_READOUT_METRIC_TONS","DIFFERENCE_KLOBS","DIFFERENCE_KL15","DIFFERENCE_METRIC_TONS","METER_FACTOR_KLOBS","CORD_VOL_DELIVERED_KLOBS","CORD_VOL_DELIVERED_KL15","CORD_VOL_DELIVERED_METRIC_TONS","DENSITY15DEG_KLOBS","BARGE_BEFORE_LOADING_KLOBS","BARGE_BEFORE_LOADING_KL15","BARGE_BEFORE_LOADING_METRIC_TONS","BARGE_AFTER_LOADING_KLOBS","BARGE_AFTER_LOADING_KL15","BARGE_AFTER_LOADING_METRIC_TONS","BARGE_LOADED_KLOBS","BARGE_LOADED_KL15","BARGE_LOADED_METRIC_TONS","BARGE_BEFORE_DISCHARGE_KLOBS","BARGE_BEFORE_DISCHARGE_KL15","BARGE_BEFORE_DISCHARGE_METRIC_TONS","BARGE_AFTER_DISCHARGE_KLOBS","BARGE_AFTER_DISCHARGE_KL15","BARGE_AFTER_DISCHARGE_METRIC_TONS","BARGE_DISCHARGE_KLOBS","BARGE_DISCHARGE_KL15","BARGE_DISCHARGE_METRIC_TONS","BARGE_BEFORE_RECEIVE_KLOBS","BARGE_BEFORE_RECEIVE_KL15","BARGE_BEFORE_RECEIVE_METRIC_TONS","BARGE_AFTER_RECEIVE_KLOBS","BARGE_AFTER_RECEIVE_KL15","BARGE_AFTER_RECEIVE_METRIC_TONS","BARGE_RECEIVE_KLOBS","BARGE_RECEIVE_KL15","BARGE_RECEIVE_METRIC_TONS","LOADING_LOSS_R1_KLOBS","LOADING_LOSS_R1_KL15","LOADING_LOSS_R1_METRIC_TONS","TRANSPORTATION_LOSS_R2_KLOBS","TRANSPORTATION_LOSS_R2_KL15","TRANSPORTATION_LOSS_R2_METRIC_TONS","DISCHARGE_LOSS_R3_KLOBS","DISCHARGE_LOSS_R3_KL15","DISCHARGE_LOSS_R3_METRIC_TONS","SUPPLY_LOSS_R4_KLOBS","SUPPLY_LOSS_R4_KL15","SUPPLY_LOSS_R4_METRIC_TONS","RN_NOTICE_ISSUE","RN_LETTER_ISSUE","RN_STATEMENT_ISSUE","BO_MFO_ON_ARRIVAL","BO_MDO_ON_ARRIVAL","BO_MFO_ON_DEPARTURE","BO_MDO_ON_DEPARTURE","SC_ON_ARRIVAL_DRAFT_FWD","SC_ON_ARRIVAL_DRAFT_AFT","SC_ON_ARRIVAL_DRAFT_LIST","SC_ON_DEPARTURE_DRAFT_FWD","SC_ON_DEPARTURE_DRAFT_AFT","SC_ON_DEPARTURE_DRAFT_LIST","SC","CREATE_TIME","MODIFY_USER","IS_DELETE"]', null, '["LOADING_LOSS_R1_KLOBS|KLOBS","LOADING_LOSS_R1_KL15|KL15","LOADING_LOSS_R1_METRIC_TONS|METRICTON"]', '["TRANSPORTATION_LOSS_R2_KLOBS|KLOBS","TRANSPORTATION_LOSS_R2_KL15|KL15","TRANSPORTATION_LOSS_R2_METRIC_TONS|METRICTON"]', '["DISCHARGE_LOSS_R3_KLOBS|KLOBS","DISCHARGE_LOSS_R3_KL15|KL15","DISCHARGE_LOSS_R3_METRIC_TONS|METRICTON"]', '["SUPPLY_LOSS_R4_KLOBS|KLOBS","SUPPLY_LOSS_R4_KL15|KL15","SUPPLY_LOSS_R4_METRIC_TONS|METRICTON"]');
+<div id="selenium-highlight">&nbsp;</div>', '6', '25', '0', null, null, null, null, null, '35', '26', '["PRODUCT_TYPE","SELECT_INTERVENTION","SELECT_CLIENT","CLIENT_ID","CLIENTS","SUPPLIER","TRADER","BUYER","SELLER","SHARING_FEE","KONTRAK","SPK","VOY","FILE_ORDER","IWO","VESSEL","VESSEL_ID","AREA","AREA_ID","SELECT_PORT","PORT_TERMINAL","PORT_ID","SELECT_PRODUCT","PRODUCT","PRODUCT_ID","LOADING_START_DATE","LOADING_START_TIME","LOADING_COMPLETE_DATE","LOADING_COMPLETE_TIME","DISCHARGE_START_DATE","DISCHARGE_START_TIME","DISCHARGE_COMPLETE_DATE","DISCHARGE_COMPLETE_TIME","BL_START_DATE","BL_START_TIME","TYPE_LOCATION","SURVEYOR_IN_CHARGE","SURVEYOR_ID","TIME_LOADING_BARGE_ARRIVED","DATE_LOADING_BARGE_ARRIVED","REMARKS_LOADING_BARGE_ARRIVED","TIME_LOADING_NOR_TENDERED","DATE_LOADING_NOR_TENDERED","REMARKS_LOADING_NOR_TENDERED","TIME_LOADING_BARGE_ALL_FAST_ALONGSIDE","DATE_LOADING_BARGE_ALL_FAST_ALONGSIDE","REMARKS_LOADING_BARGE_ALL_FAST_ALONGSIDE","TIME_LOADING_KEY_MEETING","DATE_LOADING_KEY_MEETING","REMARKS_LOADING_KEY_MEETING","TIME_LOADING_VALVE_SEEALED","DATE_LOADING_VALVE_SEEALED","REMARKS_LOADING_VALVE_SEEALED","TIME_LOADING_TANK_INSPECT_MEASURE","DATE_LOADING_TANK_INSPECT_MEASURE","REMARKS_LOADING_TANK_INSPECT_MEASURE","TIME_LOADING_TANK_INSPECT_METER_VERF","DATE_LOADING_TANK_INSPECT_METER_VERF","REMARKS_LOADING_TANK_INSPECT_METER_VERF","TIME_LOADING_HOST_CONNECTED","DATE_LOADING_HOST_CONNECTED","REMARKS_LOADING_HOST_CONNECTED","TIME_LOADING_LOADING_COMMENCED","DATE_LOADING_LOADING_COMMENCED","REMARKS_LOADING_LOADING_COMMENCED","TIME_LOADING_LOADING_COMPLETED","DATE_LOADING_LOADING_COMPLETED","REMARKS_LOADING_LOADING_COMPLETED","TIME_DATE_LOADING_HOSE_ARMS_DISCONNECT","DATE_LOADING_HOSE_ARMS_DISCONNECT","REMARKS_DATE_LOADING_HOSE_ARMS_DISCONNECT","TIME_LOADING_VISUAL_INSPEC_SAMPL","DATE_LOADING_VISUAL_INSPEC_SAMPL","REMARKS_LOADING_VISUAL_INSPEC_SAMPL","TIME_LOADING_TANK_INSPECT_MEASR_FINAL","DATE_LOADING_TANK_INSPECT_MEASR_FINAL","REMARKS_LOADING_TANK_INSPECT_MEASR_FINAL","TIME_LOADING_TANK_INSPECT_METER_FINAL","DATE_LOADING_TANK_INSPECT_METER_FINAL","REMARKS_LOADING_TANK_INSPECT_METER_FINAL","TIME_LOADING_CALCUL_COMPLETED_DOC_ONBOARD","DATE_LOADING_CALCUL_COMPLETED_DOC_ONBOARD","REMARKS_LOADING_CALCUL_COMPLETED_DOC_ONBOARD","TIME_LOADING_BARGE_LEAVE_DEPOT","DATE_LOADING_BARGE_LEAVE_DEPOT","REMARKS_LOADING_BARGE_LEAVE_DEPOT","TIME_DISCHARGE_BARGE_ARRIVED","DATE_DISCHARGE_BARGE_ARRIVED","REMARKS_DISCHARGE_BARGE_ARRIVED","TIME_DISCHARGE_NOR_TENDERED","DATE_DISCHARGE_NOR_TENDERED","REMARKS_DISCHARGE_NOR_TENDERED","TIME_DISCHARGE_BARGE_ALL_FAST_ALONGSIDE","DATE_DISCHARGE_BARGE_ALL_FAST_ALONGSIDE","REMARKS_DISCHARGE_BARGE_ALL_FAST_ALONGSIDE","TIME_DISCHARGE_KEY_MEETING","DATE_DISCHARGE_KEY_MEETING","REMARKS_DISCHARGE_KEY_MEETING","TIME_DISCHARGE_VALVE_SEEALED","DATE_DISCHARGE_VALVE_SEEALED","REMARKS_DISCHARGE_VALVE_SEEALED","TIME_DISCHARGE_TANK_INSPECT_MEASURE","DATE_DISCHARGE_TANK_INSPECT_MEASURE","REMARKS_DISCHARGE_TANK_INSPECT_MEASURE","TIME_DISCHARGE_TANK_INSPECT_METER_VERF","DATE_DISCHARGE_TANK_INSPECT_METER_VERF","REMARKS_DISCHARGE_TANK_INSPECT_METER_VERF","TIME_DISCHARGE_HOST_CONNECTED","DATE_DISCHARGE_HOST_CONNECTED","REMARKS_DISCHARGE_HOST_CONNECTED","TIME_DISCHARGE_BUNKER_COMMENCED","DATE_DISCHARGE_BUNKER_COMMENCED","REMARKS_DISCHARGE_BUNKER_COMMENCED","TIME_DISCHARGE_BUNKER_COMPLETED","DATE_DISCHARGE_BUNKER_COMPLETED","REMARKS_DISCHARGE_BUNKER_COMPLETED","TIME_DATE_DISCHARGE_HOSE_ARMS_DISCONNECT","DATE_DISCHARGE_HOSE_ARMS_DISCONNECT","REMARKS_DATE_DISCHARGE_HOSE_ARMS_DISCONNECT","TIME_DISCHARGE_VISUAL_INSPEC_SAMPL","DATE_DISCHARGE_VISUAL_INSPEC_SAMPL","REMARKS_DISCHARGE_VISUAL_INSPEC_SAMPL","TIME_DISCHARGE_TANK_INSPECT_MEASR_FINAL","DATE_DISCHARGE_TANK_INSPECT_MEASR_FINAL","REMARKS_DISCHARGE_TANK_INSPECT_MEASR_FINAL","TIME_DISCHARGE_TANK_INSPECT_METER_FINAL","DATE_DISCHARGE_TANK_INSPECT_METER_FINAL","REMARKS_DISCHARGE_TANK_INSPECT_METER_FINAL","TIME_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD","DATE_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD","REMARKS_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD","TIME_DISCHARGE_BARGE_LEAVE_SHIP","DATE_DISCHARGE_BARGE_LEAVE_SHIP","REMARKS_DISCHARGE_BARGE_LEAVE_SHIP","ACTIVITIES_REMARKS","INITIAL_READOUT_KLOBS","INITIAL_READOUT_KL15","INITIAL_READOUT_METRIC_TONS","FINAL_READOUT_KLOBS","FINAL_READOUT_KL15","FINAL_READOUT_METRIC_TONS","DIFFERENCE_KLOBS","DIFFERENCE_KL15","DIFFERENCE_METRIC_TONS","METER_FACTOR_KLOBS","CORD_VOL_DELIVERED_KLOBS","CORD_VOL_DELIVERED_KL15","CORD_VOL_DELIVERED_METRIC_TONS","DENSITY15DEG_KLOBS","BARGE_BEFORE_LOADING_KLOBS","BARGE_BEFORE_LOADING_KL15","BARGE_BEFORE_LOADING_METRIC_TONS","BARGE_AFTER_LOADING_KLOBS","BARGE_AFTER_LOADING_KL15","BARGE_AFTER_LOADING_METRIC_TONS","BARGE_LOADED_KLOBS","BARGE_LOADED_KL15","BARGE_LOADED_METRIC_TONS","BARGE_BEFORE_DISCHARGE_KLOBS","BARGE_BEFORE_DISCHARGE_KL15","BARGE_BEFORE_DISCHARGE_METRIC_TONS","BARGE_AFTER_DISCHARGE_KLOBS","BARGE_AFTER_DISCHARGE_KL15","BARGE_AFTER_DISCHARGE_METRIC_TONS","BARGE_DISCHARGE_KLOBS","BARGE_DISCHARGE_KL15","BARGE_DISCHARGE_METRIC_TONS","BARGE_BEFORE_RECEIVE_KLOBS","BARGE_BEFORE_RECEIVE_KL15","BARGE_BEFORE_RECEIVE_METRIC_TONS","BARGE_AFTER_RECEIVE_KLOBS","BARGE_AFTER_RECEIVE_KL15","BARGE_AFTER_RECEIVE_METRIC_TONS","BARGE_RECEIVE_KLOBS","BARGE_RECEIVE_KL15","BARGE_RECEIVE_METRIC_TONS","LOADING_LOSS_R1_KLOBS","LOADING_LOSS_R1_KL15","LOADING_LOSS_R1_METRIC_TONS","TRANSPORTATION_LOSS_R2_KLOBS","TRANSPORTATION_LOSS_R2_KL15","TRANSPORTATION_LOSS_R2_METRIC_TONS","DISCHARGE_LOSS_R3_KLOBS","DISCHARGE_LOSS_R3_KL15","DISCHARGE_LOSS_R3_METRIC_TONS","SUPPLY_LOSS_R4_KLOBS","SUPPLY_LOSS_R4_KL15","SUPPLY_LOSS_R4_METRIC_TONS","RN_NOTICE_ISSUE","RN_LETTER_ISSUE","RN_STATEMENT_ISSUE","BO_MFO_ON_ARRIVAL","BO_MDO_ON_ARRIVAL","BO_MFO_ON_DEPARTURE","BO_MDO_ON_DEPARTURE","SC_ON_ARRIVAL_DRAFT_FWD","SC_ON_ARRIVAL_DRAFT_AFT","SC_ON_ARRIVAL_DRAFT_LIST","SC_ON_DEPARTURE_DRAFT_FWD","SC_ON_DEPARTURE_DRAFT_AFT","SC_ON_DEPARTURE_DRAFT_LIST","SC","CREATE_TIME","MODIFY_USER","IS_DELETE"]', null, '["LOADING_LOSS_R1_KLOBS|KLOBS","LOADING_LOSS_R1_KL15|KL15","LOADING_LOSS_R1_METRIC_TONS|METRICTON"]', '["TRANSPORTATION_LOSS_R2_KLOBS|KLOBS","TRANSPORTATION_LOSS_R2_KL15|KL15","TRANSPORTATION_LOSS_R2_METRIC_TONS|METRICTON"]', '["DISCHARGE_LOSS_R3_KLOBS|KLOBS","DISCHARGE_LOSS_R3_KL15|KL15","DISCHARGE_LOSS_R3_METRIC_TONS|METRICTON"]', '["SUPPLY_LOSS_R4_KLOBS|KLOBS","SUPPLY_LOSS_R4_KL15|KL15","SUPPLY_LOSS_R4_METRIC_TONS|METRICTON"]');
 INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('c0c8844d-4599-4256-bb3b-2ef427df7677', 'Setup Product Discharge', '<br />
 <div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>
-<div id="selenium-highlight">&nbsp;</div>', '7', '15', '0', null, null, null, null, null, '27', '20', '["PRODUCT_TYPE","SELECT_INTERVENTION","SELECT_CLIENT","CLIENT_ID","CLIENTS","SUPPLIER","TRADER","BUYER","SELLER","SHARING_FEE","KONTRAK","SPK","VOY","FILE_ORDER","IWO","VESSEL","VESSEL_ID","AREA","AREA_ID","SELECT_PORT","PORT_TERMINAL","PORT_ID","SELECT_PRODUCT","PRODUCT","PRODUCT_ID","LOADING_START_DATE","LOADING_START_TIME","LOADING_COMPLETE_DATE","LOADING_COMPLETE_TIME","DISCHARGE_START_DATE","DISCHARGE_START_TIME","DISCHARGE_COMPLETE_DATE","DISCHARGE_COMPLETE_TIME","BL_START_DATE","BL_START_TIME","TYPE_LOCATION","SURVEYOR_IN_CHARGE","SURVEYOR_ID","TIME_VESSEL_ARRIVED","DATE_VESSEL_ARRIVED","REMARKS_VESSEL_ARRIVED","TIME_ANCHORAGED","DATE_ANCHORAGED","REMARKS_ANCHORAGED","TIME_NOR","DATE_NOR","REMARKS_NOR","TIME_ACCEPTED","DATE_ACCEPTED","REMARKS_ACCEPTED","TIME_POB","DATE_POB","REMARKS_POB","TIME_A_AWEIGH","DATE_A_AWEIGH","REMARKS_A_AWEIGH","TIME_BERTHING","DATE_BERTHING","REMARKS_BERTHING","TIME_SURVEYOR_ON_BOARD","DATE_SURVEYOR_ON_BOARD","REMARKS_SURVEYOR_ON_BOARD","TIME_KEY_MEETING","DATE_KEY_MEETING","REMARKS_KEY_MEETING","TIME_INPECTION_COMMENCED","DATE_INPECTION_COMMENCED","REMARKS_INPECTION_COMMENCED","TIME_INSPECTION_COMPLETED","DATE_INSPECTION_COMPLETED","REMARKS_INSPECTION_COMPLETED","TIME_SBD_COMMENCED","DATE_SBD_COMMENCED","REMARKS_SBD_COMMENCED","TIME_SBD_COMPLETED","DATE_SBD_COMPLETED","REMARKS_SBD_COMPLETED","TIME_HOSE_CONNECTED","DATE_HOSE_CONNECTED","REMARKS_HOSE_CONNECTED","TIME_CONNECTED_COMPLETED","DATE_CONNECTED_COMPLETED","REMARKS_CONNECTED_COMPLETED","TIME_DISCHARGE_COMMENCED","DATE_DISCHARGE_COMMENCED","REMARKS_DISCHARGE_COMMENCED","TIME_DISCHARGE_COMPLETED","DATE_DISCHARGE_COMPLETED","REMARKS_DISCHARGE_COMPLETED","TIME_HOSE_DISCONNECTED","DATE_HOSE_DISCONNECTED","REMARKS_HOSE_DISCONNECTED","TIME_TANKS_INS_COMMENCED","DATE_TANKS_INS_COMMENCED","REMARKS_TANKS_INS_COMMENCED","TIME_TANKS_INS_COMPLETED","DATE_TANKS_INS_COMPLETED","REMARKS_TANKS_INS_COMPLETED","TIME_DOCUMENTS_ONBOARD","DATE_DOCUMENTS_ONBOARD","REMARKS_DOCUMENTS_ONBOARD","TIME_SVY_LEFT_VESSEL","DATE_SVY_LEFT_VESSEL","REMARKS_SVY_LEFT_VESSEL","TIME_VESSEL_SAIL","DATE_VESSEL_SAIL","REMARKS_VESSEL_SAIL","ACTIVITIES_REMARKS","BL_QUANTITY_KLOBS","BL_QUANTITY_KL15","BL_QUANTITY_BBLS","BL_QUANTITY_LONGTON","BL_QUANTITY_METRICTON","BL_FLOW_METER","BL_SFAL_KLOBS","BL_SFAL_KL15","BL_SFAL_BBLS","BL_SFAL_LONGTON","BL_SFAL_METRICTON","SF_SHORE_RECEIVED_KLOBS","SF_SHORE_RECEIVED_KL15","SF_SHORE_RECEIVED_BBLS","SF_SHORE_RECEIVED_LONGTON","SF_SHORE_RECEIVED_METRICTON","SF_STU","SF_DENSITY_15C","SFBD_TOV_KLOBS","SFBD_TOV_KL15","SFBD_TOV_BBLS","SFBD_TOV_LONGTON","SFBD_TOV_METRICTON","FREE_WATER_KLOBS","FREE_WATER_KL15","FREE_WATER_BBLS","FREE_WATER_LONGTON","FREE_WATER_METRICTON","ROBQ_KLOBS","ROBQ_KL15","ROBQ_BBLS","ROBQ_LONGTON","ROBQ_METRICTON","SFBD_GSV_KLOBS","SFBD_GSV_KL15","SFBD_GSV_BBLS","SFBD_GSV_LONGTON","SFBD_GSV_METRICTON","SL_VS_BOL_R1_KLOBS","SL_VS_BOL_R1_KL15","SL_VS_BOL_R1_BBLS","SL_VS_BOL_R1_LONGTON","SL_VS_BOL_R1_METRICTON","SFAL_VS_SF_KLOBS","SFAL_VS_SF_KL15","SFAL_VS_SF_BBLS","SFAL_VS_SF_LONGTON","SFAL_VS_SF_METRICTON","SFBD_VS_SR_KLOBS","SFBD_VS_SR_KL15","SFBD_VS_SR_BBLS","SFBD_VS_SR_LONGTON","SFBD_VS_SR_METRICTON","SR_VS_BOL_KLOBS","SR_VS_BOL_KL15","SR_VS_BOL_BBLS","SR_VS_BOL_LONGTON","SR_VS_BOL_METRICTON","SAMPLE_SOURCE","DATE_OF_ANALYSIS","RN_NOTICE_ISSUE","RN_LETTER_ISSUE","RN_STATEMENT_ISSUE","BO_MFO_ON_ARRIVAL","BO_MDO_ON_ARRIVAL","BO_MFO_ON_DEPARTURE","BO_MDO_ON_DEPARTURE","SC_ON_ARRIVAL_DRAFT_FWD","SC_ON_ARRIVAL_DRAFT_AFT","SC_ON_ARRIVAL_DRAFT_LIST","SC_ON_DEPARTURE_DRAFT_FWD","SC_ON_DEPARTURE_DRAFT_AFT","SC_ON_DEPARTURE_DRAFT_LIST","SC","CREATE_TIME","MODIFY_USER","IS_DELETE"]', null, '["SL_VS_BOL_R1_KLOBS|KLOBS","SL_VS_BOL_R1_KL15|KL15","SL_VS_BOL_R1_BBLS|BBLS","SL_VS_BOL_R1_LONGTON|LONGTON","SL_VS_BOL_R1_METRICTON|METRICTON"]', '["SFAL_VS_SF_KLOBS|KLOBS","SFAL_VS_SF_KL15|KL15","SFAL_VS_SF_BBLS|BBLS","SFAL_VS_SF_LONGTON|LONGTON","SFAL_VS_SF_METRICTON|METRICTON"]', '["SFBD_VS_SR_KLOBS|KLOBS","SFBD_VS_SR_KL15|KL15","SFBD_VS_SR_BBLS|BBLS","SFBD_VS_SR_LONGTON|LONGTON","SFBD_VS_SR_METRICTON|METRICTON"]', '["SR_VS_BOL_KLOBS|KLOBS","SR_VS_BOL_KL15|KL15","SR_VS_BOL_BBLS|BBLS","SR_VS_BOL_LONGTON|LONGTON","SR_VS_BOL_METRICTON|METRICTON"]');
+<div id="selenium-highlight">&nbsp;</div>', '7', '15', '0', null, null, null, null, null, '27', '20', '["PRODUCT_TYPE","SELECT_INTERVENTION","SELECT_CLIENT","CLIENT_ID","CLIENTS","SHARING_FEE","KONTRAK","SPK","VOY","FILE_ORDER","IWO","SELECT_CARGO","VESSEL","VESSEL_ID","AREA","AREA_ID","SELECT_PORT","PORT_TERMINAL","PORT_ID","SELECT_PRODUCT","PRODUCT","PRODUCT_ID","LOADING_START_DATE","LOADING_START_TIME","LOADING_COMPLETE_DATE","LOADING_COMPLETE_TIME","DISCHARGE_START_DATE","DISCHARGE_START_TIME","DISCHARGE_COMPLETE_DATE","DISCHARGE_COMPLETE_TIME","BL_START_DATE","BL_START_TIME","TYPE_LOCATION","SURVEYOR_IN_CHARGE","SURVEYOR_ID","TIME_VESSEL_ARRIVED","DATE_VESSEL_ARRIVED","REMARKS_VESSEL_ARRIVED","TIME_ANCHORAGED","DATE_ANCHORAGED","REMARKS_ANCHORAGED","TIME_NOR","DATE_NOR","REMARKS_NOR","TIME_ACCEPTED","DATE_ACCEPTED","REMARKS_ACCEPTED","TIME_POB","DATE_POB","REMARKS_POB","TIME_A_AWEIGH","DATE_A_AWEIGH","REMARKS_A_AWEIGH","TIME_BERTHING","DATE_BERTHING","REMARKS_BERTHING","TIME_SURVEYOR_ON_BOARD","DATE_SURVEYOR_ON_BOARD","REMARKS_SURVEYOR_ON_BOARD","TIME_KEY_MEETING","DATE_KEY_MEETING","REMARKS_KEY_MEETING","TIME_INPECTION_COMMENCED","DATE_INPECTION_COMMENCED","REMARKS_INPECTION_COMMENCED","TIME_INSPECTION_COMPLETED","DATE_INSPECTION_COMPLETED","REMARKS_INSPECTION_COMPLETED","TIME_SBD_COMMENCED","DATE_SBD_COMMENCED","REMARKS_SBD_COMMENCED","TIME_SBD_COMPLETED","DATE_SBD_COMPLETED","REMARKS_SBD_COMPLETED","TIME_HOSE_CONNECTED","DATE_HOSE_CONNECTED","REMARKS_HOSE_CONNECTED","TIME_CONNECTED_COMPLETED","DATE_CONNECTED_COMPLETED","REMARKS_CONNECTED_COMPLETED","TIME_DISCHARGE_COMMENCED","DATE_DISCHARGE_COMMENCED","REMARKS_DISCHARGE_COMMENCED","TIME_DISCHARGE_COMPLETED","DATE_DISCHARGE_COMPLETED","REMARKS_DISCHARGE_COMPLETED","TIME_HOSE_DISCONNECTED","DATE_HOSE_DISCONNECTED","REMARKS_HOSE_DISCONNECTED","TIME_TANKS_INS_COMMENCED","DATE_TANKS_INS_COMMENCED","REMARKS_TANKS_INS_COMMENCED","TIME_TANKS_INS_COMPLETED","DATE_TANKS_INS_COMPLETED","REMARKS_TANKS_INS_COMPLETED","TIME_DOCUMENTS_ONBOARD","DATE_DOCUMENTS_ONBOARD","REMARKS_DOCUMENTS_ONBOARD","TIME_SVY_LEFT_VESSEL","DATE_SVY_LEFT_VESSEL","REMARKS_SVY_LEFT_VESSEL","TIME_VESSEL_SAIL","DATE_VESSEL_SAIL","REMARKS_VESSEL_SAIL","ACTIVITIES_REMARKS","BL_QUANTITY_KLOBS","BL_QUANTITY_KL15","BL_QUANTITY_BBLS","BL_QUANTITY_LONGTON","BL_QUANTITY_METRICTON","BL_FLOW_METER","BL_SFAL_KLOBS","BL_SFAL_KL15","BL_SFAL_BBLS","BL_SFAL_LONGTON","BL_SFAL_METRICTON","SF_SHORE_RECEIVED_KLOBS","SF_SHORE_RECEIVED_KL15","SF_SHORE_RECEIVED_BBLS","SF_SHORE_RECEIVED_LONGTON","SF_SHORE_RECEIVED_METRICTON","SF_STU","SF_DENSITY_15C","SFBD_TOV_KLOBS","SFBD_TOV_KL15","SFBD_TOV_BBLS","SFBD_TOV_LONGTON","SFBD_TOV_METRICTON","FREE_WATER_KLOBS","FREE_WATER_KL15","FREE_WATER_BBLS","FREE_WATER_LONGTON","FREE_WATER_METRICTON","ROBQ_KLOBS","ROBQ_KL15","ROBQ_BBLS","ROBQ_LONGTON","ROBQ_METRICTON","SFBD_GSV_KLOBS","SFBD_GSV_KL15","SFBD_GSV_BBLS","SFBD_GSV_LONGTON","SFBD_GSV_METRICTON","SL_VS_BOL_R1_KLOBS","SL_VS_BOL_R1_KL15","SL_VS_BOL_R1_BBLS","SL_VS_BOL_R1_LONGTON","SL_VS_BOL_R1_METRICTON","SFAL_VS_SF_KLOBS","SFAL_VS_SF_KL15","SFAL_VS_SF_BBLS","SFAL_VS_SF_LONGTON","SFAL_VS_SF_METRICTON","SFBD_VS_SR_KLOBS","SFBD_VS_SR_KL15","SFBD_VS_SR_BBLS","SFBD_VS_SR_LONGTON","SFBD_VS_SR_METRICTON","SR_VS_BOL_KLOBS","SR_VS_BOL_KL15","SR_VS_BOL_BBLS","SR_VS_BOL_LONGTON","SR_VS_BOL_METRICTON","SAMPLE_SOURCE","DATE_OF_ANALYSIS","RN_NOTICE_ISSUE","RN_LETTER_ISSUE","RN_STATEMENT_ISSUE","BO_MFO_ON_ARRIVAL","BO_MDO_ON_ARRIVAL","BO_MFO_ON_DEPARTURE","BO_MDO_ON_DEPARTURE","SC_ON_ARRIVAL_DRAFT_FWD","SC_ON_ARRIVAL_DRAFT_AFT","SC_ON_ARRIVAL_DRAFT_LIST","SC_ON_DEPARTURE_DRAFT_FWD","SC_ON_DEPARTURE_DRAFT_AFT","SC_ON_DEPARTURE_DRAFT_LIST","SC","CREATE_TIME","MODIFY_USER","IS_DELETE","FSOQ","RN_NOTICE_ISSUE_DESCRIPTION","RN_LETTER_ISSUE_DESCRIPTION","RN_STATEMENT_ISSUE_DESCRIPTION"]', null, '["SL_VS_BOL_R1_KLOBS|KLOBS","SL_VS_BOL_R1_KL15|KL15","SL_VS_BOL_R1_BBLS|BBLS","SL_VS_BOL_R1_LONGTON|LONGTON","SL_VS_BOL_R1_METRICTON|METRICTON"]', '["SFAL_VS_SF_KLOBS|KLOBS","SFAL_VS_SF_KL15|KL15","SFAL_VS_SF_BBLS|BBLS","SFAL_VS_SF_LONGTON|LONGTON","SFAL_VS_SF_METRICTON|METRICTON"]', '["SFBD_VS_SR_KLOBS|KLOBS","SFBD_VS_SR_KL15|KL15","SFBD_VS_SR_BBLS|BBLS","SFBD_VS_SR_LONGTON|LONGTON","SFBD_VS_SR_METRICTON|METRICTON"]', '["SR_VS_BOL_KLOBS|KLOBS","SR_VS_BOL_KL15|KL15","SR_VS_BOL_BBLS|BBLS","SR_VS_BOL_LONGTON|LONGTON","SR_VS_BOL_METRICTON|METRICTON"]');
 INSERT INTO "public"."ELEMENT_CONNECTION" VALUES ('dd727c4c-34c0-4917-82d5-abcf945d1625', 'Setup Gas Dishcarge', '<div id="selenium-highlight">&nbsp;</div>', '9', '15', '0', null, null, null, null, null, '31', '23', null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."FORM_ENTRY_FIELD"
+-- Table structure for FORM_ENTRY_FIELD
 -- ----------------------------
-DROP TABLE "public"."FORM_ENTRY_FIELD";
+DROP TABLE IF EXISTS "public"."FORM_ENTRY_FIELD";
 CREATE TABLE "public"."FORM_ENTRY_FIELD" (
 "ID" int4 DEFAULT nextval('"FORM_ENTRY_FIELD_ID_seq"'::regclass) NOT NULL,
-"SC" text,
-"IWO" text,
-"SPK" text,
-"VOY" text,
-"AREA" text,
-"SUPPLIER" text,
-"BUYER" text,
-"SELLER" text,
-"TRADER" text,
-"KONTRAK" text,
-"PRODUCT" text,
+"SC" text COLLATE "default",
+"IWO" text COLLATE "default",
+"SPK" text COLLATE "default",
+"VOY" text COLLATE "default",
+"AREA" text COLLATE "default",
+"SUPPLIER" text COLLATE "default",
+"BUYER" text COLLATE "default",
+"SELLER" text COLLATE "default",
+"TRADER" text COLLATE "default",
+"KONTRAK" text COLLATE "default",
+"PRODUCT" text COLLATE "default",
 "DATE_NOR" date,
 "TIME_NOR" time(6),
-"FWAL_BBLS" text,
-"FWAL_KL15" text,
-"FILE_ORDER" text,
-"FWAL_KLOBS" text,
-"REMARKS_NOR" text,
-"SELECT_PORT" text,
-"SHARING_FEE" text,
-"SL_GSV_BBLS" text,
-"SL_GSV_KL15" text,
+"FWAL_BBLS" text COLLATE "default",
+"FWAL_KL15" text COLLATE "default",
+"FILE_ORDER" text COLLATE "default",
+"FWAL_KLOBS" text COLLATE "default",
+"REMARKS_NOR" text COLLATE "default",
+"SELECT_PORT" text COLLATE "default",
+"SHARING_FEE" text COLLATE "default",
+"SL_GSV_BBLS" text COLLATE "default",
+"SL_GSV_KL15" text COLLATE "default",
 "DATE_BERTHED" date,
-"FWAL_LONGTON" text,
-"PRODUCT_TYPE" text,
-"SELECT_CARGO" text,
-"SL_GSV_KLOBS" text,
+"FWAL_LONGTON" text COLLATE "default",
+"PRODUCT_TYPE" text COLLATE "default",
+"SELECT_CARGO" text COLLATE "default",
+"SL_GSV_KLOBS" text COLLATE "default",
 "TIME_BERTHED" time(6),
 "BL_START_DATE" date,
 "BL_START_TIME" time(6),
 "DATE_ACCEPTED" date,
 "DATE_CONTRACT" date,
-"PORT_TERMINAL" text,
-"SAMPLE_SOURCE" text,
-"SELECT_CLIENT" text,
-"SFAL_TOV_BBLS" text,
-"SFAL_TOV_KL15" text,
-"ST_NOMINATION" text,
+"PORT_TERMINAL" text COLLATE "default",
+"SAMPLE_SOURCE" text COLLATE "default",
+"SELECT_CLIENT" text COLLATE "default",
+"SFAL_TOV_BBLS" text COLLATE "default",
+"SFAL_TOV_KL15" text COLLATE "default",
+"ST_NOMINATION" text COLLATE "default",
 "TIME_ACCEPTED" time(6),
 "DATE_COMMENCED" date,
 "DATE_COMPLETED" date,
-"FWAL_METRICTON" text,
-"SELECT_PRODUCT" text,
-"SFAL_TOV_KLOBS" text,
-"SL_GSV_LONGTON" text,
+"FWAL_METRICTON" text COLLATE "default",
+"SELECT_PRODUCT" text COLLATE "default",
+"SFAL_TOV_KLOBS" text COLLATE "default",
+"SL_GSV_LONGTON" text COLLATE "default",
 "TIME_COMMENCED" time(6),
 "TIME_COMPLETED" time(6),
 "DATE_ANCHORAGED" date,
-"REMARKS_BERTHED" text,
-"RN_LETTER_ISSUE" text,
-"RN_NOTICE_ISSUE" text,
+"REMARKS_BERTHED" text COLLATE "default",
+"RN_LETTER_ISSUE" text COLLATE "default",
+"RN_NOTICE_ISSUE" text COLLATE "default",
 "TIME_ANCHORAGED" time(6),
-"BL_QUANTITY_BBLS" text,
-"BL_QUANTITY_KL15" text,
+"BL_QUANTITY_BBLS" text COLLATE "default",
+"BL_QUANTITY_KL15" text COLLATE "default",
 "DATE_KEY_MEETING" date,
 "DATE_OF_ANALYSIS" date,
-"REMARKS_ACCEPTED" text,
-"SF_QUANTITY_BBLS" text,
-"SF_QUANTITY_KL15" text,
-"SFAL_TOV_LONGTON" text,
-"SL_GSV_METRICTON" text,
+"REMARKS_ACCEPTED" text COLLATE "default",
+"SF_QUANTITY_BBLS" text COLLATE "default",
+"SF_QUANTITY_KL15" text COLLATE "default",
+"SFAL_TOV_LONGTON" text COLLATE "default",
+"SL_GSV_METRICTON" text COLLATE "default",
 "TIME_KEY_MEETING" time(6),
-"VEF_LOADING_BBLS" text,
-"BL_QUANTITY_KLOBS" text,
-"BO_MDO_ON_ARRIVAL" text,
-"BO_MFO_ON_ARRIVAL" text,
-"OBQ_QUANTITY_BBLS" text,
-"OBQ_QUANTITY_KL15" text,
-"REMARKS_COMMENCED" text,
-"REMARKS_COMPLETED" text,
-"SF_QUANTITY_KLOBS" text,
-"SL_VS_BOL_R1_BBLS" text,
-"SL_VS_BOL_R1_KL15" text,
-"ACTIVITIES_REMARKS" text,
+"VEF_LOADING_BBLS" text COLLATE "default",
+"BL_QUANTITY_KLOBS" text COLLATE "default",
+"BO_MDO_ON_ARRIVAL" text COLLATE "default",
+"BO_MFO_ON_ARRIVAL" text COLLATE "default",
+"OBQ_QUANTITY_BBLS" text COLLATE "default",
+"OBQ_QUANTITY_KL15" text COLLATE "default",
+"REMARKS_COMMENCED" text COLLATE "default",
+"REMARKS_COMPLETED" text COLLATE "default",
+"SF_QUANTITY_KLOBS" text COLLATE "default",
+"SL_VS_BOL_R1_BBLS" text COLLATE "default",
+"SL_VS_BOL_R1_KL15" text COLLATE "default",
+"ACTIVITIES_REMARKS" text COLLATE "default",
 "DATE_LOISPKPOWONOA" date,
 "DATE_VESSEL_SAILED" date,
 "LOADING_START_DATE" date,
 "LOADING_START_TIME" time(6),
-"OBQ_QUANTITY_KLOBS" text,
-"REMARKS_ANCHORAGED" text,
-"RN_STATEMENT_ISSUE" text,
-"SFAL_TOV_METRICTON" text,
-"SL_VS_BOL_R1_KLOBS" text,
+"OBQ_QUANTITY_KLOBS" text COLLATE "default",
+"REMARKS_ANCHORAGED" text COLLATE "default",
+"RN_STATEMENT_ISSUE" text COLLATE "default",
+"SFAL_TOV_METRICTON" text COLLATE "default",
+"SL_VS_BOL_R1_KLOBS" text COLLATE "default",
 "TIME_VESSEL_SAILED" time(6),
-"BL_QUANTITY_LONGTON" text,
-"BO_MDO_ON_DEPARTURE" text,
-"BO_MFO_ON_DEPARTURE" text,
-"CLIENT_SITE_ID_FORM" text,
+"BL_QUANTITY_LONGTON" text COLLATE "default",
+"BO_MDO_ON_DEPARTURE" text COLLATE "default",
+"BO_MFO_ON_DEPARTURE" text COLLATE "default",
+"CLIENT_SITE_ID_FORM" text COLLATE "default",
 "DATE_HOSE_CONNECTED" date,
 "DATE_VESSEL_ARRIVED" date,
-"REMARKS_KEY_MEETING" text,
+"REMARKS_KEY_MEETING" text COLLATE "default",
 "SELECT_INTERVENTION" int4,
-"SF_QUANTITY_LONGTON" text,
+"SF_QUANTITY_LONGTON" text COLLATE "default",
 "TIME_HOSE_CONNECTED" time(6),
 "TIME_VESSEL_ARRIVED" time(6),
 "DISCHARGE_START_DATE" date,
 "DISCHARGE_START_TIME" time(6),
-"OBQ_QUANTITY_LONGTON" text,
-"SL_APPLIED_VEFL_BBLS" text,
-"SL_VS_BOL_R1_LONGTON" text,
-"BL_15_DERAJAT_CELCIUS" text,
-"BL_QUANTITY_METRICTON" text,
+"OBQ_QUANTITY_LONGTON" text COLLATE "default",
+"SL_APPLIED_VEFL_BBLS" text COLLATE "default",
+"SL_VS_BOL_R1_LONGTON" text COLLATE "default",
+"BL_15_DERAJAT_CELCIUS" text COLLATE "default",
+"BL_QUANTITY_METRICTON" text COLLATE "default",
 "LOADING_COMPLETE_DATE" date,
 "LOADING_COMPLETE_TIME" time(6),
-"REMARKS_VESSEL_SAILED" text,
+"REMARKS_VESSEL_SAILED" text COLLATE "default",
 "DATE_DOCUMENTS_ONBOARD" date,
 "DATE_LOADING_COMMENCED" date,
 "DATE_LOADING_COMPLETED" date,
 "DATE_SURVEYOR_ON_BOARD" date,
-"OBQ_QUANTITY_METRICTON" text,
-"REMARKS_HOSE_CONNECTED" text,
-"REMARKS_VESSEL_ARRIVED" text,
-"SF_QUANTITY_METRICTON" text,
-"SL_VS_BOL_R1_METRICTON" text,
+"OBQ_QUANTITY_METRICTON" text COLLATE "default",
+"REMARKS_HOSE_CONNECTED" text COLLATE "default",
+"REMARKS_VESSEL_ARRIVED" text COLLATE "default",
+"SF_QUANTITY_METRICTON" text COLLATE "default",
+"SL_VS_BOL_R1_METRICTON" text COLLATE "default",
 "TIME_DOCUMENTS_ONBOARD" time(6),
 "TIME_LOADING_COMMENCED" time(6),
 "TIME_LOADING_COMPLETED" time(6),
@@ -1742,93 +1776,93 @@ CREATE TABLE "public"."FORM_ENTRY_FIELD" (
 "DATE_SAMPLING_COMPLETED" date,
 "DISCHARGE_COMPLETE_DATE" date,
 "DISCHARGE_COMPLETE_TIME" time(6),
-"SC_ON_ARRIVAL_DRAFT_AFT" text,
-"SC_ON_ARRIVAL_DRAFT_FWD" text,
+"SC_ON_ARRIVAL_DRAFT_AFT" text COLLATE "default",
+"SC_ON_ARRIVAL_DRAFT_FWD" text COLLATE "default",
 "TIME_SAMPLING_COMMENCED" time(6),
 "TIME_SAMPLING_COMPLETED" time(6),
 "DATE_CONNECTED_COMMENCED" date,
 "DATE_CONNECTED_COMPLETED" date,
-"SC_ON_ARRIVAL_DRAFT_LIST" text,
+"SC_ON_ARRIVAL_DRAFT_LIST" text COLLATE "default",
 "TIME_CONNECTED_COMMENCED" time(6),
 "TIME_CONNECTED_COMPLETED" time(6),
-"REMARKS_DOCUMENTS_ONBOARD" text,
-"REMARKS_LOADING_COMMENCED" text,
-"REMARKS_LOADING_COMPLETED" text,
-"REMARKS_SURVEYOR_ON_BOARD" text,
-"SC_ON_DEPARTURE_DRAFT_AFT" text,
-"SC_ON_DEPARTURE_DRAFT_FWD" text,
+"REMARKS_DOCUMENTS_ONBOARD" text COLLATE "default",
+"REMARKS_LOADING_COMMENCED" text COLLATE "default",
+"REMARKS_LOADING_COMPLETED" text COLLATE "default",
+"REMARKS_SURVEYOR_ON_BOARD" text COLLATE "default",
+"SC_ON_DEPARTURE_DRAFT_AFT" text COLLATE "default",
+"SC_ON_DEPARTURE_DRAFT_FWD" text COLLATE "default",
 "DATE_MEASUREMENT_COMMENCED" date,
 "DATE_MEASUREMENT_COMPLETED" date,
-"REMARKS_SAMPLING_COMMENCED" text,
-"REMARKS_SAMPLING_COMPLETED" text,
-"SC_ON_DEPARTURE_DRAFT_LIST" text,
-"SL_VEF_APPLIED_VS_BOL_BBLS" text,
-"SL_VEF_APPLIED_VS_BOL_KL15" text,
+"REMARKS_SAMPLING_COMMENCED" text COLLATE "default",
+"REMARKS_SAMPLING_COMPLETED" text COLLATE "default",
+"SC_ON_DEPARTURE_DRAFT_LIST" text COLLATE "default",
+"SL_VEF_APPLIED_VS_BOL_BBLS" text COLLATE "default",
+"SL_VEF_APPLIED_VS_BOL_KL15" text COLLATE "default",
 "TIME_MEASUREMENT_COMMENCED" time(6),
 "TIME_MEASUREMENT_COMPLETED" time(6),
-"REMARKS_CONNECTED_COMMENCED" text,
-"REMARKS_CONNECTED_COMPLETED" text,
-"SL_VEF_APPLIED_VS_BOL_KLOBS" text,
-"REMARKS_MEASUREMENT_COMMENCED" text,
-"REMARKS_MEASUREMENT_COMPLETED" text,
-"SL_VEF_APPLIED_VS_BOL_LONGTON" text,
-"SL_VEF_APPLIED_VS_BOL_METRICTON" text,
+"REMARKS_CONNECTED_COMMENCED" text COLLATE "default",
+"REMARKS_CONNECTED_COMPLETED" text COLLATE "default",
+"SL_VEF_APPLIED_VS_BOL_KLOBS" text COLLATE "default",
+"REMARKS_MEASUREMENT_COMMENCED" text COLLATE "default",
+"REMARKS_MEASUREMENT_COMPLETED" text COLLATE "default",
+"SL_VEF_APPLIED_VS_BOL_LONGTON" text COLLATE "default",
+"SL_VEF_APPLIED_VS_BOL_METRICTON" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
 "CLIENT_SITE_ID" int4,
-"SF_GSV_KLOBS" text,
-"SF_NSV_KLOBS" text,
-"SF_FREE_WATER_AL_BBLS" text,
-"SF_FREE_WATER_AL_KL15" text,
-"SF_SFAL_TOV_METRICTON" text,
-"SL_APPLIED_VEFL_KLOBS" text,
+"SF_GSV_KLOBS" text COLLATE "default",
+"SF_NSV_KLOBS" text COLLATE "default",
+"SF_FREE_WATER_AL_BBLS" text COLLATE "default",
+"SF_FREE_WATER_AL_KL15" text COLLATE "default",
+"SF_SFAL_TOV_METRICTON" text COLLATE "default",
+"SL_APPLIED_VEFL_KLOBS" text COLLATE "default",
 "DATE_HOSE_DISCONNECTED" date,
-"SF_FREE_WATER_AL_KLOBS" text,
+"SF_FREE_WATER_AL_KLOBS" text COLLATE "default",
 "DATE_DISCHARGE_COMPLETED" date,
 "DATE_INPECTION_COMMENCED" date,
-"SF_FREE_WATER_AL_LONGTON" text,
+"SF_FREE_WATER_AL_LONGTON" text COLLATE "default",
 "TIME_DISCHARGE_COMMENCED" time(6),
 "TIME_DISCHARGE_COMPLETED" time(6),
 "TIME_INPECTION_COMMENCED" time(6),
 "DATE_INSPECTION_COMPLETED" date,
-"REMARKS_HOSE_DISCONNECTED" text,
-"SL_APPLIED_VEFL_METRICTON" text,
+"REMARKS_HOSE_DISCONNECTED" text COLLATE "default",
+"SL_APPLIED_VEFL_METRICTON" text COLLATE "default",
 "TIME_INSPECTION_COMPLETED" time(6),
-"SF_FREE_WATER_AL_METRICTON" text,
-"REMARKS_DISCHARGE_COMMENCED" text,
-"REMARKS_DISCHARGE_COMPLETED" text,
-"REMARKS_INPECTION_COMMENCED" text,
-"REMARKS_INSPECTION_COMPLETED" text,
+"SF_FREE_WATER_AL_METRICTON" text COLLATE "default",
+"REMARKS_DISCHARGE_COMMENCED" text COLLATE "default",
+"REMARKS_DISCHARGE_COMPLETED" text COLLATE "default",
+"REMARKS_INPECTION_COMMENCED" text COLLATE "default",
+"REMARKS_INSPECTION_COMPLETED" text COLLATE "default",
 "DATE_HOSE_CONNECTED_COMMENCED" date,
 "DATE_HOSE_CONNECTED_COMPLETED" date,
-"SL_VEF_APPLIED_VS_BOL_R1_BBLS" text,
-"SL_VEF_APPLIED_VS_BOL_R1_KL15" text,
+"SL_VEF_APPLIED_VS_BOL_R1_BBLS" text COLLATE "default",
+"SL_VEF_APPLIED_VS_BOL_R1_KL15" text COLLATE "default",
 "TIME_HOSE_CONNECTED_COMMENCED" time(6),
 "TIME_HOSE_CONNECTED_COMPLETED" time(6),
-"SL_VEF_APPLIED_VS_BOL_R1_KLOBS" text,
-"SF_SHORE_TANKS_NOMINATION_KLOBS" text,
+"SL_VEF_APPLIED_VS_BOL_R1_KLOBS" text COLLATE "default",
+"SF_SHORE_TANKS_NOMINATION_KLOBS" text COLLATE "default",
 "DATE_CARGO_MEASUREMENT_COMMENCED" date,
 "DATE_CARGO_MEASUREMENT_COMPLETED" date,
-"REMARKS_HOSE_CONNECTED_COMMENCED" text,
-"REMARKS_HOSE_CONNECTED_COMPLETED" text,
-"SL_VEF_APPLIED_VS_BOL_R1_LONGTON" text,
+"REMARKS_HOSE_CONNECTED_COMMENCED" text COLLATE "default",
+"REMARKS_HOSE_CONNECTED_COMPLETED" text COLLATE "default",
+"SL_VEF_APPLIED_VS_BOL_R1_LONGTON" text COLLATE "default",
 "TIME_CARGO_MEASUREMENT_COMMENCED" time(6),
 "TIME_CARGO_MEASUREMENT_COMPLETED" time(6),
-"SL_VEF_APPLIED_VS_BOL_R1_METRICTON" text,
-"REMARKS_CARGO_MEASUREMENT_COMMENCED" text,
-"REMARKS_CARGO_MEASUREMENT_COMPLETED" text,
-"BL_FLOW_METER" text,
-"BL_SHORE_TANK" text,
-"BL_SHIP_TANK" text,
-"FSOQ" text,
-"SURVEYOR_IN_CHARGE" text,
-"RN_NOTICE_ISSUE_DESCRIPTION" text,
-"RN_LETTER_ISSUE_DESCRIPTION" text,
-"RN_STATEMENT_ISSUE_DESCRIPTION" text,
+"SL_VEF_APPLIED_VS_BOL_R1_METRICTON" text COLLATE "default",
+"REMARKS_CARGO_MEASUREMENT_COMMENCED" text COLLATE "default",
+"REMARKS_CARGO_MEASUREMENT_COMPLETED" text COLLATE "default",
+"BL_FLOW_METER" text COLLATE "default",
+"BL_SHORE_TANK" text COLLATE "default",
+"BL_SHIP_TANK" text COLLATE "default",
+"FSOQ" text COLLATE "default",
+"SURVEYOR_IN_CHARGE" text COLLATE "default",
+"RN_NOTICE_ISSUE_DESCRIPTION" text COLLATE "default",
+"RN_LETTER_ISSUE_DESCRIPTION" text COLLATE "default",
+"RN_STATEMENT_ISSUE_DESCRIPTION" text COLLATE "default",
 "DATE_A_AWEIGH" date,
 "TIME_A_AWEIGH" time(6),
 "DATE_POB" date,
@@ -1849,422 +1883,422 @@ CREATE TABLE "public"."FORM_ENTRY_FIELD" (
 "DATE_VESSEL_SAIL" date,
 "TIME_VESSEL_SAIL" time(6),
 "TIME_HOSE_DISCONNECTED" time(6),
-"BL_SFAL_KL15" text,
-"BL_SFAL_BBLS" text,
-"BL_SFAL_METRICTON" text,
-"BL_SFAL_LONGTON" text,
-"SF_SFAL_KLOBS" text,
-"SF_SFAL_KL15" text,
-"SF_SFAL_BBLS" text,
-"SF_SFAL_METRICTON" text,
-"SF_SFAL_LONGTON" text,
-"SFBD_TOV_KLOBS" text,
-"SFBD_TOV_KL15" text,
-"SFBD_TOV_BBLS" text,
-"SFBD_TOV_METRICTON" text,
-"SFBD_TOV_LONGTON" text,
-"SFBD_GSV_KLOBS" text,
-"SFBD_GSV_BBLS" text,
-"SFBD_GSV_METRICTON" text,
-"SFBD_GSV_LONGTON" text,
-"ROBQ_KLOBS" text,
-"ROBQ_KL15" text,
-"ROBQ_BBLS" text,
-"ROBQ_METRICTON" text,
-"ROBQ_LONGTON" text,
-"BL_SFAL_KLOBS" text,
-"SFBD_GSV_KL15" text,
-"SLVS_BOL_R1_KLOBS" text,
-"SLVS_BOL_R1_KL15" text,
-"SLVS_BOL_R1_BBLS" text,
-"SLVS_BOL_R1_LONGTON" text,
-"SLVS_BOL_R1_METRICTON" text,
-"SFAL_VS_SFBD_R2_KLOBS" text,
-"SFAL_VS_SFBD_R2_KL15" text,
-"SFAL_VS_SFBD_R2_BBLS" text,
-"SFAL_VS_SFBD_R2_LONGTON" text,
-"SFAL_VS_SFBD_R2_METRICTON" text,
-"SFBD_VS_SR_R3_KLOBS" text,
-"SFBD_VS_SR_R3_KL15" text,
-"SFBD_VS_SR_R3_BBLS" text,
-"SFBD_VS_SR_R3_LONGTON" text,
-"SFBD_VS_SR_R3_METRICTON" text,
-"SR_VS_BOL_R4_KLOBS" text,
-"SR_VS_BOL_R4_KL15" text,
-"SR_VS_BOL_R4_BBLS" text,
-"SR_VS_BOL_R4_LONGTON" text,
-"SR_VS_BOL_R4_METRICTON" text,
-"VESSEL" text,
+"BL_SFAL_KL15" text COLLATE "default",
+"BL_SFAL_BBLS" text COLLATE "default",
+"BL_SFAL_METRICTON" text COLLATE "default",
+"BL_SFAL_LONGTON" text COLLATE "default",
+"SF_SFAL_KLOBS" text COLLATE "default",
+"SF_SFAL_KL15" text COLLATE "default",
+"SF_SFAL_BBLS" text COLLATE "default",
+"SF_SFAL_METRICTON" text COLLATE "default",
+"SF_SFAL_LONGTON" text COLLATE "default",
+"SFBD_TOV_KLOBS" text COLLATE "default",
+"SFBD_TOV_KL15" text COLLATE "default",
+"SFBD_TOV_BBLS" text COLLATE "default",
+"SFBD_TOV_METRICTON" text COLLATE "default",
+"SFBD_TOV_LONGTON" text COLLATE "default",
+"SFBD_GSV_KLOBS" text COLLATE "default",
+"SFBD_GSV_BBLS" text COLLATE "default",
+"SFBD_GSV_METRICTON" text COLLATE "default",
+"SFBD_GSV_LONGTON" text COLLATE "default",
+"ROBQ_KLOBS" text COLLATE "default",
+"ROBQ_KL15" text COLLATE "default",
+"ROBQ_BBLS" text COLLATE "default",
+"ROBQ_METRICTON" text COLLATE "default",
+"ROBQ_LONGTON" text COLLATE "default",
+"BL_SFAL_KLOBS" text COLLATE "default",
+"SFBD_GSV_KL15" text COLLATE "default",
+"SLVS_BOL_R1_KLOBS" text COLLATE "default",
+"SLVS_BOL_R1_KL15" text COLLATE "default",
+"SLVS_BOL_R1_BBLS" text COLLATE "default",
+"SLVS_BOL_R1_LONGTON" text COLLATE "default",
+"SLVS_BOL_R1_METRICTON" text COLLATE "default",
+"SFAL_VS_SFBD_R2_KLOBS" text COLLATE "default",
+"SFAL_VS_SFBD_R2_KL15" text COLLATE "default",
+"SFAL_VS_SFBD_R2_BBLS" text COLLATE "default",
+"SFAL_VS_SFBD_R2_LONGTON" text COLLATE "default",
+"SFAL_VS_SFBD_R2_METRICTON" text COLLATE "default",
+"SFBD_VS_SR_R3_KLOBS" text COLLATE "default",
+"SFBD_VS_SR_R3_KL15" text COLLATE "default",
+"SFBD_VS_SR_R3_BBLS" text COLLATE "default",
+"SFBD_VS_SR_R3_LONGTON" text COLLATE "default",
+"SFBD_VS_SR_R3_METRICTON" text COLLATE "default",
+"SR_VS_BOL_R4_KLOBS" text COLLATE "default",
+"SR_VS_BOL_R4_KL15" text COLLATE "default",
+"SR_VS_BOL_R4_BBLS" text COLLATE "default",
+"SR_VS_BOL_R4_LONGTON" text COLLATE "default",
+"SR_VS_BOL_R4_METRICTON" text COLLATE "default",
+"VESSEL" text COLLATE "default",
 "ALERT_PUSH" int4 DEFAULT 0,
-"CLIENTS" text,
-"BL_GSV_KLOBS" text,
-"BL_GSV_KL15" text,
-"BL_GSV_BBLS" text,
-"BL_GSV_LONGTON" text,
-"BL_GSV_METRICTON" text,
-"BL_NSV_KLOBS" text,
-"BL_NSV_KL15" text,
-"BL_NSV_BBLS" text,
-"BL_NSV_LONGTON" text,
-"BL_NSV_METRICTON" text,
-"SF_GSV_KL15" text,
-"SF_GSV_BBLS" text,
-"SF_GSV_LONGTON" text,
-"SF_GSV_METRICTON" text,
-"SF_NSV_KL15" text,
-"SF_NSV_BBLS" text,
-"SF_NSV_LONGTON" text,
-"SF_NSV_METRICTON" text,
-"SF_SFAL_TOV_KLOBS" text,
-"SF_SFAL_TOV_KL15" text,
-"SF_SFAL_TOV_BBLS" text,
-"SF_SFAL_TOV_LONGTON" text,
-"SFAL_GSV_KLOBS" text,
-"SFAL_GSV_KL15" text,
-"SFAL_GSV_BBLS" text,
-"SFAL_GSV_LONGTON" text,
-"SFAL_GSV_METRICTON" text,
-"SFAL_NSV_KLOBS" text,
-"SFAL_NSV_KL15" text,
-"SFAL_NSV_BBLS" text,
-"SFAL_NSV_LONGTON" text,
-"SFAL_NSV_METRICTON" text,
-"VEFL_KLOBS" text,
-"VEFL_KL15" text,
-"VEFL_BBLS" text,
-"VEFL_LONGTON" text,
-"VEFL_METRICTON" text,
-"SL_APPLIED_VEFL_KL15" text,
-"SL_APPLIED_VEFL_LONGTON" text,
-"REMARKS_POB" text,
-"REMARKS_A_AWEIGH" text,
-"REMARKS_BERTHING" text,
-"REMARKS_SBD_COMMENCED" text,
-"REMARKS_SBD_COMPLETED" text,
-"REMARKS_TANKS_INS_COMMENCED" text,
-"REMARKS_TANKS_INS_COMPLETED" text,
-"REMARKS_SVY_LEFT_VESSEL" text,
-"REMARKS_VESSEL_SAIL" text,
-"SFAL_KLOBS" text,
-"SFAL_KL15" text,
-"SFAL_BBLS" text,
-"SFAL_LONGTON" text,
-"SFAL_METRICTON" text,
-"SF_SQ_KLOBS" text,
-"SF_SQ_KL15" text,
-"SF_SQ_BBLS" text,
-"SF_SQ_LONGTON" text,
-"SF_SQ_METRICTON" text,
-"FREE_WATER_KLOBS" text,
-"FREE_WATER_KL15" text,
-"FREE_WATER_BBLS" text,
-"FREE_WATER_LONGTON" text,
-"FREE_WATER_METRICTON" text,
-"SFBD_NSV_KLOBS" text,
-"SFBD_NSV_KL15" text,
-"SFBD_NSV_BBLS" text,
-"SFBD_NSV_LONGTON" text,
-"SFBD_NSV_METRICTON" text,
-"TIME_LOADING_BARGE_ARRIVED" text,
-"DATE_LOADING_BARGE_ARRIVED" text,
-"REMARKS_LOADING_BARGE_ARRIVED" text,
-"TIME_LOADING_NOR_TENDERED" text,
-"DATE_LOADING_NOR_TENDERED" text,
-"REMARKS_LOADING_NOR_TENDERED" text,
-"TIME_LOADING_BARGE_ALL_FAST_ALONGSIDE" text,
-"DATE_LOADING_BARGE_ALL_FAST_ALONGSIDE" text,
-"REMARKS_LOADING_BARGE_ALL_FAST_ALONGSIDE" text,
-"TIME_LOADING_KEY_MEETING" text,
-"DATE_LOADING_KEY_MEETING" text,
-"REMARKS_LOADING_KEY_MEETING" text,
-"TIME_LOADING_NOR_ACCEPTED" text,
-"DATE_LOADING_NOR_ACCEPTED" text,
-"REMARKS_LOADING_NOR_ACCEPTED" text,
-"TIME_LOADING_VALVE_SEEALED" text,
-"DATE_LOADING_VALVE_SEEALED" text,
-"REMARKS_LOADING_VALVE_SEEALED" text,
-"TIME_LOADING_TANK_INSPECT_METER_VERIFICATION" text,
-"DATE_LOADING_TANK_INSPECT_METER_VERIFICATION" text,
-"REMARKS_LOADING_TANK_INSPECT_METER_VERIFICATION" text,
-"TIME_LOADING_HOST_CONNECTED" text,
-"DATE_LOADING_HOST_CONNECTED" text,
-"REMARKS_LOADING_HOST_CONNECTED" text,
-"TIME_LOADING_LOADING_COMMENCED" text,
-"DATE_LOADING_LOADING_COMMENCED" text,
-"REMARKS_LOADING_LOADING_COMMENCED" text,
-"TIME_LOADING_LOADING_COMPLETED" text,
-"DATE_LOADING_LOADING_COMPLETED" text,
-"REMARKS_LOADING_LOADING_COMPLETED" text,
-"TIME_DATE_LOADING_HOSE_ARMS_DISCONNECT" text,
-"DATE_LOADING_HOSE_ARMS_DISCONNECT" text,
-"REMARKS_DATE_LOADING_HOSE_ARMS_DISCONNECT" text,
-"TIME_LOADING_TANK_INSPECT_METER_VERIFICATION_FINAL" text,
-"DATE_LOADING_TANK_INSPECT_METER_VERIFICATION_FINAL" text,
-"REMARKS_LOADING_TANK_INSPECT_METER_VERIFICATION_FINAL" text,
-"TIME_LOADING_CALCUL_COMPLETED_DOC_ONBOARD" text,
-"DATE_LOADING_CALCUL_COMPLETED_DOC_ONBOARD" text,
-"REMARKS_LOADING_CALCUL_COMPLETED_DOC_ONBOARD" text,
-"TIME_DISCHARGE_BARGE_ARRIVED" text,
-"DATE_DISCHARGE_BARGE_ARRIVED" text,
-"REMARKS_DISCHARGE_BARGE_ARRIVED" text,
-"TIME_DISCHARGE_NOR_TENDERED" text,
-"DATE_DISCHARGE_NOR_TENDERED" text,
-"REMARKS_DISCHARGE_NOR_TENDERED" text,
-"TIME_DISCHARGE_KEY_MEETING" text,
-"DATE_DISCHARGE_KEY_MEETING" text,
-"REMARKS_DISCHARGE_KEY_MEETING" text,
-"TIME_DISCHARGE_NOR_ACCEPTED" text,
-"DATE_DISCHARGE_NOR_ACCEPTED" text,
-"REMARKS_DISCHARGE_NOR_ACCEPTED" text,
-"TIME_DISCHARGE_VALVE_SEEALED" text,
-"DATE_DISCHARGE_VALVE_SEEALED" text,
-"REMARKS_DISCHARGE_VALVE_SEEALED" text,
-"TIME_DISCHARGE_TANK_INSPECT_MEASURE" text,
-"DATE_DISCHARGE_TANK_INSPECT_MEASURE" text,
-"REMARKS_DISCHARGE_TANK_INSPECT_MEASURE" text,
-"TIME_VISUAL_INSPECTION_SAMPLING" text,
-"DATE_VISUAL_INSPECTION_SAMPLING" text,
-"REMARKS_VISUAL_INSPECTION_SAMPLING" text,
-"TIME_DISCHARGE_HOST_CONNECTED" text,
-"DATE_DISCHARGE_HOST_CONNECTED" text,
-"REMARKS_DISCHARGE_HOST_CONNECTED" text,
-"TIME_DISCHARGE_BUNKER_COMMENCED" text,
-"DATE_DISCHARGE_BUNKER_COMMENCED" text,
-"REMARKS_DISCHARGE_BUNKER_COMMENCED" text,
-"TIME_DISCHARGE_BUNKER_COMPLETED" text,
-"DATE_DISCHARGE_BUNKER_COMPLETED" text,
-"REMARKS_DISCHARGE_BUNKER_COMPLETED" text,
-"TIME_DATE_DISCHARGE_HOSE_DISCONNECT" text,
-"DATE_DISCHARGE_HOSE_DISCONNECT" text,
-"REMARKS_DATE_DISCHARGE_HOSE_DISCONNECT" text,
-"TIME_DISCHARGE_TANK_INSPECT_MEASR_FINAL" text,
-"DATE_DISCHARGE_TANK_INSPECT_MEASR_FINAL" text,
-"REMARKS_DISCHARGE_TANK_INSPECT_MEASR_FINAL" text,
-"TIME_DISCHARGE_VISUAL_INSPECTION_SAMPLING" text,
-"DATE_DISCHARGE_VISUAL_INSPECTION_SAMPLING" text,
-"REMARKS_DISCHARGE_VISUAL_INSPECTION_SAMPLING" text,
-"TIME_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD" text,
-"DATE_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD" text,
-"REMARKS_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD" text,
-"TIME_DISCHARGE_BARGE_LEAVE_SHIP" text,
-"DATE_DISCHARGE_BARGE_LEAVE_SHIP" text,
-"REMARKS_DISCHARGE_BARGE_LEAVE_SHIP" text,
-"INITIAL_READOUT_KLOBS" text,
-"INITIAL_READOUT_KL15" text,
-"INITIAL_READOUT_METRIC_TONS" text,
-"FINAL_READOUT_KLOBS" text,
-"FINAL_READOUT_KL15" text,
-"FINAL_READOUT_METRIC_TONS" text,
-"DIFFERENCE_KLOBS" text,
-"DIFFERENCE_KL15" text,
-"DIFFERENCE_METRIC_TONS" text,
-"METER_FACTOR_KLOBS" text,
-"CORD_VOL_DELIVERED_KLOBS" text,
-"CORD_VOL_DELIVERED_KL15" text,
-"CORD_VOL_DELIVERED_METRIC_TONS" text,
-"DENSITY15DEG_KLOBS" text,
-"SUPPLY_LOSS_KLOBS" text,
-"SUPPLY_LOSS_KL15" text,
-"SUPPLY_LOSS_METRIC_TONS" text,
-"TIME_LOADING_TANK_INSPECT_MEASURE" text,
-"DATE_LOADING_TANK_INSPECT_MEASURE" text,
-"REMARKS_LOADING_TANK_INSPECT_MEASURE" text,
-"TIME_LOADING_TANK_INSPECT_METER_VERF" text,
-"DATE_LOADING_TANK_INSPECT_METER_VERF" text,
-"REMARKS_LOADING_TANK_INSPECT_METER_VERF" text,
-"TIME_LOADING_VISUAL_INSPEC_SAMPL" text,
-"DATE_LOADING_VISUAL_INSPEC_SAMPL" text,
-"REMARKS_LOADING_VISUAL_INSPEC_SAMPL" text,
-"TIME_LOADING_TANK_INSPECT_MEASR_FINAL" text,
-"DATE_LOADING_TANK_INSPECT_MEASR_FINAL" text,
-"REMARKS_LOADING_TANK_INSPECT_MEASR_FINAL" text,
-"TIME_LOADING_TANK_INSPECT_METER_FINAL" text,
-"DATE_LOADING_TANK_INSPECT_METER_FINAL" text,
-"REMARKS_LOADING_TANK_INSPECT_METER_FINAL" text,
-"TIME_LOADING_BARGE_LEAVE_DEPOT" text,
-"DATE_LOADING_BARGE_LEAVE_DEPOT" text,
-"REMARKS_LOADING_BARGE_LEAVE_DEPOT" text,
-"TIME_DISCHARGE_BARGE_ALL_FAST_ALONGSIDE" text,
-"DATE_DISCHARGE_BARGE_ALL_FAST_ALONGSIDE" text,
-"REMARKS_DISCHARGE_BARGE_ALL_FAST_ALONGSIDE" text,
-"TIME_DISCHARGE_TANK_INSPECT_METER_VERF" text,
-"DATE_DISCHARGE_TANK_INSPECT_METER_VERF" text,
-"REMARKS_DISCHARGE_TANK_INSPECT_METER_VERF" text,
-"TIME_DATE_DISCHARGE_HOSE_ARMS_DISCONNECT" text,
-"DATE_DISCHARGE_HOSE_ARMS_DISCONNECT" text,
-"REMARKS_DATE_DISCHARGE_HOSE_ARMS_DISCONNECT" text,
-"TIME_DISCHARGE_VISUAL_INSPEC_SAMPL" text,
-"DATE_DISCHARGE_VISUAL_INSPEC_SAMPL" text,
-"REMARKS_DISCHARGE_VISUAL_INSPEC_SAMPL" text,
-"TIME_DISCHARGE_TANK_INSPECT_METER_FINAL" text,
-"DATE_DISCHARGE_TANK_INSPECT_METER_FINAL" text,
-"REMARKS_DISCHARGE_TANK_INSPECT_METER_FINAL" text,
-"BARGE_BEFORE_LOADING_KLOBS" text,
-"BARGE_BEFORE_LOADING_KL15" text,
-"BARGE_BEFORE_LOADING_METRIC_TONS" text,
-"BARGE_AFTER_LOADING_KLOBS" text,
-"BARGE_AFTER_LOADING_KL15" text,
-"BARGE_AFTER_LOADING_METRIC_TONS" text,
-"BARGE_LOADED_KLOBS" text,
-"BARGE_LOADED_KL15" text,
-"BARGE_LOADED_METRIC_TONS" text,
-"BARGE_BEFORE_DISCHARGE_KLOBS" text,
-"BARGE_BEFORE_DISCHARGE_KL15" text,
-"BARGE_BEFORE_DISCHARGE_METRIC_TONS" text,
-"BARGE_AFTER_DISCHARGE_KLOBS" text,
-"BARGE_AFTER_DISCHARGE_KL15" text,
-"BARGE_AFTER_DISCHARGE_METRIC_TONS" text,
-"BARGE_DISCHARGE_KLOBS" text,
-"BARGE_DISCHARGE_KL15" text,
-"BARGE_DISCHARGE_METRIC_TONS" text,
-"BARGE_BEFORE_RECEIVE_KLOBS" text,
-"BARGE_BEFORE_RECEIVE_KL15" text,
-"BARGE_BEFORE_RECEIVE_METRIC_TONS" text,
-"BARGE_AFTER_RECEIVE_KLOBS" text,
-"BARGE_AFTER_RECEIVE_KL15" text,
-"BARGE_AFTER_RECEIVE_METRIC_TONS" text,
-"BARGE_RECEIVE_KLOBS" text,
-"BARGE_RECEIVE_KL15" text,
-"BARGE_RECEIVE_METRIC_TONS" text,
-"LOADING_LOSS_R1_KLOBS" text,
-"LOADING_LOSS_R1_KL15" text,
-"LOADING_LOSS_R1_METRIC_TONS" text,
-"TRANSPORTATION_LOSS_R2_KLOBS" text,
-"TRANSPORTATION_LOSS_R2_KL15" text,
-"TRANSPORTATION_LOSS_R2_METRIC_TONS" text,
-"DISCHARGE_LOSS_R3_KLOBS" text,
-"DISCHARGE_LOSS_R3_KL15" text,
-"DISCHARGE_LOSS_R3_METRIC_TONS" text,
-"SUPPLY_LOSS_R4_KLOBS" text,
-"SUPPLY_LOSS_R4_KL15" text,
-"SUPPLY_LOSS_R4_METRIC_TONS" text,
-"SF_QUANTITY_METRICTON	" text,
-"SF_SHORE_RECEIVED_KLOBS" text,
-"SF_SHORE_RECEIVED_KL15" text,
-"SF_SHORE_RECEIVED_BBLS" text,
-"SF_SHORE_RECEIVED_LONGTON" text,
-"SF_SHORE_RECEIVED_METRICTON" text,
-"SF_STU" text,
-"SF_DENSITY_15C" text,
-"SFAL_VS_SF_KLOBS" text,
-"SFAL_VS_SF_KL15" text,
-"SFAL_VS_SF_BBLS" text,
-"SFAL_VS_SF_LONGTON" text,
-"SFAL_VS_SF_METRICTON" text,
-"SFBD_VS_SR_KLOBS" text,
-"SFBD_VS_SR_KL15" text,
-"SFBD_VS_SR_BBLS" text,
-"SFBD_VS_SR_LONGTON" text,
-"SFBD_VS_SR_METRICTON" text,
-"SR_VS_BOL_KLOBS" text,
-"SR_VS_BOL_KL15" text,
-"SR_VS_BOL_BBLS" text,
-"SR_VS_BOL_LONGTON" text,
-"SR_VS_BOL_METRICTON" text,
-"TYPE_LOCATION" text,
-"TIME_LOADING_GAS_VESSEL_ARRIVED" text,
-"DATE_LOADING_GAS_VESSEL_ARRIVED" text,
-"REMARKS_LOADING_GAS_VESSEL_ARRIVED" text,
-"TIME_LOADING_GAS_VESSEL_ANCHORAGED" text,
-"DATE_LOADING_GAS_VESSEL_ANCHORAGED" text,
-"REMARKS_LOADING_GAS_VESSEL_ANCHORAGED" text,
-"TIME_LOADING_GAS_NOR_TENDERED" text,
-"DATE_LOADING_GAS_NOR_TENDERED" text,
-"REMARKS_LOADING_GAS_NOR_TENDERED" text,
-"TIME_LOADING_GAS_NOR_ACCEPTED" text,
-"DATE_LOADING_GAS_NOR_ACCEPTED" text,
-"REMARKS_LOADING_GAS_NOR_ACCEPTED" text,
-"TIME_LOADING_GAS_VESSEL_BERTHED" text,
-"DATE_LOADING_GAS_VESSEL_BERTHED" text,
-"REMARKS_LOADING_GAS_VESSEL_BERTHED" text,
-"TIME_LOADING_GAS_SURVEYOR_ON_BOARD" text,
-"DATE_LOADING_GAS_SURVEYOR_ON_BOARD" text,
-"REMARKS_LOADING_GAS_SURVEYOR_ON_BOARD" text,
-"TIME_LOADING_GAS_KEY_MEETING" text,
-"DATE_LOADING_GAS_KEY_MEETING" text,
-"REMARKS_LOADING_GAS_KEY_MEETING" text,
-"TIME_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMMENCE" text,
-"DATE_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMMENCE" text,
-"REMARKS_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMMENCE" text,
-"TIME_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMPLETED" text,
-"DATE_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMPLETED" text,
-"REMARKS_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMPLETED" text,
-"TIME_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMMENCE" text,
-"DATE_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMMENCE" text,
-"REMARKS_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMMENCE" text,
-"TIME_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMPLETED" text,
-"DATE_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMPLETED" text,
-"REMARKS_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMPLETED" text,
-"TIME_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMMENCE" text,
-"DATE_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMMENCE" text,
-"REMARKS_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMMENCE" text,
-"TIME_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMPLETED" text,
-"DATE_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMPLETED" text,
-"REMARKS_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMPLETED" text,
-"TIME_LOADING_GAS_OPENING_CUSTODY_TRANSFER_INSPECTION" text,
-"DATE_LOADING_GAS_OPENING_CUSTODY_TRANSFER_INSPECTION" text,
-"REMARKS_LOADING_GAS_OPENING_CUSTODY_TRANSFER_INSPECTION" text,
-"TIME_LOADING_GAS_COMMENCED_LOADING_OF_CARGO" text,
-"DATE_LOADING_GAS_COMMENCED_LOADING_OF_CARGO" text,
-"REMARKS_LOADING_GAS_COMMENCED_LOADING_OF_CARGO" text,
-"TIME_LOADING_GAS_COMPLETED_LOADING_OF_CARGO" text,
-"DATE_LOADING_GAS_COMPLETED_LOADING_OF_CARGO" text,
-"REMARKS_LOADING_GAS_COMPLETED_LOADING_OF_CARGO" text,
-"TIME_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMMENCE" text,
-"DATE_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMMENCE" text,
-"REMARKS_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMMENCE" text,
-"TIME_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMPLETED" text,
-"DATE_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMPLETED" text,
-"REMARKS_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMPLETED" text,
-"TIME_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMMENCE" text,
-"DATE_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMMENCE" text,
-"REMARKS_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMMENCE" text,
-"TIME_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMPLETED" text,
-"DATE_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMPLETED" text,
-"REMARKS_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMPLETED" text,
-"TIME_LOADING_GAS_CLOSING_CUSTODY_TRANSFER_INSPECTION" text,
-"DATE_LOADING_GAS_CLOSING_CUSTODY_TRANSFER_INSPECTION" text,
-"REMARKS_LOADING_GAS_CLOSING_CUSTODY_TRANSFER_INSPECTION" text,
-"TIME_LOADING_GAS_DOCUMENTS_ONBOARD" text,
-"DATE_LOADING_GAS_DOCUMENTS_ONBOARD" text,
-"REMARKS_LOADING_GAS_DOCUMENTS_ONBOARD" text,
-"TIME_LOADING_GAS_VESSEL_SAILED" text,
-"DATE_LOADING_GAS_VESSEL_SAILED" text,
-"REMARKS_LOADING_GAS_VESSEL_SAILED" text,
-"GSV_GROSS_VOL" text,
-"GSV_NETT_VOL" text,
-"GSV_METRIC_TON" text,
-"GSV_CALORIE_MMBTU" text,
-"GSV_GHV" text,
-"DENSITY" text,
-"SFBL_TANK_VOLUME_CORRECTED" text,
-"SFAL_TANK_VOLUME_CORRECTED" text,
-"GAUGING_TYPE_FLOAT_GAUGE" text,
-"GROS_STANDARD_VOLUME_LOADED" text,
-"NET_STANDARD_VOLUME_LOADED" text,
-"THERMAL_EXPANSION_VOLUME_LOADING" text,
-"VOLUME_GAS_DURING_LOADING" text,
-"ENERGY_GAS_CONSUMED_DURING_LOADING" text,
-"QUALITY_SAMPLE_SOURCE" text,
-"QUALITY_DATE_OF_ANALISYS" text,
-"QUALITY_SAMPLING_METHOD" text,
-"ANALYSIS_RESULT_C1" text,
-"ANALYSIS_RESULT_C2" text,
-"ANALYSIS_RESULT_C3" text,
-"ANALYSIS_RESULT_IC4" text,
-"ANALYSIS_RESULT_NC4" text,
-"ANALYSIS_RESULT_IC5" text,
-"ANALYSIS_RESULT_NC5" text,
-"ANALYSIS_RESULT_N2" text,
-"ANALYSIS_RESULT_TOTAL" text,
-"ANALYSIS_RESULT_H2S" text,
-"ANALYSIS_RESULT_TOTAL_SULFUR" text,
-"VESSEL_ID" text,
-"AREA_ID" text,
-"PORT_ID" text,
-"PRODUCT_ID" text,
-"SURVEYOR_ID" text,
-"CLIENT_ID" text
+"CLIENTS" text COLLATE "default",
+"BL_GSV_KLOBS" text COLLATE "default",
+"BL_GSV_KL15" text COLLATE "default",
+"BL_GSV_BBLS" text COLLATE "default",
+"BL_GSV_LONGTON" text COLLATE "default",
+"BL_GSV_METRICTON" text COLLATE "default",
+"BL_NSV_KLOBS" text COLLATE "default",
+"BL_NSV_KL15" text COLLATE "default",
+"BL_NSV_BBLS" text COLLATE "default",
+"BL_NSV_LONGTON" text COLLATE "default",
+"BL_NSV_METRICTON" text COLLATE "default",
+"SF_GSV_KL15" text COLLATE "default",
+"SF_GSV_BBLS" text COLLATE "default",
+"SF_GSV_LONGTON" text COLLATE "default",
+"SF_GSV_METRICTON" text COLLATE "default",
+"SF_NSV_KL15" text COLLATE "default",
+"SF_NSV_BBLS" text COLLATE "default",
+"SF_NSV_LONGTON" text COLLATE "default",
+"SF_NSV_METRICTON" text COLLATE "default",
+"SF_SFAL_TOV_KLOBS" text COLLATE "default",
+"SF_SFAL_TOV_KL15" text COLLATE "default",
+"SF_SFAL_TOV_BBLS" text COLLATE "default",
+"SF_SFAL_TOV_LONGTON" text COLLATE "default",
+"SFAL_GSV_KLOBS" text COLLATE "default",
+"SFAL_GSV_KL15" text COLLATE "default",
+"SFAL_GSV_BBLS" text COLLATE "default",
+"SFAL_GSV_LONGTON" text COLLATE "default",
+"SFAL_GSV_METRICTON" text COLLATE "default",
+"SFAL_NSV_KLOBS" text COLLATE "default",
+"SFAL_NSV_KL15" text COLLATE "default",
+"SFAL_NSV_BBLS" text COLLATE "default",
+"SFAL_NSV_LONGTON" text COLLATE "default",
+"SFAL_NSV_METRICTON" text COLLATE "default",
+"VEFL_KLOBS" text COLLATE "default",
+"VEFL_KL15" text COLLATE "default",
+"VEFL_BBLS" text COLLATE "default",
+"VEFL_LONGTON" text COLLATE "default",
+"VEFL_METRICTON" text COLLATE "default",
+"SL_APPLIED_VEFL_KL15" text COLLATE "default",
+"SL_APPLIED_VEFL_LONGTON" text COLLATE "default",
+"REMARKS_POB" text COLLATE "default",
+"REMARKS_A_AWEIGH" text COLLATE "default",
+"REMARKS_BERTHING" text COLLATE "default",
+"REMARKS_SBD_COMMENCED" text COLLATE "default",
+"REMARKS_SBD_COMPLETED" text COLLATE "default",
+"REMARKS_TANKS_INS_COMMENCED" text COLLATE "default",
+"REMARKS_TANKS_INS_COMPLETED" text COLLATE "default",
+"REMARKS_SVY_LEFT_VESSEL" text COLLATE "default",
+"REMARKS_VESSEL_SAIL" text COLLATE "default",
+"SFAL_KLOBS" text COLLATE "default",
+"SFAL_KL15" text COLLATE "default",
+"SFAL_BBLS" text COLLATE "default",
+"SFAL_LONGTON" text COLLATE "default",
+"SFAL_METRICTON" text COLLATE "default",
+"SF_SQ_KLOBS" text COLLATE "default",
+"SF_SQ_KL15" text COLLATE "default",
+"SF_SQ_BBLS" text COLLATE "default",
+"SF_SQ_LONGTON" text COLLATE "default",
+"SF_SQ_METRICTON" text COLLATE "default",
+"FREE_WATER_KLOBS" text COLLATE "default",
+"FREE_WATER_KL15" text COLLATE "default",
+"FREE_WATER_BBLS" text COLLATE "default",
+"FREE_WATER_LONGTON" text COLLATE "default",
+"FREE_WATER_METRICTON" text COLLATE "default",
+"SFBD_NSV_KLOBS" text COLLATE "default",
+"SFBD_NSV_KL15" text COLLATE "default",
+"SFBD_NSV_BBLS" text COLLATE "default",
+"SFBD_NSV_LONGTON" text COLLATE "default",
+"SFBD_NSV_METRICTON" text COLLATE "default",
+"TIME_LOADING_BARGE_ARRIVED" text COLLATE "default",
+"DATE_LOADING_BARGE_ARRIVED" text COLLATE "default",
+"REMARKS_LOADING_BARGE_ARRIVED" text COLLATE "default",
+"TIME_LOADING_NOR_TENDERED" text COLLATE "default",
+"DATE_LOADING_NOR_TENDERED" text COLLATE "default",
+"REMARKS_LOADING_NOR_TENDERED" text COLLATE "default",
+"TIME_LOADING_BARGE_ALL_FAST_ALONGSIDE" text COLLATE "default",
+"DATE_LOADING_BARGE_ALL_FAST_ALONGSIDE" text COLLATE "default",
+"REMARKS_LOADING_BARGE_ALL_FAST_ALONGSIDE" text COLLATE "default",
+"TIME_LOADING_KEY_MEETING" text COLLATE "default",
+"DATE_LOADING_KEY_MEETING" text COLLATE "default",
+"REMARKS_LOADING_KEY_MEETING" text COLLATE "default",
+"TIME_LOADING_NOR_ACCEPTED" text COLLATE "default",
+"DATE_LOADING_NOR_ACCEPTED" text COLLATE "default",
+"REMARKS_LOADING_NOR_ACCEPTED" text COLLATE "default",
+"TIME_LOADING_VALVE_SEEALED" text COLLATE "default",
+"DATE_LOADING_VALVE_SEEALED" text COLLATE "default",
+"REMARKS_LOADING_VALVE_SEEALED" text COLLATE "default",
+"TIME_LOADING_TANK_INSPECT_METER_VERIFICATION" text COLLATE "default",
+"DATE_LOADING_TANK_INSPECT_METER_VERIFICATION" text COLLATE "default",
+"REMARKS_LOADING_TANK_INSPECT_METER_VERIFICATION" text COLLATE "default",
+"TIME_LOADING_HOST_CONNECTED" text COLLATE "default",
+"DATE_LOADING_HOST_CONNECTED" text COLLATE "default",
+"REMARKS_LOADING_HOST_CONNECTED" text COLLATE "default",
+"TIME_LOADING_LOADING_COMMENCED" text COLLATE "default",
+"DATE_LOADING_LOADING_COMMENCED" text COLLATE "default",
+"REMARKS_LOADING_LOADING_COMMENCED" text COLLATE "default",
+"TIME_LOADING_LOADING_COMPLETED" text COLLATE "default",
+"DATE_LOADING_LOADING_COMPLETED" text COLLATE "default",
+"REMARKS_LOADING_LOADING_COMPLETED" text COLLATE "default",
+"TIME_DATE_LOADING_HOSE_ARMS_DISCONNECT" text COLLATE "default",
+"DATE_LOADING_HOSE_ARMS_DISCONNECT" text COLLATE "default",
+"REMARKS_DATE_LOADING_HOSE_ARMS_DISCONNECT" text COLLATE "default",
+"TIME_LOADING_TANK_INSPECT_METER_VERIFICATION_FINAL" text COLLATE "default",
+"DATE_LOADING_TANK_INSPECT_METER_VERIFICATION_FINAL" text COLLATE "default",
+"REMARKS_LOADING_TANK_INSPECT_METER_VERIFICATION_FINAL" text COLLATE "default",
+"TIME_LOADING_CALCUL_COMPLETED_DOC_ONBOARD" text COLLATE "default",
+"DATE_LOADING_CALCUL_COMPLETED_DOC_ONBOARD" text COLLATE "default",
+"REMARKS_LOADING_CALCUL_COMPLETED_DOC_ONBOARD" text COLLATE "default",
+"TIME_DISCHARGE_BARGE_ARRIVED" text COLLATE "default",
+"DATE_DISCHARGE_BARGE_ARRIVED" text COLLATE "default",
+"REMARKS_DISCHARGE_BARGE_ARRIVED" text COLLATE "default",
+"TIME_DISCHARGE_NOR_TENDERED" text COLLATE "default",
+"DATE_DISCHARGE_NOR_TENDERED" text COLLATE "default",
+"REMARKS_DISCHARGE_NOR_TENDERED" text COLLATE "default",
+"TIME_DISCHARGE_KEY_MEETING" text COLLATE "default",
+"DATE_DISCHARGE_KEY_MEETING" text COLLATE "default",
+"REMARKS_DISCHARGE_KEY_MEETING" text COLLATE "default",
+"TIME_DISCHARGE_NOR_ACCEPTED" text COLLATE "default",
+"DATE_DISCHARGE_NOR_ACCEPTED" text COLLATE "default",
+"REMARKS_DISCHARGE_NOR_ACCEPTED" text COLLATE "default",
+"TIME_DISCHARGE_VALVE_SEEALED" text COLLATE "default",
+"DATE_DISCHARGE_VALVE_SEEALED" text COLLATE "default",
+"REMARKS_DISCHARGE_VALVE_SEEALED" text COLLATE "default",
+"TIME_DISCHARGE_TANK_INSPECT_MEASURE" text COLLATE "default",
+"DATE_DISCHARGE_TANK_INSPECT_MEASURE" text COLLATE "default",
+"REMARKS_DISCHARGE_TANK_INSPECT_MEASURE" text COLLATE "default",
+"TIME_VISUAL_INSPECTION_SAMPLING" text COLLATE "default",
+"DATE_VISUAL_INSPECTION_SAMPLING" text COLLATE "default",
+"REMARKS_VISUAL_INSPECTION_SAMPLING" text COLLATE "default",
+"TIME_DISCHARGE_HOST_CONNECTED" text COLLATE "default",
+"DATE_DISCHARGE_HOST_CONNECTED" text COLLATE "default",
+"REMARKS_DISCHARGE_HOST_CONNECTED" text COLLATE "default",
+"TIME_DISCHARGE_BUNKER_COMMENCED" text COLLATE "default",
+"DATE_DISCHARGE_BUNKER_COMMENCED" text COLLATE "default",
+"REMARKS_DISCHARGE_BUNKER_COMMENCED" text COLLATE "default",
+"TIME_DISCHARGE_BUNKER_COMPLETED" text COLLATE "default",
+"DATE_DISCHARGE_BUNKER_COMPLETED" text COLLATE "default",
+"REMARKS_DISCHARGE_BUNKER_COMPLETED" text COLLATE "default",
+"TIME_DATE_DISCHARGE_HOSE_DISCONNECT" text COLLATE "default",
+"DATE_DISCHARGE_HOSE_DISCONNECT" text COLLATE "default",
+"REMARKS_DATE_DISCHARGE_HOSE_DISCONNECT" text COLLATE "default",
+"TIME_DISCHARGE_TANK_INSPECT_MEASR_FINAL" text COLLATE "default",
+"DATE_DISCHARGE_TANK_INSPECT_MEASR_FINAL" text COLLATE "default",
+"REMARKS_DISCHARGE_TANK_INSPECT_MEASR_FINAL" text COLLATE "default",
+"TIME_DISCHARGE_VISUAL_INSPECTION_SAMPLING" text COLLATE "default",
+"DATE_DISCHARGE_VISUAL_INSPECTION_SAMPLING" text COLLATE "default",
+"REMARKS_DISCHARGE_VISUAL_INSPECTION_SAMPLING" text COLLATE "default",
+"TIME_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD" text COLLATE "default",
+"DATE_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD" text COLLATE "default",
+"REMARKS_DISCHARGE_CALCUL_COMPLETED_DOC_ONBOARD" text COLLATE "default",
+"TIME_DISCHARGE_BARGE_LEAVE_SHIP" text COLLATE "default",
+"DATE_DISCHARGE_BARGE_LEAVE_SHIP" text COLLATE "default",
+"REMARKS_DISCHARGE_BARGE_LEAVE_SHIP" text COLLATE "default",
+"INITIAL_READOUT_KLOBS" text COLLATE "default",
+"INITIAL_READOUT_KL15" text COLLATE "default",
+"INITIAL_READOUT_METRIC_TONS" text COLLATE "default",
+"FINAL_READOUT_KLOBS" text COLLATE "default",
+"FINAL_READOUT_KL15" text COLLATE "default",
+"FINAL_READOUT_METRIC_TONS" text COLLATE "default",
+"DIFFERENCE_KLOBS" text COLLATE "default",
+"DIFFERENCE_KL15" text COLLATE "default",
+"DIFFERENCE_METRIC_TONS" text COLLATE "default",
+"METER_FACTOR_KLOBS" text COLLATE "default",
+"CORD_VOL_DELIVERED_KLOBS" text COLLATE "default",
+"CORD_VOL_DELIVERED_KL15" text COLLATE "default",
+"CORD_VOL_DELIVERED_METRIC_TONS" text COLLATE "default",
+"DENSITY15DEG_KLOBS" text COLLATE "default",
+"SUPPLY_LOSS_KLOBS" text COLLATE "default",
+"SUPPLY_LOSS_KL15" text COLLATE "default",
+"SUPPLY_LOSS_METRIC_TONS" text COLLATE "default",
+"TIME_LOADING_TANK_INSPECT_MEASURE" text COLLATE "default",
+"DATE_LOADING_TANK_INSPECT_MEASURE" text COLLATE "default",
+"REMARKS_LOADING_TANK_INSPECT_MEASURE" text COLLATE "default",
+"TIME_LOADING_TANK_INSPECT_METER_VERF" text COLLATE "default",
+"DATE_LOADING_TANK_INSPECT_METER_VERF" text COLLATE "default",
+"REMARKS_LOADING_TANK_INSPECT_METER_VERF" text COLLATE "default",
+"TIME_LOADING_VISUAL_INSPEC_SAMPL" text COLLATE "default",
+"DATE_LOADING_VISUAL_INSPEC_SAMPL" text COLLATE "default",
+"REMARKS_LOADING_VISUAL_INSPEC_SAMPL" text COLLATE "default",
+"TIME_LOADING_TANK_INSPECT_MEASR_FINAL" text COLLATE "default",
+"DATE_LOADING_TANK_INSPECT_MEASR_FINAL" text COLLATE "default",
+"REMARKS_LOADING_TANK_INSPECT_MEASR_FINAL" text COLLATE "default",
+"TIME_LOADING_TANK_INSPECT_METER_FINAL" text COLLATE "default",
+"DATE_LOADING_TANK_INSPECT_METER_FINAL" text COLLATE "default",
+"REMARKS_LOADING_TANK_INSPECT_METER_FINAL" text COLLATE "default",
+"TIME_LOADING_BARGE_LEAVE_DEPOT" text COLLATE "default",
+"DATE_LOADING_BARGE_LEAVE_DEPOT" text COLLATE "default",
+"REMARKS_LOADING_BARGE_LEAVE_DEPOT" text COLLATE "default",
+"TIME_DISCHARGE_BARGE_ALL_FAST_ALONGSIDE" text COLLATE "default",
+"DATE_DISCHARGE_BARGE_ALL_FAST_ALONGSIDE" text COLLATE "default",
+"REMARKS_DISCHARGE_BARGE_ALL_FAST_ALONGSIDE" text COLLATE "default",
+"TIME_DISCHARGE_TANK_INSPECT_METER_VERF" text COLLATE "default",
+"DATE_DISCHARGE_TANK_INSPECT_METER_VERF" text COLLATE "default",
+"REMARKS_DISCHARGE_TANK_INSPECT_METER_VERF" text COLLATE "default",
+"TIME_DATE_DISCHARGE_HOSE_ARMS_DISCONNECT" text COLLATE "default",
+"DATE_DISCHARGE_HOSE_ARMS_DISCONNECT" text COLLATE "default",
+"REMARKS_DATE_DISCHARGE_HOSE_ARMS_DISCONNECT" text COLLATE "default",
+"TIME_DISCHARGE_VISUAL_INSPEC_SAMPL" text COLLATE "default",
+"DATE_DISCHARGE_VISUAL_INSPEC_SAMPL" text COLLATE "default",
+"REMARKS_DISCHARGE_VISUAL_INSPEC_SAMPL" text COLLATE "default",
+"TIME_DISCHARGE_TANK_INSPECT_METER_FINAL" text COLLATE "default",
+"DATE_DISCHARGE_TANK_INSPECT_METER_FINAL" text COLLATE "default",
+"REMARKS_DISCHARGE_TANK_INSPECT_METER_FINAL" text COLLATE "default",
+"BARGE_BEFORE_LOADING_KLOBS" text COLLATE "default",
+"BARGE_BEFORE_LOADING_KL15" text COLLATE "default",
+"BARGE_BEFORE_LOADING_METRIC_TONS" text COLLATE "default",
+"BARGE_AFTER_LOADING_KLOBS" text COLLATE "default",
+"BARGE_AFTER_LOADING_KL15" text COLLATE "default",
+"BARGE_AFTER_LOADING_METRIC_TONS" text COLLATE "default",
+"BARGE_LOADED_KLOBS" text COLLATE "default",
+"BARGE_LOADED_KL15" text COLLATE "default",
+"BARGE_LOADED_METRIC_TONS" text COLLATE "default",
+"BARGE_BEFORE_DISCHARGE_KLOBS" text COLLATE "default",
+"BARGE_BEFORE_DISCHARGE_KL15" text COLLATE "default",
+"BARGE_BEFORE_DISCHARGE_METRIC_TONS" text COLLATE "default",
+"BARGE_AFTER_DISCHARGE_KLOBS" text COLLATE "default",
+"BARGE_AFTER_DISCHARGE_KL15" text COLLATE "default",
+"BARGE_AFTER_DISCHARGE_METRIC_TONS" text COLLATE "default",
+"BARGE_DISCHARGE_KLOBS" text COLLATE "default",
+"BARGE_DISCHARGE_KL15" text COLLATE "default",
+"BARGE_DISCHARGE_METRIC_TONS" text COLLATE "default",
+"BARGE_BEFORE_RECEIVE_KLOBS" text COLLATE "default",
+"BARGE_BEFORE_RECEIVE_KL15" text COLLATE "default",
+"BARGE_BEFORE_RECEIVE_METRIC_TONS" text COLLATE "default",
+"BARGE_AFTER_RECEIVE_KLOBS" text COLLATE "default",
+"BARGE_AFTER_RECEIVE_KL15" text COLLATE "default",
+"BARGE_AFTER_RECEIVE_METRIC_TONS" text COLLATE "default",
+"BARGE_RECEIVE_KLOBS" text COLLATE "default",
+"BARGE_RECEIVE_KL15" text COLLATE "default",
+"BARGE_RECEIVE_METRIC_TONS" text COLLATE "default",
+"LOADING_LOSS_R1_KLOBS" text COLLATE "default",
+"LOADING_LOSS_R1_KL15" text COLLATE "default",
+"LOADING_LOSS_R1_METRIC_TONS" text COLLATE "default",
+"TRANSPORTATION_LOSS_R2_KLOBS" text COLLATE "default",
+"TRANSPORTATION_LOSS_R2_KL15" text COLLATE "default",
+"TRANSPORTATION_LOSS_R2_METRIC_TONS" text COLLATE "default",
+"DISCHARGE_LOSS_R3_KLOBS" text COLLATE "default",
+"DISCHARGE_LOSS_R3_KL15" text COLLATE "default",
+"DISCHARGE_LOSS_R3_METRIC_TONS" text COLLATE "default",
+"SUPPLY_LOSS_R4_KLOBS" text COLLATE "default",
+"SUPPLY_LOSS_R4_KL15" text COLLATE "default",
+"SUPPLY_LOSS_R4_METRIC_TONS" text COLLATE "default",
+"SF_QUANTITY_METRICTON	" text COLLATE "default",
+"SF_SHORE_RECEIVED_KLOBS" text COLLATE "default",
+"SF_SHORE_RECEIVED_KL15" text COLLATE "default",
+"SF_SHORE_RECEIVED_BBLS" text COLLATE "default",
+"SF_SHORE_RECEIVED_LONGTON" text COLLATE "default",
+"SF_SHORE_RECEIVED_METRICTON" text COLLATE "default",
+"SF_STU" text COLLATE "default",
+"SF_DENSITY_15C" text COLLATE "default",
+"SFAL_VS_SF_KLOBS" text COLLATE "default",
+"SFAL_VS_SF_KL15" text COLLATE "default",
+"SFAL_VS_SF_BBLS" text COLLATE "default",
+"SFAL_VS_SF_LONGTON" text COLLATE "default",
+"SFAL_VS_SF_METRICTON" text COLLATE "default",
+"SFBD_VS_SR_KLOBS" text COLLATE "default",
+"SFBD_VS_SR_KL15" text COLLATE "default",
+"SFBD_VS_SR_BBLS" text COLLATE "default",
+"SFBD_VS_SR_LONGTON" text COLLATE "default",
+"SFBD_VS_SR_METRICTON" text COLLATE "default",
+"SR_VS_BOL_KLOBS" text COLLATE "default",
+"SR_VS_BOL_KL15" text COLLATE "default",
+"SR_VS_BOL_BBLS" text COLLATE "default",
+"SR_VS_BOL_LONGTON" text COLLATE "default",
+"SR_VS_BOL_METRICTON" text COLLATE "default",
+"TYPE_LOCATION" text COLLATE "default",
+"TIME_LOADING_GAS_VESSEL_ARRIVED" text COLLATE "default",
+"DATE_LOADING_GAS_VESSEL_ARRIVED" text COLLATE "default",
+"REMARKS_LOADING_GAS_VESSEL_ARRIVED" text COLLATE "default",
+"TIME_LOADING_GAS_VESSEL_ANCHORAGED" text COLLATE "default",
+"DATE_LOADING_GAS_VESSEL_ANCHORAGED" text COLLATE "default",
+"REMARKS_LOADING_GAS_VESSEL_ANCHORAGED" text COLLATE "default",
+"TIME_LOADING_GAS_NOR_TENDERED" text COLLATE "default",
+"DATE_LOADING_GAS_NOR_TENDERED" text COLLATE "default",
+"REMARKS_LOADING_GAS_NOR_TENDERED" text COLLATE "default",
+"TIME_LOADING_GAS_NOR_ACCEPTED" text COLLATE "default",
+"DATE_LOADING_GAS_NOR_ACCEPTED" text COLLATE "default",
+"REMARKS_LOADING_GAS_NOR_ACCEPTED" text COLLATE "default",
+"TIME_LOADING_GAS_VESSEL_BERTHED" text COLLATE "default",
+"DATE_LOADING_GAS_VESSEL_BERTHED" text COLLATE "default",
+"REMARKS_LOADING_GAS_VESSEL_BERTHED" text COLLATE "default",
+"TIME_LOADING_GAS_SURVEYOR_ON_BOARD" text COLLATE "default",
+"DATE_LOADING_GAS_SURVEYOR_ON_BOARD" text COLLATE "default",
+"REMARKS_LOADING_GAS_SURVEYOR_ON_BOARD" text COLLATE "default",
+"TIME_LOADING_GAS_KEY_MEETING" text COLLATE "default",
+"DATE_LOADING_GAS_KEY_MEETING" text COLLATE "default",
+"REMARKS_LOADING_GAS_KEY_MEETING" text COLLATE "default",
+"TIME_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMMENCE" text COLLATE "default",
+"DATE_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMMENCE" text COLLATE "default",
+"REMARKS_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMMENCE" text COLLATE "default",
+"TIME_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMPLETED" text COLLATE "default",
+"DATE_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMPLETED" text COLLATE "default",
+"REMARKS_LOADING_GAS_CONNECTION_OF_VAPOR_ARMS_COMPLETED" text COLLATE "default",
+"TIME_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMMENCE" text COLLATE "default",
+"DATE_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMMENCE" text COLLATE "default",
+"REMARKS_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMMENCE" text COLLATE "default",
+"TIME_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMPLETED" text COLLATE "default",
+"DATE_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMPLETED" text COLLATE "default",
+"REMARKS_LOADING_GAS_CONNECTION_OF_LIQUID_ARMS_COMPLETED" text COLLATE "default",
+"TIME_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMMENCE" text COLLATE "default",
+"DATE_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMMENCE" text COLLATE "default",
+"REMARKS_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMMENCE" text COLLATE "default",
+"TIME_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMPLETED" text COLLATE "default",
+"DATE_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMPLETED" text COLLATE "default",
+"REMARKS_LOADING_GAS_COOL_DOWN_OF_LOADING_ARMS_COMPLETED" text COLLATE "default",
+"TIME_LOADING_GAS_OPENING_CUSTODY_TRANSFER_INSPECTION" text COLLATE "default",
+"DATE_LOADING_GAS_OPENING_CUSTODY_TRANSFER_INSPECTION" text COLLATE "default",
+"REMARKS_LOADING_GAS_OPENING_CUSTODY_TRANSFER_INSPECTION" text COLLATE "default",
+"TIME_LOADING_GAS_COMMENCED_LOADING_OF_CARGO" text COLLATE "default",
+"DATE_LOADING_GAS_COMMENCED_LOADING_OF_CARGO" text COLLATE "default",
+"REMARKS_LOADING_GAS_COMMENCED_LOADING_OF_CARGO" text COLLATE "default",
+"TIME_LOADING_GAS_COMPLETED_LOADING_OF_CARGO" text COLLATE "default",
+"DATE_LOADING_GAS_COMPLETED_LOADING_OF_CARGO" text COLLATE "default",
+"REMARKS_LOADING_GAS_COMPLETED_LOADING_OF_CARGO" text COLLATE "default",
+"TIME_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMMENCE" text COLLATE "default",
+"DATE_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMMENCE" text COLLATE "default",
+"REMARKS_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMMENCE" text COLLATE "default",
+"TIME_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMPLETED" text COLLATE "default",
+"DATE_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMPLETED" text COLLATE "default",
+"REMARKS_LOADING_GAS_DISCONNECTION_OF_VAPOR_ARMS_COMPLETED" text COLLATE "default",
+"TIME_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMMENCE" text COLLATE "default",
+"DATE_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMMENCE" text COLLATE "default",
+"REMARKS_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMMENCE" text COLLATE "default",
+"TIME_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMPLETED" text COLLATE "default",
+"DATE_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMPLETED" text COLLATE "default",
+"REMARKS_LOADING_GAS_DISCONNECTION_OF_LIQUID_ARMS_COMPLETED" text COLLATE "default",
+"TIME_LOADING_GAS_CLOSING_CUSTODY_TRANSFER_INSPECTION" text COLLATE "default",
+"DATE_LOADING_GAS_CLOSING_CUSTODY_TRANSFER_INSPECTION" text COLLATE "default",
+"REMARKS_LOADING_GAS_CLOSING_CUSTODY_TRANSFER_INSPECTION" text COLLATE "default",
+"TIME_LOADING_GAS_DOCUMENTS_ONBOARD" text COLLATE "default",
+"DATE_LOADING_GAS_DOCUMENTS_ONBOARD" text COLLATE "default",
+"REMARKS_LOADING_GAS_DOCUMENTS_ONBOARD" text COLLATE "default",
+"TIME_LOADING_GAS_VESSEL_SAILED" text COLLATE "default",
+"DATE_LOADING_GAS_VESSEL_SAILED" text COLLATE "default",
+"REMARKS_LOADING_GAS_VESSEL_SAILED" text COLLATE "default",
+"GSV_GROSS_VOL" text COLLATE "default",
+"GSV_NETT_VOL" text COLLATE "default",
+"GSV_METRIC_TON" text COLLATE "default",
+"GSV_CALORIE_MMBTU" text COLLATE "default",
+"GSV_GHV" text COLLATE "default",
+"DENSITY" text COLLATE "default",
+"SFBL_TANK_VOLUME_CORRECTED" text COLLATE "default",
+"SFAL_TANK_VOLUME_CORRECTED" text COLLATE "default",
+"GAUGING_TYPE_FLOAT_GAUGE" text COLLATE "default",
+"GROS_STANDARD_VOLUME_LOADED" text COLLATE "default",
+"NET_STANDARD_VOLUME_LOADED" text COLLATE "default",
+"THERMAL_EXPANSION_VOLUME_LOADING" text COLLATE "default",
+"VOLUME_GAS_DURING_LOADING" text COLLATE "default",
+"ENERGY_GAS_CONSUMED_DURING_LOADING" text COLLATE "default",
+"QUALITY_SAMPLE_SOURCE" text COLLATE "default",
+"QUALITY_DATE_OF_ANALISYS" text COLLATE "default",
+"QUALITY_SAMPLING_METHOD" text COLLATE "default",
+"ANALYSIS_RESULT_C1" text COLLATE "default",
+"ANALYSIS_RESULT_C2" text COLLATE "default",
+"ANALYSIS_RESULT_C3" text COLLATE "default",
+"ANALYSIS_RESULT_IC4" text COLLATE "default",
+"ANALYSIS_RESULT_NC4" text COLLATE "default",
+"ANALYSIS_RESULT_IC5" text COLLATE "default",
+"ANALYSIS_RESULT_NC5" text COLLATE "default",
+"ANALYSIS_RESULT_N2" text COLLATE "default",
+"ANALYSIS_RESULT_TOTAL" text COLLATE "default",
+"ANALYSIS_RESULT_H2S" text COLLATE "default",
+"ANALYSIS_RESULT_TOTAL_SULFUR" text COLLATE "default",
+"VESSEL_ID" text COLLATE "default",
+"AREA_ID" text COLLATE "default",
+"PORT_ID" text COLLATE "default",
+"PRODUCT_ID" text COLLATE "default",
+"SURVEYOR_ID" text COLLATE "default",
+"CLIENT_ID" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -2273,12 +2307,12 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Records of FORM_ENTRY_FIELD
 -- ----------------------------
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('51', 'Calm', 'IWO/24/04/2018/002', '["LOI\/24\/04\/2018\/001","LOI\/24\/04\/2018\/002"]', '["VOY\/24\/04\/2018\/001","LOI\/24\/04\/2018\/002"]', 'Semarang', '["on","off"]', '["off","off"]', '["off","off"]', '["off","on"]', '["KONTRAK\/24\/04\/2018\/001","KONTRAK\/24\/04\/2018\/002"]', '["HSD","MFO"]', '1970-01-01', '05:00:00', null, null, 'FO/24/04/2018/002', null, '', 'multi_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-24', '04:00:00', null, null, '["Semarang","Makasar"]', '321234', 'multi_client', null, null, null, '00:00:00', null, null, null, 'multi_product', null, null, null, null, '1970-01-01', '', 'yes', 'yes', '04:11:00', null, null, null, '2018-04-24', '', null, null, null, null, '00:00:00', null, null, '1000', '1000', '121002', '121003', null, null, null, '-0.006343262036937747', '0.01890831252229754', '', null, null, '2018-04-24', '03:00:00', '121002', '', 'yes', null, '0.00247320692497939', '00:00:00', null, '1000', '1000', null, null, '1970-01-01', '', '14', null, null, '03:00:00', null, '00:00:00', '121001', '121241', '0.010729164991072434', '123000', null, '2018-04-24', '03:00:00', '', null, null, null, null, '121004', null, '', null, '0.019703156393803874', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '1000', '1000', '00:00:00', '00:00:00', null, null, '1000', null, null, '', '', '', '', '1000', '1000', null, null, '', '', '1000', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-25 00:08:17', null, null, 'admin', null, null, '123400', '123203', '121232', '123234', '134321', '124300', null, '112999', null, null, '124000', null, null, '00:00:00', null, '', '143233', '00:00:00', '123532', null, null, '', '', null, null, '-0.006343262036937747', '0.01890831252229754', '00:00:00', '00:00:00', '0.00247320692497939', '125400', null, null, '', '', '0.010729164991072434', '00:00:00', '00:00:00', '0.019703156393803874', '', '', 'Y', null, null, '["chevron-certification1.jpg"]', '["Indra - SBU AE Migas","Bagos W - SBU AE Migas","",""]', '"PENGHARGAAN_PERTAMINA1.JPG"', '"Sertifikat_HSE1.png"', '"Sertifikat-Prakualifikasi-CSMS1.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Kelud', '0', '["CUSTOMER1","CUSTOMER2"]', '122000', '123000', '123400', '122000', '123000', '121000', '121000', '122000', '123000', '121000', '123103', '123303', '123100', '121103', '123203', '123403', '123103', '123103', '124000', '123992', '121023', '125300', '120300', '123234', '121342', '124309', '123432', '121300', '123332', '121231', '124334', '123432', '123300', '123321', '121234', '124343', '123432', '123342', '123433', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["0","0","0","0"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('52', 'Calm', 'IWO/24/04/2008/003', '["LOI\/24\/04\/2008\/003"]', '["VOY\/24\/04\/2008\/003"]', 'Semarang', '["on"]', '["off"]', '["off"]', '["off"]', '["KONTRAK\/24\/04\/2008\/003"]', '["MFO"]', '2018-04-04', '03:00:00', null, null, 'FO/24/04/2008/003', null, '', 'single_port', '["100"]', null, null, null, null, '6', null, null, '00:00:00', null, '05:00:00', null, null, '["Semarang"]', '100000', 'single_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-04', '', 'yes', 'yes', '04:00:00', null, null, null, '1970-01-01', '', null, null, null, null, '00:00:00', null, null, '100000', '100000', '92335', '92345', null, null, null, '-0.08190145807360832', '-0.07330069748299614', '', null, null, null, '03:00:00', '94300', '', 'yes', null, '-0.061513631784751034', '00:00:00', null, '100000', '100000', null, null, '2018-04-04', '', '14', null, null, '03:00:00', null, '00:00:00', '92300', '92366', '-0.0744884806602905', '98000', null, null, '02:00:00', '', null, null, null, null, '92334', null, '', null, '-0.07402314779727813', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '100000', '100000', '00:00:00', '00:00:00', null, null, '100000', null, null, '', '', '', '', '100000', '100000', null, null, '', '', '100000', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-04-29 17:29:03', null, null, 'admin', null, null, '92000', '93000', '92334', '92343', '92326', '92332', null, '92342', null, null, '92375', null, null, '00:00:00', null, '', '92373', '00:00:00', '92376', null, null, '', '', null, null, '-0.08190145807360832', '-0.07330069748299614', '00:00:00', '00:00:00', '-0.061513631784751034', '94000', null, null, '', '', '-0.0744884806602905', '00:00:00', '00:00:00', '-0.07402314779727813', '', '', 'Y', null, null, '["chevron-certification2.jpg"]', '["Indra - SBU AE Migas","Iwan - SBU AE Migas"]', '"PENGHARGAAN_PERTAMINA2.JPG"', '"Sertifikat_HSE2.png"', '"Sertifikat-Prakualifikasi-CSMS2.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Gunung Dempo', '0', '["CUSTOMER3"]', '99000', '99500', '99700', '99550', '99890', '98000', '99100', '99800', '99200', '99200', '96000', '96000', '98000', '94000', '95000', '93000', '99000', '93000', '92353', '92365', '92375', '92600', '92324', '92354', '92367', '92335', '92335', '92321', '92332', '92245', '92323', '92363', '92311', '92337', '92342', '92356', '92337', '92327', '92364', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '[]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('51', 'Calm', 'IWO/24/04/2018/002', '["LOI\/24\/04\/2018\/001","LOI\/24\/04\/2018\/002"]', '["VOY\/24\/04\/2018\/001","LOI\/24\/04\/2018\/002"]', 'Semarang', '["off","on"]', '["off","off"]', '["off","off"]', '["on","off"]', '["KONTRAK\/24\/04\/2018\/001","KONTRAK\/24\/04\/2018\/002"]', '["HSD","MFO"]', '1970-01-01', '05:00:00', null, null, 'FO/24/04/2018/002', null, '', 'multi_port', '["50","50"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-24', '04:00:00', null, null, '["Semarang","Makasar"]', '321234', 'multi_client', null, null, null, '00:00:00', null, null, null, 'multi_product', null, null, null, null, '1970-01-01', '', 'yes', 'yes', '04:11:00', null, null, null, '2018-04-24', '', null, null, null, null, '00:00:00', null, null, '1000', '1000', '121002', '121003', null, null, null, '-0.006343262036937747', '0.01890831252229754', '', null, null, '2018-04-24', '03:00:00', '121002', '', 'yes', null, '0.00247320692497939', '00:00:00', null, '1000', '1000', null, null, '1970-01-01', '', '14', null, null, '03:00:00', null, '00:00:00', '121001', '121241', '0.010729164991072434', '123000', null, '2018-04-24', '03:00:00', '', null, null, null, null, '121004', null, '', null, '0.019703156393803874', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '1000', '1000', '00:00:00', '00:00:00', null, null, '1000', null, null, '', '', '', '', '1000', '1000', null, null, '', '', '1000', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-05-23 11:54:35', null, null, 'admin', null, null, '123400', '123203', '121232', '123234', '134321', '124300', null, '112999', null, null, '124000', null, null, '00:00:00', null, '', '143233', '00:00:00', '123532', null, null, '', '', null, null, '-0.006343262036937747', '0.01890831252229754', '00:00:00', '00:00:00', '0.00247320692497939', '125400', null, null, '', '', '0.010729164991072434', '00:00:00', '00:00:00', '0.019703156393803874', '', '', 'Y', null, null, '["chevron-certification1.jpg"]', '["Indra - SBU AE Migas","Bagos W - SBU AE Migas"]', '"PENGHARGAAN_PERTAMINA1.JPG"', '"Sertifikat_HSE1.png"', '"Sertifikat-Prakualifikasi-CSMS1.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Kelud', '0', '["PLN","Pertamina"]', '122000', '123000', '123400', '122000', '123000', '121000', '121000', '122000', '123000', '121000', '123103', '123303', '123100', '121103', '123203', '123403', '123103', '123103', '124000', '123992', '121023', '125300', '120300', '123234', '121342', '124309', '123432', '121300', '123332', '121231', '124334', '123432', '123300', '123321', '121234', '124343', '123432', '123342', '123433', null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '[]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', '["2","1"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('52', 'Calm', 'IWO/24/04/2008/003', '["LOI\/24\/04\/2008\/003"]', '["VOY\/24\/04\/2008\/003"]', 'Semarang', '["on"]', '["off"]', '["off"]', '["off"]', '["KONTRAK\/24\/04\/2008\/003"]', '["MFO"]', '2018-04-04', '03:00:00', null, null, 'FO/24/04/2008/003', null, '', 'single_port', '["100"]', null, null, null, null, '6', null, null, '00:00:00', null, '05:00:00', null, null, '["Semarang"]', '100000', 'single_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-04', '', 'yes', 'yes', '04:00:00', null, null, null, '1970-01-01', '', null, null, null, null, '00:00:00', null, null, '100000', '100000', '92335', '92345', null, null, null, '-0.08190145807360832', '-0.07330069748299614', '', null, null, null, '03:00:00', '94300', '', 'yes', null, '-0.061513631784751034', '00:00:00', null, '100000', '100000', null, null, '2018-04-04', '', '14', null, null, '03:00:00', null, '00:00:00', '92300', '92366', '-0.0744884806602905', '98000', null, null, '02:00:00', '', null, null, null, null, '92334', null, '', null, '-0.07402314779727813', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '100000', '100000', '00:00:00', '00:00:00', null, null, '100000', null, null, '', '', '', '', '100000', '100000', null, null, '', '', '100000', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-05-22 08:16:41', null, null, 'admin', null, null, '92000', '93000', '92334', '92343', '92326', '92332', null, '92342', null, null, '92375', null, null, '00:00:00', null, '', '92373', '00:00:00', '92376', null, null, '', '', null, null, '-0.08190145807360832', '-0.07330069748299614', '00:00:00', '00:00:00', '-0.061513631784751034', '94000', null, null, '', '', '-0.0744884806602905', '00:00:00', '00:00:00', '-0.07402314779727813', '', '', 'Y', null, null, '["chevron-certification2.jpg"]', '["Indra - SBU AE Migas","Iwan - SBU AE Migas"]', '"PENGHARGAAN_PERTAMINA2.JPG"', '"Sertifikat_HSE2.png"', '"Sertifikat-Prakualifikasi-CSMS2.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Gunung Dempo', '0', '["Pertamina"]', '99000', '99500', '99700', '99550', '99890', '98000', '99100', '99800', '99200', '99200', '96000', '96000', '98000', '94000', '95000', '93000', '99000', '93000', '92353', '92365', '92375', '92600', '92324', '92354', '92367', '92335', '92335', '92321', '92332', '92245', '92323', '92363', '92311', '92337', '92342', '92356', '92337', '92327', '92364', null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '[]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', '["1"]');
 INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('53', 'Calm', 'IWO/24/04/2008/004', '["LOI\/24\/04\/2008\/004"]', '["VOY\/24\/04\/2008\/004"]', 'Surabaya', '["on"]', '["off"]', '["off"]', '["off"]', '["KONTRAK\/24\/04\/2008\/004"]', '["HSD"]', '2018-04-26', '04:00:00', null, null, 'FO/24/04/2008/004', null, '', 'single_port', '["100"]', null, null, null, null, '6', null, null, null, '2018-04-25', '03:00:00', null, null, '["Surabaya"]', '125000', 'single_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-25', null, 'yes', 'yes', '03:00:00', null, null, null, '2018-04-25', '', null, null, null, null, '00:00:00', null, null, '125000', '125000', null, null, null, null, null, null, null, 'Arrived', null, null, '2018-04-25', '03:00:00', null, '', 'yes', null, null, null, null, '125000', '125000', null, null, '2018-04-25', '', '15', null, '00:00:00', '02:00:00', null, '00:00:00', null, null, null, null, null, '2018-04-24', '03:00:00', null, null, null, null, null, null, '', '', null, null, '00:00:00', null, null, '00:00:00', null, null, null, '00:00:00', '125000', '125000', null, null, null, null, '125000', null, '00:00:00', '', null, null, '', '125000', '125000', null, null, null, null, '125000', null, null, null, null, null, '', null, null, null, null, null, '0', '2018-04-29 17:28:46', null, null, 'admin', null, null, '123212', '124502', null, null, null, null, null, null, null, null, null, '00:00:00', '00:00:00', '00:00:00', null, '', null, '00:00:00', null, '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["chevron-certification3.jpg"]', '["Bagos W - SBU AE Migas"]', '"PENGHARGAAN_PERTAMINA3.JPG"', '"Sertifikat_HSE3.png"', '"Sertifikat-Prakualifikasi-CSMS3.jpg"', null, '00:00:00', null, '00:00:00', null, '00:00:00', null, null, '00:00:00', '00:00:00', null, null, '00:00:00', null, '00:00:00', null, '00:00:00', null, '00:00:00', '00:00:00', null, null, null, null, '125502', '124502', '124502', '124502', '124502', '123324', '123423', '124323', '123342', '123345', '122324', '123342', '123345', '123234', '124224', '124234', '124323', '123335', '123341', null, '124452', '0.007968000509952033', '-0.06883289339443896', '0.032111933944836225', '-0.0139997695511185', '0.0024129163900179756', '-0.02704084999670032', '-0.07894951938795527', '0.022858671942784396', '0.00115124245003851', '0.009000748051446635', '0.026328894314950765', '0.00937636637463361', '0.0014493692409839516', '0.015618266268694832', '-0.014865063427535878', '0', '-0.06883289339443896', '0.02427491052776473', '0.01675152830760882', '-0.005730518685409218', 'KM Dobonsolo', '0', '["CUSTOMER4"]', '125004', '124004', '120003', '120003', '120005', '124502', '132003', '120504', '123203', '123204', '124502', '125402', '125302', '124502', '123502', '123502', '125302', '122502', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '125502', '123502', '124502', '121502', '123502', '125502', '123502', '125502', '125502', '123502', '123224', '123242', '124234', '123342', '123342', '121224', '122344', '123323', '123345', '124323', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '[]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('54', 'Calm', 'IWO/24/04/2008/004', '["LOI\/24\/04\/2008\/005"]', '["VOY\/24\/04\/2008\/004"]', 'Surabaya', 'on', null, null, null, '["KONTRAK\/24\/04\/2008\/005"]', '["HSD"]', '2018-04-25', '05:00:00', null, null, 'FO/24/04/2008/004', null, '', 'single_port', '100', null, null, null, null, '6', null, null, null, '2018-04-25', '01:00:00', null, null, '["Surabaya"]', 'GSSWDS', 'single_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-25', null, 'yes', 'yes', '04:00:00', null, null, null, '2018-05-29', '', null, null, null, null, '00:00:00', null, null, '49434', '49434', null, null, null, null, null, null, null, '', null, null, '2018-04-25', '01:00:00', null, '', 'yes', null, null, null, null, '49434', '49434', null, null, '2018-04-23', '', '15', null, '00:00:00', '02:08:00', null, '00:00:00', null, null, null, null, null, '2018-04-25', '02:00:00', null, null, null, null, null, null, '', '', null, null, '00:00:00', null, null, '00:00:00', null, null, null, '00:00:00', '49434', '49434', null, null, null, null, '49434', null, '00:00:00', '', null, null, '', '49434', '49434', null, null, null, null, '49434', null, null, null, null, null, '', null, null, null, null, null, '0', '2018-04-25 01:11:12', null, null, 'admin', null, null, '49532', '49532', null, null, null, null, null, null, null, null, null, '00:00:00', '00:00:00', '00:00:00', null, '', null, '00:00:00', null, '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["PENGHARGAAN_PERTAMINA5.JPG"]', '["Indra - SBU AE Migas","Iwan - SBU AE Migas"]', '"chevron-certification5.jpg"', '"Sertifikat_HSE5.png"', '"Sertifikat-Prakualifikasi-CSMS5.jpg"', null, '00:00:00', null, '00:00:00', null, '00:00:00', null, null, '00:00:00', '00:00:00', null, null, '00:00:00', null, '00:00:00', null, '00:00:00', null, '00:00:00', '00:00:00', null, null, null, null, '49534', '49543', '49323', '49512', '49532', '49489', '49423', '49234', '49523', '49523', '49434', '49523', '49553', '49532', '49434', '49323', '49543', '49523', '49544', null, '49234', '0.00026255730818168965', '0.001655428594500747', '0', '-0.0007876878332525448', '-0.00014131707514030767', '-0.0015579790785666592', '-0.004427834423365967', '0', '0.00006054001695120475', '-0.0017794673730612905', '0.0022005975934749253', '0.005815597108355882', '-0.0008285841316034114', '-0.00086849387004908', '0.0011916303118435934', '0.0006460469999192441', '0.0014135131860587213', '-0.0008285841316034114', '-0.0008079012744642604', '-0.0005857165939570205', 'KM Dobonsolo', '0', '["CUSTOMER4"]', '49520', '49542', '49510', '49511', '49522', '49500', '49452', '49523', '49551', '49541', '49543', '49423', '49512', '49522', '49522', '49482', '49511', '49512', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', '49513', '49534', '49523', '49512', '49534', '49521', '49523', '49482', '49532', '49543', '49423', '49423', '49523', '49511', '49542', '49423', '49234', '49523', '49554', '49453', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1","1"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('55', 'Calm', 'IWO/24/04/2008/006', '["LOI\/24\/04\/2008\/006"]', '["VOY\/24\/04\/2008\/006"]', 'Semarang', '["off"]', '["off"]', '["off"]', '["on"]', '["KONTRAK\/24\/04\/2008\/006"]', '["HSD"]', '2018-04-25', '03:00:00', '95225', '95253', 'FO/24/04/2008/006', '95221', '', 'single_port', '["100"]', '95223', '95223', null, '95223', '7', null, '95253', '00:00:00', '2018-04-25', '02:00:00', null, null, '["Semarang"]', '95232', 'single_client', '95252', '95263', '94500', '00:00:00', null, null, '95224', 'single_product', '95253', '95253', '00:00:00', '00:00:00', '2018-04-25', '', 'yes', 'yes', '03:00:00', '96000', '95000', null, '2018-04-25', '', '94332', '94132', '95223', '95223', '00:00:00', '95223', '94000', '95232', '95232', '95255', '95253', '', '', '94232', '-0.008159793327242367', '0.0023418711865830734', 'calm', null, null, '2018-04-25', '02:02:00', '95231', '', 'yes', '95253', '0.013154441329931866', '00:00:00', '95000', '95232', '95232', null, null, '2018-04-25', '', '14', '94432', '00:00:00', '03:00:00', null, '00:00:00', '95253', '95251', '0.0026560843228034814', '94234', '96000', '2018-04-25', '02:00:00', '', null, null, null, null, '95223', '', '', '', '-0.008159793327242367', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '95232', '95232', '00:00:00', '00:00:00', null, null, '95232', '00:00:00', '00:00:00', '', '', '', '', '95232', '95232', null, null, '', '', '95232', '-0.008159793327242367', '0.0023418711865830734', '00:00:00', '00:00:00', '', '', '0.013154441329931866', '', '', '0.0026560843228034814', '-0.008159793327242367', '0', '2018-05-19 16:48:47', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["chevron-certification6.jpg"]', '["Bagos W - SBU AE Migas","Indra - SBU AE Migas"]', '"PENGHARGAAN_PERTAMINA6.JPG"', '"Sertifikat_HSE6.png"', '"Sertifikat-Prakualifikasi-CSMS6.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Umsini', '1', '["CUSTOMER6"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1","1"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', null);
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('56', 'Calm', 'IWO/24/04/2008/007', '["LOI\/24\/04\/2008\/007"]', '["VOY\/24\/04\/2008\/007"]', 'Semarang', '["off"]', '["off"]', '["off"]', '["off"]', '["KONTRAK\/24\/04\/2008\/007"]', '["HSD"]', '2018-04-25', '04:00:00', null, null, 'FO/24/04/2008/007', null, '', 'single_port', '[]', null, null, null, null, '7', null, null, null, '2018-04-24', '02:00:00', '2018-05-23', null, '["Surabaya"]', '151343', 'single_client', null, null, null, '05:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-25', null, 'yes', 'yes', '02:00:00', '15130', '15220', null, '2018-04-18', '', null, null, null, null, '00:00:00', null, '15130', '151343', '151343', null, null, null, null, null, '90.00224668613794', '89.94204450083596', '', null, null, '2018-04-24', '02:00:00', null, '', 'yes', null, '90.00204848973442', null, '15120', '151343', '151343', null, null, '2018-04-26', '', '15', null, '00:00:00', '03:00:00', null, '00:00:00', null, null, '90.00944873565345', null, '15130', '2018-04-26', '02:00:00', null, null, null, null, null, null, '', '', null, '90.00151992757215', '00:00:00', null, null, '00:00:00', null, null, null, '00:00:00', '151343', '151343', null, null, null, null, '151343', null, '00:00:00', '', null, null, '', '151343', '151343', null, null, null, null, '151343', null, null, null, null, null, '', null, null, null, null, null, '0', '2018-05-21 06:40:28', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', '00:00:00', '00:00:00', null, '', null, '00:00:00', null, '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["PENGHARGAAN_PERTAMINA7.JPG"]', '["Iwan - SBU AE Migas","Indra - SBU AE Migas"]', '"Sertifikat_HSE7.png"', '"Sertifikat-Prakualifikasi-CSMS7.jpg"', '"Sertifikat_HSE8.png"', null, '00:00:00', null, '00:00:00', null, '00:00:00', null, null, '00:00:00', '00:00:00', null, null, '00:00:00', null, '00:00:00', null, '00:00:00', null, '00:00:00', '00:00:00', '151343', '151343', '151343', '151343', null, null, null, null, null, '151311', '151310', '151334', '151341', '151311', '151331', '151352', '151323', '151323', '151312', '151343', '151323', '151343', '151334', '151343', '151311', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Kelud', '0', '["CUSTOMER7"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, '151331', '151323', '151334', '151343', '151323', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '151311', '151331', '151311', '151310', '151312', '151310', '151341', '-0.007929637681638263', '-0.021148495482813542', '0.019160632168719275', '-0.007269218823311724', '-0.013216761496930405', '-0.013217809676758464', '0.013216062802730438', '-0.027096509837354853', '-0.008591633071178375', '-0.007269747277149201', '90.00072697953222', '89.94257620712214', '90.00072697953222', '90.00726984336792', '90.00079306333933', '[]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', '[]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('55', 'Calm', 'IWO/24/04/2008/006', '["LOI\/24\/04\/2008\/006"]', '["VOY\/24\/04\/2008\/006"]', 'Semarang', '["off"]', '["off"]', '["off"]', '["on"]', '["KONTRAK\/24\/04\/2008\/006"]', '["HSD"]', '2018-04-25', '03:00:00', '95225', '95253', 'FO/24/04/2008/006', '95221', '', 'single_port', '["100"]', '95223', '95223', null, '95223', '7', null, '95253', '00:00:00', '2018-04-25', '02:00:00', null, null, '["Tg Emas"]', '95232', 'single_client', '95252', '95263', '94500', '00:00:00', null, null, '95224', 'single_product', '95253', '95253', '00:00:00', '00:00:00', '2018-04-25', '', 'yes', 'yes', '03:00:00', '96000', '95000', null, '2018-04-25', '', '94332', '94132', '95223', '95223', '00:00:00', '95223', '94000', '95232', '95232', '95255', '95253', '', '', '94232', '-0.008159793327242367', '0.0023418711865830734', 'calm', null, null, '2018-04-25', '02:02:00', '95231', '', 'yes', '95253', '0.013154441329931866', '00:00:00', '95000', '95232', '95232', null, null, '2018-04-25', '', '14', '94432', '00:00:00', '03:00:00', null, '00:00:00', '95253', '95251', '0.0026560843228034814', '94234', '96000', '2018-04-25', '02:00:00', '', null, null, null, null, '95223', '', '', '', '-0.008159793327242367', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '95232', '95232', '00:00:00', '00:00:00', null, null, '95232', '00:00:00', '00:00:00', '', '', '', '', '95232', '95232', null, null, '', '', '95232', '-0.008159793327242367', '0.0023418711865830734', '00:00:00', '00:00:00', '', '', '0.013154441329931866', '', '', '0.0026560843228034814', '-0.008159793327242367', '0', '2018-05-23 11:52:17', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["chevron-certification6.jpg"]', '["Bagos W - SBU AE Migas","Indra - SBU AE Migas"]', '"PENGHARGAAN_PERTAMINA6.JPG"', '"Sertifikat_HSE6.png"', '"Sertifikat-Prakualifikasi-CSMS6.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Umsini', '1', '["PLN"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1","1"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', '["2"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('56', 'Calm', 'IWO/24/04/2008/007', '["LOI\/24\/04\/2008\/007"]', '["VOY\/24\/04\/2008\/007"]', 'Semarang', '["off"]', '["off"]', '["off"]', '["off"]', '["KONTRAK\/24\/04\/2008\/007"]', '["HSD"]', '2018-04-25', '04:00:00', null, null, 'FO/24/04/2008/007', null, '', 'single_port', '[]', null, null, null, null, '7', null, null, null, '2018-04-24', '02:00:00', '2018-05-23', null, '["Tg Emas"]', '151343', 'single_client', null, null, null, '05:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-25', null, 'yes', 'yes', '02:00:00', '15130', '15220', null, '2018-04-18', '', null, null, null, null, '00:00:00', null, '15130', '151343', '151343', null, null, null, null, null, '90.00224668613794', '89.94204450083596', '', null, null, '2018-04-24', '02:00:00', null, '', 'yes', null, '90.00204848973442', null, '15120', '151343', '151343', null, null, '2018-04-26', '', '15', null, '00:00:00', '03:00:00', null, '00:00:00', null, null, '90.00944873565345', null, '15130', '2018-04-26', '02:00:00', null, null, null, null, null, null, '', '', null, '90.00151992757215', '00:00:00', null, null, '00:00:00', null, null, null, '00:00:00', '151343', '151343', null, null, null, null, '151343', null, '00:00:00', '', null, null, '', '151343', '151343', null, null, null, null, '151343', null, null, null, null, null, '', null, null, null, null, null, '0', '2018-05-22 14:56:46', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', '00:00:00', '00:00:00', null, '', null, '00:00:00', null, '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["PENGHARGAAN_PERTAMINA7.JPG"]', '["Iwan - SBU AE Migas","Indra - SBU AE Migas"]', '"Sertifikat_HSE7.png"', '"Sertifikat-Prakualifikasi-CSMS7.jpg"', '"Sertifikat_HSE8.png"', null, '00:00:00', null, '00:00:00', null, '00:00:00', null, null, '00:00:00', '00:00:00', null, null, '00:00:00', null, '00:00:00', null, '00:00:00', null, '00:00:00', '00:00:00', '151343', '151343', '151343', '151343', null, null, null, null, null, '151311', '151310', '151334', '151341', '151311', '151331', '151352', '151323', '151323', '151312', '151343', '151323', '151343', '151334', '151343', '151311', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Kelud', '0', '["CUSTOMER7"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, '151331', '151323', '151334', '151343', '151323', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '151311', '151331', '151311', '151310', '151312', '151310', '151341', '-0.007929637681638263', '-0.021148495482813542', '0.019160632168719275', '-0.007269218823311724', '-0.013216761496930405', '-0.013217809676758464', '0.013216062802730438', '-0.027096509837354853', '-0.008591633071178375', '-0.007269747277149201', '90.00072697953222', '89.94257620712214', '90.00072697953222', '90.00726984336792', '90.00079306333933', '[]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '["12"]', '[]', '[]', '[]');
 INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('57', 'Calm', 'IWO/24/04/2008/007 	', '["LOI\/24\/04\/2008\/007"]', '["VOY\/24\/04\/2008\/007"]', 'Makasar', '["on"]', '["off"]', '["off"]', '["off"]', '["KONTRAK\/24\/04\/2008\/007"]', '["MFO"]', '2018-04-27', '04:00:00', '124353', '124353', 'FO/24/04/2008/007 	', '124315', 'Rainy', 'single_port', '["100"]', '124311', '124323', null, '124323', '7', null, '124323', '00:00:00', '2018-04-25', '03:00:00', null, null, '["Makasar"]', '125000', 'single_client', '124353', '124325', '123000', '00:00:00', null, null, '124324', 'single_product', '124342', '124354', '00:00:00', '00:00:00', '2018-04-26', '', 'yes', 'yes', '03:00:00', '125000', '125000', null, '2018-04-25', '', '123400', '122320', '124343', '124342', '00:00:00', '124353', '125000', '124300', '124300', '124323', '124356', '', '', '123000', '-0.00554255053856859', '-0.005445492788944926', '', null, null, '2018-04-25', '03:00:00', '124321', 'Cloudy', 'yes', '124354', '-0.005445492788944926', '00:00:00', '125000', '124300', '124300', null, null, '2018-04-25', '', '14', '123240', '00:00:00', '02:00:00', null, '00:00:00', '124312', '124321', '-0.005194846969136497', '125000', '125000', '2018-04-25', '02:00:00', '', null, null, null, null, '124323', '', 'Cloudy', '', '-0.005291856331730228', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '124300', '124300', '00:00:00', '00:00:00', null, null, '124300', '00:00:00', '00:00:00', '', '', '', '', '124300', '124300', null, null, '', '', '124300', '-0.00554255053856859', '-0.005445492788944926', '00:00:00', '00:00:00', '', '', '-0.005445492788944926', '', '', '-0.005194846969136497', '-0.005291856331730228', '1', '2018-04-29 17:24:19', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '["20170430-0001.jpg"]', '["Bagos W - SBU AE Migas","Indra - SBU AE Migas","Iwan - SBU AE Migas"]', '"chevron-certification7.jpg"', '"PENGHARGAAN_PERTAMINA8.JPG"', '"Sertifikat-Prakualifikasi-CSMS8.jpg"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Dobonsolo', '0', '["CUSTOMER7"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '[]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('58', 'Calm', 'IWO/24/04/2008/010', '["LOI\/24\/04\/2008\/011"]', '["VOY\/24\/04\/2008\/010"]', 'Balikpapan', '["off"]', '["off"]', '["off"]', '["on"]', '["KONTRAK\/24\/04\/2008\/010"]', '["MHO"]', '2018-04-26', '03:00:00', null, null, 'FO/24/04/2008/010', null, '', 'single_port', '["100"]', null, null, null, null, '6', null, null, '00:00:00', '2018-04-27', '00:00:00', '2018-04-26', null, '["Balikpapan"]', 'Premium', 'single_client', null, null, null, '04:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-26', '', 'yes', 'yes', '03:00:00', null, null, null, '2018-04-26', '', null, null, null, null, '00:00:00', null, null, '123000', '123000', '123002', '123002', null, null, null, '0.9016292153100712', '0.9008162336184189', '', null, null, '2018-04-26', '02:00:00', '123001', '', 'yes', null, '0.000008129750823137272', '00:00:00', null, '123000', '123000', null, null, '2018-04-26', '', '14', null, null, '03:00:00', null, '00:00:00', '123002', '123003', '0.9000040648754115', '123000', null, '2018-04-26', '02:00:00', '', null, null, null, null, '123004', null, '', null, '0.899189450663805', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '123000', '123000', '00:00:00', '00:00:00', null, null, '123000', null, null, '', '', '', '', '123000', '123000', null, null, '', '', '123000', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-05-13 21:34:28', null, null, 'admin', null, null, '123003', '123003', '123002', '123002', '123002', '123002', null, '123004', null, null, '123002', null, null, '00:00:00', null, '', '123002', '00:00:00', '123005', null, null, '', '', null, null, '0.9016292153100712', '0.9008162336184189', '00:00:00', '00:00:00', '0.000008129750823137272', '123003', null, null, '', '', '0.9000040648754115', '00:00:00', '00:00:00', '0.899189450663805', '', '', 'Y', null, null, '["chevron-certification8.jpg"]', '["Indra - SBU AE Migas","Bagos W - SBU AE Migas"]', '"PENGHARGAAN_PERTAMINA9.JPG"', '"Sertifikat-Prakualifikasi-CSMS9.jpg"', '"Sertifikat_HSE9.png"', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Dobonsolo', '0', '["Pelni"]', '124000', '123003', '123000', '123320', '12301', '123004', '12200', '12100', '12300', '12400', '123002', '123004', '123002', '123001', '123004', '123005', '123002', '123006', '123002', '123004', '123003', '123004', '123004', '123003', '123003', '123003', '123005', '123005', '123004', '123004', '123005', '123003', '123003', '123003', '123002', '123004', '123005', '123002', '123003', null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '[]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('59', 'No Condition', 'IWO/001', '["LOI\/001","LOI\/002"]', '["VOYAGE\/001","VOY\/002"]', 'TANJUNG PRIUK', '["on"]', '["on"]', null, null, '["KONTRAK\/001","CLIENT002"]', '["HSO"]', '2018-04-18', '00:00:00', null, null, 'FO/001', null, 'test 3', 'single_port', '["50","50"]', null, null, '2018-05-16', null, '6', null, null, '00:00:00', '2018-04-18', '00:00:00', '2018-05-16', null, '[""]', '110', 'multi_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, '2018-04-17', '', 'no', 'no', '00:00:00', null, null, '2018-05-16', '2018-04-20', '', null, null, null, null, '00:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-04-16', '00:00:00', '421', 'test 2', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', null, null, '2018-04-16', '', '14', null, null, '00:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-04-20', '00:00:00', '', null, '2018-05-15', null, '2018-05-15', '654', null, 'test 1', null, '-3.022421524663677', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '1', '2018-05-06 01:02:46', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, '2018-05-08', '876', null, null, '00:00:00', '2018-05-07', '', '432', '00:00:00', '112', null, null, '', '', '2018-05-23', '2018-05-14', '-5.954545454545454', '-5.867256637168142', '00:00:00', '00:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, null, '["Iwan - SBU AE Migas","Bagos W - SBU AE Migas"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'PELNI001', '0', '["Pelni","Pertamina"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, '76', '46', '31', '53', '53', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1","1"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
@@ -2288,14 +2322,24 @@ INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('63', 'Calm', 'IWO/24/04/2008/01
 INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('65', 'No Condition', 'IWO/001', '["23.5\/SPK\/01\/2018"]', '[]', 'Makasar', '["on"]', 'on', null, null, '["245\/PELNI\/2017.9"]', '["HSD"]', '2018-05-18', '04:00:00', null, null, '245/PELNI/2017.9', null, '', 'single_port', '100', null, null, '2018-05-16', null, '6', 'single_cargo', null, '06:00:00', '2018-05-18', '05:00:00', '2018-05-16', null, '["Soekarno Hatta"]', '110', 'single_client', null, null, null, '05:00:00', null, null, null, 'single_product', null, null, null, null, '2018-05-17', '', 'no', 'no', '03:00:00', null, null, '2018-05-16', '2018-04-20', '', null, null, null, null, '05:00:00', null, null, '320', '102', '567', '543', null, null, null, '-5.954545454545454', '-5.867256637168142', '', null, null, '2018-05-16', '02:00:00', '421', '', 'no', null, '-1.1849710982658959', '00:00:00', null, '100', '320', null, null, '2018-05-16', '', '14', null, null, '02:00:00', null, '00:00:00', '421', '320', '0.2013888888888889', '765', null, '2018-05-17', '02:00:00', '', null, '2018-05-15', null, '2018-05-15', '654', null, '', null, '-3.022421524663677', '00:00:00', '21:00:00', '00:00:00', '08:00:00', null, null, null, '00:00:00', '200', '100', '00:00:00', '00:00:00', null, null, '200', null, null, '', '', '', '', '320', '210', null, null, '', '', '403', null, null, null, null, null, null, null, null, null, null, null, '1', '2018-05-21 05:49:24', null, null, 'admin', null, null, '65645', '432', '654', '344', '463', '230', null, '563', null, '2018-05-08', '876', null, null, '22:00:00', '2018-05-07', '', '432', '21:00:00', '112', null, null, '', '', '2018-05-23', '2018-05-14', '-5.954545454545454', '-5.867256637168142', '19:00:00', '19:00:00', '-1.1849710982658959', '410', null, null, '', '', '0.2013888888888889', '00:00:00', '00:00:00', '-3.022421524663677', '', '', 'Y', null, null, null, '["adbul"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM. Bukit Siguntang', '0', '["PLN"]', '34', '4523', '233', '665', '7856', '756', '776', '765', '345', '897', '754', '654', '765', '345', '643', '563', '123', '190', '567', '765', '678', '786', '321', '543', '542', '432', '120', '346', '113', '110', '432', '223', '543', '456', '123', '654', '110', '230', '234', null, null, null, null, null, null, null, null, null, null, null, null, null, null, '76', '46', '31', '53', '53', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["2"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '4d48001b-3e6e-498c-8bc4-b6cd92e2ac8d', '["14"]', '["20"]', '[]', '["3","Pelni"]');
 INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('66', 'keadaan baik', '', '["23.5\/SPK\/01\/2018"]', '[]', 'Makasar', null, 'on', null, null, '["245\/PELNI\/2017.9"]', '["HSD"]', null, null, null, null, '245/PELNI/2017.9', null, null, 'single_port', '100', null, null, null, null, '6', 'single_cargo', null, null, '2018-05-02', '18:00:00', null, null, '["Soekarno Hatta"]', null, 'single_client', null, null, null, null, null, null, null, 'single_product', null, null, null, null, null, null, 'no', 'no', null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', null, null, null, null, null, null, null, 'bunker dengan pipa', null, null, '2018-05-01', '09:00:00', null, null, 'no', null, null, null, null, '', '', null, '2018-05-01', null, null, '21', null, '13:00:00', null, null, '00:00:00', null, null, null, null, null, '2018-05-01', '17:00:00', null, null, null, null, null, null, '', null, null, null, null, null, null, null, null, null, null, '00:00:00', '', '', null, null, null, null, '', null, null, null, null, null, null, '', '', null, null, null, null, '', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-05-21 07:08:18', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["Muhammad Ridwan"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM. Lambelu', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '3:00', '01/05/2018', '', '6:00', '01/05/2018', '', '7:00', '01/05/2018', '', '8:00', '01/05/2018', '', '9:00', '01/05/2018', '', '10:00', '01/05/2018', '', '11:00', '01/05/2018', '', '13:00', '01/05/2018', '', '14:00', '01/05/2018', '', '15:00', '01/05/2018', '', '16:00', '01/05/2018', '', '17:00', '01/05/2018', '', '18:00', '01/05/2018', '', '19:00', '01/05/2018', '', '20:00', '01/05/2018', '', '21:00', '01/05/2018', '', '22:00', '01/05/2018', '', '23:00', '01/05/2018', '', '22:00', '01/05/2018', '', '21:00', '01/05/2018', '', '22:00', '01/05/2018', '', '10:00', '01/05/2018', '', '9:00', '01/05/2018', '', '18:00', '01/05/2018', '', '19:00', '01/05/2018', '', '19:00', '01/05/2018', '', '20:00', '01/05/2018', '', '19:00', '01/05/2018', '', '290.000', '286.013', '', '290.000', '286.013', '', '290.000', '286.013', '', '', '', '', '', '', '289.950', '285.963', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["2"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', '["3","Pelni"]');
 INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('67', 'calm', '', '["23.5\/SPK\/01\/2018"]', '[]', 'Makasar', null, 'on', null, null, '["245\/PELNI\/2017.9"]', '["HSD"]', null, null, null, null, '245/PELNI/2017.9', null, null, 'single_port', '100', null, null, null, null, '6', 'single_cargo', null, null, '2018-05-02', '03:00:00', null, null, '["Soekarno Hatta"]', null, 'single_client', null, null, null, null, null, null, null, 'single_product', null, null, null, null, null, null, 'no', 'no', null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', null, null, null, null, null, null, null, '', null, null, '2018-05-02', '02:00:00', null, null, 'no', null, null, null, null, '', '', null, '2018-05-02', null, null, '21', null, '05:00:00', null, null, '00:00:00', null, null, null, null, null, '2018-05-02', '03:00:00', null, null, null, null, null, null, '', null, null, null, null, null, null, null, null, null, null, '00:00:00', '', '', null, null, null, null, '', null, null, null, null, null, null, '', '', null, null, null, null, '', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-05-21 07:07:51', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["Muhammad Ridwan"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM. Binaiya', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '1:00', '02/05/2018', '', '2:00', '02/05/2018', '', '3:00', '02/05/2018', '', '3:00', '02/05/2018', '', '4:00', '02/05/2018', '', '5:00', '02/05/2018', '', '6:00', '02/05/2018', '', '8:00', '02/05/2018', '', '9:00', '02/05/2018', '', '10:00', '02/05/2018', '', '11:00', '02/05/2018', '', '12:00', '02/05/2018', '', '13:00', '02/05/2018', '', '14:00', '02/05/2018', '', '15:00', '02/05/2018', '', '7:00', '02/05/2018', '', '4:00', '02/05/2018', '', '2:00', '02/05/2018', '', '16:00', '02/05/2018', '', '17:00', '02/05/2018', '', '18:00', '02/05/2018', '', '19:00', '02/05/2018', '', '20:00', '02/05/2018', '', '20:00', '02/05/2018', '', '21:00', '02/05/2018', '', '21:00', '02/05/2018', '', '22:00', '02/05/2018', '', '23:00', '02/05/2018', '', '161.000', '157.787', '', '161.000', '157.787', '', '161.000', '157.787', '', '', '', '', '', '', '160.940', '158.727', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["2"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', '["3","Pelni"]');
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('68', '', '9/PELNI/2018', '["23.5\/SPK\/01\/2018"]', '[]', 'Makasar', null, 'on', null, null, '["245\/PELNI\/2017.9"]', '["HSD"]', null, null, null, null, '245/PELNI/2017.9', null, null, 'single_port', '100', null, null, null, null, '6', 'single_cargo', null, null, '2018-05-03', '04:00:00', null, null, '["Soekarno Hatta"]', null, 'single_client', null, null, null, null, null, null, null, 'single_product', null, null, null, null, null, null, 'no', 'no', null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', null, null, null, null, null, null, null, '', null, null, '2018-05-03', '03:00:00', null, null, 'no', null, null, null, null, '', '', null, '2018-05-03', null, null, '21', null, '03:00:00', null, null, '00:00:00', null, null, null, null, null, '2018-05-03', '04:00:00', null, null, null, null, null, null, '', null, null, null, null, null, null, null, null, null, null, '00:00:00', '', '', null, null, null, null, '', null, null, null, null, null, null, '', '', null, null, null, null, '', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-05-21 07:07:21', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["Muhammad cab makassar"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Bukit Siguntang', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '3:00', '03/05/2018', '', '4:00', '03/05/2018', '', '20:00', '03/05/2018', '', '21:00', '03/05/2018', '', '19:00', '03/05/2018', '', '19:00', '03/05/2018', '', '19:00', '03/05/2018', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '21:00', '03/05/2018', '', '21:00', '03/05/2018', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '3:00', '03/05/2018', '', '21:00', '03/05/2018', '', '0:00', '', '', '20:00', '03/05/2018', '', '20:00', '03/05/2018', '', '21:00', '03/05/2018', '', '0:00', '', '', '465.000', '460.093', '', '465.000', '460.093', '', '465.000', '460.093', '', '465.000', '465.000', '460.093', '', '465.000', '464.750', '459.846', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["2"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', '["3","Pelni"]');
-INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('69', '', '245/PELNI/2017.9', '["23.5\/SPK\/01\/2018"]', '[]', 'Jakarta', '["on"]', '["off"]', '["off"]', '["off"]', '["245\/PELNI\/2017.9"]', '["HSD"]', null, null, null, null, '245/PELNI/2017.9', null, null, 'single_port', '100', null, null, null, null, '6', 'single_cargo', null, null, '2018-05-04', '03:00:00', null, null, '["Tg Priok"]', null, 'single_client', null, null, null, null, null, null, null, 'single_product', null, null, null, null, null, null, 'no', 'no', null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', null, null, null, null, null, null, null, '', null, null, '2018-05-04', '02:00:00', null, null, 'no', null, null, null, null, '', '', null, null, null, null, '25', null, null, null, null, '00:00:00', null, null, null, null, null, '2018-05-04', '04:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', '', '', null, null, null, null, '', null, null, null, null, null, null, '', '', null, null, null, null, '', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-05-21 07:06:34', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["Fajar"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Umsini', '0', '["Pelni"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2:00', '04/05/2018', '', '3:00', '04/05/2018', '', '4:00', '04/05/2018', '', '5:00', '04/05/2018', '', null, null, null, '4:00', '04/05/2018', '', null, null, null, '4:00', '04/05/2018', '', '4:00', '04/05/2018', '', '4:00', '04/05/2018', '', '2:00', '16/05/2018', '', null, null, null, '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', null, null, null, '0:00', '', '', '0:00', '', '', null, null, null, '0:00', '', '', '0:00', '', '', '0:00', '', '', null, null, null, '0:00', '', '', null, null, null, '0:00', '', '', '0:00', '', '', '460.000', '454.348', '', '460.000', '454.348', '', '460.000', '454.348', '', '460.000', '460.000', '454.348', '', '', null, null, null, '3:00', '04/05/2018', '', '3:00', '04/05/2018', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '463.727', '458.029', '', '463.491', '457.796', '', ' 463.727 ', ' 458.029 ', '', ' 463.727 ', ' 458.029 ', '', ' 463.727 ', ' 458.029 ', '', ' 463.727 ', ' 458.029 ', '', ' 460.010 ', ' 454.357 ', '', ' 460.010 ', ' 454.357 ', '', ' 460.010 ', ' 454.357 ', '', '', '', '', '', '', '', '', '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["2"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', '["3","Pelni"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('68', '', '9/PELNI/2018', '[]', '[]', 'Makasar', null, 'on', null, null, '[]', '["HSD"]', null, null, null, null, '245/PELNI/2017.9', null, null, 'single_port', '100', null, null, null, null, '6', 'single_cargo', null, null, '2018-05-03', '04:00:00', null, null, '["Soekarno Hatta"]', null, 'single_client', null, null, null, null, null, null, null, 'single_product', null, null, null, null, null, null, 'no', 'no', null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', null, null, null, null, null, null, null, '', null, null, '2018-05-03', '03:00:00', null, null, 'no', null, null, null, null, '', '', null, '2018-05-03', null, null, '21', null, '03:00:00', null, null, '00:00:00', null, null, null, null, null, '2018-05-03', '04:00:00', null, null, null, null, null, null, '', null, null, null, null, null, null, null, null, null, null, '00:00:00', '', '', null, null, null, null, '', null, null, null, null, null, null, '', '', null, null, null, null, '', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-05-27 22:11:04', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["Muhammad cab makassar"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Bukit Siguntang', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '3:00', '03/05/2018', '', '4:00', '03/05/2018', '', '20:00', '03/05/2018', '', '21:00', '03/05/2018', '', '19:00', '03/05/2018', '', '19:00', '03/05/2018', '', '19:00', '03/05/2018', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '21:00', '03/05/2018', '', '21:00', '03/05/2018', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '3:00', '03/05/2018', '', '21:00', '03/05/2018', '', '0:00', '', '', '20:00', '03/05/2018', '', '20:00', '03/05/2018', '', '21:00', '03/05/2018', '', '0:00', '', '', '465.000', '460.093', '', '465.000', '460.093', '', '465.000', '460.093', '', '465.000', '465.000', '460.093', '', '465.000', '464.750', '459.846', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["2"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', '["3","Pelni"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('69', '', '245/PELNI/2017.9', '["23.5\/SPK\/01\/2018"]', '[]', 'Jakarta', '["on"]', '["off"]', '["off"]', '["off"]', '["245\/PELNI\/2017.9"]', '["HSD"]', null, null, null, null, '245/PELNI/2017.9', null, null, 'single_port', '[]', null, null, null, null, '6', 'single_cargo', null, null, '2018-05-04', '03:00:00', null, null, '["Tg Priok"]', null, 'single_client', null, null, null, null, null, null, null, 'single_product', null, null, null, null, null, null, 'no', 'no', null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', null, null, null, null, null, null, null, '', null, null, '2018-05-04', '02:00:00', null, null, 'no', null, null, null, null, '', '', null, null, null, null, '25', null, null, null, null, '00:00:00', null, null, null, null, null, '2018-05-04', '04:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', '', '', null, null, null, null, '', null, null, null, null, null, null, '', '', null, null, null, null, '', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-05-27 22:13:26', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["Fajar"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Umsini', '0', '["Pelni"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2:00', '04/05/2018', '', '3:00', '04/05/2018', '', '4:00', '04/05/2018', '', '5:00', '04/05/2018', '', null, null, null, '4:00', '04/05/2018', '', null, null, null, '4:00', '04/05/2018', '', '4:00', '04/05/2018', '', '4:00', '04/05/2018', '', '2:00', '16/05/2018', '', null, null, null, '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', null, null, null, '0:00', '', '', '0:00', '', '', null, null, null, '0:00', '', '', '0:00', '', '', '0:00', '', '', null, null, null, '0:00', '', '', null, null, null, '0:00', '', '', '0:00', '', '', '460.000', '454.348', '', '460.000', '454.348', '', '460.000', '454.348', '', '460.000', '460.000', '454.348', '', '', null, null, null, '3:00', '04/05/2018', '', '3:00', '04/05/2018', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '463.727', '458.029', '', '463.491', '457.796', '', ' 463.727 ', ' 458.029 ', '', ' 463.727 ', ' 458.029 ', '', ' 463.727 ', ' 458.029 ', '', ' 463.727 ', ' 458.029 ', '', ' 460.010 ', ' 454.357 ', '', ' 460.010 ', ' 454.357 ', '', ' 460.010 ', ' 454.357 ', '', '', '', '', '', '', '', '', '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["2"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', '["3"]');
 INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('70', 'calm', '', '["23.5\/SPK\/01\/2018"]', '[]', 'Jakarta', null, 'on', null, null, '["245\/PELNI\/2017.9"]', '["HSD"]', null, null, null, null, '245/PELNI/2017.9', null, null, 'single_port', '100', null, null, null, null, '6', 'single_cargo', null, null, '2018-05-05', '17:00:00', null, null, '["Tg Priok"]', null, 'single_client', null, null, null, null, null, null, null, 'single_product', null, null, null, null, null, null, 'no', 'no', null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', null, null, null, null, null, null, null, '', null, null, '2018-05-05', '04:00:00', null, null, 'no', null, null, null, null, '', '', null, null, null, null, '25', null, null, null, null, '00:00:00', null, null, null, null, null, '2018-05-05', '12:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', '', '', null, null, null, null, '', null, null, null, null, null, null, '', '', null, null, null, null, '', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-05-21 07:19:32', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["qaisar"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Gunung Dempo', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2:00', '05/05/2018', '', '4:00', '05/05/2018', '', '6:00', '05/05/2018', '', '7:00', '05/05/2018', '', null, null, null, '8:00', '05/05/2018', '', null, null, null, '23:00', '05/05/2018', '', '22:00', '05/05/2018', '', '0:00', '05/05/2018', '', '0:00', '', '', null, null, null, '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', null, null, null, '0:00', '', '', '4:00', '05/05/2018', '', null, null, null, '3:00', '05/05/2018', '', '4:00', '05/05/2018', '', '4:00', '05/05/2018', '', null, null, null, '20:00', '05/05/2018', '', null, null, null, '18:00', '05/05/2018', '', '22:00', '05/05/2018', '', ' 545.000 ', ' 537.826 ', '', ' 545.000 ', ' 537.826 ', '', ' 545.000 ', ' 537.826', '', ' 545.000 ', ' 545.000 ', ' 537.826', '', ' 545.000 ', null, null, null, '6:00', '05/05/2018', '', '1:00', '05/05/2018', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '0:00', '', '', '3:00', '05/05/2018', '', '3:00', '05/05/2018', '', '20:00', '05/05/2018', '', '20:00', '05/05/2018', '', ' 555.313 ', ' 548.003 ', '', ' 555.128 ', ' 547.820 ', '', ' 555.128 ', ' 547.820 ', '', ' 10.260 ', ' 10.125 ', '', ' 10.260 ', ' 10.125 ', '', ' 555.128 ', ' 547.820 ', '', ' 545.050 ', ' 537.875 ', '', ' 545.050 ', ' 537.875 ', '', ' 545.050 ', ' 537.875 ', '', '', '', '', '', '', '', '', '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["2"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', '["3","Pelni"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('71', 'calm', 'qwerty', '["Lo1234"]', '["BR092019"]', 'Riau', 'on', null, null, null, '["Ko002"]', '["Solar"]', '2018-05-01', '02:00:00', '0', '0', 'qwerty', '0', '', 'single_port', '100', ' 141.558,023 ', ' 22.494,521 ', '2018-05-01', '0', '7', 'single_cargo', ' 22.951,407 ', '03:00:00', '2018-05-01', '00:00:00', '2018-05-01', null, '["RU II Dumai"]', '13', 'single_client', ' 141.558,023 ', ' 22.494,521 ', '13, 6 , 14, 13', '02:00:00', '2018-05-01', '2018-05-01', '0', 'single_product', ' 22.951,407 ', ' 18.198,068 ', '06:00:00', '07:00:00', '2018-05-01', '', 'yes', 'yes', '00:00:00', ' 184.192,595 ', ' 29.269,441 ', '2018-05-01', '2018-05-01', '', ' 140.763,378 ', ' 22.368,246 ', ' 18.198,068 ', ' 18.490,421 ', '05:00:00', '0,99', ' 29.663,116 ', '2000', '2000', '0', '0', '', '', ' 22.651,102 ', 'NaN', 'NaN', 'Loading Completed', null, '2018-05-01', '2018-05-01', '13:00:00', '0', '', 'yes', ' 18.490,421 ', 'NaN', '23:00:00', ' 24.159,626 ', '2000', '2000', null, '2018-05-01', '2018-05-01', '', '14', ' 18.067,864 ', '16:00:00', '00:00:00', null, '00:00:00', '0', '0,99', 'NaN', '0,7611', ' 24.546,594 ', '2018-05-01', '15:00:00', '', '2018-05-01', '2018-05-01', '2018-05-01', '2018-05-01', '0', '', '', '', 'NaN', '21:00:00', '13:00:00', '15:00:00', '04:00:00', '2018-05-01', '2018-05-01', null, '00:00:00', '3000', '3000', '17:00:00', '18:00:00', '2018-05-01', '2018-05-01', '1,19', '10:00:00', '11:00:00', '', '', '', '', '3000', '3000', '2018-05-01', '2018-05-01', '', '', '1,19', 'NaN', 'NaN', '19:00:00', '20:00:00', '', '', 'NaN', '', '', 'NaN', 'NaN', '0', '2018-05-22 08:44:06', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '""', '["Lukmanur Hakim - SBU HMPM (Hulu Migas dan Produk Migas)"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'MT Atlantic Point', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', '["1","Pertamina"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('72', 'calm', 'qwert', '["qweert"]', '["qwert"]', 'Medan', 'on', null, null, null, '["qweert"]', '["Premium"]', '2018-05-01', '00:00:00', '0', '0', 'qwert', '0', '', 'single_port', '100', '141558.023', '22494.521', '2018-05-01', '0', '7', 'single_cargo', '22951.407', '00:00:00', '2018-05-01', '04:00:00', '2018-05-01', null, '["Belawan"]', '13', 'single_client', '141558.023', '22494.521', '13', '00:00:00', '2018-05-01', '2018-05-01', '0', 'single_product', '22951.407', '18198.068', '00:00:00', '00:00:00', '2018-05-01', '', 'no', 'no', '00:00:00', '1841925.95', '292694.41', '2018-05-01', '2018-05-15', '', '140763.378', '223682.46', '18198.068', '18490.421', '00:00:00', '2456', '296631.16', '1000', '1000', '0', '0', '', '', '22651.102', '-12.011808945650506', '-12.011808964502954', '', null, '2018-05-01', '2018-05-01', '00:00:00', '0', '', 'no', '18490.421', '-11.92431265760744', '00:00:00', '24159.626', '1000', '1000', null, '2018-05-01', '2018-05-01', '', '14', '18.067.864', '00:00:00', '00:00:00', null, '00:00:00', '0', '1235', '-0.32759290711519495', '0.7611', '24546.594', '2018-05-01', '00:00:00', '', '2018-05-01', '2018-05-01', '2018-05-01', '2018-05-01', '0', '', '', '12334', '-0.32753029257689714', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '2018-05-01', '2018-05-01', null, '00:00:00', '1000', '1000', '00:00:00', '00:00:00', '2018-05-01', '2018-05-01', '1,19', '00:00:00', '00:00:00', '', '', '', '', '1000', '1000', '2018-05-01', '2018-05-01', '', '', '1,19', '-12.011808945650506', '-12.011808964502954', '00:00:00', '00:00:00', '', '', '-11.92431265760744', '', '', '-0.32759290711519495', '-0.32753029257689714', '0', '2018-05-23 11:09:27', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, null, '["Aris D Mario - SBU HMPM (Hulu Migas dan Produk Migas)"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'MT Madonasun', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', '["2","PLN"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('73', 'CALM', 'xxxx', '["LOI\/24\/04\/2008\/011"]', '["VOY\/24\/04\/2008\/010"]', 'Ambon', 'on', 'on', null, 'on', '["K0001\/03\/2017\/SUC"]', '["MFO"]', '2018-05-15', '02:00:00', '3000', '3000', 'xxxx', '3000', '', 'single_port', '100', '200', '2000', '2018-05-15', '3000', '7', 'single_cargo', '2000', '04:00:00', '2018-05-30', '05:00:00', '2018-05-15', null, '["Ambon"]', '13', 'single_client', '4000', '4000', '13', '03:00:00', '2018-05-15', '2018-05-15', '3000', 'single_product', '4000', '200', '07:00:00', '08:00:00', '2018-05-15', '', 'no', 'no', '01:00:00', '1000.90', '1000.90', '2018-05-15', '2018-05-16', '', '12000', '12000', '4000', '200', '06:00:00', '300', '1000.90', '21000', '12000', '2000', '2000', '', '', '12000', '-4.0045', '0.49955', 'loading complete', null, '2018-05-15', '2018-05-28', '02:00:00', '2000', '', 'no', '4000', '0.49955', '20:00:00', '1000.90', '12000', '12000', null, '2018-05-15', '2018-05-15', '', '14', '12000', '14:00:00', '00:00:00', null, '00:00:00', '2000', '300', '-4.0045', '12000', '1000.90', '2018-05-29', '02:00:00', '', '2018-05-15', '2018-05-15', '2018-05-15', '2018-05-15', '2000', '', '', '', '-4.0045', '19:00:00', '11:00:00', '12:00:00', '05:00:00', '2018-05-15', '2018-05-15', null, '00:00:00', '3000', '3000', '15:00:00', '16:00:00', '2018-05-15', '2018-05-15', '1.19', '09:00:00', '10:00:00', '', '', '', '', '3000', '3000', '2018-05-15', '2018-05-15', '', '', '1.19', '-4.0045', '0.49955', '17:00:00', '18:00:00', '', '', '0.49955', '', '', '-4.0045', '-4.0045', '1', '2018-05-23 11:50:36', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '""', '["Indra - SBU AE Migas"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Dorolonda', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', '["2","PLN"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('74', 'Calm', 'PLN/001', '["PLN\/01"]', '["PLN\/01"]', 'Jakarta', 'on', null, null, 'on', '["PLN\/01"]', '["HSD"]', null, '00:00:00', null, null, 'PLN/001', null, '', 'single_port', '100', null, null, null, null, '6', 'single_cargo', null, '00:00:00', '2018-05-22', '00:00:00', null, null, '["Tanjung Priuk"]', 'Premium', 'single_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, null, '', 'no', 'no', '00:00:00', null, null, null, '2018-05-09', '', null, null, null, null, '00:00:00', null, null, '1000', '1000', '2000', '2000', null, null, null, '0.9188644271731', '0.9194335143572566', '', null, null, '2018-05-23', '02:00:00', '2000', '', 'no', null, '0.9203284419332547', '00:00:00', null, '1000', '1000', null, null, null, '', '14', null, null, '00:00:00', null, '00:00:00', '2000', '300', '0.9193528718344782', '12000', null, '2018-05-24', '00:00:00', '', null, null, null, null, '2000', null, '', null, '0.9193515605310439', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '3000', '3000', '00:00:00', '00:00:00', null, null, '800', null, null, '', '', '', '', '3000', '3000', null, null, '', '', '900', null, null, null, null, null, null, null, null, null, null, null, '0', '2018-05-23 14:39:04', null, null, 'admin', null, null, '12000', '9300', '9233', '9234', '9232', '345', null, '9234', null, null, '9237', null, null, '00:00:00', null, '', '235', '00:00:00', '9237', null, null, '', '', null, null, '0.9188644271731', '0.9194335143572566', '00:00:00', '00:00:00', '0.9203284419332547', '213', null, null, '', '', '0.9193528718344782', '00:00:00', '00:00:00', '0.9193515605310439', '', '', 'Y', null, null, null, '["Aris D Mario - SBU HMPM (Hulu Migas dan Produk Migas)","Lukmanur Hakim - SBU HMPM (Hulu Migas dan Produk Migas)"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Tatamailau', '0', null, '9900', '9950', '9970', '9955', '9989', '9800', '9910', '9980', '9920', '9920', '12000', '12000', '12000', '12000', '9500', '9300', '9900', '9300', '9235', '9236', '9237', '9260', '9232', '9235', '9236', '9233', '9233', '123005', '123004', '123004', '123005', '123003', '321', '334', '454', '553', '432', '234', '213', null, null, null, null, null, null, null, null, null, null, null, null, null, null, '12000', '12000', '12000', '12000', '12000', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1","1"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', '["PLN"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('75', '', 'PLN/001', '["PLN\/001"]', '["PLN\/001"]', 'Jakarta', 'on', null, null, null, '["PLN\/001"]', '["HSD"]', null, '00:00:00', null, null, 'PLN/001', null, '', 'single_port', '100', null, null, null, null, '6', 'single_cargo', null, '00:00:00', '2018-05-22', '00:00:00', null, null, '["Tanjung Priuk"]', '', 'single_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, null, '', null, null, '00:00:00', null, null, null, null, '', null, null, null, null, '00:00:00', null, null, '', '', '', '', null, null, null, '', '', '', null, null, '2018-05-23', '02:00:00', '', '', null, null, '', '00:00:00', null, '', '', null, null, null, '', '14', null, null, '00:00:00', null, '00:00:00', '', '', '', '', null, '2018-05-24', '00:00:00', '', null, null, null, null, '', null, '', null, '', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '', '', '00:00:00', '00:00:00', null, null, '', null, null, '', '', '', '', '', '', null, null, '', '', '', null, null, null, null, null, null, null, null, null, null, null, '1', '2018-05-23 13:25:24', null, null, 'admin', null, null, '', '', '', '', '', '', null, '', null, null, '', null, null, '00:00:00', null, '', '', '00:00:00', '', null, null, '', '', null, null, '', '', '00:00:00', '00:00:00', '', '', null, null, '', '', '', '00:00:00', '00:00:00', '', '', '', null, null, null, null, '["Aris D Mario - SBU HMPM (Hulu Migas dan Produk Migas)","Lukmanur Hakim - SBU HMPM (Hulu Migas dan Produk Migas)"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Tatamailau', '0', null, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1","1"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '3', 'dc609703-c7b8-47b7-8797-170e39bb3020', '[""]', '["20"]', '["9",""]', '["","PLN"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('76', '', 'PLN', '["PLN"]', '["PLN"]', '', 'on', null, null, null, '["PLN"]', '[""]', null, '00:00:00', null, null, 'PLN', null, '', null, '100', null, null, null, null, '6', null, null, '00:00:00', null, '00:00:00', null, null, null, '', 'single_client', null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, '', null, null, '00:00:00', null, null, null, null, '', null, null, null, null, '00:00:00', null, null, '', '', '', '', null, null, null, '', '', '', null, null, null, '00:00:00', '', '', null, null, '', '00:00:00', null, '', '', null, null, null, '', '14', null, null, '00:00:00', null, '00:00:00', '', '', '', '', null, null, '00:00:00', '', null, null, null, null, '', null, '', null, '', '00:00:00', '00:00:00', '00:00:00', '00:00:00', null, null, null, '00:00:00', '', '', '00:00:00', '00:00:00', null, null, '', null, null, '', '', '', '', '', '', null, null, '', '', '', null, null, null, null, null, null, null, null, null, null, null, '1', '2018-05-23 13:31:31', null, null, 'admin', null, null, '', '', '', '', '', '', null, '', null, null, '', null, null, '00:00:00', null, '', '', '00:00:00', '', null, null, '', '', null, null, '', '', '00:00:00', '00:00:00', '', '', null, null, '', '', '', '00:00:00', '00:00:00', '', '', '', null, null, null, null, '[""]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '0', null, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["0"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', null, null, '[""]', '["","PLN"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('77', 'Calm', 'IWO/24/04/2008/003', '["PLN\/01"]', '["PLN\/01"]', 'Medan', null, null, null, 'on', '["PLN\/01"]', '["HSD"]', null, '00:00:00', null, null, 'FO/24/04/2008/010', null, '', 'single_port', '100', null, null, null, null, '7', 'single_cargo', null, null, '2018-05-09', '05:00:00', null, null, '["Belawan"]', 'Solar', 'single_client', null, null, null, '00:00:00', null, null, null, 'single_product', null, null, null, null, null, null, 'no', 'no', '00:00:00', '1841925.95', '292694.41', null, '2018-05-19', '', null, null, null, null, '00:00:00', null, '296631.16', '1000', '1000', null, null, null, null, null, '-91996.2975', '-14534.720499999998', '', null, null, '2018-05-08', '11:00:00', null, '', 'no', null, '-14731.557999999999', null, '24159.626', '1000', '1000', null, null, null, '', '15', null, '00:00:00', '00:00:00', null, '00:00:00', null, null, '-1107.9813', null, '24546.594', '2018-05-08', '00:00:00', null, null, null, null, null, null, '', '', null, '-1127.3297000000002', '00:00:00', null, null, '00:00:00', null, null, null, '00:00:00', '1000', '1000', null, null, null, null, '800', null, '00:00:00', '', null, null, '', '1000', '1000', null, null, null, null, '900', null, null, null, null, null, '', null, null, null, null, null, '0', '2018-05-23 14:49:29', null, null, 'admin', null, null, null, null, null, null, null, null, null, null, null, null, null, '00:00:00', '00:00:00', '00:00:00', null, '', null, '00:00:00', null, '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, null, '["Aris D Mario - SBU HMPM (Hulu Migas dan Produk Migas)"]', '""', '""', '""', null, '00:00:00', null, '00:00:00', null, '00:00:00', null, null, '00:00:00', '00:00:00', null, null, '00:00:00', null, '00:00:00', null, '00:00:00', null, '00:00:00', '00:00:00', '292694.41', '1841925.95', '24546.594', '24159.626', null, null, null, null, null, '2000', '2000', '2000', '2000', '2000', '2000', '2000', '2000', '2000', '2000', '2000', '2000', '2000', '2000', '296631.16', '2000', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Gunung Dempo', '0', '["PLN"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, '2000', '2000', '2000', '2000', '2000', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '24546.594', '24546.594', '24546.594', '24546.594', '24546.594', '300', '20', '-14731.557999999999', '0', '0', '0', '0', '91.85223008943726', '91.85223008943726', '91.85223008943726', '91.85223008943726', '91.85223008943726', '-1108.4412199916615', '-1092.4033533939576', '-7403.794416447348', '1.5764631133753249', '0', '["1"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '9', '3e1a934d-7a20-4991-a068-3e02b189ed6f', '[""]', '["20"]', '["9"]', '[""]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('78', 'Calm', 'IWO/24/04/2008/010', '["LOI\/24\/04\/2008\/011"]', '["VOY\/24\/04\/2008\/010"]', 'Ambon', 'on', null, null, null, '["K0001\/03\/2017\/SUC"]', '[""]', '2018-05-02', '02:00:00', null, null, 'FO/24/04/2008/010', null, '', 'single_port', '100', null, null, '2018-05-02', null, '6', 'single_cargo', null, '04:00:00', '2018-05-01', '05:00:00', '2018-05-02', null, '["Ambon"]', 'Premium', 'single_client', null, null, null, '03:00:00', null, null, null, null, null, null, null, null, '2018-05-02', '', 'no', 'no', '01:00:00', null, null, '2018-05-02', '2018-05-04', '', null, null, null, null, '06:00:00', null, null, '1000', '1000', '2000', '2000', null, null, null, '0.9188644271731', '0.9194335143572566', '', null, '2018-05-02', '2018-05-01', '01:00:00', '2000', '', 'no', null, '0.9203284419332547', '19:00:00', null, '1000', '1000', null, null, '2018-05-02', '', '14', null, null, '00:00:00', null, '00:00:00', '2000', '92366', '0.9193528718344782', '12000', null, '2018-05-01', '04:00:00', '', '2018-05-02', '2018-05-02', '2018-05-02', '2018-05-02', '2000', null, '', null, '0.9193515605310439', '18:00:00', '11:00:00', '12:00:00', '05:00:00', '2018-05-02', '2018-05-02', null, '00:00:00', '1000', '1000', '14:00:00', '15:00:00', null, null, '800', null, null, '', '', '', '', '1000', '1000', null, null, '', '', '800', null, null, null, null, null, null, null, null, null, null, null, '1', '2018-05-24 11:29:13', null, null, 'admin', null, null, '12000', '9300', '12', '12', '9232', '92332', '2018-05-02', '12', null, '2018-05-02', '12', null, null, '07:00:00', '2018-05-02', '', '92373', '08:00:00', '12', null, null, '', '', '2018-05-02', '2018-05-02', '0.9188644271731', '0.9194335143572566', '09:00:00', '10:00:00', '0.9203284419332547', '213', '2018-05-02', '2018-05-02', '', '', '0.9193528718344782', '16:00:00', '17:00:00', '0.9193515605310439', '', '', 'Y', null, null, null, '["Bagos W - SBU AE Migas"]', '""', '""', '""', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '13:00:00', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Sirimau', '0', '["Pertamina"]', '9900', '9950', '9970', '9955', '9989', '9800', '9910', '9980', '9920', '9920', '12000', '12000', '12000', '12000', '9300', '9300', '9300', '9300', '9235', '9236', '9237', '9260', '9232', '9235', '9236', '9233', '9233', '123005', '123004', '123004', '123005', '123003', '92311', '92337', '92342', '92356', '92337', '92327', '92364', null, null, null, null, null, null, null, null, null, null, null, null, null, null, '12000', '12000', '12000', '12000', '12000', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '["1"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '16', 'd3ed99f5-09be-407a-949f-d8f9e4bec6a1', '["19"]', null, '["1"]', '["1"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('79', '', 'PTM/02', '["LOI\/24\/04\/2008\/006"]', '["VOY\/24\/04\/2008\/003"]', 'Semarang', '["off"]', '["off"]', '["off"]', '["off"]', '["K0001\/03\/2017\/SUC"]', '["MFO"]', '2018-05-06', '10:00:00', null, null, 'PTM/02', null, '', 'single_port', '[]', null, null, null, null, '7', 'single_cargo', null, null, '2018-05-05', '07:00:00', '2018-05-06', null, '["Semarang"]', 'Premium', 'single_client', null, null, null, '11:00:00', null, null, null, 'single_product', null, null, null, null, '2018-05-06', null, 'yes', 'yes', '09:00:00', '292694.41', '292694.41', '2018-05-06', '2018-05-08', '', null, null, null, null, '16:00:00', null, '296631.16', '', '', null, null, null, null, null, '-29269340.999999996', '-29269340.999999996', '', null, null, '2018-05-01', '02:00:00', null, '', 'yes', null, '-29663015.999999996', null, '24159.626', '', '', null, '2018-05-06', '2018-05-06', '', '15', null, '21:00:00', '08:00:00', null, '00:00:00', null, null, '-2415862.6', null, '24546.594', '2018-05-05', '04:00:00', null, '2018-05-07', null, null, '2018-05-06', null, '', '', null, '-2454559.4', '04:00:00', null, null, '15:00:00', null, null, null, '00:00:00', '', '', null, null, null, '2018-05-06', '', null, '22:00:00', '', null, null, '', '', '', null, null, null, null, '', null, null, null, null, null, '', null, null, null, null, null, '0', '2018-05-24 14:41:50', null, null, 'admin', null, null, null, null, null, null, null, null, '2018-05-07', null, '2018-05-07', '2018-05-06', null, '23:00:00', '00:00:00', '17:00:00', '2018-05-06', '', null, '18:00:00', null, '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, null, '["Aris D Mario - SBU HMPM (Hulu Migas dan Produk Migas)"]', '""', '""', '""', '2018-05-06', '13:00:00', '2018-05-06', '12:00:00', '2018-05-06', '14:00:00', '2018-05-06', '2018-05-06', '19:00:00', '20:00:00', '2018-05-06', '2018-05-07', '02:00:00', '2018-05-07', '03:00:00', '2018-05-07', '05:00:00', '2018-05-07', '06:00:00', '01:00:00', '292694.41', '292694.41', '232694.41', '232694.41', null, null, null, null, null, '235000', '235000', '235000', '235000', '235000', '235000', '235000', '235000', '235000', '234990', '234990', '234990', '234990', '234990', '292694.41', '235000', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Kelud', '0', '["Pertamina"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, '1', '1', '1', '1', '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '200000', '200000', '200000', '200000', '200000', '200000', '1200', '-24.550812765957435', '0.00425531914893617', '0.00425531914893617', '0.00425531914893617', '0.00425531914893617', '-17.5', '-17.5', '-17.5', '-17.5', '-17.5', '-48.31557999999998', '-46.34720499999999', '-46.34720499999999', '87.920187', '87.726703', '["1"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '[]', '[]', '[]', '["1"]');
+INSERT INTO "public"."FORM_ENTRY_FIELD" VALUES ('80', 'Calm', 'IWO/24/04/2008/010', '["LOI\/24\/04\/2008\/003"]', '["VOY\/24\/04\/2008\/003"]', 'Balikpapan', null, null, null, null, '["K0001\/03\/2017\/SUC"]', '["MHO"]', '2018-05-03', '15:00:00', null, null, 'FO/24/04/2008/003', null, '', 'single_port', '100', null, null, null, null, '7', 'single_cargo', null, null, '2018-05-03', '12:00:00', '2018-05-03', null, '["Balikpapan"]', 'Premium', 'single_client', null, null, null, '16:00:00', null, null, null, 'single_product', null, null, null, null, '2018-05-03', null, 'no', 'no', '14:00:00', '292694.41', '292694.41', '2018-05-03', '2018-05-07', '', null, null, null, null, '21:00:00', null, '296631.16', '100000', '100000', null, null, null, null, null, '-29269340.999999996', '-29269340.999999996', '', null, null, '2018-05-03', '00:00:00', null, '', 'no', null, '-29663015.999999996', null, '24159.626', '100000', '100000', null, '2018-05-04', '2018-05-03', '', '15', null, '02:00:00', '13:00:00', null, '00:00:00', null, null, '-2415862.6', null, '24546.594', '2018-05-03', '05:00:00', null, '2018-05-04', null, null, '2018-05-03', null, '', '', null, '-2454559.4', '09:00:00', null, null, '20:00:00', null, null, null, '00:00:00', '100000', '100000', null, null, null, '2018-05-04', '100000', null, '03:00:00', '', null, null, '', '100000', '100000', null, null, null, null, '100000', null, null, null, null, null, '', null, null, null, null, null, '0', '2018-05-27 22:26:54', null, null, 'admin', null, null, null, null, null, null, null, null, '2018-05-04', null, '2018-05-04', '2018-05-03', null, '04:00:00', '05:00:00', '22:00:00', '2018-05-03', '', null, '23:00:00', null, '', '', '', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'Y', null, null, '""', '["Indra - SBU AE Migas"]', '""', '""', '""', '2018-05-03', '18:00:00', '2018-05-03', '17:00:00', '2018-05-03', '19:00:00', '2018-05-04', '2018-05-04', '00:00:00', '01:00:00', '2018-05-04', '2018-05-04', '07:00:00', '2018-05-04', '08:00:00', '2018-05-04', '10:00:00', '2018-05-04', '11:00:00', '06:00:00', '292694.41', '292694.41', '232694.41', '232694.41', null, null, null, null, null, '235000', '235000', '235000', '235000', '235000', '235000', '235000', '235000', '235000', '234990', '234990', '234990', '234990', '234990', '292694.41', '235000', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'KM Dorolonda', '0', '["Pertamina"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '', '', '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, '1', '1', '1', '1', '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '200000', '200000', '200000', '200000', '200000', '200000', '1200', '-24.550812765957435', '0.00425531914893617', '0.00425531914893617', '0.00425531914893617', '0.00425531914893617', '-17.5', '-17.5', '-17.5', '-17.5', '-17.5', '-48.31557999999998', '-46.34720499999999', '-46.34720499999999', '87.920187', '87.726703', '["1"]', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', '["13"]', '[""]', '["2"]', '["1"]');
 
 -- ----------------------------
--- Table structure for "public"."gammu"
+-- Table structure for gammu
 -- ----------------------------
-DROP TABLE "public"."gammu";
+DROP TABLE IF EXISTS "public"."gammu";
 CREATE TABLE "public"."gammu" (
 "Version" int2 DEFAULT '0'::smallint NOT NULL
 )
@@ -2309,23 +2353,23 @@ WITH (OIDS=FALSE)
 INSERT INTO "public"."gammu" VALUES ('15');
 
 -- ----------------------------
--- Table structure for "public"."HEADER_INFO_CLIENT"
+-- Table structure for HEADER_INFO_CLIENT
 -- ----------------------------
-DROP TABLE "public"."HEADER_INFO_CLIENT";
+DROP TABLE IF EXISTS "public"."HEADER_INFO_CLIENT";
 CREATE TABLE "public"."HEADER_INFO_CLIENT" (
 "ID" int4 DEFAULT nextval('"HEADER_INFO_CLIENT_ID_seq"'::regclass) NOT NULL,
-"INTERVENTION_ID" text,
-"PRINCIPLE" text,
-"CONTRACT_ID" text,
-"PO" text,
-"RETAIL_REFERENCE" text,
-"PRODUCT_DETAIL" text,
-"FILE_ORDER" text,
+"INTERVENTION_ID" text COLLATE "default",
+"PRINCIPLE" text COLLATE "default",
+"CONTRACT_ID" text COLLATE "default",
+"PO" text COLLATE "default",
+"RETAIL_REFERENCE" text COLLATE "default",
+"PRODUCT_DETAIL" text COLLATE "default",
+"FILE_ORDER" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
 "LOCATION_ID" int4
 )
@@ -2342,21 +2386,21 @@ INSERT INTO "public"."HEADER_INFO_CLIENT" VALUES ('4', '3', 'contract', '1', 'PO
 INSERT INTO "public"."HEADER_INFO_CLIENT" VALUES ('5', null, null, null, null, null, 'null', null, '0', null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."inbox"
+-- Table structure for inbox
 -- ----------------------------
-DROP TABLE "public"."inbox";
+DROP TABLE IF EXISTS "public"."inbox";
 CREATE TABLE "public"."inbox" (
 "UpdatedInDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "ReceivingDateTime" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
-"Text" text NOT NULL,
-"SenderNumber" varchar(20) DEFAULT ''::character varying NOT NULL,
-"Coding" varchar(255) DEFAULT 'Default_No_Compression'::character varying NOT NULL,
-"UDH" text NOT NULL,
-"SMSCNumber" varchar(20) DEFAULT ''::character varying NOT NULL,
+"Text" text COLLATE "default" NOT NULL,
+"SenderNumber" varchar(20) COLLATE "default" DEFAULT ''::character varying NOT NULL,
+"Coding" varchar(255) COLLATE "default" DEFAULT 'Default_No_Compression'::character varying NOT NULL,
+"UDH" text COLLATE "default" NOT NULL,
+"SMSCNumber" varchar(20) COLLATE "default" DEFAULT ''::character varying NOT NULL,
 "Class" int4 DEFAULT '-1'::integer NOT NULL,
-"TextDecoded" text DEFAULT ''::text NOT NULL,
+"TextDecoded" text COLLATE "default" DEFAULT ''::text NOT NULL,
 "ID" int4 DEFAULT nextval('"inbox_ID_seq"'::regclass) NOT NULL,
-"RecipientID" text NOT NULL,
+"RecipientID" text COLLATE "default" NOT NULL,
 "Processed" bool DEFAULT false NOT NULL
 )
 WITH (OIDS=FALSE)
@@ -2368,9 +2412,9 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for "public"."INFO_CLIENT"
+-- Table structure for INFO_CLIENT
 -- ----------------------------
-DROP TABLE "public"."INFO_CLIENT";
+DROP TABLE IF EXISTS "public"."INFO_CLIENT";
 CREATE TABLE "public"."INFO_CLIENT" (
 "ID_INFO" int4 DEFAULT nextval('pelni_info_id_info_seq1'::regclass) NOT NULL,
 "VESSEL" int4 DEFAULT 0 NOT NULL,
@@ -2393,15 +2437,15 @@ CREATE TABLE "public"."INFO_CLIENT" (
 "BAR_FIG_AFDC_KL15" numeric DEFAULT 0 NOT NULL,
 "SHIP_REC_KL" numeric DEFAULT 0 NOT NULL,
 "SHIP_REC_KL15" numeric DEFAULT 0 NOT NULL,
-"REMARKS" text,
+"REMARKS" text COLLATE "default",
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text,
+"DELETE_USER" text COLLATE "default",
 "CLIENT_SITE_ID" int4,
-"CLIENT_SITE_NAME" text,
+"CLIENT_SITE_NAME" text COLLATE "default",
 "HEADER_INFO_CLIENT_ID" int4
 )
 WITH (OIDS=FALSE)
@@ -2465,18 +2509,18 @@ INSERT INTO "public"."INFO_CLIENT" VALUES ('79', '0', '0', '0', '1970-01-01', '1
 INSERT INTO "public"."INFO_CLIENT" VALUES ('81', '26', '1', '6', '2017-02-09', '2017-02-10', '2017-10-10', '2017-10-10', '2017-10-10', '70.000', '69.144', '1', '1', '70.000', '69.144', '70.000', '69.144', '67.000', '69.200', '69.900', '69.016', 'with standard', null, '', null, null, null, null, '2', 'PLN', null);
 
 -- ----------------------------
--- Table structure for "public"."KOMPONEN_HTML"
+-- Table structure for KOMPONEN_HTML
 -- ----------------------------
-DROP TABLE "public"."KOMPONEN_HTML";
+DROP TABLE IF EXISTS "public"."KOMPONEN_HTML";
 CREATE TABLE "public"."KOMPONEN_HTML" (
 "ID" int4 DEFAULT nextval('"KOMPONEN_HTML_ID_seq"'::regclass) NOT NULL,
-"NAME" text,
-"DATA" text,
+"NAME" text COLLATE "default",
+"DATA" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6)
 )
 WITH (OIDS=FALSE)
@@ -6874,20 +6918,128 @@ INSERT INTO "public"."KOMPONEN_HTML" VALUES ('37', 'Timelog Product Loading', '<
 </tr>
 </tbody>
 </table>', '0', null, null, null, null, null);
+INSERT INTO "public"."KOMPONEN_HTML" VALUES ('38', 'Timelog Crude Trucking Loading', '<table id="table_list_timelog" style="width: 900px; border-collapse: separate; border-spacing: 8px; border: 4px solid #ccc; border-radius: 5px;">
+<tbody>
+<tr>
+<th style="width: 25px;"><center>No</center></th>
+<th style="width: 250px;">&nbsp;&nbsp;Activities</th>
+<th style="width: 80px;">Time</th>
+<th style="width: 100px;">Date</th>
+<th>Remarks/Delays/Etc</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Tank Truck on Terminal</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_truck_on_terminal" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_truck_on_terminal" data-date-format="dd/mm/yyyy" type="text" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_truck_on_terminal" type="text" /></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Inspector On Terminal</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_inspector_on_terminal" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_inspector_on_terminal" data-date-format="dd/mm/yyyy" type="text" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_inspector_on_terminal" type="text" /></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Tank Inspection (Loading)</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_tanks_inspection_loading" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_tanks_inspection_loading" data-date-format="dd/mm/yyyy" type="text" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_tanks_inspection_loading" type="text" /></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Hoses Connected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_hose_connected" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_hose_connected" data-date-format="dd/mm/yyyy" type="text" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_hose_connected" type="text" /></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Sampling (Unloading)</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_sampling_unloading" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_sampling_unloading" data-date-format="dd/mm/yyyy" type="text" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_sampling_unloading" type="text" /></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Ullages / Dips Commenced (Loading)</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_ullages_commenced_loading" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_ullages_commenced_loading" data-date-format="dd/mm/yyyy" type="text" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_ullages_commenced_loading" type="text" /></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Loading Commenced</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_commenced" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_commenced" data-date-format="dd/mm/yyyy" type="text" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_commenced" type="text" /></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Loading Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_loading_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_loading_completed" data-date-format="dd/mm/yyyy" type="text" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_loading_completed" type="text" /></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Hoses Disconnected</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_hose_disconnected" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_hose_disconnected" data-date-format="dd/mm/yyyy" type="text" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_hose_disconnected" type="text" /></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Sampling (Loading)</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_sampling_loading" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_sampling_loading" data-date-format="dd/mm/yyyy" type="text" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_sampling_loading" type="text" /></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Document Completed</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_document_completed" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_document_completed" data-date-format="dd/mm/yyyy" type="text" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_document_completed" type="text" /></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Tank Truck Left Terminal</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_tank_truck_left_terminal" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_tank_truck_left_terminal" data-date-format="dd/mm/yyyy" type="text" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_tank_truck_left_terminal" type="text" /></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Inspector Left Terminal</td>
+<td><input class="timepicker" style="margin-left: -10px; width: 60px;" name="time_inspector_left_terminal" type="text" /></td>
+<td><input class="datepicker" style="min-width: 100px !important; width: 100px; margin-left: -10px;" name="date_inspector_left_terminal" data-date-format="dd/mm/yyyy" type="text" /></td>
+<td><input class="" style="margin-left: -10px; width: 100%;" name="remarks_inspector_left_terminal" type="text" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Remarks</td>
+<td colspan="3"><input style="margin-left: -10px; width: 100%;" name="activities_remarks" type="text" /></td>
+</tr>
+</tbody>
+</table>', '0', null, null, null, null, null);
+INSERT INTO "public"."KOMPONEN_HTML" VALUES ('39', 'Quantity Product Trucking Loading', '', '0', null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."KOMPONEN_JSON"
+-- Table structure for KOMPONEN_JSON
 -- ----------------------------
-DROP TABLE "public"."KOMPONEN_JSON";
+DROP TABLE IF EXISTS "public"."KOMPONEN_JSON";
 CREATE TABLE "public"."KOMPONEN_JSON" (
 "ID" int4 DEFAULT nextval('"KOMPONEN_JSON_ID_seq"'::regclass) NOT NULL,
-"NAME" text,
+"NAME" text COLLATE "default",
 "DATA" jsonb,
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6)
 )
 WITH (OIDS=FALSE)
@@ -6909,20 +7061,20 @@ INSERT INTO "public"."KOMPONEN_JSON" VALUES ('9', 'timelog_petrokimia_discharge'
 INSERT INTO "public"."KOMPONEN_JSON" VALUES ('10', 'timelog_crude_bunker_vessel', '[{"date": "date_loading_barge_arrived", "time": "time_loading_barge_arrived", "tr_css": "", "remarks": "remarks_loading_barge_arrived", "activities": "@Loading - Barge Arrived"}, {"date": "date_loading_nor_tendered", "time": "time_loading_nor_tendered", "tr_css": "", "remarks": "remarks_loading_nor_tendered", "activities": "@Loading - NOR Tendered"}, {"date": "date_loading_barge_all_fast_alongside", "time": "time_loading_barge_all_fast_alongside", "tr_css": "", "remarks": "remarks_loading_barge_all_fast_alongside", "activities": "@Loading - Barge All Fast / Alongside"}, {"date": "date_loading_key_meeting", "time": "time_loading_key_meeting", "tr_css": "", "remarks": "remarks_loading_key_meeting", "activities": "@Loading - Key Meeting"}, {"date": "date_loading_valve_seealed", "time": "time_loading_valve_seealed", "tr_css": "", "remarks": "remarks_loading_valve_seealed", "activities": "@Loading - Valve Seealed"}, {"date": "date_loading_tank_inspect_measure", "time": "time_loading_tank_inspect_measure", "tr_css": "", "remarks": "remarks_loading_tank_inspect_measure", "activities": "@Loading - Tank Inspection and Measurement - Initial @Barge"}, {"date": "date_loading_tank_inspect_meter_verf", "time": "time_loading_tank_inspect_meter_verf", "tr_css": "", "remarks": "remarks_loading_tank_inspect_meter_verf", "activities": "@Loading - Tank Inspection and Meter Verification - Initial @Depot"}, {"date": "date_loading_host_connected", "time": "time_loading_host_connected", "tr_css": "", "remarks": "remarks_loading_host_connected", "activities": "@Loading - Hose(s) Connected"}, {"date": "date_loading_loading_commenced", "time": "time_loading_loading_commenced", "tr_css": "", "remarks": "remarks_loading_loading_commenced", "activities": "@Loading - Loading Commenced"}, {"date": "date_loading_loading_completed", "time": "time_loading_loading_completed", "tr_css": "", "remarks": "remarks_loading_loading_completed", "activities": "@Loading - Loading Completed"}, {"date": "date_loading_hose_arms_disconnect", "time": "time_date_loading_hose_arms_disconnect", "tr_css": "", "remarks": "remarks_date_loading_hose_arms_disconnect", "activities": "@Loading - Hose(s) Arms Disconnected"}, {"date": "date_loading_visual_inspec_sampl", "time": "time_loading_visual_inspec_sampl", "tr_css": "", "remarks": "remarks_loading_visual_inspec_sampl", "activities": "@Loading - Visual Inspection & Sampling - @Barge"}, {"date": "date_loading_tank_inspect_measr_final", "time": "time_loading_tank_inspect_measr_final", "tr_css": "", "remarks": "remarks_loading_tank_inspect_measr_final", "activities": "@Loading - Tank Inspection and Measurement - Final @Barge"}, {"date": "date_loading_tank_inspect_meter_final", "time": "time_loading_tank_inspect_meter_final", "tr_css": "", "remarks": "remarks_loading_tank_inspect_meter_final", "activities": "@Loading - Tank Inspection and Meter Verification - Final @Depot"}, {"date": "date_loading_calcul_completed_doc_onboard", "time": "time_loading_calcul_completed_doc_onboard", "tr_css": "", "remarks": "remarks_loading_calcul_completed_doc_onboard", "activities": "@Loading - Calculation completed & Documents onboard"}, {"date": "date_loading_barge_leave_depot", "time": "time_loading_barge_leave_depot", "tr_css": "", "remarks": "remarks_loading_barge_leave_depot", "activities": "@Loading - Barge Leave Depot"}, {"date": "date_discharge_barge_arrived", "time": "time_discharge_barge_arrived", "tr_css": "", "remarks": "remarks_discharge_barge_arrived", "activities": "@discharge - Barge Arrived"}, {"date": "date_discharge_nor_tendered", "time": "time_discharge_nor_tendered", "tr_css": "", "remarks": "remarks_discharge_nor_tendered", "activities": "@discharge - NOR Tendered"}, {"date": "date_discharge_barge_all_fast_alongside", "time": "time_discharge_barge_all_fast_alongside", "tr_css": "", "remarks": "remarks_discharge_barge_all_fast_alongside", "activities": "@discharge - Barge All Fast / Alongside"}, {"date": "date_discharge_key_meeting", "time": "time_discharge_key_meeting", "tr_css": "", "remarks": "remarks_discharge_key_meeting", "activities": "@discharge - Key Meeting"}, {"date": "date_discharge_valve_seealed", "time": "time_discharge_valve_seealed", "tr_css": "", "remarks": "remarks_discharge_valve_seealed", "activities": "@discharge - Valve Seealed"}, {"date": "date_discharge_tank_inspect_measure", "time": "time_discharge_tank_inspect_measure", "tr_css": "", "remarks": "remarks_discharge_tank_inspect_measure", "activities": "@discharge - Tank Inspection and Measurement - Initial @Barge"}, {"date": "date_discharge_tank_inspect_meter_verf", "time": "time_discharge_tank_inspect_meter_verf", "tr_css": "", "remarks": "remarks_discharge_tank_inspect_meter_verf", "activities": "@discharge - Tank Inspection and Meter Verification - Initial @Depot"}, {"date": "date_discharge_host_connected", "time": "time_discharge_host_connected", "tr_css": "", "remarks": "remarks_discharge_host_connected", "activities": "@discharge - Hose(s) Connected"}, {"date": "date_discharge_bunker_commenced", "time": "time_discharge_bunker_commenced", "tr_css": "", "remarks": "remarks_discharge_bunker_commenced", "activities": "@discharge - bunker Commenced"}, {"date": "date_discharge_bunker_completed", "time": "time_discharge_bunker_completed", "tr_css": "", "remarks": "remarks_discharge_bunker_completed", "activities": "@discharge - bunker Completed"}, {"date": "date_discharge_hose_arms_disconnect", "time": "time_date_discharge_hose_arms_disconnect", "tr_css": "", "remarks": "remarks_date_discharge_hose_arms_disconnect", "activities": "@discharge - Hose(s) Arms Disconnected"}, {"date": "date_discharge_visual_inspec_sampl", "time": "time_discharge_visual_inspec_sampl", "tr_css": "", "remarks": "remarks_discharge_visual_inspec_sampl", "activities": "@discharge - Visual Inspection & Sampling - @Barge"}, {"date": "date_discharge_tank_inspect_measr_final", "time": "time_discharge_tank_inspect_measr_final", "tr_css": "", "remarks": "remarks_discharge_tank_inspect_measr_final", "activities": "@discharge - Tank Inspection and Measurement - Final @Barge"}, {"date": "date_discharge_tank_inspect_meter_final", "time": "time_discharge_tank_inspect_meter_final", "tr_css": "", "remarks": "remarks_discharge_tank_inspect_meter_final", "activities": "@discharge - Tank Inspection and Meter Verification - Final @Depot"}, {"date": "date_discharge_calcul_completed_doc_onboard", "time": "time_discharge_calcul_completed_doc_onboard", "tr_css": "", "remarks": "remarks_discharge_calcul_completed_doc_onboard", "activities": "@discharge - Calculation completed & Documents onboard"}, {"date": "date_discharge_barge_leave_ship", "time": "time_discharge_barge_leave_ship", "tr_css": "", "remarks": "remarks_discharge_barge_leave_ship", "activities": "@discharge - Barge Leave Ship"}]', '0', null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."MAP_POINT"
+-- Table structure for MAP_POINT
 -- ----------------------------
-DROP TABLE "public"."MAP_POINT";
+DROP TABLE IF EXISTS "public"."MAP_POINT";
 CREATE TABLE "public"."MAP_POINT" (
 "ID" int4 DEFAULT nextval('"MAP_POINT_ID_seq"'::regclass) NOT NULL,
-"NAME" text,
+"NAME" text COLLATE "default",
 "LATITUDE" float8,
 "LONGITUDE" float8,
-"TYPE" text,
+"TYPE" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
 "ICON_ID" int4,
 "SITE_ID" int4,
@@ -6935,27 +7087,32 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Records of MAP_POINT
 -- ----------------------------
-INSERT INTO "public"."MAP_POINT" VALUES ('7', 'Riau', '1.3975014134364', '102.0100576875', 'port', null, null, null, null, null, null, '7', '3', null);
 INSERT INTO "public"."MAP_POINT" VALUES ('8', 'Balikpapan', '-0.711716694992859', '116.8635733125', 'vessel', null, null, null, null, null, null, '1', '3', null);
-INSERT INTO "public"."MAP_POINT" VALUES ('9', 'Jakarta', '-5.93060860237883', '107.1077139375', 'port', null, null, null, null, null, null, '7', '3', null);
 INSERT INTO "public"."MAP_POINT" VALUES ('10', 'Port Baru', '-7.89675935980107', '112.161424960616', 'port', null, null, null, null, null, null, '7', '1', null);
 INSERT INTO "public"."MAP_POINT" VALUES ('11', 'Test', '-0.65935255667668', '117.456834822381', 'port', null, null, null, null, null, null, '2', '1', null);
 INSERT INTO "public"."MAP_POINT" VALUES ('12', 'Vessel', '0.746861738138179', '107.129686384881', 'vessel', null, null, null, null, null, null, '1', '1', null);
+INSERT INTO "public"."MAP_POINT" VALUES ('13', 'Jakarta', '-5.81585771376557', '106.849535226563', 'port', null, null, null, null, null, null, '8', '0', '8');
 INSERT INTO "public"."MAP_POINT" VALUES ('13', 'Semarang', '-1.10058359450581', '101.6584951875', '0', null, null, null, null, null, null, '8', '0', '2');
+INSERT INTO "public"."MAP_POINT" VALUES ('15', 'Riau', '1.00208109758232', '101.90019440625', '0', null, null, null, null, null, null, '8', '1', '22');
+INSERT INTO "public"."MAP_POINT" VALUES ('16', 'PLN', '0.95814221566873', '112.5569326875', 'port', null, null, null, null, null, null, '8', '2', '13');
+INSERT INTO "public"."MAP_POINT" VALUES ('17', 'PLN Bunker', '0.474783004979002', '114.095018625', 'barge', null, null, null, null, null, null, '8', '2', '15');
+INSERT INTO "public"."MAP_POINT" VALUES ('20', 'Kalimantan Barat', '-1.10717389983593', '110.491503', 'port', null, null, null, null, null, null, '8', '2', '2');
+INSERT INTO "public"."MAP_POINT" VALUES ('21', 'Kalimatan Barat 2', '-1.27694592961598', '109.931753221017', 'port', null, null, null, null, null, null, '8', '2', '13');
+INSERT INTO "public"."MAP_POINT" VALUES ('23', 'PLN Cabang Medan', '3.59207337482438', '98.6750414243956', 'port', null, null, null, null, null, null, '8', '2', '29');
 
 -- ----------------------------
--- Table structure for "public"."MASTER_AREA"
+-- Table structure for MASTER_AREA
 -- ----------------------------
-DROP TABLE "public"."MASTER_AREA";
+DROP TABLE IF EXISTS "public"."MASTER_AREA";
 CREATE TABLE "public"."MASTER_AREA" (
-"AREA_ID" text DEFAULT gen_random_uuid() NOT NULL,
-"AREA_NAME" text,
-"AREA_DESCRIPTION" text,
+"AREA_ID" text COLLATE "default" DEFAULT gen_random_uuid() NOT NULL,
+"AREA_NAME" text COLLATE "default",
+"AREA_DESCRIPTION" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6)
 )
 WITH (OIDS=FALSE)
@@ -6965,29 +7122,31 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Records of MASTER_AREA
 -- ----------------------------
+INSERT INTO "public"."MASTER_AREA" VALUES ('3e1a934d-7a20-4991-a068-3e02b189ed6f', 'Medan', null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_AREA" VALUES ('4d48001b-3e6e-498c-8bc4-b6cd92e2ac8d', 'Makasar', null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_AREA" VALUES ('6b3a98da-9b75-42f5-9160-540cd2532e04', 'Semarang', null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_AREA" VALUES ('829a29bb-b64f-4c75-811d-d4d301101ac2', 'Riau', null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_AREA" VALUES ('d3ed99f5-09be-407a-949f-d8f9e4bec6a1', 'Ambon', null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_AREA" VALUES ('dc609703-c7b8-47b7-8797-170e39bb3020', 'Jakarta', null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_AREA" VALUES ('edcd4cc8-e3be-4aa8-8e20-d7fd839dd470', 'Balikpapan', null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_AREA" VALUES ('f3361af7-c3dc-43c4-b519-ac2e1f1f931d', 'Surabaya', null, null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."MASTER_BARGE"
+-- Table structure for MASTER_BARGE
 -- ----------------------------
-DROP TABLE "public"."MASTER_BARGE";
+DROP TABLE IF EXISTS "public"."MASTER_BARGE";
 CREATE TABLE "public"."MASTER_BARGE" (
 "BARGE_ID" int4 DEFAULT nextval('"MASTER_BARGE_BARGE_ID_seq"'::regclass) NOT NULL,
 "BARGE_NAME" name,
-"BARGE_TYPE" text,
+"BARGE_TYPE" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
 "CLIENT_SITE_ID" int4,
-"CLIENT_SITE_NAME" text
+"CLIENT_SITE_NAME" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -7009,18 +7168,18 @@ INSERT INTO "public"."MASTER_BARGE" VALUES ('12', 'MT Ferimas Akbar', 'Standard'
 INSERT INTO "public"."MASTER_BARGE" VALUES ('13', 'TK KBT I', 'Standard', '0', null, null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."MASTER_BBM"
+-- Table structure for MASTER_BBM
 -- ----------------------------
-DROP TABLE "public"."MASTER_BBM";
+DROP TABLE IF EXISTS "public"."MASTER_BBM";
 CREATE TABLE "public"."MASTER_BBM" (
 "BBM_ID" int4 DEFAULT nextval('"MASTER_BBM_BBM_ID_seq"'::regclass) NOT NULL,
-"BBM_NAME" text,
-"BBM_DESCRIPTION" text,
+"BBM_NAME" text COLLATE "default",
+"BBM_DESCRIPTION" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6)
 )
 WITH (OIDS=FALSE)
@@ -7033,20 +7192,20 @@ WITH (OIDS=FALSE)
 INSERT INTO "public"."MASTER_BBM" VALUES ('1', 'Solar', '<p>Grade A</p>', '0', null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."MASTER_CABANG"
+-- Table structure for MASTER_CABANG
 -- ----------------------------
-DROP TABLE "public"."MASTER_CABANG";
+DROP TABLE IF EXISTS "public"."MASTER_CABANG";
 CREATE TABLE "public"."MASTER_CABANG" (
 "CABANG_ID" int4 DEFAULT nextval('"MASTER_CABANG_CABANG_ID_seq"'::regclass) NOT NULL,
-"BRANCH_NAME" text,
-"BRANCH_DESCRIPTION" text,
+"BRANCH_NAME" text COLLATE "default",
+"BRANCH_DESCRIPTION" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"ADDRESS" varchar(255)
+"ADDRESS" varchar(255) COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -7084,18 +7243,18 @@ INSERT INTO "public"."MASTER_CABANG" VALUES ('28', 'Sumatera Selatan', '<p>-</p>
 INSERT INTO "public"."MASTER_CABANG" VALUES ('29', 'Sumatera Utara', '<p>-</p>', '0', '2018-04-21 00:00:00', null, '2018-04-21 00:00:00', null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."MASTER_CLIENT"
+-- Table structure for MASTER_CLIENT
 -- ----------------------------
-DROP TABLE "public"."MASTER_CLIENT";
+DROP TABLE IF EXISTS "public"."MASTER_CLIENT";
 CREATE TABLE "public"."MASTER_CLIENT" (
-"CLIENT_ID" text DEFAULT gen_random_uuid() NOT NULL,
-"CLIENT_NAME" text,
-"CLIENT_DESCRIPTION" text,
+"CLIENT_ID" text COLLATE "default" DEFAULT gen_random_uuid() NOT NULL,
+"CLIENT_NAME" text COLLATE "default",
+"CLIENT_DESCRIPTION" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6)
 )
 WITH (OIDS=FALSE)
@@ -7118,18 +7277,18 @@ INSERT INTO "public"."MASTER_CLIENT" VALUES ('edd8c517-0a45-4ee7-abbe-f691146d7d
 INSERT INTO "public"."MASTER_CLIENT" VALUES ('fd203d0b-9ed4-48ac-b006-3a4f03dee729', 'asdfasdfad', null, null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."MASTER_CONTRACT"
+-- Table structure for MASTER_CONTRACT
 -- ----------------------------
-DROP TABLE "public"."MASTER_CONTRACT";
+DROP TABLE IF EXISTS "public"."MASTER_CONTRACT";
 CREATE TABLE "public"."MASTER_CONTRACT" (
 "ID" int4 DEFAULT nextval('"MASTER_CONTRACT_ID_seq"'::regclass) NOT NULL,
-"CONTRACT" text,
-"UPLOAD_FILE" text,
+"CONTRACT" text COLLATE "default",
+"UPLOAD_FILE" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6)
 )
 WITH (OIDS=FALSE)
@@ -7146,29 +7305,29 @@ INSERT INTO "public"."MASTER_CONTRACT" VALUES ('4', 'K0004/03/2017/SUC', 'Screen
 INSERT INTO "public"."MASTER_CONTRACT" VALUES ('5', 'K0005/03/2017/SUC', 'Screenshot_from_2017-12-12_16-50-003.png', '0', null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."MASTER_CV"
+-- Table structure for MASTER_CV
 -- ----------------------------
-DROP TABLE "public"."MASTER_CV";
+DROP TABLE IF EXISTS "public"."MASTER_CV";
 CREATE TABLE "public"."MASTER_CV" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_ID_seq"'::regclass) NOT NULL,
-"NAMA" text,
-"UPLOAD_FILE" text,
+"NAMA" text COLLATE "default",
+"UPLOAD_FILE" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
 "POSISI" int4,
-"CONTACT_1" varchar(30),
-"CONTACT_2" varchar(30),
-"ADDRESS" text,
+"CONTACT_1" varchar(30) COLLATE "default",
+"CONTACT_2" varchar(30) COLLATE "default",
+"ADDRESS" text COLLATE "default",
 "BIRTHDATE" date,
-"PLACE_BIRTHDATE" varchar(100),
-"GENDER" char(1),
+"PLACE_BIRTHDATE" varchar(100) COLLATE "default",
+"GENDER" char(1) COLLATE "default",
 "REGION" int4,
-"PHOTO_FILE" text,
-"EMAIL" varchar(150),
+"PHOTO_FILE" text COLLATE "default",
+"EMAIL" varchar(150) COLLATE "default",
 "TYPE_LOCATION" int2,
 "ID_SBU" int4,
 "ID_CABANG" int4
@@ -7183,20 +7342,21 @@ COMMENT ON COLUMN "public"."MASTER_CV"."GENDER" IS 'L = Male, P = Female';
 -- ----------------------------
 INSERT INTO "public"."MASTER_CV" VALUES ('1', 'Bagos W', '180416082526_cv_5ad4a4460c58e_sea_1.jpg', '0', null, null, null, null, null, null, '08348328', '0214243', 'Gandaria 3', '1995-07-06', 'Jakarta', 'L', null, '180516111203_photo_5afbaf935d79e_corporate.png', 'bagos24@gmail.com', '1', '5', null);
 INSERT INTO "public"."MASTER_CV" VALUES ('2', 'Indra', null, '0', null, null, null, null, null, '1', null, null, null, '1990-05-01', 'Jakarta', 'L', null, null, 'indra@gmail.com', '1', '5', null);
-INSERT INTO "public"."MASTER_CV" VALUES ('3', 'Tugiman', null, '0', null, null, null, null, null, '2', '081234459021', '', 'Jalan Batuarab No. 13', '1979-03-01', 'Temanggung', 'L', null, null, 'tugitugi@gmail.com', '1', '2', null);
+INSERT INTO "public"."MASTER_CV" VALUES ('3', 'Tugiman', null, '0', null, null, null, null, null, null, '081234459021', '', 'Jalan Batubara No. 13', '1979-03-01', 'Temanggung', 'L', null, '180523035046_photo_5b0482a6ce684_Jason-Gregoire-headshot-77ed5261.jpeg', 'tugitugi@gmail.com', '1', '2', null);
 INSERT INTO "public"."MASTER_CV" VALUES ('8', 'Lukmanur Hakim', null, '0', null, null, null, null, null, '4', null, null, null, '1970-01-01', 'Jakarta', 'L', null, null, 'hakim@sucofindo.co.id', '1', '7', null);
+INSERT INTO "public"."MASTER_CV" VALUES ('9', 'Aris D Mario', null, '0', null, null, null, null, null, '6', '082182684918', '', 'JL Pancoran Barat 4A no 81', '1990-01-17', 'Makassar', 'L', null, '180522084807_photo_5b0376d7e476c_GOKUU.JPG', 'aris.mario@sucofindo.co.id', '1', '7', null);
 
 -- ----------------------------
--- Table structure for "public"."MASTER_CV_CERTIFICATE"
+-- Table structure for MASTER_CV_CERTIFICATE
 -- ----------------------------
-DROP TABLE "public"."MASTER_CV_CERTIFICATE";
+DROP TABLE IF EXISTS "public"."MASTER_CV_CERTIFICATE";
 CREATE TABLE "public"."MASTER_CV_CERTIFICATE" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_CERTIFICATE_ID_seq"'::regclass) NOT NULL,
 "ID_CV" int4,
-"CERTIFICATE_NAME" varchar(150),
+"CERTIFICATE_NAME" varchar(150) COLLATE "default",
 "CERITIFICATE_EXPIRED" date,
-"CERITIFICATE_FROM" varchar(100),
-"CERITIFICATE_FILE" text
+"CERITIFICATE_FROM" varchar(100) COLLATE "default",
+"CERITIFICATE_FILE" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -7206,17 +7366,18 @@ WITH (OIDS=FALSE)
 -- Records of MASTER_CV_CERTIFICATE
 -- ----------------------------
 INSERT INTO "public"."MASTER_CV_CERTIFICATE" VALUES ('14', '5', 'Sertifikat A', '2022-03-23', 'Vendor A', '180416110415_certificate_5ad4c97f7d7d2_nature_1.jpg');
-INSERT INTO "public"."MASTER_CV_CERTIFICATE" VALUES ('15', '5', 'Sertifikat B', '2019-03-15', 'Vendor B', '180416110415_certificate_5ad4c97f887a7_nature_2.jpg');
+INSERT INTO "public"."MASTER_CV_CERTIFICATE" VALUES ('15', '5', 'Cisco student', '2011-01-27', 'Australia', '180416110415_certificate_5ad4c97f887a7_nature_2.jpg');
+INSERT INTO "public"."MASTER_CV_CERTIFICATE" VALUES ('15', '9', 'Cisco student', '2011-01-27', 'Australia', '');
 
 -- ----------------------------
--- Table structure for "public"."MASTER_CV_EDUCATION"
+-- Table structure for MASTER_CV_EDUCATION
 -- ----------------------------
-DROP TABLE "public"."MASTER_CV_EDUCATION";
+DROP TABLE IF EXISTS "public"."MASTER_CV_EDUCATION";
 CREATE TABLE "public"."MASTER_CV_EDUCATION" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_EDUCATION_ID_seq"'::regclass) NOT NULL,
 "ID_CV" int4,
 "ID_REF_EDUCATION" int4,
-"SCHOOL" varchar(150)
+"SCHOOL" varchar(150) COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -7226,14 +7387,16 @@ WITH (OIDS=FALSE)
 -- Records of MASTER_CV_EDUCATION
 -- ----------------------------
 INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES ('101', '5', '4', 'SMKN 24');
-INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES ('102', '3', '6', 'ITB (Petroleum Enginering)');
 INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES ('102', '5', '5', 'BSI Margonda Depok');
-INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES ('105', '1', '6', 'UI (Petroleum Engineering)');
+INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES ('119', '9', '4', 'SMKN 24 TESTING');
+INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES ('120', '9', '6', 'Sriwijaya University');
+INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES ('123', '3', '6', 'ITB (Petroleum Enginering)');
+INSERT INTO "public"."MASTER_CV_EDUCATION" VALUES ('126', '1', '6', 'UI (Petroleum Engineering)');
 
 -- ----------------------------
--- Table structure for "public"."MASTER_CV_EXPERIENCE"
+-- Table structure for MASTER_CV_EXPERIENCE
 -- ----------------------------
-DROP TABLE "public"."MASTER_CV_EXPERIENCE";
+DROP TABLE IF EXISTS "public"."MASTER_CV_EXPERIENCE";
 CREATE TABLE "public"."MASTER_CV_EXPERIENCE" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_EXPERIENCE_ID_seq"'::regclass) NOT NULL,
 "ID_CV" int4,
@@ -7251,18 +7414,25 @@ COMMENT ON COLUMN "public"."MASTER_CV_EXPERIENCE"."LEVEL" IS '1 = Beginner, 2 = 
 INSERT INTO "public"."MASTER_CV_EXPERIENCE" VALUES ('79', '5', '1', '1');
 INSERT INTO "public"."MASTER_CV_EXPERIENCE" VALUES ('80', '5', '2', '3');
 INSERT INTO "public"."MASTER_CV_EXPERIENCE" VALUES ('81', '5', '3', '2');
+INSERT INTO "public"."MASTER_CV_EXPERIENCE" VALUES ('91', '9', '5', '1');
+INSERT INTO "public"."MASTER_CV_EXPERIENCE" VALUES ('92', '9', '2', '2');
+INSERT INTO "public"."MASTER_CV_EXPERIENCE" VALUES ('93', '3', '5', '3');
+INSERT INTO "public"."MASTER_CV_EXPERIENCE" VALUES ('102', '1', '6', '1');
+INSERT INTO "public"."MASTER_CV_EXPERIENCE" VALUES ('103', '1', '2', '2');
+INSERT INTO "public"."MASTER_CV_EXPERIENCE" VALUES ('104', '1', '5', '1');
+INSERT INTO "public"."MASTER_CV_EXPERIENCE" VALUES ('105', '1', '1', '3');
 
 -- ----------------------------
--- Table structure for "public"."MASTER_CV_HISTORY_OF_WORK"
+-- Table structure for MASTER_CV_HISTORY_OF_WORK
 -- ----------------------------
-DROP TABLE "public"."MASTER_CV_HISTORY_OF_WORK";
+DROP TABLE IF EXISTS "public"."MASTER_CV_HISTORY_OF_WORK";
 CREATE TABLE "public"."MASTER_CV_HISTORY_OF_WORK" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_HISTORY_OF_WORK_ID_seq"'::regclass),
-"COMPANY_NAME" varchar(150),
+"COMPANY_NAME" varchar(150) COLLATE "default",
 "FROM" date,
 "END" date,
-"POSITION" varchar(100),
-"DESCRIPTION" text,
+"POSITION" varchar(100) COLLATE "default",
+"DESCRIPTION" text COLLATE "default",
 "ID_CV" int4
 )
 WITH (OIDS=FALSE)
@@ -7274,11 +7444,12 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 INSERT INTO "public"."MASTER_CV_HISTORY_OF_WORK" VALUES ('69', 'PT A', '2018-01-01', '2018-02-28', 'Web Programmer', 'Programmer', '5');
 INSERT INTO "public"."MASTER_CV_HISTORY_OF_WORK" VALUES ('70', 'PT B', '2018-03-01', '2018-04-16', 'Desktop Programmer', 'System Analysist', '5');
+INSERT INTO "public"."MASTER_CV_HISTORY_OF_WORK" VALUES ('77', 'Sucofindo', '2017-01-08', '2005-09-28', 'Technical Inspector 1', 'PUBG, DOTA, TIdur', '9');
 
 -- ----------------------------
--- Table structure for "public"."MASTER_CV_REGION"
+-- Table structure for MASTER_CV_REGION
 -- ----------------------------
-DROP TABLE "public"."MASTER_CV_REGION";
+DROP TABLE IF EXISTS "public"."MASTER_CV_REGION";
 CREATE TABLE "public"."MASTER_CV_REGION" (
 "ID" int4 DEFAULT nextval('"MASTER_CV_REGION_ID_seq"'::regclass) NOT NULL,
 "ID_REF_REGION" int4,
@@ -7364,20 +7535,34 @@ INSERT INTO "public"."MASTER_CV_REGION" VALUES ('80', null, '3');
 INSERT INTO "public"."MASTER_CV_REGION" VALUES ('81', null, '1');
 INSERT INTO "public"."MASTER_CV_REGION" VALUES ('82', null, '1');
 INSERT INTO "public"."MASTER_CV_REGION" VALUES ('83', null, '1');
+INSERT INTO "public"."MASTER_CV_REGION" VALUES ('84', null, '9');
+INSERT INTO "public"."MASTER_CV_REGION" VALUES ('85', null, '9');
+INSERT INTO "public"."MASTER_CV_REGION" VALUES ('86', null, '9');
+INSERT INTO "public"."MASTER_CV_REGION" VALUES ('87', null, '9');
+INSERT INTO "public"."MASTER_CV_REGION" VALUES ('88', null, '9');
+INSERT INTO "public"."MASTER_CV_REGION" VALUES ('89', null, '9');
+INSERT INTO "public"."MASTER_CV_REGION" VALUES ('90', null, '9');
+INSERT INTO "public"."MASTER_CV_REGION" VALUES ('91', null, '9');
+INSERT INTO "public"."MASTER_CV_REGION" VALUES ('92', null, '3');
+INSERT INTO "public"."MASTER_CV_REGION" VALUES ('93', null, '3');
+INSERT INTO "public"."MASTER_CV_REGION" VALUES ('94', null, '3');
+INSERT INTO "public"."MASTER_CV_REGION" VALUES ('95', null, '1');
+INSERT INTO "public"."MASTER_CV_REGION" VALUES ('96', null, '1');
+INSERT INTO "public"."MASTER_CV_REGION" VALUES ('97', null, '1');
 
 -- ----------------------------
--- Table structure for "public"."MASTER_ICON_MARKER"
+-- Table structure for MASTER_ICON_MARKER
 -- ----------------------------
-DROP TABLE "public"."MASTER_ICON_MARKER";
+DROP TABLE IF EXISTS "public"."MASTER_ICON_MARKER";
 CREATE TABLE "public"."MASTER_ICON_MARKER" (
 "ID" int4 DEFAULT nextval('"MASTER_ICON_MARKER_ID_seq"'::regclass) NOT NULL,
-"NAMA" text,
-"UPLOAD_FILE" text,
+"NAMA" text COLLATE "default",
+"UPLOAD_FILE" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6)
 )
 WITH (OIDS=FALSE)
@@ -7397,19 +7582,19 @@ INSERT INTO "public"."MASTER_ICON_MARKER" VALUES ('7', 'Port Marker', 'port-map-
 INSERT INTO "public"."MASTER_ICON_MARKER" VALUES ('8', 'Cabang', 'cityscape.png', '0', null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."MASTER_INTERVENTION"
+-- Table structure for MASTER_INTERVENTION
 -- ----------------------------
-DROP TABLE "public"."MASTER_INTERVENTION";
+DROP TABLE IF EXISTS "public"."MASTER_INTERVENTION";
 CREATE TABLE "public"."MASTER_INTERVENTION" (
 "ID" int4 DEFAULT nextval('"MASTER_INTERVENTION_ID_seq"'::regclass) NOT NULL,
-"INTERVENTION_NAME" text,
+"INTERVENTION_NAME" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"FILE_SOURCE" text
+"FILE_SOURCE" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -7426,18 +7611,18 @@ INSERT INTO "public"."MASTER_INTERVENTION" VALUES ('24', 'Transhipment', '0', nu
 INSERT INTO "public"."MASTER_INTERVENTION" VALUES ('25', 'Bunker Vessel', '0', null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."MASTER_LOCATION"
+-- Table structure for MASTER_LOCATION
 -- ----------------------------
-DROP TABLE "public"."MASTER_LOCATION";
+DROP TABLE IF EXISTS "public"."MASTER_LOCATION";
 CREATE TABLE "public"."MASTER_LOCATION" (
 "ID" int4 DEFAULT nextval('"MASTER_LOCATION_ID_seq"'::regclass) NOT NULL,
-"LOCATION_NAME" text,
-"LOCATION_DESCRIPTION" text,
+"LOCATION_NAME" text COLLATE "default",
+"LOCATION_DESCRIPTION" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6)
 )
 WITH (OIDS=FALSE)
@@ -7453,19 +7638,19 @@ INSERT INTO "public"."MASTER_LOCATION" VALUES ('4', 'Transporter ', '<p>-</p>', 
 INSERT INTO "public"."MASTER_LOCATION" VALUES ('5', 'Kapal', '<p>-</p>', '0', null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."MASTER_PERSONIL"
+-- Table structure for MASTER_PERSONIL
 -- ----------------------------
-DROP TABLE "public"."MASTER_PERSONIL";
+DROP TABLE IF EXISTS "public"."MASTER_PERSONIL";
 CREATE TABLE "public"."MASTER_PERSONIL" (
 "ID" int4 DEFAULT nextval('"MASTER_PERSONIL_ID_seq"'::regclass) NOT NULL,
-"POSISI" text,
-"NAMA" text,
-"UPLOAD_FILE" text,
+"POSISI" text COLLATE "default",
+"NAMA" text COLLATE "default",
+"UPLOAD_FILE" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6)
 )
 WITH (OIDS=FALSE)
@@ -7478,21 +7663,21 @@ WITH (OIDS=FALSE)
 INSERT INTO "public"."MASTER_PERSONIL" VALUES ('3', 'Jakarta', '10', 'Screenshot_from_2018-01-12_16-51-22.png', '0', null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."MASTER_PORT"
+-- Table structure for MASTER_PORT
 -- ----------------------------
-DROP TABLE "public"."MASTER_PORT";
+DROP TABLE IF EXISTS "public"."MASTER_PORT";
 CREATE TABLE "public"."MASTER_PORT" (
 "PORT_ID" int4 DEFAULT nextval('"MASTER_PORT_PORT_ID_seq"'::regclass) NOT NULL,
 "PORT_NAME" name,
-"PORT_TYPE" text,
+"PORT_TYPE" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
 "CLIENT_SITE_ID" int4,
-"CLIENT_SITE_NAME" text
+"CLIENT_SITE_NAME" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -7509,28 +7694,34 @@ INSERT INTO "public"."MASTER_PORT" VALUES ('12', 'Tg Emas', 'Control', '0', null
 INSERT INTO "public"."MASTER_PORT" VALUES ('13', 'Balikpapan', null, null, null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_PORT" VALUES ('14', 'Soekarno Hatta', null, null, null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_PORT" VALUES ('15', 'Surabaya', null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_PORT" VALUES ('16', 'Semarang', null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_PORT" VALUES ('17', 'RU II Dumai', null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_PORT" VALUES ('18', 'Belawan', null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_PORT" VALUES ('19', 'Ambon', 'Control', '0', null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_PORT" VALUES ('20', 'Makasar', null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_PORT" VALUES ('21', 'Tanjung Priuk', null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."MASTER_PRODUCT"
+-- Table structure for MASTER_PRODUCT
 -- ----------------------------
-DROP TABLE "public"."MASTER_PRODUCT";
+DROP TABLE IF EXISTS "public"."MASTER_PRODUCT";
 CREATE TABLE "public"."MASTER_PRODUCT" (
 "PRODUCT_ID" int4 DEFAULT nextval('"MASTER_PRODUCT_ID_seq"'::regclass) NOT NULL,
 "PRODUCT_LEVEL" int4,
 "PRODUCT_REFERENCE" int4,
-"PRODUCT_NAME" text,
+"PRODUCT_NAME" text COLLATE "default",
 "WEIGHT" int4,
 "SHOW" int4,
 "HIERARCHY" int4,
 "BASICHIERARCHY" int4,
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text,
-"INTERVENTION_REFERENCE" text
+"DELETE_USER" text COLLATE "default",
+"INTERVENTION_REFERENCE" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -7552,17 +7743,19 @@ INSERT INTO "public"."MASTER_PRODUCT" VALUES ('17', '2', '7', 'MHO', '1', '1', n
 INSERT INTO "public"."MASTER_PRODUCT" VALUES ('19', '2', '7', 'MDO', '1', '1', null, null, null, null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_PRODUCT" VALUES ('20', '2', '7', 'HSD', '1', '1', null, null, null, null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_PRODUCT" VALUES ('21', '2', '7', 'HSO', '1', '1', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_PRODUCT" VALUES ('22', '2', '7', 'Solar', '1', '1', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_PRODUCT" VALUES ('23', '2', '7', 'Premium', '1', '1', null, null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."MASTER_SBU"
+-- Table structure for MASTER_SBU
 -- ----------------------------
-DROP TABLE "public"."MASTER_SBU";
+DROP TABLE IF EXISTS "public"."MASTER_SBU";
 CREATE TABLE "public"."MASTER_SBU" (
 "ID" int4 DEFAULT nextval('"MASTER_SBU_ID_seq"'::regclass),
-"NAMA_SBU" varchar(150),
+"NAMA_SBU" varchar(150) COLLATE "default",
 "CREATED_DATE" timestamp(6),
 "UPDATE_DATE" timestamp(6),
-"SBU_DESCRIPTION" varchar(255),
+"SBU_DESCRIPTION" varchar(255) COLLATE "default",
 "IS_DELETE" int2
 )
 WITH (OIDS=FALSE)
@@ -7584,20 +7777,20 @@ INSERT INTO "public"."MASTER_SBU" VALUES ('11', 'PMU Pertamina', '2018-04-21 23:
 INSERT INTO "public"."MASTER_SBU" VALUES ('12', 'SBU Industri', '2018-04-21 23:21:56', '2018-04-21 23:21:56', '-', '0');
 
 -- ----------------------------
--- Table structure for "public"."MASTER_STDREF"
+-- Table structure for MASTER_STDREF
 -- ----------------------------
-DROP TABLE "public"."MASTER_STDREF";
+DROP TABLE IF EXISTS "public"."MASTER_STDREF";
 CREATE TABLE "public"."MASTER_STDREF" (
 "ID" int4 DEFAULT nextval('"MASTER_STDREF_ID_seq"'::regclass) NOT NULL,
-"STD_REF" text,
-"UPLOAD_FILE" text,
+"STD_REF" text COLLATE "default",
+"UPLOAD_FILE" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"CONTENT_INFO" text
+"CONTENT_INFO" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -7610,20 +7803,20 @@ INSERT INTO "public"."MASTER_STDREF" VALUES ('3', 'UNDANG UNDANG NEGARA REPUBLIK
 INSERT INTO "public"."MASTER_STDREF" VALUES ('5', 'PERATURAN PEMERINTAH NO.50 TAHUN 2012', 'PP_No__50_Tahun_2012_tentang_Penerapan_SMK3_1.pdf', '0', null, null, null, null, null, 'Peraturan Pemerintah Republik Indonesia No.50 Tahun 2012 Tentang Sistem Manajemen Keselamatan dan Kesehatan Kerja');
 
 -- ----------------------------
--- Table structure for "public"."MASTER_TOOL"
+-- Table structure for MASTER_TOOL
 -- ----------------------------
-DROP TABLE "public"."MASTER_TOOL";
+DROP TABLE IF EXISTS "public"."MASTER_TOOL";
 CREATE TABLE "public"."MASTER_TOOL" (
 "ID" int4 DEFAULT nextval('"MASTER_TOOL_ID_seq"'::regclass) NOT NULL,
-"JENIS" text,
-"NAMA" text,
+"JENIS" text COLLATE "default",
+"NAMA" text COLLATE "default",
 "JUMLAH" int4,
-"UPLOAD_SERTIFIKAT" text,
+"UPLOAD_SERTIFIKAT" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
 "ID_SBU" int4,
 "ID_CABANG" int4,
@@ -7648,21 +7841,21 @@ INSERT INTO "public"."MASTER_TOOL" VALUES ('3', 'Alat Metering', 'Pressure Gauge
 INSERT INTO "public"."MASTER_TOOL" VALUES ('4', '-', 'Ullage Temperature Interface', '6', 'index.jpg', '0', null, null, null, null, null, null, '8', '2', '2018-10-04', '2');
 
 -- ----------------------------
--- Table structure for "public"."MASTER_VESSEL"
+-- Table structure for MASTER_VESSEL
 -- ----------------------------
-DROP TABLE "public"."MASTER_VESSEL";
+DROP TABLE IF EXISTS "public"."MASTER_VESSEL";
 CREATE TABLE "public"."MASTER_VESSEL" (
 "VESSEL_ID" int4 DEFAULT nextval('"MASTER_VESSEL_VESSEL_ID_seq"'::regclass) NOT NULL,
 "VESSEL_NAME" name,
-"VESSEL_TYPE" text,
+"VESSEL_TYPE" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
 "CLIENT_SITE_ID" int4,
-"CLIENT_SITE_NAME" text
+"CLIENT_SITE_NAME" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -7702,33 +7895,35 @@ INSERT INTO "public"."MASTER_VESSEL" VALUES ('28', 'MT Nirbita', null, null, nul
 INSERT INTO "public"."MASTER_VESSEL" VALUES ('29', 'KM. Lambelu', null, null, null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_VESSEL" VALUES ('30', 'KM. Binaiya', null, null, null, null, null, null, null, null, null);
 INSERT INTO "public"."MASTER_VESSEL" VALUES ('31', 'KM. Bukit Siguntang', null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_VESSEL" VALUES ('32', 'MT Atlantic Point', null, null, null, null, null, null, null, null, null);
+INSERT INTO "public"."MASTER_VESSEL" VALUES ('33', 'MT Madonasun', null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."outbox"
+-- Table structure for outbox
 -- ----------------------------
-DROP TABLE "public"."outbox";
+DROP TABLE IF EXISTS "public"."outbox";
 CREATE TABLE "public"."outbox" (
 "UpdatedInDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "InsertIntoDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "SendingDateTime" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "SendBefore" time(6) DEFAULT '23:59:59'::time without time zone NOT NULL,
 "SendAfter" time(6) DEFAULT '00:00:00'::time without time zone NOT NULL,
-"Text" text,
-"DestinationNumber" varchar(20) DEFAULT ''::character varying NOT NULL,
-"Coding" varchar(255) DEFAULT 'Default_No_Compression'::character varying NOT NULL,
-"UDH" text,
+"Text" text COLLATE "default",
+"DestinationNumber" varchar(20) COLLATE "default" DEFAULT ''::character varying NOT NULL,
+"Coding" varchar(255) COLLATE "default" DEFAULT 'Default_No_Compression'::character varying NOT NULL,
+"UDH" text COLLATE "default",
 "Class" int4 DEFAULT '-1'::integer,
-"TextDecoded" text DEFAULT ''::text NOT NULL,
+"TextDecoded" text COLLATE "default" DEFAULT ''::text NOT NULL,
 "ID" int4 DEFAULT nextval('"outbox_ID_seq"'::regclass) NOT NULL,
 "MultiPart" bool DEFAULT false NOT NULL,
 "RelativeValidity" int4 DEFAULT '-1'::integer,
-"SenderID" varchar(255),
+"SenderID" varchar(255) COLLATE "default",
 "SendingTimeOut" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
-"DeliveryReport" varchar(10) DEFAULT 'default'::character varying,
-"CreatorID" text NOT NULL,
+"DeliveryReport" varchar(10) COLLATE "default" DEFAULT 'default'::character varying,
+"CreatorID" text COLLATE "default" NOT NULL,
 "Retries" int4 DEFAULT 0,
 "Priority" int4 DEFAULT 0,
-"Status" varchar(255) DEFAULT 'Reserved'::character varying NOT NULL,
+"Status" varchar(255) COLLATE "default" DEFAULT 'Reserved'::character varying NOT NULL,
 "StatusCode" int4 DEFAULT '-1'::integer NOT NULL
 )
 WITH (OIDS=FALSE)
@@ -7743,15 +7938,15 @@ INSERT INTO "public"."outbox" VALUES ('2018-01-03 09:35:00', '2018-01-03 09:35:0
 INSERT INTO "public"."outbox" VALUES ('2018-01-03 09:35:44', '2018-01-03 09:33:48', '2018-01-03 09:33:48', '23:59:59', '00:00:00', '00480045004C004C004F00200057004F0052004C0044', '089663159652', 'Default_No_Compression', '', '-1', 'HELLO WORLD', '104', 'f', '255', '', '2018-01-03 09:45:44', 'default', 'Gammu 1.37.0', '1', '0', 'Reserved', '-1');
 
 -- ----------------------------
--- Table structure for "public"."outbox_multipart"
+-- Table structure for outbox_multipart
 -- ----------------------------
-DROP TABLE "public"."outbox_multipart";
+DROP TABLE IF EXISTS "public"."outbox_multipart";
 CREATE TABLE "public"."outbox_multipart" (
-"Text" text,
-"Coding" varchar(255) DEFAULT 'Default_No_Compression'::character varying NOT NULL,
-"UDH" text,
+"Text" text COLLATE "default",
+"Coding" varchar(255) COLLATE "default" DEFAULT 'Default_No_Compression'::character varying NOT NULL,
+"UDH" text COLLATE "default",
 "Class" int4 DEFAULT '-1'::integer,
-"TextDecoded" text,
+"TextDecoded" text COLLATE "default",
 "ID" int4 DEFAULT nextval('"outbox_multipart_ID_seq"'::regclass) NOT NULL,
 "SequencePosition" int4 DEFAULT 1 NOT NULL
 )
@@ -7764,14 +7959,14 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for "public"."pbk"
+-- Table structure for pbk
 -- ----------------------------
-DROP TABLE "public"."pbk";
+DROP TABLE IF EXISTS "public"."pbk";
 CREATE TABLE "public"."pbk" (
 "ID" int4 DEFAULT nextval('"pbk_ID_seq"'::regclass) NOT NULL,
 "GroupID" int4 DEFAULT '-1'::integer NOT NULL,
-"Name" text NOT NULL,
-"Number" text NOT NULL
+"Name" text COLLATE "default" NOT NULL,
+"Number" text COLLATE "default" NOT NULL
 )
 WITH (OIDS=FALSE)
 
@@ -7782,11 +7977,11 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for "public"."pbk_groups"
+-- Table structure for pbk_groups
 -- ----------------------------
-DROP TABLE "public"."pbk_groups";
+DROP TABLE IF EXISTS "public"."pbk_groups";
 CREATE TABLE "public"."pbk_groups" (
-"Name" text NOT NULL,
+"Name" text COLLATE "default" NOT NULL,
 "ID" int4 DEFAULT nextval('"pbk_groups_ID_seq"'::regclass) NOT NULL
 )
 WITH (OIDS=FALSE)
@@ -7798,20 +7993,20 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for "public"."phones"
+-- Table structure for phones
 -- ----------------------------
-DROP TABLE "public"."phones";
+DROP TABLE IF EXISTS "public"."phones";
 CREATE TABLE "public"."phones" (
-"ID" text NOT NULL,
+"ID" text COLLATE "default" NOT NULL,
 "UpdatedInDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "InsertIntoDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "TimeOut" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "Send" bool DEFAULT false NOT NULL,
 "Receive" bool DEFAULT false NOT NULL,
-"IMEI" varchar(35) NOT NULL,
-"NetCode" varchar(10) DEFAULT 'ERROR'::character varying,
-"NetName" varchar(35) DEFAULT 'ERROR'::character varying,
-"Client" text NOT NULL,
+"IMEI" varchar(35) COLLATE "default" NOT NULL,
+"NetCode" varchar(10) COLLATE "default" DEFAULT 'ERROR'::character varying,
+"NetName" varchar(35) COLLATE "default" DEFAULT 'ERROR'::character varying,
+"Client" text COLLATE "default" NOT NULL,
 "Battery" int4 DEFAULT '-1'::integer NOT NULL,
 "Signal" int4 DEFAULT '-1'::integer NOT NULL,
 "Sent" int4 DEFAULT 0 NOT NULL,
@@ -7827,18 +8022,18 @@ WITH (OIDS=FALSE)
 INSERT INTO "public"."phones" VALUES ('', '2018-01-03 09:35:49', '2018-01-03 09:35:42', '2018-01-03 09:35:59', 't', 't', '012345678901234', '', '', 'Gammu 1.37.0, Linux, kernel 4.4.14-040414-generic (#201606241434 SMP Fri Jun 24 18:36:45 UTC 2016), GCC 5.3', '0', '-1', '0', '0');
 
 -- ----------------------------
--- Table structure for "public"."PORT_TERMINAL_DETAIL"
+-- Table structure for PORT_TERMINAL_DETAIL
 -- ----------------------------
-DROP TABLE "public"."PORT_TERMINAL_DETAIL";
+DROP TABLE IF EXISTS "public"."PORT_TERMINAL_DETAIL";
 CREATE TABLE "public"."PORT_TERMINAL_DETAIL" (
-"PORT_TERMINAL_DETAIL_ID" text DEFAULT gen_random_uuid() NOT NULL,
+"PORT_TERMINAL_DETAIL_ID" text COLLATE "default" DEFAULT gen_random_uuid() NOT NULL,
 "FEF_ID" int4,
 "PORT_ID" int4,
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6) DEFAULT now(),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6)
 )
 WITH (OIDS=FALSE)
@@ -7848,14 +8043,29 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Records of PORT_TERMINAL_DETAIL
 -- ----------------------------
+INSERT INTO "public"."PORT_TERMINAL_DETAIL" VALUES ('1d80751c-c6c3-426c-bd20-52f16ab89089', '75', '0', null, '2018-05-23 13:25:31.385995', null, null, null, null);
+INSERT INTO "public"."PORT_TERMINAL_DETAIL" VALUES ('233d4973-dddf-4d9e-b8f7-cebf2f8da9cb', '51', '0', null, '2018-05-23 11:54:35.817797', null, null, null, null);
+INSERT INTO "public"."PORT_TERMINAL_DETAIL" VALUES ('42856a09-55bc-4140-993b-0c71f5b3934d', '72', '0', null, '2018-05-23 11:09:27.834716', null, null, null, null);
+INSERT INTO "public"."PORT_TERMINAL_DETAIL" VALUES ('430924fd-72ce-4002-9b2e-d1bc3a7a8b87', '71', '0', null, '2018-05-22 08:44:06.753571', null, null, null, null);
+INSERT INTO "public"."PORT_TERMINAL_DETAIL" VALUES ('450e41c8-9a9e-4d65-918c-28eff1edff29', '78', '19', null, '2018-05-24 11:29:13.549789', null, null, null, null);
+INSERT INTO "public"."PORT_TERMINAL_DETAIL" VALUES ('68c8a586-f0b0-4dd4-986d-3db674c0821c', '55', '0', null, '2018-05-23 11:52:17.867015', null, null, null, null);
+INSERT INTO "public"."PORT_TERMINAL_DETAIL" VALUES ('7319de69-7cd7-4ac3-8554-4759a45c3762', '74', '0', null, '2018-05-23 14:39:04.787858', null, null, null, null);
+INSERT INTO "public"."PORT_TERMINAL_DETAIL" VALUES ('9b63447a-2327-44ab-a9ce-7ea6c9e67504', '69', '0', null, '2018-05-27 22:13:26.069846', null, null, null, null);
+INSERT INTO "public"."PORT_TERMINAL_DETAIL" VALUES ('a33d7d7b-82b9-4702-9f3f-07b47b60000c', '56', '12', null, '2018-05-22 14:56:46.921478', null, null, null, null);
+INSERT INTO "public"."PORT_TERMINAL_DETAIL" VALUES ('ca1edb04-889f-4d18-9212-6dcacaf6c869', '80', '13', null, '2018-05-27 22:26:54.347111', null, null, null, null);
+INSERT INTO "public"."PORT_TERMINAL_DETAIL" VALUES ('d832f739-deab-453f-a49c-e0de6c8e6731', '51', '0', null, '2018-05-23 11:54:35.822293', null, null, null, null);
+INSERT INTO "public"."PORT_TERMINAL_DETAIL" VALUES ('d91feb58-7836-48f0-b6d1-10b79569699e', '79', '0', null, '2018-05-24 14:41:50.818492', null, null, null, null);
+INSERT INTO "public"."PORT_TERMINAL_DETAIL" VALUES ('e9883a64-e848-4d99-96c3-fb4b7ca4ce15', '73', '0', null, '2018-05-23 11:50:36.199264', null, null, null, null);
+INSERT INTO "public"."PORT_TERMINAL_DETAIL" VALUES ('f356e29c-14fe-4bd3-9837-7c69861b27ea', '77', '0', null, '2018-05-23 14:49:29.058433', null, null, null, null);
+INSERT INTO "public"."PORT_TERMINAL_DETAIL" VALUES ('f9bd8133-e344-4f2a-8664-c78b3a3e8c49', '68', '0', null, '2018-05-27 22:11:04.302857', null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."REF_EDUCATION"
+-- Table structure for REF_EDUCATION
 -- ----------------------------
-DROP TABLE "public"."REF_EDUCATION";
+DROP TABLE IF EXISTS "public"."REF_EDUCATION";
 CREATE TABLE "public"."REF_EDUCATION" (
 "ID_REF_EDUCATION" int4 NOT NULL,
-"EDUCATION_TYPE" varchar(50)
+"EDUCATION_TYPE" varchar(50) COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -7874,12 +8084,12 @@ INSERT INTO "public"."REF_EDUCATION" VALUES ('7', 'S2');
 INSERT INTO "public"."REF_EDUCATION" VALUES ('8', 'S3');
 
 -- ----------------------------
--- Table structure for "public"."REF_EXP"
+-- Table structure for REF_EXP
 -- ----------------------------
-DROP TABLE "public"."REF_EXP";
+DROP TABLE IF EXISTS "public"."REF_EXP";
 CREATE TABLE "public"."REF_EXP" (
 "ID_REF_EXP" int4 DEFAULT nextval('"REF_EXP_ID_seq"'::regclass) NOT NULL,
-"EXP_TYPE" varchar(50)
+"EXP_TYPE" varchar(50) COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -7892,14 +8102,15 @@ INSERT INTO "public"."REF_EXP" VALUES ('1', 'Designer');
 INSERT INTO "public"."REF_EXP" VALUES ('2', 'Programmer');
 INSERT INTO "public"."REF_EXP" VALUES ('3', 'Photography');
 INSERT INTO "public"."REF_EXP" VALUES ('5', 'Writer');
+INSERT INTO "public"."REF_EXP" VALUES ('6', 'Inspection');
 
 -- ----------------------------
--- Table structure for "public"."REF_POSITION"
+-- Table structure for REF_POSITION
 -- ----------------------------
-DROP TABLE "public"."REF_POSITION";
+DROP TABLE IF EXISTS "public"."REF_POSITION";
 CREATE TABLE "public"."REF_POSITION" (
 "ID_REF_POSITION" int4 DEFAULT nextval('"REF_POSITION_ID_seq"'::regclass) NOT NULL,
-"POSITION" varchar(100)
+"POSITION" varchar(100) COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -7915,12 +8126,12 @@ INSERT INTO "public"."REF_POSITION" VALUES ('4', 'Project Manager');
 INSERT INTO "public"."REF_POSITION" VALUES ('6', 'Administration Officer');
 
 -- ----------------------------
--- Table structure for "public"."REF_REGION"
+-- Table structure for REF_REGION
 -- ----------------------------
-DROP TABLE "public"."REF_REGION";
+DROP TABLE IF EXISTS "public"."REF_REGION";
 CREATE TABLE "public"."REF_REGION" (
 "ID_REF_REGION" int4 DEFAULT nextval('"REF_REGION_ID_seq"'::regclass),
-"REGION" varchar(100)
+"REGION" varchar(100) COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -7962,19 +8173,19 @@ INSERT INTO "public"."REF_REGION" VALUES ('30', 'Duri (Riau)');
 INSERT INTO "public"."REF_REGION" VALUES ('31', 'Gresik');
 
 -- ----------------------------
--- Table structure for "public"."RUNNING_TEXT"
+-- Table structure for RUNNING_TEXT
 -- ----------------------------
-DROP TABLE "public"."RUNNING_TEXT";
+DROP TABLE IF EXISTS "public"."RUNNING_TEXT";
 CREATE TABLE "public"."RUNNING_TEXT" (
 "RUNNING_TEXT_ID" int4 DEFAULT nextval('"RUNNING_TEXT_RUNNING_TEXT_ID_seq"'::regclass) NOT NULL,
-"MESSAGE" text,
+"MESSAGE" text COLLATE "default",
 "DISPLAY_START_TIME" timestamp(6),
 "DISPLAY_STOP_TIME" timestamp(6),
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
 "CLIENT_SITE_ID" int4
 )
@@ -7993,29 +8204,29 @@ INSERT INTO "public"."RUNNING_TEXT" VALUES ('87', 'Semarang,[\"HSD\"],KM Umsini,
 INSERT INTO "public"."RUNNING_TEXT" VALUES ('88', 'Semarang,[\"HSD\"],KM Umsini,25-04-2018 01:23:21,sl_vs_bol_r1_bbls:-0.01,sl_vs_bol_r1_metricton:-0.01,sl_vef_applied_vs_bol_bbls:-0.01,sl_vef_applied_vs_bol_metricton:-0.01', '2018-05-14 10:56:24', '2018-05-15 10:56:24', '0', null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."sentitems"
+-- Table structure for sentitems
 -- ----------------------------
-DROP TABLE "public"."sentitems";
+DROP TABLE IF EXISTS "public"."sentitems";
 CREATE TABLE "public"."sentitems" (
 "UpdatedInDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "InsertIntoDB" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "SendingDateTime" timestamp(6) DEFAULT ('now'::text)::timestamp(0) without time zone NOT NULL,
 "DeliveryDateTime" timestamp(6),
-"Text" text NOT NULL,
-"DestinationNumber" varchar(20) DEFAULT ''::character varying NOT NULL,
-"Coding" varchar(255) DEFAULT 'Default_No_Compression'::character varying NOT NULL,
-"UDH" text NOT NULL,
-"SMSCNumber" varchar(20) DEFAULT ''::character varying NOT NULL,
+"Text" text COLLATE "default" NOT NULL,
+"DestinationNumber" varchar(20) COLLATE "default" DEFAULT ''::character varying NOT NULL,
+"Coding" varchar(255) COLLATE "default" DEFAULT 'Default_No_Compression'::character varying NOT NULL,
+"UDH" text COLLATE "default" NOT NULL,
+"SMSCNumber" varchar(20) COLLATE "default" DEFAULT ''::character varying NOT NULL,
 "Class" int4 DEFAULT '-1'::integer NOT NULL,
-"TextDecoded" text DEFAULT ''::text NOT NULL,
+"TextDecoded" text COLLATE "default" DEFAULT ''::text NOT NULL,
 "ID" int4 DEFAULT nextval('"sentitems_ID_seq"'::regclass) NOT NULL,
-"SenderID" varchar(255) NOT NULL,
+"SenderID" varchar(255) COLLATE "default" NOT NULL,
 "SequencePosition" int4 DEFAULT 1 NOT NULL,
-"Status" varchar(255) DEFAULT 'SendingOK'::character varying NOT NULL,
+"Status" varchar(255) COLLATE "default" DEFAULT 'SendingOK'::character varying NOT NULL,
 "StatusError" int4 DEFAULT '-1'::integer NOT NULL,
 "TPMR" int4 DEFAULT '-1'::integer NOT NULL,
 "RelativeValidity" int4 DEFAULT '-1'::integer NOT NULL,
-"CreatorID" text NOT NULL
+"CreatorID" text COLLATE "default" NOT NULL
 )
 WITH (OIDS=FALSE)
 
@@ -8026,13 +8237,13 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for "public"."WA"
+-- Table structure for WA
 -- ----------------------------
-DROP TABLE "public"."WA";
+DROP TABLE IF EXISTS "public"."WA";
 CREATE TABLE "public"."WA" (
 "ID" int4 DEFAULT nextval('"WA_ID_seq"'::regclass) NOT NULL,
-"CONTACT" varchar(255),
-"MESSAGE" varchar(255),
+"CONTACT" varchar(255) COLLATE "default",
+"MESSAGE" varchar(255) COLLATE "default",
 "STATUS" int4 DEFAULT 0
 )
 WITH (OIDS=FALSE)
@@ -8055,22 +8266,22 @@ INSERT INTO "public"."WA" VALUES ('10', 'Pak Ewing', 'DUNKIN DONUTS, BAYAR 9 UNT
 INSERT INTO "public"."WA" VALUES ('11', 'Pak Ewing', 'DUNKIN DONUTS, BAYAR 9 UNTUK 12 DONUT! HANYA SAMPAI 17-18 APRIL DENGAN MENGGUNAKAN APLIKASI LINE!', '1');
 
 -- ----------------------------
--- Table structure for "public"."WEBSITE_ARTICLE"
+-- Table structure for WEBSITE_ARTICLE
 -- ----------------------------
-DROP TABLE "public"."WEBSITE_ARTICLE";
+DROP TABLE IF EXISTS "public"."WEBSITE_ARTICLE";
 CREATE TABLE "public"."WEBSITE_ARTICLE" (
 "ARTICLE_ID" int4 DEFAULT nextval('"WEBSITE_ARTICLE_ID_seq"'::regclass) NOT NULL,
 "ARTICLE_CATEGORY_ID" int4 NOT NULL,
-"TITLE" text,
-"CONTENT" text,
-"STATUS" text,
+"TITLE" text COLLATE "default",
+"CONTENT" text COLLATE "default",
+"STATUS" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text
+"DELETE_USER" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -8082,19 +8293,19 @@ WITH (OIDS=FALSE)
 INSERT INTO "public"."WEBSITE_ARTICLE" VALUES ('2', '1', 'Terjadi pencurian minyak 12000 KL di kepulauan riau.', '<p><em><strong>asdfasdfasd</strong></em></p>', 'Y', '0', null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."WEBSITE_ARTICLE_CATEGORY"
+-- Table structure for WEBSITE_ARTICLE_CATEGORY
 -- ----------------------------
-DROP TABLE "public"."WEBSITE_ARTICLE_CATEGORY";
+DROP TABLE IF EXISTS "public"."WEBSITE_ARTICLE_CATEGORY";
 CREATE TABLE "public"."WEBSITE_ARTICLE_CATEGORY" (
 "ARTICLE_CATEGORY_ID" int4 DEFAULT nextval('"WEBSITE_ARTICLE_CATEGORY_ID_seq"'::regclass) NOT NULL,
-"CATEGORY_NAME" text,
+"CATEGORY_NAME" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text
+"DELETE_USER" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -8107,29 +8318,29 @@ INSERT INTO "public"."WEBSITE_ARTICLE_CATEGORY" VALUES ('1', 'Public', '0', null
 INSERT INTO "public"."WEBSITE_ARTICLE_CATEGORY" VALUES ('2', 'Non Public', '0', null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."WEBSITE_MENU"
+-- Table structure for WEBSITE_MENU
 -- ----------------------------
-DROP TABLE "public"."WEBSITE_MENU";
+DROP TABLE IF EXISTS "public"."WEBSITE_MENU";
 CREATE TABLE "public"."WEBSITE_MENU" (
 "MENU_ID" int4 DEFAULT nextval('"WEBSITE_MENU_MENU_ID_seq"'::regclass) NOT NULL,
 "MENU_LEVEL" int4,
 "REFERENCE" int4,
-"TITLE" text,
-"URL" text,
-"REMARK" text,
-"TARGET" text,
-"IMAGE" text,
+"TITLE" text COLLATE "default",
+"URL" text COLLATE "default",
+"REMARK" text COLLATE "default",
+"TARGET" text COLLATE "default",
+"IMAGE" text COLLATE "default",
 "WEIGHT" int4,
 "SHOW" int4,
 "HIERARCHY" int4,
 "BASICHIERARCHY" int4,
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text
+"DELETE_USER" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -8147,23 +8358,23 @@ INSERT INTO "public"."WEBSITE_MENU" VALUES ('18', '2', '5', 'SCI', 'http://www.s
 INSERT INTO "public"."WEBSITE_MENU" VALUES ('21', '2', '5', 'HMPM & SBU', 'http://103.43.46.75/uploads/file_manager/KD_20-2015-Penetapan_Portofolio-Spesifikasi_Jasa.pdf', 'HMPM', '_self', '', '1', '1', null, null, '0', null, '', null, '', null, null);
 
 -- ----------------------------
--- Table structure for "public"."WEBSITE_PAGE_STATIC"
+-- Table structure for WEBSITE_PAGE_STATIC
 -- ----------------------------
-DROP TABLE "public"."WEBSITE_PAGE_STATIC";
+DROP TABLE IF EXISTS "public"."WEBSITE_PAGE_STATIC";
 CREATE TABLE "public"."WEBSITE_PAGE_STATIC" (
 "PAGE_STATIC_ID" int4 DEFAULT nextval('"WEBSITE_PAGE_STATIC_ID_seq"'::regclass) NOT NULL,
-"TITLE" text,
-"CONTENT" text,
-"STATUS" text,
+"TITLE" text COLLATE "default",
+"CONTENT" text COLLATE "default",
+"STATUS" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text,
-"URL" text,
-"SEO_TITLE" text
+"DELETE_USER" text COLLATE "default",
+"URL" text COLLATE "default",
+"SEO_TITLE" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -8369,20 +8580,20 @@ INSERT INTO "public"."WEBSITE_PAGE_STATIC" VALUES ('17', 'Standard Reference', '
 // ]]></script>', 'Y', '0', null, null, null, null, null, null, 'standard-reference', 'standard-reference');
 
 -- ----------------------------
--- Table structure for "public"."WEBSITE_SLIDER"
+-- Table structure for WEBSITE_SLIDER
 -- ----------------------------
-DROP TABLE "public"."WEBSITE_SLIDER";
+DROP TABLE IF EXISTS "public"."WEBSITE_SLIDER";
 CREATE TABLE "public"."WEBSITE_SLIDER" (
 "SLIDER_ID" int4 DEFAULT nextval('"WEBSITE_SLIDER_ID_seq"'::regclass) NOT NULL,
-"NAME" text,
+"NAME" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text,
-"STATUS" text
+"DELETE_USER" text COLLATE "default",
+"STATUS" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -8394,24 +8605,24 @@ WITH (OIDS=FALSE)
 INSERT INTO "public"."WEBSITE_SLIDER" VALUES ('4', 'Profile Slider', '0', null, null, null, null, null, null, 'Y');
 
 -- ----------------------------
--- Table structure for "public"."WEBSITE_SLIDER_DETAIL"
+-- Table structure for WEBSITE_SLIDER_DETAIL
 -- ----------------------------
-DROP TABLE "public"."WEBSITE_SLIDER_DETAIL";
+DROP TABLE IF EXISTS "public"."WEBSITE_SLIDER_DETAIL";
 CREATE TABLE "public"."WEBSITE_SLIDER_DETAIL" (
 "SLIDER_DETAIL_ID" int4 DEFAULT nextval('"WEBSITE_SLIDER_DETAIL_ID_seq"'::regclass) NOT NULL,
 "SLIDER_ID" int4,
-"TITLE" text,
-"CONTENT" text,
+"TITLE" text COLLATE "default",
+"CONTENT" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text,
-"PATH" text,
-"FILE_NAME" text,
-"STATUS" text
+"DELETE_USER" text COLLATE "default",
+"PATH" text COLLATE "default",
+"FILE_NAME" text COLLATE "default",
+"STATUS" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -8420,45 +8631,33 @@ WITH (OIDS=FALSE)
 -- ----------------------------
 -- Records of WEBSITE_SLIDER_DETAIL
 -- ----------------------------
-INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('9', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>PT. Sucofindo (Persero) | SUCOFINDO melakukan verifikasi, </strong><br /><strong>review, pemeriksaan dan evaluasi terhadap fasilitas produksi </strong><br /><strong>migas hulu,seperti pada fasilitas ekstrasi, mulai tahap disain,</strong><br /><strong> pabrikasi, instalasi, operasional sampai dengan pemeliharaannya </strong><br /><strong>untuk memastikan peralatan dan fasilitas bekerja sesuai dengan </strong><br /><strong>spesifikasi dan aman untuk dioperasikan</strong>
+INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('9', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>PT. SUCOFINDO (Persero) | SUCOFINDO melakukan verifikasi, </strong><br /><strong>review, pemeriksaan dan evaluasi terhadap fasilitas produksi </strong><br /><strong>migas hulu,seperti pada fasilitas ekstrasi, mulai dari tahap desain,</strong><br /><strong>fabrikasi, instalasi, operasional sampai dengan pemeliharaannya </strong><br /><strong>untuk memastikan peralatan dan fasilitas bekerja sesuai dengan </strong><br /><strong>spesifikasi dan aman untuk dioperasikan</strong>
 <div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>', '0', null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_47.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_47.jpeg', 'Y');
-INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('10', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>Inspeksi dapat dilakukan dengan berbagai cara sesuai dengan </strong><br /><strong>kebutuhan dan diutamakan dengan pengujian tanpa rusak sehingga </strong><br /><strong>tidak membawa dampak bagi kegiatan operasional perusahaan</strong>
-<div id="selenium-highlight">&nbsp;</div>
-<div id="selenium-highlight">&nbsp;</div>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_49.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_49.jpeg', 'Y');
-INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('11', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '- Supervise Loading, Unloading dan Transhipment Produk Migas dan Petrokimia<br />- Bunker Inspection<br />- Kalibrasi Peralatan Custody Transfer<br />- Inspeksi dan Audit Sistem Alat Ukur Custody Transfer<br />- Cargo Reconciliation dan Loss Audit<br />- Security Surveillance Services<br />- Verifikasi dan Penulusuran Teknis Ekspor/Impor Produk Migas (Permendag 03/2015)', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_48.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_48.jpeg', 'Y');
-INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('12', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>PT. Sucofindo (Persero) | SUCOFINDO melakukan verifikasi, </strong><br /><strong>review, pemeriksaan dan evaluasi terhadap fasilitas produksi </strong><br /><strong>migas hulu,seperti pada fasilitas ekstrasi, mulai tahap disain,</strong><br /><strong> pabrikasi, instalasi, operasional sampai dengan pemeliharaannya </strong><br /><strong>untuk memastikan peralatan dan fasilitas bekerja sesuai dengan </strong><br /><strong>spesifikasi dan aman untuk dioperasikan</strong>
+INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('10', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>- Supervisi Loading, Unloading dan Transhipment Produk Migas dan Petrokimia</strong><br /><strong>- Survey Bunker&nbsp;</strong><br /><strong>- Cargo Reconcilliation dan Loss Audit</strong><br /><strong>- Kalibrasi Peralatan Custody Transfer Migas</strong><br /><strong>- Inspeksi dan Audit Sistem Peralatan Custody Transfer Migas</strong><br /><strong>- Security Surveillance Services (SSS)</strong><br /><strong>-&nbsp;Verifikasi dan Penulusuran Teknis Ekspor/Impor Produk Migas (Permendag No. 03/2015)</strong>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_49.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_49.jpeg', 'Y');
+INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('11', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>- Supervisi Loading, Unloading dan Transhipment Produk Migas dan Petrokimia</strong><br /><strong>- Survey Bunker&nbsp;</strong><br /><strong>- Cargo Reconcilliation dan Loss Audit</strong><br /><strong>- Kalibrasi Peralatan Custody Transfer Migas</strong><br /><strong>- Inspeksi dan Audit Sistem Peralatan Custody Transfer Migas</strong><br /><strong>- Security Surveillance Services (SSS)</strong><br /><strong>-&nbsp;Verifikasi dan Penulusuran Teknis Ekspor/Impor Produk Migas (Permendag No. 03/2015)</strong>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_48.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_48.jpeg', 'Y');
+INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('12', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>PT. SUCOFINDO (Persero) | SUCOFINDO melakukan verifikasi, </strong><br /><strong>review, pemeriksaan dan evaluasi terhadap fasilitas produksi </strong><br /><strong>migas hulu,seperti pada fasilitas ekstrasi, mulai tahap dari desain,</strong><br /><strong>fabrikasi, instalasi, operasional sampai dengan pemeliharaannya </strong><br /><strong>untuk memastikan peralatan dan fasilitas bekerja sesuai dengan </strong><br /><strong>spesifikasi dan aman untuk dioperasikan.</strong>
 <div id="selenium-highlight">&nbsp;</div>
 <div id="selenium-highlight">&nbsp;</div>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_55.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_55.jpeg', 'Y');
-INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('13', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>Inspeksi dapat dilakukan dengan berbagai cara sesuai dengan </strong><br /><strong>kebutuhan dan diutamakan dengan pengujian tanpa rusak sehingga </strong><br /><strong>tidak membawa dampak bagi kegiatan operasional perusahaan</strong>
-<div id="selenium-highlight">&nbsp;</div>
-<div id="selenium-highlight">&nbsp;</div>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_54.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_54.jpeg', 'Y');
-INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('14', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<div id="selenium-highlight">- Supervise Loading, Unloading dan Transhipment Produk Migas dan Petrokimia<br />- Bunker Inspection<br />- Kalibrasi Peralatan Custody Transfer<br />- Inspeksi dan Audit Sistem Alat Ukur Custody Transfer<br />- Cargo Reconciliation dan Loss Audit<br />- Security Surveillance Services<br />- Verifikasi dan Penulusuran Teknis Ekspor/Impor Produk Migas (Permendag 03/2015)</div>
-<div id="selenium-highlight">&nbsp;</div>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_53.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_53.jpeg', 'Y');
-INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('16', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>Inspeksi dapat dilakukan dengan berbagai cara sesuai dengan </strong><br /><strong>kebutuhan dan diutamakan dengan pengujian tanpa rusak sehingga </strong><br /><strong>tidak membawa dampak bagi kegiatan operasional perusahaan</strong>
-<div id="selenium-highlight">&nbsp;</div>
-<div id="selenium-highlight">&nbsp;</div>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_52.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_52.jpeg', 'Y');
-INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('17', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>Inspeksi dapat dilakukan dengan berbagai cara sesuai dengan </strong><br /><strong>kebutuhan dan diutamakan dengan pengujian tanpa rusak sehingga </strong><br /><strong>tidak membawa dampak bagi kegiatan operasional perusahaan</strong>
-<div id="selenium-highlight">&nbsp;</div>
-<div id="selenium-highlight">&nbsp;</div>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_51.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_51.jpeg', 'Y');
-INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('18', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>PT. Sucofindo (Persero) | SUCOFINDO melakukan verifikasi, </strong><br /><strong>review, pemeriksaan dan evaluasi terhadap fasilitas produksi </strong><br /><strong>migas hulu,seperti pada fasilitas ekstrasi, mulai tahap disain,</strong><br /><strong> pabrikasi, instalasi, operasional sampai dengan pemeliharaannya </strong><br /><strong>untuk memastikan peralatan dan fasilitas bekerja sesuai dengan </strong><br /><strong>spesifikasi dan aman untuk dioperasikan</strong>
-<div id="selenium-highlight">&nbsp;</div>
-<div id="selenium-highlight">&nbsp;</div>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_491.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_491.jpeg', 'Y');
+INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('13', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>Inspeksi dapat dilakukan dengan berbagai cara sesuai dengan </strong><br /><strong>kebutuhan dan diutamakan dengan pengujian tanpa rusak sehingga </strong><br /><strong>tidak membawa dampak bagi kegiatan operasional perusahaan</strong>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_54.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_54.jpeg', 'Y');
+INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('16', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>Inspeksi dapat dilakukan dengan berbagai cara sesuai dengan </strong><br /><strong>kebutuhan dan diutamakan dengan pengujian tanpa rusak sehingga </strong><br /><strong>tidak membawa dampak bagi kegiatan operasional perusahaan</strong>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_52.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_52.jpeg', 'Y');
+INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('17', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>Inspeksi dapat dilakukan dengan berbagai cara sesuai dengan </strong><br /><strong>kebutuhan dan diutamakan dengan pengujian tanpa rusak sehingga </strong><br /><strong>tidak membawa dampak bagi kegiatan operasional perusahaan</strong>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_51.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_51.jpeg', 'Y');
+INSERT INTO "public"."WEBSITE_SLIDER_DETAIL" VALUES ('18', '4', 'SUCOFINDO | <small>Assure Your Confidence</small>', '<strong>PT. SUCOFINDO (Persero) | SUCOFINDO melakukan verifikasi, </strong><br /><strong>review, pemeriksaan dan evaluasi terhadap fasilitas produksi </strong><br /><strong>migas hulu,seperti pada fasilitas ekstrasi, mulai dari tahap desain,</strong><br /><strong>fabrikasi, instalasi, operasional sampai dengan pemeliharaannya </strong><br /><strong>untuk memastikan peralatan dan fasilitas bekerja sesuai dengan </strong><br /><strong>spesifikasi dan aman untuk dioperasikan</strong>', null, null, null, null, null, null, null, 'uploads/slider/WhatsApp_Image_2017-11-13_at_06_05_491.jpeg', 'WhatsApp_Image_2017-11-13_at_06_05_491.jpeg', 'Y');
 
 -- ----------------------------
--- Table structure for "public"."WEBSITE_TAG"
+-- Table structure for WEBSITE_TAG
 -- ----------------------------
-DROP TABLE "public"."WEBSITE_TAG";
+DROP TABLE IF EXISTS "public"."WEBSITE_TAG";
 CREATE TABLE "public"."WEBSITE_TAG" (
 "TAG_ID" int4 DEFAULT nextval('"WEBSITE_TAG_ID_seq"'::regclass) NOT NULL,
-"TAG_NAME" text,
+"TAG_NAME" text COLLATE "default",
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text
+"DELETE_USER" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -8474,20 +8673,20 @@ INSERT INTO "public"."WEBSITE_TAG" VALUES ('5', 'Bencana', '0', null, null, null
 INSERT INTO "public"."WEBSITE_TAG" VALUES ('6', 'Pemilu', '0', null, null, null, null, null, null);
 
 -- ----------------------------
--- Table structure for "public"."WEBSITE_TAG_ARTICLE"
+-- Table structure for WEBSITE_TAG_ARTICLE
 -- ----------------------------
-DROP TABLE "public"."WEBSITE_TAG_ARTICLE";
+DROP TABLE IF EXISTS "public"."WEBSITE_TAG_ARTICLE";
 CREATE TABLE "public"."WEBSITE_TAG_ARTICLE" (
 "TAG_ARTICLE_ID" int4 DEFAULT nextval('"WEBSITE_TAG_ARTICLE_ID_seq"'::regclass) NOT NULL,
 "ARTICLE_ID" int4,
 "TAG_ID" int4,
 "IS_DELETE" int4,
 "CREATE_TIME" timestamp(6),
-"CREATE_USER" text,
+"CREATE_USER" text COLLATE "default",
 "MODIFY_TIME" timestamp(6),
-"MODIFY_USER" text,
+"MODIFY_USER" text COLLATE "default",
 "DELETE_TIME" timestamp(6),
-"DELETE_USER" text
+"DELETE_USER" text COLLATE "default"
 )
 WITH (OIDS=FALSE)
 
@@ -8513,111 +8712,111 @@ ALTER SEQUENCE "public"."pelni_info_id_info_seq1" OWNED BY "INFO_CLIENT"."ID_INF
 ALTER SEQUENCE "public"."sentitems_ID_seq" OWNED BY "sentitems"."ID";
 
 -- ----------------------------
--- Primary Key structure for table "public"."ALERT_SUBSCRIBER"
+-- Primary Key structure for table ALERT_SUBSCRIBER
 -- ----------------------------
 ALTER TABLE "public"."ALERT_SUBSCRIBER" ADD PRIMARY KEY ("ALERT_SUBSCRIBER_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."APP_CLIENT_ACCESS"
+-- Primary Key structure for table APP_CLIENT_ACCESS
 -- ----------------------------
 ALTER TABLE "public"."APP_CLIENT_ACCESS" ADD PRIMARY KEY ("ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."APP_CLIENT_FORM_UPLOAD_DETAIL"
+-- Primary Key structure for table APP_CLIENT_FORM_UPLOAD_DETAIL
 -- ----------------------------
 ALTER TABLE "public"."APP_CLIENT_FORM_UPLOAD_DETAIL" ADD PRIMARY KEY ("FILE_UPLOAD_DETAIL_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."APP_CLIENT_HEADER_ACCESS"
+-- Primary Key structure for table APP_CLIENT_HEADER_ACCESS
 -- ----------------------------
 ALTER TABLE "public"."APP_CLIENT_HEADER_ACCESS" ADD PRIMARY KEY ("HEADER_ACCESS_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."APP_CLIENT_MENU"
+-- Primary Key structure for table APP_CLIENT_MENU
 -- ----------------------------
 ALTER TABLE "public"."APP_CLIENT_MENU" ADD PRIMARY KEY ("MENU_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."APP_CLIENT_SITE"
+-- Primary Key structure for table APP_CLIENT_SITE
 -- ----------------------------
 ALTER TABLE "public"."APP_CLIENT_SITE" ADD PRIMARY KEY ("CLIENT_SITE_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."APP_CLIENT_USER"
+-- Primary Key structure for table APP_CLIENT_USER
 -- ----------------------------
 ALTER TABLE "public"."APP_CLIENT_USER" ADD PRIMARY KEY ("USER_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."APP_CLIENT_USER_GROUP"
+-- Primary Key structure for table APP_CLIENT_USER_GROUP
 -- ----------------------------
 ALTER TABLE "public"."APP_CLIENT_USER_GROUP" ADD PRIMARY KEY ("GROUP_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."APP_FILE_MANAGER"
+-- Primary Key structure for table APP_FILE_MANAGER
 -- ----------------------------
 ALTER TABLE "public"."APP_FILE_MANAGER" ADD PRIMARY KEY ("FILE_MANAGER_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."APP_FUNCTION_ACCESS"
+-- Primary Key structure for table APP_FUNCTION_ACCESS
 -- ----------------------------
 ALTER TABLE "public"."APP_FUNCTION_ACCESS" ADD PRIMARY KEY ("ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."APP_LOG"
+-- Primary Key structure for table APP_LOG
 -- ----------------------------
 ALTER TABLE "public"."APP_LOG" ADD PRIMARY KEY ("LOG_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."APP_LOG_CLIENT"
+-- Primary Key structure for table APP_LOG_CLIENT
 -- ----------------------------
 ALTER TABLE "public"."APP_LOG_CLIENT" ADD PRIMARY KEY ("LOG_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."APP_MENU"
+-- Primary Key structure for table APP_MENU
 -- ----------------------------
 ALTER TABLE "public"."APP_MENU" ADD PRIMARY KEY ("MENU_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."APP_ROUTE"
+-- Primary Key structure for table APP_ROUTE
 -- ----------------------------
 ALTER TABLE "public"."APP_ROUTE" ADD PRIMARY KEY ("ROUTE_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."APP_SETTING"
+-- Primary Key structure for table APP_SETTING
 -- ----------------------------
 ALTER TABLE "public"."APP_SETTING" ADD PRIMARY KEY ("SETTING_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."CLIENT_MESSAGE_TICKET"
+-- Primary Key structure for table CLIENT_MESSAGE_TICKET
 -- ----------------------------
 ALTER TABLE "public"."CLIENT_MESSAGE_TICKET" ADD PRIMARY KEY ("CLIENT_MESSAGE_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."CLIENT_TICKET"
+-- Primary Key structure for table CLIENT_TICKET
 -- ----------------------------
 ALTER TABLE "public"."CLIENT_TICKET" ADD PRIMARY KEY ("CLIENT_TICKET_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."ELEMENT_CONNECTION"
+-- Primary Key structure for table ELEMENT_CONNECTION
 -- ----------------------------
 ALTER TABLE "public"."ELEMENT_CONNECTION" ADD PRIMARY KEY ("ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."KOMPONEN_HTML"
+-- Primary Key structure for table KOMPONEN_HTML
 -- ----------------------------
 ALTER TABLE "public"."KOMPONEN_HTML" ADD PRIMARY KEY ("ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."MASTER_AREA"
+-- Primary Key structure for table MASTER_AREA
 -- ----------------------------
 ALTER TABLE "public"."MASTER_AREA" ADD PRIMARY KEY ("AREA_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."MASTER_CLIENT"
+-- Primary Key structure for table MASTER_CLIENT
 -- ----------------------------
 ALTER TABLE "public"."MASTER_CLIENT" ADD PRIMARY KEY ("CLIENT_ID");
 
 -- ----------------------------
--- Primary Key structure for table "public"."PORT_TERMINAL_DETAIL"
+-- Primary Key structure for table PORT_TERMINAL_DETAIL
 -- ----------------------------
 ALTER TABLE "public"."PORT_TERMINAL_DETAIL" ADD PRIMARY KEY ("PORT_TERMINAL_DETAIL_ID");
