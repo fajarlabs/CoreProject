@@ -466,6 +466,7 @@ class Form_entry extends MY_Controller
 						$dump = array();
 						foreach($result as $k => $v) {
 							$dump[] = $v['file_name'];
+							echo $v['file_name'];
 						}
 						$array_file2d[$key] = $dump;
 					} 
@@ -477,9 +478,9 @@ class Form_entry extends MY_Controller
                     $result = $this->upload->data();
 					$array_file2d[$key] = @$result['file_name'];
                 }
+				
 			}
 		}
-
 		// ================================================================================================
 		// Upload kolom secara dinamis
 		// ================================================================================================
