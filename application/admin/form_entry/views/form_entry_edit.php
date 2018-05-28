@@ -25,9 +25,7 @@ $object = @$item->result()[0];
 
 	  		// element yg sudah di set tetap fsoq,sample_source,date_of_analysis
 	  		// search all & extract element in ID el_div_qty
-
-	  		// init once for itarate element
-	  		add_tb_certificate();
+			add_tb_certificate();
 
 	  		// iterate element timelog
 	  		$("#el_div_timelog :input").each(function() {
@@ -56,17 +54,6 @@ $object = @$item->result()[0];
 	  				}
 
 	  				$(this).val(val_data_column);
-	  			}
-
-	  			// ini untuk filter type file
-	  			if((el_type == 'file') && (el_name == 'fsoq')) {
-	  				if(val_data_column != null) {
-	  					var djson = JSON.parse(val_data_column);
-	  					for(var i=0;i<djson.length;i++) {
-	  						$("#tb_certificate").find('td:last').after('<td><a target="_blank" class="btn btn-xs btn-primary" href="<?php echo base_url(); ?>uploads/form_entry/'+djson[i]+'"><i class="fa fa-eye"></i> view</a> <i><b>*if you do not want to change the file do not upload</b></i></td>');
-	  						//();
-	  					}
-	  				}
 	  			}
 			});
 
@@ -104,8 +91,7 @@ $object = @$item->result()[0];
 	  				if(val_data_column != null) {
 	  					var djson = JSON.parse(val_data_column);
 	  					for(var i=0;i<djson.length;i++) {
-	  						$("#tb_certificate").find('td:last').after('<td><a target="_blank" class="btn btn-xs btn-primary" href="<?php echo base_url(); ?>uploads/form_entry/'+djson[i]+'"><i class="fa fa-eye"></i> view</a> <i><b>*if you do not want to change the file do not upload</b></i></td>');
-	  						//();
+	  						$("#tb_certificate tr:last").after('<tr><td colspan="2" style="padding-top:2px;padding-left:10px;padding-bottom:3px;"><a target="_blank" class="btn btn-xs btn-primary" href="<?php echo base_url(); ?>uploads/form_entry/'+djson[i]+'"><i class="fa fa-eye"></i> view</a> <i><b>*if you do not want to change the file do not upload</b></i> &nbsp;&nbsp;<a href="javascript:;" onclick="delete_tb_certificate(this)" class="btn btn-danger btn-xs"><i class="fa fa-minus"></i> </a></td></tr>');
 	  					}
 	  				}
 	  			}
