@@ -432,6 +432,10 @@ class Client_report extends CI_Controller
 				
 				$sample_source =  check_exist($row->SAMPLE_SOURCE);
 				$date_of_analysis =  check_exist_date($row->DATE_OF_ANALYSIS);
+				$fsoq =  check_exist($row->FSOQ);
+				$rn_notice_issue =  check_exist($row->RN_NOTICE_ISSUE);
+				$rn_letter_issue =  check_exist($row->RN_LETTER_ISSUE);
+				$rn_statement_issue =  check_exist($row->RN_STATEMENT_ISSUE);
 				}
         }
 	
@@ -874,6 +878,34 @@ $intervention=$this->Report_model->get_intervention($id_item);
     <td>$sl_vef_applied_vs_bol_longton</td>
   </tr>
   <tr>
+    <td>Quality</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Sample Source  : $sample_source</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Date of Analysis   : $date_of_analysis</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  
+  <tr>
     <td colspan="7" class="span" style="height:20px"></td>
   </tr>
   <tr>
@@ -886,6 +918,43 @@ $intervention=$this->Report_model->get_intervention($id_item);
     <td>&nbsp;</td>
   </tr>
    <tr>
+    <td class="span"><strong>Non Nominated Tanks</strong></td>
+    <td class="span"></td>
+    <td class="span" colspan="2"></td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr> 
+  <tr>
+    <td class="span">Notice of Apparent Discrepancies issued?</td>
+    <td class="span">:</td>
+    <td class="span" colspan="2">$rn_notice_issue</td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr>
+  <tr>
+    <td class="span">Letter of Protests isued?</td>
+    <td class="span">:</td>
+    <td class="span" colspan="2">$rn_letter_issue</td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr>
+  <tr>
+    <td class="span">Statement of Facts issued?</td>
+    <td class="span">:</td>
+    <td class="span" colspan="2">$rn_statement_issue</td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr>
+  <tr>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+  </tr>
+  <tr>
     <td class="span"><strong>Bunker onboard</strong></td>
     <td class="span"></td>
     <td class="span" colspan="2"></td>
@@ -1412,10 +1481,35 @@ EOD;
     <td>$sr_vs_bol_r4_longton</td>
   </tr>
   <tr>
-    <td colspan="7" >Sample Source  :  $sample_source</td>
+    <td>Quality</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
-    <td colspan="7" >Date of Analysis  :  $date_of_analysis</td>
+    <td>Sample Source  : $sample_source</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Date of Analysis   : $date_of_analysis</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  
+  <tr>
+    <td colspan="7" class="span" style="height:20px"></td>
   </tr>
   <tr>
     <td><strong>C. REMARKS  NOTE</strong></td>
@@ -1425,6 +1519,43 @@ EOD;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="span"><strong>Non Nominated Tanks</strong></td>
+    <td class="span"></td>
+    <td class="span" colspan="2"></td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr> 
+  <tr>
+    <td class="span">Notice of Apparent Discrepancies issued?</td>
+    <td class="span">:</td>
+    <td class="span" colspan="2">$rn_notice_issue</td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr>
+  <tr>
+    <td class="span">Letter of Protests isued?</td>
+    <td class="span">:</td>
+    <td class="span" colspan="2">$rn_letter_issue</td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr>
+  <tr>
+    <td class="span">Statement of Facts issued?</td>
+    <td class="span">:</td>
+    <td class="span" colspan="2">$rn_statement_issue</td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr>
+  <tr>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
   </tr>
    <tr>
     <td class="span"><strong>Bunker onboard</strong></td>
@@ -1818,6 +1949,43 @@ EOD;
     <td>&nbsp;</td>
   </tr>
    <tr>
+    <td class="span"><strong>Non Nominated Tanks</strong></td>
+    <td class="span"></td>
+    <td class="span" colspan="2"></td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr> 
+  <tr>
+    <td class="span">Notice of Apparent Discrepancies issued?</td>
+    <td class="span">:</td>
+    <td class="span" colspan="2">$rn_notice_issue</td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr>
+  <tr>
+    <td class="span">Letter of Protests isued?</td>
+    <td class="span">:</td>
+    <td class="span" colspan="2">$rn_letter_issue</td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr>
+  <tr>
+    <td class="span">Statement of Facts issued?</td>
+    <td class="span">:</td>
+    <td class="span" colspan="2">$rn_statement_issue</td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr>
+  <tr>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+  </tr>
+   <tr>
     <td class="span"><strong>Bunker onboard</strong></td>
     <td class="span"></td>
     <td class="span" colspan="2"></td>
@@ -2207,6 +2375,43 @@ EOD;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="span"><strong>Non Nominated Tanks</strong></td>
+    <td class="span"></td>
+    <td class="span" colspan="2"></td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr> 
+  <tr>
+    <td class="span">Notice of Apparent Discrepancies issued?</td>
+    <td class="span">:</td>
+    <td class="span" colspan="2">$rn_notice_issue</td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr>
+  <tr>
+    <td class="span">Letter of Protests isued?</td>
+    <td class="span">:</td>
+    <td class="span" colspan="2">$rn_letter_issue</td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr>
+  <tr>
+    <td class="span">Statement of Facts issued?</td>
+    <td class="span">:</td>
+    <td class="span" colspan="2">$rn_statement_issue</td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr>
+  <tr>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
   </tr>
    <tr>
     <td class="span"><strong>Bunker onboard</strong></td>
