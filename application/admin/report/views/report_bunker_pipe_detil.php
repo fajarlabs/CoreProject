@@ -368,10 +368,97 @@
   <tr>
     <td colspan="7" class="span" style="height:20px"></td>
   </tr>
-
+  
+  <tr>
+    <td colspan="7" class="span">Certificate Of Quality  : 
+		<?php 
+			$arr_prod=json_decode(@$item->result()[0]->FSOQ);
+			if (is_array($arr_prod) || is_object($arr_prod)){
+			$lines="";
+			foreach($arr_prod as $key => $value){
+				$lines .=  '<a target="_blank" style="text-decoration:none" href="/uploads/form_entry/'.$value.'">'.$value.'</a>, ';
+			}
+				echo trim($lines, ", ");
+			} else {
+				echo '<a target="_blank" style="text-decoration:none" href="/uploads/form_entry/'.@$item->result()[0]->FSOQ.'">'.@$item->result()[0]->FSOQ.'</a>';
+			}
+			?>
+	</td>
+  </tr>
+  
+  <tr>
+    <td colspan="7" class="span" style="height:20px"></td>
+  </tr>
+		
   </tr>
   <tr>
     <td class="span"><strong>C. REMARKS  NOTE</strong></td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+  </tr>
+   <tr>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+    <td class="span">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="span"><strong>Non Nominated Tanks</strong></td>
+    <td class="span"></td>
+    <td class="span" colspan="2"></td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr>
+  <tr>
+    <td class="span">Notice of Apparent Discrepancies issued?</td>
+    <td class="span"></td>
+    <td class="span" colspan="3"><?php echo ucwords(@$item->result()[0]->RN_NOTICE_ISSUE) ?>
+	<?php
+		if(@$item->result()[0]->RN_NOTICE_ISSUE_DESCRIPTION!='""'){
+			echo ' - <a target="_blank" style="text-decoration:none" href="/uploads/form_entry/'.str_replace('"','',@$item->result()[0]->RN_NOTICE_ISSUE_DESCRIPTION).'">'. str_replace('"','',@$item->result()[0]->RN_NOTICE_ISSUE_DESCRIPTION).'</a>';
+		}
+	?>
+	</td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr>
+  <tr>
+    <td class="span">Letter of Protests isued? </td>
+    <td class="span"></td>
+    <td class="span" colspan="3"><?php echo ucwords(@$item->result()[0]->RN_LETTER_ISSUE) ?>
+	<?php
+		if(@$item->result()[0]->RN_LETTER_ISSUE_DESCRIPTION!='""'){
+			echo ' - <a target="_blank" style="text-decoration:none" href="/uploads/form_entry/'.str_replace('"','',@$item->result()[0]->RN_LETTER_ISSUE_DESCRIPTION).'">'.str_replace('"','',@$item->result()[0]->RN_LETTER_ISSUE_DESCRIPTION).'</a>';
+		}
+	?>
+	</td>
+    <td class="span" colspan="2"></td>
+    <td class="span"></td>
+  </tr>
+  <tr>
+    <td class="span">Statement of Facts issued?</td>
+    <td class="span"></td>
+    <td class="span" colspan="3">
+	<?php echo ucwords(@$item->result()[0]->RN_STATEMENT_ISSUE) ?>
+	<?php
+		if(@$item->result()[0]->RN_STATEMENT_ISSUE_DESCRIPTION!='""'){
+			echo ' - <a target="_blank" style="text-decoration:none" href="/uploads/form_entry/'.str_replace('"','',@$item->result()[0]->RN_STATEMENT_ISSUE_DESCRIPTION).'">'.str_replace('"','',@$item->result()[0]->RN_STATEMENT_ISSUE_DESCRIPTION).'</a>';
+		}
+	?>
+	</td>
+    <td class="span" colspan="2">
+	</td>
+    <td class="span"></td>
+  </tr>
+  <tr>
+    <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>

@@ -380,9 +380,9 @@ class Map_point extends MY_Controller
 		$type       = $this->input->post('type');
 		$latitude   = $this->input->post('latitude');
 		$longitude  = $this->input->post('longitude');
-		$icon_id    = $this->input->post('icon_id');
-		$site_id    = $this->input->post('site_id');
-		$cabang_id  = $this->input->post('cabang_id');
+		$icon_id    = (int)$this->input->post('icon_id');
+		$site_id    = (int)$this->input->post('site_id');
+		$cabang_id  = (int)$this->input->post('cabang_id');
 
 		$insert = array(
 			'NAME'      => stripslashes($name),
@@ -405,9 +405,9 @@ class Map_point extends MY_Controller
 		$type      = $this->input->post('type');
 		$latitude  = $this->input->post('latitude');
 		$longitude = $this->input->post('longitude');
-		$icon_id   = $this->input->post('icon_id');
-		$site_id   = $this->input->post('site_id');
-		$cabang_id  = $this->input->post('cabang_id');
+		$icon_id   = (int)$this->input->post('icon_id');
+		$site_id   = (int)$this->input->post('site_id');
+		$cabang_id = (int)$this->input->post('cabang_id');
 
 		$insert = array(
 			'NAME'      => stripslashes($name),

@@ -93,6 +93,10 @@ $db['default'] = array(
 	'username' => 'postgres',
 	'password' => 'postgres',
 	'database' => 'postgres',
+	// 'hostname' => 'pgsql:host=localhost;dbname=sucofindo',
+	// 'username' => 'postgres',
+	// 'password' => 'postgres',
+	// 'database' => 'postgres',
 
 	//Server cloudkilat
 	   // 'hostname' => 'pgsql:host=127.0.0.1;dbname=db_custody',

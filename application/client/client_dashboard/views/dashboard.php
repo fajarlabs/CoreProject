@@ -154,7 +154,7 @@
 	
 		<!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="width: 850px;">
     
       <!-- Modal content-->
       <div class="modal-content">
@@ -167,7 +167,7 @@
 				<div class="col-xs-6">
          			<div style="width:auto;height:400px;" id="chart_pie_detail">No Data</div>
 				</div>
-				<div class="col-xs-6">
+				<div class="col-xs-6" style="overflow-x: auto;">
 					<table class="table">
 						<tr><td>Area</td><td id="i_area"></td></tr>
 						<tr><td>Surveyor In Charges</td><td id="i_surveyor_in_charge"></td></tr>

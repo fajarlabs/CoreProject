@@ -19,7 +19,7 @@ class Map_point_model extends CI_Model
         $this->db->from($this->table .' mp');
         $this->db->join('APP_CLIENT_SITE acs', 'acs.CLIENT_SITE_ID = mp.SITE_ID','left');
         $this->db->join('MASTER_ICON_MARKER mim', 'mim.ID = mp.ICON_ID','left');
-        $this->db->where('TYPE', $type);
+        $this->db->where('mp.TYPE', $type);
         return $this->db->get();
     }
 
