@@ -89,20 +89,21 @@ $db['default'] = array(
 	//-----------------------------------------------	
 
 	//Fajar Localhost DB
-	'hostname' => 'pgsql:host=localhost;dbname=postgres',
-	'username' => 'postgres',
-	'password' => 'postgres',
-	'database' => 'postgres',
+	// 'hostname' => 'pgsql:host=localhost;dbname=postgres',
+	// 'username' => 'postgres',
+	// 'password' => 'postgres',
+	// 'database' => 'postgres',
+	
 	// 'hostname' => 'pgsql:host=localhost;dbname=sucofindo',
 	// 'username' => 'postgres',
 	// 'password' => 'postgres',
 	// 'database' => 'postgres',
 
 	//Server cloudkilat
-	   // 'hostname' => 'pgsql:host=127.0.0.1;dbname=db_custody',
-	   // 'username' => 'sucofindo',	
-	   // 'password' => 'P@ssw0rd2018',
-	   // 'database' => 'db_custody',
+	   'hostname' => 'pgsql:host=127.0.0.1;dbname=db_custody',
+	   'username' => 'sucofindo',	
+	   'password' => 'P@ssw0rd2018',
+	   'database' => 'db_custody',
 
 	//Ridwansyah Localhost DB
 	// 'hostname' => 'pgsql:host=localhost;dbname=sucofindo',

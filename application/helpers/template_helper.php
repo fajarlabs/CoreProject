@@ -711,7 +711,7 @@ function check_exist($var){
 	$result="";
 	if(!empty($var)){
 		if($var=="0.000"){
-			$result="-";
+			$result="0";
 		}
 		else {
 			$result=$var;
