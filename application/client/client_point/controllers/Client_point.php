@@ -319,9 +319,9 @@ class Client_point extends MY_Controller
 	public function view_list()
 	{
 		$this->data['basic'] = true;
-		$this->load->view('client/header',$this->data);
+		$this->load->view('admin/header',$this->data);
 		$this->load->view('client_point_list_view',$this->data);
-		$this->load->view('client/footer',$this->data);
+		$this->load->view('admin/footer',$this->data);
 	}
 
 
@@ -369,9 +369,9 @@ class Client_point extends MY_Controller
 		$this->data['title'] = "Map Point Management";
 		$this->data['id']    = $id;
 		$this->data['item']  = $this->Client_point_model->get_item_by_id($id);
-		$this->load->view('client/header',$this->data);
+		$this->load->view('admin/header',$this->data);
 		$this->load->view('client_point_edit_view',$this->data);
-		$this->load->view('client/footer',$this->data);
+		$this->load->view('admin/footer',$this->data);
 	}
 
 	public function save()
