@@ -10,16 +10,26 @@ class Client_point_model extends CI_Model
 	{
         $this->db->select('*');
         $this->db->from($this->table);  
+
         return $this->db->get();
 	}
 
-    public function get_by_type($type)
+    public function get_all_item_by_siteid($site_id=0)
+    {
+        $this->db->select('*');
+        $this->db->from($this->table);  
+        $this->db->where('SESS_SITE_ID',$site_id);
+        return $this->db->get();
+    }
+
+    public function get_by_type($type,$sess_site_id=0)
     {
         $this->db->select('*');
         $this->db->from($this->table .' mp');
         $this->db->join('APP_CLIENT_SITE acs', 'acs.CLIENT_SITE_ID = mp.SITE_ID','left');
         $this->db->join('MASTER_ICON_MARKER mim', 'mim.ID = mp.ICON_ID','left');
-        $this->db->where('TYPE', $type);
+        $this->db->where('mp.TYPE', $type);
+        $this->db->where('mp.SESS_SITE_ID', $sess_site_id);
         return $this->db->get();
     }
 

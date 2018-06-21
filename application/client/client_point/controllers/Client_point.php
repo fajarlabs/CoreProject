@@ -327,7 +327,7 @@ class Client_point extends MY_Controller
 
 	public function page_list_rest()
 	{
-		$query = $this->Client_point_model->get_all_items();
+		$query = $this->Client_point_model->get_all_item_by_siteid(get_client_site_id());
 		$json_object = new stdClass();
 		$json_object->total = @$query->num_rows();		
 		$json_object->rows  = @$query->result();
@@ -338,7 +338,7 @@ class Client_point extends MY_Controller
 	public function get_point($type="")
 	{
 		$type = strtolower($type);
-		$query = $this->Client_point_model->get_by_type($type);
+		$query = $this->Client_point_model->get_by_type($type,get_client_site_id());
 		$json_object = new stdClass();
 		$json_object->total = @$query->num_rows();		
 		$json_object->rows  = @$query->result();
@@ -391,7 +391,8 @@ class Client_point extends MY_Controller
 			'LONGITUDE' => stripslashes($longitude),
 			'ICON_ID'   => stripslashes($icon_id),
 			'SITE_ID'   => stripslashes($site_id),
-			'CABANG_ID' => stripslashes($cabang_id)
+			'CABANG_ID' => stripslashes($cabang_id),
+			'SESS_SITE_ID' => get_client_site_id()
 		);
 
 		$this->Client_point_model->save($insert);

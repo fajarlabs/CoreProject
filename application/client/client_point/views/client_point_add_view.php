@@ -41,18 +41,10 @@
 								</select>
 							</td>
 						</tr>
-						<tr>
+						<tr style="display:none;">
 							<td width="150px" style="padding-top:15px;"><?php echo form_label('Select Site*'); ?></td>
 							<td>
-								<select name="site_id" class="form-control">
-									<option value="0">--Select Site--</option>
-									<?php 
-									if($site_list->num_rows() > 0) {
-										foreach($site_list->result() as $row_list) {
-											echo '<option value="'.$row_list->CLIENT_SITE_ID.'">'.$row_list->CLIENT_SITE_NAME.'</option>';
-										}
-									} ?>
-								</select>
+								<input type="text" class="form-control" name="site_id" value="<?php echo get_client_site_id(); ?>" readonly="true"/>
 							</td>
 						</tr>
 						<tr>
