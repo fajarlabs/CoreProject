@@ -104,10 +104,10 @@ class Report extends MY_Controller
 		$array_list  = array();
 		if($query_items->num_rows() > 0) {
 			foreach($query_items->result() as $row) {
-				$row->KONTRAK = implode(", ",json_decode($row->KONTRAK));
-				$row->SPK = implode(", ",json_decode($row->SPK));
+				$row->KONTRAK = @implode(", ",json_decode($row->KONTRAK));
+				$row->SPK = @implode(", ",json_decode($row->SPK));
 				$row->CLIENTS = @implode(", ",json_decode($row->CLIENTS));
-				$row->SURVEYOR_IN_CHARGE = implode(", ",json_decode($row->SURVEYOR_IN_CHARGE));
+				$row->SURVEYOR_IN_CHARGE = @implode(", ",json_decode($row->SURVEYOR_IN_CHARGE));
 				$row->CTIME  = date('d-m-Y H:i:s',strtotime($row->CTIME));
 				$row->FUNGSI = '<a href="'.base_url().'index.php/report/detil/'.$row->FEFID.'" class="btn btn-primary btn-xs"><i class="fa fa-eye"> View</i></a> '; 
 				$row->FUNGSI .= '<a href="javascript:;" onclick="callModal('.$row->FEFID.')" class="btn btn-success btn-xs"><i class="fa fa-print"></i> Print</a>'; 
