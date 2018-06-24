@@ -42,7 +42,7 @@
                     <div id="toolbar">
                         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newELement_htmlPage()">Add</a>
                         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editELement_htmlPage()">Edit</a>
-                        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyELement_htmlPage()">Remove</a>
+                        <a style="display:none;" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyELement_htmlPage()">Remove</a>
                     </div>
                 </div>
             </div>
