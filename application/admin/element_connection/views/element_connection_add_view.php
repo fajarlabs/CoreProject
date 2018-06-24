@@ -125,7 +125,7 @@
 						<tr style="display: none;">
 							<td colspan="2"><?php echo form_input(array('type' => 'hidden', 'name' => $csrf['name'],'value' => $csrf['hash'],'class' => 'form-control','required' => 'required')); ?></td>
 						</tr>
-						<tr>
+						<tr style="display:none;">
 							<td colspan="2">
 							<?php echo anchor('/element_connection','Back', array('title' => 'Back to Quality list', 'class' => 'btn btn-sm btn-primary')); ?>
 							<?php echo form_submit('form_user_submit', 'Submit Form', 'class="btn btn-sm btn-primary"');?>
