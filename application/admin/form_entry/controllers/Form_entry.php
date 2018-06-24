@@ -689,9 +689,9 @@ class Form_entry extends MY_Controller
 		$temp_row = array();
 		if($query->num_rows() > 0) {
 			foreach($query->result() as $row) {
-				$row->KONTRAK = implode(", ",json_decode($row->KONTRAK));
-				$row->SPK = implode(", ",json_decode($row->SPK));
-				$row->SURVEYOR_IN_CHARGE = implode(", ",json_decode($row->SURVEYOR_IN_CHARGE));
+				$row->KONTRAK = @implode(", ",json_decode($row->KONTRAK));
+				$row->SPK = @implode(", ",json_decode($row->SPK));
+				$row->SURVEYOR_IN_CHARGE = @implode(", ",json_decode($row->SURVEYOR_IN_CHARGE));
 				$row->CTIME  = date('d-m-Y H:i:s',strtotime($row->CTIME));
 				$row->FUNGSI = '<a href="'.base_url().'index.php/form_entry/edit/'.$row->FEFID.'" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> Edit</a> '; 
 				$row->FUNGSI .= '<a href="'.base_url().'index.php/form_entry/delete/'.$row->FEFID.'" onclick="return confirm(\'Delete data permanently. Are you sure? \')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>'; 
