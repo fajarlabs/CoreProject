@@ -13,10 +13,12 @@
 
 <style type="text/css">
   .span {
-     font-family: OpenSans-Regular;
+     font-family: Arial;
      font-size : 16px;
-     src: url('<?php echo base_url(); ?>assets/fonts/OpenSans/OpenSans-Regular.ttf'); 
   } 
+  .my_space_height{
+	  line-height:6px;
+  }
 </style>
 
   <!-- begin page-header -->
@@ -52,9 +54,10 @@
     <tr><td style="padding-left:20px;">
     <table width="700" border="0">
   <tr>
-    <td width="307"><img src="<?php echo base_url(); ?>/assets/admin/images/logo_suco_report.png" width="150px"/></td>
-    <td class="span" colspan="6"><strong>PT. SUPERINTENDING COMPANY OF INDONESIA<br>SBU Hulu Migas Dan Produk Migas<br>
-    LOADING SUMMARY</strong></td>
+    <td class="span" colspan="6"><strong>PT. SUPERINTENDING COMPANY OF INDONESIA<br>
+	<span class="span" style="margin-left: 50px;">SBU Hulu Migas Dan Produk Migas</span><br/>
+    <span class="span" style="line-height: 3;margin-left: 60px;">PRODUCT BUNKER VESSEL SUMMARY</span></strong></td>
+	<td width="307" align="center"><img src="<?php echo base_url(); ?>/assets/admin/images/logo_suco_report.png" width="150px"/></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -72,7 +75,7 @@
     <td colspan="7">&nbsp;</td>
   </tr>
   <tr>
-    <td class="span">Referensi</td>
+    <td class="span" style="width: 20%;">Referensi</td>
     <td class="span">:</td>
     <td class="span" colspan="5">
     REPORT-00000<?php echo check_exist($item->result()[0]->ID) ?>
@@ -81,9 +84,62 @@
 	</td>
   </tr>
   <tr>
-    <td class="span">Principal</td>
-    <td class="span">:</td>
+    <td class="my_space_height" colspan="7">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="span" rowspan="4">Principal</td>
+    <td class="span" rowspan="4">:</td>
     <td class="span" colspan="5">
+      <?php 
+      $data_client ="";
+	  $cl_count=0;
+      $arr_pr =  json_decode(@$item->result()[0]->CLIENTS);
+	  if(isset($suplier)){
+		  echo "- Client  :";
+		    foreach ($arr_pr as $key => $value) {
+		$join=""; 
+		// Supplier
+		$suplier  = json_decode(@$item->result()[0]->SUPPLIER,true);
+		$sup 	  = isset($suplier[$cl_count]) ? $suplier[$cl_count] : 0;
+		$sup_data = ($sup=="on"  ? 'Supplier, ' : '');
+		$join 	 .= $sup_data;
+		
+		// Trader
+		$trader   = json_decode(@$item->result()[0]->TRADER,true);
+		$trd 	  = isset($trader[$cl_count]) ? $trader[$cl_count] : 0;
+		$trd_data = ($trd=="on"  ? 'Trader, ' : '');
+		$join 	 .= $trd_data;
+		
+		// Buyer
+		$buyer    = json_decode(@$item->result()[0]->BUYER,true);
+		$byr 	  = isset($buyer[$cl_count]) ? $buyer[$cl_count] : 0;
+		$br_data  = ($byr=="on"  ? 'Buyer, ' : '');
+		$join 	 .= $br_data;
+		
+		// Seller
+		$seller   = json_decode(@$item->result()[0]->SELLER,true);
+		$slr 	  = isset($seller[$cl_count]) ? $seller[$cl_count] : 0;
+		$slr_data = ($slr=="on"  ? 'Seller, ' : '');
+		$join 	 .= $slr_data;
+		
+		// Sharing Fee
+		$sharing_fee    = json_decode(@$item->result()[0]->SHARING_FEE,true);
+		$shr 	  		= isset($sharing_fee[$cl_count]) ? $sharing_fee[$cl_count] : 0;
+		$shr_data 		= (!empty($shr)  ? 'Sharing Fee '.$shr.'%, ' : '');
+		$join 	 		.= $shr_data;
+		
+		$join    = rtrim($join,', ');
+        $data_client .= "<br/> &nbsp;&nbsp; - ".$value." <br/> &nbsp;&nbsp; &nbsp;&nbsp; ".$join." <br/>";
+		$cl_count++;
+      }
+      echo  rtrim($data_client, '<br/>');
+	  }
+    ?> 
+    </td>
+  </tr>
+  <tr>
+    <td class="span" colspan="5">
+	   - Kontrak :
       <?php 
       $data_pr ="";
       $arr_pr =  json_decode(@$item->result()[0]->KONTRAK);
@@ -94,24 +150,60 @@
     ?>
     </td>
   </tr>
+  <tr>
+    <td class="span" colspan="5">
+	   - LOI/SPK/PO/WO/NOA :
+      <?php 
+      $data_pr ="";
+      $arr_pr =  json_decode(@$item->result()[0]->SPK);
+      foreach ($arr_pr as $key => $value) {
+        $data_pr .=$value.", ";
+      }
+      echo  rtrim($data_pr, ', ');
+    ?>
+    </td>
+  </tr>
+  <tr>
+    <td class="span" colspan="5">
+	   - Voy. /Trip No :
+      <?php 
+      $data_pr ="";
+      $arr_pr =  json_decode(@$item->result()[0]->VOY);
+      foreach ($arr_pr as $key => $value) {
+        $data_pr .=$value.", ";
+      }
+      echo  rtrim($data_pr, ', ');
+     ?>
+    </td>
+  </tr>
+  <tr>
+    <td class="my_space_height" colspan="7">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="span" rowspan="2">Internal</td>
+    <td class="span" rowspan="2">:</td>
+    <td class="span" colspan="5">
+	   - File Order :
+      <?php echo @$item->result()[0]->FILE_ORDER; ?>
+    </td>
+  </tr>
+  <tr>
+    <td class="span" colspan="5">
+	   - IWO :
+     <?php echo @$item->result()[0]->IWO; ?>
+    </td>
+  </tr>
+  <tr>
+    <td class="my_space_height" colspan="7">&nbsp;</td>
+  </tr>
    <tr>
     <td class="span">Vessel</td>
     <td class="span">:</td>
-    <td class="span" colspan="5"><?php echo @$item->result()[0]->VESSEL; ?></td>
+    <td class="span" colspan="5">
+	<?php echo @$item->result()[0]->VESSEL; ?></td>
   </tr>
   <tr>
-    <td class="span">Voyage</td>
-    <td class="span">:</td>
-    <td class="span" colspan="5">
-    <?php 
-      $data_voy ="";
-      $arr_voy =  json_decode( @$item->result()[0]->VOY);
-      foreach ($arr_voy as $key => $value) {
-        $data_voy .=$value.", ";
-      }
-      echo  rtrim($data_voy, ', ');
-    ?>
-    </td>
+    <td class="my_space_height" colspan="7">&nbsp;</td>
   </tr>
   <tr>
     <td class="span">Location</td>
@@ -119,34 +211,65 @@
     <td class="span" colspan="5"><?php echo @$item->result()[0]->AREA; ?></td>
   </tr>
   <tr>
-    <td class="span" valign="top">Product      </td>
+    <td class="my_space_height" colspan="7">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="span">Port Terminal</td>
+    <td class="span">:</td>
+    <td class="span"  align="left" colspan="5">
+	 <?php 
+	  $arr_prod=json_decode(@$item->result()[0]->PORT_TERMINAL);
+	  if (is_array($arr_prod) || is_object($arr_prod))
+	  {
+	  $take=0;
+	  echo'<ol>';
+	  foreach($arr_prod as $key => $value){
+		 $take='<li>'.$value.'</li>';
+		echo $take;
+		}
+	   echo'</ol>';
+	  } else {
+		echo @$item->result()[0]->PORT_TERMINAL;
+	  }
+	  ?>
+	</td>
+  </tr>
+  <tr>
+    <td class="my_space_height" colspan="7">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="span" valign="top">Product</td>
     <td class="span" valign="top">:</td>
-    <td class="span" colspan="2" align="left" valign="top"><?php 
-  $arr_prod=json_decode(@$item->result()[0]->PRODUCT);
-  if (is_array($arr_prod) || is_object($arr_prod))
-  {
-  $take=0;
-  echo'<ol>';
-  foreach($arr_prod as $key => $value){
-     $take='<li>'.$value.'</li>';
-    echo $take;
-    }
-   echo'</ol>';
-  } else {
-    echo @$item->result()[0]->PRODUCT;
-  }
-  ?>
+    <td class="span" colspan="2" align="left" valign="top">
+	<?php 
+	  $arr_prod=json_decode(@$item->result()[0]->PRODUCT);
+	  if (is_array($arr_prod) || is_object($arr_prod))
+	  {
+	  $take=0;
+	  echo'<ol>';
+	  foreach($arr_prod as $key => $value){
+		 $take='<li>'.$value.'</li>';
+		echo $take;
+		}
+	   echo'</ol>';
+	  } else {
+		echo @$item->result()[0]->PRODUCT;
+	  }
+	  ?>
     
   </td>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
   </tr>
+  <tr>
+    <td class="my_space_height" colspan="7">&nbsp;</td>
+  </tr>
    <tr>
     <td class="span">Loading Date</td>
     <td class="span">:</td>
     <td class="span" colspan="2">
-      <?php echo check_exist_date($item->result()[0]->LOADING_START_DATE) ?> &nbsp;&nbsp;&nbsp;
+      <?php echo check_exist_date($item->result()[0]->LOADING_START_DATE) ?> 
       <?php echo check_exist($item->result()[0]->LOADING_START_TIME) ?>
     </td>
     <td class="span" colspan="3">s/d &nbsp;
@@ -155,13 +278,20 @@
     </td>
   </tr>
   <tr>
+    <td class="my_space_height" colspan="7">&nbsp;</td>
+  </tr>
+  <tr>
     <td class="span">BL Date</td>
     <td class="span">:</td>
-    <td class="span"><?php echo check_exist_date($item->result()[0]->BL_START_DATE); ?></td>
-    <td class="span"><?php echo check_exist($item->result()[0]->BL_START_TIME); ?></td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
+    <td class="span" colspan="2">
+      <?php echo check_exist_date($item->result()[0]->BL_START_DATE) ?> 
+      <?php echo check_exist($item->result()[0]->BL_START_TIME) ?>
+    </td>
+    <td class="span" colspan="3">
+    </td>
+  </tr>
+  <tr>
+    <td class="my_space_height" colspan="7">&nbsp;</td>
   </tr>
   <tr>
     <td class="span" valign="top">Surveyor in charge</td>
@@ -191,7 +321,7 @@
     <td class="span">&nbsp;</td>
     <td class="span">&nbsp;</td>
   </tr>
-  <tr>
+ <tr>
     <td class="span" colspan="7"><strong>II. DISCHARGE MONITORING</strong></td>
   </tr>
   <tr>
@@ -794,13 +924,6 @@
       <td class="span" colspan="5"><?php echo check_exist($item->result()[0]->SC); ?></td>
     </tr>
     <tr style="height:100px"> 
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
-    <td class="span">&nbsp;</td>
   </tr>
   
   

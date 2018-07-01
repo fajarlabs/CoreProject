@@ -151,20 +151,63 @@ class Report extends MY_Controller
         		$product_type	= $row->PRODUCT_TYPE;		
         	}
         }
-		switch($intervensi_id){
-			case 14:	// loading
-				$tplreport='report_loading_detil';
-				break;
-			case 15:   // discharge
-				$tplreport='report_discharge_detil';
-				break;
-			case 25:   // bunker vessel
-				$tplreport='report_bunker_vessel_detil';
-				break;
-			case 21:   // bunker pipe
-				$tplreport='report_bunker_pipe_detil';
-				break;
+		
+		if($product_type=="6"){  //CRUDE
+			switch($intervensi_id){
+				case 14:	// loading
+					$tplreport='report_loading_crude_detil';
+					break;
+				case 15:   // discharge
+					$tplreport='report_discharge_crude_detil';
+					break;
+				case 25:   // bunker vessel
+					$tplreport='report_bunker_vessel_crude_detil';
+					break;
+				case 21:   // bunker pipe
+					$tplreport='report_bunker_pipe_crude_detil';
+					break;
+			}
 		}
+		else if($product_type=="7"){ //PRODUCT
+			switch($intervensi_id){
+				case 14:	// loading
+					$tplreport='report_loading_product_detil';
+					break;
+				case 15:   // discharge
+					$tplreport='report_discharge_product_detil';
+					break;
+				case 25:   // bunker vessel
+					$tplreport='report_bunker_vessel_product_detil';
+					break;
+				case 21:   // bunker pipe
+					$tplreport='report_bunker_pipe_product_detil';
+					break;
+			}
+		}
+		else if($product_type=="8"){ //Petrokimia
+			switch($intervensi_id){
+				case 14:	// loading
+					$tplreport='report_loading_petrokimia_detil';
+					break;
+				case 15:   // discharge
+					$tplreport='report_discharge_petrokimia_detil';
+					break;
+			}
+		}
+		else if($product_type=="9"){ //GAS
+			switch($intervensi_id){
+				case 14:	// loading
+					$tplreport='report_loading_gas_detil';
+					break;
+				case 15:   // discharge
+					$tplreport='report_discharge_gas_detil';
+					break;
+			}
+		}
+		else {
+			echo "NO REPORT FOUND";
+		}
+		
 		$this->data['onclick_report'] = "../cetak/$id_item"; // button report		
         $this->data['site_id']     = $this->session->userdata("site_id");
         $this->data['site_name']   = $this->session->userdata("site_name");
