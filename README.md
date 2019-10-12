@@ -1,2 +1,1 @@
-# fw3
-Team FW
+# Core Project
